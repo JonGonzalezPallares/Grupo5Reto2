@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace 'com.example.retomuzkiz'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.retomuzkiz"
         minSdk 23
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -50,4 +50,8 @@ dependencies {
     //maps
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
+
+    //menu drawer
+    implementation 'androidx.drawerlayout:drawerlayout:1.1.1'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
 }
