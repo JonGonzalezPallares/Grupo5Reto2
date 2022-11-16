@@ -17,9 +17,6 @@ class MenuPrincipal : AppCompatActivity() {
         binding = ActivityMenuPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Quitamos la barra superior para que se vea mejor
-        this.supportActionBar!!.hide()
-
         //Prueba para ver como queda el recycleview, quitarlo cuando tengamos jugadores
         carga()
 

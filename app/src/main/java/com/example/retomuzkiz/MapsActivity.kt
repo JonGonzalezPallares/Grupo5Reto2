@@ -22,11 +22,13 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.CameraPosition
+import com.google.android.gms.maps.model.Marker
 import com.google.android.material.navigation.NavigationView
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback,NavigationView.OnNavigationItemSelectedListener {
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListener, NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
@@ -58,13 +60,24 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,NavigationView.OnNa
         navigationView.setNavigationItemSelectedListener(this)
         //__________________________________________________________________________________________
 
-        //Quitamos la barra superior para que se vea mejor
-        //this.supportActionBar!!.hide()
-
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        //Accion del boton flotante
+        binding.fbPosicion.setOnClickListener {
+            val pobenakoErmita = LatLng(43.346497, -3.121751)
+            //Ponemos una animacion para que no sea tan brusco el cambio
+            val camara = CameraPosition.builder()
+                .target(pobenakoErmita)
+                .zoom(15F)
+                .bearing(0F)
+                .tilt(0F)
+                .build()
+
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
+        }
     }
 
     /**
@@ -76,8 +89,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,NavigationView.OnNa
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
+    override fun onMapReady(mMap: GoogleMap) {
 
         //Creacion de los markadores
         val puenteRomano = LatLng(43.316772, -3.119471)
@@ -140,6 +152,25 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,NavigationView.OnNa
             .build()
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
+
+        mMap.setOnMarkerClickListener(this)
+    }
+
+    //Acciones que ocurren cada vez que pulsamos a un marcador
+    override fun onMarkerClick(marker: Marker): Boolean {
+        Toast.makeText(
+            this,
+            "titulo: "+marker.title+" posicion: "+marker.position,
+            Toast.LENGTH_LONG)
+            .show()
+
+        println("titulo: "+marker.title+" posicion: "+marker.position)
+
+        /*
+        Devolvemos "false" para indicar que no queremos consumir el evento, indicandole asi que queremos
+        que ocurra el evento por defecto. Que la camara se mueva al marcador seleccionado y lo centra
+         */
+        return false
     }
 
     // ESTO DEVUELVE EL OBJETO QUE QUERAMOS
