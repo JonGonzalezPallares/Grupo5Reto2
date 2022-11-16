@@ -48,6 +48,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
 
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         //__________________________________________________________________________________________
         val toolbar: Toolbar = findViewById(R.id.toolbar_main)
         setSupportActionBar(toolbar)
