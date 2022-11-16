@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import android.content.res.Configuration
+import android.graphics.drawable.ColorDrawable
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -21,14 +22,16 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.material.navigation.NavigationView
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback,NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
-    protected lateinit var Listabooleanos : ArrayList<Boolean>
-    protected lateinit var Listacoodenadas : ArrayList<LatLng>
+    //protected lateinit var Listabooleanos : ArrayList<Boolean>
+    //protected lateinit var Listacoodenadas : ArrayList<LatLng>
     lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
 
@@ -38,12 +41,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,NavigationView.OnNa
         val Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
         cargarbooleanos()
         cargarcordenadas()
-        Servicio.putExtra("boleanos",Listabooleanos)
-        Servicio.putExtra("coordenadas",Listacoodenadas)
-
-
-
-
+        //Servicio.putExtra("boleanos",Listabooleanos)
+        //Servicio.putExtra("coordenadas",Listacoodenadas)
 
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -60,7 +59,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,NavigationView.OnNa
         //__________________________________________________________________________________________
 
         //Quitamos la barra superior para que se vea mejor
-        this.supportActionBar!!.hide()
+        //this.supportActionBar!!.hide()
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -80,11 +79,67 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,NavigationView.OnNa
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        // Add a marker in Sydney and move the camera
-        //43.346497,-3.121751
+        //Creacion de los markadores
+        val puenteRomano = LatLng(43.316772, -3.119471)
+        val pobalekoBurdinola = LatLng(43.296111, -3.126113)
         val pobenakoErmita = LatLng(43.346497, -3.121751)
-        mMap.addMarker(MarkerOptions().position(pobenakoErmita).title("Pobeñako Ermita"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(pobenakoErmita))
+        val hondartzaArena = LatLng(43.349722, -3.116389)
+        val ibilbideItsaslur = LatLng(43.331075, -3.117392)
+        val muniatonesGaztelua = LatLng(43.323611, -3.112503)
+        val sanJuan = LatLng(43.330278, -3.129061)
+
+        //Añadimos los marcadores al mapa
+        mMap.addMarker(
+            MarkerOptions()
+                .position(puenteRomano)
+                .title("Pobaleko zubi erromanikoa")
+        )
+
+        mMap.addMarker(
+            MarkerOptions()
+                .position(pobalekoBurdinola)
+                .title("Pobaleko Burdinola")
+        )
+
+        mMap.addMarker(
+            MarkerOptions()
+                .position(pobenakoErmita)
+                .title("Pobeñako Ermita")
+        )
+
+        mMap.addMarker(
+            MarkerOptions()
+                .position(hondartzaArena)
+                .title("La Arena hondartza")
+        )
+
+        mMap.addMarker(
+            MarkerOptions()
+                .position(ibilbideItsaslur)
+                .title("Itsaslur Ibilbidea")
+        )
+
+        mMap.addMarker(
+            MarkerOptions()
+                .position(muniatonesGaztelua)
+                .title("Muñatones Gaztelua")
+        )
+
+        mMap.addMarker(
+            MarkerOptions()
+                .position(sanJuan)
+                .title("San Juan Gaua")
+        )
+
+        //Ponemos una animacion para que no sea tan brusco el cambio
+        val camara = CameraPosition.builder()
+            .target(pobenakoErmita)
+            .zoom(15F)
+            .bearing(0F)
+            .tilt(0F)
+            .build()
+
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
     }
 
     // ESTO DEVUELVE EL OBJETO QUE QUERAMOS
@@ -110,21 +165,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,NavigationView.OnNa
     fun cargarcordenadas(){
 
         val PobeñakoErmita = LatLng(43.346497, -3.121751)
-        Listacoodenadas[0]= PobeñakoErmita
+        //Listacoodenadas[0]= PobeñakoErmita
         //cargar las cordenadas que se usaran para las comprobaciones de cercanias
-
-
     }
-    fun cargarbooleanos(){
 
-        Listabooleanos[0]= false
+    fun cargarbooleanos(){
+        /*Listabooleanos[0]= false
         Listabooleanos[1]= false
         Listabooleanos[2]= false
         Listabooleanos[3]= false
         Listabooleanos[4]= false
         Listabooleanos[5]= false
-        Listabooleanos[6]= false
-
+        Listabooleanos[6]= false*/
     }
 
     //______________________________________________________________________________________________
@@ -138,16 +190,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,NavigationView.OnNa
         drawer.closeDrawer(GravityCompat.START)
         return true
     }
+
     //______________________________________________________________________________________________
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
         toggle.syncState()
     }
+
     //______________________________________________________________________________________________
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         toggle.onConfigurationChanged(newConfig)
     }
+
     //______________________________________________________________________________________________
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)){
@@ -155,5 +210,4 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,NavigationView.OnNa
         }
         return super.onOptionsItemSelected(item)
     }
-    //______________________________________________________________________________________________
 }
