@@ -38,7 +38,12 @@ class PuenteRomano_preg3 : Fragment() {
         val vista = inflater.inflate(R.layout.fragment_puente_romano_preg3, container, false)
 
         val texto = vista.findViewById<TextView>(R.id.txtPreg3)
-        println(texto.text.toString())
+
+        val cadena = (texto.text.toString()).toCharArray()
+
+        for (element in cadena){
+            println(element)
+        }
 
         return vista
     }
