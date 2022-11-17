@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
@@ -15,6 +16,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.widget.Toolbar
+import androidx.core.app.ActivityCompat
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -22,6 +24,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.CameraPosition
@@ -36,6 +40,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     //protected lateinit var Listacoodenadas : ArrayList<LatLng>
     lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var localicacion: FusedLocationProviderClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,6 +69,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        localicacion = LocationServices.getFusedLocationProviderClient(this)
     }
 
     /**
@@ -129,17 +136,44 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
                 .title("San Juan Gaua")
         )
 
+        mMap.setOnMarkerClickListener(this)
+
+        //Tenemos que pedir permisos
+        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+            && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(
+                this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION), 1)
+            return
+        }
+
+        //Guardamos la ultima posicion del mapa
+        localicacion.lastLocation.addOnSuccessListener { location ->
+            if(location != null){
+                //Cogemos la posicion de donde hayamos clicado
+                val ubicacion = LatLng(location.latitude, location.longitude)
+                //Añadimos un marcador donde hayamos clickado
+                val camara = CameraPosition.builder()
+                    .target(ubicacion)
+                    .zoom(15F)
+                    .bearing(0F)
+                    .tilt(0F)
+                    .build()
+                mMap.addMarker(MarkerOptions().position(ubicacion))
+                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
+            }
+        }
+
         //Ponemos una animacion para que no sea tan brusco el cambio
-        val camara = CameraPosition.builder()
+        /*val camara = CameraPosition.builder()
             .target(pobenakoErmita)
             .zoom(15F)
             .bearing(0F)
             .tilt(0F)
             .build()
 
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))*/
 
-        mMap.setOnMarkerClickListener(this)
+
 
         //Accion del boton flotante
         binding.fbPosicion.setOnClickListener {
