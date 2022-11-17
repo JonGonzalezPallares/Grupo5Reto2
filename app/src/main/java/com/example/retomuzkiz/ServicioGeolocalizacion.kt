@@ -3,6 +3,7 @@ package com.example.retomuzkiz
 import android.Manifest
 import android.R
 import android.annotation.SuppressLint
+
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -16,10 +17,12 @@ import android.media.MediaPlayer
 import android.os.Build
 import android.os.IBinder
 import androidx.annotation.RequiresApi
+
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.model.Circle
 import com.google.android.gms.maps.model.CircleOptions
@@ -43,6 +46,13 @@ class ServicioGeolocalizacion : Service() {
     lateinit  var muniatonesGaztelua : Location
     lateinit  var sanJuan : Location
     lateinit  var ubicacionact : Location
+    protected var booleano0 = false
+    protected var booleano1 = false
+    protected var booleano2 = false
+    protected var booleano3 = false
+    protected var booleano4 = false
+    protected var booleano5 = false
+    protected var booleano6 = false
 
 
 
@@ -50,8 +60,10 @@ class ServicioGeolocalizacion : Service() {
 
 
     override fun onCreate() {
+        fusedLocation= LocationServices.getFusedLocationProviderClient(applicationContext)
+        ubicacionact = Location("ubicacionact")
         //1
-
+        Listabooleanos = arrayListOf<Boolean>()
         puenteRomano = Location("puenteromano")
         puenteRomano.latitude = 43.316772
         puenteRomano.longitude = -3.119471
@@ -87,7 +99,8 @@ class ServicioGeolocalizacion : Service() {
         sanJuan.latitude = 43.330278
         sanJuan.longitude = -3.129061
 
-
+        //var arrayloc = arrayListOf<Location>()
+        //arrayloc.add()
 
 
 
@@ -107,6 +120,12 @@ class ServicioGeolocalizacion : Service() {
         fusedLocation.lastLocation.addOnSuccessListener { location->
             if(location!=null){
                 ubicacion=LatLng(location.latitude,location.longitude)
+                var ubilat = ubicacion.latitude
+                var lon =ubicacion.longitude
+                ubicacionact = Location("ubicacionact")
+                ubicacionact.latitude = location.latitude
+                ubicacionact.longitude = location.longitude
+                println("fusedlocationcreate")
             }
         }
         startForeground()
@@ -151,17 +170,32 @@ class ServicioGeolocalizacion : Service() {
     }
 
 
+
     @SuppressLint("MissingPermission")
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
-        //Cargar arra yde booleanos
-        Listabooleanos = intent.getBooleanArrayExtra("booleanos") as ArrayList<Boolean>
+        //Cargar array de booleanos
+        Listabooleanos = arrayListOf<Boolean>()
+
+        Listabooleanos.add(intent.getBooleanExtra("boleano0",false))
+        Listabooleanos.add(intent.getBooleanExtra("boleano1",false))
+        Listabooleanos.add(intent.getBooleanExtra("boleano2",false))
+        Listabooleanos.add(intent.getBooleanExtra("boleano3",false))
+        Listabooleanos.add(intent.getBooleanExtra("boleano4",false))
+        Listabooleanos.add(intent.getBooleanExtra("boleano5",false))
+        Listabooleanos.add(intent.getBooleanExtra("boleano6",false))
+
+
 
 
 
         println("onstartcomand")
         job = GlobalScope.launch{
+
             while (true){
+                println("ejecucion servicio nivel while")
                 //obtener la ubicacion actual
+
+
                 fusedLocation.lastLocation.addOnSuccessListener { location->
                     if(location!=null){
                         ubicacion=LatLng(location.latitude,location.longitude)
@@ -170,6 +204,8 @@ class ServicioGeolocalizacion : Service() {
                         ubicacionact = Location("ubicacionact")
                         ubicacionact.latitude = ubilat
                         ubicacionact.longitude = lon
+                        println(ubicacionact)
+                        println(hondartzaArena)
                     }
                 }
 
@@ -179,56 +215,16 @@ class ServicioGeolocalizacion : Service() {
                     break
                 }
                 //comprobaciones de lso puntos de ubicacion
-                if(ubicacionact.distanceTo(puenteRomano) < 50){
-                    //comprobacion de distancia del punto 1
-                    Listabooleanos[0]=true
-                }else{
-                    Listabooleanos[0]=false
-                }
+                Listabooleanos[0] = ubicacionact.distanceTo(puenteRomano) < 100
 
 
-                if(ubicacionact.distanceTo(pobalekoBurdinola) < 50){
-                    //comprobacion de distancia del punto 2
-                    Listabooleanos[1]=true
-                }else{
-                    Listabooleanos[0]=false
-                }
-                if(ubicacionact.distanceTo(pobalekoBurdinola) > 50){
-                    //comprobacion de distancia del punto 2
-                    Listabooleanos[1]=false
-                }else{
-                    Listabooleanos[1]=false
-                }
-                if(ubicacionact.distanceTo(pobenakoErmita) < 50){
-                    //comprobacion de distancia del punto 3
-                    Listabooleanos[2]=true
-                }else{
-                    Listabooleanos[2]=false
-                }
-                if(ubicacionact.distanceTo(hondartzaArena) < 50){
-                    //comprobacion de distancia del punto 4
-                    Listabooleanos[3]=true
-                }else{
-                    Listabooleanos[3]=false
-                }
-                if(ubicacionact.distanceTo(ibilbideItsaslur) < 50){
-                    //comprobacion de distancia del punto 5
-                    Listabooleanos[4]=true
-                }else{
-                    Listabooleanos[4]=false
-                }
-                if(ubicacionact.distanceTo(muniatonesGaztelua) < 50){
-                    //comprobacion de distancia del punto 6
-                    Listabooleanos[5]=true
-                }else{
-                    Listabooleanos[5]=false
-                }
-                if(ubicacionact.distanceTo(sanJuan) < 50){
-                    //comprobacion de distancia del punto 6
-                    Listabooleanos[6]=true
-                }else{
-                    Listabooleanos[6]=false
-                }
+                Listabooleanos[1] = ubicacionact.distanceTo(pobalekoBurdinola) <  100
+
+                Listabooleanos[2] = ubicacionact.distanceTo(pobenakoErmita) <  100
+                Listabooleanos[3] = ubicacionact.distanceTo(hondartzaArena).toInt() < 100
+                Listabooleanos[4] = ubicacionact.distanceTo(ibilbideItsaslur).toInt() < 100
+                Listabooleanos[5] = ubicacionact.distanceTo(muniatonesGaztelua).toInt() < 100
+                Listabooleanos[6] = ubicacionact.distanceTo(sanJuan).toInt() < 100
 
 
                 Thread.sleep(5000)
@@ -239,8 +235,22 @@ class ServicioGeolocalizacion : Service() {
 
 
                 //devolucion de la lista de booleanos
+                booleano0 = Listabooleanos[0]
+                booleano1 = Listabooleanos[1]
+                booleano2 = Listabooleanos[2]
+                booleano3 = Listabooleanos[3]
+                booleano4 = Listabooleanos[4]
+                booleano5 = Listabooleanos[5]
+                booleano6 = Listabooleanos[6]
+
                 val senderIntent = Intent("broadcast")
-                senderIntent.putExtra("Booleanoscomprobados",Listabooleanos)
+                senderIntent.putExtra("Booleano0",booleano0)
+                senderIntent.putExtra("Booleano1",booleano1)
+                senderIntent.putExtra("Booleano2",booleano2)
+                senderIntent.putExtra("Booleano3",booleano3)
+                senderIntent.putExtra("Booleano4",booleano4)
+                senderIntent.putExtra("Booleano5",booleano5)
+                senderIntent.putExtra("Booleano6",booleano6)
                 senderIntent.putExtra("ubicacionactual",ubicacion)
                 LocalBroadcastManager.getInstance(applicationContext).sendBroadcast(senderIntent)
 
