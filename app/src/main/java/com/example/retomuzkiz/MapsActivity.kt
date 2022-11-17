@@ -40,7 +40,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     //protected lateinit var Listacoodenadas : ArrayList<LatLng>
     lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
-    private lateinit var localicacion: FusedLocationProviderClient
+    private lateinit var localizacion: FusedLocationProviderClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,7 +70,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        localicacion = LocationServices.getFusedLocationProviderClient(this)
+        localizacion = LocationServices.getFusedLocationProviderClient(this)
     }
 
     /**
@@ -147,7 +147,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         }
 
         //Guardamos la posicion en la que estamos actualmente en el mapa
-        localicacion.lastLocation.addOnSuccessListener { location ->
+        localizacion.lastLocation.addOnSuccessListener { location ->
             if(location != null){
                 //Cogemos la posicion de donde hayamos clicado
                 val ubicacion = LatLng(location.latitude, location.longitude)
@@ -170,7 +170,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         //Accion del boton flotante
         binding.fbPosicion.setOnClickListener {
             //Guardamos la posicion en la que estamos actualmente en el mapa
-            localicacion.lastLocation.addOnSuccessListener { location ->
+            localizacion.lastLocation.addOnSuccessListener { location ->
                 if(location != null){
                     //Cogemos la posicion de donde hayamos clicado
                     val ubicacion = LatLng(location.latitude, location.longitude)
