@@ -33,11 +33,11 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.material.navigation.NavigationView
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListener, NavigationView.OnNavigationItemSelectedListener {
-
+    private lateinit var fusedLocation : FusedLocationProviderClient
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
-    //protected lateinit var Listabooleanos : ArrayList<Boolean>
-    //protected lateinit var Listacoodenadas : ArrayList<LatLng>
+    protected lateinit var Listabooleanos : ArrayList<Boolean>
+    private lateinit var  ubicacion:LatLng
     lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var localizacion: FusedLocationProviderClient
@@ -47,9 +47,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         // crear el servicio de geolocalizacion
         val Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
         cargarbooleanos()
-        cargarcordenadas()
-        //Servicio.putExtra("boleanos",Listabooleanos)
-        //Servicio.putExtra("coordenadas",Listacoodenadas)
+
+        Servicio.putExtra("boleanos",Listabooleanos)
+
 
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -84,6 +84,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
      * installed Google Play services and returned to the app.
      */
     override fun onMapReady(mMap: GoogleMap) {
+        //ubicacion actual
+        fusedLocation.lastLocation.addOnSuccessListener { location->
+            if(location!=null){
+                ubicacion=LatLng(location.latitude,location.longitude)
+                mMap.addMarker(MarkerOptions().position(ubicacion))
+                //mover camara
+                //mMap.moveCamera(CameraUpdateFactory.newLatLng(ubicacion))
+                //mover camara mas smooth
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion,18f))
+
+            }
+
+        }
 
         //Creacion de los markadores
         val puenteRomano = LatLng(43.316772, -3.119471)
@@ -99,6 +112,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             MarkerOptions()
                 .position(puenteRomano)
                 .title("Pobaleko zubi erromanikoa")
+
         )
 
         mMap.addMarker(
@@ -211,7 +225,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     val broadcastReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             // AQUI TIENE QUE IR EL ARRAY DE BOOLEANO DE COMPROBACION DE LOS PUNTOS DE INTERES
-            //txtcontar.text = intent?.getStringExtra("contador")
+            Listabooleanos = intent?.getBooleanArrayExtra("Booleanoscomprobados") as ArrayList<Boolean>
+            ubicacion = intent?.getParcelableExtra<LatLng>("ubicacionactual") as LatLng
         }
     }
 
@@ -227,21 +242,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         LocalBroadcastManager.getInstance(this).unregisterReceiver(broadcastReceiver)
     }
 
-    fun cargarcordenadas(){
-
-        val PobeñakoErmita = LatLng(43.346497, -3.121751)
-        //Listacoodenadas[0]= PobeñakoErmita
-        //cargar las cordenadas que se usaran para las comprobaciones de cercanias
-    }
 
     fun cargarbooleanos(){
-        /*Listabooleanos[0]= false
+        Listabooleanos[0]= false
         Listabooleanos[1]= false
         Listabooleanos[2]= false
         Listabooleanos[3]= false
         Listabooleanos[4]= false
         Listabooleanos[5]= false
-        Listabooleanos[6]= false*/
+        Listabooleanos[6]= false
     }
 
     //______________________________________________________________________________________________
