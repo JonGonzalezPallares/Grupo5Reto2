@@ -1,10 +1,11 @@
 package com.example.retomuzkiz
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
+import com.example.retomuzkiz.puenteRomano.PuenteRomano
 
 class MenuPrincipal : AppCompatActivity() {
 
@@ -25,7 +26,8 @@ class MenuPrincipal : AppCompatActivity() {
         binding.rvJugadores.adapter = adaptador
 
         binding.button.setOnClickListener {
-            val intento = Intent(this, MapsActivity::class.java)
+            //val intento = Intent(this, MapsActivity::class.java)
+            val intento = Intent(this, PuenteRomano::class.java)
             startActivity(intento)
         }
     }

@@ -99,6 +99,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             MarkerOptions()
                 .position(puenteRomano)
                 .title("Pobaleko zubi erromanikoa")
+                .snippet("0")
         )
 
         mMap.addMarker(
@@ -195,10 +196,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
 
         Toast.makeText(
             this,
-            "titulo: "+marker.title+" posicion: "+marker.position,
+            "titulo: "+marker.title+" posicion: "+marker.position+" snipet: "+marker.snippet.toString().toInt(),
             Toast.LENGTH_LONG)
             .show()
-        println("titulo: "+marker.title+" posicion: "+marker.position)
+        println("titulo: "+marker.title+" posicion: "+marker.position+" snipet: "+marker.snippet.toString().toInt())
 
         /*
         Devolvemos "false" para indicar que no queremos consumir el evento, indicandole asi que queremos

@@ -3,4 +3,9 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="puente_romano_pregunta_1">El Pobaleko zubi erromanikoa El Pobaleko burdinolarantz doa, Barbadun ibaiaren gainean. XIII. mendean eraiki zen, eta Muskiz zen herriko zubirik zaharrena.</string>
+    <string name="puente_romano_pregunta_2">Muskizeko erdigunetik Barbadun ibaia igarotzen zen, eta, beraz, zubi bat eraiki behar izan zuten herritik arazorik gabe mugitu ahal izateko. Horri esker, Galdames eta Sopuertatik Muskizera pasatzen zen jendea. Zubi hau beharrezkoa izan zen arazo demografikoengatik.</string>
+    <string name="puente_romano_pregunta_3">Zubia harrizkoa da. Arkuzko bi begi zituen, baina gaur egun bat dauka, Karlistaldietan bestea hondoratu egin baitzen, eta horren ordez hormigoizko pasabide bat eraiki da gaur egun. Gutxi gorabehera bi metroko zabalera du eta ez du babes-hormarik. Zubia ez erortzeko, zutabe handi bat eraiki da. Gaur egun ere bertatik pasa daiteke, baina ez da aspalditik erabiltzen.</string>
 </resources>
