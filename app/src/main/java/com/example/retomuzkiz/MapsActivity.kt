@@ -146,47 +146,46 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             return
         }
 
-        //Guardamos la ultima posicion del mapa
+        //Guardamos la posicion en la que estamos actualmente en el mapa
         localicacion.lastLocation.addOnSuccessListener { location ->
             if(location != null){
                 //Cogemos la posicion de donde hayamos clicado
                 val ubicacion = LatLng(location.latitude, location.longitude)
+
                 //Añadimos un marcador donde hayamos clickado
+                mMap.addMarker(MarkerOptions().position(ubicacion))
+
+                //Ponemos una animacion para que no sea tan brusco el cambio
                 val camara = CameraPosition.builder()
                     .target(ubicacion)
                     .zoom(15F)
                     .bearing(0F)
                     .tilt(0F)
                     .build()
-                mMap.addMarker(MarkerOptions().position(ubicacion))
+
                 mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
             }
         }
 
-        //Ponemos una animacion para que no sea tan brusco el cambio
-        /*val camara = CameraPosition.builder()
-            .target(pobenakoErmita)
-            .zoom(15F)
-            .bearing(0F)
-            .tilt(0F)
-            .build()
-
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))*/
-
-
-
         //Accion del boton flotante
         binding.fbPosicion.setOnClickListener {
-            val pobenakoErmita = LatLng(43.346497, -3.121751)
-            //Ponemos una animacion para que no sea tan brusco el cambio
-            val camara = CameraPosition.builder()
-                .target(pobenakoErmita)
-                .zoom(15F)
-                .bearing(0F)
-                .tilt(0F)
-                .build()
+            //Guardamos la posicion en la que estamos actualmente en el mapa
+            localicacion.lastLocation.addOnSuccessListener { location ->
+                if(location != null){
+                    //Cogemos la posicion de donde hayamos clicado
+                    val ubicacion = LatLng(location.latitude, location.longitude)
 
-            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
+                    //Ponemos una animacion para que no sea tan brusco el cambio
+                    val camara = CameraPosition.builder()
+                        .target(ubicacion)
+                        .zoom(15F)
+                        .bearing(0F)
+                        .tilt(0F)
+                        .build()
+
+                    mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
+                }
+            }
         }
     }
 
