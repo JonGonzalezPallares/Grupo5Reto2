@@ -99,7 +99,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         val ibilbideItsaslur = LatLng(43.331075, -3.117392)
         val muniatonesGaztelua = LatLng(43.323611, -3.112503)
         val sanJuan = LatLng(43.330278, -3.129061)
-
+        
         //Añadimos los marcadores al mapa
         mMap.addMarker(
             MarkerOptions()
@@ -158,11 +158,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
 
     //Acciones que ocurren cada vez que pulsamos a un marcador
     override fun onMarkerClick(marker: Marker): Boolean {
-        Toast.makeText(
-            this,
-            "titulo: "+marker.title+" posicion: "+marker.position,
-            Toast.LENGTH_LONG)
-            .show()
+
 
         println("titulo: "+marker.title+" posicion: "+marker.position)
 
