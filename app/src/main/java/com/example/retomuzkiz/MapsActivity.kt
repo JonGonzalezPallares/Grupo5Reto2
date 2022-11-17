@@ -64,20 +64,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-
-        //Accion del boton flotante
-        binding.fbPosicion.setOnClickListener {
-            val pobenakoErmita = LatLng(43.346497, -3.121751)
-            //Ponemos una animacion para que no sea tan brusco el cambio
-            val camara = CameraPosition.builder()
-                .target(pobenakoErmita)
-                .zoom(15F)
-                .bearing(0F)
-                .tilt(0F)
-                .build()
-
-            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
-        }
     }
 
     /**
@@ -154,12 +140,30 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
 
         mMap.setOnMarkerClickListener(this)
+
+        //Accion del boton flotante
+        binding.fbPosicion.setOnClickListener {
+            val pobenakoErmita = LatLng(43.346497, -3.121751)
+            //Ponemos una animacion para que no sea tan brusco el cambio
+            val camara = CameraPosition.builder()
+                .target(pobenakoErmita)
+                .zoom(15F)
+                .bearing(0F)
+                .tilt(0F)
+                .build()
+
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
+        }
     }
 
     //Acciones que ocurren cada vez que pulsamos a un marcador
     override fun onMarkerClick(marker: Marker): Boolean {
 
-
+        Toast.makeText(
+            this,
+            "titulo: "+marker.title+" posicion: "+marker.position,
+            Toast.LENGTH_LONG)
+            .show()
         println("titulo: "+marker.title+" posicion: "+marker.position)
 
         /*
