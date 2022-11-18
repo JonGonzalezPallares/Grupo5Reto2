@@ -32,6 +32,8 @@ class PuenteRomano : AppCompatActivity() {
         binding.btnAtras.setOnClickListener {
             //Cambiamos el estilo de los botones
             it.visibility = View.GONE
+            binding.btnUltimo.visibility = View.VISIBLE
+            binding.btnEmpezar.visibility = View.GONE
             binding.btnUltimo.isEnabled = true
             binding.btnPrimero.visibility = View.VISIBLE
 
@@ -56,11 +58,17 @@ class PuenteRomano : AppCompatActivity() {
             //Cambiamos el estilo de los botones
             binding.btnPrimero.visibility = View.GONE
             binding.btnAtras.visibility = View.VISIBLE
-            it.isEnabled = false
-            it.setBackgroundColor(Color.parseColor("#C1C0C0"))
+            it.visibility = View.GONE
+            binding.btnEmpezar.setBackgroundColor(Color.parseColor("#C822DA"))
+            binding.btnEmpezar.visibility = View.VISIBLE
 
             //Llamamos a la funcion para cambiar los fragmentos
             cambiarFrag(PuenteRomano_preg3())
+        }
+
+        //Boton que lleva a la activity del juego
+        binding.btnEmpezar.setOnClickListener {
+
         }
     }
 
