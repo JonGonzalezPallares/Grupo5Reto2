@@ -13,6 +13,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.location.Location
+import android.location.LocationRequest
 import android.media.MediaPlayer
 import android.os.Build
 import android.os.IBinder
@@ -21,13 +22,21 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.google.android.gms.location.CurrentLocationRequest
 import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationRequest.PRIORITY_HIGH_ACCURACY
 import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.Priority
+import com.google.android.gms.location.Priority.PRIORITY_HIGH_ACCURACY
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.model.Circle
 import com.google.android.gms.maps.model.CircleOptions
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.tasks.CancellationToken
+import com.google.android.gms.tasks.CancellationTokenSource
+import com.google.android.gms.tasks.OnTokenCanceledListener
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -118,14 +127,10 @@ class ServicioGeolocalizacion : Service() {
             return
         }
         fusedLocation.lastLocation.addOnSuccessListener { location->
+
             if(location!=null){
                 ubicacion=LatLng(location.latitude,location.longitude)
-                var ubilat = ubicacion.latitude
-                var lon =ubicacion.longitude
-                ubicacionact = Location("ubicacionact")
-                ubicacionact.latitude = location.latitude
-                ubicacionact.longitude = location.longitude
-                println("fusedlocationcreate")
+
             }
         }
         startForeground()
@@ -171,6 +176,7 @@ class ServicioGeolocalizacion : Service() {
 
 
 
+    @OptIn(DelicateCoroutinesApi::class)
     @SuppressLint("MissingPermission")
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         //Cargar array de booleanos
@@ -184,7 +190,40 @@ class ServicioGeolocalizacion : Service() {
         Listabooleanos.add(intent.getBooleanExtra("boleano5",false))
         Listabooleanos.add(intent.getBooleanExtra("boleano6",false))
 
+        fun actualizarubi(){
+            fusedLocation.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, object : CancellationToken() {
+                override fun onCanceledRequested(p0: OnTokenCanceledListener) = CancellationTokenSource().token
 
+                override fun isCancellationRequested() = false
+            }).addOnSuccessListener {
+                if(it!==null){
+                    ubicacionact.latitude=it.latitude
+                    ubicacionact.longitude=it.longitude
+                }
+                /*else{
+                    fusedLocation.lastLocation.addOnSuccessListener {location->
+                        if(location!==null){
+                            ubicacionact.latitude=location.latitude
+                            ubicacionact.longitude=location.longitude
+                        }
+                    }
+                }*/
+
+            }
+            fusedLocation.lastLocation.addOnSuccessListener { location->
+                if(location!=null){
+                   ubicacion=LatLng(location.latitude,location.longitude)
+                    println("ubiact:"+ubicacionact)
+                    /*var ubilat = ubicacion.latitude
+                   var lon =ubicacion.longitude
+                   ubicacionact = Location("ubicacionact")
+                   ubicacionact.latitude = ubilat
+                   ubicacionact.longitude = lon
+
+                   println(hondartzaArena)*/
+                }
+            }
+        }
 
 
 
@@ -195,45 +234,59 @@ class ServicioGeolocalizacion : Service() {
                 println("ejecucion servicio nivel while")
                 //obtener la ubicacion actual
 
+                clearchache.deleteCache(applicationContext)
+                actualizarubi()
 
-                fusedLocation.lastLocation.addOnSuccessListener { location->
-                    if(location!=null){
-                        ubicacion=LatLng(location.latitude,location.longitude)
-                        var ubilat = ubicacion.latitude
-                        var lon =ubicacion.longitude
-                        ubicacionact = Location("ubicacionact")
-                        ubicacionact.latitude = ubilat
-                        ubicacionact.longitude = lon
-                        println(ubicacionact)
-                        println(hondartzaArena)
-                    }
-                }
 
                 // si se ha cancelado salimos del bucle
                 if(job.isCancelled){
 
                     break
                 }
-                //comprobaciones de lso puntos de ubicacion
-                Listabooleanos[0] = ubicacionact.distanceTo(puenteRomano) < 100
-
-
-                Listabooleanos[1] = ubicacionact.distanceTo(pobalekoBurdinola) <  100
-
-                Listabooleanos[2] = ubicacionact.distanceTo(pobenakoErmita) <  100
-                Listabooleanos[3] = ubicacionact.distanceTo(hondartzaArena).toInt() < 100
-                Listabooleanos[4] = ubicacionact.distanceTo(ibilbideItsaslur).toInt() < 100
-                Listabooleanos[5] = ubicacionact.distanceTo(muniatonesGaztelua).toInt() < 100
-                Listabooleanos[6] = ubicacionact.distanceTo(sanJuan).toInt() < 100
-
-
+                //comprobaciones de los puntos de ubicacion
+                if(ubicacionact.distanceTo(puenteRomano).toInt() < 75){
+                    Listabooleanos[0]= true
+                }
+                if(ubicacionact.distanceTo(puenteRomano).toInt() >  75){
+                    Listabooleanos[0]=false
+                }
+                if(ubicacionact.distanceTo(pobalekoBurdinola).toInt() <   75){
+                    Listabooleanos[1]=true
+                }
+                if(ubicacionact.distanceTo(pobalekoBurdinola).toInt() >   75){
+                    Listabooleanos[1]=false
+                }
+                if(ubicacionact.distanceTo(pobenakoErmita).toInt() <   75){
+                    Listabooleanos[2]=true
+                }
+                if(ubicacionact.distanceTo(pobenakoErmita).toInt() >   75){
+                    Listabooleanos[2]=false
+                }
+                if(ubicacionact.distanceTo(hondartzaArena).toInt() <  75){
+                    Listabooleanos[3]=true
+                }
+                if(ubicacionact.distanceTo(hondartzaArena).toInt() >  75){
+                    Listabooleanos[3]=false
+                }
+                if(ubicacionact.distanceTo(ibilbideItsaslur).toInt() <  75){
+                    Listabooleanos[4]=true
+                }
+                if(ubicacionact.distanceTo(ibilbideItsaslur).toInt() >  75){
+                    Listabooleanos[4]=false
+                }
+                if(ubicacionact.distanceTo(muniatonesGaztelua).toInt() <  75){
+                    Listabooleanos[5] =true
+                }
+                if(ubicacionact.distanceTo(muniatonesGaztelua).toInt() >  75){
+                    Listabooleanos[5] =false
+                }
+                if(ubicacionact.distanceTo(sanJuan).toInt() <  75){
+                    Listabooleanos[6] =true
+                }
+                if(ubicacionact.distanceTo(sanJuan).toInt() >  75){
+                    Listabooleanos[6] = false
+                }
                 Thread.sleep(5000)
-
-
-
-
-
-
                 //devolucion de la lista de booleanos
                 booleano0 = Listabooleanos[0]
                 booleano1 = Listabooleanos[1]
