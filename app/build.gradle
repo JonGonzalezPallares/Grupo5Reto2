@@ -50,7 +50,8 @@ dependencies {
     //maps
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
-
+    //life cycle scope
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
     //menu drawer
     implementation 'androidx.drawerlayout:drawerlayout:1.1.1'
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'

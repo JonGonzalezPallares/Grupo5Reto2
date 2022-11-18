@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_puente_romano_preg1" />
+        tools:layout="@layout/fragment_puente_romano_preg3" />
 
     <Button
         android:id="@+id/btnPrimero"
@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="40dp"
+        android:backgroundTint="#C1C0C0"
         android:enabled="false"
         android:text="primero"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="40dp"
+        android:backgroundTint="#C822DA"
         android:text="Anterior"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="40dp"
+        android:backgroundTint="#C822DA"
         android:text="Siguiente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -59,6 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="40dp"
+        android:backgroundTint="#C822DA"
         android:text="ultimo"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"

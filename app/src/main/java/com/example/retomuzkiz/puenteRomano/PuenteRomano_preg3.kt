@@ -5,8 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import com.example.retomuzkiz.R
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,15 +40,34 @@ class PuenteRomano_preg3 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val vista = inflater.inflate(R.layout.fragment_puente_romano_preg3, container, false)
+        val saltar = vista.findViewById<Button>(R.id.btnSaltar3)
 
+        //Campo de texto donde va a estar el enunciado
         val texto = vista.findViewById<TextView>(R.id.txtPreg3)
 
+        //Texto per se del enunciado
+        val pregunta = texto.text.toString()
+
+        //Texto guardado en un array para poder ir mostrando poco a poco
         val cadena = (texto.text.toString()).toCharArray()
 
-        for (element in cadena){
-            println(element)
+        //Life cycle con la creacion del enunciado
+        val ejecucion = viewLifecycleOwner.lifecycleScope.launch{
+            //Ponemos el texto vacio para que no se superponga
+            texto.text=""
+
+            //Recorremos el array recoguiendo todas las letras y mostrandolas cada 0.08 segundos
+            for(elemento in cadena){
+                texto.append(""+elemento)
+                delay(80)
+            }
         }
 
+        //Al clickar el boton de saltar se detiene el life cycle y nos pone el texto al completo
+        saltar.setOnClickListener {
+            ejecucion.cancel()
+            texto.text = pregunta
+        }
         return vista
     }
 

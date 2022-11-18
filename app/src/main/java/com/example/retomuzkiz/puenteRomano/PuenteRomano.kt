@@ -1,5 +1,6 @@
 package com.example.retomuzkiz.puenteRomano
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -21,6 +22,7 @@ class PuenteRomano : AppCompatActivity() {
             it.isEnabled = false
             binding.btnUltimo.visibility = View.GONE
             binding.btnSiguiente.visibility = View.VISIBLE
+            binding.btnPrimero.setBackgroundColor(Color.parseColor("#C1C0C0"))
 
             //Llamamos a la funcion para cambiar los fragmentos
             cambiarFrag(PuenteRomano_preg1())
@@ -41,6 +43,7 @@ class PuenteRomano : AppCompatActivity() {
         binding.btnSiguiente.setOnClickListener {
             //Cambiamos el estilo de los botones
             binding.btnPrimero.isEnabled=true
+            binding.btnPrimero.setBackgroundColor(Color.parseColor("#C822DA"))
             it.visibility = View.GONE
             binding.btnUltimo.visibility = View.VISIBLE
 
@@ -54,6 +57,7 @@ class PuenteRomano : AppCompatActivity() {
             binding.btnPrimero.visibility = View.GONE
             binding.btnAtras.visibility = View.VISIBLE
             it.isEnabled = false
+            it.setBackgroundColor(Color.parseColor("#C1C0C0"))
 
             //Llamamos a la funcion para cambiar los fragmentos
             cambiarFrag(PuenteRomano_preg3())
