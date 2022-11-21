@@ -49,36 +49,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     protected var booleano4 = false
     protected var booleano5 = false
     protected var booleano6 = false
+    protected lateinit var Servicio : Intent
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        super.onCreate(savedInstanceState)
-        // crear el servicio de geolocalizacion
-        val Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
+        Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
         Listabooleanos = arrayListOf<Boolean>()
-        Listabooleanos.add(false)
-        Listabooleanos.add(false)
-        Listabooleanos.add(false)
-        Listabooleanos.add(false)
-        Listabooleanos.add(false)
-        Listabooleanos.add(false)
-        Listabooleanos.add(false)
-        println(Listabooleanos)
-        //cargarbooleanos()
+        super.onCreate(savedInstanceState)
 
-        Servicio.putExtra("boleano0",booleano0)
-        Servicio.putExtra("boleano1",booleano1)
-        Servicio.putExtra("boleano2",booleano2)
-        Servicio.putExtra("boleano3",booleano3)
-        Servicio.putExtra("boleano4",booleano4)
-        Servicio.putExtra("boleano5",booleano5)
-        Servicio.putExtra("boleano6",booleano6)
-
-
-        startService(Servicio)
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        modogiado()
 
         //__________________________________________________________________________________________
         val toolbar: Toolbar = findViewById(R.id.toolbar_main)
@@ -305,10 +286,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     }
 
 
-    fun cargarbooleanos(){
-
-    }
-
     //______________________________________________________________________________________________
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -339,5 +316,47 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             return true
         }
         return super.onOptionsItemSelected(item)
+    }
+    //______________________________________________________________________________________________
+    // funcion del modo libre
+    fun modolibre(){
+        stopService(Servicio)
+        Listabooleanos[0]= true
+        Listabooleanos[1]= true
+        Listabooleanos[2]= true
+        Listabooleanos[3]= true
+        Listabooleanos[4]= true
+        Listabooleanos[5]= true
+        Listabooleanos[6]= true
+
+    }
+    //______________________________________________________________________________________________
+    //funcion del modo guiado
+    fun modogiado(){
+        // crear el servicio de geolocalizacion
+
+
+        Listabooleanos.add(false)
+        Listabooleanos.add(false)
+        Listabooleanos.add(false)
+        Listabooleanos.add(false)
+        Listabooleanos.add(false)
+        Listabooleanos.add(false)
+        Listabooleanos.add(false)
+        println(Listabooleanos)
+
+        Servicio.putExtra("boleano0",booleano0)
+        Servicio.putExtra("boleano1",booleano1)
+        Servicio.putExtra("boleano2",booleano2)
+        Servicio.putExtra("boleano3",booleano3)
+        Servicio.putExtra("boleano4",booleano4)
+        Servicio.putExtra("boleano5",booleano5)
+        Servicio.putExtra("boleano6",booleano6)
+
+
+        startService(Servicio)
+
+
+
     }
 }
