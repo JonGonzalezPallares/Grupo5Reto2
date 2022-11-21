@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MapsActivity"
+    tools:context=".MapsActivity">
+
+    <Button
+        android:id="@+id/btnDesplegableTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="btn" />
+
+    <androidx.drawerlayout.widget.DrawerLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
     android:id="@+id/drawer_layut"
     tools:openDrawer="start">
 
-    <include
+        <include
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -51,5 +62,9 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
-
-
+    <include
+        android:id="@+id/bottom_sheet_key_paths"
+        layout="@layout/bottom_sheet_key_path"
+        app:layout_anchor="@+id/bottom_sheet_render_times"
+        app:layout_anchorGravity="center" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

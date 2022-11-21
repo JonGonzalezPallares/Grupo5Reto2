@@ -26,10 +26,15 @@ import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.Marker
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.navigation.NavigationView
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListener, NavigationView.OnNavigationItemSelectedListener {
-
+    private val keyPathsBehavior by lazy {
+        BottomSheetBehavior.from(binding.bottomSheetKeyPaths.root).apply {
+            peekHeight = resources.getDimensionPixelSize(androidx.appcompat.R.dimen.abc_list_item_height_material)
+        }
+    }
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
     //protected lateinit var Listabooleanos : ArrayList<Boolean>
@@ -77,6 +82,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
                 .build()
 
             mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
+        }
+        binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = rvDesplegableAdepter(listOf(Actividad("","")))
+        keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+
+
+        binding.btnDesplegableTest.setOnClickListener(){
         }
     }
 
@@ -158,6 +169,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
 
     //Acciones que ocurren cada vez que pulsamos a un marcador
     override fun onMarkerClick(marker: Marker): Boolean {
+
         Toast.makeText(
             this,
             "titulo: "+marker.title+" posicion: "+marker.position,
@@ -165,6 +177,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             .show()
 
         println("titulo: "+marker.title+" posicion: "+marker.position)
+        keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
 
         /*
         Devolvemos "false" para indicar que no queremos consumir el evento, indicandole asi que queremos
@@ -172,6 +185,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
          */
         return false
     }
+
 
     // ESTO DEVUELVE EL OBJETO QUE QUERAMOS
     val broadcastReceiver: BroadcastReceiver = object : BroadcastReceiver() {
