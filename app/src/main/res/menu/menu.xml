@@ -13,12 +13,19 @@
         <menu>
             <item
                 android:id="@+id/m_home"
-                android:title="home"/>
+                android:title="Inicio"
+                android:icon="@drawable/home"/>
             <item
-                android:id="@+id/m_ranking"
-                android:title="ranking"/>
+                android:id="@+id/m_modo"
+                android:icon="@drawable/mode"
+                android:title="Libre"/>
+
+            <item android:id="@+id/m_progreso"
+                android:icon="@drawable/progress"
+                android:title="Progreso"/>
 
             <item android:id="@+id/m_logout"
+                android:icon="@drawable/logout"
                 android:title="Logout"/>
         </menu>
     </item>

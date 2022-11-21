@@ -25,7 +25,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MenuPrincipal"
+            android:name=".MapsActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -53,7 +53,7 @@
             android:value="AIzaSyCyuDeqvpqwlX5VhQW0uaJbEbmPbNsRMUs" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".MenuPrincipal"
             android:exported="false"
             android:label="@string/title_activity_maps" />
     </application>
