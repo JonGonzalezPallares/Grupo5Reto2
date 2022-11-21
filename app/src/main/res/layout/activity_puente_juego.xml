@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".puenteRomano.PuenteJuego">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/TrozoPreg1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/btnComprobar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/puente_romano_preg_1"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/rdb_Res1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RadioButton
+                android:id="@+id/rb_res1_1"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/puente_preg_1_res_1" />
+
+            <RadioButton
+                android:id="@+id/rb_res1_2"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/puente_preg_1_res_2" />
+
+            <RadioButton
+                android:id="@+id/rb_res1_3"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/puente_preg_1_res_3" />
+        </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/TrozoPreg2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btnComprobar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/puente_romano_preg_2"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/rdb_Res2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RadioButton
+                android:id="@+id/rb_res2_1"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/puente_preg_2_res_1" />
+
+            <RadioButton
+                android:id="@+id/rb_res2_2"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/puente_preg_2_res_2" />
+
+            <RadioButton
+                android:id="@+id/rb_res2_3"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/puente_preg_2_res_3" />
+        </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/TrozoPreg3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btnComprobar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/puente_romano_preg_3"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/rdb_Res3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RadioButton
+                android:id="@+id/rb_res3_1"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/puente_preg_3_res_1" />
+
+            <RadioButton
+                android:id="@+id/rb_res3_2"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/puente_preg_3_res_2" />
+
+            <RadioButton
+                android:id="@+id/rb_res3_3"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/puente_preg_3_res_3" />
+        </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/TrozoPreg4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btnComprobar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/puente_romano_preg_4"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/rdb_Res4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RadioButton
+                android:id="@+id/rb_res4_1"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/puente_preg_4_res_1" />
+
+            <RadioButton
+                android:id="@+id/rb_res4_2"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/puente_preg_4_res_2" />
+
+            <RadioButton
+                android:id="@+id/rb_res4_3"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/puente_preg_4_res_3" />
+        </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imgTrozo1"
+        android:layout_width="89dp"
+        android:layout_height="220dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="36dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgTrozo2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fotopuente1" />
+
+    <ImageView
+        android:id="@+id/imgTrozo2"
+        android:layout_width="89dp"
+        android:layout_height="220dp"
+        android:layout_marginBottom="36dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgTrozo3"
+        app:layout_constraintStart_toEndOf="@+id/imgTrozo1"
+        app:srcCompat="@drawable/fotopuente2" />
+
+    <ImageView
+        android:id="@+id/imgTrozo3"
+        android:layout_width="89dp"
+        android:layout_height="220dp"
+        android:layout_marginBottom="36dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgTrozo4"
+        app:layout_constraintStart_toEndOf="@+id/imgTrozo2"
+        app:srcCompat="@drawable/fotopuente3" />
+
+    <ImageView
+        android:id="@+id/imgTrozo4"
+        android:layout_width="89dp"
+        android:layout_height="220dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="36dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgTrozo3"
+        app:srcCompat="@drawable/fotopuente4" />
+
+    <ImageView
+        android:id="@+id/imgFinal"
+        android:layout_width="356dp"
+        android:layout_height="219dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="36dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/puentecompleto" />
+
+    <Button
+        android:id="@+id/btnComprobar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginEnd="153dp"
+        android:text="Comprobar"
+        app:layout_constraintBottom_toTopOf="@+id/imgFinal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

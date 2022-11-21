@@ -1,5 +1,6 @@
 package com.example.retomuzkiz.puenteRomano
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -68,10 +69,12 @@ class PuenteRomano : AppCompatActivity() {
 
         //Boton que lleva a la activity del juego
         binding.btnEmpezar.setOnClickListener {
-
+            val intento = Intent(this, PuenteJuego::class.java)
+            startActivity(intento)
         }
     }
 
+    //Funcion que se encarga de cambiar entre los diferentes fragmentos
     private fun cambiarFrag(fragmento: Fragment) {
         //Creamos una variable para la transaccion
         val transicion = supportFragmentManager.beginTransaction()

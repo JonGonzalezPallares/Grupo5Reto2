@@ -284,20 +284,20 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     //______________________________________________________________________________________________
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
-        toggle.syncState()
+        //toggle.syncState()
     }
 
     //______________________________________________________________________________________________
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        toggle.onConfigurationChanged(newConfig)
+        //toggle.onConfigurationChanged(newConfig)
     }
 
     //______________________________________________________________________________________________
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (toggle.onOptionsItemSelected(item)){
+        /*if (toggle.onOptionsItemSelected(item)){
             return true
-        }
+        }*/
         return super.onOptionsItemSelected(item)
     }
     //______________________________________________________________________________________________
