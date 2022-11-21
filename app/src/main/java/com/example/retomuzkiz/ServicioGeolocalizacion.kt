@@ -67,8 +67,10 @@ class ServicioGeolocalizacion : Service() {
 
     val NOTIFICATION_ID = 1 // >= 1 !
 
-
+        //-------------------------------------------------------------------------------
     override fun onCreate() {
+
+        //creacion de las cordenadas a comprobar
         fusedLocation= LocationServices.getFusedLocationProviderClient(applicationContext)
         ubicacionact = Location("ubicacionact")
         //1
@@ -108,14 +110,11 @@ class ServicioGeolocalizacion : Service() {
         sanJuan.latitude = 43.330278
         sanJuan.longitude = -3.129061
 
-        //var arrayloc = arrayListOf<Location>()
-        //arrayloc.add()
-
-
-
+        //-------------------------------------------------------------------------------
 
         super.onCreate()
         println("onCreate")
+        //permisos de ubicacion
         if (ActivityCompat.checkSelfPermission(
                 this,
                 Manifest.permission.ACCESS_FINE_LOCATION
@@ -126,6 +125,8 @@ class ServicioGeolocalizacion : Service() {
         ) {
             return
         }
+        //inicializar la ubicacion
+        //si quitamos estas lineas deja de funcionar por alguna razon
         fusedLocation.lastLocation.addOnSuccessListener { location->
 
             if(location!=null){
@@ -137,6 +138,8 @@ class ServicioGeolocalizacion : Service() {
 
 
     }
+
+    //-------------------------------------------------------------------------------
 
     private fun startForeground() {
         println("startforeground")
@@ -160,6 +163,8 @@ class ServicioGeolocalizacion : Service() {
             .build()
         startForeground(101, notification)
     }
+    //-------------------------------------------------------------------------------
+
     @RequiresApi(Build.VERSION_CODES.O)
     private fun createNotificationChannel(): String{
         val channelId = "mi_servicio"
@@ -173,11 +178,11 @@ class ServicioGeolocalizacion : Service() {
         service.createNotificationChannel(chan)
         return channelId
     }
-
-
-
     @OptIn(DelicateCoroutinesApi::class)
     @SuppressLint("MissingPermission")
+
+    //-------------------------------------------------------------------------------
+    // ejecutcion del servicio
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         //Cargar array de booleanos
         Listabooleanos = arrayListOf<Boolean>()
@@ -190,6 +195,8 @@ class ServicioGeolocalizacion : Service() {
         Listabooleanos.add(intent.getBooleanExtra("boleano5",false))
         Listabooleanos.add(intent.getBooleanExtra("boleano6",false))
 
+        //funcion para obtener de manera continua la ubicacion actual
+        //Anotacion: lastlocation no se actualizar, hay que usar currentlocation
         fun actualizarubi(){
             fusedLocation.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, object : CancellationToken() {
                 override fun onCanceledRequested(p0: OnTokenCanceledListener) = CancellationTokenSource().token
@@ -200,47 +207,25 @@ class ServicioGeolocalizacion : Service() {
                     ubicacionact.latitude=it.latitude
                     ubicacionact.longitude=it.longitude
                 }
-                /*else{
-                    fusedLocation.lastLocation.addOnSuccessListener {location->
-                        if(location!==null){
-                            ubicacionact.latitude=location.latitude
-                            ubicacionact.longitude=location.longitude
-                        }
-                    }
-                }*/
-
             }
             fusedLocation.lastLocation.addOnSuccessListener { location->
                 if(location!=null){
                    ubicacion=LatLng(location.latitude,location.longitude)
-                    println("ubiact:"+ubicacionact)
-                    /*var ubilat = ubicacion.latitude
-                   var lon =ubicacion.longitude
-                   ubicacionact = Location("ubicacionact")
-                   ubicacionact.latitude = ubilat
-                   ubicacionact.longitude = lon
-
-                   println(hondartzaArena)*/
                 }
             }
         }
 
-
-
-        println("onstartcomand")
         job = GlobalScope.launch{
-
+            //-------------------------------------------------------------------------------
+            //ejecucion de deteccion por cercania
             while (true){
                 println("ejecucion servicio nivel while")
-                //obtener la ubicacion actual
-
+                //limpieza de cache para prevenir errores varios
                 clearchache.deleteCache(applicationContext)
+                //obtener la ubicacion actual
                 actualizarubi()
-
-
-                // si se ha cancelado salimos del bucle
+          // si se ha cancelado salimos del bucle
                 if(job.isCancelled){
-
                     break
                 }
                 //comprobaciones de los puntos de ubicacion
@@ -286,7 +271,8 @@ class ServicioGeolocalizacion : Service() {
                 if(ubicacionact.distanceTo(sanJuan).toInt() >  75){
                     Listabooleanos[6] = false
                 }
-                Thread.sleep(5000)
+                Thread.sleep(2500)
+
                 //devolucion de la lista de booleanos
                 booleano0 = Listabooleanos[0]
                 booleano1 = Listabooleanos[1]
@@ -295,7 +281,7 @@ class ServicioGeolocalizacion : Service() {
                 booleano4 = Listabooleanos[4]
                 booleano5 = Listabooleanos[5]
                 booleano6 = Listabooleanos[6]
-
+                //devolucion de los booleanos comprobados
                 val senderIntent = Intent("broadcast")
                 senderIntent.putExtra("Booleano0",booleano0)
                 senderIntent.putExtra("Booleano1",booleano1)
@@ -316,6 +302,8 @@ class ServicioGeolocalizacion : Service() {
         return START_STICKY
     }
 
+    //-------------------------------------------------------------------------------
+
     override fun onDestroy() {
         super.onDestroy()
         println("onDestroy")
@@ -325,6 +313,8 @@ class ServicioGeolocalizacion : Service() {
 
         stopSelf()
     }
+
+    //-------------------------------------------------------------------------------
 
     // obliga a implementar el método
     override fun onBind(intent: Intent): IBinder {
