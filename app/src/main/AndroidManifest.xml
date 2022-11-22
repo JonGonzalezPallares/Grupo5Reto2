@@ -32,6 +32,23 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <!--Youssef-->
+        <activity
+            android:name=".laArenaHondartza.IntroActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".laArenaHondartza.LaArenaHondartza"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
         <activity
             android:name=".Burdinola.BurdinolaVideoActivity"
             android:exported="false">
