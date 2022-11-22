@@ -21,6 +21,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
+import com.example.retomuzkiz.Burdinola.BurdinolaVideoActivity
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -335,7 +336,10 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         when (item.itemId) {
             R.id.m_home -> Toast.makeText(this," a", Toast.LENGTH_SHORT).show()
             R.id.m_ranking -> Toast.makeText(this," b", Toast.LENGTH_SHORT).show()
-            R.id.m_logout -> Toast.makeText(this," c", Toast.LENGTH_SHORT).show()
+            R.id.m_logout ->  {
+                startActivity(Intent(this, BurdinolaVideoActivity::class.java))
+
+            }
             R.id.m_Modoguiado ->
             {
                 //Carcar el modo guiado
