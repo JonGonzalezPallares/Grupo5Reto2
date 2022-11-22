@@ -294,6 +294,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="164dp"
         android:layout_marginEnd="153dp"
+        android:enabled="false"
         android:text="Comprobar"
         app:layout_constraintBottom_toTopOf="@+id/imgFinal"
         app:layout_constraintEnd_toEndOf="parent"

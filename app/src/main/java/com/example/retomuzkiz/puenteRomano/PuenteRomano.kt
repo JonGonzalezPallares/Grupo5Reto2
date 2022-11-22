@@ -77,9 +77,9 @@ class PuenteRomano : AppCompatActivity() {
     //Funcion que se encarga de cambiar entre los diferentes fragmentos
     private fun cambiarFrag(fragmento: Fragment) {
         //Creamos una variable para la transaccion
-        val transicion = supportFragmentManager.beginTransaction()
+        val transicion = supportFragmentManager.beginTransaction().setReorderingAllowed(true)
         //Le añadimos a que contenedor tiene que hacer referencia, y le pasamos el fragmento que queremos cargar
-        transicion.add(binding.frgPreguntas.id, fragmento)
+        transicion.replace(binding.frgPreguntas.id, fragmento)
         //Hacemos el cambio
         transicion.commit()
     }

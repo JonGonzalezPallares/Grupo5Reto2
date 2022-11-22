@@ -32,7 +32,7 @@ class MenuPrincipal : AppCompatActivity() {
         }
     }
 
-    fun carga() {
+    private fun carga() {
         lista = listOf(
             Jugador("Jugador 1", "29"),
             Jugador("Jugador 2", "940"),
