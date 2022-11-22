@@ -11,13 +11,17 @@ import android.os.Bundle
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import android.content.res.Configuration
 import android.graphics.drawable.ColorDrawable
+import android.os.Handler
+import android.os.Looper
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
+import com.example.retomuzkiz.Burdinola.BurdinolaVideoActivity
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -29,7 +33,6 @@ import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.Marker
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -38,13 +41,13 @@ import com.google.android.material.navigation.NavigationView
 class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener, NavigationView.OnNavigationItemSelectedListener {
     private val keyPathsBehavior by lazy {
         BottomSheetBehavior.from(binding.bottomSheetKeyPaths.root).apply {
-            peekHeight = resources.getDimensionPixelSize(androidx.appcompat.R.dimen.abc_list_item_height_material)
+            peekHeight =
+                resources.getDimensionPixelSize(androidx.appcompat.R.dimen.abc_list_item_height_material)
         }
     }
-    private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
-    protected lateinit var Listabooleanos : ArrayList<Boolean>
-    private lateinit var  ubicacion:LatLng
+    protected lateinit var Listabooleanos: ArrayList<Boolean>
+    private lateinit var ubicacion: LatLng
     lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var localizacion: FusedLocationProviderClient
@@ -55,18 +58,16 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     protected var booleano4 = false
     protected var booleano5 = false
     protected var booleano6 = false
-    protected lateinit var Servicio : Intent
+    protected lateinit var Servicio: Intent
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
         Listabooleanos = arrayListOf<Boolean>()
         super.onCreate(savedInstanceState)
-
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         modogiado()
-
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -86,13 +87,13 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 .tilt(0F)
                 .build()
 
-            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
+            //mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
         }
         keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
 
 
-        binding.btnDesplegableTest.setOnClickListener(){
-        }
+        /*binding.btnDesplegableTest.setOnClickListener(){
+        }*/
     }
 
     /**
@@ -174,10 +175,23 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         mMap.setOnMarkerClickListener(this)
 
         //Tenemos que pedir permisos
-        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-            && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+            && ActivityCompat.checkSelfPermission(
+                this,
+                android.Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
             ActivityCompat.requestPermissions(
-                this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION), 1)
+                this,
+                arrayOf(
+                    android.Manifest.permission.ACCESS_FINE_LOCATION,
+                    android.Manifest.permission.ACCESS_COARSE_LOCATION
+                ),
+                1
+            )
             return
         }
 
@@ -200,7 +214,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             return
         }
         localizacion.lastLocation.addOnSuccessListener { location ->
-            if(location != null){
+            if (location != null) {
                 //Cogemos la posicion de donde hayamos clicado
                 val ubicacion = LatLng(location.latitude, location.longitude)
 
@@ -223,7 +237,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         binding.fbPosicion.setOnClickListener {
             //Guardamos la posicion en la que estamos actualmente en el mapa
             localizacion.lastLocation.addOnSuccessListener { location ->
-                if(location != null){
+                if (location != null) {
                     //Cogemos la posicion de donde hayamos clicado
                     val ubicacion = LatLng(location.latitude, location.longitude)
 
@@ -245,23 +259,24 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     override fun onMarkerClick(marker: Marker): Boolean {
         var numero = marker.snippet.toString().toInt()
         println(numero)
-        if(Listabooleanos[numero!!] == true){
+        if (Listabooleanos[numero!!] == true) {
             Toast.makeText(
                 this,
-                "titulo: "+marker.title+" posicion: "+marker.position,
-                Toast.LENGTH_LONG)
+                "titulo: " + marker.title + " posicion: " + marker.position,
+                Toast.LENGTH_LONG
+            )
                 .show()
-            println("titulo: "+marker.title+" posicion: "+marker.position)
-        }
-        else{
+            println("titulo: " + marker.title + " posicion: " + marker.position)
+        } else {
             Toast.makeText(
                 this,
-                "titulo: "+" estas muy lejos del punto"+" posicion: "+marker.title,
-                Toast.LENGTH_LONG)
+                "titulo: " + " estas muy lejos del punto" + " posicion: " + marker.title,
+                Toast.LENGTH_LONG
+            )
                 .show()
-            println("titulo: "+" estas muy lejos del punto"+" posicion: "+marker.title)
+            println("titulo: " + " estas muy lejos del punto" + " posicion: " + marker.title)
 
-        /*Toast.makeText(
+            /*Toast.makeText(
         Toast.makeText(
             this,
             "titulo: "+marker.title+" posicion: "+marker.position+" snipet: "+marker.snippet.toString().toInt(),
@@ -269,8 +284,9 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             .show()
         println("titulo: "+marker.title+" posicion: "+marker.position+" snipet: "+marker.snippet.toString().toInt())*/
         }
-        println("titulo: "+marker.title+" posicion: "+marker.position)
-        binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = rvDesplegableAdepter(listOf(Actividad(marker.title.toString(),"")))
+        println("titulo: " + marker.title + " posicion: " + marker.position)
+        binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter =
+            rvDesplegableAdepter(listOf(Actividad(marker.title.toString(), "")))
         keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
 
         /*
@@ -285,22 +301,22 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     val broadcastReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             // AQUI TIENE QUE IR EL ARRAY DE BOOLEANO DE COMPROBACION DE LOS PUNTOS DE INTERES
-                    Listabooleanos[0]= intent.getBooleanExtra("Booleano0",false)
-                    Listabooleanos[1]= intent.getBooleanExtra("Booleano1",false)
-                    Listabooleanos[2]= intent.getBooleanExtra("Booleano2",false)
-                    Listabooleanos[3]= intent.getBooleanExtra("Booleano3",false)
-                    Listabooleanos[4]= intent.getBooleanExtra("Booleano4",false)
-                    Listabooleanos[5]= intent.getBooleanExtra("Booleano5",false)
-                    Listabooleanos[6]= intent.getBooleanExtra("Booleano6",false)
-                    println("aa"+Listabooleanos)
-                    ubicacion = intent.getParcelableExtra<LatLng>("ubicacionactual") as LatLng
+            Listabooleanos[0] = intent.getBooleanExtra("Booleano0", false)
+            Listabooleanos[1] = intent.getBooleanExtra("Booleano1", false)
+            Listabooleanos[2] = intent.getBooleanExtra("Booleano2", false)
+            Listabooleanos[3] = intent.getBooleanExtra("Booleano3", false)
+            Listabooleanos[4] = intent.getBooleanExtra("Booleano4", false)
+            Listabooleanos[5] = intent.getBooleanExtra("Booleano5", false)
+            Listabooleanos[6] = intent.getBooleanExtra("Booleano6", false)
+            println("aa" + Listabooleanos)
+            ubicacion = intent.getParcelableExtra<LatLng>("ubicacionactual") as LatLng
         }
     }
 
     override fun onResume() {
         super.onResume()
         val intentFilter = IntentFilter("broadcast")
-        LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver,intentFilter)
+        LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver, intentFilter)
     }
 
     override fun onPause() {
@@ -322,28 +338,33 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     }
 
     //______________________________________________________________________________________________
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
         /*if (toggle.onOptionsItemSelected(item)){
             return true
         }*/
         return super.onOptionsItemSelected(item)
-    }
+    }*/
     //______________________________________________________________________________________________
     // funcion del modo libre
-    fun modolibre(){
+    fun modolibre() {
         stopService(Servicio)
-        Listabooleanos[0]= true
-        Listabooleanos[1]= true
-        Listabooleanos[2]= true
-        Listabooleanos[3]= true
-        Listabooleanos[4]= true
-        Listabooleanos[5]= true
-        Listabooleanos[6]= true
+        // fundcion de espra de 3s antes de cambiar las variables
+        Handler(Looper.myLooper() ?: return).postDelayed({
+            Listabooleanos[0] = true
+            Listabooleanos[1] = true
+            Listabooleanos[2] = true
+            Listabooleanos[3] = true
+            Listabooleanos[4] = true
+            Listabooleanos[5] = true
+            Listabooleanos[6] = true
+        }, 3000)
+
 
     }
+
     //______________________________________________________________________________________________
     //funcion del modo guiado
-    fun modogiado(){
+    fun modogiado() {
         // crear el servicio de geolocalizacion
 
 
@@ -356,19 +377,55 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         Listabooleanos.add(false)
         println(Listabooleanos)
 
-        Servicio.putExtra("boleano0",booleano0)
-        Servicio.putExtra("boleano1",booleano1)
-        Servicio.putExtra("boleano2",booleano2)
-        Servicio.putExtra("boleano3",booleano3)
-        Servicio.putExtra("boleano4",booleano4)
-        Servicio.putExtra("boleano5",booleano5)
-        Servicio.putExtra("boleano6",booleano6)
+        Servicio.putExtra("boleano0", booleano0)
+        Servicio.putExtra("boleano1", booleano1)
+        Servicio.putExtra("boleano2", booleano2)
+        Servicio.putExtra("boleano3", booleano3)
+        Servicio.putExtra("boleano4", booleano4)
+        Servicio.putExtra("boleano5", booleano5)
+        Servicio.putExtra("boleano6", booleano6)
 
 
         startService(Servicio)
 
 
+    }
 
+    //______________________________________________________________________________________________
+    //funciones del menu
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        var guiado = R.id.m_Modoguiado
+        when (item.itemId) {
+            R.id.m_home -> Toast.makeText(this, " a", Toast.LENGTH_SHORT).show()
+            R.id.m_ranking -> Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
+            R.id.m_logout -> {
+                startActivity(Intent(this, BurdinolaVideoActivity::class.java))
+
+            }
+            R.id.m_Modoguiado -> {
+                //Carcar el modo guiado
+                modogiado()
+                aviso("", "Ahoras estas en el modo guiado")
+            }
+            R.id.m_Modolibre -> {
+                //cargar el modo libre
+                modolibre()
+                aviso("", "Ahoras estas en el modo libre")
+
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    //______________________________________________________________________________________________
+    //funcion del aviso
+    fun aviso(titulo: String, mensaje: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(titulo)
+        builder.setMessage(mensaje)
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
