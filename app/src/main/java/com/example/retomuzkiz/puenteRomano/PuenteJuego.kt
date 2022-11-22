@@ -121,7 +121,7 @@ class PuenteJuego : AppCompatActivity() {
             if(respuestaBien == seleccion){
                 val imagen = imagenes[cantidad-1]
                 imagen.visibility = View.VISIBLE
-                if()
+                //if()
                 imagen.startAnimation(AnimationUtils.loadAnimation(this, R.anim.animacion_puente))
                 cambiarPantalla()
             }else{
