@@ -10,13 +10,15 @@ class MsgVictoria() {
     //Funcion para mostrar el dialog de victoria
     fun carga(context: Context) {
         val constructor: AlertDialog.Builder = AlertDialog.Builder(context)
-        constructor.setTitle("¡VICTORIA!")
-        constructor.setMessage("¡Bien hecho!\nHas ganado, sigue así")
+            .setTitle("¡VICTORIA!")
+            .setMessage("¡Bien hecho!\nHas ganado, sigue así")
         //Al pulsar el boton nos llevara al mapa de nuevo
-        constructor.setPositiveButton("Ir al mapa"){_,_ ->
-            val intento = Intent(context, MapsActivity::class.java)
-            startActivity(context, intento, null)
-        }
+            .setNegativeButton("Ir al mapa"){_,_ ->
+                val intento = Intent(context, MapsActivity::class.java)
+                startActivity(context, intento, null)
+            }
+            .setCancelable(false)
+
         constructor.show()
     }
 }

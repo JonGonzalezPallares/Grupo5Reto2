@@ -186,7 +186,7 @@ class PuenteJuego : AppCompatActivity() {
         binding.imgFinal.startAnimation(AnimationUtils.loadAnimation(this, R.anim.animacion_puente_final))
 
         val tiempo = binding.imgFinal.animation.duration
-        
+
         Handler(Looper.myLooper()?:return).postDelayed({
             MsgVictoria().carga(this)
         }, (tiempo+1000))
