@@ -1,6 +1,5 @@
 package com.example.retomuzkiz.puenteRomano
 
-import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -12,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityPuenteJuegoBinding
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 
 class PuenteJuego : AppCompatActivity() {
@@ -27,8 +24,6 @@ class PuenteJuego : AppCompatActivity() {
     private lateinit var seleccion : String
     //Array con los trozos de las imagenes
     private lateinit var imagenes : MutableList<ImageView>
-    //Contexto de la vista
-    private lateinit var contexto : Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

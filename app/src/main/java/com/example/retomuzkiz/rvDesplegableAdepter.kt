@@ -1,17 +1,14 @@
 package com.example.retomuzkiz
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.retomuzkiz.databinding.SingleActividadBinding
-import com.example.retomuzkiz.databinding.VistaJugadorBinding
 
 class rvDesplegableAdepter(var listaActividades: List<Actividad>): RecyclerView.Adapter<rvDesplegableAdepter.ViewHolder>() {
     class ViewHolder (vista: View) :RecyclerView.ViewHolder(vista){
-        val binding = SingleActividadBinding.bind(vista)
+        private val binding = SingleActividadBinding.bind(vista)
 
         fun unir (actividad: Actividad){
             binding.txtTitulo.text = actividad.name

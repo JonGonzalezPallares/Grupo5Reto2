@@ -12,7 +12,7 @@ class MsgVictoria() {
         val constructor: AlertDialog.Builder = AlertDialog.Builder(context)
             .setTitle("¡VICTORIA!")
             .setMessage("¡Bien hecho!\nHas ganado, sigue así")
-        //Al pulsar el boton nos llevara al mapa de nuevo
+            //Al pulsar el boton nos llevara al mapa de nuevo
             .setNegativeButton("Ir al mapa"){_,_ ->
                 val intento = Intent(context, MapsActivity::class.java)
                 startActivity(context, intento, null)

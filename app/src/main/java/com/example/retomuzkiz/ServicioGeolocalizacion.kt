@@ -3,7 +3,6 @@ package com.example.retomuzkiz
 import android.Manifest
 import android.R
 import android.annotation.SuppressLint
-
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -13,26 +12,16 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.location.Location
-import android.location.LocationRequest
-import android.media.MediaPlayer
 import android.os.Build
 import android.os.IBinder
 import androidx.annotation.RequiresApi
-
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.google.android.gms.location.CurrentLocationRequest
 import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationRequest.PRIORITY_HIGH_ACCURACY
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
-import com.google.android.gms.location.Priority.PRIORITY_HIGH_ACCURACY
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.model.Circle
-import com.google.android.gms.maps.model.CircleOptions
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.tasks.CancellationToken
 import com.google.android.gms.tasks.CancellationTokenSource
 import com.google.android.gms.tasks.OnTokenCanceledListener
@@ -44,8 +33,8 @@ import kotlinx.coroutines.launch
 
 class ServicioGeolocalizacion : Service() {
     private lateinit var fusedLocation : FusedLocationProviderClient
-    protected lateinit var ubicacion : LatLng
-    protected lateinit var Listabooleanos : ArrayList<Boolean>
+    private lateinit var ubicacion : LatLng
+    private lateinit var Listabooleanos : ArrayList<Boolean>
     lateinit var job: Job
     lateinit  var puenteRomano : Location
     lateinit  var pobalekoBurdinola : Location
@@ -55,13 +44,13 @@ class ServicioGeolocalizacion : Service() {
     lateinit  var muniatonesGaztelua : Location
     lateinit  var sanJuan : Location
     lateinit  var ubicacionact : Location
-    protected var booleano0 = false
-    protected var booleano1 = false
-    protected var booleano2 = false
-    protected var booleano3 = false
-    protected var booleano4 = false
-    protected var booleano5 = false
-    protected var booleano6 = false
+    private var booleano0 = false
+    private var booleano1 = false
+    private var booleano2 = false
+    private var booleano3 = false
+    private var booleano4 = false
+    private var booleano5 = false
+    private var booleano6 = false
 
 
 

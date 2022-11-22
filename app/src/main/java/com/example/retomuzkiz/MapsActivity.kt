@@ -31,7 +31,6 @@ import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.navigation.NavigationView
 import com.google.android.gms.maps.model.MarkerOptions
 
 class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener{
@@ -42,7 +41,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         }
     }
     private lateinit var binding: ActivityMapsBinding
-    protected lateinit var Listabooleanos: ArrayList<Boolean>
+    private lateinit var listabooleanos: ArrayList<Boolean>
     private lateinit var ubicacion: LatLng
     lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
@@ -59,7 +58,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
-        Listabooleanos = arrayListOf<Boolean>()
+        listabooleanos = arrayListOf<Boolean>()
         super.onCreate(savedInstanceState)
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -76,12 +75,12 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         binding.fbPosicion.setOnClickListener {
             val pobenakoErmita = LatLng(43.346497, -3.121751)
             //Ponemos una animacion para que no sea tan brusco el cambio
-            val camara = CameraPosition.builder()
+            /*val camara = CameraPosition.builder()
                 .target(pobenakoErmita)
                 .zoom(15F)
                 .bearing(0F)
                 .tilt(0F)
-                .build()
+                .build()*/
 
             //mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
         }
@@ -173,18 +172,18 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         //Tenemos que pedir permisos
         if (ActivityCompat.checkSelfPermission(
                 this,
-                android.Manifest.permission.ACCESS_FINE_LOCATION
+                Manifest.permission.ACCESS_FINE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED
             && ActivityCompat.checkSelfPermission(
                 this,
-                android.Manifest.permission.ACCESS_COARSE_LOCATION
+                Manifest.permission.ACCESS_COARSE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED
         ) {
             ActivityCompat.requestPermissions(
                 this,
                 arrayOf(
-                    android.Manifest.permission.ACCESS_FINE_LOCATION,
-                    android.Manifest.permission.ACCESS_COARSE_LOCATION
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
                 ),
                 1
             )
@@ -253,9 +252,9 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
     //Acciones que ocurren cada vez que pulsamos a un marcador
     override fun onMarkerClick(marker: Marker): Boolean {
-        var numero = marker.snippet.toString().toInt()
+        val numero = marker.snippet.toString().toInt()
         println(numero)
-        if (Listabooleanos[numero!!] == true) {
+        if (listabooleanos[numero]) {
             Toast.makeText(
                 this,
                 "titulo: " + marker.title + " posicion: " + marker.position,
@@ -297,14 +296,14 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     val broadcastReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             // AQUI TIENE QUE IR EL ARRAY DE BOOLEANO DE COMPROBACION DE LOS PUNTOS DE INTERES
-            Listabooleanos[0] = intent.getBooleanExtra("Booleano0", false)
-            Listabooleanos[1] = intent.getBooleanExtra("Booleano1", false)
-            Listabooleanos[2] = intent.getBooleanExtra("Booleano2", false)
-            Listabooleanos[3] = intent.getBooleanExtra("Booleano3", false)
-            Listabooleanos[4] = intent.getBooleanExtra("Booleano4", false)
-            Listabooleanos[5] = intent.getBooleanExtra("Booleano5", false)
-            Listabooleanos[6] = intent.getBooleanExtra("Booleano6", false)
-            println("aa" + Listabooleanos)
+            listabooleanos[0] = intent.getBooleanExtra("Booleano0", false)
+            listabooleanos[1] = intent.getBooleanExtra("Booleano1", false)
+            listabooleanos[2] = intent.getBooleanExtra("Booleano2", false)
+            listabooleanos[3] = intent.getBooleanExtra("Booleano3", false)
+            listabooleanos[4] = intent.getBooleanExtra("Booleano4", false)
+            listabooleanos[5] = intent.getBooleanExtra("Booleano5", false)
+            listabooleanos[6] = intent.getBooleanExtra("Booleano6", false)
+            println("aa $listabooleanos")
             ubicacion = intent.getParcelableExtra<LatLng>("ubicacionactual") as LatLng
         }
     }
@@ -346,13 +345,13 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         stopService(Servicio)
         // fundcion de espra de 3s antes de cambiar las variables
         Handler(Looper.myLooper() ?: return).postDelayed({
-            Listabooleanos[0] = true
-            Listabooleanos[1] = true
-            Listabooleanos[2] = true
-            Listabooleanos[3] = true
-            Listabooleanos[4] = true
-            Listabooleanos[5] = true
-            Listabooleanos[6] = true
+            listabooleanos[0] = true
+            listabooleanos[1] = true
+            listabooleanos[2] = true
+            listabooleanos[3] = true
+            listabooleanos[4] = true
+            listabooleanos[5] = true
+            listabooleanos[6] = true
         }, 3000)
 
 
@@ -364,14 +363,14 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         // crear el servicio de geolocalizacion
 
 
-        Listabooleanos.add(false)
-        Listabooleanos.add(false)
-        Listabooleanos.add(false)
-        Listabooleanos.add(false)
-        Listabooleanos.add(false)
-        Listabooleanos.add(false)
-        Listabooleanos.add(false)
-        println(Listabooleanos)
+        listabooleanos.add(false)
+        listabooleanos.add(false)
+        listabooleanos.add(false)
+        listabooleanos.add(false)
+        listabooleanos.add(false)
+        listabooleanos.add(false)
+        listabooleanos.add(false)
+        println(listabooleanos)
 
         Servicio.putExtra("boleano0", booleano0)
         Servicio.putExtra("boleano1", booleano1)

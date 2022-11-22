@@ -28,7 +28,7 @@ class LaArenaHondartza : Activity() {
     //imagenes
     private lateinit var preguntas: IntArray
     private lateinit var respuestas: IntArray
-    var fondo = 0
+    private var fondo = 0
 
     //______________________________________________________________________________________________
     //variables del juego

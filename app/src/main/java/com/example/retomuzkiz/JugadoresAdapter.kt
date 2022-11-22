@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.retomuzkiz.databinding.VistaJugadorBinding
 
-class JugadoresAdapter(var lista:List<Jugador>) :RecyclerView.Adapter<JugadoresAdapter.ViewHolder>(){
+class JugadoresAdapter(private var lista:List<Jugador>) :RecyclerView.Adapter<JugadoresAdapter.ViewHolder>(){
 
     //Lo que emvuelve a cada elemento del recycleview
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
