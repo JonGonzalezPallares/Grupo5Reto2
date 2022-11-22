@@ -21,13 +21,6 @@
             android:name=".ServicioGeolocalizacion" />
         <activity
             android:name=".puenteRomano.PuenteJuego"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".puenteRomano.PuenteRomano"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -37,6 +30,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".puenteRomano.PuenteRomano"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
         <activity
             android:name=".MapsActivity"

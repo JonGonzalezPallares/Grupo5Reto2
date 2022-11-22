@@ -1,12 +1,16 @@
 package com.example.retomuzkiz.puenteRomano
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.RadioButton
+import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.R
+import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityPuenteJuegoBinding
+
 
 class PuenteJuego : AppCompatActivity() {
 
@@ -19,6 +23,8 @@ class PuenteJuego : AppCompatActivity() {
     private lateinit var seleccion : String
     //Array con los trozos de las imagenes
     private lateinit var imagenes : MutableList<ImageView>
+    //Contexto de la vista
+    private lateinit var contexto : Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -115,6 +121,8 @@ class PuenteJuego : AppCompatActivity() {
             if(respuestaBien == seleccion){
                 val imagen = imagenes[cantidad-1]
                 imagen.visibility = View.VISIBLE
+                if()
+                imagen.startAnimation(AnimationUtils.loadAnimation(this, R.anim.animacion_puente))
                 cambiarPantalla()
             }else{
                 limpiarSeleccion()
@@ -170,5 +178,10 @@ class PuenteJuego : AppCompatActivity() {
             imagen.visibility = View.GONE
         }
         binding.imgFinal.visibility = View.VISIBLE
+
+        binding.imgFinal.startAnimation(AnimationUtils.loadAnimation(this, R.anim.animacion_puente_final))
+
+        //Funcion para mostrar el mensaje de victoria
+        //MsgVictoria().carga(this)
     }
 }
