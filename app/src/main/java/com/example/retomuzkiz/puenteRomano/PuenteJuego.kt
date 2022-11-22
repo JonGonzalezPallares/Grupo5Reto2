@@ -2,6 +2,8 @@ package com.example.retomuzkiz.puenteRomano
 
 import android.content.Context
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
@@ -10,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityPuenteJuegoBinding
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class PuenteJuego : AppCompatActivity() {
@@ -117,12 +121,12 @@ class PuenteJuego : AppCompatActivity() {
         //Comprueba si el dato seleccionado concuerda con la respuesta correcta
         binding.btnComprobar.setOnClickListener {
             val respuestaBien = respuestas[cantidad-1]
-            println("Respuestas del array: $respuestaBien, Respuesta seleccion: $seleccion")
             if(respuestaBien == seleccion){
                 val imagen = imagenes[cantidad-1]
                 imagen.visibility = View.VISIBLE
-                //if()
-                imagen.startAnimation(AnimationUtils.loadAnimation(this, R.anim.animacion_puente))
+                if(cantidad<4){
+                    imagen.startAnimation(AnimationUtils.loadAnimation(this, R.anim.animacion_puente))
+                }
                 cambiarPantalla()
             }else{
                 limpiarSeleccion()
@@ -181,7 +185,10 @@ class PuenteJuego : AppCompatActivity() {
 
         binding.imgFinal.startAnimation(AnimationUtils.loadAnimation(this, R.anim.animacion_puente_final))
 
-        //Funcion para mostrar el mensaje de victoria
-        //MsgVictoria().carga(this)
+        val tiempo = binding.imgFinal.animation.duration
+        
+        Handler(Looper.myLooper()?:return).postDelayed({
+            MsgVictoria().carga(this)
+        }, (tiempo+1000))
     }
 }

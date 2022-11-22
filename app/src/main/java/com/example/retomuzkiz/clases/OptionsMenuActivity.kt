@@ -13,19 +13,4 @@ open class OptionsMenuActivity: AppCompatActivity() {
         miMenu.inflate(R.menu.menu,menu)
         return true
     }
-    //______________________________________________________________________________________________
-    //metodo identifica la option selectionada
-    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.m_home -> Toast.makeText(this," home", Toast.LENGTH_SHORT).show()
-            R.id.m_ranking -> Toast.makeText(this," Link", Toast.LENGTH_SHORT).show()
-            R.id.m_logout -> Toast.makeText(this," Logout", Toast.LENGTH_SHORT).show()
-            R.id.m_Modoguiado ->
-            {
-
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }*/
-    //______________________________________________________________________________________________
 }
