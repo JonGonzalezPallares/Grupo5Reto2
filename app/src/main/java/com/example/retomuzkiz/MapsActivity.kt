@@ -32,11 +32,15 @@ import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.Marker
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.navigation.NavigationView
 
-class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener{
-
-    private lateinit var fusedLocation : FusedLocationProviderClient
+class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener, NavigationView.OnNavigationItemSelectedListener {
+    private val keyPathsBehavior by lazy {
+        BottomSheetBehavior.from(binding.bottomSheetKeyPaths.root).apply {
+            peekHeight = resources.getDimensionPixelSize(androidx.appcompat.R.dimen.abc_list_item_height_material)
+        }
+    }
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
     protected lateinit var Listabooleanos : ArrayList<Boolean>
@@ -70,6 +74,25 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         mapFragment.getMapAsync(this)
 
         localizacion = LocationServices.getFusedLocationProviderClient(applicationContext)
+
+        //Accion del boton flotante
+        binding.fbPosicion.setOnClickListener {
+            val pobenakoErmita = LatLng(43.346497, -3.121751)
+            //Ponemos una animacion para que no sea tan brusco el cambio
+            val camara = CameraPosition.builder()
+                .target(pobenakoErmita)
+                .zoom(15F)
+                .bearing(0F)
+                .tilt(0F)
+                .build()
+
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
+        }
+        keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+
+
+        binding.btnDesplegableTest.setOnClickListener(){
+        }
     }
 
     /**
@@ -239,12 +262,16 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             println("titulo: "+" estas muy lejos del punto"+" posicion: "+marker.title)
 
         /*Toast.makeText(
+        Toast.makeText(
             this,
             "titulo: "+marker.title+" posicion: "+marker.position+" snipet: "+marker.snippet.toString().toInt(),
             Toast.LENGTH_LONG)
             .show()
         println("titulo: "+marker.title+" posicion: "+marker.position+" snipet: "+marker.snippet.toString().toInt())*/
         }
+        println("titulo: "+marker.title+" posicion: "+marker.position)
+        binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = rvDesplegableAdepter(listOf(Actividad(marker.title.toString(),"")))
+        keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
 
         /*
         Devolvemos "false" para indicar que no queremos consumir el evento, indicandole asi que queremos
@@ -252,6 +279,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
          */
         return false
     }
+
 
     // ESTO DEVUELVE EL OBJETO QUE QUERAMOS
     val broadcastReceiver: BroadcastReceiver = object : BroadcastReceiver() {
@@ -341,5 +369,9 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
 
 
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        TODO("Not yet implemented")
     }
 }
