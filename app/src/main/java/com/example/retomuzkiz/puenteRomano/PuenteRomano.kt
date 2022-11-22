@@ -1,5 +1,7 @@
 package com.example.retomuzkiz.puenteRomano
 
+import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -21,6 +23,7 @@ class PuenteRomano : AppCompatActivity() {
             it.isEnabled = false
             binding.btnUltimo.visibility = View.GONE
             binding.btnSiguiente.visibility = View.VISIBLE
+            binding.btnPrimero.setBackgroundColor(Color.parseColor("#C1C0C0"))
 
             //Llamamos a la funcion para cambiar los fragmentos
             cambiarFrag(PuenteRomano_preg1())
@@ -30,6 +33,8 @@ class PuenteRomano : AppCompatActivity() {
         binding.btnAtras.setOnClickListener {
             //Cambiamos el estilo de los botones
             it.visibility = View.GONE
+            binding.btnUltimo.visibility = View.VISIBLE
+            binding.btnEmpezar.visibility = View.GONE
             binding.btnUltimo.isEnabled = true
             binding.btnPrimero.visibility = View.VISIBLE
 
@@ -41,6 +46,7 @@ class PuenteRomano : AppCompatActivity() {
         binding.btnSiguiente.setOnClickListener {
             //Cambiamos el estilo de los botones
             binding.btnPrimero.isEnabled=true
+            binding.btnPrimero.setBackgroundColor(Color.parseColor("#C822DA"))
             it.visibility = View.GONE
             binding.btnUltimo.visibility = View.VISIBLE
 
@@ -53,18 +59,27 @@ class PuenteRomano : AppCompatActivity() {
             //Cambiamos el estilo de los botones
             binding.btnPrimero.visibility = View.GONE
             binding.btnAtras.visibility = View.VISIBLE
-            it.isEnabled = false
+            it.visibility = View.GONE
+            binding.btnEmpezar.setBackgroundColor(Color.parseColor("#C822DA"))
+            binding.btnEmpezar.visibility = View.VISIBLE
 
             //Llamamos a la funcion para cambiar los fragmentos
             cambiarFrag(PuenteRomano_preg3())
         }
+
+        //Boton que lleva a la activity del juego
+        binding.btnEmpezar.setOnClickListener {
+            val intento = Intent(this, PuenteJuego::class.java)
+            startActivity(intento)
+        }
     }
 
+    //Funcion que se encarga de cambiar entre los diferentes fragmentos
     private fun cambiarFrag(fragmento: Fragment) {
         //Creamos una variable para la transaccion
-        val transicion = supportFragmentManager.beginTransaction()
+        val transicion = supportFragmentManager.beginTransaction().setReorderingAllowed(true)
         //Le añadimos a que contenedor tiene que hacer referencia, y le pasamos el fragmento que queremos cargar
-        transicion.add(binding.frgPreguntas.id, fragmento)
+        transicion.replace(binding.frgPreguntas.id, fragmento)
         //Hacemos el cambio
         transicion.commit()
     }

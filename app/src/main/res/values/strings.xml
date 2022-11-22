@@ -5,8 +5,24 @@
     <string name="close">Close</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="puente_romano_pregunta_1">El Pobaleko zubi erromanikoa El Pobaleko burdinolarantz doa, Barbadun ibaiaren gainean. XIII. mendean eraiki zen, eta Muskiz zen herriko zubirik zaharrena.</string>
-    <string name="puente_romano_pregunta_2">Muskizeko erdigunetik Barbadun ibaia igarotzen zen, eta, beraz, zubi bat eraiki behar izan zuten herritik arazorik gabe mugitu ahal izateko. Horri esker, Galdames eta Sopuertatik Muskizera pasatzen zen jendea. Zubi hau beharrezkoa izan zen arazo demografikoengatik.</string>
-    <string name="puente_romano_pregunta_3">Zubia harrizkoa da. Arkuzko bi begi zituen, baina gaur egun bat dauka, Karlistaldietan bestea hondoratu egin baitzen, eta horren ordez hormigoizko pasabide bat eraiki da gaur egun. Gutxi gorabehera bi metroko zabalera du eta ez du babes-hormarik. Zubia ez erortzeko, zutabe handi bat eraiki da. Gaur egun ere bertatik pasa daiteke, baina ez da aspalditik erabiltzen.</string>
+    <string name="puente_romano_enunciado_1">El Pobaleko zubi erromanikoa El Pobaleko burdinolarantz doa, Barbadun ibaiaren gainean. XIII. mendean eraiki zen, eta Muskiz zen herriko zubirik zaharrena.</string>
+    <string name="puente_romano_enunciado_2">Muskizeko erdigunetik Barbadun ibaia igarotzen zen, eta, beraz, zubi bat eraiki behar izan zuten herritik arazorik gabe mugitu ahal izateko. Horri esker, Galdames eta Sopuertatik Muskizera pasatzen zen jendea. Zubi hau beharrezkoa izan zen arazo demografikoengatik.</string>
+    <string name="puente_romano_enunciado_3">Zubia harrizkoa da. Arkuzko bi begi zituen, baina gaur egun bat dauka, Karlistaldietan bestea hondoratu egin baitzen, eta horren ordez hormigoizko pasabide bat eraiki da gaur egun. Gutxi gorabehera bi metroko zabalera du eta ez du babes-hormarik. Zubia ez erortzeko, zutabe handi bat eraiki da. Gaur egun ere bertatik pasa daiteke, baina ez da aspalditik erabiltzen.</string>
+    <string name="puente_romano_preg_1">Zein mendetan eraiki zen Pobaleko zubi erromanikoa?</string>
+    <string name="puente_romano_preg_2">Zer ibaik zeharkatzen du zubi hau?</string>
+    <string name="puente_romano_preg_3">Zertarako eraiki zen zubi hau?</string>
+    <string name="puente_romano_preg_4">Zerez dago zubia eraikia?</string>
+    <string name="puente_preg_1_res_1">III. Mendean</string>
+    <string name="puente_preg_1_res_2">XIII. mendean, Muskizko zaharrena izan zen</string>
+    <string name="puente_preg_1_res_3">XX. Mendean</string>
+    <string name="puente_preg_2_res_1">Barbadun ibaia</string>
+    <string name="puente_preg_2_res_2">Nerbioi ibaia</string>
+    <string name="puente_preg_2_res_3">Kadagua ibaia</string>
+    <string name="puente_preg_3_res_1">Dekorazio gisa eraiki zen</string>
+    <string name="puente_preg_3_res_2">Animaliek alde batetik bestera pasa ahal izateko</string>
+    <string name="puente_preg_3_res_3">Galdames eta Sopuertako pertsonak Muskizera igaro ahal izateko</string>
+    <string name="puente_preg_4_res_1">Egurrez</string>
+    <string name="puente_preg_4_res_2">Harriz</string>
+    <string name="puente_preg_4_res_3">Burdinez</string>
     <string name="reiniciar_juego">Reiniciar</string>
 </resources>

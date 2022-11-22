@@ -25,13 +25,13 @@ class MenuPrincipal : AppCompatActivity() {
         binding.rvJugadores.adapter = adaptador
 
         binding.button.setOnClickListener {
-            //val intento = Intent(this, MapsActivity::class.java)
-            val intento = Intent(this, PuenteRomano::class.java)
+            val intento = Intent(this, MapsActivity::class.java)
+            //val intento = Intent(this, PuenteRomano::class.java)
             startActivity(intento)
         }
     }
 
-    fun carga() {
+    private fun carga() {
         lista = listOf(
             Jugador("Jugador 1", "29"),
             Jugador("Jugador 2", "940"),
