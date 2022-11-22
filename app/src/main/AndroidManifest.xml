@@ -32,7 +32,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LaArenaHondartza"
+            android:name=".laArenaHondartza.LaArenaHondartza"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

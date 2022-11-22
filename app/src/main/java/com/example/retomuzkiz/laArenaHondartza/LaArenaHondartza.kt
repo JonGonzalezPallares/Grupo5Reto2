@@ -1,4 +1,4 @@
-package com.example.retomuzkiz
+package com.example.retomuzkiz.laArenaHondartza
 
 
 import android.app.Activity
@@ -9,8 +9,9 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ActivityLaArenaHondartzaBinding
-import java.util.*
+
 
 class LaArenaHondartza : Activity() {
     //______________________________________________________________________________________________

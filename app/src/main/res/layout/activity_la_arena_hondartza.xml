@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:padding="10dp"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".LaArenaHondartza">
+    tools:context=".laArenaHondartza.LaArenaHondartza">
 
     <!--Texto prencipal-->
     <LinearLayout
