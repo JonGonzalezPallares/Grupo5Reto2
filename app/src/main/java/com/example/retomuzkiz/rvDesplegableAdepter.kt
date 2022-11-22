@@ -16,7 +16,7 @@ class rvDesplegableAdepter(var listaActividades: List<Actividad>): RecyclerView.
         fun unir (actividad: Actividad){
             binding.txtTitulo.text = actividad.name
             binding.button2.setOnClickListener(){
-              
+
             }
         }
     }
