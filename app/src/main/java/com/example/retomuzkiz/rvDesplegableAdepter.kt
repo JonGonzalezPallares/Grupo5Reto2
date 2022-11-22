@@ -1,8 +1,10 @@
 package com.example.retomuzkiz
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.retomuzkiz.databinding.SingleActividadBinding
 import com.example.retomuzkiz.databinding.VistaJugadorBinding
@@ -13,6 +15,9 @@ class rvDesplegableAdepter(var listaActividades: List<Actividad>): RecyclerView.
 
         fun unir (actividad: Actividad){
             binding.txtTitulo.text = actividad.name
+            binding.button2.setOnClickListener(){
+              
+            }
         }
     }
 

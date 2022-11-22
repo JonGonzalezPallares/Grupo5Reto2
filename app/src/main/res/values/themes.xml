@@ -16,4 +16,7 @@
         <item name="windowActionBar">false</item>
 
     </style>
+    <style name="Imagenes">
+        <item name="background">@drawable/stilo_desplegable_imagen</item>
+    </style>
 </resources>

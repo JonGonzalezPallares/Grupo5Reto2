@@ -83,7 +83,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
 
             mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
         }
-        binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = rvDesplegableAdepter(listOf(Actividad("","")))
         keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
 
 
@@ -177,6 +176,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             .show()
 
         println("titulo: "+marker.title+" posicion: "+marker.position)
+        binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = rvDesplegableAdepter(listOf(Actividad(marker.title.toString(),"")))
         keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
 
         /*
