@@ -36,7 +36,7 @@
                 android:textStyle="bold" />
 
             <ImageButton
-                android:id="@+id/button2"
+                android:id="@+id/btniniciarjuego"
                 android:layout_width="119dp"
                 android:layout_height="63dp"
                 android:layout_gravity="center"
