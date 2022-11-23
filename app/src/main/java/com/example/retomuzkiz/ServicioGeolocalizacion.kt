@@ -33,7 +33,6 @@ import kotlinx.coroutines.launch
 
 class ServicioGeolocalizacion : Service() {
     private lateinit var fusedLocation : FusedLocationProviderClient
-    private lateinit var ubicacion : LatLng
     private lateinit var Listabooleanos : ArrayList<Boolean>
     lateinit var job: Job
     lateinit  var puenteRomano : Location
@@ -119,7 +118,7 @@ class ServicioGeolocalizacion : Service() {
         fusedLocation.lastLocation.addOnSuccessListener { location->
 
             if(location!=null){
-                ubicacion=LatLng(location.latitude,location.longitude)
+                ubicacionact=LatLng(location.latitude,location.longitude)
 
             }
         }
