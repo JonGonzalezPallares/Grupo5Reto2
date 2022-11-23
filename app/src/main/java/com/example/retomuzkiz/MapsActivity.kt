@@ -33,7 +33,24 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.gms.maps.model.MarkerOptions
 
-class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener{
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListener, NavigationView.OnNavigationItemSelectedListener {
+    object SITES_NAMES {
+        var POBENA_FUNDICION = "Fundicion de Pobeña"
+        var POBENA_FUNDICION_IMG = "irudia_pobena_1"
+        var POBENA_HERMITA = "Hermita de Pobeña"
+        var POBENA_HERMITA_IMG = "irudia_pobena_1"
+        var ITSASLUR_IBILBIDEA= "Paseo Itsaslur"
+        var ITSASLUR_IBILBIDEA_IMG = ""
+
+        var PLAYA_LA_ARENA = "Playa La Arena"
+        var PLAYA_LA_ARENA_IMG = "irudia_pobena_1"
+        var PUENTE_ROMANO = "Puente Romano de Pobeña"
+        var PUENTE_ROMANO_IMG = "irudia_pobena_1"
+        var CASTILLO_MUNATONES = "Castillo de Muñatones"
+        var CASTILLO_MUNATONES_IMG = "irudia_pobena_1"
+        var NOCHE_SAN_JUAN = "Castillo de Muñatones"
+        var NOCHE_SAN_JUAN_IMG = "irudia_pobena_1"
+    }
     private val keyPathsBehavior by lazy {
         BottomSheetBehavior.from(binding.bottomSheetKeyPaths.root).apply {
             peekHeight =
@@ -84,11 +101,11 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
             //mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camara))
         }
+
+        //Estado por defecto del desplegable inferior
         keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
 
 
-        /*binding.btnDesplegableTest.setOnClickListener(){
-        }*/
     }
 
     /**
@@ -116,55 +133,45 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         mMap.addMarker(
             MarkerOptions()
                 .position(puenteRomano)
-                .title("Pobaleko zubi erromanikoa")
-                .snippet("0")
+                .title(SITES_NAMES.PUENTE_ROMANO)
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(pobalekoBurdinola)
-                .title("Pobaleko Burdinola")
-                .snippet("1")
-
+                .title(SITES_NAMES.POBENA_FUNDICION)
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(pobenakoErmita)
-                .title("Pobeñako Ermita")
-                .snippet("2")
+                .title(SITES_NAMES.POBENA_HERMITA)
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(hondartzaArena)
-                .title("La Arena hondartza")
-                .snippet("3")
+                .title(SITES_NAMES.PLAYA_LA_ARENA)
         )
 
         mMap.addMarker(
 
             MarkerOptions()
                 .position(ibilbideItsaslur)
-                .title("Itsaslur Ibilbidea")
-                .snippet("4")
-
-
+                .title(SITES_NAMES.ITSASLUR_IBILBIDEA)
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(muniatonesGaztelua)
-                .title("Muñatones Gaztelua")
-                .snippet("5")
+                .title(SITES_NAMES.CASTILLO_MUNATONES)
         )
 
         mMap.addMarker(
 
             MarkerOptions()
                 .position(sanJuan)
-                .title("San Juan Gaua")
-                .snippet("6")
+                .title(SITES_NAMES.NOCHE_SAN_JUAN)
         )
 
         mMap.setOnMarkerClickListener(this)
@@ -289,6 +296,32 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         }
         //println("titulo: " + marker.title + " posicion: " + marker.position)
 
+        println("titulo: "+marker.title+" posicion: "+marker.position)
+
+       //
+
+        var actividades = listOf<List<Actividad>>(
+            listOf(Actividad(SITES_NAMES.POBENA_FUNDICION, SITES_NAMES.POBENA_FUNDICION_IMG)),
+            listOf(Actividad(SITES_NAMES.POBENA_HERMITA, SITES_NAMES.POBENA_FUNDICION_IMG)),
+            listOf(Actividad(SITES_NAMES.PUENTE_ROMANO, SITES_NAMES.POBENA_FUNDICION_IMG)),
+            listOf(Actividad(SITES_NAMES.PLAYA_LA_ARENA, SITES_NAMES.POBENA_FUNDICION_IMG)),
+            listOf(Actividad(SITES_NAMES.ITSASLUR_IBILBIDEA, SITES_NAMES.POBENA_FUNDICION_IMG)),
+            listOf(Actividad(SITES_NAMES.CASTILLO_MUNATONES, SITES_NAMES.POBENA_FUNDICION_IMG)),
+            listOf(Actividad(SITES_NAMES.NOCHE_SAN_JUAN, SITES_NAMES.POBENA_FUNDICION_IMG)),
+            )
+       for (i in 0..6){
+        if(marker.title.equals(actividades[i].get(0).name)){
+            binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = rvDesplegableAdepter(actividades.get(i))
+
+        }
+        }
+
+
+
+
+
+
+        keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
 
         /*
         Devolvemos "false" para indicar que no queremos consumir el evento, indicandole asi que queremos
