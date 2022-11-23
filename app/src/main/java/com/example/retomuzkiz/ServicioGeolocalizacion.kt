@@ -290,7 +290,7 @@ class ServicioGeolocalizacion : Service() {
                 senderIntent.putExtra("Booleano4",booleano4)
                 senderIntent.putExtra("Booleano5",booleano5)
                 senderIntent.putExtra("Booleano6",booleano6)
-                senderIntent.putExtra("ubicacionactual",ubicacion)
+                //senderIntent.putExtra("ubicacionactual",ubicacion)
                 LocalBroadcastManager.getInstance(applicationContext).sendBroadcast(senderIntent)
 
             }
