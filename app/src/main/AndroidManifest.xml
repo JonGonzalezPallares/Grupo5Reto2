@@ -18,6 +18,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RetoMuzkiz"
         tools:targetApi="31">
+
+
+
+
+        <!--Activity de Itsaslur Ibilbidea-->
+        <activity
+            android:name=".itsaslurIbilbidea.ItsaslurJuego"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".itsaslurIbilbidea.PantallaEspera"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+
+
+
+        <!--Activity del mapa-->
         <activity
             android:name=".MapsActivity"
             android:exported="false">
@@ -25,6 +50,11 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+
+
+
+        <!--Activity del puente romano-->
         <activity
             android:name=".puenteRomano.PuenteRomano"
             android:exported="false">
@@ -32,7 +62,19 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <!--Youssef-->
+
+        <activity
+            android:name=".puenteRomano.PuenteJuego"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+
+
+
+        <!--Activity de la Arena-->
         <activity
             android:name=".laArenaHondartza.IntroActivity"
             android:exported="false">
@@ -41,6 +83,18 @@
                 android:value="" />
         </activity>
 
+        <activity
+            android:name=".laArenaHondartza.LaArenaHondartza"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+
+
+
+        <!--Activity de Burdinola-->
         <activity
             android:name=".Burdinola.BurdinolaVideoActivity"
             android:exported="false">
@@ -57,30 +111,13 @@
                 android:value="" />
         </activity>
 
-        <activity
-            android:name=".laArenaHondartza.LaArenaHondartza"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Burdinola.BurdinolaVideoActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
+
+
 
         <service android:name=".ServicioGeolocalizacion" />
 
-        <activity
-            android:name=".puenteRomano.PuenteJuego"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -96,16 +133,17 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCyuDeqvpqwlX5VhQW0uaJbEbmPbNsRMUs" />
 
+        <!--Activity del menu principal-->
         <activity
             android:name=".MenuPrincipal"
             android:exported="true"
-            android:label="@string/title_activity_maps" >
+            android:label="@string/title_activity_maps">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
