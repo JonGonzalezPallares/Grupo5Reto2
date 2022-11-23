@@ -32,7 +32,7 @@ class PuenteJuego : AppCompatActivity() {
 
         //Metemos las respuestas en el array
         respuestas = mutableListOf("XIII. mendean, Muskizko zaharrena izan zen",
-        "Nerbioi ibaia", "Dekorazio gisa eraiki zen", "Harriz")
+        "Barbadun ibaia", "Galdames eta Sopuertako pertsonak Muskizera igaro ahal izateko", "Harriz")
 
         //Metemos los trozos de la imagen en un array
         imagenes = mutableListOf(binding.imgTrozo1, binding.imgTrozo2, binding.imgTrozo3, binding.imgTrozo4)
