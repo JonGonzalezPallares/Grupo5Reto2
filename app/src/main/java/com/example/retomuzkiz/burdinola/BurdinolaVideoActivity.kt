@@ -19,7 +19,7 @@ class BurdinolaVideoActivity : AppCompatActivity() {
         mediaController.setAnchorView(binding.burdinolavideo)
 
         //Para borrar la barra superior
-        this.supportActionBar!!.hide()
+        //this.supportActionBar!!.hide()
 
         val offlineUri = Uri.parse("android.resource://$packageName/${R.raw.pobalekoburdinola}")
         binding.burdinolavideo.setMediaController(mediaController)

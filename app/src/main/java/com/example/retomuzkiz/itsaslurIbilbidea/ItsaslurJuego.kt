@@ -22,7 +22,7 @@ class ItsaslurJuego : AppCompatActivity() {
         setContentView(binding.root)
 
         //Para borrar la barra superior
-        this.supportActionBar!!.hide()
+        //this.supportActionBar!!.hide()
 
         //Creamos cuatro arrays para guardar los botones
         buttonsList1 = mutableListOf(binding.imgbtn11, binding.imgbtn12, binding.imgbtn13, binding.imgbtn14)

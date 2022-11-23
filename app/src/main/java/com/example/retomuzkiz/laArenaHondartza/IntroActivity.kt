@@ -19,7 +19,7 @@ class IntroActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //Para borrar la barra superior
-        this.supportActionBar!!.hide()
+        //this.supportActionBar!!.hide()
 
 
 

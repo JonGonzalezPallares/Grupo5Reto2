@@ -59,6 +59,11 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+
+
+
+        <!--Activity del mapa-->
         <activity
             android:name=".MapsActivity"
             android:exported="false">

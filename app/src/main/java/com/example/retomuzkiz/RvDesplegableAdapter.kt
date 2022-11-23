@@ -25,8 +25,9 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
         fun unir (actividad: Actividad, context: Context){
             val titulo = actividad.name
             binding.txtTitulo.text = actividad.name
-            binding.btniniciarjuego.setOnClickListener(){
+            binding.btniniciarjuego.setOnClickListener{
                 loadActivityes(titulo, context)
+                println(titulo)
             }
         }
 

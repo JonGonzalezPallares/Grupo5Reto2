@@ -14,10 +14,8 @@ import android.content.res.Configuration
 import android.os.Handler
 import android.os.Looper
 import android.view.MenuItem
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import androidx.drawerlayout.widget.DrawerLayout
+import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -31,24 +29,22 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.gms.maps.model.MarkerOptions
-import com.google.android.material.navigation.NavigationView
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListener, NavigationView.OnNavigationItemSelectedListener {
+class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener {
     object SITESNAMES {
-        var POBENA_FUNDICION = "Fundicion de Pobeña"
+        var POBENA_FUNDICION = "Pobaleko Burdinola"
         var POBENA_FUNDICION_IMG = "irudia_pobena_1"
-        var POBENA_HERMITA = "Hermita de Pobeña"
+        var POBENA_HERMITA = "Pobeñako Ermita"
         var POBENA_HERMITA_IMG = "irudia_pobena_1"
-        var ITSASLUR_IBILBIDEA= "Paseo Itsaslur"
+        var ITSASLUR_IBILBIDEA= "Itsaslur Ibilbidea"
         var ITSASLUR_IBILBIDEA_IMG = ""
-
-        var PLAYA_LA_ARENA = "Playa La Arena"
+        var PLAYA_LA_ARENA = "La Arena hondartza"
         var PLAYA_LA_ARENA_IMG = "irudia_pobena_1"
-        var PUENTE_ROMANO = "Puente Romano de Pobeña"
+        var PUENTE_ROMANO = "Pobaleko zubi erromanikoa"
         var PUENTE_ROMANO_IMG = "irudia_pobena_1"
-        var CASTILLO_MUNATONES = "Castillo de Muñatones"
+        var CASTILLO_MUNATONES = "Muñatones Gaztelua"
         var CASTILLO_MUNATONES_IMG = "irudia_pobena_1"
-        var NOCHE_SAN_JUAN = "Castillo de Muñatones"
+        var NOCHE_SAN_JUAN = "San Juan Gaua"
         var NOCHE_SAN_JUAN_IMG = "irudia_pobena_1"
     }
     private val keyPathsBehavior by lazy {
@@ -131,24 +127,28 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             MarkerOptions()
                 .position(puenteRomano)
                 .title(SITESNAMES.PUENTE_ROMANO)
+                .snippet("0")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(pobalekoBurdinola)
                 .title(SITESNAMES.POBENA_FUNDICION)
+                .snippet("1")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(pobenakoErmita)
                 .title(SITESNAMES.POBENA_HERMITA)
+                .snippet("2")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(hondartzaArena)
                 .title(SITESNAMES.PLAYA_LA_ARENA)
+                .snippet("3")
         )
 
         mMap.addMarker(
@@ -156,12 +156,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             MarkerOptions()
                 .position(ibilbideItsaslur)
                 .title(SITESNAMES.ITSASLUR_IBILBIDEA)
+                .snippet("4")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(muniatonesGaztelua)
                 .title(SITESNAMES.CASTILLO_MUNATONES)
+                .snippet("5")
         )
 
         mMap.addMarker(
@@ -169,6 +171,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             MarkerOptions()
                 .position(sanJuan)
                 .title(SITESNAMES.NOCHE_SAN_JUAN)
+                .snippet("6")
         )
 
         mMap.setOnMarkerClickListener(this)
@@ -258,7 +261,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     override fun onMarkerClick(marker: Marker): Boolean {
         val numero = marker.snippet.toString().toInt()
         println(numero)
-        if (listabooleanos[numero!!] == true) {
+        if (listabooleanos[numero]) {
             //esto pasa si estas cerca de la ubicacion
             binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter =
                 RvDesplegableAdapter(listOf(Actividad(marker.title.toString(), "")), this)
@@ -425,14 +428,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     }
 
     //______________________________________________________________________________________________
+    //______________________________________________________________________________________________
     //funciones del menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        var guiado = R.id.m_Modoguiado
         when (item.itemId) {
             R.id.m_home -> Toast.makeText(this, " a", Toast.LENGTH_SHORT).show()
             R.id.m_ranking -> Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
             R.id.m_logout -> {
-
 
             }
             R.id.m_Modoguiado -> {
@@ -459,10 +461,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        TODO("Not yet implemented")
     }
 
 
