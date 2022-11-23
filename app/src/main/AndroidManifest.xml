@@ -44,7 +44,7 @@
 
         <!--Activity del mapa-->
         <activity
-            android:name=".ponekacoermita.juegodemarActivity"
+            android:name=".ponekakoermita.JuegodemarActivity"
             android:screenOrientation="landscape"
             android:exported="false">
             <meta-data
@@ -52,7 +52,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ponekacoermita.MarineroActivity"
+            android:name=".ponekakoermita.MarineroActivity"
             android:screenOrientation="landscape"
             android:exported="false">
             <meta-data
@@ -112,7 +112,7 @@
 
         <!--Activity de Burdinola-->
         <activity
-            android:name=".Burdinola.BurdinolaVideoActivity"
+            android:name=".burdinola.BurdinolaVideoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -120,7 +120,7 @@
         </activity>
 
         <activity
-            android:name=".Burdinola.BurdinolaSopaActivity"
+            android:name=".burdinola.BurdinolaSopaActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

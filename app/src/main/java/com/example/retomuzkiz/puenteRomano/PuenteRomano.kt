@@ -29,7 +29,7 @@ class PuenteRomano : AppCompatActivity() {
             binding.btnPrimero.setBackgroundColor(Color.parseColor("#C1C0C0"))
 
             //Llamamos a la funcion para cambiar los fragmentos
-            cambiarFrag(PuenteRomano_preg1())
+            changeFrag(PuenteRomano_preg1())
         }
 
         //Boton que lleva al segundo fragment estando en el tercero
@@ -42,7 +42,7 @@ class PuenteRomano : AppCompatActivity() {
             binding.btnPrimero.visibility = View.VISIBLE
 
             //Llamamos a la funcion para cambiar los fragmentos
-            cambiarFrag(PuenteRomano_preg2())
+            changeFrag(PuenteRomano_preg2())
         }
 
         //Boton que lleva al segundo fragment estando en el primero
@@ -54,7 +54,7 @@ class PuenteRomano : AppCompatActivity() {
             binding.btnUltimo.visibility = View.VISIBLE
 
             //Llamamos a la funcion para cambiar los fragmentos
-            cambiarFrag(PuenteRomano_preg2())
+            changeFrag(PuenteRomano_preg2())
         }
 
         //Boton que lleva al tercer fragment estando en el segundo
@@ -67,7 +67,7 @@ class PuenteRomano : AppCompatActivity() {
             binding.btnEmpezar.visibility = View.VISIBLE
 
             //Llamamos a la funcion para cambiar los fragmentos
-            cambiarFrag(PuenteRomano_preg3())
+            changeFrag(PuenteRomano_preg3())
         }
 
         //Boton que lleva a la activity del juego
@@ -78,7 +78,7 @@ class PuenteRomano : AppCompatActivity() {
     }
 
     //Funcion que se encarga de cambiar entre los diferentes fragmentos
-    private fun cambiarFrag(fragmento: Fragment) {
+    private fun changeFrag(fragmento: Fragment) {
         //Creamos una variable para la transaccion
         val transicion = supportFragmentManager.beginTransaction().setReorderingAllowed(true)
         //Le añadimos a que contenedor tiene que hacer referencia, y le pasamos el fragmento que queremos cargar

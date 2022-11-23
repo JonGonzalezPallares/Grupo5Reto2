@@ -1,14 +1,12 @@
-package com.example.retomuzkiz.Burdinola
+package com.example.retomuzkiz.burdinola
 
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.MediaController
-import android.widget.VideoView
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ActivityBurdinolaVideoBinding
-import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
 
 class BurdinolaVideoActivity : AppCompatActivity() {
     private lateinit var binding : ActivityBurdinolaVideoBinding

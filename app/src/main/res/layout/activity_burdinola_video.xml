@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Burdinola.BurdinolaVideoActivity">
+    tools:context=".burdinola.BurdinolaVideoActivity">
 
     <VideoView
         android:id="@+id/burdinolavideo"

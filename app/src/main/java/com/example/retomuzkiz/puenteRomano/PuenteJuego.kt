@@ -125,15 +125,15 @@ class PuenteJuego : AppCompatActivity() {
                 if(cantidad<4){
                     imagen.startAnimation(AnimationUtils.loadAnimation(this, R.anim.animacion_puente))
                 }
-                cambiarPantalla()
+                changeScreen()
             }else{
-                limpiarSeleccion()
+                cleanSelection()
             }
         }
     }
 
     //Muestra el siguiente set de preguntas si se acierta
-    private fun cambiarPantalla() {
+    private fun changeScreen() {
         when (cantidad) {
             1 -> {
                 binding.TrozoPreg1.visibility = View.GONE
@@ -148,7 +148,7 @@ class PuenteJuego : AppCompatActivity() {
                 binding.TrozoPreg4.visibility = View.VISIBLE
             }
             else -> {
-                limpiarSeleccion()
+                cleanSelection()
             }
         }
         cantidad++
@@ -156,7 +156,7 @@ class PuenteJuego : AppCompatActivity() {
     }
 
     //Para limpiar la seleccion que se haya hecho cada vez que se falle
-    private fun limpiarSeleccion() {
+    private fun cleanSelection() {
         when (cantidad){
             1 -> {
                 binding.rdbRes1.clearCheck()
@@ -169,13 +169,13 @@ class PuenteJuego : AppCompatActivity() {
             }
             else -> {
                 binding.rdbRes4.clearCheck()
-                mostrarImg()
+                showImg()
             }
         }
     }
 
     //Funcion para mostrar la imagen final
-    private fun mostrarImg() {
+    private fun showImg() {
         for(imagen in imagenes){
             imagen.visibility = View.GONE
         }

@@ -9,7 +9,6 @@ import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ItemIntroBinding
 import com.example.retomuzkiz.laArenaHondartza.modelo.Parrafo
 
-
 class RvAdapterParrafos(
     private var parrafosList: List<Parrafo>,
     private var salir: (Int) -> Unit,

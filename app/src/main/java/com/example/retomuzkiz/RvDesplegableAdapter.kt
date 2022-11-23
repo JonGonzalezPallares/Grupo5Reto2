@@ -7,18 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.retomuzkiz.Burdinola.BurdinolaVideoActivity
+import com.example.retomuzkiz.burdinola.BurdinolaVideoActivity
 import com.example.retomuzkiz.databinding.SingleActividadBinding
-import com.example.retomuzkiz.databinding.VistaJugadorBinding
-import com.example.retomuzkiz.itsaslurIbilbidea.ItsaslurJuego
 import com.example.retomuzkiz.itsaslurIbilbidea.PantallaEspera
 import com.example.retomuzkiz.laArenaHondartza.IntroActivity
-import com.example.retomuzkiz.ponekacoermita.MarineroActivity
-import com.example.retomuzkiz.puenteRomano.PuenteJuego
+import com.example.retomuzkiz.ponekakoermita.MarineroActivity
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
 
-class rvDesplegableAdepter(var listaActividades: List<Actividad>, val context: Context): RecyclerView.Adapter<rvDesplegableAdepter.ViewHolder>() {
-    protected lateinit var Nombres : ArrayList<String>
+class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: Context): RecyclerView.Adapter<RvDesplegableAdapter.ViewHolder>() {
+    private lateinit var Nombres : ArrayList<String>
 
 
     class ViewHolder (vista: View) :RecyclerView.ViewHolder(vista){
@@ -29,11 +26,11 @@ class rvDesplegableAdepter(var listaActividades: List<Actividad>, val context: C
             val titulo = actividad.name
             binding.txtTitulo.text = actividad.name
             binding.btniniciarjuego.setOnClickListener(){
-                cargaractividades(titulo, context)
+                loadActivityes(titulo, context)
             }
         }
 
-        private fun cargaractividades(titulo: String, context: Context) {
+        private fun loadActivityes(titulo: String, context: Context) {
             when(titulo) {
 
                 "Pobaleko zubi erromanikoa"->{

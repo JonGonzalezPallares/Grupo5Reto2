@@ -27,7 +27,7 @@ class JugadoresAdapter(private var lista:List<Jugador>) :RecyclerView.Adapter<Ju
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //Creamos una funcion que nos haga la union de los elementos
         //Accedemos a la lista de asignaturas para cada posicion
-        holder.unir(lista[position])
+        holder.link(lista[position])
     }
 
     //Devuelve la cantidad de elementos
@@ -42,7 +42,7 @@ class JugadoresAdapter(private var lista:List<Jugador>) :RecyclerView.Adapter<Ju
     class ViewHolder (vista: View) :RecyclerView.ViewHolder(vista){
         val binding = VistaJugadorBinding.bind(vista)
 
-        fun unir (jugador: Jugador){
+        fun link (jugador: Jugador){
             binding.txtNombre.text = jugador.nombre
             binding.txtPuntuacion.text = jugador.puntuacion
         }

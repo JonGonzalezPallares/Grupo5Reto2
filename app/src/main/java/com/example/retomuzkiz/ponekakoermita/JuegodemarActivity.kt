@@ -1,10 +1,10 @@
-package com.example.retomuzkiz.ponekacoermita
+package com.example.retomuzkiz.ponekakoermita
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.retomuzkiz.R
 
-class juegodemarActivity : AppCompatActivity() {
+class JuegodemarActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         this.supportActionBar!!.hide()

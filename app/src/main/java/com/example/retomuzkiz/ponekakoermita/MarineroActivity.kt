@@ -1,4 +1,4 @@
-package com.example.retomuzkiz.ponekacoermita
+package com.example.retomuzkiz.ponekakoermita
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +17,7 @@ class MarineroActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnsiguiente.setOnClickListener {
-            val actividad = Intent(this, juegodemarActivity::class.java)
+            val actividad = Intent(this, JuegodemarActivity::class.java)
             ContextCompat.startActivity(this, actividad, null)
 
         }

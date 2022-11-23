@@ -1,10 +1,9 @@
-package com.example.retomuzkiz.Burdinola
+package com.example.retomuzkiz.burdinola
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ActivityBurdinolaSopaBinding
-import com.example.retomuzkiz.databinding.ActivityBurdinolaVideoBinding
 
 class BurdinolaSopaActivity : AppCompatActivity() {
     private lateinit var binding : ActivityBurdinolaSopaBinding

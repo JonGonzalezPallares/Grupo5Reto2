@@ -6,13 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import android.view.animation.Animation
-import android.view.animation.LinearInterpolator
-import android.view.animation.RotateAnimation
-import androidx.lifecycle.lifecycleScope
-import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityPantallaEsperaBinding
-import kotlinx.coroutines.launch
 
 class PantallaEspera : AppCompatActivity() {
 
@@ -26,7 +20,7 @@ class PantallaEspera : AppCompatActivity() {
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
 
-        cargar()
+        load()
 
         binding.btnContinuar.setOnClickListener {
             val intento = Intent(this, ItsaslurJuego::class.java)
@@ -34,7 +28,7 @@ class PantallaEspera : AppCompatActivity() {
         }
     }
 
-    private fun cargar() {
+    private fun load() {
         Handler(Looper.myLooper()?:return).postDelayed({
             binding.btnContinuar.visibility = View.VISIBLE
         }, 5000)

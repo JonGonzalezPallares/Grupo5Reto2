@@ -186,7 +186,7 @@ class ServicioGeolocalizacion : Service() {
 
         //funcion para obtener de manera continua la ubicacion actual
         //Anotacion: lastlocation no se actualizar, hay que usar currentlocation
-        fun actualizarubi(){
+        fun updateUbication(){
             fusedLocation.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, object : CancellationToken() {
                 override fun onCanceledRequested(p0: OnTokenCanceledListener) = CancellationTokenSource().token
 
@@ -207,7 +207,7 @@ class ServicioGeolocalizacion : Service() {
                 //limpieza de cache para prevenir errores varios
                 clearchache.deleteCache(applicationContext)
                 //obtener la ubicacion actual
-                actualizarubi()
+                updateUbication()
           // si se ha cancelado salimos del bucle
                 if(job.isCancelled){
                     break

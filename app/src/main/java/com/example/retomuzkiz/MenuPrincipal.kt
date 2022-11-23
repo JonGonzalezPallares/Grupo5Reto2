@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
-import com.example.retomuzkiz.itsaslurIbilbidea.PantallaEspera
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
 
 class MenuPrincipal : AppCompatActivity() {
@@ -20,9 +19,9 @@ class MenuPrincipal : AppCompatActivity() {
 
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
-        
+
         //Prueba para ver como queda el recycleview, quitarlo cuando tengamos jugadores
-        carga()
+        load()
 
         adaptador = JugadoresAdapter(lista)
 
@@ -36,7 +35,7 @@ class MenuPrincipal : AppCompatActivity() {
         }
     }
 
-    private fun carga() {
+    private fun load() {
         lista = listOf(
             Jugador("Jugador 1", "29"),
             Jugador("Jugador 2", "940"),

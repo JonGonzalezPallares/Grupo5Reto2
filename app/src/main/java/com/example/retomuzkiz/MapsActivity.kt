@@ -18,8 +18,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.retomuzkiz.Burdinola.BurdinolaVideoActivity
-import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -36,7 +34,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.navigation.NavigationView
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListener, NavigationView.OnNavigationItemSelectedListener {
-    object SITES_NAMES {
+    object SITESNAMES {
         var POBENA_FUNDICION = "Fundicion de Pobeña"
         var POBENA_FUNDICION_IMG = "irudia_pobena_1"
         var POBENA_HERMITA = "Hermita de Pobeña"
@@ -61,27 +59,24 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     }
     private lateinit var binding: ActivityMapsBinding
     private lateinit var listabooleanos: ArrayList<Boolean>
-    private lateinit var ubicacion: LatLng
-    lateinit var drawer: DrawerLayout
-    private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var localizacion: FusedLocationProviderClient
-    protected var booleano0 = false
-    protected var booleano1 = false
-    protected var booleano2 = false
-    protected var booleano3 = false
-    protected var booleano4 = false
-    protected var booleano5 = false
-    protected var booleano6 = false
-    protected lateinit var Servicio: Intent
+    private var booleano0 = false
+    private var booleano1 = false
+    private var booleano2 = false
+    private var booleano3 = false
+    private var booleano4 = false
+    private var booleano5 = false
+    private var booleano6 = false
+    private lateinit var Servicio: Intent
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
-        listabooleanos = arrayListOf<Boolean>()
+        listabooleanos = arrayListOf()
         super.onCreate(savedInstanceState)
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        modogiado()
+        guideMode()
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -135,45 +130,45 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         mMap.addMarker(
             MarkerOptions()
                 .position(puenteRomano)
-                .title(SITES_NAMES.PUENTE_ROMANO)
+                .title(SITESNAMES.PUENTE_ROMANO)
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(pobalekoBurdinola)
-                .title(SITES_NAMES.POBENA_FUNDICION)
+                .title(SITESNAMES.POBENA_FUNDICION)
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(pobenakoErmita)
-                .title(SITES_NAMES.POBENA_HERMITA)
+                .title(SITESNAMES.POBENA_HERMITA)
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(hondartzaArena)
-                .title(SITES_NAMES.PLAYA_LA_ARENA)
+                .title(SITESNAMES.PLAYA_LA_ARENA)
         )
 
         mMap.addMarker(
 
             MarkerOptions()
                 .position(ibilbideItsaslur)
-                .title(SITES_NAMES.ITSASLUR_IBILBIDEA)
+                .title(SITESNAMES.ITSASLUR_IBILBIDEA)
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(muniatonesGaztelua)
-                .title(SITES_NAMES.CASTILLO_MUNATONES)
+                .title(SITESNAMES.CASTILLO_MUNATONES)
         )
 
         mMap.addMarker(
 
             MarkerOptions()
                 .position(sanJuan)
-                .title(SITES_NAMES.NOCHE_SAN_JUAN)
+                .title(SITESNAMES.NOCHE_SAN_JUAN)
         )
 
         mMap.setOnMarkerClickListener(this)
@@ -266,7 +261,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         if (listabooleanos[numero!!] == true) {
             //esto pasa si estas cerca de la ubicacion
             binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter =
-                rvDesplegableAdepter(listOf(Actividad(marker.title.toString(), "")), this)
+                RvDesplegableAdapter(listOf(Actividad(marker.title.toString(), "")), this)
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
 
 
@@ -303,17 +298,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         //
 
         val actividades = listOf(
-            listOf(Actividad(SITES_NAMES.POBENA_FUNDICION, SITES_NAMES.POBENA_FUNDICION_IMG)),
-            listOf(Actividad(SITES_NAMES.POBENA_HERMITA, SITES_NAMES.POBENA_FUNDICION_IMG)),
-            listOf(Actividad(SITES_NAMES.PUENTE_ROMANO, SITES_NAMES.POBENA_FUNDICION_IMG)),
-            listOf(Actividad(SITES_NAMES.PLAYA_LA_ARENA, SITES_NAMES.POBENA_FUNDICION_IMG)),
-            listOf(Actividad(SITES_NAMES.ITSASLUR_IBILBIDEA, SITES_NAMES.POBENA_FUNDICION_IMG)),
-            listOf(Actividad(SITES_NAMES.CASTILLO_MUNATONES, SITES_NAMES.POBENA_FUNDICION_IMG)),
-            listOf(Actividad(SITES_NAMES.NOCHE_SAN_JUAN, SITES_NAMES.POBENA_FUNDICION_IMG)),
+            listOf(Actividad(SITESNAMES.POBENA_FUNDICION, SITESNAMES.POBENA_FUNDICION_IMG)),
+            listOf(Actividad(SITESNAMES.POBENA_HERMITA, SITESNAMES.POBENA_FUNDICION_IMG)),
+            listOf(Actividad(SITESNAMES.PUENTE_ROMANO, SITESNAMES.POBENA_FUNDICION_IMG)),
+            listOf(Actividad(SITESNAMES.PLAYA_LA_ARENA, SITESNAMES.POBENA_FUNDICION_IMG)),
+            listOf(Actividad(SITESNAMES.ITSASLUR_IBILBIDEA, SITESNAMES.POBENA_FUNDICION_IMG)),
+            listOf(Actividad(SITESNAMES.CASTILLO_MUNATONES, SITESNAMES.POBENA_FUNDICION_IMG)),
+            listOf(Actividad(SITESNAMES.NOCHE_SAN_JUAN, SITESNAMES.POBENA_FUNDICION_IMG)),
         )
         for (i in 0..6){
             if(marker.title.equals(actividades[i][0].name)){
-                binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = rvDesplegableAdepter(
+                binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = RvDesplegableAdapter(
                     actividades[i], this
                 )
 
@@ -384,7 +379,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     }*/
     //______________________________________________________________________________________________
     // funcion del modo libre
-    fun modolibre() {
+    private fun freeMode() {
         stopService(Servicio)
         // fundcion de espra de 3s antes de cambiar las variables
         Handler(Looper.myLooper() ?: return).postDelayed({
@@ -402,7 +397,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
 
     //______________________________________________________________________________________________
     //funcion del modo guiado
-    fun modogiado() {
+    private fun guideMode() {
         // crear el servicio de geolocalizacion
 
 
@@ -442,13 +437,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             }
             R.id.m_Modoguiado -> {
                 //Carcar el modo guiado
-                modogiado()
-                aviso("", "Ahoras estas en el modo guiado")
+                guideMode()
+                warning("", "Ahoras estas en el modo guiado")
             }
             R.id.m_Modolibre -> {
                 //cargar el modo libre
-                modolibre()
-                aviso("", "Ahoras estas en el modo libre")
+                freeMode()
+                warning("", "Ahoras estas en el modo libre")
 
             }
         }
@@ -457,7 +452,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
 
     //______________________________________________________________________________________________
     //funcion del aviso
-    fun aviso(titulo: String, mensaje: String) {
+    fun warning(titulo: String, mensaje: String) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(titulo)
         builder.setMessage(mensaje)

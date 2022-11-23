@@ -3,7 +3,6 @@ package com.example.retomuzkiz.itsaslurIbilbidea
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.retomuzkiz.databinding.ActivityItsaslurJuegoBinding
-import com.example.retomuzkiz.databinding.ActivityPantallaEsperaBinding
 
 class ItsaslurJuego : AppCompatActivity() {
 
