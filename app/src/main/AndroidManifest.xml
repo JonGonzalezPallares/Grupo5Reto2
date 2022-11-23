@@ -32,6 +32,15 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <!--Youssef-->
+        <activity
+            android:name=".laArenaHondartza.IntroActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
         <activity
             android:name=".Burdinola.BurdinolaVideoActivity"
             android:exported="false">
@@ -39,6 +48,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".Burdinola.BurdinolaSopaActivity"
             android:exported="false">
@@ -49,7 +59,14 @@
 
         <activity
             android:name=".laArenaHondartza.LaArenaHondartza"
-            android:exported="true">
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Burdinola.BurdinolaVideoActivity"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
