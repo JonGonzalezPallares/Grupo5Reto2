@@ -13,6 +13,7 @@ import com.example.retomuzkiz.databinding.VistaJugadorBinding
 import com.example.retomuzkiz.itsaslurIbilbidea.ItsaslurJuego
 import com.example.retomuzkiz.itsaslurIbilbidea.PantallaEspera
 import com.example.retomuzkiz.laArenaHondartza.IntroActivity
+import com.example.retomuzkiz.ponekacoermita.MarineroActivity
 import com.example.retomuzkiz.puenteRomano.PuenteJuego
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
 
@@ -44,7 +45,8 @@ class rvDesplegableAdepter(var listaActividades: List<Actividad>, val context: C
                     startActivity(context, intento,null)
                 }
                 "Pobeñako Ermita"->{
-
+                    val g = Intent(context, MarineroActivity::class.java)
+                    startActivity(context,g,null)
                 }
                 "La Arena hondartza"->{
                     val intento = Intent(context, IntroActivity::class.java)

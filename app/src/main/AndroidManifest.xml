@@ -44,6 +44,22 @@
 
         <!--Activity del mapa-->
         <activity
+            android:name=".ponekacoermita.juegodemarActivity"
+            android:screenOrientation="landscape"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ponekacoermita.MarineroActivity"
+            android:screenOrientation="landscape"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MapsActivity"
             android:exported="false">
             <meta-data
