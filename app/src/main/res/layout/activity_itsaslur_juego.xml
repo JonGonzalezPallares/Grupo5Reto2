@@ -15,7 +15,7 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:orientation="vertical"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +35,7 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="25dp"
-            android:background="@drawable/foto1" />
+            android:background="@drawable/itsaslur1_1" />
 
         <ImageButton
             android:id="@+id/imgbtn1_2"
@@ -44,7 +44,8 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
-            android:background="@drawable/foto2" />
+            android:background="@drawable/itsaslur1_2"
+            android:tag="true" />
 
         <ImageButton
             android:id="@+id/imgbtn1_3"
@@ -53,7 +54,8 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
-            android:background="@drawable/foto3" />
+            android:background="@drawable/itsaslur1_3"
+            android:tag="true" />
 
         <ImageButton
             android:id="@+id/imgbtn1_4"
@@ -62,7 +64,7 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
-            android:background="@drawable/foto4" />
+            android:background="@drawable/itsaslur1_4" />
     </LinearLayout>
 
     <LinearLayout
@@ -74,7 +76,7 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:orientation="vertical"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,5 +88,162 @@
             android:layout_height="wrap_content"
             android:text="Zer ikusi dugu pasealekutik?"
             android:textSize="23sp" />
+
+        <ImageButton
+            android:id="@+id/imgbtn2_1"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur2_1"
+            android:tag="true" />
+
+        <ImageButton
+            android:id="@+id/imgbtn2_2"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur2_2" />
+
+        <ImageButton
+            android:id="@+id/imgbtn2_3"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur2_3" />
+
+        <ImageButton
+            android:id="@+id/imgbtn2_4"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur2_4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Preguntas3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zer aurkitu dezakegu bide erditik?"
+            android:textSize="23sp" />
+
+        <ImageButton
+            android:id="@+id/imgbtn3_1"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur3_1" />
+
+        <ImageButton
+            android:id="@+id/imgbtn3_2"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur3_2"
+            android:tag="true" />
+
+        <ImageButton
+            android:id="@+id/imgbtn3_3"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur1_3" />
+
+        <ImageButton
+            android:id="@+id/imgbtn3_4"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/itsaslur3_4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Preguntas4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Non hartu dezakegu bainu bat?"
+            android:textSize="23sp" />
+
+        <ImageButton
+            android:id="@+id/imgbtn4_1"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur4_1" />
+
+        <ImageButton
+            android:id="@+id/imgbtn4_2"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur4_2" />
+
+        <ImageButton
+            android:id="@+id/imgbtn4_3"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur4_3" />
+
+        <ImageButton
+            android:id="@+id/imgbtn4_4"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur4_4"
+            android:tag="true" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
