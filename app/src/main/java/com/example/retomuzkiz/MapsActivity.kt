@@ -311,7 +311,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             Listabooleanos[5] = intent.getBooleanExtra("Booleano5", false)
             Listabooleanos[6] = intent.getBooleanExtra("Booleano6", false)
             println("aa" + Listabooleanos)
-            ubicacion = intent.getParcelableExtra<LatLng>("ubicacionactual") as LatLng
+            //ubicacion = intent.getParcelableExtra<LatLng>("ubicacionactual") as LatLng
         }
     }
 

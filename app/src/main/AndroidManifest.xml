@@ -19,7 +19,16 @@
         android:theme="@style/Theme.RetoMuzkiz"
         tools:targetApi="31">
         <activity
+            android:name=".ponekacoermita.juegodemarActivity"
+            android:screenOrientation="landscape"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ponekacoermita.MarineroActivity"
+            android:screenOrientation="landscape"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
