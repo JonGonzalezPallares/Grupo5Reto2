@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.retomuzkiz.Burdinola.BurdinolaVideoActivity
 import com.example.retomuzkiz.databinding.SingleActividadBinding
 import com.example.retomuzkiz.databinding.VistaJugadorBinding
+import com.example.retomuzkiz.itsaslurIbilbidea.ItsaslurJuego
+import com.example.retomuzkiz.itsaslurIbilbidea.PantallaEspera
+import com.example.retomuzkiz.laArenaHondartza.IntroActivity
 import com.example.retomuzkiz.puenteRomano.PuenteJuego
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
 
@@ -33,21 +36,23 @@ class rvDesplegableAdepter(var listaActividades: List<Actividad>, val context: C
             when(titulo) {
 
                 "Pobaleko zubi erromanikoa"->{
-                    val g = Intent(context, PuenteRomano::class.java)
-                    startActivity(context,g,null)
+                    val intento = Intent(context, PuenteRomano::class.java)
+                    startActivity(context, intento, null)
                 }
                 "Pobaleko Burdinola"->{
-                    val g = Intent(context, BurdinolaVideoActivity::class.java)
-                    startActivity(context,g,null)
+                    val intento = Intent(context, BurdinolaVideoActivity::class.java)
+                    startActivity(context, intento,null)
                 }
                 "Pobeñako Ermita"->{
 
                 }
                 "La Arena hondartza"->{
-
+                    val intento = Intent(context, IntroActivity::class.java)
+                    startActivity(context, intento,null)
                 }
                 "Itsaslur Ibilbidea"->{
-
+                    val intento = Intent(context, PantallaEspera::class.java)
+                    startActivity(context, intento,null)
                 }
                 "Muñatones Gaztelua"->{
 
