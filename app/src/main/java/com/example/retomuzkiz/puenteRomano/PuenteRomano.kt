@@ -17,6 +17,9 @@ class PuenteRomano : AppCompatActivity() {
         binding = ActivityPuenteRomanoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Para borrar la barra superior
+        this.supportActionBar!!.hide()
+
         //Boton que lleva al primer fragment estando en el segundo
         binding.btnPrimero.setOnClickListener {
             //Cambiamos el estilo de los botones

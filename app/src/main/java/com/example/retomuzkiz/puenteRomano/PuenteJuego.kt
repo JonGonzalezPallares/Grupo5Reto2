@@ -30,6 +30,9 @@ class PuenteJuego : AppCompatActivity() {
         binding = ActivityPuenteJuegoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Para borrar la barra superior
+        this.supportActionBar!!.hide()
+
         //Metemos las respuestas en el array
         respuestas = mutableListOf("XIII. mendean, Muskizko zaharrena izan zen",
         "Barbadun ibaia", "Galdames eta Sopuertako pertsonak Muskizera igaro ahal izateko", "Harriz")

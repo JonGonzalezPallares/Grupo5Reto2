@@ -14,6 +14,9 @@ class BurdinolaSopaActivity : AppCompatActivity() {
         binding = ActivityBurdinolaSopaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Para borrar la barra superior
+        this.supportActionBar!!.hide()
+
         binding.btnVolver.setOnClickListener{
             finish()
         }
