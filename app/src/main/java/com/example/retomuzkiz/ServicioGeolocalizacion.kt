@@ -33,6 +33,7 @@ import kotlinx.coroutines.launch
 
 class ServicioGeolocalizacion : Service() {
     private lateinit var fusedLocation : FusedLocationProviderClient
+    private lateinit var ubicacion : LatLng
     private lateinit var Listabooleanos : ArrayList<Boolean>
     lateinit var job: Job
     lateinit  var puenteRomano : Location
@@ -118,7 +119,7 @@ class ServicioGeolocalizacion : Service() {
         fusedLocation.lastLocation.addOnSuccessListener { location->
 
             if(location!=null){
-                ubicacionact=LatLng(location.latitude,location.longitude)
+                ubicacion=LatLng(location.latitude,location.longitude)
 
             }
         }
@@ -194,11 +195,6 @@ class ServicioGeolocalizacion : Service() {
                 if(it!==null){
                     ubicacionact.latitude=it.latitude
                     ubicacionact.longitude=it.longitude
-                }
-            }
-            fusedLocation.lastLocation.addOnSuccessListener { location->
-                if(location!=null){
-                   ubicacion=LatLng(location.latitude,location.longitude)
                 }
             }
         }
@@ -278,7 +274,7 @@ class ServicioGeolocalizacion : Service() {
                 senderIntent.putExtra("Booleano4",booleano4)
                 senderIntent.putExtra("Booleano5",booleano5)
                 senderIntent.putExtra("Booleano6",booleano6)
-                senderIntent.putExtra("ubicacionactual",ubicacion)
+                senderIntent.putExtra("ubicacionactual",ubicacionact)
                 LocalBroadcastManager.getInstance(applicationContext).sendBroadcast(senderIntent)
 
             }

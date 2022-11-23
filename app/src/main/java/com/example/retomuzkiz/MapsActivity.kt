@@ -16,6 +16,7 @@ import android.os.Looper
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.retomuzkiz.Burdinola.BurdinolaVideoActivity
 import com.example.retomuzkiz.clases.OptionsMenuActivity
@@ -32,6 +33,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.navigation.NavigationView
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListener, NavigationView.OnNavigationItemSelectedListener {
     object SITES_NAMES {
@@ -261,7 +263,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
     override fun onMarkerClick(marker: Marker): Boolean {
         val numero = marker.snippet.toString().toInt()
         println(numero)
-        if (Listabooleanos[numero!!] == true) {
+        if (listabooleanos[numero!!] == true) {
             //esto pasa si estas cerca de la ubicacion
             binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter =
                 rvDesplegableAdepter(listOf(Actividad(marker.title.toString(), "")), this)
@@ -298,9 +300,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
 
         println("titulo: "+marker.title+" posicion: "+marker.position)
 
-       //
+        //
 
-        var actividades = listOf<List<Actividad>>(
+        val actividades = listOf(
             listOf(Actividad(SITES_NAMES.POBENA_FUNDICION, SITES_NAMES.POBENA_FUNDICION_IMG)),
             listOf(Actividad(SITES_NAMES.POBENA_HERMITA, SITES_NAMES.POBENA_FUNDICION_IMG)),
             listOf(Actividad(SITES_NAMES.PUENTE_ROMANO, SITES_NAMES.POBENA_FUNDICION_IMG)),
@@ -308,12 +310,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             listOf(Actividad(SITES_NAMES.ITSASLUR_IBILBIDEA, SITES_NAMES.POBENA_FUNDICION_IMG)),
             listOf(Actividad(SITES_NAMES.CASTILLO_MUNATONES, SITES_NAMES.POBENA_FUNDICION_IMG)),
             listOf(Actividad(SITES_NAMES.NOCHE_SAN_JUAN, SITES_NAMES.POBENA_FUNDICION_IMG)),
-            )
-       for (i in 0..6){
-        if(marker.title.equals(actividades[i].get(0).name)){
-            binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = rvDesplegableAdepter(actividades.get(i))
+        )
+        for (i in 0..6){
+            if(marker.title.equals(actividades[i][0].name)){
+                binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = rvDesplegableAdepter(
+                    actividades[i], this
+                )
 
-        }
+            }
         }
 
 
@@ -343,7 +347,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
             listabooleanos[5] = intent.getBooleanExtra("Booleano5", false)
             listabooleanos[6] = intent.getBooleanExtra("Booleano6", false)
             println("aa $listabooleanos")
-            ubicacion = intent.getParcelableExtra<LatLng>("ubicacionactual") as LatLng
+            //ubicacion = intent.getParcelableExtra<LatLng>("ubicacionactual") as LatLng
         }
     }
 
@@ -460,6 +464,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, OnMarkerClickListe
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        TODO("Not yet implemented")
     }
 
 
