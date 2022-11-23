@@ -28,6 +28,9 @@ class MenuPrincipal : AppCompatActivity() {
             val intento = Intent(this, MapsActivity::class.java)
             startActivity(intento)
         }
+        binding.btnLaberinto.setOnClickListener(){
+            startActivity(Intent(this, ActivityLaberinto::class.java))
+        }
     }
 
     fun carga() {
