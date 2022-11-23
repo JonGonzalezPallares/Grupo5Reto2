@@ -254,7 +254,14 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     override fun onMarkerClick(marker: Marker): Boolean {
         val numero = marker.snippet.toString().toInt()
         println(numero)
-        if (listabooleanos[numero]) {
+        if (Listabooleanos[numero!!] == true) {
+            //esto pasa si estas cerca de la ubicacion
+            binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter =
+                rvDesplegableAdepter(listOf(Actividad(marker.title.toString(), "")), this)
+            keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
+
+
+
             Toast.makeText(
                 this,
                 "titulo: " + marker.title + " posicion: " + marker.position,
@@ -263,6 +270,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 .show()
             println("titulo: " + marker.title + " posicion: " + marker.position)
         } else {
+            //esto pasa si estas legos de la ubicacion
             Toast.makeText(
                 this,
                 "titulo: " + " estas muy lejos del punto" + " posicion: " + marker.title,
@@ -279,10 +287,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             .show()
         println("titulo: "+marker.title+" posicion: "+marker.position+" snipet: "+marker.snippet.toString().toInt())*/
         }
-        println("titulo: " + marker.title + " posicion: " + marker.position)
-        binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter =
-            rvDesplegableAdepter(listOf(Actividad(marker.title.toString(), "")))
-        keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
+        //println("titulo: " + marker.title + " posicion: " + marker.position)
+
 
         /*
         Devolvemos "false" para indicar que no queremos consumir el evento, indicandole asi que queremos
@@ -394,7 +400,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             R.id.m_home -> Toast.makeText(this, " a", Toast.LENGTH_SHORT).show()
             R.id.m_ranking -> Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
             R.id.m_logout -> {
-                startActivity(Intent(this, BurdinolaVideoActivity::class.java))
+
 
             }
             R.id.m_Modoguiado -> {
