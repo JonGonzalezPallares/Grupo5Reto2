@@ -34,6 +34,9 @@ class MenuPrincipal : AppCompatActivity() {
             //val intento = Intent(this, PantallaEspera::class.java)
             startActivity(intento)
         }
+        binding.btnLaberinto.setOnClickListener(){
+            startActivity(Intent(this, ActivityLaberinto::class.java))
+        }
     }
 
     private fun load() {
