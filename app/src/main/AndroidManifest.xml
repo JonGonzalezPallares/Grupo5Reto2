@@ -38,14 +38,14 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        
 
 
 
-
-        <!--Activity del mapa-->
+        <!--Activity de la ermita-->
         <activity
             android:name=".ponekakoermita.JuegodemarActivity"
-            android:screenOrientation="landscape"
+            android:screenOrientation="landscape"            
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -55,6 +55,50 @@
             android:name=".ponekakoermita.MarineroActivity"
             android:screenOrientation="landscape"
             android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+            
+
+
+
+        <!--Activity del castuillo-->
+        <activity
+        android:name=".gastelua.PuzzleActivity"
+        android:screenOrientation="landscape"
+        android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+        android:name=".gastelua.ExplicacionActivity"
+        android:screenOrientation="landscape"
+        android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+
+
+
+        <!--Activity del marinero-->
+        <activity
+            android:name=".ponekacoermita.juegodemarActivity"
+            android:exported="false"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".ponekacoermita.MarineroActivity"
+            android:exported="false"
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -135,7 +179,7 @@
 
 
 
-
+        <!--Servicio de geolocalizacion-->
         <service android:name=".ServicioGeolocalizacion" />
 
 
