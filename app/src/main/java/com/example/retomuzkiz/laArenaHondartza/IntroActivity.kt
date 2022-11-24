@@ -13,40 +13,44 @@ class IntroActivity : AppCompatActivity() {
     private lateinit var adapter : RvAdapterParrafos
     private lateinit var recyclerview: RecyclerView
 
+    //______________________________________________________________________________________________
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityIntroBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        init()
+    }
 
-        //Para borrar la barra superior
-        //this.supportActionBar!!.hide()
-
-
-
+    //______________________________________________________________________________________________
+    // Inicializar  recyclerview adapter
+    private fun init() {
         recyclerview = binding.rvParrafos
         adapter = RvAdapterParrafos(ProveedorParrafos.listaParrafos,{
-            salir(it)
+            play()
         },{
-            seguiente(it)
+            nextItem(it)
         },{
-            atras(it)
+            previusItem(it)
         })
+
         recyclerview.adapter = adapter
     }
 
-    private fun atras(it: Int) {
-        if (it >= 1) {
-            recyclerview.scrollToPosition(it-1)
-        }
+    //______________________________________________________________________________________________
+    // Retroceder hacia un item atras si la posicion del item es mayor que cero
+    private fun previusItem(item: Int) {
+        recyclerview.scrollToPosition(item-1)
     }
 
-    private fun seguiente(it: Int) {
-        if(it < adapter.itemCount-1){
-            recyclerview.scrollToPosition(it+1)
-        }
+    //______________________________________________________________________________________________
+    // Avanzar hacia un item adelante si la posicion del item es mayor que cero
+    private fun nextItem(item: Int) {
+        recyclerview.scrollToPosition(item+1)
     }
 
-    private fun salir(it: Int) {
+    //______________________________________________________________________________________________
+    // Llamar a la activity LaArenaHondartza
+    private fun play() {
         startActivity(Intent(this,LaArenaHondartza::class.java))
     }
 

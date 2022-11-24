@@ -3,21 +3,21 @@ package com.example.retomuzkiz.laArenaHondartza.modelo
 
 class ProveedorParrafos {
     companion object{
-        var listaParrafos= listOf<Parrafo>(
+        var listaParrafos= listOf(
             Parrafo(
-                " 1 El Pobaleko zubi erromanikoa El Pobaleko burdinolarantz doa, Barbadun ibaiaren gainean. XIII. mendean eraiki zen, eta Muskiz zen herriko zubirik zaharrena."
+                "La Arena hondartza Kantabriaren mugan dago, Muskizen. Hala ere hau ez da Muskizekoa bakarrik, bi herritan banatuta baitago: Zierbena eta Muskiz."
             ),
             Parrafo(
-                "  2 Muskizeko erdigunetik Barbadun ibaia igarotzen zen, eta, beraz, zubi bat eraiki behar izan zuten herritik arazorik gabe mugitu ahal izateko. Horri esker,"
+                "Bizkaiko kostaldeko bigarren hondartzarik zabalena da, ia kilometro bat luze, 966 metro hain zuzen."
             ),
             Parrafo(
-                " 3 El Pobaleko zubi erromanikoa El Pobaleko burdinolarantz doa, Barbadun ibaiaren gainean. XIII. mendean eraiki zen, eta Muskiz zen herriko zubirik zaharrena."
+                "Hondartza honetan Barbadun ibaia isurtzen da, eta hura gurutzatu egin daiteke, hondartza Pobeña auzoarekin lotzen duen zubi bati esker."
             ),
             Parrafo(
-                " 4 Muskizeko erdigunetik Barbadun ibaia igarotzen zen, eta, beraz, zubi bat eraiki behar izan zuten herritik arazorik gabe mugitu ahal izateko. Horri esker,"
+                "La Arena hondartzak balio botaniko handiko ingurumen eremua, hareatzak, dunak eta padurak ditu."
             ),
             Parrafo(
-                " 5 El Pobaleko zubi erromanikoa El Pobaleko burdinolarantz doa, Barbadun ibaiaren gainean. XIII. mendean eraiki zen, eta Muskiz zen herriko zubirik zaharrena."
+                "Jarduera eta kirol asko praktikatu daitezke hemen, haien artean famatuena surfa."
             ),
 
         )

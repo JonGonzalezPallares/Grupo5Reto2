@@ -131,7 +131,7 @@
 
         <!--Activity de la Arena-->
         <activity
-            android:name=".laArenaHondartza.IntroActivity"
+            android:name=".MenuPrincipal"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -190,7 +190,7 @@
 
         <!--Activity del menu principal-->
         <activity
-            android:name=".MenuPrincipal"
+            android:name=".laArenaHondartza.IntroActivity"
             android:exported="true"
             android:label="@string/title_activity_maps">
             <meta-data
