@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.retomuzkiz.Burdinola.BurdinolaVideoActivity
 import com.example.retomuzkiz.databinding.SingleActividadBinding
 import com.example.retomuzkiz.databinding.VistaJugadorBinding
+import com.example.retomuzkiz.gastelua.PuzzleActivity
 import com.example.retomuzkiz.ponekacoermita.MarineroActivity
 import com.example.retomuzkiz.puenteRomano.PuenteJuego
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
@@ -52,6 +53,8 @@ class rvDesplegableAdepter(var listaActividades: List<Actividad>, val context: C
 
                 }
                 "Muñatones Gaztelua"->{
+                    val g = Intent(context, PuzzleActivity::class.java)
+                    startActivity(context,g,null)
 
                 }
                 "San Juan Gaua"->{

@@ -19,7 +19,7 @@
         android:theme="@style/Theme.RetoMuzkiz"
         tools:targetApi="31">
         <activity
-            android:name="gastelua.ExplicacionActivity"
+            android:name=".gastelua.ExplicacionActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
