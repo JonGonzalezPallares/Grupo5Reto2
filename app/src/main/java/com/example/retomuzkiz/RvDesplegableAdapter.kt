@@ -9,9 +9,13 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.retomuzkiz.burdinola.BurdinolaVideoActivity
 import com.example.retomuzkiz.databinding.SingleActividadBinding
+import com.example.retomuzkiz.databinding.VistaJugadorBinding
 import com.example.retomuzkiz.itsaslurIbilbidea.PantallaEspera
 import com.example.retomuzkiz.laArenaHondartza.IntroActivity
 import com.example.retomuzkiz.ponekakoermita.MarineroActivity
+import com.example.retomuzkiz.gastelua.PuzzleActivity
+import com.example.retomuzkiz.ponekacoermita.MarineroActivity
+import com.example.retomuzkiz.puenteRomano.PuenteJuego
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
 
 class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: Context): RecyclerView.Adapter<RvDesplegableAdapter.ViewHolder>() {
@@ -55,6 +59,8 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
                     startActivity(context, intento,null)
                 }
                 "Muñatones Gaztelua"->{
+                    val g = Intent(context, PuzzleActivity::class.java)
+                    startActivity(context,g,null)
 
                 }
                 "San Juan Gaua"->{
