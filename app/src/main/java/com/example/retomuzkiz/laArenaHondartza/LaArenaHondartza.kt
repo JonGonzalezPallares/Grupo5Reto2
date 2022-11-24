@@ -77,7 +77,7 @@ class LaArenaHondartza : Activity() {
     //______________________________________________________________________________________________
     private fun cargarImagenes() {
         preguntas = intArrayOf(
-            R.drawable.pre0,
+            R.drawable.pre00,
             R.drawable.pre1,
             R.drawable.pre2,
             R.drawable.pre3,
