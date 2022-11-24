@@ -94,7 +94,24 @@ class LaArenaHondartza : Activity() {
     }
 
     //______________________________________________________________________________________________
-    /* devuelve array desordenado  requiere de parametro la longitud del array */
+    // Esconde la vista finalizado el juego
+    private fun hideLayout(){
+        binding.layoutImage.visibility = View.GONE
+    }
+
+    //______________________________________________________________________________________________
+    // Esconde la vista del juego y muestra la vista finalizado el juego
+    private fun showLayout(){
+        Handler(Looper.myLooper()?:return).postDelayed({
+            binding.layotButton.visibility = View.GONE
+            binding.layoutPreguntas.visibility = View.GONE
+            binding.layoutText.visibility = View.GONE
+            binding.layoutImage.visibility = View.VISIBLE
+        }, 1000)
+    }
+
+    //______________________________________________________________________________________________
+    /* devolver array desordenado  requiere de parametro la longitud del array */
     private fun desordenarArray(longitud: Int): ArrayList<Int> {
         val result = ArrayList<Int>()
         for (i in 0 until longitud) {
@@ -105,6 +122,15 @@ class LaArenaHondartza : Activity() {
     }
 
     //______________________________________________________________________________________________
+    /*
+    * comprobar si no se ha seleccionado primera imagen, di no se selecciona como primera imagen
+    * el segundo click se marca como segunda imagen, comprueba primera y segunda imagen
+    * si se encuentran en la misma posicion setea la variable primera a null y libera el bloqueo
+    * suma uno a la variable aciertos
+    * si aciertos es igual a tamaño del array termina el juego
+    * si no se encuentran en la misma posicion demora un segundo y setea las imagenes seleccionadas
+    * como estaban
+    * */
     private fun comprobar(i: Int, pregunta: Boolean, imgb: ImageButton?) {
         if (primero == null)
         {
@@ -219,20 +245,5 @@ class LaArenaHondartza : Activity() {
             tableroRespuestas[i]!!.setOnClickListener { if (!bloqueo) comprobar(i, false, tableroRespuestas[i]) }
             tableroPreguntas[i]!!.setOnClickListener { if (!bloqueo) comprobar(i, true, tableroPreguntas[i]) }
         }
-    }
-
-    //______________________________________________________________________________________________
-    private fun hideLayout(){
-        binding.layoutImage.visibility = View.GONE
-    }
-
-    //______________________________________________________________________________________________
-    private fun showLayout(){
-        Handler(Looper.myLooper()?:return).postDelayed({
-            binding.layotButton.visibility = View.GONE
-            binding.layoutPreguntas.visibility = View.GONE
-            binding.layoutText.visibility = View.GONE
-            binding.layoutImage.visibility = View.VISIBLE
-        }, 1000)
     }
 }
