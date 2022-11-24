@@ -18,32 +18,39 @@ class IntroActivity : AppCompatActivity() {
         binding = ActivityIntroBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        init()
+    }
 
+    //______________________________________________________________________________________________
+    // Inicializar  recyclerview adapter
+    private fun init() {
         recyclerview = binding.rvParrafos
         adapter = RvAdapterParrafos(ProveedorParrafos.listaParrafos,{
-            salir(it)
+            play()
         },{
-            seguiente(it)
+            nextItem(it)
         },{
-            atras(it)
+            previusItem(it)
         })
+
         recyclerview.adapter = adapter
     }
 
     //______________________________________________________________________________________________
-    // retrocede hacia un item atras si la posicion del item es mayor que cero
-    private fun atras(item: Int) {
+    // Retroceder hacia un item atras si la posicion del item es mayor que cero
+    private fun previusItem(item: Int) {
         recyclerview.scrollToPosition(item-1)
     }
 
     //______________________________________________________________________________________________
-    // avanza hacia un item adelante si la posicion del item es mayor que cero
-    private fun seguiente(item: Int) {
+    // Avanzar hacia un item adelante si la posicion del item es mayor que cero
+    private fun nextItem(item: Int) {
         recyclerview.scrollToPosition(item+1)
     }
 
     //______________________________________________________________________________________________
-    private fun salir(it: Int) {
+    // Llamar a la activity LaArenaHondartza
+    private fun play() {
         startActivity(Intent(this,LaArenaHondartza::class.java))
     }
 

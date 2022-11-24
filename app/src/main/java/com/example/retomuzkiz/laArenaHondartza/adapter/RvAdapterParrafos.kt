@@ -12,10 +12,12 @@ import com.example.retomuzkiz.laArenaHondartza.modelo.Parrafo
 
 class RvAdapterParrafos(
     private var parrafosList: List<Parrafo>,
-    private var salir: (Int) -> Unit,
-    private var seguiente: (Int) -> Unit,
-    private var atras: (Int) -> Unit,
+    private var play: () -> Unit,
+    private var nextItem: (Int) -> Unit,
+    private var privuisItem: (Int) -> Unit,
 ):RecyclerView.Adapter<ParrafosViewHolder>() {
+
+    //______________________________________________________________________________________________
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ParrafosViewHolder {
         val view = LayoutInflater
             .from(parent.context)
@@ -23,10 +25,12 @@ class RvAdapterParrafos(
         return ParrafosViewHolder(view,)
     }
 
+    //______________________________________________________________________________________________
     override fun onBindViewHolder(holder: ParrafosViewHolder, position: Int) {
-       holder.bind(parrafosList,salir, seguiente,atras)
+       holder.bind(parrafosList,play, nextItem,privuisItem)
     }
 
+    //______________________________________________________________________________________________
     override fun getItemCount(): Int = parrafosList.size
 
 }
@@ -34,29 +38,38 @@ class RvAdapterParrafos(
 class ParrafosViewHolder(view: View): RecyclerView.ViewHolder(view) {
     private val binding = ItemIntroBinding.bind(view)
 
-    fun bind(parrafosList: List<Parrafo>, salir: (Int) -> Unit, seguiente: (Int) -> Unit, atras: (Int) -> Unit ) {
+    //______________________________________________________________________________________________
+    fun bind(parrafosList: List<Parrafo>,
+             play:() -> Unit,
+             nextItem: (Int) -> Unit,
+             privuisItem: (Int) -> Unit
+    ) {
+
         binding.btnSalir.isVisible=false
         binding.btnAtras.isEnabled=false
         binding.btnSeguiente.isEnabled=false
-        binding.tvParrafo.text = parrafosList[adapterPosition].parrafo
+        binding.tvParrafo.text = parrafosList[bindingAdapterPosition].parrafo
 
-
+        // si la posicion es mayor a cero, habilitar el button atras con lambda
         if (bindingAdapterPosition >= 1){
             binding.btnAtras.isEnabled=true
             binding.btnAtras.setOnClickListener {
-                atras(bindingAdapterPosition)
+                privuisItem(bindingAdapterPosition)
+
             }
         }
+        // si la posicion es menor que el ultimo item, habilitar el button seguiente con lambda
         if(bindingAdapterPosition < parrafosList.size-1){
             binding.btnSeguiente.isEnabled = true
             binding.btnSeguiente.setOnClickListener {
-                seguiente(bindingAdapterPosition)
+                nextItem(bindingAdapterPosition)
             }
         }
+        // si la posicion es igual a ultimo item, habilitar el button salir con lambda
         if (bindingAdapterPosition == parrafosList.size-1){
             binding.btnSalir.isVisible=true
             binding.btnSalir.setOnClickListener {
-                salir(bindingAdapterPosition)
+                play()
             }
         }
 
