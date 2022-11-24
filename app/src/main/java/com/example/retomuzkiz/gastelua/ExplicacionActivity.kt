@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ActivityExplicacionBinding
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
-import com.example.retomuzkiz.ponekacoermita.juegodemarActivity
+import com.example.retomuzkiz.ponekakoermita.JuegodemarActivity
 
 class ExplicacionActivity : AppCompatActivity() {
     private lateinit var binding : ActivityExplicacionBinding

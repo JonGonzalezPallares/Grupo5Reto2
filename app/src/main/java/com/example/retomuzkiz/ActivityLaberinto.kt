@@ -7,5 +7,8 @@ class ActivityLaberinto : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_laberinto)
+
+        //Para borrar la barra superior
+        this.supportActionBar!!.hide()
     }
 }

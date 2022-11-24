@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ActivityExplicacionBinding
 import com.example.retomuzkiz.databinding.ActivityPuzzleBinding
-import com.example.retomuzkiz.ponekacoermita.MarineroActivity
+import com.example.retomuzkiz.ponekakoermita.MarineroActivity
 
 class PuzzleActivity : AppCompatActivity() {
     private lateinit var binding :ActivityPuzzleBinding

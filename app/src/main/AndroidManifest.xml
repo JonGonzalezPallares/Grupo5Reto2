@@ -59,6 +59,18 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+
+
+
+        <!--Activity laberinto-->
+        <activity
+            android:name=".ActivityLaberinto"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
             
 
 

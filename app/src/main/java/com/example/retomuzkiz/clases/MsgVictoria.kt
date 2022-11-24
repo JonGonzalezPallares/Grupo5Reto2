@@ -18,7 +18,6 @@ class MsgVictoria() {
                 startActivity(context, intento, null)
             }
             .setCancelable(false)
-
         constructor.show()
     }
 }

@@ -14,7 +14,6 @@ import com.example.retomuzkiz.itsaslurIbilbidea.PantallaEspera
 import com.example.retomuzkiz.laArenaHondartza.IntroActivity
 import com.example.retomuzkiz.ponekakoermita.MarineroActivity
 import com.example.retomuzkiz.gastelua.PuzzleActivity
-import com.example.retomuzkiz.ponekacoermita.MarineroActivity
 import com.example.retomuzkiz.puenteRomano.PuenteJuego
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
 
