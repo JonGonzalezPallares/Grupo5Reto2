@@ -5,6 +5,7 @@ import android.app.Activity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -142,7 +143,7 @@ class LaArenaHondartza : Activity() {
                 puntos ="Has acertado: "
                 if (aciertos == respuestas.size)
                 {
-                    println("Game over...")
+                    showLayout()
                 }
             } else 
             {
@@ -186,6 +187,7 @@ class LaArenaHondartza : Activity() {
         cargarTablero()
         cargarBotones()
         cargarImagenes()
+        hideLayout()
 
         arrayDesordenadoRespuestas = desordenarArray(respuestas.size)
         arrayDesordenadoPreguntas = desordenarArray(preguntas.size)
@@ -207,7 +209,7 @@ class LaArenaHondartza : Activity() {
                 tableroRespuestas[i]!!.setImageResource(fondo)
                 tableroPreguntas[i]!!.setImageResource(fondo)
             }
-        }, 5000)
+        }, 700)
 
         // al hacer  click sobre alguna foto llama a la funcion comprobar si no esta bloqueado
         for (i in 0..4)
@@ -218,5 +220,19 @@ class LaArenaHondartza : Activity() {
             tableroPreguntas[i]!!.setOnClickListener { if (!bloqueo) comprobar(i, true, tableroPreguntas[i]) }
         }
     }
+
     //______________________________________________________________________________________________
+    private fun hideLayout(){
+        binding.layoutImage.visibility = View.GONE
+    }
+
+    //______________________________________________________________________________________________
+    private fun showLayout(){
+        Handler(Looper.myLooper()?:return).postDelayed({
+            binding.layotButton.visibility = View.GONE
+            binding.layoutPreguntas.visibility = View.GONE
+            binding.layoutText.visibility = View.GONE
+            binding.layoutImage.visibility = View.VISIBLE
+        }, 1000)
+    }
 }

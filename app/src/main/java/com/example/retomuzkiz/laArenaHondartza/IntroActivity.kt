@@ -3,7 +3,6 @@ package com.example.retomuzkiz.laArenaHondartza
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import com.example.retomuzkiz.databinding.ActivityIntroBinding
 import com.example.retomuzkiz.laArenaHondartza.adapter.RvAdapterParrafos
@@ -32,14 +31,14 @@ class IntroActivity : AppCompatActivity() {
         recyclerview.adapter = adapter
     }
 
-    private fun atras(it: Int) {
-        if (it >= 1)
-        recyclerview.scrollToPosition(it-1)
+    private fun atras(item: Int) {
+        if (item >= 1)
+        recyclerview.scrollToPosition(item-1)
     }
 
-    private fun seguiente(it: Int) {
-        if(it < adapter.itemCount-1)
-        recyclerview.scrollToPosition(it+1)
+    private fun seguiente(item: Int) {
+        if(item < adapter.itemCount-1)
+        recyclerview.scrollToPosition(item+1)
     }
 
     private fun salir(it: Int) {
