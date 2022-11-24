@@ -13,12 +13,11 @@ class IntroActivity : AppCompatActivity() {
     private lateinit var adapter : RvAdapterParrafos
     private lateinit var recyclerview: RecyclerView
 
+    //______________________________________________________________________________________________
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityIntroBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-
 
         recyclerview = binding.rvParrafos
         adapter = RvAdapterParrafos(ProveedorParrafos.listaParrafos,{
@@ -31,16 +30,19 @@ class IntroActivity : AppCompatActivity() {
         recyclerview.adapter = adapter
     }
 
+    //______________________________________________________________________________________________
+    // retrocede hacia un item atras si la posicion del item es mayor que cero
     private fun atras(item: Int) {
-        if (item >= 1)
         recyclerview.scrollToPosition(item-1)
     }
 
+    //______________________________________________________________________________________________
+    // avanza hacia un item adelante si la posicion del item es mayor que cero
     private fun seguiente(item: Int) {
-        if(item < adapter.itemCount-1)
         recyclerview.scrollToPosition(item+1)
     }
 
+    //______________________________________________________________________________________________
     private fun salir(it: Int) {
         startActivity(Intent(this,LaArenaHondartza::class.java))
     }

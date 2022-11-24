@@ -36,25 +36,28 @@ class ParrafosViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     fun bind(parrafosList: List<Parrafo>, salir: (Int) -> Unit, seguiente: (Int) -> Unit, atras: (Int) -> Unit ) {
         binding.btnSalir.isVisible=false
-        binding.btnAtras.isVisible=false
+        binding.btnAtras.isEnabled=false
+        binding.btnSeguiente.isEnabled=false
         binding.tvParrafo.text = parrafosList[adapterPosition].parrafo
 
-        binding.btnSalir.setOnClickListener {
-            salir(adapterPosition)
-        }
-        binding.btnSeguiente.setOnClickListener {
-            seguiente(adapterPosition)
-        }
-        binding.btnAtras.setOnClickListener {
-            atras(adapterPosition)
-        }
 
-        if (adapterPosition>=1){
-            binding.btnAtras.isVisible=true
+        if (bindingAdapterPosition >= 1){
+            binding.btnAtras.isEnabled=true
+            binding.btnAtras.setOnClickListener {
+                atras(bindingAdapterPosition)
+            }
         }
-        if (adapterPosition==parrafosList.size-1){
+        if(bindingAdapterPosition < parrafosList.size-1){
+            binding.btnSeguiente.isEnabled = true
+            binding.btnSeguiente.setOnClickListener {
+                seguiente(bindingAdapterPosition)
+            }
+        }
+        if (bindingAdapterPosition == parrafosList.size-1){
             binding.btnSalir.isVisible=true
-
+            binding.btnSalir.setOnClickListener {
+                salir(bindingAdapterPosition)
+            }
         }
 
     }

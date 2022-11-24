@@ -9,7 +9,7 @@
     tools:context=".laArenaHondartza.LaArenaHondartza">
 
 
-    <!--layout image final-->
+    <!--Layout de imagen final-->
     <LinearLayout
         android:id="@+id/layoutImage"
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
             android:src="@drawable/irudia_arena_2"/>
     </LinearLayout>
 
-    <!--Texto prencipal-->
+    <!--Layout de texto prencipal-->
     <LinearLayout
         android:id="@+id/layoutText"
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
             android:textStyle="bold"/>
     </LinearLayout>
 
-    <!--Linear para las preguntas-->
+    <!--Layout de juego-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutPreguntas"
         android:layout_width="match_parent"
@@ -156,8 +156,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <!--linear para el button reiniciar-->
+    <!--Layout de buttones-->
     <LinearLayout
         android:id="@+id/layotButton"
         android:layout_width="match_parent"
@@ -176,6 +175,10 @@
             android:layout_height="wrap_content"
             android:text="@string/reiniciar_juego" />
     </LinearLayout>
+
+
+
+
 
 
 </LinearLayout>
