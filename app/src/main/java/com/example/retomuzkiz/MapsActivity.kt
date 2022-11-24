@@ -56,7 +56,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     protected var booleano6 = false
     protected lateinit var Servicio: Intent
 
-
+//aa
     override fun onCreate(savedInstanceState: Bundle?) {
         Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
         Listabooleanos = arrayListOf<Boolean>()
