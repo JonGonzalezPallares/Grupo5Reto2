@@ -30,18 +30,18 @@
 
         <ImageButton
             android:id="@+id/imgbtn1_1"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur1_1" />
 
         <ImageButton
             android:id="@+id/imgbtn1_2"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur1_2"
@@ -49,9 +49,9 @@
 
         <ImageButton
             android:id="@+id/imgbtn1_3"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur1_3"
@@ -59,9 +59,9 @@
 
         <ImageButton
             android:id="@+id/imgbtn1_4"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur1_4" />
@@ -91,9 +91,9 @@
 
         <ImageButton
             android:id="@+id/imgbtn2_1"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur2_1"
@@ -101,27 +101,27 @@
 
         <ImageButton
             android:id="@+id/imgbtn2_2"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur2_2" />
 
         <ImageButton
             android:id="@+id/imgbtn2_3"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur2_3" />
 
         <ImageButton
             android:id="@+id/imgbtn2_4"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur2_4" />
@@ -151,18 +151,18 @@
 
         <ImageButton
             android:id="@+id/imgbtn3_1"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur3_1" />
 
         <ImageButton
             android:id="@+id/imgbtn3_2"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur3_2"
@@ -170,18 +170,18 @@
 
         <ImageButton
             android:id="@+id/imgbtn3_3"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur1_3" />
 
         <ImageButton
             android:id="@+id/imgbtn3_4"
-            android:layout_width="150dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
             android:background="@drawable/itsaslur3_4" />
@@ -211,36 +211,36 @@
 
         <ImageButton
             android:id="@+id/imgbtn4_1"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur4_1" />
 
         <ImageButton
             android:id="@+id/imgbtn4_2"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur4_2" />
 
         <ImageButton
             android:id="@+id/imgbtn4_3"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur4_3" />
 
         <ImageButton
             android:id="@+id/imgbtn4_4"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/itsaslur4_4"

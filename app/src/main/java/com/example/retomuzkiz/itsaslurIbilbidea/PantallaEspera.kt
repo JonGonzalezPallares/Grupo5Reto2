@@ -31,6 +31,6 @@ class PantallaEspera : AppCompatActivity() {
     private fun load() {
         Handler(Looper.myLooper()?:return).postDelayed({
             binding.btnContinuar.visibility = View.VISIBLE
-        }, 5000)
+        }, 2000)
     }
 }
