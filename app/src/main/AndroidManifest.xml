@@ -97,28 +97,6 @@
 
 
 
-        <!--Activity del marinero-->
-        <activity
-            android:name=".ponekacoermita.juegodemarActivity"
-            android:exported="false"
-            android:screenOrientation="landscape">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-
-        <activity
-            android:name=".ponekacoermita.MarineroActivity"
-            android:exported="false"
-            android:screenOrientation="landscape">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-
-
-
-
         <!--Activity del mapa-->
         <activity
             android:name=".MapsActivity"

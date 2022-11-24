@@ -16,6 +16,7 @@ import com.example.retomuzkiz.ponekakoermita.MarineroActivity
 import com.example.retomuzkiz.gastelua.PuzzleActivity
 import com.example.retomuzkiz.puenteRomano.PuenteJuego
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
+import com.example.retomuzkiz.ActivityLaberinto
 
 class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: Context): RecyclerView.Adapter<RvDesplegableAdapter.ViewHolder>() {
     private lateinit var Nombres : ArrayList<String>
@@ -58,12 +59,13 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
                     startActivity(context, intento,null)
                 }
                 "Muñatones Gaztelua"->{
-                    val g = Intent(context, PuzzleActivity::class.java)
-                    startActivity(context,g,null)
+                    val intento = Intent(context, PuzzleActivity::class.java)
+                    startActivity(context, intento,null)
 
                 }
                 "San Juan Gaua"->{
-
+                    val intento = Intent(context, ActivityLaberinto::class.java)
+                    startActivity(context, intento, null)
                 }
 
             }
