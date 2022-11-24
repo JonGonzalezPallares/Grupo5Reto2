@@ -10,7 +10,9 @@ import com.example.retomuzkiz.databinding.ActivityMarineroBinding
 class MarineroActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMarineroBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        //this.supportActionBar!!.hide()
+        //Para borrar la barra superior
+        this.supportActionBar!!.hide()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_marinero)
         binding = ActivityMarineroBinding.inflate(layoutInflater)

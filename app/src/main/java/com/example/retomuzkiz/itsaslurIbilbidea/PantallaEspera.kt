@@ -18,7 +18,7 @@ class PantallaEspera : AppCompatActivity() {
         setContentView(binding.root)
 
         //Para borrar la barra superior
-        //this.supportActionBar!!.hide()
+        this.supportActionBar!!.hide()
 
         load()
 

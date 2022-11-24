@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.core.view.isVisible
+import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityItsaslurJuegoBinding
 
 class ItsaslurJuego : AppCompatActivity() {
@@ -22,7 +23,7 @@ class ItsaslurJuego : AppCompatActivity() {
         setContentView(binding.root)
 
         //Para borrar la barra superior
-        //this.supportActionBar!!.hide()
+        this.supportActionBar!!.hide()
 
         //Creamos cuatro arrays para guardar los botones
         buttonsList1 = mutableListOf(binding.imgbtn11, binding.imgbtn12, binding.imgbtn13, binding.imgbtn14)
@@ -85,7 +86,7 @@ class ItsaslurJuego : AppCompatActivity() {
         for(button in buttonsList4){
             button.setOnClickListener {
                 if(button.tag=="true"){
-                    binding.Preguntas4.visibility = View.GONE
+                    MsgVictoria().carga(this)
                 }
             }
         }

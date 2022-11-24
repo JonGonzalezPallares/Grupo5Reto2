@@ -18,7 +18,7 @@ class PuenteRomano : AppCompatActivity() {
         setContentView(binding.root)
 
         //Para borrar la barra superior
-        //this.supportActionBar!!.hide()
+        this.supportActionBar!!.hide()
 
         //Boton que lleva al primer fragment estando en el segundo
         binding.btnPrimero.setOnClickListener {

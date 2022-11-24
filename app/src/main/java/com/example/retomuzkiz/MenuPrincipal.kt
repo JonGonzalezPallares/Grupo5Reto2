@@ -19,7 +19,7 @@ class MenuPrincipal : AppCompatActivity() {
         setContentView(binding.root)
 
         //Para borrar la barra superior
-        //this.supportActionBar!!.hide()
+        this.supportActionBar!!.hide()
 
         //Prueba para ver como queda el recycleview, quitarlo cuando tengamos jugadores
         load()
@@ -29,9 +29,9 @@ class MenuPrincipal : AppCompatActivity() {
         binding.rvJugadores.adapter = adaptador
 
         binding.button.setOnClickListener {
-            //val intento = Intent(this, MapsActivity::class.java)
+            val intento = Intent(this, MapsActivity::class.java)
             //val intento = Intent(this, PuenteRomano::class.java)
-            val intento = Intent(this, PantallaEspera::class.java)
+            //val intento = Intent(this, PantallaEspera::class.java)
             startActivity(intento)
         }
     }
