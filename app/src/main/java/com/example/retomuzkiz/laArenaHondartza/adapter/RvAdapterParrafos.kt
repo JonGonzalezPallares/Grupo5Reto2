@@ -45,13 +45,12 @@ class ParrafosViewHolder(view: View): RecyclerView.ViewHolder(view) {
     ) {
 
         binding.btnSalir.isVisible=false
-        binding.btnAtras.isEnabled=false
-        binding.btnSeguiente.isEnabled=false
+        binding.btnAtras.visibility = View.INVISIBLE
         binding.tvParrafo.text = parrafosList[bindingAdapterPosition].parrafo
 
         // si la posicion es mayor a cero, habilitar el button atras con lambda
         if (bindingAdapterPosition >= 1){
-            binding.btnAtras.isEnabled=true
+            binding.btnAtras.visibility = View.VISIBLE
             binding.btnAtras.setOnClickListener {
                 privuisItem(bindingAdapterPosition)
 
@@ -59,7 +58,7 @@ class ParrafosViewHolder(view: View): RecyclerView.ViewHolder(view) {
         }
         // si la posicion es menor que el ultimo item, habilitar el button seguiente con lambda
         if(bindingAdapterPosition < parrafosList.size-1){
-            binding.btnSeguiente.isEnabled = true
+            binding.btnSeguiente.visibility = View.VISIBLE
             binding.btnSeguiente.setOnClickListener {
                 nextItem(bindingAdapterPosition)
             }
@@ -67,6 +66,7 @@ class ParrafosViewHolder(view: View): RecyclerView.ViewHolder(view) {
         // si la posicion es igual a ultimo item, habilitar el button salir con lambda
         if (bindingAdapterPosition == parrafosList.size-1){
             binding.btnSalir.isVisible=true
+            binding.btnSeguiente.visibility = View.INVISIBLE
             binding.btnSalir.setOnClickListener {
                 play()
             }

@@ -18,6 +18,10 @@ class IntroActivity : AppCompatActivity() {
         binding = ActivityIntroBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        //Para borrar la barra superior
+        this.supportActionBar!!.hide()
+
         init()
     }
 
