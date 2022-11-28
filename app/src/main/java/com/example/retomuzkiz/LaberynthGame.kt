@@ -44,6 +44,7 @@ class LaberynthGame: View {
         wallPaint.color = Color.BLACK
         wallPaint.strokeWidth = WALL_THICKNESS
         random = Random()
+
         createMaze()
 
     }
@@ -54,9 +55,9 @@ class LaberynthGame: View {
         var width = width
         var height = height
         if(width/height < COLS/ ROWS){
-            cellSize= width/(COLS+4).toFloat()
+            cellSize= width/(COLS+10).toFloat()
         }else{
-            cellSize= height/(ROWS+4).toFloat()
+            cellSize= height/(ROWS+10).toFloat()
 
         }
         hMargin = (width - COLS*cellSize)/2
@@ -149,8 +150,8 @@ class LaberynthGame: View {
 //            if (player == exit){
 //                ROWS += 5
 //                COLS += 5
-                createMaze()
-                contador ++
+            createMaze()
+            contador ++
 
         }
     }
@@ -202,16 +203,15 @@ class LaberynthGame: View {
     }
 
 
-    private fun createMaze(){
+    private fun createMaze() {
 
         var stack = Stack<Cell>()
         lateinit var currentCell: Cell
-        var nextCell: Cell?
 
-        cells = Array(COLS){ col ->
+        cells = Array(COLS) { col ->
             Array(ROWS) { row ->
-               var emptyCell = Cell(col,row)
-                var celdaBuena = Cell(col,row)
+                var emptyCell = Cell(col, row)
+                var celdaBuena = Cell(col, row)
                 emptyCell.visible = false
                 emptyCell.topWall = false
                 emptyCell.bottomWall = false
@@ -219,116 +219,118 @@ class LaberynthGame: View {
                 emptyCell.rightWall = false
                 var cell = Cell(col, row)
 
-                if(col == 0){
-                    if(row == 0||row==1||row == 2||row == 3||row == 4||row == 5||row == 13||row==14||row == 15||row == 16||row == 17||row == 18){
-                       celdaBuena= emptyCell
+                if (col == 0) {
+                    if (row == 0 || row == 1 || row == 2 || row == 3 || row == 4 || row == 5 || row == 13 || row == 14 || row == 15 || row == 16 || row == 17 || row == 18) {
+                        celdaBuena = emptyCell
 
                     }
 
-                }
-                else if(col == 1){
-                    if(row == 0||row==1||row == 2||row == 3||row == 15|| row == 16||row == 17||row == 18){
-                        celdaBuena= emptyCell
+                } else if (col == 1) {
+                    if (row == 0 || row == 1 || row == 2 || row == 3 || row == 15 || row == 16 || row == 17 || row == 18) {
+                        celdaBuena = emptyCell
 
                     }
 
-                }
-                else if(col == 2){
-                    if(row == 0||row==1||row == 2||row == 16||row == 17||row == 18){
-                        celdaBuena= emptyCell
+                } else if (col == 2) {
+                    if (row == 0 || row == 1 || row == 2 || row == 16 || row == 17 || row == 18) {
+                        celdaBuena = emptyCell
 
                     }
 
-                }
-                else if(col == 3){
-                    if(row == 0||row==1||row == 17||row == 18){
-                        celdaBuena= emptyCell
+                } else if (col == 3) {
+                    if (row == 0 || row == 1 || row == 17 || row == 18) {
+                        celdaBuena = emptyCell
 
                     }
 
-                }
-                else if(col == 5||col == 4){
-                    if(row == 0||row == 18){
-                        celdaBuena= emptyCell
+                } else if (col == 5 || col == 4) {
+                    if (row == 0 || row == 18) {
+                        celdaBuena = emptyCell
 
                     }
 
-                }
-                else if(col == 6){
-                    if(row == 5|| row == 6 || row == 7 || row == 8 || row == 9|| row == 10|| row == 11 || row == 12||row == 13){
-                        celdaBuena= emptyCell
+                } else if (col == 6) {
+                    if (row == 5 || row == 6 || row == 7 || row == 8 || row == 9 || row == 10 || row == 11 || row == 12 || row == 13) {
+                        celdaBuena = emptyCell
 
                     }
 
-                }
-                else if(col == 7){
-                    if(row == 4||row == 5||row == 6 || row == 7 || row == 8 || row == 9|| row == 10|| row == 11 || row == 12||row == 13||row==14){
-                        celdaBuena= emptyCell
+                } else if (col == 7) {
+                    if (row == 4 || row == 5 || row == 6 || row == 7 || row == 8 || row == 9 || row == 10 || row == 11 || row == 12 || row == 13 || row == 14) {
+                        celdaBuena = emptyCell
 
                     }
 
-                }
-                else if(col == 8){
-                    if(row == 3||row == 4||row == 5||row == 6 || row == 7 || row == 8 || row == 9|| row == 10|| row == 11 || row == 12||row == 13||row==14||row == 15){
-                        celdaBuena= emptyCell
+                } else if (col == 8) {
+                    if (row == 3 || row == 4 || row == 5 || row == 6 || row == 7 || row == 8 || row == 9 || row == 10 || row == 11 || row == 12 || row == 13 || row == 14 || row == 15) {
+                        celdaBuena = emptyCell
 
                     }
-                }
-                else if(col == 9){
-                    if(row == 2||row == 3||row == 4||row == 5||row == 6 || row == 7 || row == 8 || row == 9|| row == 10|| row == 11 || row == 12||row == 13||row==14||row == 15||row == 16){
-                        celdaBuena= emptyCell
+                } else if (col == 9) {
+                    if (row == 2 || row == 3 || row == 4 || row == 5 || row == 6 || row == 7 || row == 8 || row == 9 || row == 10 || row == 11 || row == 12 || row == 13 || row == 14 || row == 15 || row == 16) {
+                        celdaBuena = emptyCell
 
                     }
 
-                }
-
-
-                else if(col == 10||col == 11||col == 12){
-                    if(row==1||row == 2||row == 3||row == 4||row == 5||row == 6 || row == 7 || row == 8 || row == 9|| row == 10|| row == 11 || row == 12||row == 13||row==14||row == 15||row == 16||row == 17){
-                        celdaBuena= emptyCell
+                } else if (col == 10 || col == 11 || col == 12) {
+                    if (row == 1 || row == 2 || row == 3 || row == 4 || row == 5 || row == 6 || row == 7 || row == 8 || row == 9 || row == 10 || row == 11 || row == 12 || row == 13 || row == 14 || row == 15 || row == 16 || row == 17) {
+                        celdaBuena = emptyCell
 
 
                     }
 
 
-
                 }
 
-                   celdaBuena
+                celdaBuena
 
 
             }
         }
 
-        currentCell = cells[0][0]
+        currentCell = cells[12][0]
         currentCell.visited = true
         player = cells[12][0]
-        exit = cells[COLS-1][ROWS-1]
+        exit = cells[COLS - 1][ROWS - 1]
         var row = 0
-        for (col in 0 until COLS-1){
-            for(row in 0 until ROWS-1){
-                nextCell = cells[currentCell.cols1][currentCell.rows1+1]
-                delimitarLuna(currentCell,nextCell)
-                currentCell = nextCell
-            }
-            row = 0
-            nextCell= cells[currentCell.cols1+1][row]
-            currentCell = nextCell
-        }
+//
+//        for (col in 0 until COLS - 1) {
+//            for (row in 0 until ROWS - 1) {
+//                nextCell = cells[currentCell.cols1][currentCell.rows1]
+//                delimitarLuna(currentCell, nextCell)
+//                currentCell = nextCell
+//            }
+//            row = 0
+//            nextCell = cells[currentCell.cols1 + 1][row]
+//            currentCell = nextCell
+//
+//
+//        }
+//
+///*            */
+//
+//
+//       Thread{
+//           do {
+//               println("Ha entrado")
+//               nextCell = getNeighbour(currentCell)
+//               if (nextCell != null) {
+//
+//                   removeWall(currentCell, nextCell)
+//                   stack.push(currentCell)
+//                   currentCell = nextCell
+//                   currentCell.visited = true
+//               } else {
+//                   currentCell = stack.pop()
+//               }
+//           } while (!stack.isEmpty())
+//
+//       }
 
-        do {
-            nextCell = getNeighbour(player)
-            if (nextCell != null) {
 
-               removeWall(player, nextCell)
-                stack.push(player)
-                player = nextCell
-                player.visited = true
-            } else {
-                player = stack.pop()
-            }
-        }while (!stack.isEmpty())
     }
+
+
 
     private fun delimitarLuna(currentCell: Cell,nextCell: Cell) {
         //Si currentCell es la de abajo
@@ -353,9 +355,9 @@ class LaberynthGame: View {
                 nextCell.bottomWall = true
             }
             else{
-            currentCell.bottomWall=false
-            nextCell.topWall = false
-        }
+                currentCell.bottomWall=false
+                nextCell.topWall = false
+            }
         }
 
         //Si Current Cell es la de la izquierda
@@ -451,18 +453,18 @@ class LaberynthGame: View {
         }
         if(neighbours.size>0) {
             var index: Int = random.nextInt(neighbours.size)
-           do {
-               index=random.nextInt(neighbours.size)
-           }while(neighbours.get(index).visible == false)
+            do {
+                index=random.nextInt(neighbours.size)
+            }while(neighbours.get(index).visible == false)
 
 
-                return neighbours.get(index)
+            return neighbours.get(index)
 
 
         }else{
             return null
         }
-
+    }
 }
 private class Cell{
     var topWall=true
