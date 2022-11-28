@@ -8,6 +8,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import java.util.*
+import kotlin.concurrent.thread
 
 class LaberynthGame: View {
     companion object{
@@ -147,10 +148,11 @@ class LaberynthGame: View {
     }
     private fun checkExit(){
         if(contador != 3){
-//            if (player == exit){
+          if (player == exit) {
 //                ROWS += 5
 //                COLS += 5
-            createMaze()
+              createMaze()
+          }
             contador ++
 
         }
@@ -288,10 +290,10 @@ class LaberynthGame: View {
             }
         }
 
-        currentCell = cells[12][0]
+        currentCell = cells[9][0]
         currentCell.visited = true
-        player = cells[12][0]
-        exit = cells[COLS - 1][ROWS - 1]
+        player = cells[9][0]
+        exit = cells[COLS - 4][ROWS - 1]
         var row = 0
 //
 //        for (col in 0 until COLS - 1) {
@@ -310,22 +312,33 @@ class LaberynthGame: View {
 ///*            */
 //
 //
-//       Thread{
-//           do {
-//               println("Ha entrado")
-//               nextCell = getNeighbour(currentCell)
-//               if (nextCell != null) {
 //
-//                   removeWall(currentCell, nextCell)
-//                   stack.push(currentCell)
-//                   currentCell = nextCell
-//                   currentCell.visited = true
-//               } else {
-//                   currentCell = stack.pop()
-//               }
-//           } while (!stack.isEmpty())
-//
-//       }
+        var nextCell:Cell? = null
+        var t = Thread  (){
+            do {
+                println("Ha entrado")
+
+
+                nextCell = getNeighbour(currentCell)
+
+                if (nextCell != currentCell && nextCell!!.visible) {
+
+                    removeWall(currentCell, nextCell!!)
+
+                    stack.push(currentCell)
+                    currentCell = nextCell as Cell
+                    currentCell.visited = true
+                } else {
+
+                    currentCell = stack.pop()
+                }
+            } while (!stack.isEmpty())
+        }
+        t.start()
+
+
+
+ //      }
 
 
     }
@@ -456,13 +469,15 @@ class LaberynthGame: View {
             do {
                 index=random.nextInt(neighbours.size)
             }while(neighbours.get(index).visible == false)
+//            if (neighbours.get(index).rows1>= cell.cols1){
+                return neighbours.get(index)
+          //      }
 
 
-            return neighbours.get(index)
 
 
         }else{
-            return null
+            return cell
         }
     }
 }

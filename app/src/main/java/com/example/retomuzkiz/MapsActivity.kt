@@ -15,6 +15,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
+import com.example.retomuzkiz.clases.Actividad
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.google.android.gms.location.FusedLocationProviderClient

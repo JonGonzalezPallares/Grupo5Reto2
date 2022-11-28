@@ -3,9 +3,8 @@ package com.example.retomuzkiz
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.retomuzkiz.Laberinto.ActivityLaberinto
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
-import com.example.retomuzkiz.itsaslurIbilbidea.PantallaEspera
-import com.example.retomuzkiz.puenteRomano.PuenteRomano
 
 class MenuPrincipal : AppCompatActivity() {
 

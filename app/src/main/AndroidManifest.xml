@@ -65,7 +65,7 @@
 
         <!--Activity laberinto-->
         <activity
-            android:name=".ActivityLaberinto"
+            android:name=".Laberinto.ActivityLaberinto"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
