@@ -15,6 +15,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
+import androidx.core.graphics.drawable.toDrawable
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -73,6 +74,9 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         guideMode()
+
+        val a = R.drawable.fondo_degradado
+        this.supportActionBar!!.setBackgroundDrawable(a.toDrawable())
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager

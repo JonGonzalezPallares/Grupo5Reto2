@@ -29,10 +29,8 @@ class MenuPrincipal : AppCompatActivity() {
         binding.rvJugadores.adapter = adaptador
 
         binding.button.setOnClickListener {
-            val intento = Intent(this, MapsActivity::class.java)
-            //val intento = Intent(this, PuenteRomano::class.java)
-            //val intento = Intent(this, PantallaEspera::class.java)
-            //val intento = Intent(this, LaberynthGame::class.java)
+            //val intento = Intent(this, MapsActivity::class.java)
+            val intento = Intent(this, PuenteRomano::class.java)
             startActivity(intento)
         }
         binding.btnLaberinto.setOnClickListener(){

@@ -1,5 +1,6 @@
 package com.example.retomuzkiz.puenteRomano
 
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -29,6 +30,7 @@ class PuenteJuego : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPuenteJuegoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val colorSeleccion = Color.
 
         //Para borrar la barra superior
         this.supportActionBar!!.hide()

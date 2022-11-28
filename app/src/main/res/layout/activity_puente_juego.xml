@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_degradado"
     tools:context=".puenteRomano.PuenteJuego">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,7 +28,9 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="@string/puente_romano_preg_1"
+            android:textColor="#B544F3"
             android:textSize="30dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +54,9 @@
                 android:id="@+id/rb_res1_2"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:text="@string/puente_preg_1_res_2" />
+                android:text="@string/puente_preg_1_res_2"
+                android:textColor="#37FF00"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/rb_res1_3"
@@ -83,7 +88,9 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="@string/puente_romano_preg_2"
+            android:textColor="#B544F3"
             android:textSize="30dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -140,6 +147,7 @@
             android:layout_marginEnd="10dp"
             android:text="@string/puente_romano_preg_3"
             android:textSize="30dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -196,6 +204,7 @@
             android:layout_marginEnd="10dp"
             android:text="@string/puente_romano_preg_4"
             android:textSize="30dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -294,6 +303,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="164dp"
         android:layout_marginEnd="153dp"
+        android:background="@drawable/estilo_botones"
         android:enabled="false"
         android:text="Comprobar"
         app:layout_constraintBottom_toTopOf="@+id/imgFinal"
