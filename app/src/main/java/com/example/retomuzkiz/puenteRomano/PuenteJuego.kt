@@ -1,6 +1,7 @@
 package com.example.retomuzkiz.puenteRomano
 
 import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -30,7 +31,6 @@ class PuenteJuego : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPuenteJuegoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val colorSeleccion = Color.
 
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
@@ -48,14 +48,29 @@ class PuenteJuego : AppCompatActivity() {
                 R.id.rb_res1_1 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res1_1).text.toString()
                     seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes11.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes12.typeface = Typeface.DEFAULT
+                    binding.rbRes13.typeface = Typeface.DEFAULT
                 }
                 R.id.rb_res1_2 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res1_2).text.toString()
                     seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes11.typeface = Typeface.DEFAULT
+                    binding.rbRes12.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes13.typeface = Typeface.DEFAULT
                 }
                 R.id.rb_res1_3 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res1_3).text.toString()
                     seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes11.typeface = Typeface.DEFAULT
+                    binding.rbRes12.typeface = Typeface.DEFAULT
+                    binding.rbRes13.typeface = Typeface.DEFAULT_BOLD
                 }
             }
             binding.btnComprobar.isEnabled = true
@@ -67,14 +82,29 @@ class PuenteJuego : AppCompatActivity() {
                 R.id.rb_res2_1 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res2_1).text.toString()
                     seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes21.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes22.typeface = Typeface.DEFAULT
+                    binding.rbRes23.typeface = Typeface.DEFAULT
                 }
                 R.id.rb_res2_2 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res2_2).text.toString()
                     seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes21.typeface = Typeface.DEFAULT
+                    binding.rbRes22.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes23.typeface = Typeface.DEFAULT
                 }
                 R.id.rb_res2_3 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res2_3).text.toString()
                     seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes21.typeface = Typeface.DEFAULT
+                    binding.rbRes22.typeface = Typeface.DEFAULT
+                    binding.rbRes23.typeface = Typeface.DEFAULT_BOLD
                 }
             }
             binding.btnComprobar.isEnabled = true
@@ -86,14 +116,29 @@ class PuenteJuego : AppCompatActivity() {
                 R.id.rb_res3_1 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res3_1).text.toString()
                     seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes31.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes32.typeface = Typeface.DEFAULT
+                    binding.rbRes33.typeface = Typeface.DEFAULT
                 }
                 R.id.rb_res3_2 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res3_2).text.toString()
                     seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes31.typeface = Typeface.DEFAULT
+                    binding.rbRes32.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes33.typeface = Typeface.DEFAULT
                 }
                 R.id.rb_res3_3 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res3_3).text.toString()
                     seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes31.typeface = Typeface.DEFAULT
+                    binding.rbRes32.typeface = Typeface.DEFAULT
+                    binding.rbRes33.typeface = Typeface.DEFAULT_BOLD
                 }
             }
             binding.btnComprobar.isEnabled = true
@@ -105,14 +150,29 @@ class PuenteJuego : AppCompatActivity() {
                 R.id.rb_res4_1 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res4_1).text.toString()
                     seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes41.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes42.typeface = Typeface.DEFAULT
+                    binding.rbRes43.typeface = Typeface.DEFAULT
                 }
                 R.id.rb_res4_2 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res4_2).text.toString()
                     seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes41.typeface = Typeface.DEFAULT
+                    binding.rbRes42.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes43.typeface = Typeface.DEFAULT
                 }
                 R.id.rb_res4_3 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res4_3).text.toString()
                     seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes41.typeface = Typeface.DEFAULT
+                    binding.rbRes42.typeface = Typeface.DEFAULT
+                    binding.rbRes43.typeface = Typeface.DEFAULT_BOLD
                 }
             }
             binding.btnComprobar.isEnabled = true
