@@ -1,6 +1,7 @@
 package com.example.retomuzkiz
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -14,7 +15,12 @@ import android.content.res.Configuration
 import android.os.Handler
 import android.os.Looper
 import android.view.MenuItem
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.view.isVisible
+import androidx.drawerlayout.widget.DrawerLayout
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -29,6 +35,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.navigation.NavigationView
 
 class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener {
     object SITESNAMES {
@@ -63,16 +70,94 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     private var booleano4 = false
     private var booleano5 = false
     private var booleano6 = false
+    var navegacion = false
     private lateinit var Servicio: Intent
+    lateinit var toggle : ActionBarDrawerToggle
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        this.supportActionBar!!.hide()
         Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
         listabooleanos = arrayListOf()
         super.onCreate(savedInstanceState)
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         guideMode()
+        val navview : NavigationView = findViewById(R.id.lateralmenu)
+        //menu lateral
+        binding.Navegation.setOnClickListener{
+            if(navegacion == false){
+                navegacion = true
+            }
+            else{
+                navegacion = false
+            }
+            binding.lateralmenu.isVisible = navegacion
+
+        }
+        //______________________________________________________________________________________________
+        //funciones del menu
+        navview.setNavigationItemSelectedListener { menu ->
+            when(menu.itemId) {
+                R.id.m_home -> {
+                    Toast.makeText(this, " a", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.m_ranking -> {
+                    Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.m_logout -> {
+                true
+                }
+                R.id.m_Modoguiado -> {
+                    //Carcar el modo guiado
+                    guideMode()
+                    warning("", "Ahoras estas en el modo guiado")
+                        true
+                }
+                R.id.m_Modolibre -> {
+                    //cargar el modo libre
+                    freeMode()
+                    warning("", "Ahoras estas en el modo libre")
+                    true
+                }
+                else -> {false}
+            }
+        }
+        //______________________________________________________________________________________________
+
+        /*
+        //val drawerLayout:DrawerLayout = findViewById(R.id.drawer_layut)
+        val navview : NavigationView = findViewById(R.id.lateralmenu)
+        toggle = ActionBarDrawerToggle(this, drawerLayout,R.string.open,R.string.close)
+        toggle.syncState()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        navview.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.m_Modoguiado -> {
+                    //Carcar el modo guiado
+                    guideMode()
+                    warning("", "Ahoras estas en el modo guiado")
+                }
+                R.id.m_Modolibre -> {
+                    //cargar el modo libre
+                    freeMode()
+                    warning("", "Ahoras estas en el modo libre")
+
+                }
+
+
+            }
+
+
+        }*/
+
+
+
+
+
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -425,31 +510,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         startService(Servicio)
 
 
-    }
-
-    //______________________________________________________________________________________________
-    //______________________________________________________________________________________________
-    //funciones del menu
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.m_home -> Toast.makeText(this, " a", Toast.LENGTH_SHORT).show()
-            R.id.m_ranking -> Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
-            R.id.m_logout -> {
-
-            }
-            R.id.m_Modoguiado -> {
-                //Carcar el modo guiado
-                guideMode()
-                warning("", "Ahoras estas en el modo guiado")
-            }
-            R.id.m_Modolibre -> {
-                //cargar el modo libre
-                freeMode()
-                warning("", "Ahoras estas en el modo libre")
-
-            }
-        }
-        return super.onOptionsItemSelected(item)
     }
 
     //______________________________________________________________________________________________

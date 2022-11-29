@@ -1,36 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <!--Menu desplegable-->
-    <item
-        android:id="@+id/hamburger"
-        android:icon="@drawable/menu"
-        android:title="barra"
-        app:showAsAction="ifRoom">
-        <!--Items del menu-->
-        <!--Se puede añadir icon a cada item con la etiqueta  android:icon-->
-        <menu>
-            <item
-                android:id="@+id/m_home"
-                android:title="home"
-                android:visible ="true"/>
-            <item
-                android:id="@+id/m_Modolibre"
-                android:title="Modo libre"
-                android:visible ="true"/>
-            <item
-                android:id="@+id/m_Modoguiado"
-                android:title="Modo guiado"
-                android:visible ="true"/>
-            <item
-                android:id="@+id/m_ranking"
-                android:title="ranking"
-                android:visible ="true"/>
+    xmlns:tools="http://schemas.android.com/tools"
 
-            <item android:id="@+id/m_logout"
-                android:title="Logout"
-                android:visible ="true"/>
-        </menu>
-    </item>
+    tools:showIn="navigation_view">
+            <item android:title="home">
+                <menu>
+                    <item
+                    android:id="@+id/m_home"
+                    android:title="home"
+                    android:visible ="true"/>
+                </menu>
+            </item>
+
+            <item android:title="Modos">
+                <menu>
+                    <item
+                    android:id="@+id/m_Modolibre"
+                    android:title="Modo libre"
+                    android:visible ="true"/>
+                <item
+                    android:id="@+id/m_Modoguiado"
+                    android:title="Modo guiado"
+                    android:visible ="true"/>
+                </menu>
+            </item>
+            <item android:title="Ranking de puntuaciones">
+                <menu>
+                    <item
+                        android:id="@+id/m_ranking"
+                        android:title="ranking"
+                        android:visible ="true"/>
+                </menu>
+            </item>
+            <item android:title="Cerrar la sesion">
+                <menu>
+                    <item android:id="@+id/m_logout"
+                    android:title="Logout"
+                    android:visible ="true"/>
+                </menu>
+            </item>
+
 </menu>
