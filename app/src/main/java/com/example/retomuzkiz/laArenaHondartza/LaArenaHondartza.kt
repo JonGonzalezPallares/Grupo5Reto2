@@ -66,9 +66,9 @@ class LaArenaHondartza : Activity() {
 
     //______________________________________________________________________________________________
     private fun cargarBotones() {
-        botonReiniciar = binding.botonJuegoReiniciar
+        //botonReiniciar = binding.botonJuegoReiniciar
         botonReiniciar.setOnClickListener { init() }
-        resultado = binding.tvAciertos
+        //resultado = binding.tvAciertos
         resultado.text = ""
         puntos = "Has acertado: "
         aciertos = 0
@@ -95,20 +95,20 @@ class LaArenaHondartza : Activity() {
 
     //______________________________________________________________________________________________
     // Esconde la vista finalizado el juego
-    private fun hideLayout(){
+    /*private fun hideLayout(){
         binding.layoutImage.visibility = View.GONE
-    }
+    }*/
 
     //______________________________________________________________________________________________
     // Esconde la vista del juego y muestra la vista finalizado el juego
-    private fun showLayout(){
+    /*private fun showLayout(){
         Handler(Looper.myLooper()?:return).postDelayed({
             binding.layotButton.visibility = View.GONE
             binding.layoutPreguntas.visibility = View.GONE
             binding.layoutText.visibility = View.GONE
             binding.layoutImage.visibility = View.VISIBLE
         }, 1000)
-    }
+    }*/
 
     //______________________________________________________________________________________________
     /* devolver array desordenado  requiere de parametro la longitud del array */
@@ -169,7 +169,7 @@ class LaArenaHondartza : Activity() {
                 puntos ="Has acertado: "
                 if (aciertos == respuestas.size)
                 {
-                    showLayout()
+                    //showLayout()
                 }
             } else 
             {
@@ -213,7 +213,7 @@ class LaArenaHondartza : Activity() {
         cargarTablero()
         cargarBotones()
         cargarImagenes()
-        hideLayout()
+        //hideLayout()
 
         arrayDesordenadoRespuestas = desordenarArray(respuestas.size)
         arrayDesordenadoPreguntas = desordenarArray(preguntas.size)
