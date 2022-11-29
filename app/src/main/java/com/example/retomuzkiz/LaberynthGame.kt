@@ -49,7 +49,7 @@ class LaberynthGame: View {
     }
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        canvas.drawColor(Color.GREEN)
+        //canvas.drawColor(Color.GREEN)
 
         var width = width
         var height = height
