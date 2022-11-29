@@ -496,8 +496,8 @@ private class Cell{
     }
 
 }
-private class EmptyCell  {
-    var topWall=false
+private class EmptyCell {
+    var topWall = false
     var leftWall = false
     var bottomWall = false
     var rightWall = false
@@ -505,10 +505,11 @@ private class EmptyCell  {
     var visible = false
     var cols1 = 0
     var rows1 = 0
-    constructor( cols:Int, rows:Int){
+
+    constructor(cols: Int, rows: Int) {
         cols1 = cols
-        rows1=rows
+        rows1 = rows
     }
 
-
+}
 }
