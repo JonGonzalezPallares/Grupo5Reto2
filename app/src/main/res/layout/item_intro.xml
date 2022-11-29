@@ -1,70 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/per"
+    android:padding="10dp"
     xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
     <!--layout de parrafos-->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:clipToPadding="false"
-        android:padding="40dp"
-        card_view:cardCornerRadius="10dp"
-        card_view:cardElevation="6dp"
-        card_view:cardUseCompatPadding="true"
-        android:layout_marginTop="20dp"
-        card_view:layout_constraintTop_toTopOf="parent"
-        card_view:layout_constraintStart_toStartOf="parent">
-        <TextView
-            android:id="@+id/tv_parrafo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="26sp"
-            android:layout_margin="10dp"
-            android:textStyle="italic"
-            tools:text="El mendean eraiki zen, eta Muskiz zen herriko zubirik zaharrena."/>
-    </androidx.cardview.widget.CardView>
 
     <!--layout de los buttones-->
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+
+    <ImageButton
+        android:id="@+id/btn_atras"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="80dp"
+        android:src="@android:drawable/ic_media_previous" />
+
+    <ImageButton
+        android:id="@+id/btn_seguiente"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="80dp"
+        android:src="@android:drawable/ic_media_next" />
+
+    <Button
+        android:id="@+id/btn_salir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        card_view:layout_constraintTop_toBottomOf="@+id/card_view"
-        card_view:layout_constraintStart_toStartOf="parent">
+        android:layout_alignParentBottom="true"
+        android:text="Jugar" />
 
-        <ImageButton
-            android:id="@+id/btn_atras"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:src="@android:drawable/ic_media_previous"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btn_seguiente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:src="@android:drawable/ic_media_next"
-            card_view:layout_constraintStart_toEndOf="@+id/btn_atras"
-            card_view:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/btn_salir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Jugar"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_parrafo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/btn_atras"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="58dp"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold|italic"
+        tools:text="El mendean eraiki zen, eta Muskiz zen herriko zubirik zaharrena." />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
