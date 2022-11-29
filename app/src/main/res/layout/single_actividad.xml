@@ -2,7 +2,8 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/tools"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_view_servicio"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view_actividad"
     android:layout_width="match_parent"
     android:layout_height="850px"
     android:layout_margin="12dp"
@@ -52,18 +53,21 @@
 
         </LinearLayout>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="204dp"
-            android:layout_height="189dp"
-            android:layout_gravity="center_horizontal"
-            card_view:cardCornerRadius="40dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="182dp"
+            android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/img"
-                android:layout_width="246dp"
-                android:layout_height="match_parent"
-                card_view:srcCompat="@drawable/irudia_pobena_1" />
-        </androidx.cardview.widget.CardView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/imageRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutManager="LinearLayoutManager"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/single_image_desplegable"/>
+
+            </LinearLayout>
+
 
     </LinearLayout>
 

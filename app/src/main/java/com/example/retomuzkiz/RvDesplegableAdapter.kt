@@ -2,9 +2,12 @@ package com.example.retomuzkiz
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getDrawable
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.retomuzkiz.burdinola.BurdinolaVideoActivity
@@ -32,6 +35,10 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
                 loadActivityes(titulo, context)
                 println(titulo)
             }
+            var drawable:Drawable? = null
+            binding.imageRecyclerView.adapter = RvDesplegableImageAdapter(actividad.img,actividad,context)
+
+
         }
 
         private fun loadActivityes(titulo: String, context: Context) {

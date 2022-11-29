@@ -34,19 +34,22 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener {
     object SITESNAMES {
         var POBENA_FUNDICION = "Pobaleko Burdinola"
-        var POBENA_FUNDICION_IMG = "irudia_pobena_1"
+        var POBENA_FUNDICION_IMG_1 = "irudia_pobena_1"
         var POBENA_HERMITA = "Pobeñako Ermita"
         var POBENA_HERMITA_IMG = "irudia_pobena_1"
         var ITSASLUR_IBILBIDEA= "Itsaslur Ibilbidea"
-        var ITSASLUR_IBILBIDEA_IMG = ""
+        var ITSASLUR_IBILBIDEA_IMG_1 = "itsaslur1_2"
+        var ITSASLUR_IBILBIDEA_IMG_2 = "itsaslur2_1"
+
+        var ITSASLUR_IBILBIDEA_IMG_3 = "itsaslur2_2"
         var PLAYA_LA_ARENA = "La Arena hondartza"
-        var PLAYA_LA_ARENA_IMG = "irudia_pobena_1"
+        var PLAYA_LA_ARENA_IMG = "irudia_arena_2"
         var PUENTE_ROMANO = "Pobaleko zubi erromanikoa"
-        var PUENTE_ROMANO_IMG = "irudia_pobena_1"
+        var PUENTE_ROMANO_IMG = "puentecompleto"
         var CASTILLO_MUNATONES = "Muñatones Gaztelua"
         var CASTILLO_MUNATONES_IMG = "irudia_pobena_1"
         var NOCHE_SAN_JUAN = "San Juan Gaua"
-        var NOCHE_SAN_JUAN_IMG = "irudia_pobena_1"
+        var NOCHE_SAN_JUAN_IMG = "irudia_san_juan"
     }
     private val keyPathsBehavior by lazy {
         BottomSheetBehavior.from(binding.bottomSheetKeyPaths.root).apply {
@@ -264,8 +267,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         println(numero)
         if (listabooleanos[numero]) {
             //esto pasa si estas cerca de la ubicacion
-            binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter =
-                RvDesplegableAdapter(listOf(Actividad(marker.title.toString(), "")), this)
+//            binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter =
+//                RvDesplegableAdapter(, this)
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
 
 
@@ -302,14 +305,17 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         //
 
         val actividades = listOf(
-            listOf(Actividad(SITESNAMES.POBENA_FUNDICION, SITESNAMES.POBENA_FUNDICION_IMG)),
-            listOf(Actividad(SITESNAMES.POBENA_HERMITA, SITESNAMES.POBENA_FUNDICION_IMG)),
-            listOf(Actividad(SITESNAMES.PUENTE_ROMANO, SITESNAMES.POBENA_FUNDICION_IMG)),
-            listOf(Actividad(SITESNAMES.PLAYA_LA_ARENA, SITESNAMES.POBENA_FUNDICION_IMG)),
-            listOf(Actividad(SITESNAMES.ITSASLUR_IBILBIDEA, SITESNAMES.POBENA_FUNDICION_IMG)),
-            listOf(Actividad(SITESNAMES.CASTILLO_MUNATONES, SITESNAMES.POBENA_FUNDICION_IMG)),
-            listOf(Actividad(SITESNAMES.NOCHE_SAN_JUAN, SITESNAMES.POBENA_FUNDICION_IMG)),
-        )
+            listOf(Actividad(SITESNAMES.POBENA_FUNDICION, listOf(SITESNAMES.POBENA_FUNDICION_IMG_1) )),
+            listOf(Actividad(SITESNAMES.POBENA_HERMITA, listOf(SITESNAMES.POBENA_HERMITA_IMG))),
+            listOf(Actividad(SITESNAMES.PUENTE_ROMANO, listOf(SITESNAMES.PUENTE_ROMANO_IMG))),
+            listOf(Actividad(SITESNAMES.PLAYA_LA_ARENA, listOf(SITESNAMES.PLAYA_LA_ARENA_IMG))),
+            listOf(Actividad(SITESNAMES.ITSASLUR_IBILBIDEA,
+                listOf<String>( SITESNAMES.ITSASLUR_IBILBIDEA_IMG_1,
+                SITESNAMES.ITSASLUR_IBILBIDEA_IMG_2,
+                SITESNAMES.ITSASLUR_IBILBIDEA_IMG_3))),
+            listOf(Actividad(SITESNAMES.CASTILLO_MUNATONES, listOf( SITESNAMES.CASTILLO_MUNATONES_IMG))),
+            listOf(Actividad(SITESNAMES.NOCHE_SAN_JUAN, listOf( SITESNAMES.NOCHE_SAN_JUAN_IMG))))
+
         for (i in 0..6){
             if(marker.title.equals(actividades[i][0].name)){
                 binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = RvDesplegableAdapter(
@@ -430,6 +436,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
     //______________________________________________________________________________________________
     //______________________________________________________________________________________________
+
     //funciones del menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

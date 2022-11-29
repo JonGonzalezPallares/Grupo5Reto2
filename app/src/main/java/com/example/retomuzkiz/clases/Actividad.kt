@@ -1,6 +1,6 @@
 package com.example.retomuzkiz.clases
 
-class Actividad(name: String, urlImage:String) {
+class Actividad(name: String, urlImage:List<String>) {
     val name= name
-    val url = urlImage
+    val img = urlImage
 }
