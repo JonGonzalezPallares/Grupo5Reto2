@@ -94,12 +94,6 @@ class LaArenaHondartza : Activity() {
     }
 
     //______________________________________________________________________________________________
-    // Esconde la vista finalizado el juego
-    private fun hideLayout(){
-        binding.layoutImage.visibility = View.GONE
-    }
-
-    //______________________________________________________________________________________________
     // Esconde la vista del juego y muestra la vista finalizado el juego
     private fun showLayout(){
         Handler(Looper.myLooper()?:return).postDelayed({
@@ -213,7 +207,6 @@ class LaArenaHondartza : Activity() {
         cargarTablero()
         cargarBotones()
         cargarImagenes()
-        hideLayout()
 
         arrayDesordenadoRespuestas = desordenarArray(respuestas.size)
         arrayDesordenadoPreguntas = desordenarArray(preguntas.size)
