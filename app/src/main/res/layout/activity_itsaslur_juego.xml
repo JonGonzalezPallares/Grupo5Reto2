@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_degradado"
     tools:context=".itsaslurIbilbidea.ItsaslurJuego">
 
     <LinearLayout
@@ -26,7 +27,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nondik sartu gara pasealekura?"
-            android:textSize="23sp" />
+            android:textColor="@color/botones_desactivados"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <ImageButton
             android:id="@+id/imgbtn1_1"
@@ -87,7 +90,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Zer ikusi dugu pasealekutik?"
-            android:textSize="23sp" />
+            android:textColor="@color/botones_desactivados"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <ImageButton
             android:id="@+id/imgbtn2_1"
@@ -147,7 +152,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Zer aurkitu dezakegu bide erditik?"
-            android:textSize="23sp" />
+            android:textColor="@color/botones_desactivados"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <ImageButton
             android:id="@+id/imgbtn3_1"
@@ -207,7 +214,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Non hartu dezakegu bainu bat?"
-            android:textSize="23sp" />
+            android:textColor="@color/botones_desactivados"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <ImageButton
             android:id="@+id/imgbtn4_1"
