@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ActivityLaArenaHondartzaBinding
 
@@ -19,9 +16,6 @@ class LaArenaHondartza : Activity() {
     // variables para los componentes de la vista
     private var tableroRespuestas = arrayOfNulls<ImageButton>(5)
     private var tableroPreguntas = arrayOfNulls<ImageButton>(5)
-    private lateinit var botonReiniciar: Button
-    private lateinit var resultado: TextView
-    private lateinit var puntos: String
     private lateinit var binding: ActivityLaArenaHondartzaBinding
 
 
@@ -35,7 +29,7 @@ class LaArenaHondartza : Activity() {
     //variables del juego
     private lateinit var arrayDesordenadoRespuestas: ArrayList<Int>
     private lateinit var arrayDesordenadoPreguntas: ArrayList<Int>
-    private var primero: ImageButton? = null
+    private var primero: ImageView? = null
     private var numeroPrimero = 0
     private var numeroSegundo = 0
     private var bloqueo = false
@@ -65,23 +59,13 @@ class LaArenaHondartza : Activity() {
     }
 
     //______________________________________________________________________________________________
-    private fun cargarBotones() {
-        //botonReiniciar = binding.botonJuegoReiniciar
-        botonReiniciar.setOnClickListener { init() }
-        //resultado = binding.tvAciertos
-        resultado.text = ""
-        puntos = "Has acertado: "
-        aciertos = 0
-    }
-
-    //______________________________________________________________________________________________
     private fun cargarImagenes() {
         preguntas = intArrayOf(
             R.drawable.pre00,
-            R.drawable.pre1,
-            R.drawable.pre2,
-            R.drawable.pre3,
-            R.drawable.pre4,
+            R.drawable.pre01,
+            R.drawable.pre02,
+            R.drawable.pre03,
+            R.drawable.pre04,
         )
         respuestas = intArrayOf(
             R.drawable.res0,
@@ -90,25 +74,19 @@ class LaArenaHondartza : Activity() {
             R.drawable.res3,
             R.drawable.res4,
         )
-        fondo = R.drawable.fondo_preguntas
+        fondo = R.drawable.carta_fondo
     }
 
-    //______________________________________________________________________________________________
-    // Esconde la vista finalizado el juego
-    /*private fun hideLayout(){
-        binding.layoutImage.visibility = View.GONE
-    }*/
+
 
     //______________________________________________________________________________________________
     // Esconde la vista del juego y muestra la vista finalizado el juego
-    /*private fun showLayout(){
+    private fun showFinalLayout(){
         Handler(Looper.myLooper()?:return).postDelayed({
-            binding.layotButton.visibility = View.GONE
-            binding.layoutPreguntas.visibility = View.GONE
-            binding.layoutText.visibility = View.GONE
+            binding.layoutButton.visibility = View.GONE
             binding.layoutImage.visibility = View.VISIBLE
         }, 1000)
-    }*/
+    }
 
     //______________________________________________________________________________________________
     /* devolver array desordenado  requiere de parametro la longitud del array */
@@ -163,13 +141,13 @@ class LaArenaHondartza : Activity() {
             {
                 primero = null
                 bloqueo = false
-                aciertos++
-                puntos += aciertos
-                resultado.text = puntos
-                puntos ="Has acertado: "
+                Toast.makeText(this, "Matched!", Toast.LENGTH_SHORT).show()
+               aciertos++
+
+
                 if (aciertos == respuestas.size)
                 {
-                    //showLayout()
+                    showFinalLayout()
                 }
             } else 
             {
@@ -211,9 +189,7 @@ class LaArenaHondartza : Activity() {
     private fun init()
     {
         cargarTablero()
-        cargarBotones()
         cargarImagenes()
-        //hideLayout()
 
         arrayDesordenadoRespuestas = desordenarArray(respuestas.size)
         arrayDesordenadoPreguntas = desordenarArray(preguntas.size)
@@ -224,7 +200,9 @@ class LaArenaHondartza : Activity() {
             tableroRespuestas[i]!!.scaleType = ImageView.ScaleType.CENTER_CROP
             tableroPreguntas[i]!!.scaleType = ImageView.ScaleType.CENTER_CROP
             tableroRespuestas[i]!!.setImageResource(respuestas[arrayDesordenadoRespuestas[i]])
+
             tableroPreguntas[i]!!.setImageResource(preguntas[arrayDesordenadoPreguntas[i]])
+
         }
         // demora  medio segundo luego esconde las imagenes puestas a los buttones
         Handler(Looper.myLooper()?:return).postDelayed({
@@ -234,6 +212,7 @@ class LaArenaHondartza : Activity() {
                 tableroPreguntas[i]!!.scaleType = ImageView.ScaleType.CENTER_CROP
                 tableroRespuestas[i]!!.setImageResource(fondo)
                 tableroPreguntas[i]!!.setImageResource(fondo)
+
             }
         }, 700)
 

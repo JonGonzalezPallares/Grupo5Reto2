@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical"
-    android:padding="10dp"
     tools:context=".laArenaHondartza.LaArenaHondartza">
 
 
-    <!--Layout de imagen final-->
+    <!--Layout final del juego-->
     <LinearLayout
         android:id="@+id/layoutImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
+        android:orientation="vertical"
+        android:visibility="gone">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -23,163 +23,107 @@
             android:src="@drawable/irudia_arena_2" />
     </LinearLayout>
 
-    <!--Layout de texto prencipal-->
-    <LinearLayout
-        android:id="@+id/layoutText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="08dp"
-            android:text="Empareja preguntas con respuestas:"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-    </LinearLayout>
 
     <!--Layout de juego-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutPreguntas"
+    <GridLayout
+        android:id="@+id/layoutButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/carta_fondo"
+        android:columnCount="2"
+        android:rowCount="5">
 
         <ImageButton
             android:id="@+id/boton12"
-            android:layout_width="160dp"
+            android:layout_width="100dp"
             android:layout_height="94dp"
-            android:layout_marginStart="20dp"
-            android:background="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_rowWeight="1"
+            android:layout_margin="5dp"
+            android:layout_columnWeight="1"
+            android:background="@color/black" />
 
         <ImageButton
             android:id="@+id/boton09"
-            android:layout_width="160dp"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
             android:layout_height="94dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="05dp"
-            android:background="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/boton00"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
 
         <ImageButton
             android:id="@+id/boton02"
-            android:layout_width="160dp"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
             android:layout_height="94dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/boton10"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@color/black" />
 
         <ImageButton
             android:id="@+id/boton03"
-            android:layout_width="160dp"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
             android:layout_height="94dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
 
         <ImageButton
             android:id="@+id/boton04"
-            android:layout_width="160dp"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
             android:layout_height="94dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/boton11"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
 
         <ImageButton
             android:id="@+id/boton08"
-            android:layout_width="160dp"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
             android:layout_height="94dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="05dp"
-            android:background="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
+
 
         <ImageButton
             android:id="@+id/boton01"
-            android:layout_width="160dp"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
             android:layout_height="94dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="05dp"
-            android:background="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/boton08"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
 
         <ImageButton
             android:id="@+id/boton10"
-            android:layout_width="160dp"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
             android:layout_height="94dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/boton04"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
 
         <ImageButton
             android:id="@+id/boton11"
-            android:layout_width="160dp"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
             android:layout_height="94dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/boton03"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
 
         <ImageButton
             android:id="@+id/boton00"
-            android:layout_width="160dp"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
             android:layout_height="94dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="05dp"
-            android:background="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/boton01"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!--Layout de buttones-->
-    <LinearLayout
-        android:id="@+id/layotButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tvAciertos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/botonJuegoReiniciar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/reiniciar_juego" />
-    </LinearLayout>
-
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
+    </GridLayout>
 
 </LinearLayout>
