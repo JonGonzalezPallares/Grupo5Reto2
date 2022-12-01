@@ -60,7 +60,7 @@
             app:headerLayout="@layout/nav_header"
             app:menu="@menu/menu"
             android:translationZ="0dp"
-
+            android:background="@drawable/menu_degradado"
 
             android:visibility="invisible"
 

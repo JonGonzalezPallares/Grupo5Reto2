@@ -90,15 +90,15 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         guideMode()
         val navview : NavigationView = findViewById(R.id.lateralmenu)
         //menu lateral
-
         binding.Navegation.setOnClickListener{
             if(navegacion == false){
                 navegacion = true
                 if(iniciarguiado == false){
                 val guide = findViewById<View>(R.id.m_Modoguiado)
-                    val free = findViewById<View>(R.id.m_Modolibre)
+                val free = findViewById<View>(R.id.m_Modolibre)
                 guide.isEnabled = false
-                    free.isEnabled = true
+
+                free.isEnabled = true
                 iniciarguiado = true
                 }
             }
@@ -113,10 +113,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         //funciones del menu
         navview.setNavigationItemSelectedListener { menu ->
             when(menu.itemId) {
-                R.id.m_home -> {
-                    Toast.makeText(this, " a", Toast.LENGTH_SHORT).show()
-                    true
-                }
+
                 R.id.m_ranking -> {
                     Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
                     true

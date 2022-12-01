@@ -18,4 +18,9 @@
     <style name="Imagenes">
         <item name="background">@drawable/stilo_desplegable_imagen</item>
     </style>
+
+
+<style name="menu">
+
+</style>
 </resources>

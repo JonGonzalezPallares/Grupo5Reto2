@@ -5,37 +5,25 @@
 
 
     tools:showIn="navigation_view">
-            <item android:title="home">
 
-                <menu>
-                    <item
-                    android:id="@+id/m_home"
-                        android:icon="@drawable/icohome"
-                    android:title="home"
-                    android:visible ="true"
-                        />
-                </menu>
-            </item>
 
-            <item android:title="Modos">
+            <item android:title="Modos"
+                android:titleCondensed="">
                 <menu>
                     <item
                     android:id="@+id/m_Modolibre"
                     android:title="Modo libre"
                         android:icon="@drawable/libre"
                     android:visible ="true"
-
-                        android:enabled="true"/>
+                        />
                     <item
                         android:id="@+id/m_Modoguiado"
                         android:title="Modo guiado"
                         android:icon="@drawable/guiado"
                         android:visible="true"
-                        android:enabled="true"
                         />
                     <item
                         android:id="@+id/m_Profesor"
-                        android:enabled="true"
                         android:title="Modo Profesor"
                         android:icon="@drawable/profesor"
                         android:visible="true" />
