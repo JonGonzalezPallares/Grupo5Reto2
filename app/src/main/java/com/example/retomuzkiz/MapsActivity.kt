@@ -305,16 +305,13 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         //
 
         val actividades = listOf(
-            listOf(Actividad(SITESNAMES.POBENA_FUNDICION, listOf(SITESNAMES.POBENA_FUNDICION_IMG_1) )),
-            listOf(Actividad(SITESNAMES.POBENA_HERMITA, listOf(SITESNAMES.POBENA_HERMITA_IMG))),
-            listOf(Actividad(SITESNAMES.PUENTE_ROMANO, listOf(SITESNAMES.PUENTE_ROMANO_IMG))),
-            listOf(Actividad(SITESNAMES.PLAYA_LA_ARENA, listOf(SITESNAMES.PLAYA_LA_ARENA_IMG))),
-            listOf(Actividad(SITESNAMES.ITSASLUR_IBILBIDEA,
-                listOf<String>( SITESNAMES.ITSASLUR_IBILBIDEA_IMG_1,
-                SITESNAMES.ITSASLUR_IBILBIDEA_IMG_2,
-                SITESNAMES.ITSASLUR_IBILBIDEA_IMG_3))),
-            listOf(Actividad(SITESNAMES.CASTILLO_MUNATONES, listOf( SITESNAMES.CASTILLO_MUNATONES_IMG))),
-            listOf(Actividad(SITESNAMES.NOCHE_SAN_JUAN, listOf( SITESNAMES.NOCHE_SAN_JUAN_IMG))))
+            listOf(Actividad(SITESNAMES.POBENA_FUNDICION, SITESNAMES.POBENA_FUNDICION_IMG_1 )),
+            listOf(Actividad(SITESNAMES.POBENA_HERMITA, SITESNAMES.POBENA_HERMITA_IMG)),
+            listOf(Actividad(SITESNAMES.PUENTE_ROMANO, SITESNAMES.PUENTE_ROMANO_IMG)),
+            listOf(Actividad(SITESNAMES.PLAYA_LA_ARENA, SITESNAMES.PLAYA_LA_ARENA_IMG)),
+            listOf(Actividad(SITESNAMES.ITSASLUR_IBILBIDEA,SITESNAMES.ITSASLUR_IBILBIDEA_IMG_1, )),
+            listOf(Actividad(SITESNAMES.CASTILLO_MUNATONES, SITESNAMES.CASTILLO_MUNATONES_IMG)),
+            listOf(Actividad(SITESNAMES.NOCHE_SAN_JUAN, SITESNAMES.NOCHE_SAN_JUAN_IMG)))
 
         for (i in 0..6){
             if(marker.title.equals(actividades[i][0].name)){
