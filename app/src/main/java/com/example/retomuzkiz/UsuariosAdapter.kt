@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.retomuzkiz.databinding.VistaJugadorBinding
 import com.example.retomuzkiz.room.Usuario
 
-class UsuariosAdapter(private var lista:List<Usuario>) :RecyclerView.Adapter<UsuariosAdapter.ViewHolder>(){
+class UsuariosAdapter(private var lista:List<Usuario>,private val escuchador:(Usuario)->Unit) :RecyclerView.Adapter<UsuariosAdapter.ViewHolder>(){
 
     //Lo que emvuelve a cada elemento del recycleview
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -31,6 +31,10 @@ class UsuariosAdapter(private var lista:List<Usuario>) :RecyclerView.Adapter<Usu
         //Creamos una funcion que nos haga la union de los elementos
         //Accedemos a la lista de asignaturas para cada posicion
         holder.link(lista[position])
+        //Al clickar sobre algun item
+        holder.itemView.setOnClickListener {
+            escuchador(lista[position])
+        }
     }
 
     //Devuelve la cantidad de elementos

@@ -13,10 +13,12 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import android.content.res.Configuration
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import com.example.retomuzkiz.clases.Actividad
 import com.example.retomuzkiz.clases.OptionsMenuActivity
+import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.prefs
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -74,6 +76,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         guideMode()
+
+        Log.d("usuario", prefs.getUser())
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager

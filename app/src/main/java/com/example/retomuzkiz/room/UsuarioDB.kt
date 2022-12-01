@@ -8,7 +8,6 @@ import androidx.room.RoomDatabase
 abstract class UsuarioDB: RoomDatabase() {
     abstract val usuarioDao: UsuarioDao
 
-
     companion object{
         const val DATABASE_NAME = "dbUsuario"
     }
