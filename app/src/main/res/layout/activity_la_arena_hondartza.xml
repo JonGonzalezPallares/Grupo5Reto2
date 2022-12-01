@@ -9,19 +9,65 @@
     tools:context=".laArenaHondartza.LaArenaHondartza">
 
 
-    <!--Layout final del juego-->
-    <LinearLayout
+    <!--Layout final del juego  -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:background="@drawable/fondo_degradado"
+        >
+
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/fondo_degradado"
-            android:src="@drawable/irudia_arena_2" />
-    </LinearLayout>
+            android:layout_height="300dp"
+            android:layout_marginTop="88dp"
+            android:src="@drawable/irudia_arena_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Lo hiciste, amigo!"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintBottom_toTopOf="@+id/tvSeg"/>
+
+        <TextView
+            android:id="@+id/tvSeg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            android:text="¡Has resuelto el desafío!"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnCompletado"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnCompletado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:text="continuar"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <!--Layout de juego-->

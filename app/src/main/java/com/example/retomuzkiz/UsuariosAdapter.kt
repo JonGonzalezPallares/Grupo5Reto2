@@ -53,6 +53,7 @@ class UsuariosAdapter(private var lista:List<Usuario>,private val escuchador:(Us
         fun link (usuario: Usuario){
             binding.txtNombre.text = usuario.nombre
             binding.txtPuntuacion.text = usuario.puntos.toString()
+            //Glide.with(binding.fotoimg.context).load(chat.photo).into(binding.fotoimg)
         }
     }
 }

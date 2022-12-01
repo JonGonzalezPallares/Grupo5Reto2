@@ -77,7 +77,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         setContentView(binding.root)
         guideMode()
 
-        Log.d("usuario", prefs.getUser())
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager

@@ -186,10 +186,19 @@ class LaArenaHondartza : Activity() {
     }
 
     //______________________________________________________________________________________________
+    // al teminar el juego
+    fun completarJuego(){
+        binding.btnCompletado.setOnClickListener{
+            Toast.makeText(this, "hacer algo con esto", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    //______________________________________________________________________________________________
     private fun init()
     {
         cargarTablero()
         cargarImagenes()
+        completarJuego()
 
         arrayDesordenadoRespuestas = desordenarArray(respuestas.size)
         arrayDesordenadoPreguntas = desordenarArray(preguntas.size)

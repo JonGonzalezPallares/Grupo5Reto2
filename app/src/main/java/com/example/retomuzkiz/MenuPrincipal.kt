@@ -1,6 +1,5 @@
 package com.example.retomuzkiz
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -47,8 +46,8 @@ class MenuPrincipal : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         //__________________________________________________________________________________________
-        val usuarioLista = database!!.usuarioDao.getAllUsers()
-        adaptadorUsuario = UsuariosAdapter(usuarioLista){
+        val listaUsuarios = database!!.usuarioDao.getAllUsers()
+        adaptadorUsuario = UsuariosAdapter(listaUsuarios){
             listar(it.nombre)
         }
         binding.rvJugadores.adapter = adaptadorUsuario
