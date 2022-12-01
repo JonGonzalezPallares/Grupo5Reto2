@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
 import com.example.retomuzkiz.itsaslurIbilbidea.PantallaEspera
 import com.example.retomuzkiz.laArenaHondartza.IntroActivity
+import com.example.retomuzkiz.puenteRomano.PuenteJuego
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
 
 class MenuPrincipal : AppCompatActivity() {
@@ -31,7 +32,7 @@ class MenuPrincipal : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             //val intento = Intent(this, MapsActivity::class.java)
-            val intento = Intent(this, IntroActivity::class.java)
+            val intento = Intent(this, PuenteJuego::class.java)
             startActivity(intento)
         }
         binding.btnLaberinto.setOnClickListener(){

@@ -7,7 +7,10 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+//import androidx.compose.ui.graphics.ImageBitmap
+//import androidx.compose.ui.res.imageResource
 import java.util.*
+
 
 class LaberynthGame: View {
     companion object{
@@ -35,8 +38,36 @@ class LaberynthGame: View {
 
     constructor(applicationContext: Context,attrs: AttributeSet?) :super(applicationContext,attrs){
 
+        //val bitmap = BitmapFactory.decodeResource(context.resources, R.drawable.btn_star_big_on)
+        //canvas.drawBitmap(bitmap, null, mRedPaddleRect, mPaint)
+
+        /*
+
+        Paint paint = new Paint();
+
+    paint.setColor(context.getResources().getColor(R.color.text_color)); // Text
+
+        paint.setStrokeWidth(12); // Text Size
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OVER)); // Text
+                                                                                // Overlapping
+                                                                                // Pattern
+        // some more settings...
+
+        canvas.drawBitmap(mutableBitmap, RECTsrc, RECTdst, paint);
+         */
+        //val estilo =
+
+
         playerPaint = Paint()
         playerPaint.color = Color.RED
+
+        /*
+
+        Para cargar una imagen en un paint
+
+         */
+        //ImageBitmap.imageResource(id = R.drawable.pause)
+
         exitPaint = Paint()
         exitPaint.color = Color.BLUE
 
@@ -49,8 +80,6 @@ class LaberynthGame: View {
     }
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        //canvas.drawColor(Color.GREEN)
-
         var width = width
         var height = height
         if(width/height < COLS/ ROWS){
