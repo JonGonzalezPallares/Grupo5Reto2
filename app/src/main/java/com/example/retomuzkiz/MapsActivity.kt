@@ -14,14 +14,21 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import android.content.res.Configuration
 import android.os.Handler
 import android.os.Looper
+import android.transition.Slide
+import android.transition.TransitionManager
+
+import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet.Layout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
+
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -105,7 +112,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             else{
                 navegacion = false
             }
-            binding.lateralmenu.isVisible = navegacion
+            menuanimation()
 
         }
 
@@ -543,6 +550,15 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
+    }
+    //______________________________________________________________________________________________
+    //funcion de animacion del menu
+    fun menuanimation(){
+        val mSlideLeft = Slide()
+        val layout = findViewById<CoordinatorLayout>(R.id.drawer_layut)
+        mSlideLeft.slideEdge = Gravity.START
+        TransitionManager.beginDelayedTransition(layout,mSlideLeft)
+        binding.lateralmenu.isVisible = navegacion
     }
 
 
