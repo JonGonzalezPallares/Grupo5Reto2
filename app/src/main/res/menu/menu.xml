@@ -29,22 +29,34 @@
                         android:visible="true" />
                 </menu>
             </item>
-            <item android:title="Ranking de puntuaciones">
+            <item android:title="Puntuacion">
+            <menu>
+                <item
+                    android:id="@+id/m_Puntuacion"
+                    android:title="Tu progreso"
+                    android:icon="@drawable/progreso"
+                    android:visible ="true"/>
+                <item
+                android:id="@+id/m_ranking"
+                android:title="Ranking de puntuacion"
+                android:icon="@drawable/coronareal"
+                android:visible ="true"/>
+
+            </menu>
+    </item>
+            <item android:title="Otros">
                 <menu>
-                    <item
-                        android:id="@+id/m_ranking"
-                        android:title="ranking"
-                        android:icon="@drawable/coronareal"
+
+                    <item android:id="@+id/m_About"
+                        android:title="Sobre nosotros"
+                        android:icon="@drawable/nosotros"
+                        android:visible ="true"/>
+                    <item android:id="@+id/m_logout"
+                        android:title="Logout"
+                        android:icon="@drawable/signodebotondeencendido"
                         android:visible ="true"/>
                 </menu>
             </item>
-            <item android:title="Cerrar la sesion">
-                <menu>
-                    <item android:id="@+id/m_logout"
-                    android:title="Logout"
-                        android:icon="@drawable/signodebotondeencendido"
-                    android:visible ="true"/>
-                </menu>
-            </item>
+
 
 </menu>
