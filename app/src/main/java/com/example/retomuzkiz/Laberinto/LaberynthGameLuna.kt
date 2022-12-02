@@ -8,15 +8,14 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import java.util.*
-import kotlin.concurrent.thread
 
-class LaberynthGame: View {
+class LaberynthGameLuna: View {
     companion object{
         const val WALL_THICKNESS = 4f
     }
     private var ROWS:Int= 19
     private var COLS:Int= 13
-    private lateinit var cells:Array<Array<Cell>>
+    private lateinit var cells:Array<Array<CellLuna>>
     var cellSize:Float=0.0f
     var hMargin:Float=4f
     var vMargin:Float=4f
@@ -31,8 +30,8 @@ class LaberynthGame: View {
     private lateinit var wallPaint: Paint
 
     //
-    private lateinit var player: Cell
-    private lateinit var exit: Cell
+    private lateinit var player: CellLuna
+    private lateinit var exit: CellLuna
 
     constructor(applicationContext: Context,attrs: AttributeSet?) :super(applicationContext,attrs){
 
@@ -207,19 +206,19 @@ class LaberynthGame: View {
 
     private fun createMaze() {
 
-        var stack = Stack<Cell>()
-        lateinit var currentCell: Cell
+        var stack = Stack<CellLuna>()
+        lateinit var currentCell: CellLuna
 
         cells = Array(COLS) { col ->
             Array(ROWS) { row ->
-                var emptyCell = Cell(col, row)
-                var celdaBuena = Cell(col, row)
+                var emptyCell = CellLuna(col, row)
+                var celdaBuena = CellLuna(col, row)
                 emptyCell.visible = false
                 emptyCell.topWall = false
                 emptyCell.bottomWall = false
                 emptyCell.leftWall = false
                 emptyCell.rightWall = false
-                var cell = Cell(col, row)
+                var cell = CellLuna(col, row)
 
                 if (col == 0) {
                     if (row == 0 || row == 1 || row == 2 || row == 3 || row == 4 || row == 5 || row == 13 || row == 14 || row == 15 || row == 16 || row == 17 || row == 18) {
@@ -313,7 +312,7 @@ class LaberynthGame: View {
 //
 //
 //
-        var nextCell:Cell? = null
+        var nextCell:CellLuna? = null
         var t = Thread  (){
             do {
                 println("Ha entrado")
@@ -326,7 +325,7 @@ class LaberynthGame: View {
                     removeWall(currentCell, nextCell!!)
 
                     stack.push(currentCell)
-                    currentCell = nextCell as Cell
+                    currentCell = nextCell as CellLuna
                     currentCell.visited = true
                 } else {
 
@@ -345,7 +344,7 @@ class LaberynthGame: View {
 
 
 
-    private fun delimitarLuna(currentCell: Cell,nextCell: Cell) {
+    private fun delimitarLuna(currentCell: CellLuna, nextCell: CellLuna) {
         //Si currentCell es la de abajo
 
         if(currentCell.cols1 == nextCell.cols1 && currentCell.rows1 == nextCell.rows1+1){
@@ -402,7 +401,7 @@ class LaberynthGame: View {
     }
 
 
-    private fun removeWall(currentCell: Cell, nextCell: Cell) {
+    private fun removeWall(currentCell: CellLuna, nextCell: CellLuna) {
         //delimitarLuna(currentCell,nextCell)
 
         if (currentCell.visible == true && nextCell.visible == true) {
@@ -431,8 +430,8 @@ class LaberynthGame: View {
         }
     }
 
-    private fun getNeighbour(cell: Cell): Cell?{
-        var neighbours = ArrayList<Cell>()
+    private fun getNeighbour(cell: CellLuna): CellLuna?{
+        var neighbours = ArrayList<CellLuna>()
         //left neighbour
         if(cell.cols1>0){
             if(!cells[cell.cols1-1][cell.rows1].visited){
@@ -481,7 +480,7 @@ class LaberynthGame: View {
         }
     }
 }
-private class Cell{
+private class CellLuna{
     var topWall=true
     var leftWall = true
     var bottomWall = true
@@ -496,19 +495,6 @@ private class Cell{
     }
 
 }
-private class EmptyCell  {
-    var topWall=false
-    var leftWall = false
-    var bottomWall = false
-    var rightWall = false
-    var visited = false
-    var visible = false
-    var cols1 = 0
-    var rows1 = 0
-    constructor( cols:Int, rows:Int){
-        cols1 = cols
-        rows1=rows
-    }
 
 
 }
