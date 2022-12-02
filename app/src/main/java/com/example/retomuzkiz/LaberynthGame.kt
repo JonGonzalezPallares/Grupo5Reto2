@@ -16,8 +16,8 @@ class LaberynthGame: View {
     companion object{
         const val WALL_THICKNESS = 4f
     }
-    private var ROWS:Int= 5
-    private var COLS:Int= 5
+    private var ROWS:Int= 19
+    private var COLS:Int= 13
     private lateinit var cells:Array<Array<Cell>>
     var cellSize:Float=0.0f
     var hMargin:Float=4f
@@ -75,6 +75,7 @@ class LaberynthGame: View {
         wallPaint.color = Color.BLACK
         wallPaint.strokeWidth = WALL_THICKNESS
         random = Random()
+
         createMaze()
 
     }
@@ -83,9 +84,9 @@ class LaberynthGame: View {
         var width = width
         var height = height
         if(width/height < COLS/ ROWS){
-            cellSize= width/(COLS+4).toFloat()
+            cellSize= width/(COLS+10).toFloat()
         }else{
-            cellSize= height/(ROWS+4).toFloat()
+            cellSize= height/(ROWS+10).toFloat()
 
         }
         hMargin = (width - COLS*cellSize)/2
@@ -175,12 +176,12 @@ class LaberynthGame: View {
     }
     private fun checkExit(){
         if(contador != 3){
-            if (player == exit){
-                ROWS += 5
-                COLS += 5
-                createMaze()
-                contador ++
-            }
+//            if (player == exit){
+//                ROWS += 5
+//                COLS += 5
+            createMaze()
+            contador ++
+
         }
     }
     override fun onTouchEvent(event: MotionEvent): Boolean {
@@ -231,55 +232,186 @@ class LaberynthGame: View {
     }
 
 
-    private fun createMaze(){
+    private fun createMaze() {
 
         var stack = Stack<Cell>()
         lateinit var currentCell: Cell
-        var nextCell: Cell?
 
-        cells = Array(COLS){ col->
+        cells = Array(COLS) { col ->
             Array(ROWS) { row ->
-                Cell(col, row)
+                var emptyCell = Cell(col, row)
+                var celdaBuena = Cell(col, row)
+                emptyCell.visible = false
+                emptyCell.topWall = false
+                emptyCell.bottomWall = false
+                emptyCell.leftWall = false
+                emptyCell.rightWall = false
+                var cell = Cell(col, row)
+
+                if (col == 0) {
+                    if (row == 0 || row == 1 || row == 2 || row == 3 || row == 4 || row == 5 || row == 13 || row == 14 || row == 15 || row == 16 || row == 17 || row == 18) {
+                        celdaBuena = emptyCell
+
+                    }
+
+                } else if (col == 1) {
+                    if (row == 0 || row == 1 || row == 2 || row == 3 || row == 15 || row == 16 || row == 17 || row == 18) {
+                        celdaBuena = emptyCell
+
+                    }
+
+                } else if (col == 2) {
+                    if (row == 0 || row == 1 || row == 2 || row == 16 || row == 17 || row == 18) {
+                        celdaBuena = emptyCell
+
+                    }
+
+                } else if (col == 3) {
+                    if (row == 0 || row == 1 || row == 17 || row == 18) {
+                        celdaBuena = emptyCell
+
+                    }
+
+                } else if (col == 5 || col == 4) {
+                    if (row == 0 || row == 18) {
+                        celdaBuena = emptyCell
+
+                    }
+
+                } else if (col == 6) {
+                    if (row == 5 || row == 6 || row == 7 || row == 8 || row == 9 || row == 10 || row == 11 || row == 12 || row == 13) {
+                        celdaBuena = emptyCell
+
+                    }
+
+                } else if (col == 7) {
+                    if (row == 4 || row == 5 || row == 6 || row == 7 || row == 8 || row == 9 || row == 10 || row == 11 || row == 12 || row == 13 || row == 14) {
+                        celdaBuena = emptyCell
+
+                    }
+
+                } else if (col == 8) {
+                    if (row == 3 || row == 4 || row == 5 || row == 6 || row == 7 || row == 8 || row == 9 || row == 10 || row == 11 || row == 12 || row == 13 || row == 14 || row == 15) {
+                        celdaBuena = emptyCell
+
+                    }
+                } else if (col == 9) {
+                    if (row == 2 || row == 3 || row == 4 || row == 5 || row == 6 || row == 7 || row == 8 || row == 9 || row == 10 || row == 11 || row == 12 || row == 13 || row == 14 || row == 15 || row == 16) {
+                        celdaBuena = emptyCell
+
+                    }
+
+                } else if (col == 10 || col == 11 || col == 12) {
+                    if (row == 1 || row == 2 || row == 3 || row == 4 || row == 5 || row == 6 || row == 7 || row == 8 || row == 9 || row == 10 || row == 11 || row == 12 || row == 13 || row == 14 || row == 15 || row == 16 || row == 17) {
+                        celdaBuena = emptyCell
+
+
+                    }
+
+
+                }
+
+                celdaBuena
+
+
             }
         }
 
-        currentCell = cells[0][0]
+        currentCell = cells[12][0]
         currentCell.visited = true
-        player = cells[0][0]
-        exit = cells[COLS-1][ROWS-1]
-        do {
-            nextCell = getNeighbour(currentCell)
-            if (nextCell != null) {
+        player = cells[12][0]
+        exit = cells[COLS - 1][ROWS - 1]
+        var row = 0
+//
+//        for (col in 0 until COLS - 1) {
+//            for (row in 0 until ROWS - 1) {
+//                nextCell = cells[currentCell.cols1][currentCell.rows1]
+//                delimitarLuna(currentCell, nextCell)
+//                currentCell = nextCell
+//            }
+//            row = 0
+//            nextCell = cells[currentCell.cols1 + 1][row]
+//            currentCell = nextCell
+//
+//
+//        }
+//
+///*            */
+//
+//
+//       Thread{
+//           do {
+//               println("Ha entrado")
+//               nextCell = getNeighbour(currentCell)
+//               if (nextCell != null) {
+//
+//                   removeWall(currentCell, nextCell)
+//                   stack.push(currentCell)
+//                   currentCell = nextCell
+//                   currentCell.visited = true
+//               } else {
+//                   currentCell = stack.pop()
+//               }
+//           } while (!stack.isEmpty())
+//
+//       }
 
-                removeWall(currentCell, nextCell)
-                stack.push(currentCell)
-                currentCell = nextCell
-                currentCell.visited = true
-            } else {
-                currentCell = stack.pop()
-            }
-        }while (!stack.isEmpty())
+
     }
 
+
+
     private fun delimitarLuna(currentCell: Cell,nextCell: Cell) {
-        //Left side
-        var col1 = listOf<Int>(0,1,2,3,4,5)
-        col1.forEach(){
-            if(it == currentCell.cols1 && currentCell.rows1 == 0){
-                currentCell.topWall=false
-                currentCell.leftWall=false
-                currentCell.rightWall=false
-                currentCell.bottomWall= false
-                if ((currentCell.cols1 == 6) && currentCell.rows1 == 0){
+        //Si currentCell es la de abajo
 
-                    currentCell.bottomWall = true
-                    currentCell.leftWall = true
-                }
-                if(currentCell.cols1==4 && currentCell.rows1 == 0)
-                {
-                    currentCell.bottomWall = true
-                }
+        if(currentCell.cols1 == nextCell.cols1 && currentCell.rows1 == nextCell.rows1+1){
+            if ( currentCell.visible == true && nextCell.visible == false){
+                currentCell.topWall = true
+            }else if (currentCell.visible == false&& nextCell.visible == true){
+                nextCell.bottomWall = true
+            }
 
+            else {
+                currentCell.topWall = false
+                nextCell.bottomWall = false
+            }
+        }
+        //Si current cell es la de arriba
+        if(currentCell.cols1 == nextCell.cols1 && currentCell.rows1 == nextCell.rows1-1){
+            if ( currentCell.visible == true && nextCell.visible == false){
+                currentCell.bottomWall =true
+            }else if( currentCell.visible == false && nextCell.visible == true){
+                nextCell.bottomWall = true
+            }
+            else{
+                currentCell.bottomWall=false
+                nextCell.topWall = false
+            }
+        }
+
+        //Si Current Cell es la de la izquierda
+        if(currentCell.cols1 == nextCell.cols1+1 && currentCell.rows1 == nextCell.rows1){
+            if ( currentCell.visible == true && nextCell.visible == false){
+                currentCell.leftWall =true
+            }
+            else if( currentCell.visible == false && nextCell.visible == true){
+                nextCell.leftWall = true
+            }else {
+                currentCell.leftWall = false
+                nextCell.rightWall = false
+            }
+        }
+        //Si current Cell es la de la derecha
+        if(currentCell.cols1 == nextCell.cols1-1 && currentCell.rows1 == nextCell.rows1){
+            if ( currentCell.visible == true && nextCell.visible == false){
+                currentCell.rightWall =true
+            }
+            else if( currentCell.visible == false && nextCell.visible == true){
+                nextCell.rightWall = true
+            }
+            else {
+                currentCell.rightWall = false
+                nextCell.leftWall = false
             }
         }
 
@@ -288,28 +420,31 @@ class LaberynthGame: View {
 
     private fun removeWall(currentCell: Cell, nextCell: Cell) {
         //delimitarLuna(currentCell,nextCell)
-        //Top Wall
-        if(currentCell.cols1 == nextCell.cols1 && currentCell.rows1 == nextCell.rows1+1){
-            currentCell.topWall=false
-            nextCell.bottomWall = false
-        }
-        //Bottom wall
-        if(currentCell.cols1 == nextCell.cols1 && currentCell.rows1 == nextCell.rows1-1){
-            currentCell.bottomWall=false
-            nextCell.topWall = false
-        }
-        //LeftWall
-        if(currentCell.cols1 == nextCell.cols1+1 && currentCell.rows1 == nextCell.rows1){
-            currentCell.leftWall=false
-            nextCell.rightWall = false
-        }
-        //rightWall
-        if(currentCell.cols1 == nextCell.cols1-1 && currentCell.rows1 == nextCell.rows1){
-            currentCell.rightWall=false
-            nextCell.leftWall = false
-        }
+
+        if (currentCell.visible == true && nextCell.visible == true) {
+            //Si current Cell es la de Abajo
+            if (currentCell.cols1 == nextCell.cols1 && currentCell.rows1 == nextCell.rows1 + 1) {
+                currentCell.topWall = false
+                nextCell.bottomWall = false
+            }
+            //Bottom wall
+            if (currentCell.cols1 == nextCell.cols1 && currentCell.rows1 == nextCell.rows1 - 1) {
+                currentCell.bottomWall = false
+                nextCell.topWall = false
+            }
+            //Si current Cell es la de la Izquierda
+            if (currentCell.cols1 == nextCell.cols1 + 1 && currentCell.rows1 == nextCell.rows1) {
+                currentCell.leftWall = false
+                nextCell.rightWall = false
+            }
+            //Si current Cell es la de la derecha
+            if (currentCell.cols1 == nextCell.cols1 - 1 && currentCell.rows1 == nextCell.rows1) {
+                currentCell.rightWall = false
+                nextCell.leftWall = false
+            }
 
 
+        }
     }
 
     private fun getNeighbour(cell: Cell): Cell?{
@@ -346,8 +481,15 @@ class LaberynthGame: View {
             }
         }
         if(neighbours.size>0) {
-            var index = random.nextInt(neighbours.size)
+            var index: Int = random.nextInt(neighbours.size)
+            do {
+                index=random.nextInt(neighbours.size)
+            }while(neighbours.get(index).visible == false)
+
+
             return neighbours.get(index)
+
+
         }else{
             return null
         }
@@ -366,5 +508,21 @@ private class Cell{
         cols1 = cols
         rows1=rows
     }
+
+}
+private class EmptyCell  {
+    var topWall=false
+    var leftWall = false
+    var bottomWall = false
+    var rightWall = false
+    var visited = false
+    var visible = false
+    var cols1 = 0
+    var rows1 = 0
+    constructor( cols:Int, rows:Int){
+        cols1 = cols
+        rows1=rows
+    }
+
 
 }

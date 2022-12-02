@@ -2,6 +2,7 @@ package com.example.retomuzkiz
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
 import com.example.retomuzkiz.itsaslurIbilbidea.ItsaslurJuego
@@ -37,7 +38,9 @@ class MenuPrincipal : AppCompatActivity() {
             startActivity(intento)
         }
         binding.btnLaberinto.setOnClickListener(){
+
             startActivity(Intent(this, ActivityLaberinto::class.java))
+
         }
     }
 

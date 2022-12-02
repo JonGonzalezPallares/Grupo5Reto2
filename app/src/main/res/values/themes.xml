@@ -12,10 +12,16 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowContentTransitions">true</item>
 
 
     </style>
     <style name="Imagenes">
         <item name="background">@drawable/stilo_desplegable_imagen</item>
     </style>
+
+
+<style name="menu">
+
+</style>
 </resources>
