@@ -1,4 +1,4 @@
-package com.example.retomuzkiz
+package com.example.retomuzkiz.Laberinto
 
 import android.content.Context
 import android.graphics.Canvas
@@ -493,8 +493,5 @@ private class CellLuna{
         cols1 = cols
         rows1=rows
     }
-
-}
-
 
 }

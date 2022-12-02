@@ -556,7 +556,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     //funciones del menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.m_home -> Toast.makeText(this, " a", Toast.LENGTH_SHORT).show()
+           // R.id.m_home -> Toast.makeText(this, " a", Toast.LENGTH_SHORT).show()
             R.id.m_ranking -> Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
             R.id.m_logout -> {
 

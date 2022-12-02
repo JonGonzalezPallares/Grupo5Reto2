@@ -37,8 +37,8 @@ class MenuPrincipal : AppCompatActivity() {
           binding.rvJugadores.adapter = adaptador*/
 
         binding.button.setOnClickListener {
-            //val intento = Intent(this, MapsActivity::class.java)
-            val intento = Intent(this, ItsaslurJuego::class.java)
+            val intento = Intent(this, MapsActivity::class.java)
+            //val intento = Intent(this, ItsaslurJuego::class.java)
             startActivity(intento)
         }
         binding.btnLaberinto.setOnClickListener(){

@@ -7,7 +7,7 @@
 
     <view
         android:id="@+id/view"
-        class="com.example.retomuzkiz.LaberynthGame"
+        class="com.example.retomuzkiz.Laberinto.LaberynthGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </FrameLayout>
