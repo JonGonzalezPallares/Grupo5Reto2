@@ -54,21 +54,20 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="376dp"
             android:layout_height="193dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="204dp"
-                android:layout_height="189dp"
+                android:layout_height="182dp"
                 android:layout_gravity="center_horizontal"
-                card_view:cardCornerRadius="40dp"
-                tools:layout_editor_absoluteX="104dp">
+                card_view:cardCornerRadius="40dp">
 
                 <ImageView
                     android:id="@+id/img"
-                    android:layout_width="215dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="262dp"
+                    android:layout_height="208dp"
                     android:layout_gravity="center_horizontal" />
             </androidx.cardview.widget.CardView>
 

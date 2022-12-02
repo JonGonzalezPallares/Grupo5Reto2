@@ -34,9 +34,9 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener {
     object SITESNAMES {
         var POBENA_FUNDICION = "Pobaleko Burdinola"
-        var POBENA_FUNDICION_IMG_1 = "irudia_pobena_1"
+        var POBENA_FUNDICION_IMG_1 = "fundicion_pobela"
         var POBENA_HERMITA = "Pobeñako Ermita"
-        var POBENA_HERMITA_IMG = "irudia_pobena_1"
+        var POBENA_HERMITA_IMG = "irudiapobena1"
         var ITSASLUR_IBILBIDEA= "Itsaslur Ibilbidea"
         var ITSASLUR_IBILBIDEA_IMG_1 = "itsaslur1_2"
         var ITSASLUR_IBILBIDEA_IMG_2 = "itsaslur2_1"
@@ -327,7 +327,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
 
 
-        keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
+        keyPathsBehavior.state = BottomSheetBehavior.STATE_EXPANDED
 
         /*
         Devolvemos "false" para indicar que no queremos consumir el evento, indicandole asi que queremos
