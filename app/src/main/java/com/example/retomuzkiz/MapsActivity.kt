@@ -16,7 +16,7 @@ import android.os.Handler
 import android.os.Looper
 import android.transition.Slide
 import android.transition.TransitionManager
-
+import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
@@ -28,8 +28,10 @@ import androidx.constraintlayout.widget.ConstraintSet.Layout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.retomuzkiz.clases.Actividad
 import androidx.core.graphics.drawable.toDrawable
 import com.example.retomuzkiz.clases.OptionsMenuActivity
+import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.prefs
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -187,6 +189,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
         val a = R.drawable.fondo_degradado
         this.supportActionBar!!.setBackgroundDrawable(a.toDrawable())
+
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager

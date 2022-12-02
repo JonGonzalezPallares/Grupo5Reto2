@@ -8,11 +8,7 @@
     android:padding="10dp"
     xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
-    <!--layout de parrafos-->
-
     <!--layout de los buttones-->
-
-
     <ImageButton
         android:id="@+id/btn_atras"
         android:layout_width="56dp"
@@ -20,7 +16,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="40dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="160dp"
         android:src="@android:drawable/ic_media_previous"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -31,7 +27,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="160dp"
         android:src="@android:drawable/ic_media_next"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -40,34 +36,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/jugar" />
+        android:text="Jugar" />
 
+    <!--layout de parrafos-->
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/btn_atras"
+        android:layout_alignBottom="@id/btn_salir"
         android:layout_alignParentTop="true"
         android:layout_marginStart="22dp"
-        android:layout_marginTop="6dp"
         android:layout_marginEnd="22dp"
+        android:layout_marginTop="6dp"
         android:layout_marginBottom="58dp"
         android:background="@drawable/pergamino_fondo"
         android:orientation="vertical">
 
         <TextView
-
             android:id="@+id/tv_parrafo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="60dp"
+            android:layout_width="437dp"
+            android:layout_height="169dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="80dp"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold|italic"
-            tools:text="El mendean eraiki lorem ipsum naplest d zenbbdbdbdsbsfbsfdbdsbsdbbbsbdfsd, eta Muskiz zen herriko zubirik zaharrena." />
+            tools:text="El mendean eraiki zenbbdbdbdsbsfbsfdbdsbsdbbbsbdfsd, eta Muskiz zen herriko zubirik zaharrena." />
     </LinearLayout>
 
 

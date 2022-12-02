@@ -1,10 +1,11 @@
-package com.example.retomuzkiz
+package com.example.retomuzkiz.Laberinto
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import com.example.retomuzkiz.databinding.ActivityLaberintoBinding
 import com.example.retomuzkiz.databinding.ActivityPuenteJuegoBinding
+import com.example.retomuzkiz.R
 
 class ActivityLaberinto : AppCompatActivity() {
 
