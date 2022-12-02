@@ -25,6 +25,7 @@ class PantallaEspera : AppCompatActivity() {
         binding.btnContinuar.setOnClickListener {
             val intento = Intent(this, ItsaslurJuego::class.java)
             startActivity(intento)
+            finish()
         }
     }
 

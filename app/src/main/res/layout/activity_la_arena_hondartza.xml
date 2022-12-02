@@ -1,189 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:orientation="vertical"
-    android:padding="10dp"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".laArenaHondartza.LaArenaHondartza">
 
 
-    <!--Layout de imagen final-->
-    <LinearLayout
+    <!--Layout final del juego  -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@drawable/fondo_degradado"
+        >
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/fondo_degradado"
-            android:src="@drawable/irudia_arena_2" />
-    </LinearLayout>
-
-    <!--Layout de texto prencipal-->
-    <LinearLayout
-        android:id="@+id/layoutText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical">
+            android:layout_height="300dp"
+            android:layout_marginTop="88dp"
+            android:src="@drawable/irudia_arena_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="08dp"
-            android:text="Empareja preguntas con respuestas:"
+            android:text="¡Lo hiciste, amigo!"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintBottom_toTopOf="@+id/tvSeg"/>
+
+        <TextView
+            android:id="@+id/tvSeg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            android:text="¡Has resuelto el desafío!"
+            android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="22sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            app:layout_constraintBottom_toTopOf="@+id/btnCompletado"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <!--Layout de juego-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutPreguntas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageButton
-            android:id="@+id/boton12"
-            android:layout_width="160dp"
-            android:layout_height="94dp"
-            android:layout_marginStart="20dp"
-            android:background="@color/black"
+        <Button
+            android:id="@+id/btnCompletado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:text="continuar"
+            android:textColor="@color/black"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/boton09"
-            android:layout_width="160dp"
-            android:layout_height="94dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="05dp"
-            android:background="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/boton00"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/boton02"
-            android:layout_width="160dp"
-            android:layout_height="94dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/boton10"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/boton03"
-            android:layout_width="160dp"
-            android:layout_height="94dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/boton04"
-            android:layout_width="160dp"
-            android:layout_height="94dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/boton11"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/boton08"
-            android:layout_width="160dp"
-            android:layout_height="94dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="05dp"
-            android:background="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/boton01"
-            android:layout_width="160dp"
-            android:layout_height="94dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="05dp"
-            android:background="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/boton08"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/boton10"
-            android:layout_width="160dp"
-            android:layout_height="94dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/boton04"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/boton11"
-            android:layout_width="160dp"
-            android:layout_height="94dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/boton03"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/boton00"
-            android:layout_width="160dp"
-            android:layout_height="94dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="05dp"
-            android:background="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/boton01"
-            tools:ignore="SpeakableTextPresentCheck" />
-
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!--Layout de buttones-->
-    <LinearLayout
-        android:id="@+id/layotButton"
+
+    <!--Layout de juego-->
+    <GridLayout
+        android:id="@+id/layoutButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/carta_fondo"
+        android:columnCount="2"
+        android:rowCount="5">
 
-        <TextView
-            android:id="@+id/tvAciertos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="24sp" />
+        <ImageButton
+            android:id="@+id/boton12"
+            android:layout_width="100dp"
+            android:layout_height="94dp"
+            android:layout_rowWeight="1"
+            android:layout_margin="5dp"
+            android:layout_columnWeight="1"
+            android:background="@color/black" />
 
-        <Button
-            android:id="@+id/botonJuegoReiniciar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/reiniciar_juego" />
-    </LinearLayout>
+        <ImageButton
+            android:id="@+id/boton09"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
+            android:layout_height="94dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
+
+        <ImageButton
+            android:id="@+id/boton02"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
+            android:layout_height="94dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@color/black" />
+
+        <ImageButton
+            android:id="@+id/boton03"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
+            android:layout_height="94dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
+
+        <ImageButton
+            android:id="@+id/boton04"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
+            android:layout_height="94dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
+
+        <ImageButton
+            android:id="@+id/boton08"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
+            android:layout_height="94dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
 
 
+        <ImageButton
+            android:id="@+id/boton01"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
+            android:layout_height="94dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
 
+        <ImageButton
+            android:id="@+id/boton10"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
+            android:layout_height="94dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
 
+        <ImageButton
+            android:id="@+id/boton11"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
+            android:layout_height="94dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
 
+        <ImageButton
+            android:id="@+id/boton00"
+            android:layout_margin="5dp"
+            android:layout_width="100dp"
+            android:layout_height="94dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@color/black" />
+    </GridLayout>
 
 </LinearLayout>

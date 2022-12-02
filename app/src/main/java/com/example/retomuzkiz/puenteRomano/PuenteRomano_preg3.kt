@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import com.example.retomuzkiz.R
@@ -40,7 +41,7 @@ class PuenteRomano_preg3 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val vista = inflater.inflate(R.layout.fragment_puente_romano_preg3, container, false)
-        val saltar = vista.findViewById<Button>(R.id.btnSaltar3)
+        val saltar = vista.findViewById<ImageButton>(R.id.btnSaltar3)
 
         //Campo de texto donde va a estar el enunciado
         val texto = vista.findViewById<TextView>(R.id.txtPreg3)

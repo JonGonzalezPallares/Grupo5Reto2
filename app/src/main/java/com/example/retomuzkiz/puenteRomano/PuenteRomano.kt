@@ -1,11 +1,15 @@
 package com.example.retomuzkiz.puenteRomano
 
 import android.content.Intent
+import android.content.res.Resources
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ActivityPuenteRomanoBinding
 
 class PuenteRomano : AppCompatActivity() {
@@ -24,9 +28,14 @@ class PuenteRomano : AppCompatActivity() {
         binding.btnPrimero.setOnClickListener {
             //Cambiamos el estilo de los botones
             it.isEnabled = false
+
+            //Estilo para el boton cuando esta inactivo
+            binding.btnPrimero.setBackgroundResource(R.drawable.estilo_boton_desactivado)
+            binding.btnPrimero.alpha = 0.5F
+            binding.btnPrimero.setTextColor(Color.BLACK)
+
             binding.btnUltimo.visibility = View.GONE
             binding.btnSiguiente.visibility = View.VISIBLE
-            binding.btnPrimero.setBackgroundColor(Color.parseColor("#C1C0C0"))
 
             //Llamamos a la funcion para cambiar los fragmentos
             changeFrag(PuenteRomano_preg1())
@@ -49,7 +58,12 @@ class PuenteRomano : AppCompatActivity() {
         binding.btnSiguiente.setOnClickListener {
             //Cambiamos el estilo de los botones
             binding.btnPrimero.isEnabled=true
-            binding.btnPrimero.setBackgroundColor(Color.parseColor("#C822DA"))
+
+            //Estilo para el boton cuando esta activo
+            binding.btnPrimero.setBackgroundResource(R.drawable.estilo_botones)
+            binding.btnPrimero.alpha = 1F
+            binding.btnPrimero.setTextColor(Color.WHITE)
+
             it.visibility = View.GONE
             binding.btnUltimo.visibility = View.VISIBLE
 
@@ -63,7 +77,6 @@ class PuenteRomano : AppCompatActivity() {
             binding.btnPrimero.visibility = View.GONE
             binding.btnAtras.visibility = View.VISIBLE
             it.visibility = View.GONE
-            binding.btnEmpezar.setBackgroundColor(Color.parseColor("#C822DA"))
             binding.btnEmpezar.visibility = View.VISIBLE
 
             //Llamamos a la funcion para cambiar los fragmentos

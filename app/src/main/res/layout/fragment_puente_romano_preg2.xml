@@ -4,40 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#170505"
+    android:background="@drawable/pergamino_fondo"
     tools:context=".puenteRomano.PuenteRomano_preg2" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/txtPreg2"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="283dp"
+            android:layout_height="482dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="73dp"
+            android:layout_marginEnd="60dp"
             android:paddingStart="10dp"
             android:paddingTop="20dp"
             android:paddingEnd="10dp"
             android:text="@string/puente_romano_enunciado_2"
-            android:textColor="#FFFFFF"
-            android:textSize="23sp"
-            app:layout_constraintBottom_toTopOf="@+id/btnSaltar2"
+            android:textAlignment="center"
+            android:textColor="#703C10"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnSaltar2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
-            android:layout_marginTop="5dp"
             android:layout_marginEnd="160dp"
-            android:text="Saltar"
+            android:layout_marginBottom="30dp"
+            android:background="#00735F5F"
+            android:src="@drawable/saltar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPreg2" />
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

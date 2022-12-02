@@ -143,3 +143,4 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
 
     }
 }
+

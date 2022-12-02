@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/fondo_degradado"
+    android:orientation="horizontal"
     tools:context=".ActivityLaberinto">
 
     <androidx.fragment.app.FragmentContainerView
@@ -13,5 +14,21 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="20dp"
         tools:layout="@layout/fragment_blank" />
+
+    <ImageView
+        android:id="@+id/fuegoAtras"
+        android:layout_width="479dp"
+        android:layout_height="165dp"
+        android:layout_gravity="bottom|center"
+        android:background="@drawable/llamas_fuego_1" />
+
+    <ImageView
+        android:id="@+id/fuegoAlante"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:layout_gravity="bottom|center"
+        android:background="@drawable/llamas_fuego_2" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
