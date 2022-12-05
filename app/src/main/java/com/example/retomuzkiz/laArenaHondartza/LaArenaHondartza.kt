@@ -187,7 +187,8 @@ class LaArenaHondartza : Activity() {
     // al teminar el juego
     fun completarJuego(){
         binding.btnCompletado.setOnClickListener{
-            Toast.makeText(this, "hacer algo con esto", Toast.LENGTH_SHORT).show()
+            //MsgVictoria().carga(this)
+            //Toast.makeText(this, "hacer algo con esto", Toast.LENGTH_SHORT).show()
         }
     }
 

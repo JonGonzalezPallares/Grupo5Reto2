@@ -1,19 +1,25 @@
 package com.example.retomuzkiz.clases
 
-import android.content.Context
-import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.retomuzkiz.R
+import com.example.retomuzkiz.databinding.ActivityMsgVictoriaBinding
 
-class MsgVictoria() {
-    //Funcion para mostrar el dialog de victoria
-    fun carga(context: Context) {
-        val constructor: AlertDialog.Builder = AlertDialog.Builder(context)
-            .setTitle("¡VICTORIA!")
-            .setMessage("¡Bien hecho!\nHas ganado, sigue así")
-            //Al pulsar el boton nos llevara al mapa de nuevo
-            .setPositiveButton("Ir al mapa"){_,_ ->
-                return@setPositiveButton
-            }
-            .setCancelable(false)
-        constructor.show()
+class MsgVictoria : AppCompatActivity() {
+    private lateinit var binding : ActivityMsgVictoriaBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMsgVictoriaBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        //Para borrar la barra superior
+        this.supportActionBar!!.hide()
+
+        var imagenFondo = 0
+        if(intent.getStringExtra("imagen") == "itsaslur2_2"){
+            imagenFondo = R.drawable.itsaslur2_2
+        }
+        binding.imgVictoria.setImageResource(imagenFondo)
     }
 }

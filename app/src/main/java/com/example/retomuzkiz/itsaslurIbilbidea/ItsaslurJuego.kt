@@ -1,11 +1,10 @@
 package com.example.retomuzkiz.itsaslurIbilbidea
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.ImageButton
-import androidx.core.view.isVisible
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityItsaslurJuegoBinding
 
@@ -86,7 +85,10 @@ class ItsaslurJuego : AppCompatActivity() {
         for(button in buttonsList4){
             button.setOnClickListener {
                 if(button.tag=="true"){
-                    MsgVictoria().carga(this)
+                    val intento = Intent(this, MsgVictoria::class.java)
+                    intento.putExtra("imagen", "itsaslur2_2")
+                    startActivity(intento)
+                    //MsgVictoria(this)
                 }
             }
         }

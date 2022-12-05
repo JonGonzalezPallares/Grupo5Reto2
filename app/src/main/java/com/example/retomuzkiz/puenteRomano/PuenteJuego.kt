@@ -1,6 +1,5 @@
 package com.example.retomuzkiz.puenteRomano
 
-import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.os.Handler
@@ -11,7 +10,6 @@ import android.widget.ImageView
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.R
-import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityPuenteJuegoBinding
 
 
@@ -248,7 +246,7 @@ class PuenteJuego : AppCompatActivity() {
         val tiempo = binding.imgFinal.animation.duration
 
         Handler(Looper.myLooper()?:return).postDelayed({
-            MsgVictoria().carga(this)
+            //MsgVictoria().carga(this)
         }, (tiempo+1000))
     }
 }

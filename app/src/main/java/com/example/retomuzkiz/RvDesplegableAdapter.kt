@@ -46,32 +46,32 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
             when (name) {
                 MapsActivity.SITESNAMES.PUENTE_ROMANO_IMG -> {
 
-                    binding.img.setImageDrawable(ContextCompat.getDrawable(context,
+                    binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.puentecompleto))
                 }
                 MapsActivity.SITESNAMES.POBENA_FUNDICION_IMG_1 -> {
-                    binding.img.setImageDrawable(ContextCompat.getDrawable(context,
+                    binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.fundicion_pobela))
                 }
                 MapsActivity.SITESNAMES.POBENA_HERMITA_IMG -> {
-                    binding.img.setImageDrawable(ContextCompat.getDrawable(context,
+                    binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.hermita_pobena_1))
 
                 }
                 MapsActivity.SITESNAMES.PLAYA_LA_ARENA_IMG -> {
-                    binding.img.setImageDrawable(ContextCompat.getDrawable(context,
+                    binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.irudia_arena_2))
                 }
                 MapsActivity.SITESNAMES.ITSASLUR_IBILBIDEA_IMG_1-> {
-                    binding.img.setImageDrawable(ContextCompat.getDrawable(context,
+                    binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.itsaslur2_2))
                 }
                 MapsActivity.SITESNAMES.CASTILLO_MUNATONES_IMG -> {
-                    binding.img.setImageDrawable(ContextCompat.getDrawable(context,
+                    binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.castillo))
                 }
                 MapsActivity.SITESNAMES.NOCHE_SAN_JUAN_IMG -> {
-                    binding.img.setImageDrawable(ContextCompat.getDrawable(context,
+                    binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.irudia_san_juan_1))
                 }
 

@@ -37,14 +37,11 @@ class LaberynthGame: View {
     private lateinit var exit: Cell
 
     constructor(applicationContext: Context,attrs: AttributeSet?) :super(applicationContext,attrs){
-
         playerPaint = Paint()
         playerPaint.color = Color.RED
         exitPaint = Paint()
         exitPaint.color = Color.BLUE
-
         wallPaint = Paint()
-        wallPaint.setColor(Color.BLACK)
         wallPaint.color = Color.BLACK
         wallPaint.strokeWidth = WALL_THICKNESS
         random = Random()
@@ -68,7 +65,7 @@ class LaberynthGame: View {
 
         for(col in 0 until COLS){
             for (row in 0 until ROWS){
-                var celda = cells[col][row]
+                val celda = cells[col][row]
                 if(celda.topWall){
                     canvas.drawLine(
                         col*cellSize,
@@ -103,7 +100,8 @@ class LaberynthGame: View {
                     )
                 }
             }
-            var margin = cellSize/10
+
+            val margin = cellSize/10
             canvas.drawRect(
                 player.cols1*cellSize+margin,
                 player.rows1*cellSize+margin,
@@ -118,10 +116,7 @@ class LaberynthGame: View {
                 (exit.rows1+1)*cellSize - margin,
                 exitPaint
             )
-
         }
-
-
     }
 
     private fun movePlayer(direccion: Direction){
@@ -212,95 +207,95 @@ class LaberynthGame: View {
         var nextCell: Cell?
 
         cells = Array(COLS){ col->
-        Array(ROWS) { row ->
-            Cell(col, row)
+            Array(ROWS) { row ->
+                Cell(col, row)
+            }
+        }
+
+        currentCell = cells[0][0]
+        currentCell.visited = true
+        player = cells[0][0]
+        exit = cells[COLS-1][ROWS-1]
+        do {
+            nextCell = getNeighbour(currentCell)
+            if (nextCell != null) {
+
+                removeWall(currentCell, nextCell)
+                stack.push(currentCell)
+                currentCell = nextCell
+                currentCell.visited = true
+            } else {
+                currentCell = stack.pop()
+            }
+        }while (!stack.isEmpty())
+    }
+
+
+    private fun removeWall(currentCell: Cell, nextCell: Cell) {
+        //Top Wall
+        if(currentCell.cols1 == nextCell.cols1 && currentCell.rows1 == nextCell.rows1+1){
+            currentCell.topWall=false
+            nextCell.bottomWall = false
+        }
+        //Bottom wall
+        if(currentCell.cols1 == nextCell.cols1 && currentCell.rows1 == nextCell.rows1-1){
+            currentCell.bottomWall=false
+            nextCell.topWall = false
+        }
+        //LeftWall
+        if(currentCell.cols1 == nextCell.cols1+1 && currentCell.rows1 == nextCell.rows1){
+            currentCell.leftWall=false
+            nextCell.rightWall = false
+        }
+        //rightWall
+        if(currentCell.cols1 == nextCell.cols1-1 && currentCell.rows1 == nextCell.rows1){
+            currentCell.rightWall=false
+            nextCell.leftWall = false
+        }
+
+
+    }
+
+    private fun getNeighbour(cell: Cell): Cell?{
+        var neighbours = ArrayList<Cell>()
+        //left neighbour
+        if(cell.cols1>0){
+            if(!cells[cell.cols1-1][cell.rows1].visited){
+                neighbours.add(cells[cell.cols1-1][cell.rows1])
+
+            }
+        }
+        //rigth neighbour
+
+        if(cell.cols1< COLS-1){
+            if(!cells[cell.cols1+1][cell.rows1].visited){
+                neighbours.add(cells[cell.cols1+1][cell.rows1])
+
+            }
+        }
+        //top neighbour
+
+        if(cell.rows1>0){
+            if(!cells[cell.cols1][cell.rows1-1].visited){
+                neighbours.add(cells[cell.cols1][cell.rows1-1])
+
+            }
+        }
+        //bottom neighbour
+
+        if(cell.rows1 < ROWS-1){
+            if(!cells[cell.cols1][cell.rows1+1].visited){
+                neighbours.add(cells[cell.cols1][cell.rows1+1])
+
+            }
+        }
+        return if(neighbours.size>0) {
+            val index = random.nextInt(neighbours.size)
+            neighbours[index]
+        }else{
+            null
         }
     }
-
-    currentCell = cells[0][0]
-    currentCell.visited = true
-    player = cells[0][0]
-    exit = cells[COLS-1][ROWS-1]
-    do {
-        nextCell = getNeighbour(currentCell)
-        if (nextCell != null) {
-
-            removeWall(currentCell, nextCell)
-            stack.push(currentCell)
-            currentCell = nextCell
-            currentCell.visited = true
-        } else {
-            currentCell = stack.pop()
-        }
-    }while (!stack.isEmpty())
-}
-
-
-private fun removeWall(currentCell: Cell, nextCell: Cell) {
-    //Top Wall
-    if(currentCell.cols1 == nextCell.cols1 && currentCell.rows1 == nextCell.rows1+1){
-        currentCell.topWall=false
-        nextCell.bottomWall = false
-    }
-    //Bottom wall
-    if(currentCell.cols1 == nextCell.cols1 && currentCell.rows1 == nextCell.rows1-1){
-        currentCell.bottomWall=false
-        nextCell.topWall = false
-    }
-    //LeftWall
-    if(currentCell.cols1 == nextCell.cols1+1 && currentCell.rows1 == nextCell.rows1){
-        currentCell.leftWall=false
-        nextCell.rightWall = false
-    }
-    //rightWall
-    if(currentCell.cols1 == nextCell.cols1-1 && currentCell.rows1 == nextCell.rows1){
-        currentCell.rightWall=false
-        nextCell.leftWall = false
-    }
-
-
-}
-
-private fun getNeighbour(cell: Cell): Cell?{
-    var neighbours = ArrayList<Cell>()
-    //left neighbour
-    if(cell.cols1>0){
-        if(!cells[cell.cols1-1][cell.rows1].visited){
-            neighbours.add(cells[cell.cols1-1][cell.rows1])
-
-        }
-    }
-    //rigth neighbour
-
-    if(cell.cols1< COLS-1){
-        if(!cells[cell.cols1+1][cell.rows1].visited){
-            neighbours.add(cells[cell.cols1+1][cell.rows1])
-
-        }
-    }
-    //top neighbour
-
-    if(cell.rows1>0){
-        if(!cells[cell.cols1][cell.rows1-1].visited){
-            neighbours.add(cells[cell.cols1][cell.rows1-1])
-
-        }
-    }
-    //bottom neighbour
-
-    if(cell.rows1 < ROWS-1){
-        if(!cells[cell.cols1][cell.rows1+1].visited){
-            neighbours.add(cells[cell.cols1][cell.rows1+1])
-
-        }
-    }
-    if(neighbours.size>0) {
-        var index = random.nextInt(neighbours.size)
-        return neighbours.get(index)
-    }else{
-        return null
-    }
-}
 }
 private class Cell{
     var topWall=true
