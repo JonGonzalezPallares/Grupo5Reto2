@@ -1,29 +1,91 @@
 <resources>
+
     <string name="app_name">Grupo5Reto2</string>
     <string name="title_activity_maps">Muskiz ezagutzen!</string>
-    <string name="open">Open</string>
-    <string name="close">Close</string>
+    <string name="open">Abrir</string>
+    <string name="close">Cerrar</string>
     <!-- TODO: Remove or change this placeholder text -->
+
+
+    <!-- Menu Principal -->
+    <string name="hintUser">Usuario</string>
+    <string name="hintClase">Clase</string>
+    <string name="start">Inicio</string>
+    <string name="othersUsers">Otros usuarios</string>
+
+    <!-- Map Activity -->
+    <!-- Menu -->
+    <string name="modes">Modos</string>
+    <string name="puntuation">Puntuacion</string>
+    <string name="others">Otros</string>
+    <string name="freeMode">Modo libre</string>
+    <string name="guidedMode">Modo guiado</string>
+    <string name="profesorMode">Modo profesor</string>
+    <string name="yourProgress">Tu progreso</string>
+    <string name="ranking">Ranking</string>
+    <string name="aboutUs">Sobre nosotros</string>
+    <string name="logOut">Cerrar sesión</string>
+
+    <!-- Playa La Arena -->
+    <string name="gameLaArenaHondartza">Playa de la Arena</string>
+    <string name="cardsMatch">Correcto!</string>
+
+    <!-- Hermita -->
+    <string name="gameHermitaDePobeña">Hermita de Pobela</string>
+
+
+    <!-- Fundicion -->
+    <string name="gameFundicion"></string>
+
+    <!-- Castillo Muñatones -->
+    <string name="gameCastilloMuñatones">Castillo de Muñatones</string>
+
+    <!-- Itsaslur Ibilbidea -->
+    <string name="gameItsaslurIbilbidea">Paseo de Itsaslur</string>
+
+    <string name="waiting">Esperando</string>
+    <string name="waitingExplanation">Hay que esperar a que el profesor termine de dar la explicacion</string>
+    <string name="itsaslurQ1">Por donde hemos entrado al paseo?</string>
+    <string name="itsaslurQ2">Que hemos visto en el paseo?</string>
+    <string name="itsaslurQ3">Que hemos encontrado a la mitad del camino?</string>
+    <string name="itsaslurQ4">Donde podemos darnos un baño?</string>
+    <!-- San Juan gaua-->
+    <string name="gameSanJuan">Noche de San Juan</string>
+    <string name="explanationSanJuan">La víspera de San Juan es conocida como el día más corto del año, aunque en realidad la fecha real de hoy en dia es el 21 de junio.
+        ¿Cuándo se celebra el solsticio de verano? La adaptación que hizo el cristianismo explica que no coincide con el solsticio de verano. Esta noche con San Juan
+        se festejará, el fuego lo quema todo, se desea el fuego y se dará la bienvenida al verano. Además de ser un día mágico, también puede ahuyentar malos espíritus o lo sucedido
+        rompiendo con las cosas malas.En el pasado, estos fuegos se encendían para dar más poder al sol y así extender la luz.
+        En el pasado, se celebraba como una fiesta pagana, ya que el sol era considerado un dios. Con la llegada del cristianismo, la celebración cambió, pero nunca perdió su esencia.
+        Hoy en día se mezclan tradición y rituales, y cada uno celebra como quiere, bailando alrededor del fuego, saltando sobre él, disfrutando de la noche.
+        El origen de esta fecha es el día del nacimiento de San Juan Bautista, ya que su padre Zacarías mandó encender un fuego para anunciar el nacimiento de su hijo.
+        En Muskiz tiene gran importancia la bajada de las antorchas, que se inicia en la estación a las 22:30. Luego, alrededor de las 23:30, comienzan los fuegos artificiales, seguidos de una verbena.
+        Esa noche, las personas que acuden a Muskiz encienden antorchas hasta el antiguo almacén de Petronor, junto con los silbadores, y luego arrojan las antorchas a la hoguera de San Jorge.</string>
+    <!-- Pantalla felicitacion-->
+    <string name="congratulations1">¡Lo hiciste, amigo!</string>
+    <string name="congratulations2">Has resuelto el desafio</string>
+    <!-- Pantalla felicitacion-->
+
+    <string name="Continue">Continuar</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="puente_romano_enunciado_1">El Pobaleko zubi erromanikoa El Pobaleko burdinolarantz doa, Barbadun ibaiaren gainean. XIII. mendean eraiki zen, eta Muskiz zen herriko zubirik zaharrena.</string>
-    <string name="puente_romano_enunciado_2">Muskizeko erdigunetik Barbadun ibaia igarotzen zen, eta, beraz, zubi bat eraiki behar izan zuten herritik arazorik gabe mugitu ahal izateko. Horri esker, Galdames eta Sopuertatik Muskizera pasatzen zen jendea. Zubi hau beharrezkoa izan zen arazo demografikoengatik.</string>
-    <string name="puente_romano_enunciado_3">Zubia harrizkoa da. Arkuzko bi begi zituen, baina gaur egun bat dauka, Karlistaldietan bestea hondoratu egin baitzen, eta horren ordez hormigoizko pasabide bat eraiki da gaur egun. Gutxi gorabehera bi metroko zabalera du eta ez du babes-hormarik. Zubia ez erortzeko, zutabe handi bat eraiki da. Gaur egun ere bertatik pasa daiteke, baina ez da aspalditik erabiltzen.</string>
-    <string name="puente_romano_preg_1">Zein mendetan eraiki zen Pobaleko zubi erromanikoa?</string>
-    <string name="puente_romano_preg_2">Zer ibaik zeharkatzen du zubi hau?</string>
-    <string name="puente_romano_preg_3">Zertarako eraiki zen zubi hau?</string>
-    <string name="puente_romano_preg_4">Zerez dago zubia eraikia?</string>
-    <string name="puente_preg_1_res_1">III. Mendean</string>
-    <string name="puente_preg_1_res_2">XIII. mendean, Muskizko zaharrena izan zen</string>
-    <string name="puente_preg_1_res_3">XX. Mendean</string>
-    <string name="puente_preg_2_res_1">Barbadun ibaia</string>
-    <string name="puente_preg_2_res_2">Nerbioi ibaia</string>
-    <string name="puente_preg_2_res_3">Kadagua ibaia</string>
-    <string name="puente_preg_3_res_1">Dekorazio gisa eraiki zen</string>
-    <string name="puente_preg_3_res_2">Animaliek alde batetik bestera pasa ahal izateko</string>
-    <string name="puente_preg_3_res_3">Galdames eta Sopuertako pertsonak Muskizera igaro ahal izateko</string>
-    <string name="puente_preg_4_res_1">Egurrez</string>
-    <string name="puente_preg_4_res_2">Harriz</string>
-    <string name="puente_preg_4_res_3">Burdinez</string>
+    <string name="puente_romano_enunciado_1">El puente románico de El Pobal conduce a la ferrería de El Pobal, sobre el río Barbadun. XIII. Fue construido en el siglo, y Muskiz era el puente más antiguo de la ciudad.</string>
+    <string name="puente_romano_enunciado_2">El río Barbadun pasaba por el centro de Muskize, por lo que tuvieron que construir un puente para poder moverse por el pueblo sin ningún problema. Gracias a ello, la gente se trasladó de Galdames y Sopuerta a Muskize. Este puente era necesario por problemas demográficos.</string>
+    <string name="puente_romano_enunciado_3">El puente está hecho de piedra. Tenía dos ojos arqueados, pero hoy tiene uno, ya que el otro se hundió en las Guerras Carlistas, y hoy se ha construido una pasarela de hormigón en su lugar. Tiene aproximadamente dos metros de ancho y no tiene paredes protectoras. Para evitar que el puente se caiga, se ha construido un gran pilar. Todavía hoy es transitable, pero hace mucho tiempo que no se usa.</string>
+    <string name="puente_romano_preg_1">¿En qué siglo se construyó el puente románico del Pobal?</string>
+    <string name="puente_romano_preg_2">¿Qué río cruza este puente?</string>
+    <string name="puente_romano_preg_3">¿Para qué se construyó este puente?</string>
+    <string name="puente_romano_preg_4">¿De qué está hecho el puente?</string>
+    <string name="puente_preg_1_res_1">Siglo III.</string>
+    <string name="puente_preg_1_res_2">Siglo XIII., el mas antiguo de Muskiz</string>
+    <string name="puente_preg_1_res_3">Siglo XX.</string>
+    <string name="puente_preg_2_res_1">Rio Barbudo</string>
+    <string name="puente_preg_2_res_2">Rio Nervión</string>
+    <string name="puente_preg_2_res_3">Rio kadagua</string>
+    <string name="puente_preg_3_res_1">Se construyo como decoración</string>
+    <string name="puente_preg_3_res_2">Para que los animales puedan pasar</string>
+    <string name="puente_preg_3_res_3">Para que las personas de Sopuerta y Galdames puedan ir a Muskiz</string>
+    <string name="puente_preg_4_res_1">Madera</string>
+    <string name="puente_preg_4_res_2">Piedra</string>
+    <string name="puente_preg_4_res_3">Hierrp</string>
     <string name="reiniciar_juego">Reiniciar</string>
     <string name="jugar">Jugar</string>
 </resources>
