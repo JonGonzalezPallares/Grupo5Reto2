@@ -2,12 +2,14 @@
 package com.example.retomuzkiz.Laberinto
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import com.example.retomuzkiz.clases.MsgVictoria
 import java.util.*
 
 class LaberynthGame: View {
@@ -16,6 +18,7 @@ class LaberynthGame: View {
         const val ROWS:Int= 19
         const val WALL_THICKNESS = 4f
     }
+    private var contexto : Context
     private var ROWS:Int= 5
     private var COLS:Int= 5
     private lateinit var cells:Array<Array<Cell>>
@@ -45,6 +48,7 @@ class LaberynthGame: View {
         wallPaint.color = Color.BLACK
         wallPaint.strokeWidth = WALL_THICKNESS
         random = Random()
+        contexto = applicationContext
         createMaze()
 
     }
@@ -143,12 +147,18 @@ class LaberynthGame: View {
         invalidate()
     }
     private fun checkExit(){
-        if(contador != 3){
+        if(contador < 1){
             if (player == exit){
                 ROWS += 5
                 COLS += 5
                 createMaze()
                 contador ++
+            }
+        }else{
+            if(player == exit) {
+                ActivityLaberinto.fin ++
+                ActivityLaberinto.cambio = true
+                ActivityLaberinto.finalizar(contexto)
             }
         }
     }

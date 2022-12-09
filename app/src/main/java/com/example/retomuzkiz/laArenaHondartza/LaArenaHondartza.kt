@@ -2,12 +2,14 @@ package com.example.retomuzkiz.laArenaHondartza
 
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.*
 import com.example.retomuzkiz.R
+import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityLaArenaHondartzaBinding
 
 
@@ -34,6 +36,10 @@ class LaArenaHondartza : Activity() {
     private var numeroSegundo = 0
     private var bloqueo = false
     private var aciertos = 0
+
+    //______________________________________________________________________________________________
+    //Variable para saber cuando se tiene que cerrar y cuando no
+    private var cambio = false
 
     //______________________________________________________________________________________________
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -187,8 +193,10 @@ class LaArenaHondartza : Activity() {
     // al teminar el juego
     fun completarJuego(){
         binding.btnCompletado.setOnClickListener{
-            //MsgVictoria().carga(this)
-            //Toast.makeText(this, "hacer algo con esto", Toast.LENGTH_SHORT).show()
+            val intento = Intent(this, MsgVictoria::class.java)
+            intento.putExtra("imagen", "arena")
+            cambio = true
+            startActivity(intento)
         }
     }
 
@@ -231,6 +239,14 @@ class LaArenaHondartza : Activity() {
             tableroRespuestas[i]!!.isEnabled = true
             tableroRespuestas[i]!!.setOnClickListener { if (!bloqueo) comprobar(i, false, tableroRespuestas[i]) }
             tableroPreguntas[i]!!.setOnClickListener { if (!bloqueo) comprobar(i, true, tableroPreguntas[i]) }
+        }
+    }
+
+    //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
+    override fun onPause() {
+        super.onPause()
+        if(cambio){
+            finish()
         }
     }
 }

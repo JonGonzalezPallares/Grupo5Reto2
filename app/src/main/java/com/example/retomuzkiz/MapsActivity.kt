@@ -106,12 +106,12 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             if(navegacion == false){
                 navegacion = true
                 if(iniciarguiado == false){
-                val guide = findViewById<View>(R.id.m_Modoguiado)
-                val free = findViewById<View>(R.id.m_Modolibre)
-                guide.isEnabled = false
+                    val guide = findViewById<View>(R.id.m_Modoguiado)
+                    val free = findViewById<View>(R.id.m_Modolibre)
+                    guide.isEnabled = false
 
-                free.isEnabled = true
-                iniciarguiado = true
+                    free.isEnabled = true
+                    iniciarguiado = true
                 }
             }
             else{
@@ -131,7 +131,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                     true
                 }
                 R.id.m_logout -> {
-                true
+                    true
                 }
                 R.id.m_Modoguiado -> {
                     //Carcar el modo guiado
@@ -142,7 +142,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                     guide.isEnabled = false
                     free.isEnabled = true
                     warning("", "Ahoras estas en el modo guiado")
-                        true
+                    true
                 }
                 R.id.m_Modolibre -> {
                     var guide = findViewById<View>(R.id.m_Modoguiado)
@@ -556,7 +556,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     //funciones del menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-           // R.id.m_home -> Toast.makeText(this, " a", Toast.LENGTH_SHORT).show()
+            // R.id.m_home -> Toast.makeText(this, " a", Toast.LENGTH_SHORT).show()
             R.id.m_ranking -> Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
             R.id.m_logout -> {
 
@@ -595,6 +595,4 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         TransitionManager.beginDelayedTransition(layout,mSlideLeft)
         binding.lateralmenu.isVisible = navegacion
     }
-
-
 }
