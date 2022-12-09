@@ -11,21 +11,19 @@
                 android:titleCondensed="">
                 <menu>
                     <item
-                    android:id="@+id/m_Modolibre"
-                    android:title="Modo libre"
+                        android:id="@+id/m_Modolibre"
                         android:icon="@drawable/libre"
-                    android:visible ="true"
-                        />
+                        android:title="@string/freeMode"
+                        android:visible="true" />
                     <item
                         android:id="@+id/m_Modoguiado"
-                        android:title="Modo guiado"
                         android:icon="@drawable/guiado"
-                        android:visible="true"
-                        />
+                        android:title="@string/guidedMode"
+                        android:visible="true" />
                     <item
                         android:id="@+id/m_Profesor"
-                        android:title="Modo Profesor"
                         android:icon="@drawable/profesor"
+                        android:title="@string/profesorMode"
                         android:visible="true" />
                 </menu>
             </item>
@@ -33,28 +31,30 @@
             <menu>
                 <item
                     android:id="@+id/m_Puntuacion"
-                    android:title="Tu progreso"
                     android:icon="@drawable/progreso"
-                    android:visible ="true"/>
+                    android:title="@string/yourProgress"
+                    android:visible="true" />
                 <item
-                android:id="@+id/m_ranking"
-                android:title="Ranking de puntuacion"
-                android:icon="@drawable/coronareal"
-                android:visible ="true"/>
+                    android:id="@+id/m_ranking"
+                    android:icon="@drawable/coronareal"
+                    android:title="@string/ranking"
+                    android:visible="true" />
 
             </menu>
     </item>
             <item android:title="Otros">
                 <menu>
 
-                    <item android:id="@+id/m_About"
-                        android:title="Sobre nosotros"
+                    <item
+                        android:id="@+id/m_About"
                         android:icon="@drawable/nosotros"
-                        android:visible ="true"/>
-                    <item android:id="@+id/m_logout"
-                        android:title="Logout"
+                        android:title="@string/aboutUs"
+                        android:visible="true" />
+                    <item
+                        android:id="@+id/m_logout"
                         android:icon="@drawable/signodebotondeencendido"
-                        android:visible ="true"/>
+                        android:title="@string/logOut"
+                        android:visible="true" />
                 </menu>
             </item>
 

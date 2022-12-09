@@ -31,11 +31,11 @@
     <string name="cardsMatch">Correcto!</string>
 
     <!-- Hermita -->
-    <string name="gameHermitaDePobeña">Hermita de Pobela</string>
+    <string name="gameHermitaDePobeña">Hermita de Pobeña</string>
 
 
     <!-- Fundicion -->
-    <string name="gameFundicion"></string>
+    <string name="gameFundicion">Fundicion de Pobeña</string>
 
     <!-- Castillo Muñatones -->
     <string name="gameCastilloMuñatones">Castillo de Muñatones</string>
@@ -64,7 +64,7 @@
     <string name="congratulations1">¡Lo hiciste, amigo!</string>
     <string name="congratulations2">Has resuelto el desafio</string>
     <!-- Pantalla felicitacion-->
-
+    <string name="gamePuenteRomano">Puente Romano de Pobeña</string>
     <string name="Continue">Continuar</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="puente_romano_enunciado_1">El puente románico de El Pobal conduce a la ferrería de El Pobal, sobre el río Barbadun. XIII. Fue construido en el siglo, y Muskiz era el puente más antiguo de la ciudad.</string>
@@ -88,13 +88,5 @@
     <string name="puente_preg_4_res_3">Hierrp</string>
     <string name="reiniciar_juego">Reiniciar</string>
     <string name="jugar">Jugar</string>
-    <string name="title_activity_main">MainActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

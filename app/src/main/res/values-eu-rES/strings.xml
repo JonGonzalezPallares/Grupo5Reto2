@@ -28,16 +28,14 @@
 
     <!-- Playa La Arena -->
     <string name="gameLaArenaHondartza">Playa de la Arena</string>
-    <string name="playLaArenaHondartza">Jugar</string>
     <string name="cardsMatch">Correcto!</string>
 
     <!-- Hermita -->
     <string name="gameHermitaDePobeña">Hermita de Pobela</string>
-    <string name="nextHermita">Siguiente</string>
 
 
     <!-- Fundicion -->
-    <string name="gameFundicion"></string>
+    <string name="gameFundicion">Pobeñako BUrdinola</string>
 
     <!-- Castillo Muñatones -->
     <string name="gameCastilloMuñatones">Castillo de Muñatones</string>
@@ -62,6 +60,7 @@ Muskizen, garrantzi handia du 22: 30ean geltokian hasten den zuzien jaitsierak. 
     <string name="congratulations1">¡Lo hiciste, amigo!</string>
     <string name="congratulations2">Has resuelto el desafio</string>
     <!-- Pantalla felicitacion-->
+    <string name="gamePuenteRomano">Pubeñako Zubi Erromanikoa</string>
 
     <string name="Continue">Continuar</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>

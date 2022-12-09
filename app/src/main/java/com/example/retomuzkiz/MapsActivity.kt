@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Handler
 import android.os.Looper
 import android.transition.Slide
@@ -30,6 +31,13 @@ import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.retomuzkiz.clases.Actividad
 import androidx.core.graphics.drawable.toDrawable
+import com.example.retomuzkiz.MapsActivity.SITESNAMES.CASTILLO_MUNATONES
+import com.example.retomuzkiz.MapsActivity.SITESNAMES.ITSASLUR_IBILBIDEA
+import com.example.retomuzkiz.MapsActivity.SITESNAMES.NOCHE_SAN_JUAN
+import com.example.retomuzkiz.MapsActivity.SITESNAMES.PLAYA_LA_ARENA
+import com.example.retomuzkiz.MapsActivity.SITESNAMES.POBENA_FUNDICION
+import com.example.retomuzkiz.MapsActivity.SITESNAMES.POBENA_HERMITA
+import com.example.retomuzkiz.MapsActivity.SITESNAMES.PUENTE_ROMANO
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.prefs
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
@@ -49,22 +57,21 @@ import com.google.android.material.navigation.NavigationView
 
 class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener {
     object SITESNAMES {
-        var POBENA_FUNDICION = "Pobaleko Burdinola"
+        lateinit var POBENA_FUNDICION:String
         var POBENA_FUNDICION_IMG_1 = "fundicion_pobela"
-        var POBENA_HERMITA = "Pobeñako Ermita"
+        lateinit var POBENA_HERMITA :String
         var POBENA_HERMITA_IMG = "irudiapobena1"
-        var ITSASLUR_IBILBIDEA= "Itsaslur Ibilbidea"
+        lateinit var ITSASLUR_IBILBIDEA : String
         var ITSASLUR_IBILBIDEA_IMG_1 = "itsaslur1_2"
         var ITSASLUR_IBILBIDEA_IMG_2 = "itsaslur2_1"
-
         var ITSASLUR_IBILBIDEA_IMG_3 = "itsaslur2_2"
-        var PLAYA_LA_ARENA = "La Arena hondartza"
+        lateinit var PLAYA_LA_ARENA :String
         var PLAYA_LA_ARENA_IMG = "irudia_arena_2"
-        var PUENTE_ROMANO = "Pobaleko zubi erromanikoa"
+        lateinit var PUENTE_ROMANO :String
         var PUENTE_ROMANO_IMG = "puentecompleto"
-        var CASTILLO_MUNATONES = "Muñatones Gaztelua"
+        lateinit var CASTILLO_MUNATONES :String
         var CASTILLO_MUNATONES_IMG = "irudia_pobena_1"
-        var NOCHE_SAN_JUAN = "San Juan Gaua"
+        lateinit var NOCHE_SAN_JUAN :String
         var NOCHE_SAN_JUAN_IMG = "irudia_san_juan"
     }
     private val keyPathsBehavior by lazy {
@@ -94,6 +101,16 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
 
         this.supportActionBar!!.hide()
+
+        /* Inicializacion variablees */
+        POBENA_FUNDICION = resources.getString(R.string.gameFundicion)
+        POBENA_HERMITA = resources.getString(R.string.gameHermitaDePobeña)
+        ITSASLUR_IBILBIDEA = resources.getString(R.string.gameItsaslurIbilbidea)
+        NOCHE_SAN_JUAN = resources.getString(R.string.gameSanJuan)
+        PUENTE_ROMANO = resources.getString(R.string.gamePuenteRomano)
+        CASTILLO_MUNATONES = resources.getString(R.string.gameCastilloMuñatones)
+        PLAYA_LA_ARENA = resources.getString(R.string.gameLaArenaHondartza)
+        /*Inicio Servicio Geolacilazacion*/
         Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
         listabooleanos = arrayListOf()
         super.onCreate(savedInstanceState)
