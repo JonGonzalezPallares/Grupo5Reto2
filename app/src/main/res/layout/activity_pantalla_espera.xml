@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="86dp"
         android:layout_marginTop="219dp"
-        android:text="ESPERANDO"
+        android:text="@string/waiting"
         android:textSize="35sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="144dp"
         android:layout_marginBottom="152dp"
-        android:text="Continuar"
+        android:text="@string/Continue"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -35,7 +35,7 @@
         android:layout_height="130dp"
         android:layout_marginStart="104dp"
         android:layout_marginTop="82dp"
-        android:text="Hay que esperar a que el profesor termine de dar la explicacion"
+        android:text="@string/waitingExplanation"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />

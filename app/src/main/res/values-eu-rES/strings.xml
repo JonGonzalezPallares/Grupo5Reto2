@@ -39,7 +39,17 @@
 
     <!-- Castillo Muñatones -->
     <string name="gameCastilloMuñatones">Castillo de Muñatones</string>
-
+    <string name="explanationCastilloMuñatones">Muñatones Gaztelua Muskizen dago, Bizkaian.
+        Somorrostro haranan dagoen herri bat da, Barbadun ibaiaz osatuta dagoena.
+        7500 biztanle inguru ditu eta udalerria naturagune babestu batean dago.
+        Hitz egingo dugun gaztelu hau Petronor enpresaren findegiaren aurrean aurkituko dugu.
+        Gaztelua deitzen den arren, dorretxea da.
+        Aipatzekoa da ez dela edozein dorretxe, Lope García de Salazarrena baizik,
+        Bizkaiko Erdi Aroko pertsonaiarik nabarmenetakoa. 1339. urtean eraiki zen,
+        aurretik aipatutako garaiaren amaieran.
+        Muñatones egungo gaztelua mendeetan zehar eraiki eta suntsitu zen,
+        era guztietako garaipen eta porrotekin. Gaur egun, Muñatones gaztelua
+        da bere garaiko ezaugarri gehienak mantentzen dituen Bizkaiko gaztelu bakarra.  </string>
     <!-- Itsaslur Ibilbidea -->
     <string name="gameItsaslurIbilbidea">Paseo de Itsaslur</string>
 
@@ -59,6 +69,7 @@ Muskizen, garrantzi handia du 22: 30ean geltokian hasten den zuzien jaitsierak. 
     <!-- Pantalla felicitacion-->
     <string name="congratulations1">¡Lo hiciste, amigo!</string>
     <string name="congratulations2">Has resuelto el desafio</string>
+    <string name="GoToMap">Mapara joan</string>
     <!-- Pantalla felicitacion-->
     <string name="gamePuenteRomano">Pubeñako Zubi Erromanikoa</string>
 
