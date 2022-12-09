@@ -1,11 +1,10 @@
 package com.example.retomuzkiz.itsaslurIbilbidea
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.ImageButton
-import androidx.core.view.isVisible
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityItsaslurJuegoBinding
 
@@ -16,6 +15,8 @@ class ItsaslurJuego : AppCompatActivity() {
     private lateinit var buttonsList2 : List<ImageButton>
     private lateinit var buttonsList3 : List<ImageButton>
     private lateinit var buttonsList4 : List<ImageButton>
+    //Variable para saber cuando se tiene que cerrar y cuando no
+    private var cambio = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,9 +87,20 @@ class ItsaslurJuego : AppCompatActivity() {
         for(button in buttonsList4){
             button.setOnClickListener {
                 if(button.tag=="true"){
-                    MsgVictoria().carga(this)
+                    val intento = Intent(this, MsgVictoria::class.java)
+                    intento.putExtra("imagen", "itsaslur")
+                    cambio = true
+                    startActivity(intento)
                 }
             }
+        }
+    }
+
+    //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
+    override fun onPause() {
+        super.onPause()
+        if(cambio){
+            finish()
         }
     }
 }

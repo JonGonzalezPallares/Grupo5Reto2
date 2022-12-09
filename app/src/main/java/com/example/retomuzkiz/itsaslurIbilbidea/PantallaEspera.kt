@@ -11,6 +11,8 @@ import com.example.retomuzkiz.databinding.ActivityPantallaEsperaBinding
 class PantallaEspera : AppCompatActivity() {
 
     private lateinit var binding : ActivityPantallaEsperaBinding
+    //Variable para saber cuando se tiene que cerrar y cuando no
+    private var cambio = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +27,7 @@ class PantallaEspera : AppCompatActivity() {
         binding.btnContinuar.setOnClickListener {
             val intento = Intent(this, ItsaslurJuego::class.java)
             startActivity(intento)
-            finish()
+            cambio = true
         }
     }
 
@@ -33,5 +35,13 @@ class PantallaEspera : AppCompatActivity() {
         Handler(Looper.myLooper()?:return).postDelayed({
             binding.btnContinuar.visibility = View.VISIBLE
         }, 2000)
+    }
+
+    //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
+    override fun onPause() {
+        super.onPause()
+        if(cambio){
+            finish()
+        }
     }
 }

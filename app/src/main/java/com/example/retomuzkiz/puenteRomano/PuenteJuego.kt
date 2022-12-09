@@ -1,6 +1,6 @@
 package com.example.retomuzkiz.puenteRomano
 
-import android.graphics.Color
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.os.Handler
@@ -26,6 +26,8 @@ class PuenteJuego : AppCompatActivity() {
     private lateinit var seleccion : String
     //Array con los trozos de las imagenes
     private lateinit var imagenes : MutableList<ImageView>
+    //Variable para saber cuando se tiene que cerrar y cuando no
+    private var cambio = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -248,7 +250,18 @@ class PuenteJuego : AppCompatActivity() {
         val tiempo = binding.imgFinal.animation.duration
 
         Handler(Looper.myLooper()?:return).postDelayed({
-            MsgVictoria().carga(this)
+            val intento = Intent(this, MsgVictoria::class.java)
+            intento.putExtra("imagen", "puente")
+            cambio = true
+            startActivity(intento)
         }, (tiempo+1000))
+    }
+
+    //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
+    override fun onPause() {
+        super.onPause()
+        if(cambio){
+            finish()
+        }
     }
 }

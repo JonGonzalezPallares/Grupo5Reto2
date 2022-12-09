@@ -9,10 +9,10 @@ import com.example.retomuzkiz.ponekakoermita.JuegodemarActivity
 
 class ExplicacionActivity : AppCompatActivity() {
     private lateinit var binding : ActivityExplicacionBinding
-            override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_explicacion)
-                binding = ActivityExplicacionBinding.inflate(layoutInflater)
-                setContentView(binding.root)
+        binding = ActivityExplicacionBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }

@@ -15,6 +15,8 @@ import com.example.retomuzkiz.databinding.ActivityPuenteRomanoBinding
 class PuenteRomano : AppCompatActivity() {
 
     private lateinit var binding : ActivityPuenteRomanoBinding
+    //Variable para saber cuando se tiene que cerrar y cuando no
+    private var cambio = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,6 +88,7 @@ class PuenteRomano : AppCompatActivity() {
         //Boton que lleva a la activity del juego
         binding.btnEmpezar.setOnClickListener {
             val intento = Intent(this, PuenteJuego::class.java)
+            cambio = true
             startActivity(intento)
         }
     }
@@ -98,5 +101,13 @@ class PuenteRomano : AppCompatActivity() {
         transicion.replace(binding.frgPreguntas.id, fragmento)
         //Hacemos el cambio
         transicion.commit()
+    }
+
+    //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
+    override fun onPause() {
+        super.onPause()
+        if(cambio){
+            finish()
+        }
     }
 }

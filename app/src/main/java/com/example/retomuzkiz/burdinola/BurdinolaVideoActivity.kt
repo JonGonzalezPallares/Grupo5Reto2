@@ -5,11 +5,14 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.MediaController
+import com.example.retomuzkiz.Laberinto.ActivityLaberinto
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ActivityBurdinolaVideoBinding
 
 class BurdinolaVideoActivity : AppCompatActivity() {
     private lateinit var binding : ActivityBurdinolaVideoBinding
+    //Variable para saber cuando se tiene que cerrar y cuando no
+    private var cambio = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_burdinola_video)
@@ -36,12 +39,19 @@ class BurdinolaVideoActivity : AppCompatActivity() {
 
         binding.btnJuego.setOnClickListener{
             startActivity(Intent(this, BurdinolaSopaActivity::class.java))
-            finish()
-
+            cambio=true
         }
 
 
 
 
+    }
+
+    //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
+    override fun onPause() {
+        super.onPause()
+        if(cambio){
+            finish()
+        }
     }
 }
