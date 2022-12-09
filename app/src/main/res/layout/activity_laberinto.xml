@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo_degradado"
     android:orientation="horizontal"
-    tools:context=".ActivityLaberinto">
+    tools:context=".Laberinto.ActivityLaberinto">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="20dp"
+        android:visibility="invisible"
         tools:layout="@layout/fragment_blank" />
 
     <ImageView
@@ -30,5 +31,11 @@
         android:layout_height="97dp"
         android:layout_gravity="bottom|center"
         android:background="@drawable/llamas_fuego_2" />
+
+    <view
+        android:id="@+id/view2"
+        class="com.example.retomuzkiz.Laberinto.LaberynthGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -103,6 +103,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         val navview : NavigationView = findViewById(R.id.lateralmenu)
         //menu lateral
         binding.Navegation.setOnClickListener{
+            keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
             if(navegacion == false){
                 navegacion = true
                 if(iniciarguiado == false){

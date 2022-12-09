@@ -18,10 +18,10 @@ class PuzzleActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        binding.btnsiguiente.setOnClickListener{
-            val g = Intent(this, ExplicacionActivity::class.java)
-            ContextCompat.startActivity(this, g, null)
-
+        binding.btnVolver.setOnClickListener{
+//            val g = Intent(this, ExplicacionActivity::class.java)
+//            ContextCompat.startActivity(this, g, null)
+        finish()
         }
     }
 }

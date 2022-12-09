@@ -41,11 +41,7 @@ class MenuPrincipal : AppCompatActivity() {
             //val intento = Intent(this, ItsaslurJuego::class.java)
             startActivity(intento)
         }
-        binding.btnLaberinto.setOnClickListener(){
 
-            startActivity(Intent(this, ActivityLaberinto::class.java))
-
-        }
     }
 
     override fun onResume() {

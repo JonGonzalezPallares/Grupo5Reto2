@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view_actividad"
     android:layout_width="match_parent"
-    android:layout_height="850px"
+    android:layout_height="600dp"
     android:layout_margin="12dp"
     app:ignore="NamespaceTypo"
     card_view:cardBackgroundColor="@color/white"
@@ -15,20 +15,21 @@
 
     <LinearLayout
         android:layout_width="387dp"
-        android:layout_height="299dp"
+        android:layout_height="600dp"
         android:layout_marginTop="10dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="375dp"
-            android:layout_height="wrap_content"
+            android:layout_height="114dp"
             android:background="@color/white"
             android:padding="16dp">
 
             <TextView
                 android:id="@+id/txtTitulo"
-                android:layout_width="203dp"
-                android:layout_height="51dp"
+                android:layout_width="195dp"
+                android:layout_height="62dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_weight="1"
@@ -49,26 +50,29 @@
 
 
                 android:src="@drawable/jugar_blanco"
-                android:text="Jugar" />
+                android:text="Jugar"
+                app:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="376dp"
-            android:layout_height="193dp"
+            android:layout_width="369dp"
+            android:layout_height="452dp"
+            android:layout_gravity="center_vertical"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="204dp"
-                android:layout_height="182dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_width="313dp"
+                android:layout_height="306dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="35dp"
                 card_view:cardCornerRadius="40dp">
 
                 <ImageView
                     android:id="@+id/img"
-                    android:layout_width="262dp"
-                    android:layout_height="208dp"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_width="358dp"
+                    android:layout_height="339dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
             </androidx.cardview.widget.CardView>
 
 
@@ -76,5 +80,13 @@
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="50dp"
+        android:layout_height="14dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/stilo_desplegable_boton"
+        android:gravity="center_horizontal" />
 
 </androidx.cardview.widget.CardView>

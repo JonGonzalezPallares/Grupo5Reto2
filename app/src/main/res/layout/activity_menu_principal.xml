@@ -29,8 +29,8 @@
                     android:id="@+id/txtUsuario"
                     android:layout_width="0dp"
                     android:layout_height="47dp"
-                    android:layout_marginStart="75dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="32dp"
                     android:ems="10"
                     android:hint="Usuario"
                     android:inputType="textPersonName"
@@ -44,7 +44,7 @@
                     android:id="@+id/button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="165dp"
+                    android:layout_marginStart="160dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="40dp"
                     android:background="@drawable/estilo_botones"
@@ -52,31 +52,20 @@
                     android:textColor="#FFFFFF"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtClase" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnLaberinto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="18dp"
-                    android:background="@drawable/estilo_botones"
-                    android:text="Laberinto"
-                    android:textColor="#FFFFFF"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtClase" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtClase"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <EditText
                     android:id="@+id/txtClase"
-                    android:layout_width="212dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="46dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="80dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="24dp"
                     android:ems="10"
                     android:hint="Clase"
                     android:inputType="textPersonName"
                     android:textColorHint="#000000"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtUsuario" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
