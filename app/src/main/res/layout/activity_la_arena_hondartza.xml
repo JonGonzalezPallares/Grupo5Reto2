@@ -75,7 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
-        android:background="@drawable/carta_fondo"
+        android:background="@drawable/fondo_juego"
         android:columnCount="2"
         android:rowCount="5"
         android:visibility="visible">
