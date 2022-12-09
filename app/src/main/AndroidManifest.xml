@@ -20,13 +20,19 @@
         android:theme="@style/Theme.RetoMuzkiz"
         tools:targetApi="31">
         <activity
-            android:name=".clases.MsgVictoria"
+            android:name=".gastelua.ActivityGaztelua"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <!-- Activity de Itsaslur Ibilbidea -->
+        <activity
+            android:name=".clases.MsgVictoria"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity> <!-- Activity de Itsaslur Ibilbidea -->
         <activity
             android:name=".itsaslurIbilbidea.ItsaslurJuego"
             android:exported="false">
@@ -64,14 +70,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity> <!-- Activity del castuillo -->
-        <activity
-            android:name=".gastelua.PuzzleActivity"
-            android:exported="false"
-            android:screenOrientation="landscape">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".gastelua.ExplicacionActivity"
             android:exported="false"
