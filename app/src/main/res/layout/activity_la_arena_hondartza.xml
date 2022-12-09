@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/fondo_degradado"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <ImageView
             android:layout_width="match_parent"
@@ -78,7 +78,7 @@
         android:background="@drawable/carta_fondo"
         android:columnCount="2"
         android:rowCount="5"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ImageButton
             android:id="@+id/boton12"
