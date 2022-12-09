@@ -38,14 +38,18 @@ class PuenteJuego : AppCompatActivity() {
         this.supportActionBar!!.hide()
 
         //Metemos las respuestas en el array
-        respuestas = mutableListOf("XIII. mendean, Muskizko zaharrena izan zen",
-        "Barbadun ibaia", "Galdames eta Sopuertako pertsonak Muskizera igaro ahal izateko", "Harriz")
+        respuestas = mutableListOf(
+            resources.getString(R.string.puente_preg_1_res_2),
+            resources.getString(R.string.puente_preg_2_res_1),
+            resources.getString(R.string.puente_preg_3_res_3),
+            resources.getString(R.string.puente_preg_4_res_2)
+        )
 
         //Metemos los trozos de la imagen en un array
         imagenes = mutableListOf(binding.imgTrozo1, binding.imgTrozo2, binding.imgTrozo3, binding.imgTrozo4)
 
         //Si es el primer set de preguntas
-        binding.rdbRes1.setOnCheckedChangeListener { group, id ->
+        binding.rdbRes1.setOnCheckedChangeListener { _, id ->
             when(id){
                 R.id.rb_res1_1 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res1_1).text.toString()
@@ -79,7 +83,7 @@ class PuenteJuego : AppCompatActivity() {
         }
 
         //Si es el segundo set de preguntas
-        binding.rdbRes2.setOnCheckedChangeListener { group, id ->
+        binding.rdbRes2.setOnCheckedChangeListener { _, id ->
             when(id){
                 R.id.rb_res2_1 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res2_1).text.toString()
@@ -113,7 +117,7 @@ class PuenteJuego : AppCompatActivity() {
         }
 
         //Si es el tercer set de preguntas
-        binding.rdbRes3.setOnCheckedChangeListener { group, id ->
+        binding.rdbRes3.setOnCheckedChangeListener { _, id ->
             when(id){
                 R.id.rb_res3_1 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res3_1).text.toString()
@@ -147,7 +151,7 @@ class PuenteJuego : AppCompatActivity() {
         }
 
         //Si es el cuarto set de preguntas
-        binding.rdbRes4.setOnCheckedChangeListener { group, id ->
+        binding.rdbRes4.setOnCheckedChangeListener { _, id ->
             when(id){
                 R.id.rb_res4_1 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res4_1).text.toString()
