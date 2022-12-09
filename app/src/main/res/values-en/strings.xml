@@ -1,0 +1,93 @@
+<resources>
+
+    <string name="app_name">Grupo5Reto2</string>
+    <string name="title_activity_maps">Get to know Muzkiz!</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <!-- Menu Principal -->
+    <string name="hintUser">Username</string>
+    <string name="hintClase">Classroom</string>
+    <string name="start">Start</string>
+    <string name="othersUsers">Other Users</string>
+
+    <!-- Map Activity -->
+    <!-- Menu -->
+    <string name="modes">Modes</string>
+    <string name="puntuation">Score</string>
+    <string name="others">Others</string>
+    <string name="freeMode">Free Mode</string>
+    <string name="guidedMode">Guided Mode</string>
+    <string name="profesorMode">Teacher Mode</string>
+    <string name="yourProgress">Your Progress</string>
+    <string name="ranking">Ranking</string>
+    <string name="aboutUs">About Us</string>
+    <string name="logOut">Log Out</string>
+
+    <!-- Playa La Arena -->
+    <string name="gameLaArenaHondartza">La Arena Beach</string>
+    <string name="cardsMatch">Right!</string>
+
+    <!-- Hermita -->
+    <string name="gameHermitaDePobeña">Pobela Hermitage</string>
+
+
+
+    <!-- Fundicion -->
+    <string name="gameFundicion">Pobela Foundry</string>
+
+    <!-- Castillo Muñatones -->
+    <string name="gameCastilloMuñatones">Muñatones Castle</string>
+
+    <!-- Itsaslur Ibilbidea -->
+    <string name="gameItsaslurIbilbidea">Itsaslur Route</string>
+
+    <string name="waiting">Waiting</string>
+    <string name="waitingExplanation">You have to wait for the teacher to finish giving the explanation</string>
+    <string name="itsaslurQ1">Where have we entered the route?</string>
+    <string name="itsaslurQ2">What have we seen in the route</string>
+    <string name="itsaslurQ3">What have we found halfway?</string>
+    <string name="itsaslurQ4">Where can we take a bath?</string>
+    <!-- San Juan gaua-->
+    <string name="gameSanJuan">San Juan Night</string>
+    <string name="explanationSanJuan">St Juan is known as the shortest day of the year, although in fact actual date is June 21st.
+        When is the summer solstice celebrated? The adaptation made by Christianism explains that it does not coincide with the summer solstice. Tonight with San Joan
+        will be celebrated, fire burns everything, fire is desired and summer will be welcomed. In addition to being a magical day, it can also ward off bad spirits or what happened
+        breaking with bad things. In the past, these fires were lit to give more power to the sun and thus extend the light.
+        In the past, it was celebrated as a pagan festival, as the sun was considered a god. With the advent of Christianity, the celebration changed, but it has never lost its essence.
+        Nowadays, tradition and rituals are mixed, and everyone celebrates as they want, dancing around the fire, jumping over it, enjoying the night.
+        The origin of this date is the day of the birth of Saint John the Baptist, as his father Zacharias ordered a fire to be lit to announce the birth of his son.
+        In Muskizen, the descent of the torches, which starts at the station at 22:30, is of great importance. Then, around 11:30 p.m., the fireworks start, followed by a verbena.
+        That night, people who come to Muskize light torches up to the old warehouse of Petronor, together with the whistlers, and then throw the torches into the bonfire of San Jorge.
+</string>
+    <!-- Pantalla felicitacion-->
+    <string name="congratulations1">You did it, friend!</string>
+    <string name="congratulations2">You have solved the challenge</string>
+    <!-- Pantalla felicitacion-->
+
+    <string name="Continue">Continue</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="puente_romano_enunciado_1">The Romanesque bridge of El Pobal leads to the El Pobal ironworks, over the Barbadun river. XIII. It was built in the century, and Muskiz was the oldest bridge in the city.</string>
+    <string name="puente_romano_enunciado_2">The Barbadun River passed through the center of Muskize, so they had to build a bridge to be able to move around the town without any problem. Thanks to this, people moved from Galdames and Sopuerta to Muskize. This bridge was necessary due to demographic problems.</string>
+    <string name="puente_romano_enunciado_3">The bridge is made of stone. It had two arched eyes, but today it has one, as the other sank in the Carlistlands, and a concrete walkway has been built in its place today. It is approximately two meters wide and has no protective walls. To prevent the bridge from falling, a large pillar has been built. It is still passable today, but it has not been used for a long time.</string>
+    <string name="puente_romano_preg_1">In what century was the Romanesque bridge of Pobal built?</string>
+    <string name="puente_romano_preg_2">What river crosses this bridge?</string>
+    <string name="puente_romano_preg_3">What was this bridge built for?</string>
+    <string name="puente_romano_preg_4">What is the bridge made of?</string>
+    <string name="puente_preg_1_res_1">3th Century</string>
+    <string name="puente_preg_1_res_2">13th Century , oldest from Muskiz</string>
+    <string name="puente_preg_1_res_3">20th Century</string>
+    <string name="puente_preg_2_res_1">Barbadun river</string>
+    <string name="puente_preg_2_res_2">Nerbioi river</string>
+    <string name="puente_preg_2_res_3">Kadagua river</string>
+    <string name="puente_preg_3_res_1">It was built as decoration</string>
+    <string name="puente_preg_3_res_2">For animals to pass from one side to the other</string>
+    <string name="puente_preg_3_res_3">So that people from Galdames and Sopuerta can pass to Muskiz</string>
+    <string name="puente_preg_4_res_1">Wood</string>
+    <string name="puente_preg_4_res_2">Stone</string>
+    <string name="puente_preg_4_res_3">Iron</string>
+    <string name="reiniciar_juego">Restart</string>
+    <string name="jugar">Play</string>
+</resources>
