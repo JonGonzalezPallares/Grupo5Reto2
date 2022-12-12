@@ -3,7 +3,6 @@ package com.example.retomuzkiz.clases
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.retomuzkiz.Laberinto.ActivityLaberinto
 import com.example.retomuzkiz.MapsActivity
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ActivityMsgVictoriaBinding

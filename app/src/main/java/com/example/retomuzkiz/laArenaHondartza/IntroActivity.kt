@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
-import com.example.retomuzkiz.Laberinto.ActivityLaberinto
 import com.example.retomuzkiz.databinding.ActivityIntroBinding
 import com.example.retomuzkiz.laArenaHondartza.adapter.RvAdapterParrafos
 import com.example.retomuzkiz.laArenaHondartza.modelo.ProveedorParrafos

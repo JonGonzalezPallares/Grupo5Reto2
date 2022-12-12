@@ -2,24 +2,15 @@ package com.example.retomuzkiz
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.retomuzkiz.Laberinto.ActivityLaberinto
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.database
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.prefs
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
-import com.example.retomuzkiz.itsaslurIbilbidea.ItsaslurJuego
-import com.example.retomuzkiz.itsaslurIbilbidea.PantallaEspera
-import com.example.retomuzkiz.laArenaHondartza.IntroActivity
 import com.example.retomuzkiz.room.Usuario
-import com.example.retomuzkiz.puenteRomano.PuenteJuego
-import com.example.retomuzkiz.puenteRomano.PuenteRomano
 
 class MenuPrincipal : AppCompatActivity() {
 
     private lateinit var binding : ActivityMenuPrincipalBinding
-    //private lateinit var lista: List<Jugador>
-    //private lateinit var adaptador: JugadoresAdapter
     private lateinit var adaptadorUsuario: UsuariosAdapter
 
 
@@ -30,11 +21,6 @@ class MenuPrincipal : AppCompatActivity() {
 
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
-
-        //Prueba para ver como queda el recycleview, quitarlo cuando tengamos jugadores
-        /*  load()
-          adaptador = JugadoresAdapter(lista)
-          binding.rvJugadores.adapter = adaptador*/
 
         binding.button.setOnClickListener {
             val intento = Intent(this, MapsActivity::class.java)

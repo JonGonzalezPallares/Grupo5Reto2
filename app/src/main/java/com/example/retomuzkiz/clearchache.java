@@ -4,7 +4,6 @@ import android.content.Context;
 
 import java.io.File;
 
-
 //funciones de limpieza de cache
 //-------------------------------------------------------------------------------
 public class clearchache {
