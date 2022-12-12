@@ -1,6 +1,5 @@
 package com.example.retomuzkiz.laArenaHondartza.modelo
 
-
 class ProveedorParrafos {
     companion object{
         var listaParrafos= listOf(
@@ -18,8 +17,7 @@ class ProveedorParrafos {
             ),
             Parrafo(
                 "Jarduera eta kirol asko praktikatu daitezke hemen, haien artean famatuena surfa."
-            ),
-
+            )
         )
     }
 }

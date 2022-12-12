@@ -17,7 +17,8 @@ import com.example.retomuzkiz.ponekakoermita.MarineroActivity
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
 import com.example.retomuzkiz.Laberinto.ActivityLaberinto
 import com.example.retomuzkiz.clases.Actividad
-import com.example.retomuzkiz.gastelua.ActivityGaztelua
+//import com.example.retomuzkiz.gastelua.ActivityGaztelua
+import com.example.retomuzkiz.gastelua.ExplicacionActivity
 
 class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: Context): RecyclerView.Adapter<RvDesplegableAdapter.ViewHolder>() {
     private lateinit var Nombres : ArrayList<String>
@@ -29,86 +30,97 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
 
         fun unir (actividad: Actividad, context: Context){
             val titulo = actividad.name
-           loadImages(actividad.img,context)
+            loadImages(actividad.img,context)
             binding.txtTitulo.text = actividad.name
             binding.btniniciarjuego.setOnClickListener{
                 loadActivityes(titulo, context)
                 println(titulo)
             }
             var drawable:Drawable? = null
-
-
-
-
         }
+
         private fun loadImages(name: String, context: Context) {
             when (name) {
                 MapsActivity.SITESNAMES.PUENTE_ROMANO_IMG -> {
-
                     binding.img.setImageDrawable(getDrawable(context,
-                        R.drawable.puentecompleto))
+                        R.drawable.puentecompleto)
+                    )
                 }
+
                 MapsActivity.SITESNAMES.POBENA_FUNDICION_IMG_1 -> {
                     binding.img.setImageDrawable(getDrawable(context,
-                        R.drawable.fundicion_pobela))
+                        R.drawable.fundicion_pobela)
+                    )
                 }
+
                 MapsActivity.SITESNAMES.POBENA_HERMITA_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
-                        R.drawable.hermita_pobena_1))
+                        R.drawable.hermita_pobena_1)
+                    )
 
                 }
+
                 MapsActivity.SITESNAMES.PLAYA_LA_ARENA_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
-                        R.drawable.irudia_arena_2))
+                        R.drawable.irudia_arena_2)
+                    )
                 }
+
                 MapsActivity.SITESNAMES.ITSASLUR_IBILBIDEA_IMG_1-> {
                     binding.img.setImageDrawable(getDrawable(context,
-                        R.drawable.itsaslur2_2))
+                        R.drawable.itsaslur2_2)
+                    )
                 }
+
                 MapsActivity.SITESNAMES.CASTILLO_MUNATONES_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
-                        R.drawable.castillo))
+                        R.drawable.castillo)
+                    )
                 }
+
                 MapsActivity.SITESNAMES.NOCHE_SAN_JUAN_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
-                        R.drawable.irudia_san_juan_1))
+                        R.drawable.irudia_san_juan_1)
+                    )
                 }
-
             }
         }
+
         private fun loadActivityes(titulo: String, context: Context) {
             when(titulo) {
-
                 MapsActivity.SITESNAMES.PUENTE_ROMANO->{
                     val intento = Intent(context, PuenteRomano::class.java)
                     startActivity(context, intento, null)
                 }
+
                 MapsActivity.SITESNAMES.POBENA_FUNDICION->{
                     val intento = Intent(context, BurdinolaVideoActivity::class.java)
                     startActivity(context, intento,null)
                 }
+
                 MapsActivity.SITESNAMES.POBENA_HERMITA->{
-                    val g = Intent(context, MarineroActivity::class.java)
-                    startActivity(context,g,null)
+                    val intento = Intent(context, MarineroActivity::class.java)
+                    startActivity(context, intento,null)
                 }
                 MapsActivity.SITESNAMES.PLAYA_LA_ARENA->{
                     val intento = Intent(context, IntroActivity::class.java)
                     startActivity(context, intento,null)
                 }
+
                 MapsActivity.SITESNAMES.ITSASLUR_IBILBIDEA->{
                     val intento = Intent(context, PantallaEspera::class.java)
                     startActivity(context, intento,null)
                 }
-                MapsActivity.SITESNAMES.CASTILLO_MUNATONES->{
-                    val intento = Intent(context, ActivityGaztelua::class.java)
-                    startActivity(context, intento,null)
 
+                MapsActivity.SITESNAMES.CASTILLO_MUNATONES->{
+                    val intento = Intent(context, ExplicacionActivity::class.java)
+                    startActivity(context, intento,null)
                 }
+
                 MapsActivity.SITESNAMES.NOCHE_SAN_JUAN->{
                     val intento = Intent(context, ActivityLaberinto::class.java)
                     startActivity(context, intento, null)
                 }
-
             }
         }
     }
@@ -137,8 +149,8 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
     override fun getItemCount(): Int {
         return listaActividades.size
     }
-    fun cargaractividades(titulo:String){
 
+    fun cargaractividades(titulo:String){
 
     }
 }

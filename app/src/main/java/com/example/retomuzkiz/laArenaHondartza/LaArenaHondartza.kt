@@ -1,6 +1,5 @@
 package com.example.retomuzkiz.laArenaHondartza
 
-
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +10,6 @@ import android.widget.*
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityLaArenaHondartzaBinding
-
 
 class LaArenaHondartza : Activity() {
     //______________________________________________________________________________________________
@@ -116,7 +114,7 @@ class LaArenaHondartza : Activity() {
     private fun comprobar(i: Int, pregunta: Boolean, imgb: ImageButton?) {
         if (primero == null)
         {
-            if (pregunta) 
+            if (pregunta)
             {
                 primero = imgb
                 primero!!.scaleType = ImageView.ScaleType.CENTER_CROP
@@ -124,7 +122,8 @@ class LaArenaHondartza : Activity() {
                 primero!!.isEnabled = false
                 numeroPrimero = arrayDesordenadoPreguntas[i]
 
-            } else
+            }
+            else
             {
                 primero = imgb
                 primero!!.scaleType = ImageView.ScaleType.CENTER_CROP
@@ -133,7 +132,8 @@ class LaArenaHondartza : Activity() {
                 numeroPrimero = arrayDesordenadoRespuestas[i]
             }
 
-        } else
+        }
+        else
         {
             when (pregunta)
             {
@@ -141,19 +141,20 @@ class LaArenaHondartza : Activity() {
                 else -> setRespuesta(i, imgb)
             }
 
-            if (numeroPrimero == numeroSegundo) 
+            if (numeroPrimero == numeroSegundo)
             {
                 primero = null
                 bloqueo = false
                 Toast.makeText(this, "Matched!", Toast.LENGTH_SHORT).show()
-               aciertos++
+                aciertos++
 
 
                 if (aciertos == respuestas.size)
                 {
                     showFinalLayout()
                 }
-            } else 
+            }
+            else
             {
                 Handler(Looper.myLooper()?:return).postDelayed({
                     primero!!.scaleType = ImageView.ScaleType.CENTER_CROP
@@ -191,7 +192,7 @@ class LaArenaHondartza : Activity() {
 
     //______________________________________________________________________________________________
     // al teminar el juego
-    fun completarJuego(){
+    private fun completarJuego(){
         binding.btnCompletado.setOnClickListener{
             val intento = Intent(this, MsgVictoria::class.java)
             intento.putExtra("imagen", "arena")
@@ -211,7 +212,7 @@ class LaArenaHondartza : Activity() {
         arrayDesordenadoPreguntas = desordenarArray(preguntas.size)
 
         // setea imagen a cada button en la posicion donde se encuentra
-        for (i in 0..4) 
+        for (i in 0..4)
         {
             tableroRespuestas[i]!!.scaleType = ImageView.ScaleType.CENTER_CROP
             tableroPreguntas[i]!!.scaleType = ImageView.ScaleType.CENTER_CROP

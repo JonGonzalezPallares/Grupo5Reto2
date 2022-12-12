@@ -1,15 +1,12 @@
-
 package com.example.retomuzkiz.Laberinto
 
 import android.content.Context
-import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import com.example.retomuzkiz.clases.MsgVictoria
 import java.util.*
 
 class LaberynthGame: View {

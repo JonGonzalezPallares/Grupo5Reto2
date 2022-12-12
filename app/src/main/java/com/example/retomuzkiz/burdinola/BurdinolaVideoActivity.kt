@@ -5,7 +5,6 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.MediaController
-import com.example.retomuzkiz.Laberinto.ActivityLaberinto
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ActivityBurdinolaVideoBinding
 

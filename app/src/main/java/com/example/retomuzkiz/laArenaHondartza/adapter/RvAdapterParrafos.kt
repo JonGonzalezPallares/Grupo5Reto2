@@ -26,7 +26,7 @@ class RvAdapterParrafos(
 
     //______________________________________________________________________________________________
     override fun onBindViewHolder(holder: ParrafosViewHolder, position: Int) {
-       holder.bind(parrafosList,play, nextItem,privuisItem)
+        holder.bind(parrafosList,play, nextItem,privuisItem)
     }
 
     //______________________________________________________________________________________________
