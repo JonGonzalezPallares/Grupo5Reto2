@@ -121,9 +121,9 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         //menu lateral
         binding.Navegation.setOnClickListener{
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
-            if(navegacion == false){
+            if(!navegacion){
                 navegacion = true
-                if(iniciarguiado == false){
+                if(!iniciarguiado){
                     val guide = findViewById<View>(R.id.m_Modoguiado)
                     val free = findViewById<View>(R.id.m_Modolibre)
                     guide.isEnabled = false
