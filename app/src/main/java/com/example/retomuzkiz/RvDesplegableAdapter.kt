@@ -79,32 +79,32 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
         private fun loadActivityes(titulo: String, context: Context) {
             when(titulo) {
 
-                "Pobaleko zubi erromanikoa"->{
+                MapsActivity.SITESNAMES.PUENTE_ROMANO->{
                     val intento = Intent(context, PuenteRomano::class.java)
                     startActivity(context, intento, null)
                 }
-                "Pobaleko Burdinola"->{
+                MapsActivity.SITESNAMES.POBENA_FUNDICION->{
                     val intento = Intent(context, BurdinolaVideoActivity::class.java)
                     startActivity(context, intento,null)
                 }
-                "Pobeñako Ermita"->{
+                MapsActivity.SITESNAMES.POBENA_HERMITA->{
                     val g = Intent(context, MarineroActivity::class.java)
                     startActivity(context,g,null)
                 }
-                "La Arena hondartza"->{
+                MapsActivity.SITESNAMES.PLAYA_LA_ARENA->{
                     val intento = Intent(context, IntroActivity::class.java)
                     startActivity(context, intento,null)
                 }
-                "Itsaslur Ibilbidea"->{
+                MapsActivity.SITESNAMES.ITSASLUR_IBILBIDEA->{
                     val intento = Intent(context, PantallaEspera::class.java)
                     startActivity(context, intento,null)
                 }
-                "Muñatones Gaztelua"->{
+                MapsActivity.SITESNAMES.CASTILLO_MUNATONES->{
                     val intento = Intent(context, ActivityGaztelua::class.java)
                     startActivity(context, intento,null)
 
                 }
-                "San Juan Gaua"->{
+                MapsActivity.SITESNAMES.NOCHE_SAN_JUAN->{
                     val intento = Intent(context, ActivityLaberinto::class.java)
                     startActivity(context, intento, null)
                 }

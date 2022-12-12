@@ -39,6 +39,17 @@
 
     <!-- Castillo Muñatones -->
     <string name="gameCastilloMuñatones">Castillo de Muñatones</string>
+    <string name="explanationCastilloMuñatones">El Castillo de Muñatones se encuentra en Muskiz, Bizkaia.
+        Somorrostro es un pueblo del valle, formado por el río Barbadun.
+        Tiene alrededor de 7500 habitantes y el municipio está situado en un espacio natural protegido.
+        Este castillo del que os hablamos lo encontraremos frente a la refinería de la empresa Petronor.
+        Aunque se llama castillo, es una casa torre.
+        Cabe señalar que no se trata de una torre cualquiera, sino la de Lope García de Salazar,
+        Una de las personalidades más destacadas de la Edad Media de Bizkaia. Fue construido en 1339,
+        al final del período antes mencionado.
+        El actual castillo de Muñatones fue construido y destruido a lo largo de los siglos.
+        con todo tipo de victorias y derrotas. Hoy, castillo de Muñatones
+        Es el único castillo de Bizkaia que ha conservado la mayor parte de las características de su época.</string>
 
     <!-- Itsaslur Ibilbidea -->
     <string name="gameItsaslurIbilbidea">Paseo de Itsaslur</string>
@@ -63,6 +74,7 @@
     <!-- Pantalla felicitacion-->
     <string name="congratulations1">¡Lo hiciste, amigo!</string>
     <string name="congratulations2">Has resuelto el desafio</string>
+    <string name="GoToMap">Ir al mapa</string>
     <!-- Pantalla felicitacion-->
     <string name="gamePuenteRomano">Puente Romano de Pobeña</string>
     <string name="Continue">Continuar</string>
