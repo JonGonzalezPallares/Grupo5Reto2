@@ -7,9 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:translationZ="0dp"
-
     tools:context=".MapsActivity">
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,9 +61,7 @@
             app:menu="@menu/menu"
             android:translationZ="0dp"
             android:background="@drawable/menu_degradado"
-
             android:visibility="invisible"
-
             tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

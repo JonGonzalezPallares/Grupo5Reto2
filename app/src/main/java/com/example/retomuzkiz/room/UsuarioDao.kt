@@ -9,8 +9,6 @@ import androidx.room.Update
 
 @Dao
 interface UsuarioDao {
-
-
      //Listar todos los usuarios
      @Query("select * from Usuario")
      fun getAllUsers(): List<Usuario>

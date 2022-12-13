@@ -8,6 +8,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import java.util.*
+import kotlin.math.abs
 
 class LaberynthGameLuna: View {
     companion object{
@@ -52,12 +53,12 @@ class LaberynthGameLuna: View {
         super.onDraw(canvas)
         canvas.drawColor(Color.GREEN)
 
-        var width = width
-        var height = height
-        if(width/height < COLS/ ROWS){
-            cellSize= width/(COLS+10).toFloat()
+        val width = width
+        val height = height
+        cellSize = if(width/height < COLS/ ROWS){
+            width/(COLS+10).toFloat()
         }else{
-            cellSize= height/(ROWS+10).toFloat()
+            height/(ROWS+10).toFloat()
 
         }
         hMargin = (width - COLS*cellSize)/2
@@ -66,7 +67,7 @@ class LaberynthGameLuna: View {
 
         for(col in 0 until COLS){
             for (row in 0 until ROWS){
-                var celda = cells[col][row]
+                val celda = cells[col][row]
                 if(celda.topWall){
                     canvas.drawLine(
                         col*cellSize,
@@ -76,6 +77,7 @@ class LaberynthGameLuna: View {
                         wallPaint
                     )
                 }
+
                 if(celda.leftWall){
                     canvas.drawLine(
                         col*cellSize,
@@ -84,6 +86,7 @@ class LaberynthGameLuna: View {
                         (row+1)*cellSize,wallPaint
                     )
                 }
+
                 if(celda.bottomWall){
                     canvas.drawLine(
                         col*cellSize,
@@ -92,6 +95,7 @@ class LaberynthGameLuna: View {
                         (row+1)*cellSize,wallPaint
                     )
                 }
+
                 if(celda.rightWall){
                     canvas.drawLine(
                         (col+1)*cellSize,
@@ -101,7 +105,8 @@ class LaberynthGameLuna: View {
                     )
                 }
             }
-            var margin = cellSize/10
+
+            val margin = cellSize/10
             canvas.drawRect(
                 player.cols1*cellSize+margin,
                 player.rows1*cellSize+margin,
@@ -109,6 +114,7 @@ class LaberynthGameLuna: View {
                 (player.rows1+1)*cellSize-margin,
                 playerPaint
             )
+
             canvas.drawRect(
                 exit.cols1*cellSize + margin,
                 exit.rows1*cellSize + margin,
@@ -116,10 +122,7 @@ class LaberynthGameLuna: View {
                 (exit.rows1+1)*cellSize - margin,
                 exitPaint
             )
-
         }
-
-
     }
 
     private fun movePlayer(direccion: Direction){
@@ -145,33 +148,37 @@ class LaberynthGameLuna: View {
         checkExit()
         invalidate()
     }
+
     private fun checkExit(){
         if(contador != 3){
-          if (player == exit) {
-//                ROWS += 5
-//                COLS += 5
-              createMaze()
-          }
+            if (player == exit) {
+                createMaze()
+            }
             contador ++
-
         }
     }
+
     override fun onTouchEvent(event: MotionEvent): Boolean {
         if (event.action == 0){
             return true
         }
 
         if(event.action == MotionEvent.ACTION_MOVE){
-            var x = event.x
-            var y = event.y
-            var playerCenterX = hMargin + (player.cols1 + 0.5f)*cellSize
-            var playerCenterY = vMargin + (player.rows1 + 0.5f)*cellSize
+            val x = event.x
+            val y = event.y
+            val playerCenterX = hMargin + (player.cols1 + 0.5f)*cellSize
+            val playerCenterY = vMargin + (player.rows1 + 0.5f)*cellSize
+            val dx = x-playerCenterX
+            val dy = y-playerCenterY
 
-            var dx = x-playerCenterX
-            var dy = y-playerCenterY
-
-            var absDx = Math.abs(dx)
-            var absDy = Math.abs(dy)
+            /**
+             * Antes
+             *
+             * val absDx = Math.abs(dx)
+             * val absDy = Math.abs(dy)
+             */
+            val absDx = abs(dx)
+            val absDy = abs(dy)
 
             if (absDx > cellSize || absDy > cellSize){
                 if (absDx> absDy){
@@ -197,57 +204,48 @@ class LaberynthGameLuna: View {
                 }
             }
             return true
-
         }
-
         return super.onTouchEvent(event)
     }
 
-
     private fun createMaze() {
-
-        var stack = Stack<CellLuna>()
+        val stack = Stack<CellLuna>()
         lateinit var currentCell: CellLuna
 
         cells = Array(COLS) { col ->
             Array(ROWS) { row ->
-                var emptyCell = CellLuna(col, row)
+                val emptyCell = CellLuna(col, row)
                 var celdaBuena = CellLuna(col, row)
                 emptyCell.visible = false
                 emptyCell.topWall = false
                 emptyCell.bottomWall = false
                 emptyCell.leftWall = false
                 emptyCell.rightWall = false
-                var cell = CellLuna(col, row)
+                CellLuna(col, row)
 
                 if (col == 0) {
                     if (row == 0 || row == 1 || row == 2 || row == 3 || row == 4 || row == 5 || row == 13 || row == 14 || row == 15 || row == 16 || row == 17 || row == 18) {
                         celdaBuena = emptyCell
-
                     }
 
                 } else if (col == 1) {
                     if (row == 0 || row == 1 || row == 2 || row == 3 || row == 15 || row == 16 || row == 17 || row == 18) {
                         celdaBuena = emptyCell
-
                     }
 
                 } else if (col == 2) {
                     if (row == 0 || row == 1 || row == 2 || row == 16 || row == 17 || row == 18) {
                         celdaBuena = emptyCell
-
                     }
 
                 } else if (col == 3) {
                     if (row == 0 || row == 1 || row == 17 || row == 18) {
                         celdaBuena = emptyCell
-
                     }
 
                 } else if (col == 5 || col == 4) {
                     if (row == 0 || row == 18) {
                         celdaBuena = emptyCell
-
                     }
 
                 } else if (col == 6) {
@@ -313,11 +311,8 @@ class LaberynthGameLuna: View {
 //
 //
         var nextCell:CellLuna? = null
-        var t = Thread  (){
+        val t = Thread{
             do {
-                println("Ha entrado")
-
-
                 nextCell = getNeighbour(currentCell)
 
                 if (nextCell != currentCell && nextCell!!.visible) {
@@ -337,7 +332,7 @@ class LaberynthGameLuna: View {
 
 
 
- //      }
+        //      }
 
 
     }
@@ -469,8 +464,8 @@ class LaberynthGameLuna: View {
                 index=random.nextInt(neighbours.size)
             }while(neighbours.get(index).visible == false)
 //            if (neighbours.get(index).rows1>= cell.cols1){
-                return neighbours.get(index)
-          //      }
+            return neighbours.get(index)
+            //      }
 
 
 

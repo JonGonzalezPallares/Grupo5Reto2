@@ -60,6 +60,7 @@ class PuenteJuego : AppCompatActivity() {
                     binding.rbRes12.typeface = Typeface.DEFAULT
                     binding.rbRes13.typeface = Typeface.DEFAULT
                 }
+
                 R.id.rb_res1_2 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res1_2).text.toString()
                     seleccion = texto
@@ -69,6 +70,7 @@ class PuenteJuego : AppCompatActivity() {
                     binding.rbRes12.typeface = Typeface.DEFAULT_BOLD
                     binding.rbRes13.typeface = Typeface.DEFAULT
                 }
+
                 R.id.rb_res1_3 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res1_3).text.toString()
                     seleccion = texto
@@ -94,6 +96,7 @@ class PuenteJuego : AppCompatActivity() {
                     binding.rbRes22.typeface = Typeface.DEFAULT
                     binding.rbRes23.typeface = Typeface.DEFAULT
                 }
+
                 R.id.rb_res2_2 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res2_2).text.toString()
                     seleccion = texto
@@ -103,6 +106,7 @@ class PuenteJuego : AppCompatActivity() {
                     binding.rbRes22.typeface = Typeface.DEFAULT_BOLD
                     binding.rbRes23.typeface = Typeface.DEFAULT
                 }
+
                 R.id.rb_res2_3 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res2_3).text.toString()
                     seleccion = texto
@@ -128,6 +132,7 @@ class PuenteJuego : AppCompatActivity() {
                     binding.rbRes32.typeface = Typeface.DEFAULT
                     binding.rbRes33.typeface = Typeface.DEFAULT
                 }
+
                 R.id.rb_res3_2 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res3_2).text.toString()
                     seleccion = texto
@@ -137,6 +142,7 @@ class PuenteJuego : AppCompatActivity() {
                     binding.rbRes32.typeface = Typeface.DEFAULT_BOLD
                     binding.rbRes33.typeface = Typeface.DEFAULT
                 }
+
                 R.id.rb_res3_3 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res3_3).text.toString()
                     seleccion = texto
@@ -162,6 +168,7 @@ class PuenteJuego : AppCompatActivity() {
                     binding.rbRes42.typeface = Typeface.DEFAULT
                     binding.rbRes43.typeface = Typeface.DEFAULT
                 }
+
                 R.id.rb_res4_2 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res4_2).text.toString()
                     seleccion = texto
@@ -171,6 +178,7 @@ class PuenteJuego : AppCompatActivity() {
                     binding.rbRes42.typeface = Typeface.DEFAULT_BOLD
                     binding.rbRes43.typeface = Typeface.DEFAULT
                 }
+
                 R.id.rb_res4_3 -> {
                     val texto = findViewById<RadioButton>(R.id.rb_res4_3).text.toString()
                     seleccion = texto
@@ -207,14 +215,17 @@ class PuenteJuego : AppCompatActivity() {
                 binding.TrozoPreg1.visibility = View.GONE
                 binding.TrozoPreg2.visibility = View.VISIBLE
             }
+
             2 -> {
                 binding.TrozoPreg2.visibility = View.GONE
                 binding.TrozoPreg3.visibility = View.VISIBLE
             }
+
             3 -> {
                 binding.TrozoPreg3.visibility = View.GONE
                 binding.TrozoPreg4.visibility = View.VISIBLE
             }
+
             else -> {
                 cleanSelection()
             }
@@ -229,12 +240,15 @@ class PuenteJuego : AppCompatActivity() {
             1 -> {
                 binding.rdbRes1.clearCheck()
             }
+
             2 -> {
                 binding.rdbRes2.clearCheck()
             }
+
             3 -> {
                 binding.rdbRes3.clearCheck()
             }
+
             else -> {
                 binding.rdbRes4.clearCheck()
                 showImg()
@@ -247,8 +261,8 @@ class PuenteJuego : AppCompatActivity() {
         for(imagen in imagenes){
             imagen.visibility = View.GONE
         }
-        binding.imgFinal.visibility = View.VISIBLE
 
+        binding.imgFinal.visibility = View.VISIBLE
         binding.imgFinal.startAnimation(AnimationUtils.loadAnimation(this, R.anim.animacion_puente_final))
 
         val tiempo = binding.imgFinal.animation.duration

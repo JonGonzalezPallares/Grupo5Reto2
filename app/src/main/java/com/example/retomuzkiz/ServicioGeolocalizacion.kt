@@ -52,16 +52,14 @@ class ServicioGeolocalizacion : Service() {
     private var booleano5 = false
     private var booleano6 = false
 
-
-
-    val NOTIFICATION_ID = 1 // >= 1 !
-
-        //-------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------
     override fun onCreate() {
 
         //creacion de las cordenadas a comprobar
         fusedLocation= LocationServices.getFusedLocationProviderClient(applicationContext)
         ubicacionact = Location("ubicacionact")
+
+
         //1
         Listabooleanos = arrayListOf<Boolean>()
         puenteRomano = Location("puenteromano")
@@ -70,39 +68,42 @@ class ServicioGeolocalizacion : Service() {
 
 
         //2
-
         pobalekoBurdinola=Location("pobalekoBurdinola")
         pobalekoBurdinola.latitude = 43.296111
         pobalekoBurdinola.longitude = -3.126113
+
 
         //3
         pobenakoErmita=Location("pobenakoErmita")
         pobenakoErmita.latitude = 43.346497
         pobenakoErmita.longitude = -3.121751
-        //4
 
+
+        //4
         hondartzaArena=Location("hondartzaArena")
         hondartzaArena.latitude = 43.349722
         hondartzaArena.longitude = -3.116389
-        //5
 
+
+        //5
         ibilbideItsaslur=Location("ibilbideItsaslur")
         ibilbideItsaslur.latitude = 43.331075
         ibilbideItsaslur.longitude = -3.117392
-        //6
 
+
+        //6
         muniatonesGaztelua=Location("muniatonesGaztelua")
         muniatonesGaztelua.latitude = 43.323611
         muniatonesGaztelua.longitude = -3.112503
+
+
         //7
         sanJuan=Location("sanJuan")
         sanJuan.latitude = 43.330278
         sanJuan.longitude = -3.129061
 
         //-------------------------------------------------------------------------------
-
         super.onCreate()
-        println("onCreate")
         //permisos de ubicacion
         if (ActivityCompat.checkSelfPermission(
                 this,
@@ -114,18 +115,16 @@ class ServicioGeolocalizacion : Service() {
         ) {
             return
         }
+
         //inicializar la ubicacion
         //si quitamos estas lineas deja de funcionar por alguna razon
         fusedLocation.lastLocation.addOnSuccessListener { location->
-
             if(location!=null){
                 ubicacion=LatLng(location.latitude,location.longitude)
 
             }
         }
         startForeground()
-
-
     }
 
     //-------------------------------------------------------------------------------
@@ -136,13 +135,11 @@ class ServicioGeolocalizacion : Service() {
         val channelId =
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 createNotificationChannel()
-
             } else {
                 // If earlier version channel ID is not used
                 // https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html#NotificationCompat.Builder(android.content.Context)
                 ""
             }
-        println("startforeground2")
         val notificationBuilder = NotificationCompat.Builder(applicationContext, channelId )
         val notification = notificationBuilder.setOngoing(true)
             .setSmallIcon(R.drawable.ic_input_add)
@@ -152,8 +149,8 @@ class ServicioGeolocalizacion : Service() {
             .build()
         startForeground(101, notification)
     }
-    //-------------------------------------------------------------------------------
 
+    //-------------------------------------------------------------------------------
     @RequiresApi(Build.VERSION_CODES.O)
     private fun createNotificationChannel(): String{
         val channelId = "mi_servicio"
@@ -167,6 +164,7 @@ class ServicioGeolocalizacion : Service() {
         service.createNotificationChannel(chan)
         return channelId
     }
+
     @OptIn(DelicateCoroutinesApi::class)
     @SuppressLint("MissingPermission")
 
@@ -189,7 +187,6 @@ class ServicioGeolocalizacion : Service() {
         fun updateUbication(){
             fusedLocation.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, object : CancellationToken() {
                 override fun onCanceledRequested(p0: OnTokenCanceledListener) = CancellationTokenSource().token
-
                 override fun isCancellationRequested() = false
             }).addOnSuccessListener {
                 if(it!==null){
@@ -203,58 +200,74 @@ class ServicioGeolocalizacion : Service() {
             //-------------------------------------------------------------------------------
             //ejecucion de deteccion por cercania
             while (true){
-                println("ejecucion servicio nivel while")
                 //limpieza de cache para prevenir errores varios
                 clearchache.deleteCache(applicationContext)
+
                 //obtener la ubicacion actual
                 updateUbication()
-          // si se ha cancelado salimos del bucle
+
+                // si se ha cancelado salimos del bucle
                 if(job.isCancelled){
                     break
                 }
+
                 //comprobaciones de los puntos de ubicacion
                 if(ubicacionact.distanceTo(puenteRomano).toInt() < 75){
                     Listabooleanos[0]= true
                 }
+
                 if(ubicacionact.distanceTo(puenteRomano).toInt() >  75){
                     Listabooleanos[0]=false
                 }
+
                 if(ubicacionact.distanceTo(pobalekoBurdinola).toInt() <   75){
                     Listabooleanos[1]=true
                 }
+
                 if(ubicacionact.distanceTo(pobalekoBurdinola).toInt() >   75){
                     Listabooleanos[1]=false
                 }
+
                 if(ubicacionact.distanceTo(pobenakoErmita).toInt() <   75){
                     Listabooleanos[2]=true
                 }
+
                 if(ubicacionact.distanceTo(pobenakoErmita).toInt() >   75){
                     Listabooleanos[2]=false
                 }
+
                 if(ubicacionact.distanceTo(hondartzaArena).toInt() <  75){
                     Listabooleanos[3]=true
                 }
+
                 if(ubicacionact.distanceTo(hondartzaArena).toInt() >  75){
                     Listabooleanos[3]=false
                 }
+
                 if(ubicacionact.distanceTo(ibilbideItsaslur).toInt() <  75){
                     Listabooleanos[4]=true
                 }
+
                 if(ubicacionact.distanceTo(ibilbideItsaslur).toInt() >  75){
                     Listabooleanos[4]=false
                 }
+
                 if(ubicacionact.distanceTo(muniatonesGaztelua).toInt() <  75){
                     Listabooleanos[5] =true
                 }
+
                 if(ubicacionact.distanceTo(muniatonesGaztelua).toInt() >  75){
                     Listabooleanos[5] =false
                 }
+
                 if(ubicacionact.distanceTo(sanJuan).toInt() <  75){
                     Listabooleanos[6] =true
                 }
+
                 if(ubicacionact.distanceTo(sanJuan).toInt() >  75){
                     Listabooleanos[6] = false
                 }
+
                 Thread.sleep(2500)
 
                 //devolucion de la lista de booleanos
@@ -265,6 +278,7 @@ class ServicioGeolocalizacion : Service() {
                 booleano4 = Listabooleanos[4]
                 booleano5 = Listabooleanos[5]
                 booleano6 = Listabooleanos[6]
+
                 //devolucion de los booleanos comprobados
                 val senderIntent = Intent("broadcast")
                 senderIntent.putExtra("Booleano0",booleano0)
@@ -274,35 +288,24 @@ class ServicioGeolocalizacion : Service() {
                 senderIntent.putExtra("Booleano4",booleano4)
                 senderIntent.putExtra("Booleano5",booleano5)
                 senderIntent.putExtra("Booleano6",booleano6)
-                //senderIntent.putExtra("ubicacionactual",ubicacion)
+
                 LocalBroadcastManager.getInstance(applicationContext).sendBroadcast(senderIntent)
-
             }
-
-
         }
-
-
         return START_STICKY
     }
 
     //-------------------------------------------------------------------------------
-
     override fun onDestroy() {
         super.onDestroy()
-        println("onDestroy")
         stopForeground(true)
         job.cancel()
-
-
         stopSelf()
     }
 
     //-------------------------------------------------------------------------------
-
     // obliga a implementar el método
     override fun onBind(intent: Intent): IBinder {
         TODO("Return the communication channel to the service.")
     }
-
 }

@@ -26,7 +26,7 @@
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nondik sartu gara pasealekura?"
+            android:text="@string/itsaslurQ1"
             android:textColor="@color/botones_desactivados"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -89,7 +89,7 @@
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Zer ikusi dugu pasealekutik?"
+            android:text="@string/itsaslurQ2"
             android:textColor="@color/botones_desactivados"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -151,7 +151,7 @@
             android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Zer aurkitu dezakegu bide erditik?"
+            android:text="@string/itsaslurQ3"
             android:textColor="@color/botones_desactivados"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -213,7 +213,7 @@
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Non hartu dezakegu bainu bat?"
+            android:text="@string/itsaslurQ4"
             android:textColor="@color/botones_desactivados"
             android:textSize="20sp"
             android:textStyle="bold" />

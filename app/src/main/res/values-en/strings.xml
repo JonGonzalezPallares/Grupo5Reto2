@@ -103,4 +103,10 @@
     <string name="puente_preg_4_res_3">Iron</string>
     <string name="reiniciar_juego">Restart</string>
     <string name="jugar">Play</string>
+    <string name="volver">Return</string>
+    <string name="incorrecto">Wrong</string>
+    <string name="siguiente">Next</string>
+    <string name="primero">First</string>
+    <string name="anterior">Previous</string>
+    <string name="ultimo">Last</string>
 </resources>

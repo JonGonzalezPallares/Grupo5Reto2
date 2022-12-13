@@ -2,43 +2,42 @@
 
     <string name="app_name">Grupo5Reto2</string>
     <string name="title_activity_maps">Muskiz ezagutzen!</string>
-    <string name="open">Open</string>
-    <string name="close">Close</string>
+    <string name="close">Itxi</string>
     <!-- TODO: Remove or change this placeholder text -->
 
 
     <!-- Menu Principal -->
-    <string name="hintUser">Usuario</string>
-    <string name="hintClase">Clase</string>
-    <string name="start">Inicio</string>
+    <string name="hintUser">Erabiltzailea</string>
+    <string name="hintClase">Gela</string>
+    <string name="start">Hasiera</string>
     <string name="othersUsers">Otros usuarios</string>
 
     <!-- Map Activity -->
     <!-- Menu -->
-    <string name="modes">Modos</string>
-    <string name="puntuation">Puntuacion</string>
-    <string name="others">Otros</string>
-    <string name="freeMode">Modo libre</string>
-    <string name="guidedMode">Modo guiado</string>
-    <string name="profesorMode">Modo profesor</string>
-    <string name="yourProgress">Tu progreso</string>
-    <string name="ranking">Ranking</string>
+    <string name="modes">Moduak</string>
+    <string name="puntuation">Puntuazioa</string>
+    <string name="others">Beste batzuk</string>
+    <string name="freeMode">Aske modua</string>
+    <string name="guidedMode">Modu gidatua</string>
+    <string name="profesorMode">Irakasle modua</string>
+    <string name="yourProgress">Zure garapena</string>
+    <string name="ranking">Rankina</string>
     <string name="aboutUs">Sobre nosotros</string>
     <string name="logOut">Cerrar sesión</string>
 
     <!-- Playa La Arena -->
-    <string name="gameLaArenaHondartza">Playa de la Arena</string>
-    <string name="cardsMatch">Correcto!</string>
+    <string name="gameLaArenaHondartza">La Arena Hondartza</string>
+    <string name="cardsMatch">Zuzena!</string>
 
     <!-- Hermita -->
-    <string name="gameHermitaDePobeña">Hermita de Pobela</string>
+    <string name="gameHermitaDePobeña">Pobelako Ermita</string>
 
 
     <!-- Fundicion -->
-    <string name="gameFundicion">Pobeñako BUrdinola</string>
+    <string name="gameFundicion">Pobeñako Burdinola</string>
 
     <!-- Castillo Muñatones -->
-    <string name="gameCastilloMuñatones">Castillo de Muñatones</string>
+    <string name="gameCastilloMuñatones">Muñatones Gaztelua</string>
     <string name="explanationCastilloMuñatones">Muñatones Gaztelua Muskizen dago, Bizkaian.
         Somorrostro haranan dagoen herri bat da, Barbadun ibaiaz osatuta dagoena.
         7500 biztanle inguru ditu eta udalerria naturagune babestu batean dago.
@@ -51,14 +50,14 @@
         era guztietako garaipen eta porrotekin. Gaur egun, Muñatones gaztelua
         da bere garaiko ezaugarri gehienak mantentzen dituen Bizkaiko gaztelu bakarra.  </string>
     <!-- Itsaslur Ibilbidea -->
-    <string name="gameItsaslurIbilbidea">Paseo de Itsaslur</string>
+    <string name="gameItsaslurIbilbidea">Itsaslur Ibilbidea</string>
 
-    <string name="waiting">Esperando</string>
-    <string name="waitingExplanation">Hay que esperar a que el profesor termine de dar la explicacion</string>
-    <string name="itsaslurQ1">Por donde hemos entrado al paseo?</string>
-    <string name="itsaslurQ2">Que hemos visto en el paseo?</string>
-    <string name="itsaslurQ3">Que hemos encontrado a la mitad del camino?</string>
-    <string name="itsaslurQ4">Donde podemos darnos un baño?</string>
+    <string name="waiting">Itzaroten</string>
+    <string name="waitingExplanation">Irakasleak azalpena ematen amaitu arte itxaron beharko duzu</string>
+    <string name="itsaslurQ1">Nondik sartu gara ibilbidera?</string>
+    <string name="itsaslurQ2">Zer ikusi dugu ibilbidean?</string>
+    <string name="itsaslurQ3">Zer aurkitu dezakegu bide erditik?</string>
+    <string name="itsaslurQ4">Non hartu dezakegu bainu bat?</string>
     <!-- San Juan gaua-->
     <string name="gameSanJuan">San Juan gaua </string>
     <string name="explanationSanJuan">San Joan gaua urteko gaurik laburrena bezala ezagutzen da, nahiz eta, egia esan, gaur egungo benetako data ekainaren 21a izan, udako solstizioa noiz ospatzen den. Kristautasunak egin zuen egokitzapenak azaltzen du ez datorrela bat udako solstizioarekin. Gaur gauean San Joan Etxeekin ospatuko da, suak dena erretzen du, sua desiratzen da eta udako ongietorria egingo da. Egun magikoa izateaz gain, izpiritu txarrak uxatzea edo gertatu diren gauza txarrekin apurtzea.
@@ -67,13 +66,13 @@ Data honen jatorria San Joan Bataiatzailea jaio zen eguna da, bere aita Zacarias
 Muskizen, garrantzi handia du 22: 30ean geltokian hasten den zuzien jaitsierak. Ondoren, 23: 30ak aldera, su artifizialak hasten dira eta ondoren berbena bat. Gau horretan Muskizera hurbiltzen diren pertsonek zuziak pizten dituzte Petronorreko biltegi zaharrera arte, txistulariekin batera, eta gero zuziak San Jorgeko sutara botatzen dituzte.
 </string>
     <!-- Pantalla felicitacion-->
-    <string name="congratulations1">¡Lo hiciste, amigo!</string>
-    <string name="congratulations2">Has resuelto el desafio</string>
+    <string name="congratulations1">Egin duzu, lagun!</string>
+    <string name="congratulations2">Erronka osatu duzu</string>
     <string name="GoToMap">Mapara joan</string>
     <!-- Pantalla felicitacion-->
     <string name="gamePuenteRomano">Pubeñako Zubi Erromanikoa</string>
 
-    <string name="Continue">Continuar</string>
+    <string name="Continue">Jarraitu</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="puente_romano_enunciado_1">El Pobaleko zubi erromanikoa El Pobaleko burdinolarantz doa, Barbadun ibaiaren gainean. XIII. mendean eraiki zen, eta Muskiz zen herriko zubirik zaharrena.</string>
     <string name="puente_romano_enunciado_2">Muskizeko erdigunetik Barbadun ibaia igarotzen zen, eta, beraz, zubi bat eraiki behar izan zuten herritik arazorik gabe mugitu ahal izateko. Horri esker, Galdames eta Sopuertatik Muskizera pasatzen zen jendea. Zubi hau beharrezkoa izan zen arazo demografikoengatik.</string>
@@ -95,5 +94,12 @@ Muskizen, garrantzi handia du 22: 30ean geltokian hasten den zuzien jaitsierak. 
     <string name="puente_preg_4_res_2">Harriz</string>
     <string name="puente_preg_4_res_3">Burdinez</string>
     <string name="reiniciar_juego">Reiniciar</string>
-    <string name="jugar">Jugar</string>
+    <string name="jugar">Jolastu</string>
+    <string name="open">Zabaldu</string>
+    <string name="volver">Itzuli</string>
+    <string name="incorrecto">Okerra</string>
+    <string name="siguiente">Hurrengoa</string>
+    <string name="primero">Lehenengoa</string>
+    <string name="anterior">Aurrekoa</string>
+    <string name="ultimo">Azkena</string>
 </resources>

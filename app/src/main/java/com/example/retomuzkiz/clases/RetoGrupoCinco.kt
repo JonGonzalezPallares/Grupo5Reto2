@@ -18,6 +18,5 @@ class RetoGrupoCinco : Application() {
             .databaseBuilder(this,UsuarioDB::class.java,UsuarioDB.DATABASE_NAME)
             .allowMainThreadQueries()
             .build()
-
     }
 }

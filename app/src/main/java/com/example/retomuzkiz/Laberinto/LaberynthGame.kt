@@ -8,11 +8,10 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import java.util.*
+import kotlin.math.abs
 
 class LaberynthGame: View {
     companion object{
-        const val COLS:Int= 13
-        const val ROWS:Int= 19
         const val WALL_THICKNESS = 4f
     }
     private var contexto : Context
@@ -47,17 +46,17 @@ class LaberynthGame: View {
         random = Random()
         contexto = applicationContext
         createMaze()
-
     }
+
+
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-
-        var width = width
-        var height = height
-        if(width/height < COLS/ ROWS){
-            cellSize= width/(COLS+4).toFloat()
+        val width = width
+        val height = height
+        cellSize = if(width/height < COLS/ ROWS){
+            width/(COLS+4).toFloat()
         }else{
-            cellSize= height/(ROWS+4).toFloat()
+            height/(ROWS+4).toFloat()
 
         }
         hMargin = (width - COLS*cellSize)/2
@@ -76,6 +75,7 @@ class LaberynthGame: View {
                         wallPaint
                     )
                 }
+
                 if(celda.leftWall){
                     canvas.drawLine(
                         col*cellSize,
@@ -84,6 +84,7 @@ class LaberynthGame: View {
                         (row+1)*cellSize,wallPaint
                     )
                 }
+
                 if(celda.bottomWall){
                     canvas.drawLine(
                         col*cellSize,
@@ -92,6 +93,7 @@ class LaberynthGame: View {
                         (row+1)*cellSize,wallPaint
                     )
                 }
+
                 if(celda.rightWall){
                     canvas.drawLine(
                         (col+1)*cellSize,
@@ -110,6 +112,7 @@ class LaberynthGame: View {
                 (player.rows1+1)*cellSize-margin,
                 playerPaint
             )
+
             canvas.drawRect(
                 exit.cols1*cellSize + margin,
                 exit.rows1*cellSize + margin,
@@ -120,12 +123,14 @@ class LaberynthGame: View {
         }
     }
 
+
     private fun movePlayer(direccion: Direction){
         when(direccion){
             Direction.up ->
                 if (!player.topWall) {
                     player = cells[player.cols1][player.rows1 - 1]
                 }
+
             Direction.down ->
                 if (!player.bottomWall) {
                     player = cells[player.cols1][player.rows1 + 1]
@@ -135,6 +140,7 @@ class LaberynthGame: View {
                 if (!player.rightWall) {
                     player = cells[player.cols1 + 1][player.rows1]
                 }
+
             Direction.left->
                 if (!player.leftWall) {
                     player = cells[player.cols1 - 1][player.rows1]
@@ -143,6 +149,8 @@ class LaberynthGame: View {
         checkExit()
         invalidate()
     }
+
+
     private fun checkExit(){
         if(contador < 3){
             if (player == exit){
@@ -159,22 +167,28 @@ class LaberynthGame: View {
             }
         }
     }
+
+
     override fun onTouchEvent(event: MotionEvent): Boolean {
         if (event.action == 0){
             return true
         }
 
         if(event.action == MotionEvent.ACTION_MOVE){
-            var x = event.x
-            var y = event.y
-            var playerCenterX = hMargin + (player.cols1 + 0.5f)*cellSize
-            var playerCenterY = vMargin + (player.rows1 + 0.5f)*cellSize
-
-            var dx = x-playerCenterX
-            var dy = y-playerCenterY
-
-            var absDx = Math.abs(dx)
-            var absDy = Math.abs(dy)
+            val x = event.x
+            val y = event.y
+            val playerCenterX = hMargin + (player.cols1 + 0.5f)*cellSize
+            val playerCenterY = vMargin + (player.rows1 + 0.5f)*cellSize
+            val dx = x-playerCenterX
+            val dy = y-playerCenterY
+            /**
+             * Antes
+             *
+             * val absDx = Math.abs(dx)
+             * val absDy = Math.abs(dy)
+             */
+            val absDx = abs(dx)
+            val absDy = abs(dy)
 
             if (absDx > cellSize || absDy > cellSize){
                 if (absDx> absDy){
@@ -184,32 +198,26 @@ class LaberynthGame: View {
                         movePlayer(Direction.right)
                     }else{
                         movePlayer(Direction.left)
-
                     }
                 }else{
                     //MOve in Y
                     if (dy>0){
                         //move Down
                         movePlayer(Direction.down)
-
                     }else{
                         //move Up
                         movePlayer(Direction.up)
-
                     }
                 }
             }
             return true
-
         }
-
         return super.onTouchEvent(event)
     }
 
 
     private fun createMaze(){
-
-        var stack = Stack<Cell>()
+        val stack = Stack<Cell>()
         lateinit var currentCell: Cell
         var nextCell: Cell?
 
@@ -244,27 +252,29 @@ class LaberynthGame: View {
             currentCell.topWall=false
             nextCell.bottomWall = false
         }
+
         //Bottom wall
         if(currentCell.cols1 == nextCell.cols1 && currentCell.rows1 == nextCell.rows1-1){
             currentCell.bottomWall=false
             nextCell.topWall = false
         }
+
         //LeftWall
         if(currentCell.cols1 == nextCell.cols1+1 && currentCell.rows1 == nextCell.rows1){
             currentCell.leftWall=false
             nextCell.rightWall = false
         }
+
         //rightWall
         if(currentCell.cols1 == nextCell.cols1-1 && currentCell.rows1 == nextCell.rows1){
             currentCell.rightWall=false
             nextCell.leftWall = false
         }
-
-
     }
 
+
     private fun getNeighbour(cell: Cell): Cell?{
-        var neighbours = ArrayList<Cell>()
+        val neighbours = ArrayList<Cell>()
         //left neighbour
         if(cell.cols1>0){
             if(!cells[cell.cols1-1][cell.rows1].visited){
@@ -272,30 +282,31 @@ class LaberynthGame: View {
 
             }
         }
-        //rigth neighbour
 
+        //rigth neighbour
         if(cell.cols1< COLS-1){
             if(!cells[cell.cols1+1][cell.rows1].visited){
                 neighbours.add(cells[cell.cols1+1][cell.rows1])
 
             }
         }
-        //top neighbour
 
+        //top neighbour
         if(cell.rows1>0){
             if(!cells[cell.cols1][cell.rows1-1].visited){
                 neighbours.add(cells[cell.cols1][cell.rows1-1])
 
             }
         }
-        //bottom neighbour
 
+        //bottom neighbour
         if(cell.rows1 < ROWS-1){
             if(!cells[cell.cols1][cell.rows1+1].visited){
                 neighbours.add(cells[cell.cols1][cell.rows1+1])
 
             }
         }
+
         return if(neighbours.size>0) {
             val index = random.nextInt(neighbours.size)
             neighbours[index]
@@ -304,6 +315,8 @@ class LaberynthGame: View {
         }
     }
 }
+
+
 private class Cell{
     var topWall=true
     var leftWall = true
@@ -317,5 +330,4 @@ private class Cell{
         cols1 = cols
         rows1=rows
     }
-
 }

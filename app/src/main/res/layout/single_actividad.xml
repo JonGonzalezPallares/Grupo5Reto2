@@ -27,7 +27,7 @@
 
             <TextView
                 android:id="@+id/txtTitulo"
-                android:layout_width="195dp"
+                android:layout_width="0dp"
                 android:layout_height="62dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="15dp"
@@ -44,15 +44,11 @@
                 android:layout_width="119dp"
                 android:layout_height="63dp"
                 android:layout_gravity="center"
-
                 android:background="@drawable/stilo_desplegable_boton_jugar"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
-
-
                 android:src="@drawable/jugar_blanco"
-                android:text="Jugar"
+                android:text="@string/jugar"
                 app:ignore="SpeakableTextPresentCheck" />
-
         </LinearLayout>
 
         <LinearLayout

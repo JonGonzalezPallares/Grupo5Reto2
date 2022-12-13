@@ -23,7 +23,6 @@ import com.example.retomuzkiz.gastelua.ExplicacionActivity
 class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: Context): RecyclerView.Adapter<RvDesplegableAdapter.ViewHolder>() {
     private lateinit var Nombres : ArrayList<String>
 
-
     class ViewHolder (vista: View) :RecyclerView.ViewHolder(vista){
 
         val binding = SingleActividadBinding.bind(vista)
@@ -36,7 +35,6 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
                 loadActivityes(titulo, context)
                 println(titulo)
             }
-            var drawable:Drawable? = null
         }
 
         private fun loadImages(name: String, context: Context) {
@@ -57,7 +55,6 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.hermita_pobena_1)
                     )
-
                 }
 
                 MapsActivity.SITESNAMES.PLAYA_LA_ARENA_IMG -> {
@@ -102,6 +99,7 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
                     val intento = Intent(context, MarineroActivity::class.java)
                     startActivity(context, intento,null)
                 }
+
                 MapsActivity.SITESNAMES.PLAYA_LA_ARENA->{
                     val intento = Intent(context, IntroActivity::class.java)
                     startActivity(context, intento,null)
@@ -126,8 +124,7 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        Nombres = arrayListOf<String>()
-
+        Nombres = arrayListOf()
 
         val vista = LayoutInflater
             //Tenemos que inflarlo del mas cercano al que estemos
@@ -151,7 +148,6 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
     }
 
     fun cargaractividades(titulo:String){
-
     }
 }
 

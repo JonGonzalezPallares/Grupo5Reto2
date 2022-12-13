@@ -10,63 +10,6 @@
 
 
     <!--Layout final del juego  -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutImage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/fondo_degradado"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginTop="88dp"
-            android:src="@drawable/irudia_arena_2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:text="¡Lo hiciste, amigo!"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/tvSeg"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.488"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/tvSeg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="22dp"
-            android:text="¡Has resuelto el desafío!"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toTopOf="@+id/btnCompletado"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.488"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/btnCompletado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="28dp"
-            android:text="continuar"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <!--Layout de juego-->

@@ -21,7 +21,6 @@ class MarineroActivity : AppCompatActivity() {
         binding.btnsiguiente.setOnClickListener {
             val actividad = Intent(this, JuegodemarActivity::class.java)
             ContextCompat.startActivity(this, actividad, null)
-
         }
     }
 }

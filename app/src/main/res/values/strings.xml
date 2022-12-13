@@ -56,10 +56,10 @@
 
     <string name="waiting">Esperando</string>
     <string name="waitingExplanation">Hay que esperar a que el profesor termine de dar la explicacion</string>
-    <string name="itsaslurQ1">Por donde hemos entrado al paseo?</string>
-    <string name="itsaslurQ2">Que hemos visto en el paseo?</string>
-    <string name="itsaslurQ3">Que hemos encontrado a la mitad del camino?</string>
-    <string name="itsaslurQ4">Donde podemos darnos un baño?</string>
+    <string name="itsaslurQ1">¿Por donde hemos entrado al paseo?</string>
+    <string name="itsaslurQ2">¿Que hemos visto en el paseo?</string>
+    <string name="itsaslurQ3">¿Que hemos encontrado a la mitad del camino?</string>
+    <string name="itsaslurQ4">¿Donde podemos darnos un baño?</string>
     <!-- San Juan gaua-->
     <string name="gameSanJuan">Noche de San Juan</string>
     <string name="explanationSanJuan">La víspera de San Juan es conocida como el día más corto del año, aunque en realidad la fecha real de hoy en dia es el 21 de junio.
@@ -100,5 +100,11 @@
     <string name="puente_preg_4_res_3">Hierrp</string>
     <string name="reiniciar_juego">Reiniciar</string>
     <string name="jugar">Jugar</string>
+    <string name="volver">Volver</string>
+    <string name="incorrecto">Incorrecto</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="primero">Primero</string>
+    <string name="anterior">Anterior</string>
+    <string name="ultimo">Ultimo</string>
 
 </resources>

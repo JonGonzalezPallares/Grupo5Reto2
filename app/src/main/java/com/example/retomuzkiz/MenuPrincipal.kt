@@ -13,7 +13,6 @@ class MenuPrincipal : AppCompatActivity() {
     private lateinit var binding : ActivityMenuPrincipalBinding
     private lateinit var adaptadorUsuario: UsuariosAdapter
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuPrincipalBinding.inflate(layoutInflater)
@@ -24,7 +23,6 @@ class MenuPrincipal : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             val intento = Intent(this, MapsActivity::class.java)
-            //val intento = Intent(this, ItsaslurJuego::class.java)
             startActivity(intento)
         }
 
@@ -39,6 +37,7 @@ class MenuPrincipal : AppCompatActivity() {
         }
         binding.rvJugadores.adapter = adaptadorUsuario
     }
+
     //______________________________________________________________________________________________
     // guarda en sharedFreferences nombre pasado en parametro y llama la activity maps
     private fun listar(nombre: String) {
@@ -61,5 +60,4 @@ class MenuPrincipal : AppCompatActivity() {
         database!!.usuarioDao.insertUser(user)
         prefs.saveUser(userName)
     }
-
 }

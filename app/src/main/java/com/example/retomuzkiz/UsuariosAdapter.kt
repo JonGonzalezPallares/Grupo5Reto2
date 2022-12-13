@@ -22,7 +22,6 @@ class UsuariosAdapter(private var lista:List<Usuario>,private val escuchador:(Us
              */
             .inflate(R.layout.vista_jugador, parent, false)
         return ViewHolder(vista)
-
     }
 
     //Relacionar cada elemento
@@ -47,7 +46,6 @@ class UsuariosAdapter(private var lista:List<Usuario>,private val escuchador:(Us
 
     class ViewHolder (vista: View) :RecyclerView.ViewHolder(vista){
         val binding = VistaJugadorBinding.bind(vista)
-
 
         fun link (usuario: Usuario){
             binding.txtNombre.text = usuario.nombre

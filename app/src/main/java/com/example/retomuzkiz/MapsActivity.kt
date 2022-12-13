@@ -10,7 +10,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import android.content.res.Configuration
 import android.os.Handler
 import android.os.Looper
 import android.transition.Slide
@@ -66,11 +65,13 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         lateinit var NOCHE_SAN_JUAN :String
         var NOCHE_SAN_JUAN_IMG = "irudia_san_juan"
     }
+
     private val keyPathsBehavior by lazy {
         BottomSheetBehavior.from(binding.bottomSheetKeyPaths.root).apply {
             peekHeight = resources.getDimensionPixelSize(androidx.appcompat.R.dimen.abc_list_item_height_material)
         }
     }
+
     private lateinit var binding: ActivityMapsBinding
     private lateinit var listabooleanos: ArrayList<Boolean>
     private lateinit var localizacion: FusedLocationProviderClient
@@ -84,12 +85,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     private var navegacion = false
     private var iniciarguiado = false
     private lateinit var Servicio: Intent
-    lateinit var toggle : ActionBarDrawerToggle
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
 
         this.supportActionBar!!.hide()
 
@@ -127,21 +124,21 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 navegacion = false
             }
             menuanimation()
-
         }
 
         //______________________________________________________________________________________________
         //funciones del menu
         navview.setNavigationItemSelectedListener { menu ->
             when(menu.itemId) {
-
                 R.id.m_ranking -> {
                     Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
                     true
                 }
+
                 R.id.m_logout -> {
                     true
                 }
+
                 R.id.m_Modoguiado -> {
                     //Carcar el modo guiado
                     val guide = findViewById<View>(R.id.m_Modoguiado)
@@ -152,6 +149,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                     warning("", "Ahoras estas en el modo guiado")
                     true
                 }
+
                 R.id.m_Modolibre -> {
                     val guide = findViewById<View>(R.id.m_Modoguiado)
                     val free = findViewById<View>(R.id.m_Modolibre)
@@ -169,7 +167,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         val a = R.drawable.fondo_degradado
         this.supportActionBar!!.setBackgroundDrawable(a.toDrawable())
 
-
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -179,8 +176,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
         //Estado por defecto del desplegable inferior
         keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
-
-
     }
 
     /**
@@ -193,7 +188,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
      * installed Google Play services and returned to the app.
      */
     override fun onMapReady(mMap: GoogleMap) {
-
 
         //Creacion de los markadores
         val puenteRomano = LatLng(43.316772, -3.119471)
@@ -339,11 +333,13 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     //Acciones que ocurren cada vez que pulsamos a un marcador
     override fun onMarkerClick(marker: Marker): Boolean {
         val numero = marker.snippet.toString().toInt()
-        println(numero)
         if (listabooleanos[numero]) {
+            /**
+             * TODO ver si se pueden eliminar estos comentarios o todavia no
+             */
             //esto pasa si estas cerca de la ubicacion
-//            binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter =
-//                RvDesplegableAdapter(, this)
+            //binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter =
+            //RvDesplegableAdapter(, this)
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
 
             Toast.makeText(
@@ -351,8 +347,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 "titulo: " + marker.title + " posicion: " + marker.position,
                 Toast.LENGTH_LONG
             )
-                .show()
-            println("titulo: " + marker.title + " posicion: " + marker.position)
+            .show()
         } else {
             //esto pasa si estas legos de la ubicacion
             Toast.makeText(
@@ -360,11 +355,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 "titulo: " + " estas muy lejos del punto" + " posicion: " + marker.title,
                 Toast.LENGTH_LONG
             )
-                .show()
-            println("titulo: " + " estas muy lejos del punto" + " posicion: " + marker.title)
+            .show()
         }
-
-        println("titulo: "+marker.title+" posicion: "+marker.position)
 
         val actividades = listOf(
             listOf(Actividad(POBENA_FUNDICION, SITESNAMES.POBENA_FUNDICION_IMG_1 )),
@@ -392,7 +384,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         return false
     }
 
-
     // ESTO DEVUELVE EL OBJETO QUE QUERAMOS
     private val broadcastReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -404,7 +395,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             listabooleanos[4] = intent.getBooleanExtra("Booleano4", false)
             listabooleanos[5] = intent.getBooleanExtra("Booleano5", false)
             listabooleanos[6] = intent.getBooleanExtra("Booleano6", false)
-            println("aa $listabooleanos")
         }
     }
 
@@ -416,11 +406,12 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     }
 
     override fun onPause() {
-
         super.onPause()
-        val intentFilter = IntentFilter("broadcast")
+
+        IntentFilter("broadcast")
         LocalBroadcastManager.getInstance(this).unregisterReceiver(broadcastReceiver)
     }
+
     //______________________________________________________________________________________________
     // funcion del modo libre
     private fun freeMode() {
@@ -449,7 +440,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         listabooleanos.add(false)
         listabooleanos.add(false)
         listabooleanos.add(false)
-        println(listabooleanos)
 
         Servicio.putExtra("boleano0", booleano0)
         Servicio.putExtra("boleano1", booleano1)
@@ -462,12 +452,12 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     }
 
     //______________________________________________________________________________________________
-    //______________________________________________________________________________________________
-
     //funciones del menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.m_ranking -> Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
+            R.id.m_ranking -> {
+                Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
+            }
 
             R.id.m_logout -> {
             }
@@ -497,6 +487,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
+
     //______________________________________________________________________________________________
     //funcion de animacion del menu
     private fun menuanimation(){

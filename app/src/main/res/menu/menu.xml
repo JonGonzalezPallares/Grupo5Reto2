@@ -2,61 +2,60 @@
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-
-
     tools:showIn="navigation_view">
 
+    <item android:title="@string/modes"
+        android:titleCondensed="">
+        <menu>
+            <item
+                android:id="@+id/m_Modolibre"
+                android:icon="@drawable/libre"
+                android:title="@string/freeMode"
+                android:visible="true" />
 
-            <item android:title="Modos"
-                android:titleCondensed="">
-                <menu>
-                    <item
-                        android:id="@+id/m_Modolibre"
-                        android:icon="@drawable/libre"
-                        android:title="@string/freeMode"
-                        android:visible="true" />
-                    <item
-                        android:id="@+id/m_Modoguiado"
-                        android:icon="@drawable/guiado"
-                        android:title="@string/guidedMode"
-                        android:visible="true" />
-                    <item
-                        android:id="@+id/m_Profesor"
-                        android:icon="@drawable/profesor"
-                        android:title="@string/profesorMode"
-                        android:visible="true" />
-                </menu>
-            </item>
-            <item android:title="Puntuacion">
-            <menu>
-                <item
-                    android:id="@+id/m_Puntuacion"
-                    android:icon="@drawable/progreso"
-                    android:title="@string/yourProgress"
-                    android:visible="true" />
-                <item
-                    android:id="@+id/m_ranking"
-                    android:icon="@drawable/coronareal"
-                    android:title="@string/ranking"
-                    android:visible="true" />
+            <item
+                android:id="@+id/m_Modoguiado"
+                android:icon="@drawable/guiado"
+                android:title="@string/guidedMode"
+                android:visible="true" />
 
-            </menu>
+            <item
+                android:id="@+id/m_Profesor"
+                android:icon="@drawable/profesor"
+                android:title="@string/profesorMode"
+                android:visible="true" />
+        </menu>
     </item>
-            <item android:title="Otros">
-                <menu>
 
-                    <item
-                        android:id="@+id/m_About"
-                        android:icon="@drawable/nosotros"
-                        android:title="@string/aboutUs"
-                        android:visible="true" />
-                    <item
-                        android:id="@+id/m_logout"
-                        android:icon="@drawable/signodebotondeencendido"
-                        android:title="@string/logOut"
-                        android:visible="true" />
-                </menu>
-            </item>
+    <item android:title="@string/puntuation">
+        <menu>
+            <item
+                android:id="@+id/m_Puntuacion"
+                android:icon="@drawable/progreso"
+                android:title="@string/yourProgress"
+                android:visible="true" />
 
+            <item
+                android:id="@+id/m_ranking"
+                android:icon="@drawable/coronareal"
+                android:title="@string/ranking"
+                android:visible="true" />
+        </menu>
+    </item>
 
+    <item android:title="@string/others">
+        <menu>
+            <item
+                android:id="@+id/m_About"
+                android:icon="@drawable/nosotros"
+                android:title="@string/aboutUs"
+                android:visible="true" />
+
+            <item
+                android:id="@+id/m_logout"
+                android:icon="@drawable/signodebotondeencendido"
+                android:title="@string/logOut"
+                android:visible="true" />
+        </menu>
+    </item>
 </menu>

@@ -10,7 +10,7 @@
         android:id="@+id/textView6"
         android:layout_width="352dp"
         android:layout_height="551dp"
-        android:text="Muñatones Gaztelua Muskizen dago, Bizkaian. Somorrostro haranan dagoen herri bat da, Barbadun ibaiaz osatuta dagoena. 7500 biztanle inguru ditu eta udalerria naturagune babestu batean dago. Hitz egingo dugun gaztelu hau Petronor enpresaren findegiaren aurrean aurkituko dugu. Gaztelua deitzen den arren, dorretxea da. Aipatzekoa da ez dela edozein dorretxe, Lope García de Salazarrena baizik, Bizkaiko Erdi Aroko pertsonaiarik nabarmenetakoa. 1339. urtean eraiki zen, aurretik aipatutako garaiaren amaieran. Muñatones egungo gaztelua mendeetan zehar eraiki eta suntsitu zen, era guztietako garaipen eta porrotekin. Gaur egun, Muñatones gaztelua da bere garaiko ezaugarri gehienak mantentzen dituen Bizkaiko gaztelu bakarra.  "
+        android:text="@string/explanationCastilloMuñatones"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"

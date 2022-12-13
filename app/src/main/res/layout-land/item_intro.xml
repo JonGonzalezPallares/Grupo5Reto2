@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Jugar" />
+        android:text="@string/jugar" />
 
     <!--layout de parrafos-->
     <LinearLayout
@@ -64,8 +64,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="24sp"
-            android:textStyle="bold|italic"
-            tools:text="El mendean eraiki zenbbdbdbdsbsfbsfdbdsbsdbbbsbdfsd, eta Muskiz zen herriko zubirik zaharrena." />
+            android:textStyle="bold|italic"/>
     </LinearLayout>
 
 

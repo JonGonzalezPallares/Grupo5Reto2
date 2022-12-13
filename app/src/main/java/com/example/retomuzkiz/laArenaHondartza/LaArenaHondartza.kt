@@ -83,12 +83,12 @@ class LaArenaHondartza : Activity() {
 
     //______________________________________________________________________________________________
     // Esconde la vista del juego y muestra la vista finalizado el juego
-    private fun showFinalLayout(){
+    /*private fun showFinalLayout(){
         Handler(Looper.myLooper()?:return).postDelayed({
             binding.layoutButton.visibility = View.GONE
             binding.layoutImage.visibility = View.VISIBLE
         }, 1000)
-    }
+    }*/
 
     //______________________________________________________________________________________________
     /* devolver array desordenado  requiere de parametro la longitud del array */
@@ -151,7 +151,7 @@ class LaArenaHondartza : Activity() {
 
                 if (aciertos == respuestas.size)
                 {
-                    showFinalLayout()
+                    completarJuego()
                 }
             }
             else
@@ -193,12 +193,12 @@ class LaArenaHondartza : Activity() {
     //______________________________________________________________________________________________
     // al teminar el juego
     private fun completarJuego(){
-        binding.btnCompletado.setOnClickListener{
-            val intento = Intent(this, MsgVictoria::class.java)
-            intento.putExtra("imagen", "arena")
-            cambio = true
-            startActivity(intento)
-        }
+        val intento = Intent(this, MsgVictoria::class.java)
+        intento.putExtra("imagen", "arena")
+        cambio = true
+        startActivity(intento)
+        /*binding.btnCompletado.setOnClickListener{
+        }*/
     }
 
     //______________________________________________________________________________________________
@@ -206,7 +206,6 @@ class LaArenaHondartza : Activity() {
     {
         cargarTablero()
         cargarImagenes()
-        completarJuego()
 
         arrayDesordenadoRespuestas = desordenarArray(respuestas.size)
         arrayDesordenadoPreguntas = desordenarArray(preguntas.size)
