@@ -195,6 +195,7 @@ class PuenteJuego : AppCompatActivity() {
         //Comprueba si el dato seleccionado concuerda con la respuesta correcta
         binding.btnComprobar.setOnClickListener {
             val respuestaBien = respuestas[cantidad-1]
+            println("$respuestaBien $seleccion")
             if(respuestaBien == seleccion){
                 val imagen = imagenes[cantidad-1]
                 imagen.visibility = View.VISIBLE
@@ -227,7 +228,7 @@ class PuenteJuego : AppCompatActivity() {
             }
 
             else -> {
-                cleanSelection()
+                showImg()
             }
         }
         cantidad++
@@ -251,7 +252,6 @@ class PuenteJuego : AppCompatActivity() {
 
             else -> {
                 binding.rdbRes4.clearCheck()
-                showImg()
             }
         }
     }
@@ -272,7 +272,7 @@ class PuenteJuego : AppCompatActivity() {
             intento.putExtra("imagen", "puente")
             cambio = true
             startActivity(intento)
-        }, (tiempo+1000))
+        }, (tiempo+500))
     }
 
     //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
