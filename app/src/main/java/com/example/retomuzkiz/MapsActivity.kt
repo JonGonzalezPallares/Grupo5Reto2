@@ -333,30 +333,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     //Acciones que ocurren cada vez que pulsamos a un marcador
     override fun onMarkerClick(marker: Marker): Boolean {
         val numero = marker.snippet.toString().toInt()
-        if (listabooleanos[numero]) {
-            /**
-             * TODO ver si se pueden eliminar estos comentarios o todavia no
-             */
-            //esto pasa si estas cerca de la ubicacion
-            //binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter =
-            //RvDesplegableAdapter(, this)
-            keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
-
-            Toast.makeText(
-                this,
-                "titulo: " + marker.title + " posicion: " + marker.position,
-                Toast.LENGTH_LONG
-            )
-            .show()
-        } else {
-            //esto pasa si estas legos de la ubicacion
-            Toast.makeText(
-                this,
-                "titulo: " + " estas muy lejos del punto" + " posicion: " + marker.title,
-                Toast.LENGTH_LONG
-            )
-            .show()
-        }
 
         val actividades = listOf(
             listOf(Actividad(POBENA_FUNDICION, SITESNAMES.POBENA_FUNDICION_IMG_1 )),
@@ -367,15 +343,41 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             listOf(Actividad(CASTILLO_MUNATONES, SITESNAMES.CASTILLO_MUNATONES_IMG)),
             listOf(Actividad(NOCHE_SAN_JUAN, SITESNAMES.NOCHE_SAN_JUAN_IMG)))
 
-        for (i in 0..6){
-            if(marker.title.equals(actividades[i][0].name)){
-                binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = RvDesplegableAdapter(
-                    actividades[i], this
-                )
+        if (listabooleanos[numero]) {
+            /**
+             * TODO ver si se pueden eliminar estos comentarios o todavia no
+             */
+            //esto pasa si estas cerca de la ubicacion
+            //binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter =
+            //RvDesplegableAdapter(, this)
+            //keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
+
+            /*Toast.makeText(
+                this,
+                "titulo: " + marker.title + " posicion: " + marker.position,
+                Toast.LENGTH_LONG
+            )
+            .show()*/
+            for (i in 0..6){
+                if(marker.title.equals(actividades[i][0].name)){
+                    binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = RvDesplegableAdapter(
+                        actividades[i], this
+                    )
+                }
             }
+
+            keyPathsBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+        } else {
+            //esto pasa si estas legos de la ubicacion
+            Toast.makeText(
+                this,
+                "titulo: " + " estas muy lejos del punto" + " posicion: " + marker.title,
+                Toast.LENGTH_LONG
+            )
+            .show()
         }
 
-        keyPathsBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+
 
         /*
         Devolvemos "false" para indicar que no queremos consumir el evento, indicandole asi que queremos
