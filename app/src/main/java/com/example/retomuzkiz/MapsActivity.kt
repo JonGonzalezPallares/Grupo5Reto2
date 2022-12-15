@@ -17,7 +17,6 @@ import android.transition.TransitionManager
 import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
@@ -131,7 +130,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         navview.setNavigationItemSelectedListener { menu ->
             when(menu.itemId) {
                 R.id.m_ranking -> {
-                    Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
                     true
                 }
 
@@ -458,7 +457,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.m_ranking -> {
-                Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
             }
 
             R.id.m_logout -> {
