@@ -32,15 +32,13 @@ class BurdinolaVideoActivity : AppCompatActivity() {
         binding.burdinolavideo.canSeekForward()
         binding.burdinolavideo.start()
 
-        binding.btnStart.setOnClickListener {
-            binding.burdinolavideo.start()
-        }
+
 
         binding.btnJuego.setOnClickListener{
             startActivity(Intent(this, BurdinolaSopaActivity::class.java))
             cambio=true
         }
-
+    
 
 
 

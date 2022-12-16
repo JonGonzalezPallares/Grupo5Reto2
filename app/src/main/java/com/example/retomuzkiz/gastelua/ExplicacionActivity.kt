@@ -12,5 +12,7 @@ class ExplicacionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_explicacion)
         binding = ActivityExplicacionBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
     }
 }
