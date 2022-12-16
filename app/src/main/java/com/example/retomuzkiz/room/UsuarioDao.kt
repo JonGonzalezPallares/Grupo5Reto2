@@ -14,8 +14,8 @@ interface UsuarioDao {
      fun getAllUsers(): List<Usuario>
 
      //Listar usuario en concreto
-     @Query("select * from Usuario where nombre like :nombre")
-     fun getUser(nombre: String): Usuario
+     @Query("select * from Usuario where name like :name")
+     fun getUser(name: String): Usuario
 
      //Insertar Usuario
      @Insert(onConflict = OnConflictStrategy.REPLACE)

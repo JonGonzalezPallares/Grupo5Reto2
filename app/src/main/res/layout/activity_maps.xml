@@ -68,8 +68,9 @@
     <include
         android:id="@+id/bottom_sheet_key_paths"
         layout="@layout/bottom_sheet_key_path"
-        app:layout_anchor="@+id/bottom_sheet_render_times"
-        app:layout_anchorGravity="center" />
+        app:layout_anchor="@+id/bottom_sheet_key_paths"
+        app:layout_anchorGravity="center"
+       />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,17 +1,32 @@
 package com.example.retomuzkiz.room
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
 
-@Entity
+@Entity (tableName = "Usuario",foreignKeys =
+    [ForeignKey(entity = Progress::class, parentColumns = arrayOf("totalPuntuation"),
+      childColumns = arrayOf("totPuntuation"), onDelete = ForeignKey.CASCADE)],
+    primaryKeys = arrayOf("userId", "totPuntuation"),
+    indices = [Index(
+        value = arrayOf("userId"),
+        unique = true
+        )])
+
+
 data class Usuario(
-    @PrimaryKey(autoGenerate = false)
-    var nombre: String,
 
-    @ColumnInfo(name = "puntos")
-    var puntos: Int,
+    val userId: String,
 
-    @ColumnInfo(name = "juegos_completados")
-    var juegosCompletados: Int
-)
+    @ColumnInfo(name = "name")
+    var name: String,
+
+    @ColumnInfo(name = "totPuntuation")
+    var totPuntuation: Int,
+    @ColumnInfo(name = "userClass")
+    var userClass: String,
+    @ColumnInfo(name = "gamesDone")
+    var gamesDone: Int,
+
+    @ColumnInfo(name = "isProfessor")
+    var isProfessor: Boolean,
+
+    )

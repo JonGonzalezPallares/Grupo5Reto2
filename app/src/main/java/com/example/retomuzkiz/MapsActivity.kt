@@ -22,15 +22,11 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
 import com.example.retomuzkiz.clases.Actividad
 import androidx.core.graphics.drawable.toDrawable
-import com.example.retomuzkiz.MapsActivity.SITESNAMES.CASTILLO_MUNATONES
-import com.example.retomuzkiz.MapsActivity.SITESNAMES.ITSASLUR_IBILBIDEA
-import com.example.retomuzkiz.MapsActivity.SITESNAMES.NOCHE_SAN_JUAN
-import com.example.retomuzkiz.MapsActivity.SITESNAMES.PLAYA_LA_ARENA
-import com.example.retomuzkiz.MapsActivity.SITESNAMES.POBENA_FUNDICION
-import com.example.retomuzkiz.MapsActivity.SITESNAMES.POBENA_HERMITA
-import com.example.retomuzkiz.MapsActivity.SITESNAMES.PUENTE_ROMANO
+
 import com.example.retomuzkiz.clases.OptionsMenuActivity
+import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
+import com.example.retomuzkiz.room.Game
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -46,24 +42,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.navigation.NavigationView
 
 class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener {
-    object SITESNAMES {
-        lateinit var POBENA_FUNDICION:String
-        var POBENA_FUNDICION_IMG_1 = "fundicion_pobela"
-        lateinit var POBENA_HERMITA :String
-        var POBENA_HERMITA_IMG = "irudiapobena1"
-        lateinit var ITSASLUR_IBILBIDEA : String
-        var ITSASLUR_IBILBIDEA_IMG_1 = "itsaslur1_2"
-        var ITSASLUR_IBILBIDEA_IMG_2 = "itsaslur2_1"
-        var ITSASLUR_IBILBIDEA_IMG_3 = "itsaslur2_2"
-        lateinit var PLAYA_LA_ARENA :String
-        var PLAYA_LA_ARENA_IMG = "irudia_arena_2"
-        lateinit var PUENTE_ROMANO :String
-        var PUENTE_ROMANO_IMG = "puentecompleto"
-        lateinit var CASTILLO_MUNATONES :String
-        var CASTILLO_MUNATONES_IMG = "irudia_pobena_1"
-        lateinit var NOCHE_SAN_JUAN :String
-        var NOCHE_SAN_JUAN_IMG = "irudia_san_juan"
-    }
+
 
     private val keyPathsBehavior by lazy {
         BottomSheetBehavior.from(binding.bottomSheetKeyPaths.root).apply {
@@ -84,19 +63,15 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     private var navegacion = false
     private var iniciarguiado = false
     private lateinit var Servicio: Intent
+    val db = RetoGrupoCinco.database!!
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         this.supportActionBar!!.hide()
 
         /* Inicializacion variablees */
-        POBENA_FUNDICION = resources.getString(R.string.gameFundicion)
-        POBENA_HERMITA = resources.getString(R.string.gameHermitaDePobeña)
-        ITSASLUR_IBILBIDEA = resources.getString(R.string.gameItsaslurIbilbidea)
-        NOCHE_SAN_JUAN = resources.getString(R.string.gameSanJuan)
-        PUENTE_ROMANO = resources.getString(R.string.gamePuenteRomano)
-        CASTILLO_MUNATONES = resources.getString(R.string.gameCastilloMuñatones)
-        PLAYA_LA_ARENA = resources.getString(R.string.gameLaArenaHondartza)
+
         /*Inicio Servicio Geolacilazacion*/
         Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
         listabooleanos = arrayListOf()
@@ -201,28 +176,28 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         mMap.addMarker(
             MarkerOptions()
                 .position(puenteRomano)
-                .title(PUENTE_ROMANO)
+                .title(getString(R.string.gamePuenteRomano))
                 .snippet("0")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(pobalekoBurdinola)
-                .title(POBENA_FUNDICION)
+                .title(getString(R.string.gameFundicion))
                 .snippet("1")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(pobenakoErmita)
-                .title(POBENA_HERMITA)
+                .title(getString(R.string.gameHermitaDePobeña))
                 .snippet("2")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(hondartzaArena)
-                .title(PLAYA_LA_ARENA)
+                .title(getString(R.string.gameLaArenaHondartza))
                 .snippet("3")
         )
 
@@ -230,14 +205,14 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
             MarkerOptions()
                 .position(ibilbideItsaslur)
-                .title(ITSASLUR_IBILBIDEA)
+                .title(getString(R.string.gameItsaslurIbilbidea))
                 .snippet("4")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(muniatonesGaztelua)
-                .title(CASTILLO_MUNATONES)
+                .title(getString(R.string.gameCastilloMuñatones))
                 .snippet("5")
         )
 
@@ -245,7 +220,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
             MarkerOptions()
                 .position(sanJuan)
-                .title(NOCHE_SAN_JUAN)
+                .title(getString(R.string.gameSanJuan))
                 .snippet("6")
         )
 
@@ -333,14 +308,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     override fun onMarkerClick(marker: Marker): Boolean {
         val numero = marker.snippet.toString().toInt()
 
-        val actividades = listOf(
-            listOf(Actividad(POBENA_FUNDICION, SITESNAMES.POBENA_FUNDICION_IMG_1 )),
-            listOf(Actividad(POBENA_HERMITA, SITESNAMES.POBENA_HERMITA_IMG)),
-            listOf(Actividad(PUENTE_ROMANO, SITESNAMES.PUENTE_ROMANO_IMG)),
-            listOf(Actividad(PLAYA_LA_ARENA, SITESNAMES.PLAYA_LA_ARENA_IMG)),
-            listOf(Actividad(ITSASLUR_IBILBIDEA, SITESNAMES.ITSASLUR_IBILBIDEA_IMG_1)),
-            listOf(Actividad(CASTILLO_MUNATONES, SITESNAMES.CASTILLO_MUNATONES_IMG)),
-            listOf(Actividad(NOCHE_SAN_JUAN, SITESNAMES.NOCHE_SAN_JUAN_IMG)))
+        val actividades = db.gameDao.getAllGames()
 
         if (listabooleanos[numero]) {
             /**
@@ -357,15 +325,17 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 Toast.LENGTH_LONG
             )
             .show()*/
-            for (i in 0..6){
-                if(marker.title.equals(actividades[i][0].name)){
+
+
+            actividades.forEach(){ game ->
+                if(marker.title.equals(game.gameName)){
                     binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = RvDesplegableAdapter(
-                        actividades[i], this
+                        game , this
                     )
                 }
             }
 
-            keyPathsBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+            keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
         } else {
             //esto pasa si estas legos de la ubicacion
             Toast.makeText(
@@ -373,7 +343,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 "titulo: " + " estas muy lejos del punto" + " posicion: " + marker.title,
                 Toast.LENGTH_LONG
             )
-            .show()
+                .show()
         }
 
 

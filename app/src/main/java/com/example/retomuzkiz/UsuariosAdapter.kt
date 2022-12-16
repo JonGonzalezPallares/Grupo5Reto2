@@ -48,8 +48,8 @@ class UsuariosAdapter(private var lista:List<Usuario>,private val escuchador:(Us
         val binding = VistaJugadorBinding.bind(vista)
 
         fun link (usuario: Usuario){
-            binding.txtNombre.text = usuario.nombre
-            binding.txtPuntuacion.text = usuario.puntos.toString()
+            binding.txtNombre.text = usuario.name
+            binding.txtPuntuacion.text = usuario.totPuntuation.toString()
         }
     }
 }
