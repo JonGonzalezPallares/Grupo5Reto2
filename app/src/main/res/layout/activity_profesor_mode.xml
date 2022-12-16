@@ -20,37 +20,27 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="84dp"
         android:text="Playa La Arena:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="85dp"
-        android:text="Noche de San Juan:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-    <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="84dp"
         android:text="Paseo de Itsaslur:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="37dp"
         android:text="Puente romano:"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,14 +50,15 @@
         android:id="@+id/textView19"
         android:layout_width="222dp"
         android:layout_height="140dp"
-        android:layout_marginStart="92dp"
         android:layout_marginTop="36dp"
         android:text="Para poder aceder más rapidamente a los juegos. Por si no funciona el mapa por algun casual. Esto se cambiará para que el profesor pueda ver las respuestas de los juegos."
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnPuenteRes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -77,17 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:text="Ir a la noche de San Juan"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
-
-    <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnItsasRes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -97,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnArenaRes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -105,4 +86,26 @@
         android:text="Ir a La Arena"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="80dp"
+        android:text="Clase:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/txtClaseRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="65dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

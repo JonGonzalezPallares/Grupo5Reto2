@@ -31,6 +31,7 @@ import com.example.retomuzkiz.MapsActivity.SITESNAMES.POBENA_HERMITA
 import com.example.retomuzkiz.MapsActivity.SITESNAMES.PUENTE_ROMANO
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
+import com.example.retomuzkiz.puenteRomano.PuenteJuego
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -129,15 +130,19 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         //funciones del menu
         navview.setNavigationItemSelectedListener { menu ->
             when(menu.itemId) {
-                R.id.m_ranking -> {
-                    //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
+                //Para activar el modo libre
+                R.id.m_Modolibre -> {
+                    val guide = findViewById<View>(R.id.m_Modoguiado)
+                    val free = findViewById<View>(R.id.m_Modolibre)
+                    //cargar el modo libre
+                    freeMode()
+                    guide.isEnabled = true
+                    free.isEnabled = false
+                    warning("", "Ahoras estas en el modo libre")
                     true
                 }
 
-                R.id.m_logout -> {
-                    true
-                }
-
+                //Para activar al modo guiado
                 R.id.m_Modoguiado -> {
                     //Carcar el modo guiado
                     val guide = findViewById<View>(R.id.m_Modoguiado)
@@ -149,16 +154,26 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                     true
                 }
 
-                R.id.m_Modolibre -> {
-                    val guide = findViewById<View>(R.id.m_Modoguiado)
-                    val free = findViewById<View>(R.id.m_Modolibre)
-                    //cargar el modo libre
-                    freeMode()
-                    guide.isEnabled = true
-                    free.isEnabled = false
-                    warning("", "Ahoras estas en el modo libre")
+                //Para entrar como profesor
+                R.id.m_Profesor -> {
+                    val intento = Intent(this, ProfesorMode::class.java)
+                    //cambio = true
+                    startActivity(intento)
                     true
                 }
+
+                //Para ir al ranking
+                R.id.m_ranking -> {
+                    //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
+                    true
+                }
+
+                //Para hacer logout
+                R.id.m_logout -> {
+                    true
+                }
+
+                //Cosa que sino explota
                 else -> {false}
             }
         }
@@ -454,13 +469,10 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
     //______________________________________________________________________________________________
     //funciones del menu
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.m_ranking -> {
                 //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
-            }
-
-            R.id.m_logout -> {
             }
 
             R.id.m_Modoguiado -> {
@@ -474,9 +486,12 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 freeMode()
                 warning("", "Ahoras estas en el modo libre")
             }
+
+            R.id.m_logout -> {
+            }
         }
         return super.onOptionsItemSelected(item)
-    }
+    }*/
 
     //______________________________________________________________________________________________
     //funcion del aviso
