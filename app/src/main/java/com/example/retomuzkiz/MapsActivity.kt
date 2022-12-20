@@ -385,7 +385,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             //esto pasa si estas legos de la ubicacion
             Toast.makeText(
                 this,
-                "titulo: " + " estas muy lejos del punto" + " posicion: " + marker.title,
+                "Estas muy lejos del punto. Hacercate más para jugar.",
                 Toast.LENGTH_LONG
             )
             .show()

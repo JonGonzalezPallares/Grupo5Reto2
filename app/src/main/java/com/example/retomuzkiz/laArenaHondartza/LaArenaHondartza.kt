@@ -78,7 +78,7 @@ class LaArenaHondartza : Activity() {
             R.drawable.res3,
             R.drawable.res4,
         )
-        fondo = R.drawable.carta_fondo
+        fondo = R.drawable.bandera_muskiz
     }
 
     //______________________________________________________________________________________________
@@ -145,10 +145,8 @@ class LaArenaHondartza : Activity() {
             {
                 primero = null
                 bloqueo = false
-                Toast.makeText(this, "Matched!", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, "Matched!", Toast.LENGTH_SHORT).show()
                 aciertos++
-
-
                 if (aciertos == respuestas.size)
                 {
                     completarJuego()
