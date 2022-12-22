@@ -6,20 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".ponekakoermita.MarineroActivity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.example.retomuzkiz.Fragment_mobile_rotation"
+        android:layout_width="411dp"
+        android:layout_height="728dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_mobile_rotation" />
+
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="452dp"
-        android:layout_height="408dp"
-        app:layout_constraintBaseline_toBaselineOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="151dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btnsiguiente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/irudiapobena1" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="396dp"
         android:layout_height="265dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -33,6 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/siguiente"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.788"

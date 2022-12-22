@@ -30,35 +30,43 @@
         app:srcCompat="@drawable/hombre" />
 
     <TextView
-        android:id="@+id/txtUser"
+        android:id="@+id/menuTxtUser"
         android:layout_width="140dp"
         android:layout_height="35dp"
         android:layout_marginStart="5dp"
+        android:gravity="center_vertical"
         android:paddingStart="5dp"
         android:paddingEnd="5dp"
         android:text="Nombreuser"
         android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.41" />
+        app:layout_constraintVertical_bias="0.582" />
 
     <TextView
-        android:id="@+id/txtPuntuacion"
+        android:id="@+id/menuTxtPuntuacion"
         android:layout_width="140dp"
         android:layout_height="35dp"
         android:layout_marginStart="5dp"
+        android:gravity="center_vertical"
         android:paddingStart="5dp"
         android:paddingEnd="5dp"
         android:text="Puntuacion: 0"
         android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

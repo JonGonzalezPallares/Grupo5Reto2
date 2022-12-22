@@ -8,13 +8,13 @@ interface ProgressDao{
     @Query("select * from Progress")
     fun getAllUsersProgress(): List<Progress>
 
-    //Listar usuario en concreto
+    //Listar progreso en concreto
     @Query("select * from Progress where user like :userId")
     fun getUserProgress(userId: String): Progress
 
-//    Insertar Usuario
-//    @Insert(onConflict = OnConflictStrategy.REPLACE)
-//    fun insertUser(usuario: Usuario)
+    //Insertar progreso
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertProgress(progress: Progress)
 
     //Eliminaar Usuario
     @Delete

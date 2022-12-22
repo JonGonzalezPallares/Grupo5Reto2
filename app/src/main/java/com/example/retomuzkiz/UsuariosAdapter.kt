@@ -33,6 +33,9 @@ class UsuariosAdapter(private var lista:List<Usuario>,private val escuchador:(Us
         holder.itemView.setOnClickListener {
             escuchador(lista[position])
         }
+//        holder.itemView.setOnLongClickListener(){
+//
+//        }
     }
 
     //Devuelve la cantidad de elementos
@@ -49,7 +52,7 @@ class UsuariosAdapter(private var lista:List<Usuario>,private val escuchador:(Us
 
         fun link (usuario: Usuario){
             binding.txtNombre.text = usuario.name
-            binding.txtPuntuacion.text = usuario.totPuntuation.toString()
+
         }
     }
 }

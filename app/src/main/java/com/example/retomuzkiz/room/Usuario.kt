@@ -1,32 +1,26 @@
 package com.example.retomuzkiz.room
-
+import android.os.Parcelable
 import androidx.room.*
+import kotlinx.parcelize.Parcelize
 
-@Entity (tableName = "Usuario",foreignKeys =
-    [ForeignKey(entity = Progress::class, parentColumns = arrayOf("totalPuntuation"),
-      childColumns = arrayOf("totPuntuation"), onDelete = ForeignKey.CASCADE)],
-    primaryKeys = arrayOf("userId", "totPuntuation"),
+@Entity (tableName = "Usuario",
     indices = [Index(
         value = arrayOf("userId"),
         unique = true
         )])
 
-
+@Parcelize
 data class Usuario(
-
+    @PrimaryKey
     val userId: String,
 
     @ColumnInfo(name = "name")
     var name: String,
 
-    @ColumnInfo(name = "totPuntuation")
-    var totPuntuation: Int,
     @ColumnInfo(name = "userClass")
     var userClass: String,
-    @ColumnInfo(name = "gamesDone")
-    var gamesDone: Int,
 
     @ColumnInfo(name = "isProfessor")
     var isProfessor: Boolean,
 
-    )
+    ):Parcelable

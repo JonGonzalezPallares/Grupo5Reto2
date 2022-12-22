@@ -2,10 +2,12 @@ package com.example.retomuzkiz
 
 import android.Manifest
 import android.content.BroadcastReceiver
+import android.content.ClipData.Item
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -17,16 +19,21 @@ import android.transition.TransitionManager
 import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
 import com.example.retomuzkiz.clases.Actividad
 import androidx.core.graphics.drawable.toDrawable
+import androidx.core.view.get
+import androidx.navigation.Navigator
 
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
+import com.example.retomuzkiz.databinding.NavHeaderBinding
 import com.example.retomuzkiz.room.Game
+import com.example.retomuzkiz.room.Usuario
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -65,33 +72,45 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     private lateinit var Servicio: Intent
     val db = RetoGrupoCinco.database!!
 
-
+    override fun onDestroy() {
+        super.onDestroy()
+      Servicio
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        this.supportActionBar!!.hide()
+        val user: Usuario? = intent.getParcelableExtra("user" )
+            this.supportActionBar!!.hide()
 
         /* Inicializacion variablees */
 
-        /*Inicio Servicio Geolacilazacion*/
+            /*Inicio Servicio Geolacilazacion*/
         Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
         listabooleanos = arrayListOf()
         super.onCreate(savedInstanceState)
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+      //Cambiado Para Pruebas
         guideMode()
-        val navview : NavigationView = findViewById(R.id.lateralmenu)
+        //freeMode()
+        val navView : NavigationView = binding.lateralmenu
         //menu lateral
+        val header = navView.getHeaderView(0)
+        var totPuntuacion =  header.findViewById<TextView>(R.id.menuTxtPuntuacion)
+        var nombreUser =  header.findViewById<TextView>(R.id.menuTxtUser)
+        totPuntuacion.text = "Puntuacion: ${db.progressDao.getUserProgress(user!!.userId).totalPuntuation.toString()}"
+        nombreUser.text = user.name
+
         binding.Navegation.setOnClickListener{
+
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
             if(!navegacion){
                 navegacion = true
                 if(!iniciarguiado){
-                    val guide = findViewById<View>(R.id.m_Modoguiado)
-                    val free = findViewById<View>(R.id.m_Modolibre)
-                    guide.isEnabled = false
 
-                    free.isEnabled = true
+
+
+                   // free.isEnabled = false
                     iniciarguiado = true
+
                 }
             }
             else{
@@ -102,7 +121,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
         //______________________________________________________________________________________________
         //funciones del menu
-        navview.setNavigationItemSelectedListener { menu ->
+        navView.setNavigationItemSelectedListener { menu ->
+
             when(menu.itemId) {
                 R.id.m_ranking -> {
                     //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
@@ -468,4 +488,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         TransitionManager.beginDelayedTransition(layout,mSlideLeft)
         binding.lateralmenu.isVisible = navegacion
     }
+
+
 }

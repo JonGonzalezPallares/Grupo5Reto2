@@ -35,6 +35,7 @@ class RvDesplegableAdapter(var listaActividades: Game, val context: Context): Re
             binding.txtTitulo.text = game.gameName
             binding.btniniciarjuego.setOnClickListener{
                 loadActivityes(id, context)
+                var fragment = Fragment_mobile_rotation()
             }
         }
 
@@ -111,6 +112,7 @@ class RvDesplegableAdapter(var listaActividades: Game, val context: Context): Re
                     startActivity(context, intento,null)
                 }
                 6->{
+
                     val intento = Intent(context, MarineroActivity::class.java)
                     startActivity(context, intento,null)
                 }

@@ -30,8 +30,7 @@ class MsgVictoria : AppCompatActivity() {
         binding.imgVictoria.setImageResource(imagenFondo)
 
         binding.btnIrMapa.setOnClickListener {
-            val intento = Intent(this, MapsActivity::class.java)
-            startActivity(intento)
+        finish()
         }
     }
 }
