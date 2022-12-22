@@ -4,40 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/irudiapobena3"
     tools:context=".ponekakoermita.JuegodemarActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imgMar"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
+        android:background="@drawable/binoculares"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/irudiapobena3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btncorrect"
-        android:layout_width="0dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="134dp"
-        android:layout_marginEnd="316dp"
-        android:layout_marginBottom="24dp"
-        android:text="@string/cardsMatch"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnIncorrect"
+        android:id="@+id/btnTranquilo"
+        android:layout_width="122dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="160dp"
+        android:text="@string/mar_tranquilo"
+        app:layout_constraintBottom_toBottomOf="@+id/btnIncorrect"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnIncorrect"
-        android:layout_width="0dp"
-        android:layout_height="67dp"
-        android:layout_marginEnd="139dp"
-        android:layout_marginBottom="24dp"
-        android:text="@string/incorrecto"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/mar_revuelto"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btncorrect" />
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
