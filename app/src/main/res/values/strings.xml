@@ -106,5 +106,7 @@
     <string name="primero">Primero</string>
     <string name="anterior">Anterior</string>
     <string name="ultimo">Ultimo</string>
+    <string name="mar_tranquilo">Tranquilo</string>
+    <string name="mar_revuelto">Revuelto</string>
 
 </resources>

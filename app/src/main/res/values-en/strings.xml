@@ -109,4 +109,6 @@
     <string name="primero">First</string>
     <string name="anterior">Previous</string>
     <string name="ultimo">Last</string>
+    <string name="mar_revuelto">Rough</string>
+    <string name="mar_tranquilo">Calm</string>
 </resources>

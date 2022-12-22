@@ -102,4 +102,6 @@ Muskizen, garrantzi handia du 22: 30ean geltokian hasten den zuzien jaitsierak. 
     <string name="primero">Lehenengoa</string>
     <string name="anterior">Aurrekoa</string>
     <string name="ultimo">Azkena</string>
+    <string name="mar_tranquilo">Barea</string>
+    <string name="mar_revuelto">Zakarra</string>
 </resources>
