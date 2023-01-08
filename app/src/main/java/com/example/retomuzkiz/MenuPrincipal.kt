@@ -38,6 +38,12 @@ class MenuPrincipal : AppCompatActivity() {
                 val intento = Intent(this, MapsActivity::class.java).putExtra("user", user)
                 startActivity(intento)
             }
+            RetoGrupoCinco.mSocket.connect()
+            RetoGrupoCinco.mSocket.emit("classConnection",user?.userClass)
+
+
+
+
 
         }
 
@@ -89,6 +95,7 @@ class MenuPrincipal : AppCompatActivity() {
         return null
     }
 
+
     override fun onResume() {
         super.onResume()
 //__________________________________________________________________________________________
@@ -111,6 +118,8 @@ class MenuPrincipal : AppCompatActivity() {
         //prefs.saveUser(nombre)
         val intento = Intent(this, MapsActivity::class.java).putExtra("user", user)
         startActivity(intento)
+        RetoGrupoCinco.mSocket.connect()
+        RetoGrupoCinco.mSocket.emit("classConnection",user?.userClass)
     }
 
 

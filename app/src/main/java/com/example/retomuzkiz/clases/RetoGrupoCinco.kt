@@ -5,6 +5,8 @@ import androidx.room.Room
 import com.example.retomuzkiz.MapsActivity
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.room.*
+import io.socket.client.IO
+import io.socket.client.Socket
 import java.nio.file.attribute.UserPrincipal
 
 class RetoGrupoCinco : Application() {
@@ -23,6 +25,8 @@ class RetoGrupoCinco : Application() {
         lateinit var progressDb:ProgressDao
         lateinit var gameDb :GameDao
         lateinit var userDb :UsuarioDao
+        var mSocket : Socket = IO.socket("https://servicioitsaslur.glitch.me/");
+
 
 
     }

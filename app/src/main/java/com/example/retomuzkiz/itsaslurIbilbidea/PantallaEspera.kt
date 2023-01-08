@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityPantallaEsperaBinding
+import io.socket.client.IO
+import io.socket.client.Socket
 
 class PantallaEspera : AppCompatActivity() {
 

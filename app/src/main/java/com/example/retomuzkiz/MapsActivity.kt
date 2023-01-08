@@ -74,21 +74,22 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
     override fun onDestroy() {
         super.onDestroy()
-      Servicio
+        RetoGrupoCinco.mSocket.disconnect()
+        Servicio
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         val user: Usuario? = intent.getParcelableExtra("user" )
-            this.supportActionBar!!.hide()
+        this.supportActionBar!!.hide()
 
         /* Inicializacion variablees */
 
-            /*Inicio Servicio Geolacilazacion*/
+        /*Inicio Servicio Geolacilazacion*/
         Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
         listabooleanos = arrayListOf()
         super.onCreate(savedInstanceState)
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-      //Cambiado Para Pruebas
+        //Cambiado Para Pruebas
         guideMode()
         //freeMode()
         val navView : NavigationView = binding.lateralmenu
@@ -108,7 +109,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
 
 
-                   // free.isEnabled = false
+                    // free.isEnabled = false
                     iniciarguiado = true
 
                 }
