@@ -38,6 +38,7 @@ class PuenteJuego : AppCompatActivity() {
         this.supportActionBar!!.hide()
 
         //Metemos las respuestas en el array
+        //Tiene que ser una mutable list por que los textos estan obtenidos del resources
         respuestas = mutableListOf(
             resources.getString(R.string.puente_preg_1_res_2),
             resources.getString(R.string.puente_preg_2_res_1),

@@ -2,16 +2,39 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vista"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/irudiapobena3"
     tools:context=".ponekakoermita.JuegodemarActivity">
+
+    <ImageView
+        android:id="@+id/color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:translationZ="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/binoculares" />
+
+    <ImageView
+        android:id="@+id/imgBinoculares"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/binoculares"
+        android:translationZ="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imgMar"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/binoculares"
+        android:translationZ="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,16 +46,20 @@
         android:layout_height="50dp"
         android:layout_marginStart="160dp"
         android:text="@string/mar_tranquilo"
-        app:layout_constraintBottom_toBottomOf="@+id/btnIncorrect"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/btnRevuelto"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnIncorrect"
+        android:id="@+id/btnRevuelto"
         android:layout_width="115dp"
         android:layout_height="50dp"
         android:layout_marginEnd="160dp"
         android:layout_marginBottom="16dp"
         android:text="@string/mar_revuelto"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/bandera_muskiz" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
