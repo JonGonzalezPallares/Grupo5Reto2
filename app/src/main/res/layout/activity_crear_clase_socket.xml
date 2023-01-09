@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityCrearClaseSocket">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"
+                android:text="Bienvenido a Muskiz"
+                android:textColor="#000000"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/txtExplicacion1"
+                android:layout_width="match_parent"
+                android:layout_height="139dp"
+                android:gravity="center"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:text="Ha llegado el momento de crear una sala para que tus alumnos se unan!"
+                android:textColor="#332D2D"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtExplicacion2"
+                android:layout_width="match_parent"
+                android:layout_height="181dp"
+                android:gravity="center"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:text="  Por favor, escriba sunombre,  el nombre de tu clase, el cual tus alumnos usarán como clave para unirse a la partida, y la contraseña facilitada en el manual de usuario."
+                android:textColor="#332D2D"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName2"
+                android:layout_width="247dp"
+                android:layout_height="61dp"
+                android:layout_gravity="center_horizontal"
+                android:ems="10"
+                android:hint="Nombre de la clase"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="247dp"
+                android:layout_height="57dp"
+                android:layout_gravity="center_horizontal"
+                android:ems="10"
+                android:hint="Nombre Profesor"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="247dp"
+                android:layout_height="59dp"
+                android:layout_gravity="center_horizontal"
+                android:ems="10"
+                android:hint="Contraseña"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/estilo_boton_crear_clase"
+                android:text="Crear" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

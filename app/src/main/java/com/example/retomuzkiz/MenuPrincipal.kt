@@ -26,7 +26,10 @@ class MenuPrincipal : AppCompatActivity() {
         this.supportActionBar!!.hide()
 
 
-
+        binding.txtProfesor.setOnClickListener(){
+            startActivity(Intent(this,ActivityCrearClaseSocket::class.java))
+            finish()
+        }
         binding.button.setOnClickListener {
             var user = comprobarUsuario()
             if(user  != null){

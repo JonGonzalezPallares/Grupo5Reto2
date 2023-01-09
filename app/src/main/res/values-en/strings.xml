@@ -12,6 +12,8 @@
     <string name="hintClase">Classroom</string>
     <string name="start">Start</string>
     <string name="othersUsers">Other Users</string>
+    <string name="eresProfesor"><u>IF YOU ARE PROFESSOR, PRESS HERE</u></string>
+
 
     <!-- Map Activity -->
     <!-- Menu -->
