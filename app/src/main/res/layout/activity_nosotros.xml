@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_degradado"
     tools:context=".Nosotros">
 
     <TableLayout
@@ -125,6 +126,30 @@
                     android:textAlignment="center"
                     android:textSize="20sp" />
             </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="40dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@drawable/divisor"
+                android:gravity="left"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contacto"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
         </TableRow>
 
         <TableRow
