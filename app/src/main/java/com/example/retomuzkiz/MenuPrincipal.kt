@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.database
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.prefs
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
+import com.example.retomuzkiz.gastelua.ActivityGaztelua
 import com.example.retomuzkiz.room.Usuario
 
 class MenuPrincipal : AppCompatActivity() {
@@ -23,6 +24,7 @@ class MenuPrincipal : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             val intento = Intent(this, MapsActivity::class.java)
+
             startActivity(intento)
         }
 
@@ -43,6 +45,7 @@ class MenuPrincipal : AppCompatActivity() {
     private fun listar(nombre: String) {
         prefs.saveUser(nombre)
         val intento = Intent(this, MapsActivity::class.java)
+
         startActivity(intento)
     }
 
