@@ -25,6 +25,7 @@ class MsgVictoria : AppCompatActivity() {
             "arena" -> imagenFondo=R.drawable.irudia_arena_2
             "laberinto" -> imagenFondo=R.drawable.irudia_san_juan_1
             "puente" -> imagenFondo=R.drawable.puentecompleto
+            "castillo" -> imagenFondo=R.drawable.castillo
         }
 
         binding.imgVictoria.setImageResource(imagenFondo)

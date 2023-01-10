@@ -3,6 +3,7 @@ package com.example.retomuzkiz.gastelua
 import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipDescription
+import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Point
 import android.os.Build
@@ -11,6 +12,8 @@ import android.os.Bundle
 import android.view.DragEvent
 import android.view.View
 import android.widget.ImageView
+import androidx.core.view.isVisible
+import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityGazteluaBinding
 
 class ActivityGaztelua : AppCompatActivity() {
@@ -108,6 +111,18 @@ class ActivityGaztelua : AppCompatActivity() {
                     println("correcto")
 
                     Imagen.visibility = View.INVISIBLE
+
+                    //comprobacion de todas las partes visibles para finalizar el juego
+                    if(binding.imgarribaizq.isVisible==false && binding.imgarribamed.isVisible==false &&
+                        binding.imgarribader.isVisible==false && binding.imgcentroizq.isVisible==false &&
+                        binding.imgcentromed.isVisible==false && binding.imgcentroder.isVisible==false &&
+                        binding.imgabajoizq.isVisible==false && binding.imgabajomed.isVisible==false &&
+                        binding.imgabajoder.isVisible==false ){
+                        val intento = Intent(this, MsgVictoria::class.java)
+                        intento.putExtra("imagen","castillo")
+                        startActivity(intento)
+
+                    }
 
                 }else{
                     receiverView.setAlpha(0)
