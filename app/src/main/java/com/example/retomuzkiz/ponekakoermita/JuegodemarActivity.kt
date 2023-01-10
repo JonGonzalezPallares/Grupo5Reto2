@@ -1,19 +1,17 @@
 package com.example.retomuzkiz.ponekakoermita
 
 import android.content.Intent
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.view.marginTop
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityJuegodemarBinding
-import kotlin.concurrent.thread
 import kotlin.random.Random
 
 class JuegodemarActivity : AppCompatActivity() {
@@ -21,6 +19,8 @@ class JuegodemarActivity : AppCompatActivity() {
     private lateinit var binding : ActivityJuegodemarBinding
     private var respuestas = mutableListOf<String>()
     private var respuestasBien = mutableListOf<String>()
+    //Variable para saber cuando se tiene que cerrar y cuando no
+    private var cambio = false
 
     //Lista con los diferentes fotos de mares
     private val maresTipos = mutableListOf(
@@ -56,6 +56,7 @@ class JuegodemarActivity : AppCompatActivity() {
         binding.color.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fondonegro))
         binding.imgBinoculares.startAnimation(AnimationUtils.loadAnimation(this, R.anim.binoculares))
 
+        carga(binding.color.animation.duration)
         binding.btnRevuelto.setOnClickListener{
             respuestas.add("Revuelto")
             if(respuestasBien.size==6){
@@ -63,12 +64,6 @@ class JuegodemarActivity : AppCompatActivity() {
             }else{
                 mares()
             }
-        }
-
-        Thread {
-            Thread.sleep(2005)
-            binding.btnRevuelto.visibility = View.VISIBLE
-            binding.btnTranquilo.visibility = View.VISIBLE
         }
 
         binding.btnTranquilo.setOnClickListener{
@@ -79,6 +74,13 @@ class JuegodemarActivity : AppCompatActivity() {
                 mares()
             }
         }
+    }
+
+    private fun carga(duration: Long) {
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.btnRevuelto.visibility = View.VISIBLE
+            binding.btnTranquilo.visibility = View.VISIBLE
+        }, duration)
     }
 
     //Funcion para cargar las imagenes de fondo
@@ -104,6 +106,19 @@ class JuegodemarActivity : AppCompatActivity() {
             if(respuestasBien[respuesta]==respuestas[respuesta]){
                 correctas += 1
             }
+        }
+        //Toast.makeText(this, "Has acertado $correctas fotos", Toast.LENGTH_SHORT).show()
+        val intento = Intent(this, MsgVictoria::class.java)
+        intento.putExtra("imagen", "mar")
+        cambio = true
+        startActivity(intento)
+    }
+
+    //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
+    override fun onPause() {
+        super.onPause()
+        if(cambio){
+            finish()
         }
     }
 }
