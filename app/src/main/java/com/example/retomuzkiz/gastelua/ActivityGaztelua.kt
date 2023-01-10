@@ -46,7 +46,7 @@ class ActivityGaztelua : AppCompatActivity() {
         binding.imagenabajoizq.setOnDragListener(dragListener)
         binding.imagenabajomed.setOnDragListener(dragListener)
         binding.imagenabajoder.setOnDragListener(dragListener)
-
+        //poner invisibles las imagenes del resultado
         binding.imagenarribaizq.setAlpha(0)
         binding.imagenarribamed.setAlpha(0)
         binding.imagenarribader.setAlpha(0)
@@ -58,7 +58,7 @@ class ActivityGaztelua : AppCompatActivity() {
         binding.imagenabajoder.setAlpha(0)
 
     }
-
+    //funcion del long listener de arrastrar
     private val longClickListener = View.OnLongClickListener { v ->
         Imagen = v as ImageView
         val item = ClipData.Item(v.tag as? CharSequence)
@@ -77,6 +77,7 @@ class ActivityGaztelua : AppCompatActivity() {
         true
     }
     @SuppressLint("range")
+    //funcion de deteccion de eventos al arrastrar
     private val dragListener = View.OnDragListener{ v, event ->
         val receiverView: ImageView = v as ImageView
 
