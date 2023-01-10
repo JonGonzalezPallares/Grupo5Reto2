@@ -111,4 +111,12 @@
     <string name="ultimo">Last</string>
     <string name="mar_revuelto">Rough</string>
     <string name="mar_tranquilo">Calm</string>
+    <string name="upv1">Uxue Cerrada</string>
+    <string name="upv2">Irati Bargos</string>
+    <string name="upv3">Oihane Baz</string>
+    <string name="upv4">Aitor del Pozo</string>
+    <string name="tx1">Jon Gonzalez</string>
+    <string name="tx2">Eder</string>
+    <string name="tx3">Daniel</string>
+    <string name="tx4">Youseff</string>
 </resources>
