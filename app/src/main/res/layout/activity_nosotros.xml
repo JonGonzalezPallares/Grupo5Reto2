@@ -13,6 +13,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="50dp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +22,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_horizontal">
+            android:gravity="center">
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -41,13 +42,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="40dp"
-            android:gravity="center_horizontal">
+            android:gravity="center">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:divider="@drawable/divisor"
-                android:gravity="center_horizontal"
+                android:gravity="left"
                 android:orientation="vertical"
                 android:showDividers="middle">
 
@@ -88,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:divider="@drawable/divisor"
-                android:gravity="center_horizontal"
+                android:gravity="right"
                 android:orientation="vertical"
                 android:showDividers="middle">
 
@@ -124,6 +125,29 @@
                     android:textAlignment="center"
                     android:textSize="20sp" />
             </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="40dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@drawable/divisor"
+                android:gravity="left"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+            </LinearLayout>
+
         </TableRow>
 
     </TableLayout>
