@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.database
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.prefs
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
+import com.example.retomuzkiz.itsaslurIbilbidea.ItsaslurJuego
+import com.example.retomuzkiz.profesor.ProfesorMode
 import com.example.retomuzkiz.room.Usuario
 
 class MenuPrincipal : AppCompatActivity() {
@@ -22,7 +24,7 @@ class MenuPrincipal : AppCompatActivity() {
         this.supportActionBar!!.hide()
 
         binding.button.setOnClickListener {
-            val intento = Intent(this, MapsActivity::class.java)
+            val intento = Intent(this, ProfesorMode::class.java)
             startActivity(intento)
         }
 

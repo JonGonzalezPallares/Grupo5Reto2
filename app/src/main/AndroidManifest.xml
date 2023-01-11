@@ -31,7 +31,7 @@
 
         <!-- Activity modo profesor -->
         <activity
-            android:name=".ProfesorMode"
+            android:name=".profesor.ProfesorMode"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

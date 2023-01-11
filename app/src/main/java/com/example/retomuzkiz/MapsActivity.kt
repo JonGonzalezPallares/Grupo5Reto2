@@ -15,7 +15,6 @@ import android.os.Looper
 import android.transition.Slide
 import android.transition.TransitionManager
 import android.view.Gravity
-import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -31,7 +30,7 @@ import com.example.retomuzkiz.MapsActivity.SITESNAMES.POBENA_HERMITA
 import com.example.retomuzkiz.MapsActivity.SITESNAMES.PUENTE_ROMANO
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
-import com.example.retomuzkiz.puenteRomano.PuenteJuego
+import com.example.retomuzkiz.profesor.ProfesorMode
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
