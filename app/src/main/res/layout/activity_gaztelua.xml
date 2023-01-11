@@ -7,21 +7,6 @@
     android:background="@drawable/fondo_degradado"
     tools:context=".burdinola.BurdinolaSopaActivity">
 
-    <Button
-        android:id="@+id/btn_volver"
-        android:layout_width="121dp"
-        android:layout_height="42dp"
-        android:gravity="center"
-        android:text="@string/volver"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.976"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.987" />
-
     <ImageView
         android:id="@+id/imgabajoder"
         android:layout_width="111dp"

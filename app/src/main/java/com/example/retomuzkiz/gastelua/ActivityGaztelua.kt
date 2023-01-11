@@ -23,7 +23,7 @@ class ActivityGaztelua : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityGazteluaBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
+
         //crear los listeners
         binding.imgarribaizq.setOnLongClickListener(longClickListener)
         binding.imgarribamed.setOnLongClickListener(longClickListener)

@@ -42,9 +42,9 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="160dp"
+                    android:layout_width="100dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="152dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="40dp"
                     android:background="@drawable/estilo_botones"
