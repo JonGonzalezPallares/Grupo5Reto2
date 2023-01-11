@@ -11,7 +11,7 @@
                 android:centerColor="#67B659"
                 android:endColor="#99B6FFA9"
 
-                android:angle="90"/>
+                android:angle="45"/>
         </shape>
     </item>
 </selector>
