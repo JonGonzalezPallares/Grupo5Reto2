@@ -5,16 +5,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityItsaslurJuegoBinding
 
 class ItsaslurJuego : AppCompatActivity() {
 
     private lateinit var binding : ActivityItsaslurJuegoBinding
+    //Variable para saber en que lista de botones estamos
+    private var posicion = 0
+    //Variables de las listas para los botones
     private lateinit var buttonsList1 : List<ImageButton>
     private lateinit var buttonsList2 : List<ImageButton>
     private lateinit var buttonsList3 : List<ImageButton>
     private lateinit var buttonsList4 : List<ImageButton>
+    //Variable de la lista de listas
+    private lateinit var listaButtons : List<List<ImageButton>>
+    //Variable de lista para guardar los grupos de preguntas
+    private lateinit var preguntas : List<LinearLayout>
     //Variable para saber cuando se tiene que cerrar y cuando no
     private var cambio = false
 
@@ -26,14 +34,20 @@ class ItsaslurJuego : AppCompatActivity() {
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
 
-        //Creamos cuatro arrays para guardar los botones
-        buttonsList1 = mutableListOf(binding.imgbtn11, binding.imgbtn12, binding.imgbtn13, binding.imgbtn14)
-        buttonsList2 = mutableListOf(binding.imgbtn21, binding.imgbtn22, binding.imgbtn23, binding.imgbtn24)
-        buttonsList3 = mutableListOf(binding.imgbtn31, binding.imgbtn32, binding.imgbtn33, binding.imgbtn34)
-        buttonsList4 = mutableListOf(binding.imgbtn41, binding.imgbtn42, binding.imgbtn43, binding.imgbtn44)
+        //Metemos todas las imagenes botones en cada una de su lista
+        buttonsList1 = listOf(binding.imgbtn11, binding.imgbtn12, binding.imgbtn13, binding.imgbtn14)
+        buttonsList2 = listOf(binding.imgbtn21, binding.imgbtn22, binding.imgbtn23, binding.imgbtn24)
+        buttonsList3 = listOf(binding.imgbtn31, binding.imgbtn32, binding.imgbtn33, binding.imgbtn34)
+        buttonsList4 = listOf(binding.imgbtn41, binding.imgbtn42, binding.imgbtn43, binding.imgbtn44)
+
+        //Metemos las listas creadas con anterioridad en una sola lista para crear un bucle
+        listaButtons = listOf(buttonsList1, buttonsList2, buttonsList3, buttonsList4)
+
+        //Metemos los grupos de preguntas en una sola lista
+        preguntas = listOf(binding.Preguntas1, binding.Preguntas2, binding.Preguntas3, binding.Preguntas4)
 
         //Llamamos a la primera funcion de comprobacion
-        checkFirst()
+        comprobar()
     }
 
     /*
@@ -43,54 +57,34 @@ class ItsaslurJuego : AppCompatActivity() {
 
      */
 
-    //Comprueba que el tag del boton de la primera tanda de preguntas sea "true", si es asi pasa al siguiente
-    private fun checkFirst() {
-        for(button in buttonsList1){
-            button.setOnClickListener {
-                if(button.tag=="true"){
-                    binding.Preguntas1.visibility = View.GONE
-                    binding.Preguntas2.visibility = View.VISIBLE
-                    checkSecond()
-                }
-            }
-        }
-    }
-
-    //Comprueba si el tag de la segunda tanda de preguntas es "true", si es asi sigue
-    private fun checkSecond() {
-        for(button in buttonsList2){
-            button.setOnClickListener {
-                if(button.tag=="true"){
-                    binding.Preguntas2.visibility = View.GONE
-                    binding.Preguntas3.visibility = View.VISIBLE
-                    checkThird()
-                }
-            }
-        }
-    }
-
-    //Comprueba si el tag de la tercera tanda de preguntas es "true", si es asi sigue
-    private fun checkThird() {
-        for(button in buttonsList3){
-            button.setOnClickListener {
-                if(button.tag=="true"){
-                    binding.Preguntas3.visibility = View.GONE
-                    binding.Preguntas4.visibility = View.VISIBLE
-                    checkFourth()
-                }
-            }
-        }
-    }
-
-    //Comprueba si el tag de la ultima tanda de preguntas es "true", si es asi termina
-    private fun checkFourth() {
-        for(button in buttonsList4){
-            button.setOnClickListener {
-                if(button.tag=="true"){
-                    val intento = Intent(this, MsgVictoria::class.java)
-                    intento.putExtra("imagen", "itsaslur")
-                    cambio = true
-                    startActivity(intento)
+    //Funcion para comprobar que se hayan acertado las imagenes seleccionadas
+    private fun comprobar() {
+        //Recorremos la lista con listas
+        for (lista in listaButtons){
+            //Recorremos cada lista para obtener cada boton
+            for(button in lista){
+                //Si estamos en la ultima pregunta y hemos acertado, abre el mensaje de victoria
+                if(posicion==3){
+                    button.setOnClickListener {
+                        if(button.tag == "true"){
+                            val intento = Intent(this, MsgVictoria::class.java)
+                            intento.putExtra("imagen", "itsaslur")
+                            cambio = true
+                            startActivity(intento)
+                        }
+                    }
+                }else{
+                    //Añadimos el listener a cada boton
+                    button.setOnClickListener {
+                        //Si el tag del boton es correcto, cambiamos la visibilidad de las preguntas. Sumamos uno a la variable de posicion y volvemos a llamar a la funcion
+                        if(button.tag == "true"){
+                            preguntas[posicion].visibility = View.GONE
+                            val avanze = posicion+1
+                            preguntas[avanze].visibility = View.VISIBLE
+                            posicion=avanze
+                            comprobar()
+                        }
+                    }
                 }
             }
         }
