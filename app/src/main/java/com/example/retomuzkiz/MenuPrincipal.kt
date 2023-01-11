@@ -37,12 +37,15 @@ class MenuPrincipal : AppCompatActivity() {
                 startActivity(intento)
             }
             else{
-                val user = insertarUser()
+                user = insertarUser()
                 val intento = Intent(this, MapsActivity::class.java).putExtra("user", user)
                 startActivity(intento)
             }
             RetoGrupoCinco.mSocket.connect()
-            RetoGrupoCinco.mSocket.emit("classConnection",user?.userClass)
+            RetoGrupoCinco.mSocket.emit("join server",user?.name)
+            RetoGrupoCinco.mSocket.emit("join room",user?.userClass)
+
+
 
 
 
@@ -122,7 +125,10 @@ class MenuPrincipal : AppCompatActivity() {
         val intento = Intent(this, MapsActivity::class.java).putExtra("user", user)
         startActivity(intento)
         RetoGrupoCinco.mSocket.connect()
-        RetoGrupoCinco.mSocket.emit("classConnection",user?.userClass)
+        RetoGrupoCinco.mSocket.emit("join server",user?.name)
+
+        RetoGrupoCinco.mSocket.emit("join room",user?.userClass)
+
     }
 
 

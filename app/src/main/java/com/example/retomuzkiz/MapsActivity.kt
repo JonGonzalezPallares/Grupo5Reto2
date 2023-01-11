@@ -78,7 +78,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         Servicio
     }
     override fun onCreate(savedInstanceState: Bundle?) {
-        val user: Usuario? = intent.getParcelableExtra("user" )
+        val user: Usuario = intent.getParcelableExtra("user")!!
+
         this.supportActionBar!!.hide()
 
         /* Inicializacion variablees */
@@ -329,6 +330,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     override fun onMarkerClick(marker: Marker): Boolean {
         val numero = marker.snippet.toString().toInt()
 
+        val user: Usuario = intent.getParcelableExtra("user")!!
+
         val actividades = db.gameDao.getAllGames()
 
         if (listabooleanos[numero]) {
@@ -351,7 +354,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             actividades.forEach(){ game ->
                 if(marker.title.equals(game.gameName)){
                     binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = RvDesplegableAdapter(
-                        game , this
+                        game, user,this
                     )
                 }
             }

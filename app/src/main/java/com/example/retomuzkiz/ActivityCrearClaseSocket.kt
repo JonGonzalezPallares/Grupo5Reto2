@@ -1,5 +1,6 @@
 package com.example.retomuzkiz
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings.Global
@@ -36,6 +37,8 @@ class ActivityCrearClaseSocket : AppCompatActivity() {
                 RetoGrupoCinco.mSocket.emit("join server", user.name)
                 RetoGrupoCinco.mSocket.emit("join room", binding.txtNombreClase.text.toString())
                 showDialog(this,"","Bienvenido!")
+                startActivity(Intent(this, MapsActivity::class.java).putExtra("user", user))
+                finish()
             } else {
                 showDialog(this,
                     " Algo no fue como debía. Recuerde rellenar todos los campos y proporcionar una contraseña válida",

@@ -22,19 +22,21 @@ import com.example.retomuzkiz.gastelua.ActivityGaztelua
 //import com.example.retomuzkiz.gastelua.ActivityGaztelua
 import com.example.retomuzkiz.gastelua.ExplicacionActivity
 import com.example.retomuzkiz.room.Game
+import com.example.retomuzkiz.room.Usuario
 
-class RvDesplegableAdapter(var listaActividades: Game, val context: Context): RecyclerView.Adapter<RvDesplegableAdapter.ViewHolder>() {
+
+class RvDesplegableAdapter(var listaActividades: Game, var user : Usuario,  val context: Context): RecyclerView.Adapter<RvDesplegableAdapter.ViewHolder>() {
     private lateinit var Nombres : ArrayList<String>
-
     class ViewHolder (vista: View) :RecyclerView.ViewHolder(vista){
 
         val binding = SingleActividadBinding.bind(vista)
-        fun unir (game: Game, context: Context){
+        fun unir (game: Game, user:Usuario, context: Context){
             val id = game.gameId
+            var usuario = user
             loadImages(game.res,context)
             binding.txtTitulo.text = game.gameName
             binding.btniniciarjuego.setOnClickListener{
-                loadActivityes(id, context)
+                loadActivityes(id, user, context)
                 var fragment = Fragment_mobile_rotation()
             }
         }
@@ -85,40 +87,41 @@ class RvDesplegableAdapter(var listaActividades: Game, val context: Context): Re
             }
         }
 
-        private fun loadActivityes(id: Int, context: Context) {
+        private fun loadActivityes(id: Int,user: Usuario, context: Context) {
             when(id) {
                 1->{
-                    val intento = Intent(context, ActivityLaberinto::class.java)
+
+                    val intento = Intent(context, ActivityLaberinto::class.java).putExtra("user", user)
                     startActivity(context, intento, null)
                 }
 
                 2->{
-                    val intento = Intent(context, PantallaEspera::class.java)
+                    val intento = Intent(context, PantallaEspera::class.java).putExtra("user", user)
                     startActivity(context, intento,null)
                 }
 
                 3->{
-                    val intento = Intent(context, PuenteRomano::class.java)
+                    val intento = Intent(context, PuenteRomano::class.java).putExtra("user", user)
                     startActivity(context, intento,null)
                 }
 
                 4->{
-                    val intento = Intent(context,BurdinolaVideoActivity::class .java)
+                    val intento = Intent(context,BurdinolaVideoActivity::class .java).putExtra("user", user)
                     startActivity(context, intento,null)
                 }
 
                 5->{
-                    val intento = Intent(context, IntroActivity::class.java)
+                    val intento = Intent(context, IntroActivity::class.java).putExtra("user", user)
                     startActivity(context, intento,null)
                 }
                 6->{
 
-                    val intento = Intent(context, MarineroActivity::class.java)
+                    val intento = Intent(context, MarineroActivity::class.java).putExtra("user", user)
                     startActivity(context, intento,null)
                 }
 
                 7->{
-                    val intento = Intent(context, ActivityGaztelua::class.java)
+                    val intento = Intent(context, ActivityGaztelua::class.java).putExtra("user", user)
                     startActivity(context, intento, null)
                 }
             }
@@ -142,7 +145,7 @@ class RvDesplegableAdapter(var listaActividades: Game, val context: Context): Re
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.unir(listaActividades, context)
+        holder.unir(listaActividades, user, context)
     }
 
     override fun getItemCount(): Int {
