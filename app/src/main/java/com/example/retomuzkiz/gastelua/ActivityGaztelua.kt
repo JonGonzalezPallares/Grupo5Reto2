@@ -23,10 +23,8 @@ class ActivityGaztelua : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityGazteluaBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
-
-
+        
+        //crear los listeners
         binding.imgarribaizq.setOnLongClickListener(longClickListener)
         binding.imgarribamed.setOnLongClickListener(longClickListener)
         binding.imgarribader.setOnLongClickListener(longClickListener)
@@ -83,23 +81,17 @@ class ActivityGaztelua : AppCompatActivity() {
 
         when(event.action){
             DragEvent.ACTION_DRAG_STARTED ->{
-                if(event.clipDescription.label == receiverView.tag as String){
-                    //v.visibility = View.VISIBLE
-                }
                 true
             }
             DragEvent.ACTION_DRAG_ENTERED ->{
-
                 v.invalidate()
                 true
             }
             DragEvent.ACTION_DRAG_LOCATION ->{
-                //Imagen.visibility = View.VISIBLE
                 true
             }
             DragEvent.ACTION_DRAG_EXITED ->{
                 if(event.clipDescription.label == receiverView.tag as String) {
-
                     v.invalidate()
                 }
                 true
@@ -119,6 +111,7 @@ class ActivityGaztelua : AppCompatActivity() {
                         binding.imgcentromed.isVisible==false && binding.imgcentroder.isVisible==false &&
                         binding.imgabajoizq.isVisible==false && binding.imgabajomed.isVisible==false &&
                         binding.imgabajoder.isVisible==false ){
+
                         val intento = Intent(this, MsgVictoria::class.java)
                         intento.putExtra("imagen","castillo")
                         startActivity(intento)
@@ -130,25 +123,13 @@ class ActivityGaztelua : AppCompatActivity() {
                     println("error")
 
                     Imagen.visibility = View.VISIBLE
-
-
                 }
                 true
             }
-            DragEvent.ACTION_DRAG_ENDED -> {
-                //Imagen.visibility = View.VISIBLE
-
-
-                true
-            }
-
             else -> {
                 false
             }        }
     }
-
-
-
     //crear sombreado al arrastrar
     private class MyDragShadowBuilder(val v : View) : View.DragShadowBuilder(v){
         override fun onProvideShadowMetrics(size: Point, touch: Point) {
