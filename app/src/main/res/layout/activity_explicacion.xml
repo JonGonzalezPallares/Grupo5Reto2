@@ -4,30 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_degradado"
     tools:context=".gastelua.ExplicacionActivity">
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="352dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="38dp"
+        android:layout_width="337dp"
+        android:layout_height="520dp"
         android:layout_marginBottom="66dp"
+        android:background="@drawable/pergaminov2"
+        android:paddingStart="31dp"
+        android:paddingTop="50dp"
+        android:paddingRight="31dp"
+        android:paddingBottom="40dp"
         android:text="@string/explanationCastilloMuñatones"
-        app:layout_constraintBottom_toTopOf="@+id/btnjuego"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintVertical_bias="0.416" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnjuego"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="51dp"
-        android:layout_marginBottom="188dp"
+        android:layout_width="141dp"
+        android:layout_height="50dp"
+        android:background="@drawable/estilo_botones"
         android:text="Ir al puzle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.881" />
 </androidx.constraintlayout.widget.ConstraintLayout>

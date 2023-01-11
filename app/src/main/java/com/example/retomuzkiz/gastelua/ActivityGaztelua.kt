@@ -20,9 +20,12 @@ class ActivityGaztelua : AppCompatActivity() {
     private lateinit var Imagen : ImageView
     lateinit var binding: ActivityGazteluaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         binding = ActivityGazteluaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //Para borrar la barra superior
+        this.supportActionBar!!.hide()
 
         //crear los listeners
         binding.imgarribaizq.setOnLongClickListener(longClickListener)

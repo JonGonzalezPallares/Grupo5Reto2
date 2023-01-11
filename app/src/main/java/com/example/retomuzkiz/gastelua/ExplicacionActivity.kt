@@ -14,6 +14,8 @@ class ExplicacionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_explicacion)
         binding = ActivityExplicacionBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //Para borrar la barra superior
+        this.supportActionBar!!.hide()
         binding.btnjuego.setOnClickListener{
             val intento = Intent(this, ActivityGaztelua::class.java)
             startActivity(intento)
