@@ -8,7 +8,7 @@
     tools:context=".Nosotros">
 
     <TableLayout
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
@@ -19,6 +19,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView47"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Informacion sobre\nlos equipos"
+                android:textAlignment="center" />
+        </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
@@ -37,6 +51,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
                 app:srcCompat="@drawable/logo_upv" />
+
         </TableRow>
 
         <TableRow
@@ -52,6 +67,13 @@
                 android:gravity="left"
                 android:orientation="vertical"
                 android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Desarrollada\npor:"
+                    android:textAlignment="center" />
 
                 <TextView
                     android:id="@+id/textView32"
@@ -95,6 +117,13 @@
                 android:showDividers="middle">
 
                 <TextView
+                    android:id="@+id/textView45"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ideada\npor:"
+                    android:textAlignment="center" />
+
+                <TextView
                     android:id="@+id/textView34"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -132,7 +161,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="40dp"
-            android:gravity="center">
+            android:gravity="center"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -146,7 +176,7 @@
                     android:id="@+id/textView20"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Contacto"
+                    android:text="Contacto: 833745274"
                     android:textAlignment="center" />
             </LinearLayout>
 
@@ -176,4 +206,5 @@
         </TableRow>
 
     </TableLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
