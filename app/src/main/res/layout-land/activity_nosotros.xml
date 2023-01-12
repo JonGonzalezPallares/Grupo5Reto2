@@ -90,6 +90,7 @@
                             android:layout_marginStart="10dp"
                             android:divider="@drawable/divisor"
                             android:gravity="center"
+                            android:orientation="horizontal"
                             android:showDividers="middle">
 
                             <TextView
@@ -164,6 +165,7 @@
                             android:layout_marginStart="10dp"
                             android:divider="@drawable/divisor"
                             android:gravity="center"
+                            android:orientation="horizontal"
                             android:showDividers="middle">
 
                             <TextView
