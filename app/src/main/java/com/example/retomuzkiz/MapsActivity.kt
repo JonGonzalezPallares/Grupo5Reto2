@@ -156,7 +156,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 //Para entrar como profesor
                 R.id.m_Profesor -> {
                     val intento = Intent(this, ProfesorMode::class.java)
-                    //cambio = true
                     startActivity(intento)
                     true
                 }
@@ -164,6 +163,13 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 //Para ir al ranking
                 R.id.m_ranking -> {
                     //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
+                    true
+                }
+
+                //Para ir a sobre nosotros
+                R.id.m_About -> {
+                    val intento = Intent(this, Nosotros::class.java)
+                    startActivity(intento)
                     true
                 }
 
