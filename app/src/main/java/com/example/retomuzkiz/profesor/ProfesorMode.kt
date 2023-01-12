@@ -25,7 +25,7 @@ class ProfesorMode : AppCompatActivity() {
         binding.btnPuenteRes.setOnClickListener {
             //binding.contenedorFrag = contenedor donde se van a cargar todos los fragmentos
             //PuenteRespuestas() = siendo el fragmento que queremos cargar
-            binding.contenedorFrag.changeFrag(PuenteRespuestas())
+            PuenteRespuestas().cambiarF(binding.contenedorFrag.id)
 
             oscurecer(true)
         }
@@ -33,7 +33,7 @@ class ProfesorMode : AppCompatActivity() {
         binding.btnItsasRes.setOnClickListener {
             //binding.contenedorFrag = contenedor donde se van a cargar todos los fragmentos
             //ItsaslurRespuestas() = siendo el fragmento que queremos cargar
-            binding.contenedorFrag.changeFrag(ItsaslurRespuestas())
+            ItsaslurRespuestas().cambiarF(binding.contenedorFrag.id)
 
             oscurecer(true)
         }
@@ -41,7 +41,7 @@ class ProfesorMode : AppCompatActivity() {
         binding.btnCastilloRes.setOnClickListener {
             //binding.contenedorFrag = contenedor donde se van a cargar todos los fragmentos
             //CastilloRespuestas() = siendo el fragmento que queremos cargar
-            binding.contenedorFrag.changeFrag(CastilloRespuestas())
+            CastilloRespuestas().cambiarF(binding.contenedorFrag.id)
 
             oscurecer(true)
         }
@@ -49,7 +49,7 @@ class ProfesorMode : AppCompatActivity() {
         binding.btnHermitaRes.setOnClickListener {
             //binding.contenedorFrag = contenedor donde se van a cargar todos los fragmentos
             //HermitaRespuestas() = siendo el fragmento que queremos cargar
-            binding.contenedorFrag.changeFrag(HermitaRespuestas())
+            HermitaRespuestas().cambiarF(binding.contenedorFrag.id)
 
             oscurecer(true)
         }
@@ -84,12 +84,12 @@ class ProfesorMode : AppCompatActivity() {
         }
     }
 
-    //Añadimos una funcion de extension a los FragmentContainerView
-    private fun FragmentContainerView.changeFrag(fragmento: Fragment) {
+    //Funcion de extension que se encarga de cambiar entre los diferentes fragmentos
+    private fun Fragment.cambiarF(id: Int) {
         //Creamos una variable para la transaccion
         val transicion = supportFragmentManager.beginTransaction().setReorderingAllowed(true)
-        //Al usar funciones de extension ya sabemos en que fragmento estamos, asi que solamente tenemos que pasarle el id y el fragmento a cambiar
-        transicion.replace(this.id, fragmento)
+        //Le añadimos a que contenedor tiene que hacer referencia, y le pasamos el fragmento que queremos cargar
+        transicion.replace(id, this)
         //Hacemos el cambio
         transicion.commit()
     }

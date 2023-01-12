@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.View
+import com.example.retomuzkiz.funcionesExtension.desordeno
 import android.widget.*
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.clases.MsgVictoria
@@ -83,14 +83,15 @@ class LaArenaHondartza : Activity() {
 
     //______________________________________________________________________________________________
     /* devolver array desordenado  requiere de parametro la longitud del array */
-    private fun desordenarArray(longitud: Int): ArrayList<Int> {
+    /*private fun desordenarArray(longitud: Int): ArrayList<Int> {
         val result = ArrayList<Int>()
         for (i in 0 until longitud) {
+            println(i % longitud)
             result.add(i % longitud)
         }
         result.shuffle()
         return result
-    }
+    }*/
 
     //______________________________________________________________________________________________
     /*
@@ -196,8 +197,8 @@ class LaArenaHondartza : Activity() {
         cargarTablero()
         cargarImagenes()
 
-        arrayDesordenadoRespuestas = desordenarArray(respuestas.size)
-        arrayDesordenadoPreguntas = desordenarArray(preguntas.size)
+        arrayDesordenadoRespuestas = respuestas.desordeno()
+        arrayDesordenadoPreguntas = preguntas.desordeno()
 
         // setea imagen a cada button en la posicion donde se encuentra
         for (i in 0..4)

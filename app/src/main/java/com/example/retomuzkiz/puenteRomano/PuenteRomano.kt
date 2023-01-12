@@ -5,7 +5,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
+import com.example.retomuzkiz.funcionesExtension.cambiarF
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ActivityPuenteRomanoBinding
 
@@ -37,7 +37,7 @@ class PuenteRomano : AppCompatActivity() {
             binding.btnSiguiente.visibility = View.VISIBLE
 
             //Llamamos a la funcion para cambiar los fragmentos
-            changeFrag(PuenteRomano_preg1())
+            PuenteRomano_preg1().cambiarF(binding.frgPreguntas.id, supportFragmentManager)
         }
 
         //Boton que lleva al segundo fragment estando en el tercero
@@ -50,7 +50,7 @@ class PuenteRomano : AppCompatActivity() {
             binding.btnPrimero.visibility = View.VISIBLE
 
             //Llamamos a la funcion para cambiar los fragmentos
-            changeFrag(PuenteRomano_preg2())
+            PuenteRomano_preg2().cambiarF(binding.frgPreguntas.id, supportFragmentManager)
         }
 
         //Boton que lleva al segundo fragment estando en el primero
@@ -67,7 +67,7 @@ class PuenteRomano : AppCompatActivity() {
             binding.btnUltimo.visibility = View.VISIBLE
 
             //Llamamos a la funcion para cambiar los fragmentos
-            changeFrag(PuenteRomano_preg2())
+            PuenteRomano_preg2().cambiarF(binding.frgPreguntas.id, supportFragmentManager)
         }
 
         //Boton que lleva al tercer fragment estando en el segundo
@@ -79,7 +79,7 @@ class PuenteRomano : AppCompatActivity() {
             binding.btnEmpezar.visibility = View.VISIBLE
 
             //Llamamos a la funcion para cambiar los fragmentos
-            changeFrag(PuenteRomano_preg3())
+            PuenteRomano_preg3().cambiarF(binding.frgPreguntas.id, supportFragmentManager)
         }
 
         //Boton que lleva a la activity del juego
@@ -88,16 +88,6 @@ class PuenteRomano : AppCompatActivity() {
             cambio = true
             startActivity(intento)
         }
-    }
-
-    //Funcion que se encarga de cambiar entre los diferentes fragmentos
-    private fun changeFrag(fragmento: Fragment) {
-        //Creamos una variable para la transaccion
-        val transicion = supportFragmentManager.beginTransaction().setReorderingAllowed(true)
-        //Le añadimos a que contenedor tiene que hacer referencia, y le pasamos el fragmento que queremos cargar
-        transicion.replace(binding.frgPreguntas.id, fragmento)
-        //Hacemos el cambio
-        transicion.commit()
     }
 
     //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
