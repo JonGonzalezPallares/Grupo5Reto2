@@ -103,4 +103,20 @@
     <string name="anterior">Anterior</string>
     <string name="ultimo">Ultimo</string>
 
+    <!-- Descripciones -->
+    <string name="DescripcionCastillo">El castillo de Muñatones en Musques (Vizcaya, España) se eleva dominando los prados y las marismas que, a su encuentro con el mar, conforman el río Barbadún (o Mayor) y sus arroyos afluentes, caso del río Cotorrio.</string>
+    <string name="DescripcionLaarena">La playa de La Arena situada entre los municipios vizcaínos de Zierbena y Muskiz, País Vasco (España),es una playa con arena oscura, al lado de la desembocadura del río Barbadún, junto a las localidades de La Arena (Ciérvana) y Pobeña (Muskiz).\n\n
+Parte de la playa está incluida en el espacio natural protegido de la ría del Barbadun.</string>
+    <string name="DescripcionPuente">El puente románico de El Pobal conduce a la ferrería de El Pobal, sobre el río Barbadun. XIII. Fue construido en el siglo, y Muskiz era el puente más antiguo de la ciudad.</string>
+    <string name="DescripcionBurdinola">La Ferrería de El Pobal es una antigua fábrica hidráulica en la que se trabajaba el mineral del hierro para elaborar todo tipo de herramientas, sobre todo de uso doméstico.Fue construida junto al río Barbadún a principios del siglo XVI. </string>
+    <string name="Descripcionermita">Las atalayas y puestos de señeros eran infraestructuras muy sencillas.\n\n
+    La ermita-atalaya de Nuestra Señora del Socorro, se ubica sobre un pequeño promontorio dominando la desembocadura del Barbadún.
+        La ermita de Pobeña, de gran devoción marinera, se puede datar entre los siglos XVII y XVIII</string>
+    <string name="Descripcionitzalsur">La vía verde de Itsaslur, conocida popularmente como el paseo de Itsaslur, une los núcleos urbanos de Pobeña y Kobaron creando uno de los paseos más bonitos de Bizkaia.\n\n
+        Un recorrido familiar, que, debido a su belleza atrae a miles de personas al año.</string>
+    <string name="DescripcionSanjuan">La Fiesta de San Juan, también llamada víspera de San Juan o Noche de San Juan, es la víspera de la celebración previa a la festividad cristiana del nacimiento de San Juan Bautista el día 24 de junio.
+        Algunos vinculan la festividad o algunas de sus celebraciones en ritos de origen pagano previos o ajenos al cristianismo.\n\n
+        La realización de hogueras suele ser un elemento habitual.</string>
+
+
 </resources>

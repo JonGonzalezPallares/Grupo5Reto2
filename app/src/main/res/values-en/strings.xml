@@ -109,4 +109,12 @@
     <string name="primero">First</string>
     <string name="anterior">Previous</string>
     <string name="ultimo">Last</string>
+    <!-- Descripciones -->
+    <string name="DescripcionCastillo">Ultimo</string>
+    <string name="DescripcionLaarena">Ultimo</string>
+    <string name="DescripcionPuente">Ultimo</string>
+    <string name="DescripcionBurdinola">Ultimo</string>
+    <string name="Descripcionermita">Ultimo</string>
+    <string name="Descripcionitzalsur">Ultimo</string>
+    <string name="DescripcionSanjuan">Ultimo</string>
 </resources>

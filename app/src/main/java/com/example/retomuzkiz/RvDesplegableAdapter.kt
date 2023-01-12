@@ -2,12 +2,15 @@ package com.example.retomuzkiz
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.graphics.drawable.Drawable
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getDrawable
 import androidx.core.content.ContextCompat.startActivity
+import androidx.core.content.res.TypedArrayUtils.getString
 import androidx.recyclerview.widget.RecyclerView
 import com.example.retomuzkiz.burdinola.BurdinolaVideoActivity
 import com.example.retomuzkiz.databinding.SingleActividadBinding
@@ -42,43 +45,62 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
                 MapsActivity.SITESNAMES.PUENTE_ROMANO_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.puentecompleto)
+
                     )
+                    val a: String = context.resources.getString(R.string.DescripcionPuente)
+                    binding.txtdescripcion.text = a
                 }
 
                 MapsActivity.SITESNAMES.POBENA_FUNDICION_IMG_1 -> {
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.fundicion_pobela)
                     )
+                    val a: String = context.resources.getString(R.string.DescripcionBurdinola)
+                    binding.txtdescripcion.text = a
                 }
 
                 MapsActivity.SITESNAMES.POBENA_HERMITA_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.hermita_pobena_1)
+
                     )
+                    val a: String = context.resources.getString(R.string.Descripcionermita)
+                    binding.txtdescripcion.text = a
                 }
 
                 MapsActivity.SITESNAMES.PLAYA_LA_ARENA_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.irudia_arena_2)
                     )
+                    val a: String = context.resources.getString(R.string.DescripcionLaarena)
+                    binding.txtdescripcion.text =a
                 }
 
                 MapsActivity.SITESNAMES.ITSASLUR_IBILBIDEA_IMG_1-> {
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.itsaslur2_2)
                     )
+                    val a: String = context.resources.getString(R.string.Descripcionitzalsur)
+
+                    binding.txtdescripcion.text = a
+
+
                 }
 
                 MapsActivity.SITESNAMES.CASTILLO_MUNATONES_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.castillo)
                     )
+                    val a: String = context.resources.getString(R.string.DescripcionCastillo)
+                    binding.txtdescripcion.text =a
                 }
 
                 MapsActivity.SITESNAMES.NOCHE_SAN_JUAN_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.irudia_san_juan_1)
                     )
+                    val a: String = context.resources.getString(R.string.DescripcionSanjuan)
+                    binding.txtdescripcion.text =a
                 }
             }
         }
