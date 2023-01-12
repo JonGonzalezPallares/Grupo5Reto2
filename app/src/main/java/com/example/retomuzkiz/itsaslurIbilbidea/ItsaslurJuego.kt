@@ -6,10 +6,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import com.example.retomuzkiz.clases.MsgVictoria
+import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityItsaslurJuegoBinding
+import com.example.retomuzkiz.room.Usuario
 
 class ItsaslurJuego : AppCompatActivity() {
 
+    private lateinit var usuario: Usuario
     private lateinit var binding : ActivityItsaslurJuegoBinding
     private lateinit var buttonsList1 : List<ImageButton>
     private lateinit var buttonsList2 : List<ImageButton>
@@ -22,7 +25,14 @@ class ItsaslurJuego : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityItsaslurJuegoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        usuario = intent.getParcelableExtra("user")!!
 
+        RetoGrupoCinco.mSocket.on("game finish") { args ->
+            runOnUiThread(){
+                finish()
+                // com.example.retomuzkiz.showDialog(this, "El profesor ha abandonado el juego", "Intentalo de nuevo mas tarde")
+            }
+        }
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
 
@@ -96,6 +106,16 @@ class ItsaslurJuego : AppCompatActivity() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        if(usuario.isProfessor){
+            RetoGrupoCinco.mSocket.emit("user leave", usuario.userClass)
+            RetoGrupoCinco.mSocket.emit("game finished", usuario.userClass)
+        }else{
+            RetoGrupoCinco.mSocket.emit("user leave", usuario.userClass)
+
+        }
+    }
     //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
     override fun onPause() {
         super.onPause()
