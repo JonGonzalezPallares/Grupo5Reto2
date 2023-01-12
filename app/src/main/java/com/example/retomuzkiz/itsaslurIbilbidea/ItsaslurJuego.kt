@@ -64,7 +64,7 @@ class ItsaslurJuego : AppCompatActivity() {
             //Recorremos cada lista para obtener cada boton
             for(button in lista){
                 //Si estamos en la ultima pregunta y hemos acertado, abre el mensaje de victoria
-                if(posicion==3){
+                if(posicion==(preguntas.size-1)){
                     button.setOnClickListener {
                         if(button.tag == "true"){
                             val intento = Intent(this, MsgVictoria::class.java)
@@ -79,9 +79,9 @@ class ItsaslurJuego : AppCompatActivity() {
                         //Si el tag del boton es correcto, cambiamos la visibilidad de las preguntas. Sumamos uno a la variable de posicion y volvemos a llamar a la funcion
                         if(button.tag == "true"){
                             preguntas[posicion].visibility = View.GONE
-                            val avanze = posicion+1
-                            preguntas[avanze].visibility = View.VISIBLE
-                            posicion=avanze
+                            val avance = posicion+1
+                            preguntas[avance].visibility = View.VISIBLE
+                            posicion=avance
                             comprobar()
                         }
                     }
