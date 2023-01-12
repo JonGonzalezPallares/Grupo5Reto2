@@ -21,10 +21,27 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Somos un grupo de alumn@s de Magisterio de la UPV.\nJunto a un grupo de alumnos del CIFP Txurdinaga hemos llevado a cabo una aplicación para los niñ@s de primaria de Muskiz puedan conozer jugando."
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp"
-            android:gravity="center">
+            android:gravity="center"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/textView47"
@@ -37,19 +54,24 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center">
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="140dp"
+                android:layout_width="185dp"
                 android:layout_height="122dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="10"
                 app:srcCompat="@drawable/txurdinaga" />
 
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="140dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/logo_upv" />
 
         </TableRow>
@@ -58,11 +80,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="40dp"
+            android:layout_weight="1"
             android:gravity="center">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
                 android:divider="@drawable/divisor"
                 android:gravity="left"
                 android:orientation="vertical"
@@ -111,6 +136,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
                 android:divider="@drawable/divisor"
                 android:gravity="right"
                 android:orientation="vertical"
@@ -161,7 +187,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="40dp"
-            android:gravity="center">
+            android:gravity="center"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -170,7 +197,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/btnVolver"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/volver" />

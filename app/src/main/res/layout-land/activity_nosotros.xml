@@ -27,63 +27,67 @@
 
             <TextView
                 android:id="@+id/textView47"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Informacion sobre\nlos equipos"
+                android:layout_weight="1"
+                android:text="Somos un grupo de alumn@s de Magisterio de la UPV.\nJunto a un grupo de alumnos del CIFP Txurdinaga hemos llevado a cabo una aplicación para los niñ@s de primaria de Muskiz puedan conozer jugando."
                 android:textAlignment="center" />
         </TableRow>
 
         <TableRow
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:gravity="center_horizontal">
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="0dp"
-                android:layout_marginEnd="20dp">
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:gravity="right|center_vertical"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/imageView6"
-                        android:layout_width="140dp"
-                        android:layout_height="122dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
                         app:srcCompat="@drawable/txurdinaga" />
 
                     <ImageView
                         android:id="@+id/imageView4"
-                        android:layout_width="140dp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:layout_weight="1"
                         app:srcCompat="@drawable/logo_upv" />
                 </LinearLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="left|center_vertical"
                         android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
                             android:divider="@drawable/divisor"
                             android:gravity="center"
                             android:showDividers="middle">
@@ -92,7 +96,7 @@
                                 android:id="@+id/textView44"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="10dp"
+                                android:layout_marginEnd="20dp"
                                 android:text="Desarrollada\npor:"
                                 android:textAlignment="center" />
 
@@ -113,7 +117,7 @@
                                     android:id="@+id/textView30"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
+                                    android:layout_marginTop="15dp"
                                     android:text="@string/tx2"
                                     android:textAlignment="center"
                                     android:textSize="20sp" />
@@ -128,7 +132,7 @@
                                     android:id="@+id/textView37"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
+                                    android:layout_marginStart="20dp"
                                     android:text="@string/tx3"
                                     android:textAlignment="center"
                                     android:textSize="20sp" />
@@ -137,8 +141,8 @@
                                     android:id="@+id/textView36"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_marginTop="5dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="15dp"
                                     android:text="@string/tx4"
                                     android:textAlignment="center"
                                     android:textSize="20sp" />
@@ -149,13 +153,15 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
                         android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
                             android:divider="@drawable/divisor"
                             android:gravity="center"
                             android:showDividers="middle">
@@ -164,7 +170,7 @@
                                 android:id="@+id/textView45"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="10dp"
+                                android:layout_marginEnd="20dp"
                                 android:text="Ideada\npor:"
                                 android:textAlignment="center" />
 
@@ -185,7 +191,7 @@
                                     android:id="@+id/textView33"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
+                                    android:layout_marginTop="15dp"
                                     android:text="@string/upv2"
                                     android:textAlignment="center"
                                     android:textSize="20sp" />
@@ -200,7 +206,7 @@
                                     android:id="@+id/textView31"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
+                                    android:layout_marginStart="20dp"
                                     android:text="@string/upv3"
                                     android:textAlignment="center"
                                     android:textSize="20sp" />
@@ -209,8 +215,8 @@
                                     android:id="@+id/textView35"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_marginTop="5dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="15dp"
                                     android:text="@string/upv4"
                                     android:textAlignment="center"
                                     android:textSize="20sp" />
@@ -220,7 +226,6 @@
                     </LinearLayout>
 
                 </LinearLayout>
-
             </TableRow>
 
         </TableRow>
@@ -229,7 +234,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="40dp"
-            android:gravity="center">
+            android:gravity="center"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -238,7 +244,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/btnVolver"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/volver" />
