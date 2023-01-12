@@ -61,7 +61,7 @@ class ServicioGeolocalizacion : Service() {
 
 
         //1
-        Listabooleanos = arrayListOf<Boolean>()
+        Listabooleanos = arrayListOf()
         puenteRomano = Location("puenteromano")
         puenteRomano.latitude = 43.316772
         puenteRomano.longitude = -3.119471
@@ -172,7 +172,7 @@ class ServicioGeolocalizacion : Service() {
     // ejecutcion del servicio
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         //Cargar array de booleanos
-        Listabooleanos = arrayListOf<Boolean>()
+        Listabooleanos = arrayListOf()
 
         Listabooleanos.add(intent.getBooleanExtra("boleano0",false))
         Listabooleanos.add(intent.getBooleanExtra("boleano1",false))

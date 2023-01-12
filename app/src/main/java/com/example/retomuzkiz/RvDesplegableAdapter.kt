@@ -2,7 +2,6 @@ package com.example.retomuzkiz
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +16,6 @@ import com.example.retomuzkiz.ponekakoermita.MarineroActivity
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
 import com.example.retomuzkiz.Laberinto.ActivityLaberinto
 import com.example.retomuzkiz.clases.Actividad
-//import com.example.retomuzkiz.gastelua.ActivityGaztelua
 import com.example.retomuzkiz.gastelua.ExplicacionActivity
 
 class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: Context): RecyclerView.Adapter<RvDesplegableAdapter.ViewHolder>() {
@@ -146,8 +144,8 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
     override fun getItemCount(): Int {
         return listaActividades.size
     }
-
+/*
     fun cargaractividades(titulo:String){
-    }
+    }*/
 }
 

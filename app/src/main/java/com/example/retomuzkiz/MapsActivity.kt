@@ -53,8 +53,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         var POBENA_HERMITA_IMG = "irudiapobena1"
         lateinit var ITSASLUR_IBILBIDEA : String
         var ITSASLUR_IBILBIDEA_IMG_1 = "itsaslur1_2"
-        var ITSASLUR_IBILBIDEA_IMG_2 = "itsaslur2_1"
-        var ITSASLUR_IBILBIDEA_IMG_3 = "itsaslur2_2"
+        //var ITSASLUR_IBILBIDEA_IMG_2 = "itsaslur2_1"
+        //var ITSASLUR_IBILBIDEA_IMG_3 = "itsaslur2_2"
         lateinit var PLAYA_LA_ARENA :String
         var PLAYA_LA_ARENA_IMG = "irudia_arena_2"
         lateinit var PUENTE_ROMANO :String

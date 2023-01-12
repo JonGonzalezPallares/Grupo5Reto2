@@ -49,7 +49,7 @@ class PuenteRomano : AppCompatActivity() {
             binding.btnUltimo.isEnabled = true
             binding.btnPrimero.visibility = View.VISIBLE
 
-            //Llamamos a la funcion para cambiar los fragmentos
+            //Llamamos a la funcion de extension para cambiar los fragmentos
             PuenteRomano_preg2().cambiarF(binding.frgPreguntas.id, supportFragmentManager)
         }
 
@@ -66,7 +66,7 @@ class PuenteRomano : AppCompatActivity() {
             it.visibility = View.GONE
             binding.btnUltimo.visibility = View.VISIBLE
 
-            //Llamamos a la funcion para cambiar los fragmentos
+            //Llamamos a la funcion de extension para cambiar los fragmentos
             PuenteRomano_preg2().cambiarF(binding.frgPreguntas.id, supportFragmentManager)
         }
 
@@ -78,7 +78,7 @@ class PuenteRomano : AppCompatActivity() {
             it.visibility = View.GONE
             binding.btnEmpezar.visibility = View.VISIBLE
 
-            //Llamamos a la funcion para cambiar los fragmentos
+            //Llamamos a la funcion de extension para cambiar los fragmentos
             PuenteRomano_preg3().cambiarF(binding.frgPreguntas.id, supportFragmentManager)
         }
 

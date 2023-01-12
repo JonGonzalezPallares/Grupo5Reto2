@@ -17,8 +17,6 @@ class ProfesorMode : AppCompatActivity() {
         binding = ActivityProfesorModeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val duracion =Toast.LENGTH_LONG
-
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
 

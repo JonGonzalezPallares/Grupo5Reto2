@@ -3,7 +3,6 @@ package com.example.retomuzkiz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
 import com.example.retomuzkiz.databinding.ActivityNosotrosBinding
 
 class Nosotros : AppCompatActivity() {
