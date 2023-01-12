@@ -82,15 +82,6 @@ class LaArenaHondartza : Activity() {
     }
 
     //______________________________________________________________________________________________
-    // Esconde la vista del juego y muestra la vista finalizado el juego
-    /*private fun showFinalLayout(){
-        Handler(Looper.myLooper()?:return).postDelayed({
-            binding.layoutButton.visibility = View.GONE
-            binding.layoutImage.visibility = View.VISIBLE
-        }, 1000)
-    }*/
-
-    //______________________________________________________________________________________________
     /* devolver array desordenado  requiere de parametro la longitud del array */
     private fun desordenarArray(longitud: Int): ArrayList<Int> {
         val result = ArrayList<Int>()
