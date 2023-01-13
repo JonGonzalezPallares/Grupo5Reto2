@@ -119,6 +119,7 @@ class RvDesplegableAdapter(var listaActividades: Game, var user : Usuario,  val 
                 2->{
                     val intento = Intent(context, PantallaEspera::class.java).putExtra("user", user)
                     startActivity(context, intento,null)
+                    MapsActivity.isJoined = true
                 }
 
                 3->{

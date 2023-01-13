@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import com.example.retomuzkiz.MapsActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityPantallaEsperaBinding
 import com.example.retomuzkiz.room.Usuario
@@ -21,7 +22,7 @@ class PantallaEspera : AppCompatActivity() {
     //Variable para saber cuando se tiene que cerrar y cuando no
     private var cambio = false
     private var isEventSend = false
-    private var userJoined = false
+
     private lateinit var usuario: Usuario
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +31,7 @@ class PantallaEspera : AppCompatActivity() {
         usuario = intent.getParcelableExtra("user")!!
         //Evento usuario unido al juego
         RetoGrupoCinco.mSocket.emit("join game", usuario.userClass)
-
+        MapsActivity.isJoined = true
 
         //Evento usuario se une al juego
         RetoGrupoCinco.mSocket.on("user joined") { args ->
@@ -38,12 +39,18 @@ class PantallaEspera : AppCompatActivity() {
                 binding.txtUsuariosConectados.text = "${args[0]}/20"
 
             }
-            userJoined = true
+
         }
         //Evento usuario deja el juego
         RetoGrupoCinco.mSocket.on("user leaved") { args ->
             runOnUiThread(){
-                finish()
+                if(usuario.userClass.equals(args[0]) && !usuario.isProfessor ){
+                    finish()
+
+                }else{
+                    binding.txtUsuariosConectados.text = "${args[1] as Int}/20"
+
+                }
             }
         }
         //Evento profesor deja el juego
@@ -55,7 +62,8 @@ class PantallaEspera : AppCompatActivity() {
         }
         //Evento Iniciar Juego
         var event = RetoGrupoCinco.mSocket.on("start game"){
-            if ( pantallas<1 && userJoined == true){
+            if ( pantallas<1 && MapsActivity.isJoined == true){
+
                 if(!usuario.isProfessor){
                     val intento = Intent(this, ItsaslurJuego::class.java).putExtra("user", usuario)
                     startActivity(intento)
@@ -65,7 +73,7 @@ class PantallaEspera : AppCompatActivity() {
                 }else{
                     val intento = Intent(this, ItsaslurJuego::class.java).putExtra("user", usuario)
                     startActivity(intento)
-                    finish()
+
                     pantallas ++
 
                 }
@@ -89,7 +97,10 @@ class PantallaEspera : AppCompatActivity() {
 
             RetoGrupoCinco.mSocket.emit("startGame", usuario.userClass)
             cambio = true
-            finish()
+            if(!usuario.isProfessor) {
+                finish()
+            }
+
         }
     }
 
@@ -103,19 +114,20 @@ class PantallaEspera : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         pantallas = 0
-        userJoined = false
+
+        MapsActivity.isJoined = false
     }
     override fun onBackPressed() {
         super.onBackPressed()
         if(usuario.isProfessor){
-            RetoGrupoCinco.mSocket.emit("user leave", usuario.userClass)
+           // RetoGrupoCinco.mSocket.emit("user leave", usuario.userClass)
             RetoGrupoCinco.mSocket.emit("game finished", usuario.userClass)
         }else{
             RetoGrupoCinco.mSocket.emit("user leave", usuario.userClass)
 
         }
         pantallas = 0
-        userJoined=false
+        MapsActivity.isJoined=false
 
     }
     //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
@@ -124,5 +136,6 @@ class PantallaEspera : AppCompatActivity() {
         if(cambio){
             finish()
         }
+        MapsActivity.isJoined=false
     }
 }

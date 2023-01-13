@@ -49,6 +49,9 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.navigation.NavigationView
 
 class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener {
+    companion object{
+       var isJoined = false
+    }
     object SITESNAMES {
         lateinit var POBENA_FUNDICION:String
         var POBENA_FUNDICION_IMG_1 = "fundicion_pobela"
