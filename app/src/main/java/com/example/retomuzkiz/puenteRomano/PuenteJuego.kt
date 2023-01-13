@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityPuenteJuegoBinding
+import com.example.retomuzkiz.funcionesExtension.eliminarNegrita
 
 
 class PuenteJuego : AppCompatActivity() {
@@ -26,6 +27,8 @@ class PuenteJuego : AppCompatActivity() {
     private lateinit var seleccion : String
     //Array con los trozos de las imagenes
     private lateinit var imagenes : MutableList<ImageView>
+    //Lista para los textos de las soluciones
+    private lateinit var seleTxt : List<List<Int>>
     //Variable para saber cuando se tiene que cerrar y cuando no
     private var cambio = false
 
@@ -79,7 +82,7 @@ class PuenteJuego : AppCompatActivity() {
         )
 
         //Lista de listas para guardar los textos de las selecciones
-        val seleTxt = listOf(
+        seleTxt = listOf(
             listOf(
                 binding.rbRes11.id,
                 binding.rbRes12.id,
@@ -204,18 +207,30 @@ class PuenteJuego : AppCompatActivity() {
         when (cantidad){
             1 -> {
                 binding.rdbRes1.clearCheck()
+
+                //Llamada a la funcion para eliminar el efecto de "negrita"
+                binding.rdbRes1.eliminarNegrita(seleTxt, cantidad)
             }
 
             2 -> {
                 binding.rdbRes2.clearCheck()
+
+                //Llamada a la funcion para eliminar el efecto de "negrita"
+                binding.rdbRes2.eliminarNegrita(seleTxt, cantidad)
             }
 
             3 -> {
                 binding.rdbRes3.clearCheck()
+
+                //Llamada a la funcion para eliminar el efecto de "negrita"
+                binding.rdbRes3.eliminarNegrita(seleTxt, cantidad)
             }
 
             else -> {
                 binding.rdbRes4.clearCheck()
+
+                //Llamada a la funcion para eliminar el efecto de "negrita"
+                binding.rdbRes4.eliminarNegrita(seleTxt, cantidad)
             }
         }
     }
