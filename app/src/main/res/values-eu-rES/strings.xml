@@ -104,4 +104,31 @@ Muskizen, garrantzi handia du 22: 30ean geltokian hasten den zuzien jaitsierak. 
     <string name="primero">Lehenengoa</string>
     <string name="anterior">Aurrekoa</string>
     <string name="ultimo">Azkena</string>
+    <string name="mar_tranquilo">Barea</string>
+    <string name="mar_revuelto">Zakarra</string>
+    <string name="upv1">Uxue Cerrada</string>
+    <string name="upv2">Irati Bargos</string>
+    <string name="upv3">Oihane Baz</string>
+    <string name="upv4">Aitor del Pozo</string>
+    <string name="tx1">Jon Gonzalez</string>
+    <string name="tx2">Eder Torres</string>
+    <string name="tx3">Daniel Diez</string>
+    <string name="tx4">Youssef Ait</string>
+    <!-- Descripciones -->
+    <string name="DescripcionCastillo">
+Musques-eko (Bizkaia, Espainia) Muñatones gaztelua altxatzen da, itsasoarekin bat egiten duten heinean Barbadún (edo Mayor) ibaia eta bere ibaiadarrak, Cotorrio ibaia adibidez, osatzen dituzten belardi eta paduretan nagusituz.</string>
+    <string name="DescripcionLaarena">
+La Arena hondartza Bizkaiko Zierbena eta Muskiz udalerrien artean kokatua, Euskal Herria (Espainia), harea iluneko hondartza da, Barbadún ibaiaren bokalearen ondoan, La Arena (Ciérvana) eta Pobeña (Muskiz) herrien ondoan. .\n\n
+Hondartzaren zati bat Barbadun itsasadarreko natur eremu babestuan sartuta dago.</string>
+    <string name="DescripcionPuente">El Pobaleko zubi erromanikoak El Pobal burdinolara eramaten du, Barbadun ibaiaren gainean. XIII. Mendean eraiki zen, eta Muskiz hiriko zubirik zaharrena izan zen.</string>
+    <string name="DescripcionBurdinola">
+El Pobal Burdinola antzinako fabrika hidrauliko bat da, non burdin minerala lantzen zen mota guztietako tresnak egiteko, batez ere etxeko erabilerarako.Barbadún ibaiaren ondoan eraiki zen XVI.mendearen hasieran.</string>
+    <string name="Descripcionermita">Talaiak eta seinale-postuak oso azpiegitura sinpleak ziren.\n\n
+    Socorroko Andre Mariaren baseliza-talaia Barbadunen bokalera begira dagoen mendigune txiki batean dago.
+        Pobeñako baseliza, itsas debozio handikoa, XVII eta XVIII.</string>
+    <string name="Descripcionitzalsur">Itsaslur bide berdeak, herrian Itsaslur pasealekua izenez ezagutzen dena, Pobeña eta Kobaron hiriguneak batzen ditu, Bizkaiko pasealeku ederrenetako bat sortuz.\n\n
+        Familia-ibilaldia, bere edertasunagatik, urtean milaka pertsona erakartzen dituena.</string>
+    <string name="DescripcionSanjuan">San Joan jaiak, San Joan bezpera edo San Joan gaua ere deituak, ekainaren 24an San Joan Bataiatzailearen jaiotzaren kristau jaiaren aurreko ospakizunaren bezpera da.
+        Batzuek jaia edo ospakizunetako batzuk kristautasunaren aurreko edo arrotzen diren jatorri paganoko erritoekin lotzen dituzte.\n\n
+        Suak egitea ohiko elementua izan ohi da.</string>
 </resources>

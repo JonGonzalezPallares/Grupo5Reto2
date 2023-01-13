@@ -10,22 +10,23 @@
 
 
     app:ignore="NamespaceTypo"
-    card_view:cardBackgroundColor="@color/white"
+    card_view:cardBackgroundColor="#BFB6FFA9"
     card_view:cardCornerRadius="20dp"
     card_view:cardElevation="6dp"
     card_view:contentPadding="4dp">
 
     <LinearLayout
         android:layout_width="374dp"
-        android:layout_height="503dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
+        android:background="#00B6FFA9"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="114dp"
-            android:background="@color/white"
+            android:background="#00B6FFA9"
             android:padding="16dp">
 
             <TextView
@@ -36,6 +37,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_weight="1"
+                android:background="#00B6FFA9"
                 android:gravity="center_vertical"
                 android:text="Titulo"
                 android:textColor="@android:color/black"
@@ -44,34 +46,58 @@
 
             <ImageButton
                 android:id="@+id/btniniciarjuego"
-                android:layout_width="106dp"
-                android:layout_height="64dp"
-                android:layout_gravity="bottom|center"
+                android:layout_width="119dp"
+                android:layout_height="63dp"
+
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
                 android:background="@drawable/stilo_desplegable_boton_jugar"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/jugar_blanco"
+                android:scaleType="centerInside"
+                android:src="@drawable/flechacorrecta"
                 android:text="@string/jugar"
                 app:ignore="SpeakableTextPresentCheck" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="372dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtdescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="25dp"
+                android:paddingLeft="10dp"
+                android:paddingEnd="25dp"
+                android:paddingBottom="10dp"
+                android:text="Descripcion"
+                android:textAlignment="textStart"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="369dp"
+            android:layout_height="452dp"
             android:layout_gravity="center_vertical"
+            android:background="#00B6FFA9"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="339dp"
-                android:layout_height="321dp"
-                android:layout_gravity="center_horizontal|top"
-                android:layout_marginTop="5dp"
+                android:layout_width="313dp"
+                android:layout_height="306dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="35dp"
+                card_view:cardBackgroundColor="#00B6FFA9"
                 card_view:cardCornerRadius="40dp">
 
                 <ImageView
                     android:id="@+id/img"
-                    android:layout_width="388dp"
-                    android:layout_height="338dp"
-                    android:layout_gravity="center_horizontal|center_vertical" />
+                    android:layout_width="358dp"
+                    android:layout_height="339dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="#00B6FFA9" />
             </androidx.cardview.widget.CardView>
 
 

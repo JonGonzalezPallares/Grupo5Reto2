@@ -80,7 +80,7 @@
     <string name="congratulations2">You have solved the challenge</string>
     <string name="GoToMap">Go to Map</string>
     <!-- Pantalla felicitacion-->
-    <string name="gamePuenteRomano">Romanic bridge of Pobeña</string>
+    <string name="gamePuenteRomano">Roman bridge of Pobeña</string>
 
     <string name="Continue">Continue</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -111,4 +111,22 @@
     <string name="primero">First</string>
     <string name="anterior">Previous</string>
     <string name="ultimo">Last</string>
+    <string name="mar_revuelto">Rough</string>
+    <string name="mar_tranquilo">Calm</string>
+    <string name="upv1">Uxue Cerrada</string>
+    <string name="upv2">Irati Bargos</string>
+    <string name="upv3">Oihane Baz</string>
+    <string name="upv4">Aitor del Pozo</string>
+    <string name="tx1">Jon Gonzalez</string>
+    <string name="tx2">Eder Torres</string>
+    <string name="tx3">Daniel Diez</string>
+    <string name="tx4">Youssef Ait</string>
+    <!-- Descripciones -->
+    <string name="DescripcionCastillo">Ultimo</string>
+    <string name="DescripcionLaarena">Ultimo</string>
+    <string name="DescripcionPuente">Ultimo</string>
+    <string name="DescripcionBurdinola">Ultimo</string>
+    <string name="Descripcionermita">Ultimo</string>
+    <string name="Descripcionitzalsur">Ultimo</string>
+    <string name="DescripcionSanjuan">Ultimo</string>
 </resources>

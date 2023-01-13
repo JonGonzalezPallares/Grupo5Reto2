@@ -8,6 +8,7 @@ import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.prefs
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
 import com.example.retomuzkiz.room.Progress
+import com.example.retomuzkiz.gastelua.ActivityGaztelua
 import com.example.retomuzkiz.room.Usuario
 import kotlin.random.Random
 import kotlin.random.nextInt
@@ -28,7 +29,6 @@ class MenuPrincipal : AppCompatActivity() {
 
         binding.txtProfesor.setOnClickListener(){
             startActivity(Intent(this,ActivityCrearClaseSocket::class.java))
-
         }
         binding.button.setOnClickListener {
             var user = comprobarUsuario()
