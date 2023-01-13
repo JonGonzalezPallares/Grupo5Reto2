@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_degradado"
+    tools:context=".burdinola.BurdinolaSopaActivity">
+
+    <ImageView
+        android:id="@+id/imgabajoder"
+        android:layout_width="200dp"
+        android:layout_height="185dp"
+        android:layout_marginStart="7dp"
+        android:tag="23"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/puzle"
+        app:layout_constraintVertical_bias="0.017"
+        app:srcCompat="@drawable/castillobd" />
+
+    <ImageView
+        android:id="@+id/imgabajomed"
+        android:layout_width="200dp"
+        android:layout_height="185dp"
+        android:layout_marginStart="7dp"
+        android:tag="13"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/puzle"
+        app:layout_constraintVertical_bias="0.016"
+        app:srcCompat="@drawable/castillobm" />
+
+    <ImageView
+        android:id="@+id/imgcentroder"
+        android:layout_width="200dp"
+        android:layout_height="185dp"
+        android:layout_marginStart="7dp"
+        android:tag="22"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgabajomed"
+        app:layout_constraintVertical_bias="0.054"
+        app:srcCompat="@drawable/castillocd" />
+
+    <ImageView
+        android:id="@+id/imgarribamed"
+        android:layout_width="200dp"
+        android:layout_height="185dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitStart"
+        android:tag="11"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgcentroder"
+        app:layout_constraintVertical_bias="0.238"
+        app:srcCompat="@drawable/castilloac" />
+
+    <ImageView
+        android:id="@+id/imgabajoizq"
+        android:layout_width="200dp"
+        android:layout_height="185dp"
+        android:layout_marginStart="7dp"
+        android:tag="03"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/puzle"
+        app:layout_constraintVertical_bias="0.017"
+        app:srcCompat="@drawable/castillobi" />
+
+    <ImageView
+        android:id="@+id/imgcentroizq"
+        android:layout_width="200dp"
+        android:layout_height="185dp"
+        android:layout_marginStart="7dp"
+        android:tag="02"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgabajoizq"
+        app:layout_constraintVertical_bias="0.054"
+        app:srcCompat="@drawable/castillomi" />
+
+    <ImageView
+        android:id="@+id/imgcentromed"
+        android:layout_width="200dp"
+        android:layout_height="185dp"
+        android:tag="12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgarribader"
+        app:layout_constraintVertical_bias="0.238"
+        app:srcCompat="@drawable/castillomc" />
+
+    <ImageView
+        android:id="@+id/imgarribader"
+        android:layout_width="200dp"
+        android:layout_height="185dp"
+        android:tag="21"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgabajoder"
+        app:layout_constraintVertical_bias="0.054"
+        app:srcCompat="@drawable/castilload" />
+
+    <ImageView
+        android:id="@+id/imgarribaizq"
+        android:layout_width="200dp"
+        android:layout_height="185dp"
+        android:layout_marginStart="7dp"
+        android:tag="aa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgcentroizq"
+        app:layout_constraintVertical_bias="0.238"
+        app:srcCompat="@drawable/catilloai" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/puzle"
+        android:layout_width="666dp"
+        android:layout_height="600dp"
+        android:foreground="@drawable/stylepuzle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023">
+
+        <ImageView
+            android:id="@+id/imagenabajomed"
+            android:layout_width="222dp"
+            android:layout_height="200dp"
+            android:tag="13"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@+id/imagenabajoizq"
+            app:layout_constraintTop_toBottomOf="@+id/imagenmediomed"
+            app:srcCompat="@drawable/castillobm"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/imagenmedioder"
+            android:layout_width="222dp"
+            android:layout_height="200dp"
+            android:tag="22"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@+id/imagenmediomed"
+            app:layout_constraintTop_toBottomOf="@+id/imagenarribader"
+            app:srcCompat="@drawable/castillocd"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/imagenarribamed"
+            android:layout_width="222dp"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:tag="11"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@+id/imagenarribaizq"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/castilloac"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/imagenabajoizq"
+            android:layout_width="222dp"
+            android:layout_height="200dp"
+            android:tag="03"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagenmedioizq"
+            app:srcCompat="@drawable/castillobi"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/imagenabajoder"
+            android:layout_width="222dp"
+            android:layout_height="200dp"
+            android:tag="23"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@+id/imagenabajomed"
+            app:layout_constraintTop_toBottomOf="@+id/imagenmedioder"
+            app:srcCompat="@drawable/castillobd"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/imagenarribaizq"
+            android:layout_width="222dp"
+            android:layout_height="200dp"
+            android:tag="aa"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/catilloai"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/imagenmedioizq"
+            android:layout_width="222dp"
+            android:layout_height="200dp"
+            android:tag="02"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagenarribaizq"
+            app:srcCompat="@drawable/castillomi"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/imagenmediomed"
+            android:layout_width="222dp"
+            android:layout_height="200dp"
+            android:tag="12"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@+id/imagenmedioizq"
+            app:layout_constraintTop_toBottomOf="@+id/imagenarribamed"
+            app:srcCompat="@drawable/castillomc"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/imagenarribader"
+            android:layout_width="222dp"
+            android:layout_height="200dp"
+            android:tag="21"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@+id/imagenarribamed"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/castilload"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

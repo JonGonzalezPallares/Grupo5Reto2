@@ -9,47 +9,54 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnIrMapa"
-        android:layout_width="116dp"
-        android:layout_height="51dp"
-        android:layout_marginBottom="30dp"
+        android:layout_width="131dp"
+        android:layout_height="53dp"
         android:background="@drawable/estilo_botones"
         android:text="@string/GoToMap"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.84"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.895" />
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_width="287dp"
+        android:layout_height="38dp"
         android:text="@string/congratulations1"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnIrMapa"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.963"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.632" />
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_width="288dp"
+        android:layout_height="174dp"
         android:text="@string/congratulations2"
         android:textAlignment="center"
         android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.943"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.232" />
 
     <ImageView
         android:id="@+id/imgVictoria"
-        android:layout_width="0dp"
-        android:layout_height="283dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="395dp"
+        android:layout_height="266dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.014"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496"
         app:srcCompat="@drawable/bandera_muskiz" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -142,7 +142,7 @@ class RvDesplegableAdapter(var listaActividades: Game, var user : Usuario,  val 
                 }
 
                 7->{
-                    val intento = Intent(context, ActivityGaztelua::class.java).putExtra("user", user)
+                    val intento = Intent(context, ExplicacionActivity::class.java).putExtra("user", user)
                     startActivity(context, intento, null)
                 }
             }
