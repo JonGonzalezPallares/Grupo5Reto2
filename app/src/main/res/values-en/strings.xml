@@ -121,4 +121,12 @@
     <string name="tx2">Eder Torres</string>
     <string name="tx3">Daniel Diez</string>
     <string name="tx4">Youssef Ait</string>
+    <!-- Descripciones -->
+    <string name="DescripcionCastillo">Ultimo</string>
+    <string name="DescripcionLaarena">Ultimo</string>
+    <string name="DescripcionPuente">Ultimo</string>
+    <string name="DescripcionBurdinola">Ultimo</string>
+    <string name="Descripcionermita">Ultimo</string>
+    <string name="Descripcionitzalsur">Ultimo</string>
+    <string name="DescripcionSanjuan">Ultimo</string>
 </resources>

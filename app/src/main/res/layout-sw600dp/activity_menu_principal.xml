@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuPrincipal"
-    android:focusedByDefault="false">
+    tools:context=".MenuPrincipal">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,64 +22,51 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="463dp"
                 android:background="#0F4BAE">
 
                 <EditText
                     android:id="@+id/txtUsuario"
-                    android:layout_width="0dp"
-                    android:layout_height="47dp"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_width="414dp"
+                    android:layout_height="136dp"
+                    android:layout_marginTop="36dp"
                     android:ems="10"
                     android:hint="@string/hintUser"
                     android:inputType="textPersonName"
                     android:textColor="#FFFFFF"
                     android:textColorHighlight="#741EFF"
                     android:textColorHint="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:focusedByDefault="false"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button"
-                    android:layout_width="100dp"
-                    android:layout_height="51dp"
-                    android:layout_marginStart="152dp"
+                    android:layout_width="228dp"
+                    android:layout_height="82dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="40dp"
                     android:background="@drawable/estilo_botones"
                     android:text="@string/start"
                     android:textColor="#FFFFFF"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtClase"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintVertical_bias="0.21" />
 
                 <EditText
                     android:id="@+id/txtClase"
-                    android:layout_width="wrap_content"
-                    android:layout_height="46dp"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_width="414dp"
+                    android:layout_height="136dp"
+                    android:layout_marginTop="4dp"
                     android:ems="10"
                     android:hint="@string/hintClase"
                     android:inputType="textPersonName"
                     android:textColorHint="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtUsuario"
-                    android:focusedByDefault="false"/>
-
-                <TextView
-                    android:id="@+id/txtProfesor"
-                    android:layout_width="match_parent"
-                    android:layout_height="31dp"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center"
-                    android:text="@string/eresProfesor"
-                    android:textColor="#000000"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtUsuario" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -92,19 +78,20 @@
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_width="506dp"
+                    android:layout_height="39dp"
+                    android:layout_marginTop="24dp"
                     android:text="@string/othersUsers"
+                    android:textAlignment="center"
                     android:textColor="#FAF9F9"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvJugadores"
-                    android:layout_width="322dp"
-                    android:layout_height="448dp"
+                    android:layout_width="912dp"
+                    android:layout_height="498dp"
                     android:layout_marginStart="45dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginEnd="45dp"
@@ -114,6 +101,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView2"
+                    app:layout_constraintVertical_bias="1.0"
                     tools:itemCount="5" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
