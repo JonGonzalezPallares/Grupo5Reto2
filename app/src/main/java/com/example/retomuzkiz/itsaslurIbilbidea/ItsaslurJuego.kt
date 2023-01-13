@@ -103,7 +103,7 @@ class ItsaslurJuego : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         if(usuario.isProfessor){
-            RetoGrupoCinco.mSocket.emit("user leave", usuario.userClass)
+           // RetoGrupoCinco.mSocket.emit("user leave", usuario.userClass)
             RetoGrupoCinco.mSocket.emit("game finished", usuario.userClass)
         }else{
             RetoGrupoCinco.mSocket.emit("user leave", usuario.userClass)
