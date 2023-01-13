@@ -4,59 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/irudiapobena1"
     tools:context=".ponekakoermita.MarineroActivity">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginTop="10dp"
-        android:background="#E9FFFFFF"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.example.retomuzkiz.Fragment_mobile_rotation"
+        android:layout_width="411dp"
+        android:layout_height="728dp"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_mobile_rotation" />
 
-        <TextView
-            android:id="@+id/txt1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Talaiak eta keinulari-postuak oso azpiegitura sinpleak ziren, eta Pobeñakoa hain zuzen, XVI. eta XVIII. mendeen artean sortua izan zen. Muskizko arrantzaleen beharrak asetzeaz gain, talaia hori funtsezkoa izan zen Somorrostroko meategietako burdin mineralarekin lotutako merkataritza-trafikoa eta Barbadun ibaiko burdinoletako burdina kudeatzeko, arraunean ibilitako ontzi txikien laguntzarekin."
-            android:textAlignment="center"
-            android:textSize="22sp"
-            android:visibility="visible" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="151dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btnsiguiente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/irudiapobena1" />
 
-        <TextView
-            android:id="@+id/txt2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nuestra Señora del Socorro baseliza, 1768. urtean eraikia izan zen, eta Barbadun ibaiaren bokalearen ondoan dago. Izenak adierazten duen bezala, Nuestra Señora del Socorro deitzen dute laguntza eskatzeko arriskua zegoenean erabiltzen baitzuten, eta horrek Pobeñako marinelen kutunetako bat bihurtu zuen, arrantzara ateratzen zirenean beti itsasoan egoten baitziren. Hori dela eta, arrantzan hasi baino lehen, txalupak bertan gelditu, babesa eskatzera igo eta itsasoaren egoera begiratzen zuten, ontziratzea komeni zen ala ez erabakitzeko."
-            android:textAlignment="center"
-            android:textSize="22sp"
-            android:visibility="gone" />
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:text="Button"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="396dp"
+        android:layout_height="265dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.109"
+        app:srcCompat="@drawable/bocadillo" />
 
     <Button
         android:id="@+id/btnsiguiente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
         android:text="@string/siguiente"
-        android:visibility="invisible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.818" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

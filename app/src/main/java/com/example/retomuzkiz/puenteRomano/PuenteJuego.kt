@@ -38,7 +38,6 @@ class PuenteJuego : AppCompatActivity() {
         this.supportActionBar!!.hide()
 
         //Metemos las respuestas en el array
-        //Tiene que ser una mutable list por que los textos estan obtenidos del resources
         respuestas = mutableListOf(
             resources.getString(R.string.puente_preg_1_res_2),
             resources.getString(R.string.puente_preg_2_res_1),
@@ -49,117 +48,154 @@ class PuenteJuego : AppCompatActivity() {
         //Metemos los trozos de la imagen en un array
         imagenes = mutableListOf(binding.imgTrozo1, binding.imgTrozo2, binding.imgTrozo3, binding.imgTrozo4)
 
-        //Listas para guardar los botones
-        val grupos = listOf(
-            binding.rdbRes1, binding.rdbRes2, binding.rdbRes3, binding.rdbRes4
-        )
+        //Si es el primer set de preguntas
+        binding.rdbRes1.setOnCheckedChangeListener { _, id ->
+            when(id){
+                R.id.rb_res1_1 -> {
+                    val texto = findViewById<RadioButton>(R.id.rb_res1_1).text.toString()
+                    seleccion = texto
 
-        //Lista de listas para guardar los id de los botones que seleccionemos
-        val seleId = listOf(
-            listOf(
-                R.id.rb_res1_1,
-                R.id.rb_res1_2,
-                R.id.rb_res1_3
-            ),
-            listOf(
-                R.id.rb_res2_1,
-                R.id.rb_res2_2,
-                R.id.rb_res2_3
-            ),
-            listOf(
-                R.id.rb_res3_1,
-                R.id.rb_res3_2,
-                R.id.rb_res3_3
-            ),
-            listOf(
-                R.id.rb_res4_1,
-                R.id.rb_res4_2,
-                R.id.rb_res4_3
-            )
-        )
-
-        //Lista de listas para guardar los textos de las selecciones
-        val seleTxt = listOf(
-            listOf(
-                binding.rbRes11.id,
-                binding.rbRes12.id,
-                binding.rbRes13.id
-            ),
-            listOf(
-                binding.rbRes21.id,
-                binding.rbRes22.id,
-                binding.rbRes23.id
-            ),
-            listOf(
-                binding.rbRes31.id,
-                binding.rbRes32.id,
-                binding.rbRes33.id
-            ),
-            listOf(
-                binding.rbRes41.id,
-                binding.rbRes42.id,
-                binding.rbRes43.id
-            )
-        )
-
-        var paso = 0
-
-        //Recorremos el grupo de todos los radiogroups
-        for(grupo in grupos) {
-            //Guardamos en una variable la lista de id separado por cada grupo de preguntas
-            val listaId = seleId[paso]
-
-            val primero = findViewById<RadioButton>(seleTxt[paso][0].toString().toInt())
-            val segundo = findViewById<RadioButton>(seleTxt[paso][1].toString().toInt())
-            val tercero = findViewById<RadioButton>(seleTxt[paso][2].toString().toInt())
-
-            //Añadimos el listener a cada grupo
-            grupo.setOnCheckedChangeListener { _, id ->
-                when(id){
-                    //Si el seleccionado es la primera opcion
-                    listaId[0] -> {
-                        //Recogemos el texto y se lo pasamos a la variable de seleccion
-                        val texto = findViewById<RadioButton>(listaId[0]).text.toString()
-                        seleccion = texto
-
-                        //Ponemos en negrita la seleccionada y ponemos en normal las otras
-                        primero.typeface = Typeface.DEFAULT_BOLD
-                        segundo.typeface = Typeface.DEFAULT
-                        tercero.typeface = Typeface.DEFAULT
-                    }
-
-                    //Si el seleccionado es la segunda opcion
-                    listaId[1] -> {
-                        //Recogemos el texto y se lo pasamos a la variable de seleccion
-                        val texto = findViewById<RadioButton>(listaId[1]).text.toString()
-                        seleccion = texto
-
-                        //Ponemos en negrita la seleccionada y ponemos en normal las otras
-                        primero.typeface = Typeface.DEFAULT
-                        segundo.typeface = Typeface.DEFAULT_BOLD
-                        tercero.typeface = Typeface.DEFAULT
-                    }
-
-                    //Si el seleccionado es la tercera opcion
-                    listaId[2] -> {
-                        //Recogemos el texto y se lo pasamos a la variable de seleccion
-                        val texto = findViewById<RadioButton>(listaId[2]).text.toString()
-                        seleccion = texto
-
-                        //Ponemos en negrita la seleccionada y ponemos en normal las otras
-                        primero.typeface = Typeface.DEFAULT
-                        segundo.typeface = Typeface.DEFAULT
-                        tercero.typeface = Typeface.DEFAULT_BOLD
-                    }
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes11.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes12.typeface = Typeface.DEFAULT
+                    binding.rbRes13.typeface = Typeface.DEFAULT
                 }
-                binding.btnComprobar.isEnabled = true
+
+                R.id.rb_res1_2 -> {
+                    val texto = findViewById<RadioButton>(R.id.rb_res1_2).text.toString()
+                    seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes11.typeface = Typeface.DEFAULT
+                    binding.rbRes12.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes13.typeface = Typeface.DEFAULT
+                }
+
+                R.id.rb_res1_3 -> {
+                    val texto = findViewById<RadioButton>(R.id.rb_res1_3).text.toString()
+                    seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes11.typeface = Typeface.DEFAULT
+                    binding.rbRes12.typeface = Typeface.DEFAULT
+                    binding.rbRes13.typeface = Typeface.DEFAULT_BOLD
+                }
             }
-            paso += 1
+            binding.btnComprobar.isEnabled = true
+        }
+
+        //Si es el segundo set de preguntas
+        binding.rdbRes2.setOnCheckedChangeListener { _, id ->
+            when(id){
+                R.id.rb_res2_1 -> {
+                    val texto = findViewById<RadioButton>(R.id.rb_res2_1).text.toString()
+                    seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes21.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes22.typeface = Typeface.DEFAULT
+                    binding.rbRes23.typeface = Typeface.DEFAULT
+                }
+
+                R.id.rb_res2_2 -> {
+                    val texto = findViewById<RadioButton>(R.id.rb_res2_2).text.toString()
+                    seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes21.typeface = Typeface.DEFAULT
+                    binding.rbRes22.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes23.typeface = Typeface.DEFAULT
+                }
+
+                R.id.rb_res2_3 -> {
+                    val texto = findViewById<RadioButton>(R.id.rb_res2_3).text.toString()
+                    seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes21.typeface = Typeface.DEFAULT
+                    binding.rbRes22.typeface = Typeface.DEFAULT
+                    binding.rbRes23.typeface = Typeface.DEFAULT_BOLD
+                }
+            }
+            binding.btnComprobar.isEnabled = true
+        }
+
+        //Si es el tercer set de preguntas
+        binding.rdbRes3.setOnCheckedChangeListener { _, id ->
+            when(id){
+                R.id.rb_res3_1 -> {
+                    val texto = findViewById<RadioButton>(R.id.rb_res3_1).text.toString()
+                    seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes31.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes32.typeface = Typeface.DEFAULT
+                    binding.rbRes33.typeface = Typeface.DEFAULT
+                }
+
+                R.id.rb_res3_2 -> {
+                    val texto = findViewById<RadioButton>(R.id.rb_res3_2).text.toString()
+                    seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes31.typeface = Typeface.DEFAULT
+                    binding.rbRes32.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes33.typeface = Typeface.DEFAULT
+                }
+
+                R.id.rb_res3_3 -> {
+                    val texto = findViewById<RadioButton>(R.id.rb_res3_3).text.toString()
+                    seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes31.typeface = Typeface.DEFAULT
+                    binding.rbRes32.typeface = Typeface.DEFAULT
+                    binding.rbRes33.typeface = Typeface.DEFAULT_BOLD
+                }
+            }
+            binding.btnComprobar.isEnabled = true
+        }
+
+        //Si es el cuarto set de preguntas
+        binding.rdbRes4.setOnCheckedChangeListener { _, id ->
+            when(id){
+                R.id.rb_res4_1 -> {
+                    val texto = findViewById<RadioButton>(R.id.rb_res4_1).text.toString()
+                    seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes41.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes42.typeface = Typeface.DEFAULT
+                    binding.rbRes43.typeface = Typeface.DEFAULT
+                }
+
+                R.id.rb_res4_2 -> {
+                    val texto = findViewById<RadioButton>(R.id.rb_res4_2).text.toString()
+                    seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes41.typeface = Typeface.DEFAULT
+                    binding.rbRes42.typeface = Typeface.DEFAULT_BOLD
+                    binding.rbRes43.typeface = Typeface.DEFAULT
+                }
+
+                R.id.rb_res4_3 -> {
+                    val texto = findViewById<RadioButton>(R.id.rb_res4_3).text.toString()
+                    seleccion = texto
+
+                    //Ponemos en negrita la seleccionada y ponemos en normal las otras
+                    binding.rbRes41.typeface = Typeface.DEFAULT
+                    binding.rbRes42.typeface = Typeface.DEFAULT
+                    binding.rbRes43.typeface = Typeface.DEFAULT_BOLD
+                }
+            }
+            binding.btnComprobar.isEnabled = true
         }
 
         //Comprueba si el dato seleccionado concuerda con la respuesta correcta
         binding.btnComprobar.setOnClickListener {
             val respuestaBien = respuestas[cantidad-1]
+            println("$respuestaBien $seleccion")
             if(respuestaBien == seleccion){
                 val imagen = imagenes[cantidad-1]
                 imagen.visibility = View.VISIBLE

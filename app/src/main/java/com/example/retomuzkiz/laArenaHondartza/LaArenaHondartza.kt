@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.example.retomuzkiz.funcionesExtension.desordeno
+import android.view.View
 import android.widget.*
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.clases.MsgVictoria
@@ -78,20 +78,28 @@ class LaArenaHondartza : Activity() {
             R.drawable.res3,
             R.drawable.res4,
         )
-        fondo = R.drawable.bandera_muskiz
+        fondo = R.drawable.carta_fondo
     }
 
     //______________________________________________________________________________________________
+    // Esconde la vista del juego y muestra la vista finalizado el juego
+    /*private fun showFinalLayout(){
+        Handler(Looper.myLooper()?:return).postDelayed({
+            binding.layoutButton.visibility = View.GONE
+            binding.layoutImage.visibility = View.VISIBLE
+        }, 1000)
+    }*/
+
+    //______________________________________________________________________________________________
     /* devolver array desordenado  requiere de parametro la longitud del array */
-    /*private fun desordenarArray(longitud: Int): ArrayList<Int> {
+    private fun desordenarArray(longitud: Int): ArrayList<Int> {
         val result = ArrayList<Int>()
         for (i in 0 until longitud) {
-            println(i % longitud)
             result.add(i % longitud)
         }
         result.shuffle()
         return result
-    }*/
+    }
 
     //______________________________________________________________________________________________
     /*
@@ -137,8 +145,10 @@ class LaArenaHondartza : Activity() {
             {
                 primero = null
                 bloqueo = false
-                //Toast.makeText(this, "Matched!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Matched!", Toast.LENGTH_SHORT).show()
                 aciertos++
+
+
                 if (aciertos == respuestas.size)
                 {
                     completarJuego()
@@ -197,8 +207,8 @@ class LaArenaHondartza : Activity() {
         cargarTablero()
         cargarImagenes()
 
-        arrayDesordenadoRespuestas = respuestas.desordeno()
-        arrayDesordenadoPreguntas = preguntas.desordeno()
+        arrayDesordenadoRespuestas = desordenarArray(respuestas.size)
+        arrayDesordenadoPreguntas = desordenarArray(preguntas.size)
 
         // setea imagen a cada button en la posicion donde se encuentra
         for (i in 0..4)

@@ -10,12 +10,11 @@ import android.view.View
 import java.util.*
 import kotlin.math.abs
 
-class LaberynthGame(applicationContext: Context, attrs: AttributeSet?) :
-    View(applicationContext, attrs) {
+class LaberynthGame: View {
     companion object{
         const val WALL_THICKNESS = 4f
     }
-    private var contexto : Context = applicationContext
+    private var contexto : Context
     private var ROWS:Int= 5
     private var COLS:Int= 5
     private lateinit var cells:Array<Array<Cell>>
@@ -25,18 +24,19 @@ class LaberynthGame(applicationContext: Context, attrs: AttributeSet?) :
 
     private var contador = 1
     //
-    private var playerPaint = Paint()
-    private var exitPaint: Paint
-    private enum class Direction {Up, Down, Left, Right}
+    private lateinit var playerPaint: Paint
+    private lateinit var exitPaint: Paint
+    private final enum class Direction {up, down, left, right}
 
-    private var random:Random
-    private var wallPaint: Paint
+    private lateinit var random:Random
+    private lateinit var wallPaint: Paint
 
     //
     private lateinit var player: Cell
     private lateinit var exit: Cell
 
-    init {
+    constructor(applicationContext: Context,attrs: AttributeSet?) :super(applicationContext,attrs){
+        playerPaint = Paint()
         playerPaint.color = Color.RED
         exitPaint = Paint()
         exitPaint.color = Color.BLUE
@@ -44,6 +44,7 @@ class LaberynthGame(applicationContext: Context, attrs: AttributeSet?) :
         wallPaint.color = Color.BLACK
         wallPaint.strokeWidth = WALL_THICKNESS
         random = Random()
+        contexto = applicationContext
         createMaze()
     }
 
@@ -125,22 +126,22 @@ class LaberynthGame(applicationContext: Context, attrs: AttributeSet?) :
 
     private fun movePlayer(direccion: Direction){
         when(direccion){
-            Direction.Up ->
+            Direction.up ->
                 if (!player.topWall) {
                     player = cells[player.cols1][player.rows1 - 1]
                 }
 
-            Direction.Down ->
+            Direction.down ->
                 if (!player.bottomWall) {
                     player = cells[player.cols1][player.rows1 + 1]
                 }
 
-            Direction.Right->
+            Direction.right->
                 if (!player.rightWall) {
                     player = cells[player.cols1 + 1][player.rows1]
                 }
 
-            Direction.Left->
+            Direction.left->
                 if (!player.leftWall) {
                     player = cells[player.cols1 - 1][player.rows1]
                 }
@@ -194,18 +195,18 @@ class LaberynthGame(applicationContext: Context, attrs: AttributeSet?) :
                     //Move in x
                     if (dx> 0){
                         //Move to rigth
-                        movePlayer(Direction.Right)
+                        movePlayer(Direction.right)
                     }else{
-                        movePlayer(Direction.Left)
+                        movePlayer(Direction.left)
                     }
                 }else{
                     //MOve in Y
                     if (dy>0){
                         //move Down
-                        movePlayer(Direction.Down)
+                        movePlayer(Direction.down)
                     }else{
                         //move Up
-                        movePlayer(Direction.Up)
+                        movePlayer(Direction.up)
                     }
                 }
             }
@@ -316,12 +317,17 @@ class LaberynthGame(applicationContext: Context, attrs: AttributeSet?) :
 }
 
 
-private class Cell(cols: Int, rows: Int) {
+private class Cell{
     var topWall=true
     var leftWall = true
     var bottomWall = true
     var rightWall = true
     var visited = false
-    var cols1 = cols
-    var rows1 = rows
+    var visible = true
+    var cols1 = 0
+    var rows1 = 0
+    constructor( cols:Int, rows:Int){
+        cols1 = cols
+        rows1=rows
+    }
 }

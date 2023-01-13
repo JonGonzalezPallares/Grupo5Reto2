@@ -56,7 +56,7 @@ class PuenteRomano_preg2 : Fragment() {
             //Ponemos el texto vacio para que no se superponga
             texto.text=""
 
-            //Recorremos el array recogiendo todas las letras y mostrandolas cada 0.08 segundos
+            //Recorremos el array recoguiendo todas las letras y mostrandolas cada 0.08 segundos
             for(elemento in cadena){
                 texto.append(""+elemento)
                 delay(80)

@@ -98,7 +98,7 @@
     <string name="puente_preg_3_res_3">Para que las personas de Sopuerta y Galdames puedan ir a Muskiz</string>
     <string name="puente_preg_4_res_1">Madera</string>
     <string name="puente_preg_4_res_2">Piedra</string>
-    <string name="puente_preg_4_res_3">Hierro</string>
+    <string name="puente_preg_4_res_3">Hierrp</string>
     <string name="reiniciar_juego">Reiniciar</string>
     <string name="jugar">Jugar</string>
     <string name="volver">Volver</string>
@@ -107,16 +107,5 @@
     <string name="primero">Primero</string>
     <string name="anterior">Anterior</string>
     <string name="ultimo">Ultimo</string>
-    <string name="mar_tranquilo">Tranquilo</string>
-    <string name="mar_revuelto">Revuelto</string>
-    <string name="upv1">Uxue Cerrada</string>
-    <string name="upv2">Irati Bargos</string>
-    <string name="upv3">Oihane Baz</string>
-    <string name="upv4">Aitor del Pozo</string>
-    <string name="tx1">Jon Gonzalez</string>
-    <string name="tx2">Eder Torres</string>
-    <string name="tx3">Daniel Diez</string>
-    <string name="tx4">Youssef Ait</string>
-    <!-- Equipos -->
 
 </resources>

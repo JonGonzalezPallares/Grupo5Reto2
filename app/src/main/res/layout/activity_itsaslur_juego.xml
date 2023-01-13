@@ -47,7 +47,8 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
-            android:background="@drawable/itsaslur1_2" />
+            android:background="@drawable/itsaslur1_2"
+            android:tag="true" />
 
         <ImageButton
             android:id="@+id/imgbtn1_3"

@@ -17,6 +17,7 @@ import android.os.Looper
 import android.transition.Slide
 import android.transition.TransitionManager
 import android.view.Gravity
+import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
@@ -30,7 +31,6 @@ import androidx.navigation.Navigator
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
-import com.example.retomuzkiz.profesor.ProfesorMode
 import com.example.retomuzkiz.databinding.NavHeaderBinding
 import com.example.retomuzkiz.room.Game
 import com.example.retomuzkiz.room.Usuario
@@ -49,24 +49,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.navigation.NavigationView
 
 class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener {
-    object SITESNAMES {
-        lateinit var POBENA_FUNDICION:String
-        var POBENA_FUNDICION_IMG_1 = "fundicion_pobela"
-        lateinit var POBENA_HERMITA :String
-        var POBENA_HERMITA_IMG = "irudiapobena1"
-        lateinit var ITSASLUR_IBILBIDEA : String
-        var ITSASLUR_IBILBIDEA_IMG_1 = "itsaslur1_2"
-        //var ITSASLUR_IBILBIDEA_IMG_2 = "itsaslur2_1"
-        //var ITSASLUR_IBILBIDEA_IMG_3 = "itsaslur2_2"
-        lateinit var PLAYA_LA_ARENA :String
-        var PLAYA_LA_ARENA_IMG = "irudia_arena_2"
-        lateinit var PUENTE_ROMANO :String
-        var PUENTE_ROMANO_IMG = "puentecompleto"
-        lateinit var CASTILLO_MUNATONES :String
-        var CASTILLO_MUNATONES_IMG = "irudia_pobena_1"
-        lateinit var NOCHE_SAN_JUAN :String
-        var NOCHE_SAN_JUAN_IMG = "irudia_san_juan"
-    }
+
 
     private val keyPathsBehavior by lazy {
         BottomSheetBehavior.from(binding.bottomSheetKeyPaths.root).apply {
@@ -143,19 +126,15 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         navView.setNavigationItemSelectedListener { menu ->
 
             when(menu.itemId) {
-                //Para activar el modo libre
-                R.id.m_Modolibre -> {
-                    val guide = findViewById<View>(R.id.m_Modoguiado)
-                    val free = findViewById<View>(R.id.m_Modolibre)
-                    //cargar el modo libre
-                    freeMode()
-                    guide.isEnabled = true
-                    free.isEnabled = false
-                    warning("", "Ahoras estas en el modo libre")
+                R.id.m_ranking -> {
+                    //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
                     true
                 }
 
-                //Para activar al modo guiado
+                R.id.m_logout -> {
+                    true
+                }
+
                 R.id.m_Modoguiado -> {
                     //Carcar el modo guiado
                     val guide = findViewById<View>(R.id.m_Modoguiado)
@@ -167,32 +146,16 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                     true
                 }
 
-                //Para entrar como profesor
-                R.id.m_Profesor -> {
-                    val intento = Intent(this, ProfesorMode::class.java)
-                    startActivity(intento)
+                R.id.m_Modolibre -> {
+                    val guide = findViewById<View>(R.id.m_Modoguiado)
+                    val free = findViewById<View>(R.id.m_Modolibre)
+                    //cargar el modo libre
+                    freeMode()
+                    guide.isEnabled = true
+                    free.isEnabled = false
+                    warning("", "Ahoras estas en el modo libre")
                     true
                 }
-
-                //Para ir al ranking
-                R.id.m_ranking -> {
-                    //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
-                    true
-                }
-
-                //Para ir a sobre nosotros
-                R.id.m_About -> {
-                    val intento = Intent(this, Nosotros::class.java)
-                    startActivity(intento)
-                    true
-                }
-
-                //Para hacer logout
-                R.id.m_logout -> {
-                    true
-                }
-
-                //Cosa que sino explota
                 else -> {false}
             }
         }
@@ -401,7 +364,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             //esto pasa si estas legos de la ubicacion
             Toast.makeText(
                 this,
-                "Estas muy lejos del punto. Hacercate más para jugar.",
+                "titulo: " + " estas muy lejos del punto" + " posicion: " + marker.title,
                 Toast.LENGTH_LONG
             )
                 .show()
@@ -485,10 +448,13 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
     //______________________________________________________________________________________________
     //funciones del menu
-    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.m_ranking -> {
                 //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.m_logout -> {
             }
 
             R.id.m_Modoguiado -> {
@@ -502,12 +468,9 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 freeMode()
                 warning("", "Ahoras estas en el modo libre")
             }
-
-            R.id.m_logout -> {
-            }
         }
         return super.onOptionsItemSelected(item)
-    }*/
+    }
 
     //______________________________________________________________________________________________
     //funcion del aviso
