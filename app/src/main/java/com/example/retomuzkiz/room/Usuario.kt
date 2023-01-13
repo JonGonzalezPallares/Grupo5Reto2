@@ -1,17 +1,26 @@
 package com.example.retomuzkiz.room
+import android.os.Parcelable
+import androidx.room.*
+import kotlinx.parcelize.Parcelize
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+@Entity (tableName = "Usuario",
+    indices = [Index(
+        value = arrayOf("userId"),
+        unique = true
+        )])
 
-@Entity
+@Parcelize
 data class Usuario(
-    @PrimaryKey(autoGenerate = false)
-    var nombre: String,
+    @PrimaryKey
+    val userId: String,
 
-    @ColumnInfo(name = "puntos")
-    var puntos: Int,
+    @ColumnInfo(name = "name")
+    var name: String,
 
-    @ColumnInfo(name = "juegos_completados")
-    var juegosCompletados: Int
-)
+    @ColumnInfo(name = "userClass")
+    var userClass: String,
+
+    @ColumnInfo(name = "isProfessor")
+    var isProfessor: Boolean,
+
+    ):Parcelable

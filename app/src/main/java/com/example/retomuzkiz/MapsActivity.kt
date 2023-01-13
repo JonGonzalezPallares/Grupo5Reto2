@@ -2,10 +2,12 @@ package com.example.retomuzkiz
 
 import android.Manifest
 import android.content.BroadcastReceiver
+import android.content.ClipData.Item
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -16,21 +18,22 @@ import android.transition.Slide
 import android.transition.TransitionManager
 import android.view.Gravity
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
 import com.example.retomuzkiz.clases.Actividad
 import androidx.core.graphics.drawable.toDrawable
-import com.example.retomuzkiz.MapsActivity.SITESNAMES.CASTILLO_MUNATONES
-import com.example.retomuzkiz.MapsActivity.SITESNAMES.ITSASLUR_IBILBIDEA
-import com.example.retomuzkiz.MapsActivity.SITESNAMES.NOCHE_SAN_JUAN
-import com.example.retomuzkiz.MapsActivity.SITESNAMES.PLAYA_LA_ARENA
-import com.example.retomuzkiz.MapsActivity.SITESNAMES.POBENA_FUNDICION
-import com.example.retomuzkiz.MapsActivity.SITESNAMES.POBENA_HERMITA
-import com.example.retomuzkiz.MapsActivity.SITESNAMES.PUENTE_ROMANO
+import androidx.core.view.get
+import androidx.navigation.Navigator
+
 import com.example.retomuzkiz.clases.OptionsMenuActivity
+import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.example.retomuzkiz.profesor.ProfesorMode
+import com.example.retomuzkiz.databinding.NavHeaderBinding
+import com.example.retomuzkiz.room.Game
+import com.example.retomuzkiz.room.Usuario
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -84,39 +87,49 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     private var navegacion = false
     private var iniciarguiado = false
     private lateinit var Servicio: Intent
+    val db = RetoGrupoCinco.database!!
 
+    override fun onDestroy() {
+        super.onDestroy()
+        RetoGrupoCinco.mSocket.disconnect()
+        Servicio
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
+        val user: Usuario = intent.getParcelableExtra("user")!!
 
         this.supportActionBar!!.hide()
 
         /* Inicializacion variablees */
-        POBENA_FUNDICION = resources.getString(R.string.gameFundicion)
-        POBENA_HERMITA = resources.getString(R.string.gameHermitaDePobeña)
-        ITSASLUR_IBILBIDEA = resources.getString(R.string.gameItsaslurIbilbidea)
-        NOCHE_SAN_JUAN = resources.getString(R.string.gameSanJuan)
-        PUENTE_ROMANO = resources.getString(R.string.gamePuenteRomano)
-        CASTILLO_MUNATONES = resources.getString(R.string.gameCastilloMuñatones)
-        PLAYA_LA_ARENA = resources.getString(R.string.gameLaArenaHondartza)
+
         /*Inicio Servicio Geolacilazacion*/
         Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
         listabooleanos = arrayListOf()
         super.onCreate(savedInstanceState)
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //Cambiado Para Pruebas
         guideMode()
-        val navview : NavigationView = findViewById(R.id.lateralmenu)
+        //freeMode()
+        val navView : NavigationView = binding.lateralmenu
         //menu lateral
+        val header = navView.getHeaderView(0)
+        var totPuntuacion =  header.findViewById<TextView>(R.id.menuTxtPuntuacion)
+        var nombreUser =  header.findViewById<TextView>(R.id.menuTxtUser)
+        totPuntuacion.text = "Puntuacion: ${db.progressDao.getUserProgress(user!!.userId).totalPuntuation.toString()}"
+        nombreUser.text = user.name
+
         binding.Navegation.setOnClickListener{
+
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
             if(!navegacion){
                 navegacion = true
                 if(!iniciarguiado){
-                    val guide = findViewById<View>(R.id.m_Modoguiado)
-                    val free = findViewById<View>(R.id.m_Modolibre)
-                    guide.isEnabled = false
 
-                    free.isEnabled = true
+
+
+                    // free.isEnabled = false
                     iniciarguiado = true
+
                 }
             }
             else{
@@ -127,7 +140,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
         //______________________________________________________________________________________________
         //funciones del menu
-        navview.setNavigationItemSelectedListener { menu ->
+        navView.setNavigationItemSelectedListener { menu ->
+
             when(menu.itemId) {
                 //Para activar el modo libre
                 R.id.m_Modolibre -> {
@@ -221,28 +235,28 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         mMap.addMarker(
             MarkerOptions()
                 .position(puenteRomano)
-                .title(PUENTE_ROMANO)
+                .title(getString(R.string.gamePuenteRomano))
                 .snippet("0")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(pobalekoBurdinola)
-                .title(POBENA_FUNDICION)
+                .title(getString(R.string.gameFundicion))
                 .snippet("1")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(pobenakoErmita)
-                .title(POBENA_HERMITA)
+                .title(getString(R.string.gameHermitaDePobeña))
                 .snippet("2")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(hondartzaArena)
-                .title(PLAYA_LA_ARENA)
+                .title(getString(R.string.gameLaArenaHondartza))
                 .snippet("3")
         )
 
@@ -250,14 +264,14 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
             MarkerOptions()
                 .position(ibilbideItsaslur)
-                .title(ITSASLUR_IBILBIDEA)
+                .title(getString(R.string.gameItsaslurIbilbidea))
                 .snippet("4")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(muniatonesGaztelua)
-                .title(CASTILLO_MUNATONES)
+                .title(getString(R.string.gameCastilloMuñatones))
                 .snippet("5")
         )
 
@@ -265,7 +279,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
             MarkerOptions()
                 .position(sanJuan)
-                .title(NOCHE_SAN_JUAN)
+                .title(getString(R.string.gameSanJuan))
                 .snippet("6")
         )
 
@@ -353,14 +367,9 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     override fun onMarkerClick(marker: Marker): Boolean {
         val numero = marker.snippet.toString().toInt()
 
-        val actividades = listOf(
-            listOf(Actividad(POBENA_FUNDICION, SITESNAMES.POBENA_FUNDICION_IMG_1 )),
-            listOf(Actividad(POBENA_HERMITA, SITESNAMES.POBENA_HERMITA_IMG)),
-            listOf(Actividad(PUENTE_ROMANO, SITESNAMES.PUENTE_ROMANO_IMG)),
-            listOf(Actividad(PLAYA_LA_ARENA, SITESNAMES.PLAYA_LA_ARENA_IMG)),
-            listOf(Actividad(ITSASLUR_IBILBIDEA, SITESNAMES.ITSASLUR_IBILBIDEA_IMG_1)),
-            listOf(Actividad(CASTILLO_MUNATONES, SITESNAMES.CASTILLO_MUNATONES_IMG)),
-            listOf(Actividad(NOCHE_SAN_JUAN, SITESNAMES.NOCHE_SAN_JUAN_IMG)))
+        val user: Usuario = intent.getParcelableExtra("user")!!
+
+        val actividades = db.gameDao.getAllGames()
 
         if (listabooleanos[numero]) {
             /**
@@ -377,10 +386,12 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 Toast.LENGTH_LONG
             )
             .show()*/
-            for (i in 0..6){
-                if(marker.title.equals(actividades[i][0].name)){
+
+
+            actividades.forEach(){ game ->
+                if(marker.title.equals(game.gameName)){
                     binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = RvDesplegableAdapter(
-                        actividades[i], this
+                        game, user,this
                     )
                 }
             }
@@ -393,7 +404,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 "Estas muy lejos del punto. Hacercate más para jugar.",
                 Toast.LENGTH_LONG
             )
-            .show()
+                .show()
         }
 
 
@@ -518,4 +529,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         TransitionManager.beginDelayedTransition(layout,mSlideLeft)
         binding.lateralmenu.isVisible = navegacion
     }
+
+
 }

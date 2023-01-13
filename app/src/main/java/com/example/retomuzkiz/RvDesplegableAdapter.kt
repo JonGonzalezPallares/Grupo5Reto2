@@ -16,64 +16,69 @@ import com.example.retomuzkiz.ponekakoermita.MarineroActivity
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
 import com.example.retomuzkiz.Laberinto.ActivityLaberinto
 import com.example.retomuzkiz.clases.Actividad
+import com.example.retomuzkiz.clases.RetoGrupoCinco
+import com.example.retomuzkiz.gastelua.ActivityGaztelua
+//import com.example.retomuzkiz.gastelua.ActivityGaztelua
 import com.example.retomuzkiz.gastelua.ExplicacionActivity
+import com.example.retomuzkiz.room.Game
+import com.example.retomuzkiz.room.Usuario
 
-class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: Context): RecyclerView.Adapter<RvDesplegableAdapter.ViewHolder>() {
+
+class RvDesplegableAdapter(var listaActividades: Game, var user : Usuario,  val context: Context): RecyclerView.Adapter<RvDesplegableAdapter.ViewHolder>() {
     private lateinit var Nombres : ArrayList<String>
-
     class ViewHolder (vista: View) :RecyclerView.ViewHolder(vista){
 
         val binding = SingleActividadBinding.bind(vista)
-
-        fun unir (actividad: Actividad, context: Context){
-            val titulo = actividad.name
-            loadImages(actividad.img,context)
-            binding.txtTitulo.text = actividad.name
+        fun unir (game: Game, user:Usuario, context: Context){
+            val id = game.gameId
+            var usuario = user
+            loadImages(game.res,context)
+            binding.txtTitulo.text = game.gameName
             binding.btniniciarjuego.setOnClickListener{
-                loadActivityes(titulo, context)
-                println(titulo)
+                loadActivityes(id, user, context)
+                var fragment = Fragment_mobile_rotation()
             }
         }
 
         private fun loadImages(name: String, context: Context) {
             when (name) {
-                MapsActivity.SITESNAMES.PUENTE_ROMANO_IMG -> {
+                RetoGrupoCinco.SITESNAMES.PUENTE_ROMANO_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.puentecompleto)
                     )
                 }
 
-                MapsActivity.SITESNAMES.POBENA_FUNDICION_IMG_1 -> {
+                RetoGrupoCinco.SITESNAMES.POBENA_FUNDICION_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.fundicion_pobela)
                     )
                 }
 
-                MapsActivity.SITESNAMES.POBENA_HERMITA_IMG -> {
+                RetoGrupoCinco.SITESNAMES.POBENA_HERMITA_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.hermita_pobena_1)
                     )
                 }
 
-                MapsActivity.SITESNAMES.PLAYA_LA_ARENA_IMG -> {
+                RetoGrupoCinco.SITESNAMES.PLAYA_LA_ARENA_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.irudia_arena_2)
                     )
                 }
 
-                MapsActivity.SITESNAMES.ITSASLUR_IBILBIDEA_IMG_1-> {
+                RetoGrupoCinco.SITESNAMES.ITSASLUR_IBILBIDEA_IMG-> {
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.itsaslur2_2)
                     )
                 }
 
-                MapsActivity.SITESNAMES.CASTILLO_MUNATONES_IMG -> {
+                RetoGrupoCinco.SITESNAMES.CASTILLO_MUNATONES_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.castillo)
                     )
                 }
 
-                MapsActivity.SITESNAMES.NOCHE_SAN_JUAN_IMG -> {
+                RetoGrupoCinco.SITESNAMES.NOCHE_SAN_JUAN_IMG -> {
                     binding.img.setImageDrawable(getDrawable(context,
                         R.drawable.irudia_san_juan_1)
                     )
@@ -81,40 +86,41 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
             }
         }
 
-        private fun loadActivityes(titulo: String, context: Context) {
-            when(titulo) {
-                MapsActivity.SITESNAMES.PUENTE_ROMANO->{
-                    val intento = Intent(context, PuenteRomano::class.java)
+        private fun loadActivityes(id: Int,user: Usuario, context: Context) {
+            when(id) {
+                1->{
+
+                    val intento = Intent(context, ActivityLaberinto::class.java).putExtra("user", user)
                     startActivity(context, intento, null)
                 }
 
-                MapsActivity.SITESNAMES.POBENA_FUNDICION->{
-                    val intento = Intent(context, BurdinolaVideoActivity::class.java)
+                2->{
+                    val intento = Intent(context, PantallaEspera::class.java).putExtra("user", user)
                     startActivity(context, intento,null)
                 }
 
-                MapsActivity.SITESNAMES.POBENA_HERMITA->{
-                    val intento = Intent(context, MarineroActivity::class.java)
+                3->{
+                    val intento = Intent(context, PuenteRomano::class.java).putExtra("user", user)
                     startActivity(context, intento,null)
                 }
 
-                MapsActivity.SITESNAMES.PLAYA_LA_ARENA->{
-                    val intento = Intent(context, IntroActivity::class.java)
+                4->{
+                    val intento = Intent(context,BurdinolaVideoActivity::class .java).putExtra("user", user)
                     startActivity(context, intento,null)
                 }
 
-                MapsActivity.SITESNAMES.ITSASLUR_IBILBIDEA->{
-                    val intento = Intent(context, PantallaEspera::class.java)
+                5->{
+                    val intento = Intent(context, IntroActivity::class.java).putExtra("user", user)
+                    startActivity(context, intento,null)
+                }
+                6->{
+
+                    val intento = Intent(context, MarineroActivity::class.java).putExtra("user", user)
                     startActivity(context, intento,null)
                 }
 
-                MapsActivity.SITESNAMES.CASTILLO_MUNATONES->{
-                    val intento = Intent(context, ExplicacionActivity::class.java)
-                    startActivity(context, intento,null)
-                }
-
-                MapsActivity.SITESNAMES.NOCHE_SAN_JUAN->{
-                    val intento = Intent(context, ActivityLaberinto::class.java)
+                7->{
+                    val intento = Intent(context, ActivityGaztelua::class.java).putExtra("user", user)
                     startActivity(context, intento, null)
                 }
             }
@@ -138,14 +144,11 @@ class RvDesplegableAdapter(var listaActividades: List<Actividad>, val context: C
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.unir(listaActividades[position], context)
+        holder.unir(listaActividades, user, context)
     }
 
     override fun getItemCount(): Int {
-        return listaActividades.size
+        return 1
     }
-/*
-    fun cargaractividades(titulo:String){
-    }*/
 }
 

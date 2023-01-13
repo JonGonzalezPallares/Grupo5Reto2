@@ -17,7 +17,8 @@
                 android:id="@+id/m_Modoguiado"
                 android:icon="@drawable/guiado"
                 android:title="@string/guidedMode"
-                android:visible="true" />
+                android:visible="true"
+               />
 
             <item
                 android:id="@+id/m_Profesor"

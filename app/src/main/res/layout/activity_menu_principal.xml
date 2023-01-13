@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuPrincipal">
+    tools:context=".MenuPrincipal"
+    android:focusedByDefault="false">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -38,7 +39,8 @@
                     android:textColorHighlight="#741EFF"
                     android:textColorHint="#000000"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:focusedByDefault="false"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button"
@@ -66,7 +68,19 @@
                     android:inputType="textPersonName"
                     android:textColorHint="#000000"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtUsuario" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtUsuario"
+                    android:focusedByDefault="false"/>
+
+                <TextView
+                    android:id="@+id/txtProfesor"
+                    android:layout_width="match_parent"
+                    android:layout_height="31dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="@string/eresProfesor"
+                    android:textColor="#000000"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

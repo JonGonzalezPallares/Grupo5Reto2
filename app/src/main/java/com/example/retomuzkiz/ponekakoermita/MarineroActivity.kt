@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.commit
+import com.example.retomuzkiz.Fragment_mobile_rotation
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ActivityMarineroBinding
 
@@ -15,7 +17,10 @@ class MarineroActivity : AppCompatActivity() {
         this.supportActionBar!!.hide()
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_marinero)
+        var fragmentMobileRotation = Fragment_mobile_rotation.newInstance(this)
+        binding.fragmentContainerView2.visibility = View.VISIBLE
+
+
         binding = ActivityMarineroBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
