@@ -19,6 +19,7 @@ class ExplicacionActivity : AppCompatActivity() {
         binding.btnjuego.setOnClickListener{
             val intento = Intent(this, ActivityGaztelua::class.java)
             startActivity(intento)
+            this.finish()
         }
 
 

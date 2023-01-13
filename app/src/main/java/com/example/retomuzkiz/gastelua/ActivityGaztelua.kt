@@ -116,6 +116,7 @@ class ActivityGaztelua : AppCompatActivity() {
                         val intento = Intent(this, MsgVictoria::class.java)
                         intento.putExtra("imagen","castillo")
                         startActivity(intento)
+                        this.finish()
 
                     }
 
