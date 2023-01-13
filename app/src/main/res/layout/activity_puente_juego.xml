@@ -303,11 +303,11 @@
         android:id="@+id/btnComprobar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164sp"
-        android:layout_marginEnd="153sp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/estilo_botones"
         android:enabled="false"
         android:text="Comprobar"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/imgFinal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
