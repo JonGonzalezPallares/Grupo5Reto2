@@ -2,7 +2,6 @@ package com.example.retomuzkiz
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -151,6 +150,5 @@ class RvDesplegableAdapter(var listaActividades: Game, var user : Usuario,  val 
     override fun getItemCount(): Int {
         return 1
     }
-
 }
 
