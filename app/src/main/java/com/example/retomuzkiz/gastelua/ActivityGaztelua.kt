@@ -87,16 +87,14 @@ class ActivityGaztelua : AppCompatActivity() {
                 true
             }
             DragEvent.ACTION_DRAG_ENTERED ->{
-                v.invalidate()
+                //v.invalidate()
                 true
             }
             DragEvent.ACTION_DRAG_LOCATION ->{
                 true
             }
             DragEvent.ACTION_DRAG_EXITED ->{
-                if(event.clipDescription.label == receiverView.tag as String) {
-                    v.invalidate()
-                }
+
                 true
             }
 
@@ -122,9 +120,6 @@ class ActivityGaztelua : AppCompatActivity() {
                     }
 
                 }else{
-                    receiverView.setAlpha(0)
-                    println("error")
-
                     Imagen.visibility = View.VISIBLE
                 }
                 true
