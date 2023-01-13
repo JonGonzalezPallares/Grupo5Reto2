@@ -52,8 +52,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtClase"
-                    app:layout_constraintVertical_bias="0.21" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtProfesor" />
 
                 <EditText
                     android:id="@+id/txtClase"
@@ -67,6 +66,18 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtUsuario" />
+
+                <TextView
+                    android:id="@+id/txtProfesor"
+                    android:layout_width="match_parent"
+                    android:layout_height="31dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="@string/eresProfesor"
+                    android:textColor="#000000"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtClase" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

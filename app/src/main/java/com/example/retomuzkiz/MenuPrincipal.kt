@@ -29,7 +29,6 @@ class MenuPrincipal : AppCompatActivity() {
 
         binding.txtProfesor.setOnClickListener(){
             startActivity(Intent(this,ActivityCrearClaseSocket::class.java))
-
         }
         binding.button.setOnClickListener {
             var user = comprobarUsuario()
