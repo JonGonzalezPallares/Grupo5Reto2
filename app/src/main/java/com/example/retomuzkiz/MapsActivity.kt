@@ -439,6 +439,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
     override fun onPause() {
         super.onPause()
+        stopService(Servicio)
 
         IntentFilter("broadcast")
         LocalBroadcastManager.getInstance(this).unregisterReceiver(broadcastReceiver)
@@ -529,6 +530,4 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         TransitionManager.beginDelayedTransition(layout,mSlideLeft)
         binding.lateralmenu.isVisible = navegacion
     }
-
-
 }
