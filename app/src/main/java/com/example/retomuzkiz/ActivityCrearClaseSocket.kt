@@ -67,8 +67,6 @@ class ActivityCrearClaseSocket : AppCompatActivity() {
 
             }
         )
-
-
         return res
     }
 }

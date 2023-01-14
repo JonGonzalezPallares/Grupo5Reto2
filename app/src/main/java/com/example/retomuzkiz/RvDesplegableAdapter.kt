@@ -52,6 +52,7 @@ class RvDesplegableAdapter(var listaActividades: Game, var user : Usuario,  val 
                     )
                     val a: String = context.resources.getString(R.string.DescripcionPuente)
                     binding.txtdescripcion.text = a
+
                 }
 
                 RetoGrupoCinco.SITESNAMES.POBENA_FUNDICION_IMG -> {
