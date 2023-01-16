@@ -16,6 +16,10 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
+
+        //Para cambiar el nombre de la applicacion al generar el apk
+        setProperty("archivesBaseName", "Muskiz ezagutzen")
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
