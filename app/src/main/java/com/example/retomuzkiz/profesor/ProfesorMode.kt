@@ -64,7 +64,6 @@ class ProfesorMode : AppCompatActivity() {
             binding.vistaRespuestas.visibility = View.VISIBLE
 
             binding.cuerpo.alpha = 0.5F
-            binding.txtClaseRoom.isEnabled = false
             binding.btnCastilloRes.isEnabled = false
             binding.btnHermitaRes.isEnabled = false
             binding.btnPuenteRes.isEnabled = false
@@ -74,7 +73,6 @@ class ProfesorMode : AppCompatActivity() {
             binding.vistaRespuestas.visibility = View.GONE
 
             binding.cuerpo.alpha = 1F
-            binding.txtClaseRoom.isEnabled = true
             binding.btnCastilloRes.isEnabled = true
             binding.btnHermitaRes.isEnabled = true
             binding.btnPuenteRes.isEnabled = true

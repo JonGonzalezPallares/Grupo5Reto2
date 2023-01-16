@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Somos un grupo de alumn@s de Magisterio de la UPV.\nJunto a un grupo de alumnos del CIFP Txurdinaga hemos llevado a cabo una aplicación para los niñ@s de primaria de Muskiz puedan conozer jugando."
+                android:text="@string/Nosotros"
                 android:textAlignment="center" />
         </TableRow>
 
@@ -98,7 +98,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="20dp"
-                                android:text="Desarrollada\npor:"
+                                android:text="@string/Desarrollo"
                                 android:textAlignment="center" />
 
                             <LinearLayout
@@ -173,7 +173,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="20dp"
-                                android:text="Ideada\npor:"
+                                android:text="@string/Idea"
                                 android:textAlignment="center" />
 
                             <LinearLayout

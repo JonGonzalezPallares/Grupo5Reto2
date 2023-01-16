@@ -131,4 +131,20 @@ El Pobal Burdinola antzinako fabrika hidrauliko bat da, non burdin minerala lant
     <string name="DescripcionSanjuan">San Joan jaiak, San Joan bezpera edo San Joan gaua ere deituak, ekainaren 24an San Joan Bataiatzailearen jaiotzaren kristau jaiaren aurreko ospakizunaren bezpera da.
         Batzuek jaia edo ospakizunetako batzuk kristautasunaren aurreko edo arrotzen diren jatorri paganoko erritoekin lotzen dituzte.\n\n
         Suak egitea ohiko elementua izan ohi da.</string>
+    <string name="IrPuzzle">Puzzlera joan</string>
+    <string name="Marinero1">Talaiak eta keinulari-postuak oso azpiegitura sinpleak ziren, eta Pobeñakoa hain zuzen, XVI. eta XVIII. mendeen artean sortua izan zen. Muskileen beharrak asetzea gain, talaia hori arrantzatzeko izan zen Somorrostroko meategietako burdin mineralekin merkataritza-trafikoa eta Barbadun ibaiko burdinoletako burdina kudeatzeko, ibilitako ontzi txikien laguntzarekin.</string>
+    <string name="Nosotros">EHUko Irakaskuntzako ikasle talde bat gara. CIFP Txurdinagako ikasle talde batekin batera aplikazio bat egin dugu Muskizko Lehen Hezkuntzako haurrek jolasten ari diren bitartean ikas dezaten.</string>
+    <string name="Idea">Diseinatuta:</string>
+    <string name="Desarrollo">Garatuta:</string>
+    <string name="DescProf">Irakasleak jolas batzuen erantzunak ikusteko gunea. Azkenik, bera izango da beste partida batzuk kontrolatzeaz arduratuko dena.</string>
+    <string name="ResButPuente">Zubi erromanikora joan</string>
+    <string name="ResButPaseo">Itsaslurrera joan</string>
+    <string name="ResButCastillo">Gaztelura joan</string>
+    <string name="ResButHermita">Hermitara joan</string>
+    <string name="Comprobar">Egiaztatu</string>
+    <string name="ResTxtCas">Puzzlearen azken irudiak gaztelua izan behar du. Itxura hau izango behar du:</string>
+    <string name="ResTxtHermita">Jokoaren irtenbideak hauek dira: itsaso zakarra eta barea, hona hemen argazki ezberdinen irtenbideak:</string>
+    <string name="ResTxtHermita">Jokoaren irtenbideak hauek dira: itsaso zakarra eta barea,</string>
+    <string name="ResTranquilo">Itsaso barea:</string>
+    <string name="ResRevuelto">Itsaso zakarra:</string>
 </resources>

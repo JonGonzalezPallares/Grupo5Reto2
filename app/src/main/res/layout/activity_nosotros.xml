@@ -32,22 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Somos un grupo de alumn@s de Magisterio de la UPV.\nJunto a un grupo de alumnos del CIFP Txurdinaga hemos llevado a cabo una aplicación para los niñ@s de primaria de Muskiz puedan conozer jugando."
-                android:textAlignment="center" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:visibility="gone">
-
-            <TextView
-                android:id="@+id/textView47"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Informacion sobre\nlos equipos"
+                android:text="@string/Nosotros"
                 android:textAlignment="center" />
         </TableRow>
 
@@ -97,7 +82,7 @@
                     android:id="@+id/textView44"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Desarrollada\npor:"
+                    android:text="@string/Desarrollo"
                     android:textAlignment="center" />
 
                 <TextView
@@ -146,7 +131,7 @@
                     android:id="@+id/textView45"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ideada\npor:"
+                    android:text="@string/Idea"
                     android:textAlignment="center" />
 
                 <TextView

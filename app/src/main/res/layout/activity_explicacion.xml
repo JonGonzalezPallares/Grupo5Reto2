@@ -33,7 +33,7 @@
         android:layout_width="141dp"
         android:layout_height="50dp"
         android:background="@drawable/estilo_botones"
-        android:text="Ir al puzle"
+        android:text="@string/IrPuzzle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.944"

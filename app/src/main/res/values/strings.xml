@@ -129,6 +129,21 @@ Parte de la playa está incluida en el espacio natural protegido de la ría del 
     <string name="DescripcionSanjuan">La Fiesta de San Juan, también llamada víspera de San Juan o Noche de San Juan, es la víspera de la celebración previa a la festividad cristiana del nacimiento de San Juan Bautista el día 24 de junio.
         Algunos vinculan la festividad o algunas de sus celebraciones en ritos de origen pagano previos o ajenos al cristianismo.\n\n
         La realización de hogueras suele ser un elemento habitual.</string>
+    <string name="IrPuzzle">Ir al puzle</string>
+    <string name="Marinero1">Las torres de vigilancia y los postes de señalización eran estructuras muy sencillas, y en particular la de Pobeña, fueron creadas entre el siglo XVI. y XVIII. Además de atender las necesidades de los mejillones, este mirador servía de pesca para gestionar el tráfico comercial con el mineral de hierro de las minas de Somorrostro y el hierro de las ferrerías del río Barbadún, con la ayuda de los pequeños barcos que transitaban .</string>
+    <string name="Nosotros">Somos un grupo de alumn@s de Magisterio de la UPV. Junto a un grupo de alumnos del CIFP Txurdinaga hemos llevado a cabo una aplicación para los niñ@s de primaria de Muskiz puedan conozer jugando.</string>
+    <string name="Desarrollo">Desarrollo por:</string>
+    <string name="Idea">Ideada por:</string>
+    <string name="DescProf">Zona para que el profesor/a pueda visualizar las respuestas de algunos juegos. Por último va a ser el/la encargad@ de controlar algun que otro de los juegos.</string>
+    <string name="ResButPuente">Ir al puente romano</string>
+    <string name="ResButPaseo">Ir a itsaslur</string>
+    <string name="ResButCastillo">Ir al castillo</string>
+    <string name="ResButHermita">Ir a la hermita</string>
+    <string name="Comprobar">Comprobar</string>
+    <string name="ResTxtCas">La imagen final del puzle debe ser el castillo. Asi es como se deberia ver:</string>
+    <string name="ResTxtHermita">Las soluciones al juego estan divididas en: mar revuelto y tranquilo, aqui estan las soluciones a las diferentes fotos:</string>
+    <string name="ResRevuelto">Mar revuelto:</string>
+    <string name="ResTranquilo">Mar tranquilo:</string>
 
 
 </resources>

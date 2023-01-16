@@ -129,4 +129,19 @@
     <string name="Descripcionermita">Ultimo</string>
     <string name="Descripcionitzalsur">Ultimo</string>
     <string name="DescripcionSanjuan">Ultimo</string>
+    <string name="IrPuzzle">Go to puzzle</string>
+    <string name="Marinero1">The watchtowers and signaling posts were very simple structures, and Pobeña\'s in particular, it was created between the 16th century. and 18th century. In addition to meeting the needs of the mussels, this vantage point was used for fishing to manage the commercial traffic with iron ore from the mines of Somorrostro and the iron from the forges of the Barbadun river, with the help of the small ships that traveled.</string>
+    <string name="Nosotros">We are a group of UPV Teaching students. Together with a group of students from the CIFP Txurdinaga we have carried out an application so that the primary school children of Muskiz can learn while playing.</string>
+    <string name="Idea">Devised by:</string>
+    <string name="Desarrollo">Developers:</string>
+    <string name="DescProf">Area for the teacher to view the answers to some games. Finally, he will be the one in charge of controlling some of the other games.</string>
+    <string name="ResButPuente">Go to roman bridge</string>
+    <string name="ResButPaseo">Go to Itsaslur</string>
+    <string name="ResButCastillo">Go to the castle</string>
+    <string name="ResButHermita">Go to the hermitage</string>
+    <string name="Comprobar">Check</string>
+    <string name="ResTxtCas">The final image of the puzzle must be the castle. This is how it should look like:</string>
+    <string name="ResTxtHermita">The solutions to the game are divided into: rough and calm sea, here are the solutions to the different photos:</string>
+    <string name="ResTranquilo">Calm sea:</string>
+    <string name="ResRevuelto">Rough sea:</string>
 </resources>

@@ -19,7 +19,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="5dp"
-            android:text="Las soluciones al juego estan divididas en: mar revuelto y tranquilo, aqui estan las soluciones a las diferentes fotos:"
+            android:text="@string/ResTxtHermita"
             android:textAlignment="center"
             android:textSize="20sp" />
 
@@ -40,7 +40,7 @@
                     android:id="@+id/textView51"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Mar tranquilo"
+                    android:text="@string/ResTranquilo"
                     android:textAlignment="center"
                     android:textSize="16sp" />
 
@@ -81,7 +81,7 @@
                     android:id="@+id/textView55"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Mar revuelto"
+                    android:text="@string/ResRevuelto"
                     android:textAlignment="center"
                     android:textSize="16sp" />
 
