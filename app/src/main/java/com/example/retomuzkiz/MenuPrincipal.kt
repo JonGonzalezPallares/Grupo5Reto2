@@ -44,7 +44,9 @@ class MenuPrincipal : AppCompatActivity() {
             RetoGrupoCinco.mSocket.connect()
             RetoGrupoCinco.mSocket.emit("join server",user?.name)
             RetoGrupoCinco.mSocket.emit("join room",user?.userClass)
-
+            RetoGrupoCinco.mSocket.on("Salas"){ args ->
+                println(args[0])
+            }
 
 
 

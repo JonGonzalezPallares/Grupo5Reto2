@@ -14,7 +14,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:focusable="true" android:focusableInTouchMode="true">
 
             <TextView
                 android:id="@+id/textView14"
@@ -24,9 +25,11 @@
                 android:paddingStart="20dp"
                 android:text="Bienvenido a Muskiz"
                 android:textColor="#000000"
-                android:textSize="26sp" />
+                android:textSize="26sp"
+                />
 
             <TextView
+
                 android:id="@+id/txtExplicacion1"
                 android:layout_width="match_parent"
                 android:layout_height="139dp"
@@ -55,25 +58,32 @@
                 android:layout_gravity="center_horizontal"
                 android:ems="10"
                 android:hint="Nombre de la clase"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+               />
 
             <EditText
+                android:focusedByDefault="false"
+
                 android:id="@+id/txtNombreProfesor"
                 android:layout_width="247dp"
                 android:layout_height="57dp"
                 android:layout_gravity="center_horizontal"
                 android:ems="10"
                 android:hint="Nombre Profesor"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+               />
 
             <EditText
+                android:focusedByDefault="false"
+
                 android:id="@+id/editTextTextPassword"
                 android:layout_width="247dp"
                 android:layout_height="59dp"
                 android:layout_gravity="center_horizontal"
                 android:ems="10"
                 android:hint="Contraseña"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+           />
 
             <Button
                 android:id="@+id/btnCrearClase"
@@ -82,7 +92,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/estilo_boton_crear_clase"
-                android:text="Crear" />
+                android:text="Crear"
+                />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

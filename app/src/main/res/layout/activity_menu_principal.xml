@@ -24,7 +24,8 @@
                 android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#0F4BAE">
+                android:background="#0F4BAE"
+                android:focusable="true" android:focusableInTouchMode="true">
 
                 <EditText
                     android:id="@+id/txtUsuario"
