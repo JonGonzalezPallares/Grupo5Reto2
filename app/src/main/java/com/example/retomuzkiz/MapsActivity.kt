@@ -111,8 +111,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //Cambiado Para Pruebas
-        guideMode()
-        //freeMode()
+        //guideMode()
+        freeMode()
         val navView : NavigationView = binding.lateralmenu
         //menu lateral
         val header = navView.getHeaderView(0)
@@ -127,8 +127,10 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             if(!navegacion){
                 navegacion = true
                 if(!iniciarguiado){
+                    val free = findViewById<View>(R.id.m_Modolibre)
 
 
+                    //free.isEnabled = false
 
                     // free.isEnabled = false
                     iniciarguiado = true
@@ -454,13 +456,24 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         stopService(Servicio)
         // fundcion de espra de 3s antes de cambiar las variables
         Handler(Looper.myLooper() ?: return).postDelayed({
-            listabooleanos[0] = true
-            listabooleanos[1] = true
-            listabooleanos[2] = true
-            listabooleanos[3] = true
-            listabooleanos[4] = true
-            listabooleanos[5] = true
-            listabooleanos[6] = true
+           if (listabooleanos.isEmpty()){
+               listabooleanos.add(true)
+               listabooleanos.add(true)
+               listabooleanos.add(true)
+               listabooleanos.add(true)
+               listabooleanos.add(true)
+               listabooleanos.add(true)
+               listabooleanos.add(true)
+           }else{
+               listabooleanos[0] = true
+               listabooleanos[1] = true
+               listabooleanos[2] = true
+               listabooleanos[3] = true
+               listabooleanos[4] = true
+               listabooleanos[5] = true
+               listabooleanos[6] = true
+           }
+        iniciarguiado = false
         }, 3000)
     }
 

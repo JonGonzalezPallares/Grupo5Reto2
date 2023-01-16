@@ -12,7 +12,9 @@ open class OptionsMenuActivity: AppCompatActivity() {
         super.onCreateOptionsMenu(menu)
         val miMenu= menuInflater
         val guide = findViewById<View>(R.id.m_Modoguiado)
-        guide.isEnabled= false
+        val free = findViewById<View>(R.id.m_Modolibre)
+
+        free.isEnabled= false
         miMenu.inflate(R.menu.menu,menu)
         return true
     }
