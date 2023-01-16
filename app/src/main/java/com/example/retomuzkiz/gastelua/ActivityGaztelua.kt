@@ -87,7 +87,6 @@ class ActivityGaztelua : AppCompatActivity() {
                 true
             }
             DragEvent.ACTION_DRAG_ENTERED ->{
-                //v.invalidate()
                 true
             }
             DragEvent.ACTION_DRAG_LOCATION ->{
