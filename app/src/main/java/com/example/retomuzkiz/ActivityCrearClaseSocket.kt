@@ -40,7 +40,9 @@ class ActivityCrearClaseSocket : AppCompatActivity() {
                 progressDb.insertProgress(progress)
                 RetoGrupoCinco.mSocket.connect()
                 RetoGrupoCinco.mSocket.emit("join server", user.name)
+                RetoGrupoCinco.mSocket.emit("create room", binding.txtNombreClase.text.toString())
                 RetoGrupoCinco.mSocket.emit("join room", binding.txtNombreClase.text.toString())
+
                 RetoGrupoCinco.mSocket.on("Salas"){ args ->
                     println(args[0])
                 }
