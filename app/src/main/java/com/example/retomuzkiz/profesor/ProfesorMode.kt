@@ -76,6 +76,9 @@ class ProfesorMode : AppCompatActivity() {
 
         binding.btnOcultar.setOnClickListener {
             regresar(navController)
+
+            //Para cuando se le pulsa el boton de volver hacia atras
+            regresar = "vuelto"
             oscurecer(false)
         }
     }
