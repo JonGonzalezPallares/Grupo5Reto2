@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_mapa"
-    android:padding="10dp"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    android:background="@drawable/fondo_degradado"
+    android:padding="10dp">
 
     <!--layout de parrafos-->
 
@@ -21,7 +20,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="40dp"
         android:layout_marginBottom="80dp"
-        android:background="#39150000"
         android:src="@drawable/anterior"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -33,7 +31,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="80dp"
-        android:background="#39150000"
         android:src="@drawable/siguiente"
         tools:ignore="SpeakableTextPresentCheck" />
 

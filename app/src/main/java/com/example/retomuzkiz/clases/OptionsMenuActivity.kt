@@ -11,7 +11,7 @@ open class OptionsMenuActivity: AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
         val miMenu= menuInflater
-        val guide = findViewById<View>(R.id.m_Modoguiado)
+        //val guide = findViewById<View>(R.id.m_Modoguiado)
         val free = findViewById<View>(R.id.m_Modolibre)
 
         free.isEnabled= false
