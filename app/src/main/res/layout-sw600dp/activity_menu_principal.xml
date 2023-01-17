@@ -42,8 +42,8 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button"
-                    android:layout_width="228dp"
-                    android:layout_height="82dp"
+                    android:layout_width="252dp"
+                    android:layout_height="70dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="40dp"
                     android:background="@drawable/estilo_botones"
@@ -70,14 +70,15 @@
                 <TextView
                     android:id="@+id/txtProfesor"
                     android:layout_width="match_parent"
-                    android:layout_height="31dp"
+                    android:layout_height="0dp"
                     android:layout_marginStart="28dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="317dp"
                     android:gravity="center"
                     android:text="@string/eresProfesor"
                     android:textColor="#000000"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtClase" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

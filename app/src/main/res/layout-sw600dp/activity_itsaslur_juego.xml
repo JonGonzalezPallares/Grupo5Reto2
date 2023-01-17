@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_degradado"
+    tools:context=".itsaslurIbilbidea.ItsaslurJuego">
+
+    <LinearLayout
+        android:id="@+id/Preguntas1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="@string/itsaslurQ1"
+            android:textColor="@color/botones_desactivados"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/imgbtn1_1"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur1_1" />
+
+        <ImageButton
+            android:id="@+id/imgbtn1_2"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur1_2" />
+
+        <ImageButton
+            android:id="@+id/imgbtn1_3"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur1_3"
+            android:tag="true" />
+
+        <ImageButton
+            android:id="@+id/imgbtn1_4"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur1_4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Preguntas2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="@string/itsaslurQ2"
+            android:textColor="@color/botones_desactivados"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/imgbtn2_1"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur2_1"
+            android:tag="true" />
+
+        <ImageButton
+            android:id="@+id/imgbtn2_2"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur2_2" />
+
+        <ImageButton
+            android:id="@+id/imgbtn2_3"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur2_3" />
+
+        <ImageButton
+            android:id="@+id/imgbtn2_4"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur2_4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Preguntas3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/itsaslurQ3"
+            android:textColor="@color/botones_desactivados"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/imgbtn3_1"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur3_1" />
+
+        <ImageButton
+            android:id="@+id/imgbtn3_2"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur3_2"
+            android:tag="true" />
+
+        <ImageButton
+            android:id="@+id/imgbtn3_3"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur1_3" />
+
+        <ImageButton
+            android:id="@+id/imgbtn3_4"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/itsaslur3_4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Preguntas4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/itsaslurQ4"
+            android:textColor="@color/botones_desactivados"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/imgbtn4_1"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur4_1" />
+
+        <ImageButton
+            android:id="@+id/imgbtn4_2"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur4_2" />
+
+        <ImageButton
+            android:id="@+id/imgbtn4_3"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur4_3" />
+
+        <ImageButton
+            android:id="@+id/imgbtn4_4"
+            android:layout_width="450dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/itsaslur4_4"
+            android:tag="true" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
