@@ -22,7 +22,7 @@
             android:id="@+id/txt1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Talaiak eta keinulari-postuak oso azpiegitura sinpleak ziren, eta Pobeñakoa hain zuzen, XVI. eta XVIII. mendeen artean sortua izan zen. Muskizko arrantzaleen beharrak asetzeaz gain, talaia hori funtsezkoa izan zen Somorrostroko meategietako burdin mineralarekin lotutako merkataritza-trafikoa eta Barbadun ibaiko burdinoletako burdina kudeatzeko, arraunean ibilitako ontzi txikien laguntzarekin."
+            android:text="@string/Marinero1"
             android:textAlignment="center"
             android:textSize="22sp"
             android:visibility="visible" />
@@ -31,7 +31,7 @@
             android:id="@+id/txt2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nuestra Señora del Socorro baseliza, 1768. urtean eraikia izan zen, eta Barbadun ibaiaren bokalearen ondoan dago. Izenak adierazten duen bezala, Nuestra Señora del Socorro deitzen dute laguntza eskatzeko arriskua zegoenean erabiltzen baitzuten, eta horrek Pobeñako marinelen kutunetako bat bihurtu zuen, arrantzara ateratzen zirenean beti itsasoan egoten baitziren. Hori dela eta, arrantzan hasi baino lehen, txalupak bertan gelditu, babesa eskatzera igo eta itsasoaren egoera begiratzen zuten, ontziratzea komeni zen ala ez erabakitzeko."
+            android:text="@string/Marinero2"
             android:textAlignment="center"
             android:textSize="22sp"
             android:visibility="gone" />

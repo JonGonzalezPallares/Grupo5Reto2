@@ -2,13 +2,11 @@ package com.example.retomuzkiz
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco
-import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.prefs
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
 import com.example.retomuzkiz.room.Progress
-import com.example.retomuzkiz.gastelua.ActivityGaztelua
+import com.example.retomuzkiz.profesor.ProfesorMode
 import com.example.retomuzkiz.room.Usuario
 import kotlin.random.Random
 import kotlin.random.nextInt
@@ -28,7 +26,7 @@ class MenuPrincipal : AppCompatActivity() {
 
 
         binding.txtProfesor.setOnClickListener(){
-            startActivity(Intent(this,ActivityCrearClaseSocket::class.java))
+            startActivity(Intent(this, ProfesorMode::class.java))
         }
         binding.button.setOnClickListener {
             var user = comprobarUsuario()
@@ -107,9 +105,9 @@ class MenuPrincipal : AppCompatActivity() {
 //__________________________________________________________________________________________
 
         val listaUsuarios = db.usuarioDao.getAllUsers()
-        if(!listaUsuarios.isEmpty()) {
-            for (i in 0 until listaUsuarios.size) {
-                println(listaUsuarios[i].toString())
+        if(listaUsuarios.isNotEmpty()) {
+            for (element in listaUsuarios) {
+                println(element.toString())
             }
         }
         adaptadorUsuario = UsuariosAdapter(listaUsuarios){

@@ -22,7 +22,7 @@
                 android:layout_height="79dp"
                 android:gravity="center_vertical"
                 android:paddingStart="20dp"
-                android:text="Bienvenido a Muskiz"
+                android:text="@string/Bienvenido"
                 android:textColor="#000000"
                 android:textSize="26sp" />
 
@@ -33,7 +33,7 @@
                 android:gravity="center"
                 android:paddingStart="40dp"
                 android:paddingEnd="40dp"
-                android:text="Ha llegado el momento de crear una sala para que tus alumnos se unan!"
+                android:text="@string/CrearSala"
                 android:textColor="#332D2D"
                 android:textSize="16sp" />
 
@@ -44,7 +44,7 @@
                 android:gravity="center"
                 android:paddingStart="40dp"
                 android:paddingEnd="40dp"
-                android:text="  Por favor, escriba sunombre,  el nombre de tu clase, el cual tus alumnos usarán como clave para unirse a la partida, y la contraseña facilitada en el manual de usuario."
+                android:text="@string/Informacion"
                 android:textColor="#332D2D"
                 android:textSize="16sp" />
 
@@ -82,7 +82,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/estilo_boton_crear_clase"
-                android:text="Crear" />
+                android:text="@string/Crear" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -47,8 +47,9 @@ class ActivityGaztelua : AppCompatActivity() {
         binding.imagenabajoizq.setOnDragListener(dragListener)
         binding.imagenabajomed.setOnDragListener(dragListener)
         binding.imagenabajoder.setOnDragListener(dragListener)
+
         //poner invisibles las imagenes del resultado
-        binding.imagenarribaizq.setAlpha(0)
+        /*binding.imagenarribaizq.setAlpha(0)
         binding.imagenarribamed.setAlpha(0)
         binding.imagenarribader.setAlpha(0)
         binding.imagenmedioizq.setAlpha(0)
@@ -56,7 +57,17 @@ class ActivityGaztelua : AppCompatActivity() {
         binding.imagenmedioder.setAlpha(0)
         binding.imagenabajoizq.setAlpha(0)
         binding.imagenabajomed.setAlpha(0)
-        binding.imagenabajoder.setAlpha(0)
+        binding.imagenabajoder.setAlpha(0)*/
+
+        binding.imagenarribaizq.alpha = 0F
+        binding.imagenarribamed.alpha = 0F
+        binding.imagenarribader.alpha = 0F
+        binding.imagenmedioizq.alpha = 0F
+        binding.imagenmediomed.alpha = 0F
+        binding.imagenmedioder.alpha = 0F
+        binding.imagenabajoizq.alpha = 0F
+        binding.imagenabajomed.alpha = 0F
+        binding.imagenabajoder.alpha = 0F
 
     }
     //funcion del long listener de arrastrar
@@ -99,18 +110,18 @@ class ActivityGaztelua : AppCompatActivity() {
 
             DragEvent.ACTION_DROP ->{
                 if(event.clipDescription.label == receiverView.tag as String) {
-                    receiverView.setAlpha(255)
-
-                    println("correcto")
+                    //receiverView.setAlpha(255)
+                    receiverView.alpha = 255F
 
                     Imagen.visibility = View.INVISIBLE
 
                     //comprobacion de todas las partes visibles para finalizar el juego
-                    if(binding.imgarribaizq.isVisible==false && binding.imgarribamed.isVisible==false &&
-                        binding.imgarribader.isVisible==false && binding.imgcentroizq.isVisible==false &&
-                        binding.imgcentromed.isVisible==false && binding.imgcentroder.isVisible==false &&
-                        binding.imgabajoizq.isVisible==false && binding.imgabajomed.isVisible==false &&
-                        binding.imgabajoder.isVisible==false ){
+                    if(!binding.imgarribaizq.isVisible && !binding.imgarribamed.isVisible
+                        && !binding.imgarribader.isVisible && !binding.imgcentroizq.isVisible
+                        && !binding.imgcentromed.isVisible && !binding.imgcentroder.isVisible
+                        && !binding.imgabajoizq.isVisible && !binding.imgabajomed.isVisible
+                        && !binding.imgabajoder.isVisible)
+                    {
 
                         val intento = Intent(this, MsgVictoria::class.java)
                         intento.putExtra("imagen","castillo")

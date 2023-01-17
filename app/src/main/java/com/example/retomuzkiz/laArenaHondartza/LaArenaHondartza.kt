@@ -181,14 +181,12 @@ class LaArenaHondartza : Activity() {
     }
 
     //______________________________________________________________________________________________
-    // al teminar el juego
+    // al terminar el juego
     private fun completarJuego(){
         val intento = Intent(this, MsgVictoria::class.java)
         intento.putExtra("imagen", "arena")
         cambio = true
         startActivity(intento)
-        /*binding.btnCompletado.setOnClickListener{
-        }*/
     }
 
     //______________________________________________________________________________________________
@@ -210,7 +208,7 @@ class LaArenaHondartza : Activity() {
             tableroPreguntas[i]!!.setImageResource(preguntas[arrayDesordenadoPreguntas[i]])
 
         }
-        // demora  medio segundo luego esconde las imagenes puestas a los buttones
+        // demora medio segundo luego esconde las imagenes puestas a los buttones
         Handler(Looper.myLooper()?:return).postDelayed({
             for (i in 0..4)
             {
@@ -222,7 +220,7 @@ class LaArenaHondartza : Activity() {
             }
         }, 700)
 
-        // al hacer  click sobre alguna foto llama a la funcion comprobar si no esta bloqueado
+        // al hacer click sobre alguna foto llama a la funcion comprobar si no esta bloqueado
         for (i in 0..4)
         {
             tableroPreguntas[i]!!.isEnabled = true

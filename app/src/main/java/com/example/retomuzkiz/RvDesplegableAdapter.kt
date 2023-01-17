@@ -2,14 +2,11 @@ package com.example.retomuzkiz
 
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getDrawable
 import androidx.core.content.ContextCompat.startActivity
-import androidx.core.content.res.TypedArrayUtils.getString
 import androidx.recyclerview.widget.RecyclerView
 import com.example.retomuzkiz.burdinola.BurdinolaVideoActivity
 import com.example.retomuzkiz.databinding.SingleActividadBinding
@@ -18,9 +15,7 @@ import com.example.retomuzkiz.laArenaHondartza.IntroActivity
 import com.example.retomuzkiz.ponekakoermita.MarineroActivity
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
 import com.example.retomuzkiz.Laberinto.ActivityLaberinto
-import com.example.retomuzkiz.clases.Actividad
 import com.example.retomuzkiz.clases.RetoGrupoCinco
-import com.example.retomuzkiz.gastelua.ActivityGaztelua
 //import com.example.retomuzkiz.gastelua.ActivityGaztelua
 import com.example.retomuzkiz.gastelua.ExplicacionActivity
 import com.example.retomuzkiz.room.Game

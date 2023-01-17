@@ -130,28 +130,25 @@ class ServicioGeolocalizacion : Service() {
     //-------------------------------------------------------------------------------
 
     private fun startForeground() {
-        println("startforeground")
         // OJO! Expresión ternaria! para asignar valor a channelId, no es un IF de sentencias
         val channelId =
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                createNotificationChannel()
+                //createNotificationChannel()
             } else {
                 // If earlier version channel ID is not used
                 // https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html#NotificationCompat.Builder(android.content.Context)
                 ""
             }
-        val notificationBuilder = NotificationCompat.Builder(applicationContext, channelId )
+        /*val notificationBuilder = NotificationCompat.Builder(applicationContext, channelId )
         val notification = notificationBuilder.setOngoing(true)
             .setSmallIcon(R.drawable.ic_input_add)
             .setCategory(Notification.CATEGORY_SERVICE)
-            .setContentTitle("Mi Servicio")
-            .setContentText("Mi Servicio se está ejecutando en segundo plano")
             .build()
-        startForeground(101, notification)
+        startForeground(101, notification)*/
     }
 
     //-------------------------------------------------------------------------------
-    @RequiresApi(Build.VERSION_CODES.O)
+    /*@RequiresApi(Build.VERSION_CODES.O)
     private fun createNotificationChannel(): String{
         val channelId = "mi_servicio"
         val channelName = "Mi servicio en segundo plano"
@@ -163,7 +160,7 @@ class ServicioGeolocalizacion : Service() {
         val service = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         service.createNotificationChannel(chan)
         return channelId
-    }
+    }*/
 
     @OptIn(DelicateCoroutinesApi::class)
     @SuppressLint("MissingPermission")

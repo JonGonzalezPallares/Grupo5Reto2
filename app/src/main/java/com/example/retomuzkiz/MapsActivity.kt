@@ -2,12 +2,10 @@ package com.example.retomuzkiz
 
 import android.Manifest
 import android.content.BroadcastReceiver
-import android.content.ClipData.Item
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
-import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -22,17 +20,12 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
-import com.example.retomuzkiz.clases.Actividad
 import androidx.core.graphics.drawable.toDrawable
-import androidx.core.view.get
-import androidx.navigation.Navigator
 
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.example.retomuzkiz.profesor.ProfesorMode
-import com.example.retomuzkiz.databinding.NavHeaderBinding
-import com.example.retomuzkiz.room.Game
 import com.example.retomuzkiz.room.Usuario
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -156,7 +149,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                     freeMode()
                     guide.isEnabled = true
                     free.isEnabled = false
-                    warning("", "Ahoras estas en el modo libre")
+                    warning("", this.applicationContext.resources.getString(R.string.txtLibre))
                     true
                 }
 
@@ -168,7 +161,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                     guideMode()
                     guide.isEnabled = false
                     free.isEnabled = true
-                    warning("", "Ahoras estas en el modo guiado")
+                    warning("", this.applicationContext.resources.getString(R.string.txtGuiado))
                     true
                 }
 
@@ -241,28 +234,24 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             MarkerOptions()
                 .position(puenteRomano)
                 .title(getString(R.string.gamePuenteRomano))
-                .snippet("0")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(pobalekoBurdinola)
                 .title(getString(R.string.gameFundicion))
-                .snippet("1")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(pobenakoErmita)
                 .title(getString(R.string.gameHermitaDePobeña))
-                .snippet("2")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(hondartzaArena)
                 .title(getString(R.string.gameLaArenaHondartza))
-                .snippet("3")
         )
 
         mMap.addMarker(
@@ -270,14 +259,12 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             MarkerOptions()
                 .position(ibilbideItsaslur)
                 .title(getString(R.string.gameItsaslurIbilbidea))
-                .snippet("4")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(muniatonesGaztelua)
                 .title(getString(R.string.gameCastilloMuñatones))
-                .snippet("5")
         )
 
         mMap.addMarker(
@@ -285,7 +272,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             MarkerOptions()
                 .position(sanJuan)
                 .title(getString(R.string.gameSanJuan))
-                .snippet("6")
         )
 
         mMap.setOnMarkerClickListener(this)
@@ -377,22 +363,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         val actividades = db.gameDao.getAllGames()
 
         if (listabooleanos[numero]) {
-            /**
-             * TODO ver si se pueden eliminar estos comentarios o todavia no
-             */
-            //esto pasa si estas cerca de la ubicacion
-            //binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter =
-            //RvDesplegableAdapter(, this)
-            //keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
-
-            /*Toast.makeText(
-                this,
-                "titulo: " + marker.title + " posicion: " + marker.position,
-                Toast.LENGTH_LONG
-            )
-            .show()*/
-
-
             actividades.forEach(){ game ->
                 if(marker.title.equals(game.gameName)){
                     binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = RvDesplegableAdapter(
@@ -406,7 +376,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             //esto pasa si estas legos de la ubicacion
             Toast.makeText(
                 this,
-                "Estas muy lejos del punto. Hacercate más para jugar.",
+                this.applicationContext.resources.getString(R.string.txtLejos),
                 Toast.LENGTH_LONG
             )
                 .show()
@@ -501,38 +471,12 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     }
 
     //______________________________________________________________________________________________
-    //funciones del menu
-    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.m_ranking -> {
-                //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
-            }
-
-            R.id.m_Modoguiado -> {
-                //Carcar el modo guiado
-                guideMode()
-                warning("", "Ahoras estas en el modo guiado")
-            }
-
-            R.id.m_Modolibre -> {
-                //cargar el modo libre
-                freeMode()
-                warning("", "Ahoras estas en el modo libre")
-            }
-
-            R.id.m_logout -> {
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }*/
-
-    //______________________________________________________________________________________________
     //funcion del aviso
     private fun warning(titulo: String, mensaje: String) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(titulo)
         builder.setMessage(mensaje)
-        builder.setPositiveButton("Aceptar", null)
+        builder.setPositiveButton(this.applicationContext.resources.getString(R.string.Aceptar), null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }

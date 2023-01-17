@@ -31,11 +31,12 @@
             app:cardCornerRadius="10dp">
 
             <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/contenedorFrag"
-                android:name="com.example.retomuzkiz.profesor.PuenteRespuestas"
+                android:id="@+id/fragmentos"
+                android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:layout="@layout/fragment_puente_respuestas" />
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_graph" />
         </androidx.cardview.widget.CardView>
 
         <Button

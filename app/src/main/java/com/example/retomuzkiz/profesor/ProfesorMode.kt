@@ -3,14 +3,17 @@ package com.example.retomuzkiz.profesor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainerView
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import com.example.retomuzkiz.CargandoDirections
 import com.example.retomuzkiz.databinding.ActivityProfesorModeBinding
 
 class ProfesorMode : AppCompatActivity() {
 
     private lateinit var binding : ActivityProfesorModeBinding
+    //Variable para saber en que fragmento nos hemos quedado
+    private var regresar = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,40 +23,79 @@ class ProfesorMode : AppCompatActivity() {
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
 
+        //Asi obtenemos el navController para poder cambiar entre fragmentos mediante el nav graph
+        //binding.fragmentos.id -> contenedor donde se van a cargar los diferentes fragmentos
+        val navHostFragment = supportFragmentManager.findFragmentById(binding.fragmentos.id) as NavHostFragment
+
+        //Guardamos el controlador en una variable
+        val navController = navHostFragment.navController
+
         binding.btnPuenteRes.setOnClickListener {
-            //binding.contenedorFrag = contenedor donde se van a cargar todos los fragmentos
-            //PuenteRespuestas() = siendo el fragmento que queremos cargar
-            PuenteRespuestas().cambiarF(binding.contenedorFrag.id)
+            //Vamos desde el fragmento vacio, hasta el puente
+
+            navController.navigate(CargandoDirections.cargatoPuente())
+
+            //Cambiamos el valor para saber que estamos en el puente
+            regresar = "Puente"
 
             oscurecer(true)
         }
 
         binding.btnItsasRes.setOnClickListener {
-            //binding.contenedorFrag = contenedor donde se van a cargar todos los fragmentos
-            //ItsaslurRespuestas() = siendo el fragmento que queremos cargar
-            ItsaslurRespuestas().cambiarF(binding.contenedorFrag.id)
+            //Vamos desde el fragmento vacio, hasta itsaslur
+
+            navController.navigate(CargandoDirections.cargatoItsaslur())
+
+            //Cambiamos el valor para saber que estamos en itsaslur
+            regresar = "Itsaslur"
 
             oscurecer(true)
         }
 
         binding.btnCastilloRes.setOnClickListener {
-            //binding.contenedorFrag = contenedor donde se van a cargar todos los fragmentos
-            //CastilloRespuestas() = siendo el fragmento que queremos cargar
-            CastilloRespuestas().cambiarF(binding.contenedorFrag.id)
+            //Vamos desde el fragmento vacio, hasta el castillo
+
+            navController.navigate(CargandoDirections.cargatoCastillo())
+
+            //Cambiamos el valor para saber que estamos en el castillo
+            regresar = "Castillo"
 
             oscurecer(true)
         }
 
         binding.btnHermitaRes.setOnClickListener {
-            //binding.contenedorFrag = contenedor donde se van a cargar todos los fragmentos
-            //HermitaRespuestas() = siendo el fragmento que queremos cargar
-            HermitaRespuestas().cambiarF(binding.contenedorFrag.id)
+            //Vamos desde el fragmento cargando, hasta la hermita
+
+            navController.navigate(CargandoDirections.cargatoHermita())
+
+            //Cambiamos el valor para saber que estamos en la hermita
+            regresar = "Hermita"
 
             oscurecer(true)
         }
 
         binding.btnOcultar.setOnClickListener {
+            regresar(navController)
             oscurecer(false)
+        }
+    }
+
+    //Funcion para regresar al fragmento de cargando
+    private fun regresar(navController: NavController) {
+        //Segun con que texto venga
+        when(regresar){
+            "Puente" -> {
+                navController.navigate(PuenteRespuestasDirections.regresoPuente())
+            }
+            "Itsaslur" -> {
+                navController.navigate(ItsaslurRespuestasDirections.regresoItsaslur())
+            }
+            "Castillo" -> {
+                navController.navigate(CastilloRespuestasDirections.regresoCastillo())
+            }
+            "Hermita" -> {
+                navController.navigate(HermitaRespuestasDirections.regresoHermita())
+            }
         }
     }
 

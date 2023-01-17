@@ -9,12 +9,14 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frgPreguntas"
-        android:name="com.example.retomuzkiz.puenteRomano.PuenteRomano_preg1"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="412dp"
         android:layout_height="633dp"
+        app:defaultNavHost="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph"
         tools:layout="@layout/fragment_puente_romano_preg1" />
 
     <androidx.appcompat.widget.AppCompatButton
