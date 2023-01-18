@@ -163,6 +163,7 @@ class LaberynthGame(applicationContext: Context, attrs: AttributeSet?) :
                 ActivityLaberinto.fin ++
                 ActivityLaberinto.cambio = true
                 ActivityLaberinto.finalizar(contexto)
+                ActivityLaberinto.stopTimer()
             }
         }
     }

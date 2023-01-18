@@ -443,11 +443,17 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     override fun onPause() {
         super.onPause()
         stopService(Servicio)
-
+        keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
         IntentFilter("broadcast")
         LocalBroadcastManager.getInstance(this).unregisterReceiver(broadcastReceiver)
     }
-
+    override fun onBackPressed(){
+        if (keyPathsBehavior.state != BottomSheetBehavior.STATE_HIDDEN){
+            keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+        }else{
+            super.onBackPressed()
+        }
+    }
     //______________________________________________________________________________________________
     // funcion del modo libre
     private fun freeMode() {

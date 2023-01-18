@@ -144,7 +144,11 @@ class MenuPrincipal : AppCompatActivity() {
         startActivity(intento)
         RetoGrupoCinco.mSocket.connect()
         RetoGrupoCinco.mSocket.emit("join server",user?.name)
-        RetoGrupoCinco.mSocket.emit("create room",user?.userClass)
+
+        if(user.isProfessor){
+            RetoGrupoCinco.mSocket.emit("create room",user?.userClass)
+
+        }
 
 
 

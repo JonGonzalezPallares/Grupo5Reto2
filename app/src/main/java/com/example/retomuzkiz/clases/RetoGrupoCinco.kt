@@ -30,14 +30,13 @@ class RetoGrupoCinco : Application() {
 
 
     }
-
+    var gameList = List<Game>()
     override fun onCreate() {
         super.onCreate()
         prefs = Pref(applicationContext)
         database = Room.databaseBuilder(this, AppDatabase::class.java, AppDatabase.DATABASE_NAME)
             .allowMainThreadQueries()
             .build()
-
          progressDb = database.progressDao
          gameDb = database.gameDao
          userDb = database.usuarioDao
@@ -58,20 +57,20 @@ class RetoGrupoCinco : Application() {
     }
     private fun cargarProgreso() {
 
-        val progress =  Progress("1", 0, 0,0)
+        val progress =  Progress("1", 0, 0,gameList)
 
         progressDb.insertProgress(progress)
     }
 
     private fun cargarJuegos() {
-        var gameList = listOf<Game>(
+         gameList = listOf<Game>(
             Game(getString(R.string.gameSanJuan),1, false,SITESNAMES.NOCHE_SAN_JUAN_IMG),
-            Game(getString(R.string.gameItsaslurIbilbidea), 2,false,SITESNAMES.ITSASLUR_IBILBIDEA_IMG),
-            Game(getString(R.string.gamePuenteRomano), 3,false,SITESNAMES.PUENTE_ROMANO_IMG),
-            Game(getString(R.string.gameFundicion),4, false,SITESNAMES.POBENA_FUNDICION_IMG),
-            Game(getString(R.string.gameLaArenaHondartza),5, false,SITESNAMES.PLAYA_LA_ARENA_IMG),
-            Game(getString(R.string.gameHermitaDePobeña), 6,false,SITESNAMES.POBENA_HERMITA_IMG),
-            Game(getString(R.string.gameCastilloMuñatones),7, false,SITESNAMES.CASTILLO_MUNATONES_IMG))
+            Game(getString(R.string.gameItsaslurIbilbidea), 1,false,SITESNAMES.ITSASLUR_IBILBIDEA_IMG),
+            Game(getString(R.string.gamePuenteRomano), 1,false,SITESNAMES.PUENTE_ROMANO_IMG),
+            Game(getString(R.string.gameFundicion),1, false,SITESNAMES.POBENA_FUNDICION_IMG),
+            Game(getString(R.string.gameLaArenaHondartza),1, false,SITESNAMES.PLAYA_LA_ARENA_IMG),
+            Game(getString(R.string.gameHermitaDePobeña), 1,false,SITESNAMES.POBENA_HERMITA_IMG),
+            Game(getString(R.string.gameCastilloMuñatones),1, false,SITESNAMES.CASTILLO_MUNATONES_IMG))
         gameList.forEach(){
             gameDb.insertGame(it)
         }
