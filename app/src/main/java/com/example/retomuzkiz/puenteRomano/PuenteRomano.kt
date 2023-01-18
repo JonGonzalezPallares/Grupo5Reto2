@@ -23,16 +23,17 @@ class PuenteRomano : AppCompatActivity() {
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
 
+        //Para que se cargue el primer fragmento, por que si no no aparece nada
+        PuenteRomano_preg1().cambiarF(binding.frgPreguntas.id, supportFragmentManager)
+        binding.btnPrimero.visibility = View.GONE
+
         //Boton que lleva al primer fragment estando en el segundo
         binding.btnPrimero.setOnClickListener {
             //Cambiamos el estilo de los botones
             it.isEnabled = false
 
             //Estilo para el boton cuando esta inactivo
-            binding.btnPrimero.setBackgroundResource(R.drawable.estilo_boton_desactivado)
-            binding.btnPrimero.alpha = 0.5F
-            binding.btnPrimero.setTextColor(Color.BLACK)
-
+            binding.btnPrimero.visibility = View.GONE
             binding.btnUltimo.visibility = View.GONE
             binding.btnSiguiente.visibility = View.VISIBLE
 
@@ -59,9 +60,7 @@ class PuenteRomano : AppCompatActivity() {
             binding.btnPrimero.isEnabled=true
 
             //Estilo para el boton cuando esta activo
-            binding.btnPrimero.setBackgroundResource(R.drawable.estilo_botones)
-            binding.btnPrimero.alpha = 1F
-            binding.btnPrimero.setTextColor(Color.WHITE)
+            binding.btnPrimero.visibility = View.VISIBLE
 
             it.visibility = View.GONE
             binding.btnUltimo.visibility = View.VISIBLE

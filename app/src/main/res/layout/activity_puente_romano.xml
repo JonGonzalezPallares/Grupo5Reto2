@@ -7,79 +7,83 @@
     android:background="@drawable/fondo_degradado"
     tools:context=".puenteRomano.PuenteRomano">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/frgPreguntas"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="412dp"
-        android:layout_height="633dp"
-        app:defaultNavHost="true"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/nav_graph"
-        tools:layout="@layout/fragment_puente_romano_preg1" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnPrimero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="40dp"
-        android:alpha="0.5"
-        android:background="@drawable/estilo_boton_desactivado"
-        android:text="@string/primero"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnAtras"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/estilo_botones"
-        android:text="@string/anterior"
-        android:textColor="#FFFFFF"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSiguiente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/estilo_botones"
-        android:text="@string/siguiente"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnUltimo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/estilo_botones"
-        android:text="@string/ultimo"
-        android:textColor="#FFFFFF"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/frgPreguntas"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout="@layout/fragment_puente_romano_preg1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
-        android:id="@+id/btnEmpezar"
-        android:layout_width="86dp"
-        android:layout_height="66dp"
-        android:layout_marginEnd="30dp"
+        android:id="@+id/btnPrimero"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="60dp"
         android:layout_marginBottom="30dp"
         android:background="#00FFFFFF"
-        android:rotationY="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/anterior" />
+
+    <ImageButton
+        android:id="@+id/btnAtras"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="30dp"
+        android:background="#00FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/anterior" />
+
+    <ImageButton
+        android:id="@+id/btnSiguiente"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="30dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/siguiente" />
+
+    <ImageButton
+        android:id="@+id/btnUltimo"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="30dp"
+        android:background="#00FFFFFF"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/flecha_empezar" />
+        app:srcCompat="@drawable/siguiente" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEmpezar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/estilo_botones"
+        android:text="@string/jugar"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

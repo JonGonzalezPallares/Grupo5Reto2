@@ -82,18 +82,6 @@ class LaArenaHondartza : Activity() {
     }
 
     //______________________________________________________________________________________________
-    /* devolver array desordenado  requiere de parametro la longitud del array */
-    /*private fun desordenarArray(longitud: Int): ArrayList<Int> {
-        val result = ArrayList<Int>()
-        for (i in 0 until longitud) {
-            println(i % longitud)
-            result.add(i % longitud)
-        }
-        result.shuffle()
-        return result
-    }*/
-
-    //______________________________________________________________________________________________
     /*
     * comprobar si no se ha seleccionado primera imagen, di no se selecciona como primera imagen
     * el segundo click se marca como segunda imagen, comprueba primera y segunda imagen
@@ -137,7 +125,6 @@ class LaArenaHondartza : Activity() {
             {
                 primero = null
                 bloqueo = false
-                //Toast.makeText(this, "Matched!", Toast.LENGTH_SHORT).show()
                 aciertos++
                 if (aciertos == respuestas.size)
                 {
@@ -218,7 +205,7 @@ class LaArenaHondartza : Activity() {
                 tableroPreguntas[i]!!.setImageResource(fondo)
 
             }
-        }, 700)
+        }, 4000)
 
         // al hacer click sobre alguna foto llama a la funcion comprobar si no esta bloqueado
         for (i in 0..4)
