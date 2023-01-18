@@ -11,8 +11,9 @@
     <string name="hintUser">Usuario</string>
     <string name="hintClase">Clase</string>
     <string name="start">Inicio</string>
-    <string name="othersUsers">Otros usuarios</string>
+    <string name="othersUsers">Partidas guardadas:</string>
     <string name="eresProfesor"><u>SI ERES PROFESOR, PULSE AQUI</u></string>
+    <string name="partidaguardada">Pulsa para continuar esta partida</string>
 
     <!-- Map Activity -->
     <!-- Menu -->

@@ -11,8 +11,9 @@
     <string name="hintUser">Username</string>
     <string name="hintClase">Classroom</string>
     <string name="start">Start</string>
-    <string name="othersUsers">Other Users</string>
+    <string name="othersUsers">Savegames:</string>
     <string name="eresProfesor"><u>IF YOU ARE PROFESSOR, PRESS HERE</u></string>
+    <string name="partidaguardada">Touch to continue this savegame</string>
 
 
     <!-- Map Activity -->
