@@ -1,10 +1,13 @@
 package com.example.retomuzkiz.laArenaHondartza
 
+import android.animation.AnimatorInflater
+import android.animation.AnimatorSet
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.animation.AnimationUtils
 import com.example.retomuzkiz.funcionesExtension.desordeno
 import android.widget.*
 import com.example.retomuzkiz.R
@@ -203,6 +206,11 @@ class LaArenaHondartza : Activity() {
                 tableroPreguntas[i]!!.scaleType = ImageView.ScaleType.CENTER_CROP
                 tableroRespuestas[i]!!.setImageResource(fondo)
                 tableroPreguntas[i]!!.setImageResource(fondo)
+                (AnimatorInflater.loadAnimator(this, R.animator.vuelta) as AnimatorSet).apply {
+                    setTarget(tableroPreguntas[i]!!)
+                    start()
+                }
+                //tableroPreguntas[i]!!.startAnimation(AnimationUtils.loadAnimation(this, R.anim.vuelta))
 
             }
         }, 4000)
