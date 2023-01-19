@@ -13,5 +13,5 @@ data class Progress(
     @ColumnInfo(name="achievements")
     var achievements: Int,
     @ColumnInfo(name="gamesDone")
-    var gamesDone: Int
+    var gamesDone: String
 )

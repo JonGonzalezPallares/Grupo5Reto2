@@ -1,16 +1,13 @@
 package com.example.retomuzkiz.laArenaHondartza
 
-import android.animation.AnimatorInflater
-import android.animation.AnimatorSet
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.animation.AnimationUtils
 import com.example.retomuzkiz.funcionesExtension.desordeno
 import android.widget.*
-import com.example.retomuzkiz.R
+import com.example.retomuzkiz.*
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityLaArenaHondartzaBinding
 
@@ -47,6 +44,8 @@ class LaArenaHondartza : Activity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLaArenaHondartzaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        startTimer()
+        fin = 0
         init()
     }
 
@@ -83,6 +82,18 @@ class LaArenaHondartza : Activity() {
         )
         fondo = R.drawable.bandera_muskiz
     }
+
+    //______________________________________________________________________________________________
+    /* devolver array desordenado  requiere de parametro la longitud del array */
+    /*private fun desordenarArray(longitud: Int): ArrayList<Int> {
+        val result = ArrayList<Int>()
+        for (i in 0 until longitud) {
+            println(i % longitud)
+            result.add(i % longitud)
+        }
+        result.shuffle()
+        return result
+    }*/
 
     //______________________________________________________________________________________________
     /*
@@ -128,6 +139,7 @@ class LaArenaHondartza : Activity() {
             {
                 primero = null
                 bloqueo = false
+                //Toast.makeText(this, "Matched!", Toast.LENGTH_SHORT).show()
                 aciertos++
                 if (aciertos == respuestas.size)
                 {
@@ -171,12 +183,19 @@ class LaArenaHondartza : Activity() {
     }
 
     //______________________________________________________________________________________________
-    // al terminar el juego
+    // al teminar el juego
     private fun completarJuego(){
-        val intento = Intent(this, MsgVictoria::class.java)
-        intento.putExtra("imagen", "arena")
+        stopTimer()
+        juegoAcabado(4)
+        fin++
         cambio = true
-        startActivity(intento)
+        finalizar(this,"arena")
+
+//        intento.putExtra("imagen", "arena")
+//        cambio = true
+//        startActivity(intento)
+        /*binding.btnCompletado.setOnClickListener{
+        }*/
     }
 
     //______________________________________________________________________________________________
@@ -198,7 +217,7 @@ class LaArenaHondartza : Activity() {
             tableroPreguntas[i]!!.setImageResource(preguntas[arrayDesordenadoPreguntas[i]])
 
         }
-        // demora medio segundo luego esconde las imagenes puestas a los buttones
+        // demora  medio segundo luego esconde las imagenes puestas a los buttones
         Handler(Looper.myLooper()?:return).postDelayed({
             for (i in 0..4)
             {
@@ -206,16 +225,11 @@ class LaArenaHondartza : Activity() {
                 tableroPreguntas[i]!!.scaleType = ImageView.ScaleType.CENTER_CROP
                 tableroRespuestas[i]!!.setImageResource(fondo)
                 tableroPreguntas[i]!!.setImageResource(fondo)
-                (AnimatorInflater.loadAnimator(this, R.animator.vuelta) as AnimatorSet).apply {
-                    setTarget(tableroPreguntas[i]!!)
-                    start()
-                }
-                //tableroPreguntas[i]!!.startAnimation(AnimationUtils.loadAnimation(this, R.anim.vuelta))
 
             }
-        }, 4000)
+        }, 700)
 
-        // al hacer click sobre alguna foto llama a la funcion comprobar si no esta bloqueado
+        // al hacer  click sobre alguna foto llama a la funcion comprobar si no esta bloqueado
         for (i in 0..4)
         {
             tableroPreguntas[i]!!.isEnabled = true

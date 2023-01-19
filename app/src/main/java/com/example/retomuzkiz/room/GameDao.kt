@@ -4,23 +4,23 @@ import androidx.room.*
 
 @Dao
 interface GameDao {
-    //Listar todos los usuarios
+    //Listar todos los juegos
     @Query("select * from Game")
     fun getAllGames(): List<Game>
 
-    //Listar usuario en concreto
+    //Listar juegos en concreto
     @Query("select * from Game where gameName like :name")
     fun getGame(name: String): Game
 
-    //Insertar Usuario
+    //Insertar juegos
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertGame(game: Game)
 
-    //Eliminaar Usuario
+    //Eliminaar juegos
     @Delete
     fun deleteGame(game: Game)
 
-    //Actualizar Usuario
+    //Actualizar juegos
     @Update
     fun updateGame(game: Game)
 }

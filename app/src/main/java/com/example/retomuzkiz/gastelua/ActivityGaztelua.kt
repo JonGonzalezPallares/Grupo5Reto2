@@ -13,6 +13,8 @@ import android.view.DragEvent
 import android.view.View
 import android.widget.ImageView
 import androidx.core.view.isVisible
+import com.example.retomuzkiz.*
+import com.example.retomuzkiz.Laberinto.ActivityLaberinto.Companion.cambio
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityGazteluaBinding
 
@@ -20,7 +22,8 @@ class ActivityGaztelua : AppCompatActivity() {
     private lateinit var Imagen : ImageView
     lateinit var binding: ActivityGazteluaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-
+        fin = 0
+        startTimer()
         super.onCreate(savedInstanceState)
         binding = ActivityGazteluaBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -123,9 +126,11 @@ class ActivityGaztelua : AppCompatActivity() {
                         && !binding.imgabajoder.isVisible)
                     {
 
-                        val intento = Intent(this, MsgVictoria::class.java)
-                        intento.putExtra("imagen","castillo")
-                        startActivity(intento)
+                        stopTimer()
+                        juegoAcabado(6)
+                        fin++
+                        cambio = true
+                        finalizar(this,"castillo")
                         this.finish()
                     }
 

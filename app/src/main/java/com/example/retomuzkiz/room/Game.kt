@@ -7,7 +7,7 @@ data class Game(
     @PrimaryKey
     var gameName : String,
     var gameId: Int,
-   // var achievement: String,
+    var puntuacion: Int,
     var done: Boolean,
     var res: String
 

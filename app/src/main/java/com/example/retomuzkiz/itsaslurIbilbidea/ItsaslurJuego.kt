@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import com.example.retomuzkiz.*
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityItsaslurJuegoBinding
@@ -31,10 +32,11 @@ class ItsaslurJuego : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        startTimer()
         binding = ActivityItsaslurJuegoBinding.inflate(layoutInflater)
         setContentView(binding.root)
         usuario = intent.getParcelableExtra("user")!!
-
+        fin = 0
         RetoGrupoCinco.mSocket.on("game finish") { args ->
             runOnUiThread(){
                 finish()
@@ -77,10 +79,17 @@ class ItsaslurJuego : AppCompatActivity() {
                 if(posicion==(preguntas.size-1)){
                     button.setOnClickListener {
                         if(button.tag == "true"){
-                            val intento = Intent(this, MsgVictoria::class.java)
-                            intento.putExtra("imagen", "itsaslur")
+                           stopTimer()
+                            juegoAcabado(1)
+                            fin++
                             cambio = true
-                            startActivity(intento)
+                            finalizar(this,"itsaslur")
+
+
+//                            val intento = Intent(this, MsgVictoria::class.java)
+//                            intento.putExtra("imagen", "itsaslur")
+
+//                            startActivity(intento)
                         }
                     }
                 }else{
