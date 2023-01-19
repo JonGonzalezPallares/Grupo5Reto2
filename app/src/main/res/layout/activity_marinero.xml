@@ -56,6 +56,7 @@
         android:layout_marginBottom="50dp"
         android:background="@drawable/estilo_botones"
         android:text="@string/siguiente"
+        android:textColor="#FFFFFF"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

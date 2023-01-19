@@ -82,6 +82,7 @@
         android:layout_marginBottom="30dp"
         android:background="@drawable/estilo_botones"
         android:text="@string/jugar"
+        android:textColor="#FFFFFF"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

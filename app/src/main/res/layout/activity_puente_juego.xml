@@ -307,8 +307,8 @@
         android:alpha="0.5"
         android:background="@drawable/estilo_botones"
         android:enabled="false"
-        android:text="Comprobar"
-        android:textColor="#000000"
+        android:text="@string/Comprobar"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/imgFinal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

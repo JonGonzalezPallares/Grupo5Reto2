@@ -145,4 +145,13 @@
     <string name="ResTxtHermita">The solutions to the game are divided into: rough and calm sea, here are the solutions to the different photos:</string>
     <string name="ResTranquilo">Calm sea:</string>
     <string name="ResRevuelto">Rough sea:</string>
+    <string name="Aceptar">Goodbye</string>
+    <string name="txtLejos">You are to far from the point! Get closer to play.</string>
+    <string name="txtGuiado">You are in guide mode</string>
+    <string name="txtLibre">You are in free mode</string>
+    <string name="Crear">Create</string>
+    <string name="Informacion">Please, write you\'re name, you\'re classroom\'s name (you\'re pupils will use it as a password to enter in the match) and the password that\'s given in the user manual.</string>
+    <string name="Marinero2">The hermitage of Nuestra Señora del Socorro was built in 1768 and is located near the mouth of the Barbadun River. They call it Nuestra Señora del Socorro because they used it when there was danger to ask for help, which made it one of the favorites of the sailors of Pobeña, who were always at sea when they went fishing. Therefore, before starting to fish, the boats stopped there, went up to ask for protection and checked the state of the sea, to decide whether it was convenient to embark or not.</string>
+    <string name="Bienvenido">Welcome to Muskiz!</string>
+    <string name="CrearSala">The time has come to create a new room so your pupils can join in!</string>
 </resources>

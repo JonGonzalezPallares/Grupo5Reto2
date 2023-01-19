@@ -47,6 +47,7 @@
         android:layout_marginStart="160dp"
         android:background="@drawable/estilo_botones"
         android:text="@string/mar_tranquilo"
+        android:textColor="#FFFFFF"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/btnRevuelto"
         app:layout_constraintStart_toStartOf="parent" />
@@ -59,6 +60,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/estilo_botones"
         android:text="@string/mar_revuelto"
+        android:textColor="#FFFFFF"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

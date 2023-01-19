@@ -40,7 +40,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/estilo_botones"
-        android:text="@string/jugar" />
+        android:text="@string/jugar"
+        android:textColor="#FFFFFF" />
 
     <LinearLayout
 
