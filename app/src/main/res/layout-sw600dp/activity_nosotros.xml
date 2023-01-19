@@ -30,10 +30,11 @@
             <TextView
                 android:id="@+id/textView48"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="134dp"
                 android:layout_weight="1"
                 android:text="@string/Nosotros"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="25sp" />
         </TableRow>
 
         <TableRow
@@ -44,19 +45,18 @@
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="185dp"
-                android:layout_height="122dp"
+                android:layout_width="442dp"
+                android:layout_height="262dp"
                 android:layout_marginStart="10dp"
-                android:layout_weight="10"
+                android:layout_weight="20"
                 app:srcCompat="@drawable/txurdinaga" />
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="140dp"
+                android:layout_width="288dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_weight="1"
                 app:srcCompat="@drawable/logo_upv" />
 
         </TableRow>
@@ -83,7 +83,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Desarrollo"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/textView32"
@@ -91,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/tx1"
                     android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/textView30"
@@ -99,7 +100,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/tx2"
                     android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/textView37"
@@ -107,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/tx3"
                     android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/textView36"
@@ -115,7 +116,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/tx4"
                     android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:textSize="25sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -132,7 +133,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Idea"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/textView34"
@@ -140,7 +142,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/upv1"
                     android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/textView33"
@@ -148,7 +150,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/upv2"
                     android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/textView31"
@@ -156,7 +158,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/upv3"
                     android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/textView35"
@@ -164,7 +166,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/upv4"
                     android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:textSize="25sp" />
             </LinearLayout>
         </TableRow>
 

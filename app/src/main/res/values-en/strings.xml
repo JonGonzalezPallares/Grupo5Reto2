@@ -11,8 +11,9 @@
     <string name="hintUser">Username</string>
     <string name="hintClase">Classroom</string>
     <string name="start">Start</string>
-    <string name="othersUsers">Other Users</string>
-    <string name="eresProfesor"><u>IF YOU ARE A TEACHER, PRESS HERE</u></string>
+    <string name="othersUsers">Savegames:</string>
+    <string name="eresProfesor"><u>IF YOU ARE PROFESSOR, PRESS HERE</u></string>
+    <string name="partidaguardada">Touch to continue this savegame</string>
 
 
     <!-- Map Activity -->
@@ -76,7 +77,7 @@
         That night, people who come to Muskize light torches up to the old warehouse of Petronor, together with the whistlers, and then throw the torches into the bonfire of San Jorge.
 </string>
     <!-- Pantalla felicitacion-->
-    <string name="congratulations1">You did it, buddy!</string>
+    <string name="congratulations1">You did it, friend!</string>
     <string name="congratulations2">You have solved the challenge</string>
     <string name="GoToMap">Go to Map</string>
     <!-- Pantalla felicitacion-->
@@ -144,13 +145,4 @@
     <string name="ResTxtHermita">The solutions to the game are divided into: rough and calm sea, here are the solutions to the different photos:</string>
     <string name="ResTranquilo">Calm sea:</string>
     <string name="ResRevuelto">Rough sea:</string>
-    <string name="Marinero2">The hermitage of Nuestra Señora del Socorro was built in 1768 and is located near the mouth of the Barbadun river. They call it Nuestra Señora del Socorro because they used it when there was danger to ask for help, which made it one of the favorites of the sailors from Pobeña, who were always at sea when they went fishing. For this reason, before starting to fish, the boats would stop there, go up to ask for protection and check the state of the sea, to decide if it was convenient to embark or not.</string>
-    <string name="Bienvenido">Welcome to Muskiz!</string>
-    <string name="CrearSala">The time has come to create a room for your students to join!</string>
-    <string name="Informacion">Please write your name, the name of your class (which your students will use as a code to join the game) and the password provided in the user manual.</string>
-    <string name="Crear">Create</string>
-    <string name="txtLibre">You are now in free mode</string>
-    <string name="txtGuiado">You are now in guided mode</string>
-    <string name="txtLejos">You are to far from the point! Get closer to play.</string>
-    <string name="Aceptar">Agree</string>
 </resources>
