@@ -22,7 +22,7 @@
     <string name="others">Otros</string>
     <string name="freeMode">Modo libre</string>
     <string name="guidedMode">Modo guiado</string>
-    <string name="profesorMode">Modo profesor</string>
+    <string name="profesorMode">Modo profesor/a</string>
     <string name="yourProgress">Tu progreso</string>
     <string name="ranking">Ranking</string>
     <string name="aboutUs">Sobre nosotros</string>
@@ -53,7 +53,7 @@
     <string name="gameItsaslurIbilbidea">Paseo de Itsaslur</string>
 
     <string name="waiting">Esperando</string>
-    <string name="waitingExplanation">Hay que esperar a que el profesor termine de dar la explicacion</string>
+    <string name="waitingExplanation">Hay que esperar a que el/la profesor/a termine de dar la explicacion</string>
     <string name="itsaslurQ1">¿Por donde hemos entrado al paseo?</string>
     <string name="itsaslurQ2">¿Que hemos visto en el paseo?</string>
     <string name="itsaslurQ3">¿Que hemos encontrado a la mitad del camino?</string>
@@ -70,7 +70,7 @@
         En Muskiz tiene gran importancia la bajada de las antorchas, que se inicia en la estación a las 22:30. Luego, alrededor de las 23:30, comienzan los fuegos artificiales, seguidos de una verbena.
         Esa noche, las personas que acuden a Muskiz encienden antorchas hasta el antiguo almacén de Petronor, junto con los silbadores, y luego arrojan las antorchas a la hoguera de San Jorge.</string>
     <!-- Pantalla felicitacion-->
-    <string name="congratulations1">¡Lo hiciste, amigo!</string>
+    <string name="congratulations1">¡Lo hiciste, compañero!</string>
     <string name="congratulations2">Has resuelto el desafio</string>
     <string name="GoToMap">Ir al mapa</string>
     <!-- Pantalla felicitacion-->
@@ -145,6 +145,15 @@ Parte de la playa está incluida en el espacio natural protegido de la ría del 
     <string name="ResTxtHermita">Las soluciones al juego estan divididas en: mar revuelto y tranquilo, aqui estan las soluciones a las diferentes fotos:</string>
     <string name="ResRevuelto">Mar revuelto:</string>
     <string name="ResTranquilo">Mar tranquilo:</string>
+    <string name="Marinero2">La ermita de Nuestra Señora del Socorro fue construida en 1768 y está situada cerca de la desembocadura del río Barbadun. La llaman Nuestra Señora del Socorro porque la usaban cuando había peligro para pedir ayuda, lo que la convertía en una de las favoritas de los marineros de Pobeña, que siempre estaban en el mar cuando iban a pescar. Por eso, antes de empezar a pescar, las barcas se detenían allí, subían a pedir protección y comprobaban el estado del mar, para decidir si convenía embarcar o no.</string>
+    <string name="Bienvenido">¡Bienvenido a Muskiz!</string>
+    <string name="CrearSala">¡Ha llegado el momento de crear una sala para que tus alumnos se unan!</string>
+    <string name="Informacion">Por favor, escriba su nombre,  el nombre de tu clase (el cual tus alumnos usarán como clave para unirse a la partida) y la contraseña facilitada en el manual de usuario.</string>
+    <string name="Crear">Crear</string>
+    <string name="txtLibre">Ahora estás en el modo libre</string>
+    <string name="txtGuiado">Ahora estás en el modo guiado</string>
+    <string name="txtLejos">¡Estas muy lejos del punto! Hacercate más para jugar.</string>
+    <string name="Aceptar">Aceptar</string>
 
 
 </resources>

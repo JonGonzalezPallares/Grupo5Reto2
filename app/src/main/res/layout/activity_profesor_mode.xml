@@ -39,9 +39,10 @@
                 app:navGraph="@navigation/nav_graph" />
         </androidx.cardview.widget.CardView>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnOcultar"
             android:layout_width="match_parent"
+            android:background="@drawable/estilo_botones"
             android:layout_height="wrap_content"
             android:text="@string/volver" />
 
@@ -66,12 +67,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnPuenteRes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="166dp"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
+            android:background="@drawable/estilo_botones"
             android:text="@string/ResButPuente"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -86,12 +88,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnItsasRes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="106dp"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
+            android:background="@drawable/estilo_botones"
             android:text="@string/ResButPaseo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView17" />
@@ -137,22 +140,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnCastilloRes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="123dp"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
+            android:background="@drawable/estilo_botones"
             android:text="@string/ResButCastillo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnHermitaRes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="131dp"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
+            android:background="@drawable/estilo_botones"
             android:text="@string/ResButHermita"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView21" />

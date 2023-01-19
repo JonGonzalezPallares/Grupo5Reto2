@@ -5,10 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
-import com.example.retomuzkiz.laArenaHondartza.LaArenaHondartza
-import com.example.retomuzkiz.room.Progress
 import com.example.retomuzkiz.profesor.ProfesorMode
-import com.example.retomuzkiz.puenteRomano.PuenteRomano
+import com.example.retomuzkiz.room.Progress
 import com.example.retomuzkiz.room.Usuario
 import kotlin.random.Random
 import kotlin.random.nextInt
@@ -29,7 +27,7 @@ class MenuPrincipal : AppCompatActivity() {
 
 
         binding.txtProfesor.setOnClickListener(){
-            startActivity(Intent(this, LaArenaHondartza::class.java))
+            startActivity(Intent(this, ProfesorMode::class.java))
         }
 
         binding.button.setOnClickListener {

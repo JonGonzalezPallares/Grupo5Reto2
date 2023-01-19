@@ -10,6 +10,7 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityPuenteJuegoBinding
@@ -156,6 +157,7 @@ class PuenteJuego : AppCompatActivity() {
                     }
                 }
                 binding.btnComprobar.isEnabled = true
+                binding.btnComprobar.alpha = 1F
             }
             paso += 1
         }
@@ -169,6 +171,7 @@ class PuenteJuego : AppCompatActivity() {
                 if(cantidad<4){
                     imagen.startAnimation(AnimationUtils.loadAnimation(this, R.anim.animacion_puente))
                 }
+                binding.btnComprobar.alpha = 0.5F
                 changeScreen()
             }else{
                 cleanSelection()
