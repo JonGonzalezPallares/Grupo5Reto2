@@ -21,6 +21,7 @@ class MenuPrincipal : AppCompatActivity() {
     val db = RetoGrupoCinco.database!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_RetoMuzkiz)
         super.onCreate(savedInstanceState)
         binding = ActivityMenuPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)

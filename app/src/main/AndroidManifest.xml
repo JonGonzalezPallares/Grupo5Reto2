@@ -19,9 +19,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RetoMuzkiz"
         tools:targetApi="31">
+        <activity
+            android:name=".LoadingActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!-- Activity sobre nosotros -->
         <activity
             android:name=".Nosotros"
@@ -29,44 +38,28 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-
-
-        <!-- Activity para crear la clase del socket -->
+        </activity> <!-- Activity para crear la clase del socket -->
         <activity
-        android:name=".ActivityCrearClaseSocket"
-        android:exported="false">
-                <meta-data
+            android:name=".ActivityCrearClaseSocket"
+            android:exported="false">
+            <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-        
-
-        <!-- Activity modo profesor -->
+        </activity> <!-- Activity modo profesor -->
         <activity
             android:name=".profesor.ProfesorMode"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-
-
-        <!-- Activity mensaje victoria -->
+        </activity> <!-- Activity mensaje victoria -->
         <activity
             android:name=".clases.MsgVictoria"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-
-
-        <!-- Activity de Itsaslur Ibilbidea -->
+        </activity> <!-- Activity de Itsaslur Ibilbidea -->
         <activity
             android:name=".itsaslurIbilbidea.ItsaslurJuego"
             android:exported="false">
@@ -74,18 +67,13 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".itsaslurIbilbidea.PantallaEspera"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-
-
-        <!-- Activity de la hermita -->
+        </activity> <!-- Activity de la hermita -->
         <activity
             android:name=".ponekakoermita.JuegodemarActivity"
             android:exported="false"
@@ -94,7 +82,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".ponekakoermita.MarineroActivity"
             android:exported="false"
@@ -102,55 +89,36 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-
-
-        <!-- Activity laberinto -->
+        </activity> <!-- Activity laberinto -->
         <activity
             android:name=".Laberinto.ActivityLaberinto"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-
-
-        <!-- Activity del castillo -->
+        </activity> <!-- Activity del castillo -->
         <activity
             android:name=".gastelua.ExplicacionActivity"
-            android:exported="false"
-            >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".gastelua.ActivityGaztelua"
             android:exported="false"
-            android:screenOrientation="portrait"
-            >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-
-
-        <!-- Activity del mapa -->
+        </activity> <!-- Activity del mapa -->
         <activity
             android:name=".MapsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-
-
-        <!-- Activity del puente romano -->
+        </activity> <!-- Activity del puente romano -->
         <activity
             android:name=".puenteRomano.PuenteRomano"
             android:exported="false">
@@ -164,11 +132,7 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-
-
-        <!-- Activity de la Arena -->
+        </activity> <!-- Activity de la Arena -->
         <activity
             android:name=".laArenaHondartza.IntroActivity"
             android:exported="false">
@@ -182,11 +146,7 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-
-
-        <!-- Activity de Burdinola -->
+        </activity> <!-- Activity de Burdinola -->
         <activity
             android:name=".burdinola.BurdinolaVideoActivity"
             android:exported="false">
@@ -200,11 +160,7 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-
-
-        <!-- Servicio de geolocalizacion -->
+        </activity> <!-- Servicio de geolocalizacion -->
         <service android:name=".ServicioGeolocalizacion" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -219,24 +175,18 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCyuDeqvpqwlX5VhQW0uaJbEbmPbNsRMUs" />
-
-
-
-        <!-- Activity del menu principal -->
+            android:value="AIzaSyCyuDeqvpqwlX5VhQW0uaJbEbmPbNsRMUs" /> <!-- Activity del menu principal -->
         <activity
             android:name=".MenuPrincipal"
             android:exported="true"
-            android:label="@string/title_activity_maps">
+            android:label="@string/title_activity_maps"
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
+
 </manifest>

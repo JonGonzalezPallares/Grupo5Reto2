@@ -95,7 +95,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     override fun onDestroy() {
         super.onDestroy()
         RetoGrupoCinco.mSocket.disconnect()
-        Servicio
+        stopService(Servicio)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         val user: Usuario = intent.getParcelableExtra("user")!!

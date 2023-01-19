@@ -19,6 +19,9 @@
     <style name="Imagenes">
         <item name="background">@drawable/stilo_desplegable_imagen</item>
     </style>
+    <style name="splashscreen" parent="Theme.RetoMuzkiz">
+        <item name="android:windowBackground">@drawable/splashscreen</item>
+    </style>
 
 
 <style name="menu">
