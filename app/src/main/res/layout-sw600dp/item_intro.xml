@@ -34,11 +34,12 @@
         android:src="@drawable/siguiente"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_salir"
         android:layout_width="935dp"
         android:layout_height="92dp"
         android:layout_alignParentBottom="true"
+        android:background="@drawable/estilo_botones"
         android:text="@string/jugar" />
 
     <LinearLayout
