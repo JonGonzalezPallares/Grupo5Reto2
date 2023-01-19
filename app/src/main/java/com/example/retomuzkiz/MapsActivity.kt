@@ -234,24 +234,31 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             MarkerOptions()
                 .position(puenteRomano)
                 .title(getString(R.string.gamePuenteRomano))
+                .snippet("0")
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(pobalekoBurdinola)
                 .title(getString(R.string.gameFundicion))
+                .snippet("1")
+
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(pobenakoErmita)
                 .title(getString(R.string.gameHermitaDePobeña))
+                .snippet("2")
+
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(hondartzaArena)
                 .title(getString(R.string.gameLaArenaHondartza))
+                .snippet("3")
+
         )
 
         mMap.addMarker(
@@ -259,12 +266,16 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             MarkerOptions()
                 .position(ibilbideItsaslur)
                 .title(getString(R.string.gameItsaslurIbilbidea))
+                .snippet("4")
+
         )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(muniatonesGaztelua)
                 .title(getString(R.string.gameCastilloMuñatones))
+                .snippet("5")
+
         )
 
         mMap.addMarker(
@@ -272,6 +283,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             MarkerOptions()
                 .position(sanJuan)
                 .title(getString(R.string.gameSanJuan))
+                .snippet("6")
+
         )
 
         mMap.setOnMarkerClickListener(this)
