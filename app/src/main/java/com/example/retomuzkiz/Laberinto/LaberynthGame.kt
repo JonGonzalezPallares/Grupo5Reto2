@@ -7,6 +7,10 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import com.example.retomuzkiz.fin
+import com.example.retomuzkiz.finalizar
+import com.example.retomuzkiz.juegoAcabado
+import com.example.retomuzkiz.stopTimer
 import java.util.*
 import kotlin.math.abs
 
@@ -151,7 +155,7 @@ class LaberynthGame(applicationContext: Context, attrs: AttributeSet?) :
 
 
     private fun checkExit(){
-        if(contador < 3){
+        if(contador < 1){
             if (player == exit){
                 ROWS += 5
                 COLS += 5
@@ -160,10 +164,13 @@ class LaberynthGame(applicationContext: Context, attrs: AttributeSet?) :
             }
         }else{
             if(player == exit) {
-                ActivityLaberinto.fin ++
+
+
+                stopTimer()
+                juegoAcabado(0)
+                fin ++
+                finalizar(contexto,"laberinto")
                 ActivityLaberinto.cambio = true
-                ActivityLaberinto.finalizar(contexto)
-                ActivityLaberinto.stopTimer()
             }
         }
     }

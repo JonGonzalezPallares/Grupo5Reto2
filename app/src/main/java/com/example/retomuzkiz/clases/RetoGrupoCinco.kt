@@ -26,11 +26,15 @@ class RetoGrupoCinco : Application() {
         lateinit var gameDb :GameDao
         lateinit var userDb :UsuarioDao
         var mSocket : Socket = IO.socket("https://servicioitsaslur.glitch.me/");
+        var currentUser: Usuario? = null
 
+        fun setUser(user: Usuario) {
+        currentUser = user
+        }
 
 
     }
-    var gameList = List<Game>()
+    lateinit var  gameList: List<Game>
     override fun onCreate() {
         super.onCreate()
         prefs = Pref(applicationContext)
@@ -57,20 +61,20 @@ class RetoGrupoCinco : Application() {
     }
     private fun cargarProgreso() {
 
-        val progress =  Progress("1", 0, 0,gameList)
+        val progress =  Progress("1", 0, 0,TypeConverter.someObjectListToString(gameList))
 
         progressDb.insertProgress(progress)
     }
 
     private fun cargarJuegos() {
          gameList = listOf<Game>(
-            Game(getString(R.string.gameSanJuan),1, false,SITESNAMES.NOCHE_SAN_JUAN_IMG),
-            Game(getString(R.string.gameItsaslurIbilbidea), 1,false,SITESNAMES.ITSASLUR_IBILBIDEA_IMG),
-            Game(getString(R.string.gamePuenteRomano), 1,false,SITESNAMES.PUENTE_ROMANO_IMG),
-            Game(getString(R.string.gameFundicion),1, false,SITESNAMES.POBENA_FUNDICION_IMG),
-            Game(getString(R.string.gameLaArenaHondartza),1, false,SITESNAMES.PLAYA_LA_ARENA_IMG),
-            Game(getString(R.string.gameHermitaDePobeña), 1,false,SITESNAMES.POBENA_HERMITA_IMG),
-            Game(getString(R.string.gameCastilloMuñatones),1, false,SITESNAMES.CASTILLO_MUNATONES_IMG))
+            Game(getString(R.string.gameSanJuan),1, 0,false,SITESNAMES.NOCHE_SAN_JUAN_IMG),
+            Game(getString(R.string.gameItsaslurIbilbidea), 2,0,false,SITESNAMES.ITSASLUR_IBILBIDEA_IMG),
+            Game(getString(R.string.gamePuenteRomano), 3,0,false,SITESNAMES.PUENTE_ROMANO_IMG),
+            Game(getString(R.string.gameFundicion),4, 0,false,SITESNAMES.POBENA_FUNDICION_IMG),
+            Game(getString(R.string.gameLaArenaHondartza),5, 0,false,SITESNAMES.PLAYA_LA_ARENA_IMG),
+            Game(getString(R.string.gameHermitaDePobeña), 6,0,false,SITESNAMES.POBENA_HERMITA_IMG),
+            Game(getString(R.string.gameCastilloMuñatones),7, 0,false,SITESNAMES.CASTILLO_MUNATONES_IMG))
         gameList.forEach(){
             gameDb.insertGame(it)
         }

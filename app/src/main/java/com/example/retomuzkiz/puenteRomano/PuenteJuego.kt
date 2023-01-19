@@ -10,7 +10,7 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
-import com.example.retomuzkiz.R
+import com.example.retomuzkiz.*
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityPuenteJuegoBinding
 import com.example.retomuzkiz.funcionesExtension.eliminarNegrita
@@ -36,7 +36,8 @@ class PuenteJuego : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPuenteJuegoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        startTimer()
+        fin = 0
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
 
@@ -247,10 +248,11 @@ class PuenteJuego : AppCompatActivity() {
         val tiempo = binding.imgFinal.animation.duration
 
         Handler(Looper.myLooper()?:return).postDelayed({
-            val intento = Intent(this, MsgVictoria::class.java)
-            intento.putExtra("imagen", "puente")
+            stopTimer()
+            juegoAcabado(2)
+            fin++
             cambio = true
-            startActivity(intento)
+            finalizar(this,"itsaslur")
         }, (tiempo+500))
     }
 

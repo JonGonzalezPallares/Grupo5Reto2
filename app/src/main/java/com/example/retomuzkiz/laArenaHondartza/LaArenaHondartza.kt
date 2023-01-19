@@ -7,7 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import com.example.retomuzkiz.funcionesExtension.desordeno
 import android.widget.*
-import com.example.retomuzkiz.R
+import com.example.retomuzkiz.*
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityLaArenaHondartzaBinding
 
@@ -44,6 +44,8 @@ class LaArenaHondartza : Activity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLaArenaHondartzaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        startTimer()
+        fin = 0
         init()
     }
 
@@ -183,10 +185,15 @@ class LaArenaHondartza : Activity() {
     //______________________________________________________________________________________________
     // al teminar el juego
     private fun completarJuego(){
-        val intento = Intent(this, MsgVictoria::class.java)
-        intento.putExtra("imagen", "arena")
+        stopTimer()
+        juegoAcabado(4)
+        fin++
         cambio = true
-        startActivity(intento)
+        finalizar(this,"arena")
+
+//        intento.putExtra("imagen", "arena")
+//        cambio = true
+//        startActivity(intento)
         /*binding.btnCompletado.setOnClickListener{
         }*/
     }

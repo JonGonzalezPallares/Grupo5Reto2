@@ -9,6 +9,8 @@ import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.prefs
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
 import com.example.retomuzkiz.room.Progress
 import com.example.retomuzkiz.gastelua.ActivityGaztelua
+import com.example.retomuzkiz.room.Game
+import com.example.retomuzkiz.room.TypeConverter
 import com.example.retomuzkiz.room.Usuario
 import kotlin.random.Random
 import kotlin.random.nextInt
@@ -34,6 +36,7 @@ class MenuPrincipal : AppCompatActivity() {
             dialogos = 0
             var user = comprobarUsuario()
             var room :String? = null
+            RetoGrupoCinco.currentUser = null
             RetoGrupoCinco.mSocket.connect()
             RetoGrupoCinco.mSocket.emit("join server",binding.txtUsuario.text.toString())
             RetoGrupoCinco.mSocket.emit("join room",binding.txtClase.text.toString())
@@ -55,11 +58,14 @@ class MenuPrincipal : AppCompatActivity() {
                 if(dialogos<1) {
                     if (room == null) {
                         if (user != null) {
+                            RetoGrupoCinco.setUser(user!!)
                             val intento =
                                 Intent(this, MapsActivity::class.java).putExtra("user", user)
                             startActivity(intento)
                         } else {
                             user = insertarUser()
+                            RetoGrupoCinco.setUser(user!!)
+
                             val intento =
                                 Intent(this, MapsActivity::class.java).putExtra("user", user)
                             startActivity(intento)
@@ -93,7 +99,7 @@ class MenuPrincipal : AppCompatActivity() {
             user.userId,
             0,
             0,
-            0
+            TypeConverter.someObjectListToString(cargarJuegos(user))
         )
         db.progressDao.insertProgress(progress)
         // prefs.saveUser(userName)
@@ -119,7 +125,24 @@ class MenuPrincipal : AppCompatActivity() {
         return null
     }
 
-
+    private fun cargarJuegos(user: Usuario) : List<Game> {
+        var gameList = listOf<Game>(
+            Game(getString(R.string.gameSanJuan),1, 0,false,
+                RetoGrupoCinco.SITESNAMES.NOCHE_SAN_JUAN_IMG),
+            Game(getString(R.string.gameItsaslurIbilbidea), 2,0,false,
+                RetoGrupoCinco.SITESNAMES.ITSASLUR_IBILBIDEA_IMG),
+            Game(getString(R.string.gamePuenteRomano), 3,0,false,
+                RetoGrupoCinco.SITESNAMES.PUENTE_ROMANO_IMG),
+            Game(getString(R.string.gameFundicion),4, 0,false,
+                RetoGrupoCinco.SITESNAMES.POBENA_FUNDICION_IMG),
+            Game(getString(R.string.gameLaArenaHondartza),5, 0,false,
+                RetoGrupoCinco.SITESNAMES.PLAYA_LA_ARENA_IMG),
+            Game(getString(R.string.gameHermitaDePobeña), 6,0,false,
+                RetoGrupoCinco.SITESNAMES.POBENA_HERMITA_IMG),
+            Game(getString(R.string.gameCastilloMuñatones), 7, 0,false,
+                RetoGrupoCinco.SITESNAMES.CASTILLO_MUNATONES_IMG))
+        return gameList
+    }
     override fun onResume() {
         super.onResume()
 //__________________________________________________________________________________________
@@ -140,8 +163,7 @@ class MenuPrincipal : AppCompatActivity() {
     // guarda en sharedFreferences nombre pasado en parametro y llama la activity maps
     private fun listar(user: Usuario) {
         //prefs.saveUser(nombre)
-        val intento = Intent(this, MapsActivity::class.java).putExtra("user", user)
-        startActivity(intento)
+
         RetoGrupoCinco.mSocket.connect()
         RetoGrupoCinco.mSocket.emit("join server",user?.name)
 
@@ -155,6 +177,21 @@ class MenuPrincipal : AppCompatActivity() {
         RetoGrupoCinco.mSocket.emit("join room",user?.userClass)
         RetoGrupoCinco.mSocket.on("Salas"){ args ->
             println(args[0])
+        }
+        RetoGrupoCinco.mSocket.on("joined") { args ->
+            var room = null
+            if(dialogos<1) {
+                if (room == null) {
+                    if (user != null) {
+                        RetoGrupoCinco.setUser(user!!)
+                        val intento =
+                            Intent(this, MapsActivity::class.java).putExtra("user", user)
+                        startActivity(intento)
+                        dialogos++
+                    }
+                }
+            }
+
         }
 
     }
