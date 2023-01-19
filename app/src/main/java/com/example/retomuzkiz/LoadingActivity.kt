@@ -31,12 +31,12 @@ class LoadingActivity : AppCompatActivity() {
 
     fun animaciones(){
         binding.imgvandera.animate().apply {
-            duration=1200
-            rotationYBy(360f)
+            duration=1200 // La animación dura 1.2 segundo
+            rotationYBy(360f) //rotacion en horizontal en un sentido
         }.withEndAction {
             binding.imgvandera.animate().apply {
-                duration=1200
-                rotationYBy(-360f)
+                duration=1200 // La animación dura 1.2 segundo
+                rotationYBy(-360f) //rotacion en horizontal en el otro sentido
             }.start()
         }
         binding.txtmuzkiz.animate().apply {
@@ -47,7 +47,8 @@ class LoadingActivity : AppCompatActivity() {
             binding.txtmuzkiz.animate().apply {
             alpha(0.5f) // El TextView se vuelve completamente visible
             setDuration(750) // La animación dura 1 segundo
-            setInterpolator(LinearInterpolator()) // Utiliza un interpolador lineal
+            setInterpolator(LinearInterpolator()) // Utiliza un interpolador lineal para darle
+                //una uniformidad a la transformacion del texto
             }.withEndAction {
                 binding.txtmuzkiz.animate().apply {
                     alpha(1f) // El TextView se vuelve completamente visible
