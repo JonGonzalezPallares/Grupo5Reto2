@@ -84,14 +84,14 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     private var iniciarguiado = false
     private lateinit var Servicio: Intent
     val db = RetoGrupoCinco.database!!
-
+    lateinit var user:Usuario
     override fun onDestroy() {
         super.onDestroy()
         RetoGrupoCinco.mSocket.disconnect()
         stopService(Servicio)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
-        val user: Usuario = intent.getParcelableExtra("user")!!
+        user = intent.getParcelableExtra("user")!!
 
         this.supportActionBar!!.hide()
 
@@ -110,10 +110,15 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         //menu lateral
         val header = navView.getHeaderView(0)
         var totPuntuacion =  header.findViewById<TextView>(R.id.menuTxtPuntuacion)
-        var nombreUser =  header.findViewById<TextView>(R.id.menuTxtUser)
         totPuntuacion.text = "Puntuacion: ${db.progressDao.getUserProgress(user!!.userId).totalPuntuation.toString()}"
-        nombreUser.text = user.name
 
+        var nombreUser =  header.findViewById<TextView>(R.id.menuTxtUser)
+        nombreUser.text = user.name
+        RetoGrupoCinco.mSocket.on("gameCompleted"){ args->
+            runOnUiThread(){
+                totPuntuacion.text = "Puntuacion: ${db.progressDao.getUserProgress(user!!.userId).totalPuntuation.toString()}"
+            }
+        }
         binding.Navegation.setOnClickListener{
 
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
@@ -436,6 +441,9 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         if (keyPathsBehavior.state != BottomSheetBehavior.STATE_HIDDEN){
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
         }else{
+
+            val intento = Intent(this, MenuPrincipal::class.java)
+            startActivity(intento)
             super.onBackPressed()
         }
     }

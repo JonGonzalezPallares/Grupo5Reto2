@@ -28,7 +28,7 @@ class MenuPrincipal : AppCompatActivity() {
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
 
-
+        dialogos = 0
         binding.txtProfesor.setOnClickListener(){
             startActivity(Intent(this,ActivityCrearClaseSocket::class.java))
         }
@@ -187,6 +187,7 @@ class MenuPrincipal : AppCompatActivity() {
                         val intento =
                             Intent(this, MapsActivity::class.java).putExtra("user", user)
                         startActivity(intento)
+                        finish()
                         dialogos++
                     }
                 }
