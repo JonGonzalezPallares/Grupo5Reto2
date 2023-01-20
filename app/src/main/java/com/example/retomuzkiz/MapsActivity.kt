@@ -389,7 +389,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 }
             }
 
-            keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
+            keyPathsBehavior.state = BottomSheetBehavior.STATE_EXPANDED
         } else {
             //esto pasa si estas legos de la ubicacion
             Toast.makeText(
