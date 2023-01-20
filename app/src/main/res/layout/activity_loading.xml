@@ -28,7 +28,7 @@
         android:layout_height="61dp"
         android:layout_marginBottom="54dp"
         android:elegantTextHeight="true"
-        android:text="Muzkiz Aurrera!!"
+        android:text="Muskiz Aurrera!!"
         android:textAlignment="center"
         android:textSize="20sp"
         app:autoSizeTextType="uniform"
