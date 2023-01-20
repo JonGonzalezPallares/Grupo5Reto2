@@ -37,6 +37,7 @@ fun finalizar(contexto: Context, gameName:String) {
         val intento = Intent(contexto, MsgVictoria::class.java)
         intento.putExtra("imagen", gameName)
         ContextCompat.startActivity(contexto, intento, null)
+        RetoGrupoCinco.mSocket.emit("game completed", currentProgress!!.totalPuntuation)
     }
 }
 var startTime: Long = 0
