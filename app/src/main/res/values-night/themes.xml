@@ -3,7 +3,7 @@
     <style name="Theme.RetoMuzkiz" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#781AAA</item>
-        <item name="colorPrimaryVariant">#0CB300</item>
+        <item name="colorPrimaryVariant">#083700</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -12,5 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+    <!-- Color fragmentos del puente -->
+    <style name="colorFragment">
+        <item name="android:textColor">#C60101</item>
     </style>
 </resources>

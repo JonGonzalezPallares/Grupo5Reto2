@@ -13,6 +13,7 @@
 
         <TextView
             android:id="@+id/txtPreg3"
+            style="@style/colorFragment"
             android:layout_width="283dp"
             android:layout_height="482dp"
             android:layout_marginStart="68dp"
@@ -23,7 +24,6 @@
             android:paddingEnd="10dp"
             android:text="@string/puente_romano_enunciado_3"
             android:textAlignment="center"
-            android:textColor="#703C10"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
             android:layout_marginEnd="160dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="10dp"
             android:background="#00FFFFFF"
             android:src="@drawable/saltar"
             app:layout_constraintBottom_toBottomOf="parent"

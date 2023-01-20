@@ -32,23 +32,25 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="50dp"
             android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/botones_desactivados"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ubicacion"
-            android:focusable="true" />
+            app:srcCompat="@drawable/ubicacion" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/Navegation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
             android:clickable="true"
+            android:focusable="true"
             android:translationZ="20dp"
-            app:layout_constraintTop_toTopOf="parent"
+            app:backgroundTint="@color/botones_desactivados"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/menu"
-            android:focusable="true" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/menu" />
 
         <com.google.android.material.navigation.NavigationView
             android:animateLayoutChanges="true"
