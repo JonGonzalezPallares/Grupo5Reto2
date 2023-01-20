@@ -13,8 +13,10 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:windowContentTransitions">true</item>
-
-
+    </style>
+    <!-- Color fragmentos del puente -->
+    <style name="colorFragment">
+        <item name="android:textColor">#703C10</item>
     </style>
     <style name="Imagenes">
         <item name="background">@drawable/stilo_desplegable_imagen</item>
