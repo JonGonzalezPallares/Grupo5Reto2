@@ -7,19 +7,19 @@ class ProveedorParrafos{
     companion object{
         var listaParrafos= listOf(
             Parrafo(
-                Resources.getSystem().getString(R.string.arenaExpl1)
+                "La Arena hondartza Kantabriaren mugan dago, Muskizen. Hala ere hau ez da Muskizekoa bakarrik, bi herritan banatuta baitago: Zierbena eta Muskiz."
             ),
             Parrafo(
-                Resources.getSystem().getString(R.string.arenaExpl2)
+                "Bizkaiko kostaldeko bigarren hondartzarik zabalena da, ia kilometro bat luze, 966 metro hain zuzen."
             ),
             Parrafo(
-                Resources.getSystem().getString(R.string.arenaExpl3)
+                "Hondartza honetan Barbadun ibaia isurtzen da, eta hura gurutzatu egin daiteke, hondartza Pobeña auzoarekin lotzen duen zubi bati esker."
             ),
             Parrafo(
-                Resources.getSystem().getString(R.string.arenaExpl4)
+                "La Arena hondartzak balio botaniko handiko ingurumen eremua, hareatzak, dunak eta padurak ditu."
             ),
             Parrafo(
-                Resources.getSystem().getString(R.string.arenaExpl5)
+                "Jarduera eta kirol asko praktikatu daitezke hemen, haien artean famatuena surfa."
             )
         )
     }

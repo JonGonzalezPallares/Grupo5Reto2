@@ -87,8 +87,7 @@
                     android:name="com.example.retomuzkiz.PopUpFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    tools:layout="@layout/fragment_pop_up" />
+                    android:visibility="gone" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/Navegation"
@@ -128,6 +127,7 @@
                                 android:id="@+id/imgPuenteRomano"
                                 android:layout_width="match_parent"
                                 android:layout_height="103dp"
+                                android:background="@drawable/stilo_desplegable_imagen"
                                 tools:src="@drawable/puentecompleto" />
                         </androidx.cardview.widget.CardView>
 
