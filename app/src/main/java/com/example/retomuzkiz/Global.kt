@@ -77,7 +77,12 @@ fun juegoAcabado(gamePos : Int) {
 }
 
 fun calcularPuntuacionMuñatones(gamePos: Int): List<Game>? {
-    var puntuacion = 500 - time
+    var puntuacion= 0
+    if(time>500){
+        puntuacion = 0
+    }else {
+        puntuacion = 500 - time
+    }
     var totPuntuation = 0
 
     var list = TypeConverter.stringToSomeObjectList(currentProgress!!.gamesDone)
@@ -93,7 +98,12 @@ fun calcularPuntuacionMuñatones(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionHermita(gamePos: Int): List<Game>? {
-    var puntuacion = 500 - time
+    var puntuacion= 0
+    if(time>500){
+        puntuacion = 0
+    }else {
+        puntuacion = 500 - time
+    }
     var totPuntuation = 0
 
     var list = TypeConverter.stringToSomeObjectList(currentProgress!!.gamesDone)
@@ -109,7 +119,12 @@ fun calcularPuntuacionHermita(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionLaArena(gamePos: Int): List<Game>? {
-    var puntuacion = 500 - time
+    var puntuacion= 0
+    if(time>500){
+        puntuacion = 0
+    }else {
+        puntuacion = 500 - time
+    }
     var totPuntuation = 0
 
     var list = TypeConverter.stringToSomeObjectList(currentProgress!!.gamesDone)
@@ -125,7 +140,12 @@ fun calcularPuntuacionLaArena(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionFundicion(gamePos: Int): List<Game>? {
-    var puntuacion = 500 - time
+    var puntuacion= 0
+    if(time>500){
+        puntuacion = 0
+    }else {
+        puntuacion = 500 - time
+    }
     var totPuntuation = 0
 
     var list = TypeConverter.stringToSomeObjectList(currentProgress!!.gamesDone)
@@ -141,7 +161,12 @@ fun calcularPuntuacionFundicion(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionPuenteRomano(gamePos: Int): List<Game>? {
-    var puntuacion = 500 - time
+    var puntuacion= 0
+    if(time>500){
+        puntuacion = 0
+    }else {
+        puntuacion = 500 - time
+    }
     var totPuntuation = 0
 
     var list = TypeConverter.stringToSomeObjectList(currentProgress!!.gamesDone)
@@ -157,7 +182,12 @@ fun calcularPuntuacionPuenteRomano(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionItsaslur(gamePos: Int): List<Game>? {
-    var puntuacion = 500 - time
+    var puntuacion= 0
+    if(time>500){
+        puntuacion = 0
+    }else {
+        puntuacion = 500 - time
+    }
     var totPuntuation = 0
 
     var list = TypeConverter.stringToSomeObjectList(currentProgress!!.gamesDone)
@@ -173,7 +203,12 @@ fun calcularPuntuacionItsaslur(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionLaberinto(gamePos: Int): List<Game> {
-    var puntuacion = 500 - time
+    var puntuacion= 0
+    if(time>500){
+        puntuacion = 0
+    }else {
+        puntuacion = 500 - time
+    }
     var totPuntuation = 0
 
     var list = TypeConverter.stringToSomeObjectList(currentProgress!!.gamesDone)

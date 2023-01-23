@@ -8,6 +8,14 @@
     tools:context=".ponekakoermita.JuegodemarActivity">
 
     <ImageView
+        android:id="@+id/imgIncorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_delete" />
+
+    <ImageView
         android:id="@+id/color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

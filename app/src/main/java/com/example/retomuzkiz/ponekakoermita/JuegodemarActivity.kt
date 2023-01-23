@@ -18,7 +18,7 @@ class JuegodemarActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityJuegodemarBinding
     private var respuestas = mutableListOf<String>()
-    private var respuestasBien = mutableListOf<String>()
+    private var respuestasBien = 0
     //Variable para saber cuando se tiene que cerrar y cuando no
     private var cambio = false
 
@@ -51,7 +51,7 @@ class JuegodemarActivity : AppCompatActivity() {
         //Cargamos la primera imagen de fondo
         binding.imgMar.background = AppCompatResources.getDrawable(this, R.drawable.martran1)
 
-        respuestasBien.add("Tranquilo")
+       // respuestasBien.add("Tranquilo")
 
         binding.color.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fondonegro))
         binding.imgBinoculares.startAnimation(AnimationUtils.loadAnimation(this, R.anim.binoculares))
@@ -59,20 +59,36 @@ class JuegodemarActivity : AppCompatActivity() {
         carga(binding.color.animation.duration)
         binding.btnRevuelto.setOnClickListener{
             respuestas.add("Revuelto")
-            if(respuestasBien.size==6){
-                comprobacion()
-            }else{
+
+            if ((respuestas.elementAt(respuestas.size-1)) == respuestasMares[respuestasBien]) {
+                respuestasBien++
+                comprobacionFinal()
                 mares()
+            } else {
+                binding.imgIncorrect.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in))
+
+                respuestas.removeLast()
+
+
             }
         }
 
         binding.btnTranquilo.setOnClickListener{
             respuestas.add("Tranquilo")
-            if(respuestasBien.size==6){
-                comprobacion()
-            }else{
-                mares()
-            }
+
+                if ((respuestas.elementAt(respuestas.size-1)) == respuestasMares[respuestasBien]) {
+                    respuestasBien++
+                    comprobacionFinal()
+                    mares()
+                } else {
+                    binding.imgIncorrect.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in))
+                    //binding.imgIncorrect.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_out))
+                    respuestas.removeLast()
+
+
+
+                }
+
         }
     }
 
@@ -93,26 +109,26 @@ class JuegodemarActivity : AppCompatActivity() {
         //Despues de cargar la imagen borramos ese elemento de la lista
         maresTipos.removeAt(random)
 
-        respuestasBien.add(respuestasMares[random])
+        //respuestasBien.add(respuestasMares[random])
 
         //Despues de guardar la respuesta correcta, borramos ese elemento
         respuestasMares.removeAt(random)
     }
 
     //Funcion para comprobar las respuestas
-    private fun comprobacion() {
+    private fun comprobacionFinal() {
         var correctas = 0
-        for (respuesta in 0 until 6){
-            if(respuestasBien[respuesta]==respuestas[respuesta]){
-                correctas += 1
+
+            if(respuestasBien== 6){
+                val intento = Intent(this, MsgVictoria::class.java)
+                intento.putExtra("imagen", "mar")
+                cambio = true
+                startActivity(intento)
             }
         }
         //Toast.makeText(this, "Has acertado $correctas fotos", Toast.LENGTH_SHORT).show()
-        val intento = Intent(this, MsgVictoria::class.java)
-        intento.putExtra("imagen", "mar")
-        cambio = true
-        startActivity(intento)
-    }
+
+
 
     //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
     override fun onPause() {
