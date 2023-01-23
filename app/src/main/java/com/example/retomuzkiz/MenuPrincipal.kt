@@ -59,14 +59,18 @@ class MenuPrincipal : AppCompatActivity() {
                         if (user != null) {
                             RetoGrupoCinco.setUser(user!!)
                             val intento =
-                                Intent(this, MapsActivity::class.java).putExtra("user", user)
+                                Intent(this, MapsActivity::class.java)
+                            RetoGrupoCinco.setUser(user!!)
+
                             startActivity(intento)
                         } else {
                             user = insertarUser()
                             RetoGrupoCinco.setUser(user!!)
 
                             val intento =
-                                Intent(this, MapsActivity::class.java).putExtra("user", user)
+                                Intent(this, MapsActivity::class.java)
+                            RetoGrupoCinco.setUser(user!!)
+
                             startActivity(intento)
                         }
                     }
