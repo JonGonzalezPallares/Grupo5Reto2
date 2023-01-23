@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco
-import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.prefs
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
 import com.example.retomuzkiz.room.Progress
 import com.example.retomuzkiz.gastelua.ActivityGaztelua
