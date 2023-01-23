@@ -29,6 +29,11 @@
     <string name="aboutUs">About Us</string>
     <string name="logOut">Log Out</string>
 
+
+    <!-- YourProgress -->
+    <string name="progressPuntuation">Tu puntuacion</string>
+    <string name="gamesDone">Juegos Completados</string>
+
     <!-- Playa La Arena -->
     <string name="gameLaArenaHondartza">La Arena Beach</string>
     <string name="cardsMatch">Right!</string>
@@ -80,6 +85,8 @@
     <string name="congratulations1">You did it, friend!</string>
     <string name="congratulations2">You have solved the challenge</string>
     <string name="GoToMap">Go to Map</string>
+    <!-- Pantalla PopUp-->
+    <string name="explicacion1">¡Complete the games to get badges!</string>
     <!-- Pantalla felicitacion-->
     <string name="gamePuenteRomano">Roman bridge of Pobeña</string>
 

@@ -227,7 +227,7 @@ class LaArenaHondartza : Activity() {
                 tableroPreguntas[i]!!.setImageResource(fondo)
 
             }
-        }, 700)
+        }, 4000)
 
         // al hacer  click sobre alguna foto llama a la funcion comprobar si no esta bloqueado
         for (i in 0..4)

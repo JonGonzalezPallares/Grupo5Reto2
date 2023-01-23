@@ -25,8 +25,12 @@
     <string name="profesorMode">Irakasle modua</string>
     <string name="yourProgress">Zure garapena</string>
     <string name="ranking">Rankina</string>
-    <string name="aboutUs">Sobre nosotros</string>
-    <string name="logOut">Cerrar sesión</string>
+    <string name="aboutUs">Guri buruz</string>
+    <string name="logOut">Saioa Itxi</string>
+
+    <!-- YourProgress -->
+    <string name="progressPuntuation">Zure Puntuazioa</string>
+    <string name="gamesDone">Amaitutako Jokuak</string>
 
     <!-- Playa La Arena -->
     <string name="gameLaArenaHondartza">La Arena Hondartza</string>
@@ -72,6 +76,9 @@ Muskizen, garrantzi handia du 22: 30ean geltokian hasten den zuzien jaitsierak. 
     <string name="congratulations1">Egin duzu, lagun!</string>
     <string name="congratulations2">Erronka osatu duzu</string>
     <string name="GoToMap">Mapara joan</string>
+
+    <!-- Pantalla PopUp-->
+    <string name="explicacion1">¡Jokuak bete intsigniak lortzeko! </string>
     <!-- Pantalla felicitacion-->
     <string name="gamePuenteRomano">Pubeñako Zubi Erromanikoa</string>
 

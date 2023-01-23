@@ -20,19 +20,26 @@
         android:theme="@style/Theme.RetoMuzkiz"
         tools:targetApi="31">
         <activity
+            android:name=".ProgressActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".LoadingActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!-- Activity sobre nosotros -->
+        </activity> <!-- Activity sobre nosotros -->
         <activity
             android:name=".Nosotros"
             android:exported="false">
@@ -141,6 +148,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".laArenaHondartza.LaArenaHondartza"
             android:exported="false"
@@ -186,8 +194,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
-
         </activity>
     </application>
 

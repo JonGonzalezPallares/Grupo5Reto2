@@ -23,4 +23,5 @@ data class Usuario(
     @ColumnInfo(name = "isProfessor")
     var isProfessor: Boolean,
 
+
     ):Parcelable

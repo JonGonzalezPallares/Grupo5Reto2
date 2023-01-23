@@ -183,6 +183,15 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                     true
                 }
 
+                //Para ir al ranking
+                R.id.m_Puntuacion -> {
+                    //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
+                    val intento = Intent(this, ProgressActivity::class.java)
+                    startActivity(intento)
+                    true
+                }
+
+
                 //Para ir a sobre nosotros
                 R.id.m_About -> {
                     val intento = Intent(this, Nosotros::class.java)
@@ -389,7 +398,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 }
             }
 
-            keyPathsBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
+            keyPathsBehavior.state = BottomSheetBehavior.STATE_EXPANDED
         } else {
             //esto pasa si estas legos de la ubicacion
             Toast.makeText(

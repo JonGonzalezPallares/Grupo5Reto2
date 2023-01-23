@@ -28,6 +28,10 @@
     <string name="aboutUs">Sobre nosotros</string>
     <string name="logOut">Cerrar sesión</string>
 
+    <!-- YourProgress -->
+    <string name="progressPuntuation">Tu puntuacion</string>
+    <string name="gamesDone">Juegos Completados</string>
+
     <!-- Playa La Arena -->
     <string name="gameLaArenaHondartza">Playa de la Arena</string>
     <string name="cardsMatch">Correcto!</string>
@@ -70,9 +74,12 @@
         En Muskiz tiene gran importancia la bajada de las antorchas, que se inicia en la estación a las 22:30. Luego, alrededor de las 23:30, comienzan los fuegos artificiales, seguidos de una verbena.
         Esa noche, las personas que acuden a Muskiz encienden antorchas hasta el antiguo almacén de Petronor, junto con los silbadores, y luego arrojan las antorchas a la hoguera de San Jorge.</string>
     <!-- Pantalla felicitacion-->
-    <string name="congratulations1">¡Lo hiciste, compañero!</string>
+    <string name="congratulations1">¡Lo hiciste, compa!</string>
     <string name="congratulations2">Has resuelto el desafio</string>
     <string name="GoToMap">Ir al mapa</string>
+    <!-- Pantalla PopUp-->
+    <string name="explicacion1">¡Completa los juegos para conseguir insignias!</string>
+
     <!-- Pantalla felicitacion-->
     <string name="gamePuenteRomano">Puente Romano de Pobeña</string>
     <string name="Continue">Continuar</string>
