@@ -1,12 +1,8 @@
 package com.example.retomuzkiz
 
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings.Global
-import androidx.annotation.RequiresApi
-import androidx.room.util.StringUtil
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.database
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.progressDb
@@ -28,7 +24,7 @@ class ActivityCrearClaseSocket : AppCompatActivity() {
 
         binding.btnCrearClase.setOnClickListener() {
             if (comprobarCampos()) {
-                var user = Usuario("${database.usuarioDao.getAllUsers().size + 1}",
+                val user = Usuario("${database.usuarioDao.getAllUsers().size + 1}",
                     binding.txtNombreProfesor.text.toString(),
                     binding.txtNombreClase.text.toString(),
                     true)
@@ -37,7 +33,7 @@ class ActivityCrearClaseSocket : AppCompatActivity() {
                     user.userId,
                     0,
                     0,
-                    TypeConverter.someObjectListToString(cargarJuegos(user))
+                    TypeConverter.someObjectListToString(cargarJuegos())
                 )
                 progressDb.insertProgress(progress)
                 RetoGrupoCinco.mSocket.connect()
@@ -62,42 +58,55 @@ class ActivityCrearClaseSocket : AppCompatActivity() {
     }
 
     private fun comprobarCampos(): Boolean {
-        var res: Boolean = false
-       var clases =  RetoGrupoCinco. userDb.getAllUsers()
-        clases.forEach(
-            {
-                if(!binding.txtNombreClase.text.toString().equals(it.userClass)){
-                    if (binding.txtNombreProfesor.text.toString().isNotEmpty() && binding.txtNombreClase.text.toString().isNotEmpty() )
-                    {
-                        if (binding.editTextTextPassword.text.toString().contentEquals("1234")) {
-                            res = true
-                        }
+        var res = false
+       val clases =  userDb.getAllUsers()
+        clases.forEach {
+            if (binding.txtNombreClase.text.toString() != it.userClass) {
+                if (binding.txtNombreProfesor.text.toString()
+                        .isNotEmpty() && binding.txtNombreClase.text.toString().isNotEmpty()
+                ) {
+                    if (binding.editTextTextPassword.text.toString().contentEquals("1234")) {
+                        res = true
                     }
-                }else{
-                    return false
                 }
-
+            } else {
+                return false
             }
-        )
+
+        }
         return res
     }
 
-    private fun cargarJuegos(user: Usuario) : List<Game> {
-        var gameList = listOf<Game>(
-            Game(getString(R.string.gameSanJuan),1, 0,false,
-                RetoGrupoCinco.SITESNAMES.NOCHE_SAN_JUAN_IMG),
-            Game(getString(R.string.gameItsaslurIbilbidea), 2,0,false,
-                RetoGrupoCinco.SITESNAMES.ITSASLUR_IBILBIDEA_IMG),
-            Game(getString(R.string.gamePuenteRomano), 3,0,false,
-                RetoGrupoCinco.SITESNAMES.PUENTE_ROMANO_IMG),
-            Game(getString(R.string.gameFundicion),4, 0,false,
-                RetoGrupoCinco.SITESNAMES.POBENA_FUNDICION_IMG),
-            Game(getString(R.string.gameLaArenaHondartza),5, 0,false,
-                RetoGrupoCinco.SITESNAMES.PLAYA_LA_ARENA_IMG),
-            Game(getString(R.string.gameHermitaDePobeña), 6,0,false,
-                RetoGrupoCinco.SITESNAMES.POBENA_HERMITA_IMG),
-            Game(getString(R.string.gameCastilloMuñatones),7, 0,false,
-                RetoGrupoCinco.SITESNAMES.CASTILLO_MUNATONES_IMG))
-        return gameList
+    private fun cargarJuegos(): List<Game> {
+        return listOf(
+            Game(
+                getString(R.string.gameSanJuan), 1, 0, false,
+                RetoGrupoCinco.SITESNAMES.NOCHE_SAN_JUAN_IMG
+            ),
+            Game(
+                getString(R.string.gameItsaslurIbilbidea), 2, 0, false,
+                RetoGrupoCinco.SITESNAMES.ITSASLUR_IBILBIDEA_IMG
+            ),
+            Game(
+                getString(R.string.gamePuenteRomano), 3, 0, false,
+                RetoGrupoCinco.SITESNAMES.PUENTE_ROMANO_IMG
+            ),
+            Game(
+                getString(R.string.gameFundicion), 4, 0, false,
+                RetoGrupoCinco.SITESNAMES.POBENA_FUNDICION_IMG
+            ),
+            Game(
+                getString(R.string.gameLaArenaHondartza), 5, 0, false,
+                RetoGrupoCinco.SITESNAMES.PLAYA_LA_ARENA_IMG
+            ),
+            Game(
+                getString(R.string.gameHermitaDePobeña), 6, 0, false,
+                RetoGrupoCinco.SITESNAMES.POBENA_HERMITA_IMG
+            ),
+            Game(
+                getString(R.string.gameCastilloMuñatones), 7, 0, false,
+                RetoGrupoCinco.SITESNAMES.CASTILLO_MUNATONES_IMG
+            )
+        )
     }
 }
