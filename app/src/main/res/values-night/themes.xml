@@ -17,4 +17,8 @@
     <style name="colorFragment">
         <item name="android:textColor">#C60101</item>
     </style>
+    <!-- Color campos de texto -->
+    <style name="colorTxt">
+        <item name="android:textColor">#C9C9C9</item>
+    </style>
 </resources>
