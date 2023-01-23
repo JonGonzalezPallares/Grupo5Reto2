@@ -2,6 +2,7 @@ package com.example.retomuzkiz
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityProgresBinding
@@ -19,7 +20,14 @@ class ProgressActivity : AppCompatActivity() {
         binding =  ActivityProgresBinding.inflate(layoutInflater)
         setContentView(binding.root)
         this.supportActionBar!!.hide()
+        binding.Navegation.setOnClickListener(){
+           if(binding.fragmentContainerView2.visibility == 0){
+               binding.fragmentContainerView2.visibility = View.GONE
+           }else{
+               binding.fragmentContainerView2.visibility = View.VISIBLE
 
+           }
+        }
         cargarImagenes()
         binding.txtTotPuntuacion.text = "${progress.totalPuntuation}"
 

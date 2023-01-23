@@ -1,10 +1,10 @@
 package com.example.retomuzkiz
 
+import android.content.pm.ActivityInfo.WindowLayout
 import android.os.Bundle
+import android.util.DisplayMetrics
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,10 +23,11 @@ class PopUpFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        var medidasVentana = DisplayMetrics()
+        var ancho = medidasVentana.widthPixels
+        var alto = medidasVentana.heightPixels
+        WindowLayout((ancho*0.85).toInt(),0f, (alto*0.85).toInt(),0f,Gravity.CENTER,(ancho*0.85).toInt(), (alto*0.85).toInt())
+
     }
 
     override fun onCreateView(

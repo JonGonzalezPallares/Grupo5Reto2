@@ -10,6 +10,7 @@ import io.socket.client.Socket
 import java.nio.file.attribute.UserPrincipal
 
 class RetoGrupoCinco : Application() {
+    lateinit var prefs: Pref
     object SITESNAMES {
         var POBENA_FUNDICION_IMG = "fundicion_pobela"
         var POBENA_HERMITA_IMG = "irudiapobena1"
@@ -20,7 +21,6 @@ class RetoGrupoCinco : Application() {
         var NOCHE_SAN_JUAN_IMG = "irudia_san_juan"
     }
     companion object {
-        lateinit var prefs: Pref
         lateinit var database: AppDatabase
         lateinit var progressDb:ProgressDao
         lateinit var gameDb :GameDao

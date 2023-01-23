@@ -85,6 +85,8 @@
     <string name="congratulations1">You did it, friend!</string>
     <string name="congratulations2">You have solved the challenge</string>
     <string name="GoToMap">Go to Map</string>
+    <!-- Pantalla PopUp-->
+    <string name="explicacion1">¡Complete the games to get badges!</string>
     <!-- Pantalla felicitacion-->
     <string name="gamePuenteRomano">Roman bridge of Pobeña</string>
 

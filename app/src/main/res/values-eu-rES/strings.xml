@@ -76,6 +76,9 @@ Muskizen, garrantzi handia du 22: 30ean geltokian hasten den zuzien jaitsierak. 
     <string name="congratulations1">Egin duzu, lagun!</string>
     <string name="congratulations2">Erronka osatu duzu</string>
     <string name="GoToMap">Mapara joan</string>
+
+    <!-- Pantalla PopUp-->
+    <string name="explicacion1">¡Jokuak bete intsigniak lortzeko! </string>
     <!-- Pantalla felicitacion-->
     <string name="gamePuenteRomano">Pubeñako Zubi Erromanikoa</string>
 

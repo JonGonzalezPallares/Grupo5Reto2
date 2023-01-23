@@ -77,6 +77,9 @@
     <string name="congratulations1">¡Lo hiciste, compa!</string>
     <string name="congratulations2">Has resuelto el desafio</string>
     <string name="GoToMap">Ir al mapa</string>
+    <!-- Pantalla PopUp-->
+    <string name="explicacion1">¡Completa los juegos para conseguir insignias!</string>
+
     <!-- Pantalla felicitacion-->
     <string name="gamePuenteRomano">Puente Romano de Pobeña</string>
     <string name="Continue">Continuar</string>
