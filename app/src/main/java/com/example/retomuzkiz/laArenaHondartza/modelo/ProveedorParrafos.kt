@@ -1,22 +1,25 @@
 package com.example.retomuzkiz.laArenaHondartza.modelo
 
-class ProveedorParrafos {
+import android.content.res.Resources
+import com.example.retomuzkiz.R
+
+class ProveedorParrafos{
     companion object{
         var listaParrafos= listOf(
             Parrafo(
-                "La Arena hondartza Kantabriaren mugan dago, Muskizen. Hala ere hau ez da Muskizekoa bakarrik, bi herritan banatuta baitago: Zierbena eta Muskiz."
+                Resources.getSystem().getString(R.string.arenaExpl1)
             ),
             Parrafo(
-                "Bizkaiko kostaldeko bigarren hondartzarik zabalena da, ia kilometro bat luze, 966 metro hain zuzen."
+                Resources.getSystem().getString(R.string.arenaExpl2)
             ),
             Parrafo(
-                "Hondartza honetan Barbadun ibaia isurtzen da, eta hura gurutzatu egin daiteke, hondartza Pobeña auzoarekin lotzen duen zubi bati esker."
+                Resources.getSystem().getString(R.string.arenaExpl3)
             ),
             Parrafo(
-                "La Arena hondartzak balio botaniko handiko ingurumen eremua, hareatzak, dunak eta padurak ditu."
+                Resources.getSystem().getString(R.string.arenaExpl4)
             ),
             Parrafo(
-                "Jarduera eta kirol asko praktikatu daitezke hemen, haien artean famatuena surfa."
+                Resources.getSystem().getString(R.string.arenaExpl5)
             )
         )
     }

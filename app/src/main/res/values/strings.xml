@@ -161,6 +161,11 @@ Parte de la playa está incluida en el espacio natural protegido de la ría del 
     <string name="txtGuiado">Ahora estás en el modo guiado</string>
     <string name="txtLejos">¡Estas muy lejos del punto! Hacercate más para jugar.</string>
     <string name="Aceptar">Aceptar</string>
+    <string name="arenaExpl1">La playa de La Arena está situada en la frontera de Cantabria, en Muskiz. Sin embargo, esto no es solo de Muskiz, ya que se divide en dos pueblos: Zierbena y Muskiz.</string>
+    <string name="arenaExpl2">Es la segunda playa más ancha de la costa de Bizkaia, con casi un kilómetro de longitud, 966 metros para ser exactos.</string>
+    <string name="arenaExpl3">En esta playa discurre el río Barbadun, y se puede cruzar gracias a un puente que une la playa con el barrio de Pobeña.</string>
+    <string name="arenaExpl4">La playa de La Arena cuenta con un espacio medioambiental de alto valor botánico, arenales, dunas y marismas.</string>
+    <string name="arenaExpl5">Aquí se pueden practicar muchas actividades y deportes, el más famoso de los cuales es el surf.</string>
 
 
 </resources>
