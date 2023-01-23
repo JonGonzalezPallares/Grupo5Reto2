@@ -4,6 +4,10 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.SystemClock
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.example.retomuzkiz.Laberinto.ActivityLaberinto
@@ -188,6 +192,34 @@ fun calcularPuntuacionLaberinto(gamePos: Int): List<Game> {
     return list
 }
 
+
+
 private fun updateProgress() {
     RetoGrupoCinco.progressDb.updateProgress(currentProgress!!)
+}
+
+
+
+
+fun dialogoAyudaJuegos (juego : String, context: Context,layoutInflater: LayoutInflater){
+    val builder = AlertDialog.Builder(context)
+    val view = layoutInflater.inflate(R.layout.ventanayuda,null)
+
+    builder.setView(view)
+
+    val dialog = builder.create()
+    dialog.show()
+
+    when(juego){
+        "castillo"->{
+
+
+        }
+
+
+
+
+
+    }
+
 }

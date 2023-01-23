@@ -10,8 +10,11 @@ import android.widget.*
 import com.example.retomuzkiz.*
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityLaArenaHondartzaBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class LaArenaHondartza : Activity() {
+
+
     //______________________________________________________________________________________________
     // variables para los componentes de la vista
     private var tableroRespuestas = arrayOfNulls<ImageButton>(5)
@@ -47,6 +50,7 @@ class LaArenaHondartza : Activity() {
         startTimer()
         fin = 0
         init()
+
     }
 
     //______________________________________________________________________________________________

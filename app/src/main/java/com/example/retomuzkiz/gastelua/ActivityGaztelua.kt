@@ -9,6 +9,7 @@ import android.graphics.Point
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings.Global
 import android.view.DragEvent
 import android.view.View
 import android.widget.ImageView
@@ -71,6 +72,14 @@ class ActivityGaztelua : AppCompatActivity() {
         binding.imagenabajoizq.alpha = 0F
         binding.imagenabajomed.alpha = 0F
         binding.imagenabajoder.alpha = 0F
+
+        binding.btnayuda.setOnClickListener{
+
+            dialogoAyudaJuegos("castillo",this,layoutInflater)
+
+
+        }
+
 
     }
     //funcion del long listener de arrastrar

@@ -8,20 +8,21 @@
     android:orientation="vertical"
     tools:context=".laArenaHondartza.LaArenaHondartza">
 
-
     <!--Layout final del juego  -->
 
-
     <!--Layout de juego-->
+
     <GridLayout
+
         android:id="@+id/layoutButton"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="875dp"
         android:layout_margin="10dp"
         android:background="@drawable/fondo_juego"
         android:columnCount="2"
         android:rowCount="5"
         android:visibility="visible">
+
 
         <ImageButton
             android:id="@+id/boton12"
