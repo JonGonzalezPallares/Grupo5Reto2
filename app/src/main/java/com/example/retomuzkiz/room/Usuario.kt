@@ -11,6 +11,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Usuario(
+<<<<<<< Updated upstream
     @PrimaryKey
     val userId: String,
 
@@ -22,5 +23,12 @@ data class Usuario(
 
     @ColumnInfo(name = "isProfessor")
     var isProfessor: Boolean,
+=======
+    @PrimaryKey(autoGenerate = false)
+    var name: String,
+
+    @ColumnInfo(name = "totPuntuation")
+    var totPuntuation: Int,
+>>>>>>> Stashed changes
 
     ):Parcelable
