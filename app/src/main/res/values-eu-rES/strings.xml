@@ -25,8 +25,12 @@
     <string name="profesorMode">Irakasle modua</string>
     <string name="yourProgress">Zure garapena</string>
     <string name="ranking">Rankina</string>
-    <string name="aboutUs">Sobre nosotros</string>
-    <string name="logOut">Cerrar sesión</string>
+    <string name="aboutUs">Guri buruz</string>
+    <string name="logOut">Saioa Itxi</string>
+
+    <!-- YourProgress -->
+    <string name="progressPuntuation">Zure Puntuazioa</string>
+    <string name="gamesDone">Amaitutako Jokuak</string>
 
     <!-- Playa La Arena -->
     <string name="gameLaArenaHondartza">La Arena Hondartza</string>

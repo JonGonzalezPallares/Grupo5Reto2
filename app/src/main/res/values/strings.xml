@@ -28,6 +28,10 @@
     <string name="aboutUs">Sobre nosotros</string>
     <string name="logOut">Cerrar sesión</string>
 
+    <!-- YourProgress -->
+    <string name="progressPuntuation">Tu puntuacion</string>
+    <string name="gamesDone">Juegos Completados</string>
+
     <!-- Playa La Arena -->
     <string name="gameLaArenaHondartza">Playa de la Arena</string>
     <string name="cardsMatch">Correcto!</string>
