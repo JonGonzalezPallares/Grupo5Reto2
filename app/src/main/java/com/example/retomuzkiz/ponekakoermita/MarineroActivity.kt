@@ -21,14 +21,31 @@ class MarineroActivity : AppCompatActivity() {
         binding = ActivityMarineroBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.button2.setOnClickListener {
+        //Al pulsar el boton de continuar
+        binding.btnSiguiente.setOnClickListener {
+            //Cambiamos los textos que se muestran
             binding.txt1.visibility = View.GONE
             binding.txt2.visibility = View.VISIBLE
-            binding.btnsiguiente.visibility = View.VISIBLE
+
+            //Cambiamos la visibilidad de los botones
+            binding.btnAtras.visibility = View.VISIBLE
+            binding.btnEmpezar.visibility = View.VISIBLE
             it.visibility = View.GONE
         }
 
-        binding.btnsiguiente.setOnClickListener {
+        //Al pulsar el boton de atras
+        binding.btnAtras.setOnClickListener {
+            //Cambiamos los textos que se muestran
+            binding.txt1.visibility = View.VISIBLE
+            binding.txt2.visibility = View.GONE
+
+            //Cambiamos la visibilidad de los botones
+            binding.btnSiguiente.visibility = View.VISIBLE
+            binding.btnEmpezar.visibility = View.GONE
+            it.visibility = View.GONE
+        }
+
+        binding.btnEmpezar.setOnClickListener {
             val actividad = Intent(this, JuegodemarActivity::class.java)
             ContextCompat.startActivity(this, actividad, null)
             cambio = true
