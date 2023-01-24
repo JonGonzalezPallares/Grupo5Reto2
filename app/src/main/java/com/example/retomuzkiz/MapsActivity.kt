@@ -119,19 +119,27 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 totPuntuacion.text = "Puntuacion: ${db.progressDao.getUserProgress(user!!.userId).totalPuntuation.toString()}"
             }
         }
+
+        binding.vista.setOnClickListener{
+            binding.vista.visibility = View.GONE
+            navegacion=false
+            menuanimation()
+        }
+
         binding.Navegation.setOnClickListener{
 
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
             if(!navegacion){
+                binding.vista.visibility = View.VISIBLE
                 navegacion = true
                 if(!iniciarguiado){
                     //val free = findViewById<View>(R.id.m_Modolibre)
                     //free.isEnabled = false
-                    // free.isEnabled = false
+                    //free.isEnabled = false
                     iniciarguiado = true
                 }
-            }
-            else{
+            }else{
+                binding.vista.visibility = View.GONE
                 navegacion = false
             }
             menuanimation()
@@ -376,13 +384,12 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             }
         }
 
-        binding.map.setOnClickListener{
-            println(navegacion)
+        /*binding.map.setOnClickListener{
             if (navegacion){
                 navegacion=false
                 menuanimation()
             }
-        }
+        }*/
     }
 
     //Acciones que ocurren cada vez que pulsamos a un marcador
