@@ -148,7 +148,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".laArenaHondartza.LaArenaHondartza"
             android:exported="false"
@@ -157,13 +156,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity> <!-- Activity de Burdinola -->
-        <activity
-            android:name=".burdinola.BurdinolaVideoActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
         <activity
             android:name=".burdinola.BurdinolaSopaActivity"
             android:exported="false">

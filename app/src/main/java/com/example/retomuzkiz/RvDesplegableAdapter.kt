@@ -8,13 +8,13 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getDrawable
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.retomuzkiz.burdinola.BurdinolaVideoActivity
 import com.example.retomuzkiz.databinding.SingleActividadBinding
 import com.example.retomuzkiz.itsaslurIbilbidea.PantallaEspera
 import com.example.retomuzkiz.laArenaHondartza.IntroActivity
 import com.example.retomuzkiz.ponekakoermita.MarineroActivity
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
 import com.example.retomuzkiz.Laberinto.ActivityLaberinto
+import com.example.retomuzkiz.burdinola.BurdinolaSopaActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 //import com.example.retomuzkiz.gastelua.ActivityGaztelua
 import com.example.retomuzkiz.gastelua.ExplicacionActivity
@@ -124,7 +124,7 @@ class RvDesplegableAdapter(var listaActividades: Game, var user : Usuario,  val 
                 }
 
                 4->{
-                    val intento = Intent(context,BurdinolaVideoActivity::class .java).putExtra("user", user)
+                    val intento = Intent(context, BurdinolaSopaActivity::class.java).putExtra("user", user)
                     startActivity(context, intento,null)
                 }
 
