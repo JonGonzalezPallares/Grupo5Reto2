@@ -2,15 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="382dp"
-        android:layout_height="641dp"
-        android:layout_marginStart="10dp"
+        android:layout_width="334dp"
+        android:layout_height="619dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
@@ -18,28 +16,32 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0">
 
-        <Button
-            android:id="@+id/btncerrar"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btncerrarayuda"
             android:layout_width="124dp"
             android:layout_height="47dp"
-            android:text="Button"
+            android:background="@drawable/estilo_botones"
+            android:text="@string/close"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.937"
+            app:layout_constraintHorizontal_bias="0.718"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtexplicacion"
-            app:layout_constraintVertical_bias="0.378" />
+            app:layout_constraintVertical_bias="0.41" />
 
         <TextView
             android:id="@+id/txtexplicacion"
-            android:layout_width="342dp"
-            android:layout_height="118dp"
+            android:layout_width="281dp"
+            android:layout_height="98dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.166"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imagenjuego"
-            app:layout_constraintVertical_bias="0.122" />
+            app:layout_constraintVertical_bias="0.071" />
 
         <TextView
             android:id="@+id/txtnombrejuego"
@@ -54,12 +56,14 @@
 
         <ImageView
             android:id="@+id/imagenjuego"
-            android:layout_width="355dp"
-            android:layout_height="300dp"
+            android:layout_width="320dp"
+            android:layout_height="380dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="11dp"
+            android:layout_marginEnd="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.769"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtnombrejuego"
             app:layout_constraintVertical_bias="0.0"

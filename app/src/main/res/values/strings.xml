@@ -155,5 +155,7 @@ Parte de la playa está incluida en el espacio natural protegido de la ría del 
     <string name="txtLejos">¡Estas muy lejos del punto! Hacercate más para jugar.</string>
     <string name="Aceptar">Aceptar</string>
 
+    <string name="Ayudacastillo">En este juego deberas resolver el puzle, para ello manten pulsadas las imagenes de abajo para arrastrarlas y sueltalas en el hueco que les corresponda. Buena suerte!</string>
+
 
 </resources>

@@ -3,17 +3,19 @@ package com.example.retomuzkiz
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.SystemClock
 import android.view.LayoutInflater
-import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
-import com.example.retomuzkiz.Laberinto.ActivityLaberinto
+import androidx.core.view.isGone
+import com.bumptech.*
+import com.bumptech.glide.Glide
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.clases.RetoGrupoCinco
-import com.example.retomuzkiz.itsaslurIbilbidea.ItsaslurJuego
 import com.example.retomuzkiz.room.Game
 import com.example.retomuzkiz.room.Progress
 import com.example.retomuzkiz.room.TypeConverter
@@ -210,11 +212,39 @@ fun dialogoAyudaJuegos (juego : String, context: Context,layoutInflater: LayoutI
     val dialog = builder.create()
     dialog.show()
 
+    val titulo = view.findViewById<TextView>(R.id.txtnombrejuego)
+    val img = view.findViewById<ImageView>(R.id.imagenjuego)
+    val explicacion = view.findViewById<TextView>(R.id.txtexplicacion)
+    val boton = view.findViewById<Button>(R.id.btncerrarayuda)
+    boton.setOnClickListener {
+        dialog.hide()
+    }
     when(juego){
         "castillo"->{
-
-
+        titulo.text = context.resources.getString(R.string.gameCastilloMuñatones)
+            cargargifs(img,ContextCompat.getDrawable(context, R.drawable.ayudacastillo)!!,context)
+            //img.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ayudacastillo))
+            explicacion.text = context.resources.getString(R.string.Ayudacastillo)
         }
+        "playa"->{
+           //TODO
+        }
+        "fundicion"->{
+            //TODO
+        }
+        "sanjuan"->{
+            //TODO
+        }
+        "puente"->{
+            //TODO
+        }
+        "ermita"->{
+            //TODO
+        }
+        "paseo"->{
+            //TODO
+        }
+
 
 
 
@@ -222,4 +252,7 @@ fun dialogoAyudaJuegos (juego : String, context: Context,layoutInflater: LayoutI
 
     }
 
+}
+fun cargargifs(img : ImageView, draw : Drawable,context: Context){
+    Glide.with(context).load(draw).into(img)
 }
