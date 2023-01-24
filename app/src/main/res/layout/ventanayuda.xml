@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/estilo_ayuda">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="334dp"
         android:layout_height="619dp"
         android:layout_marginTop="10dp"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
@@ -24,30 +26,33 @@
             android:text="@string/close"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.718"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtexplicacion"
-            app:layout_constraintVertical_bias="0.41" />
+            app:layout_constraintVertical_bias="0.644" />
 
         <TextView
             android:id="@+id/txtexplicacion"
-            android:layout_width="281dp"
-            android:layout_height="98dp"
+            android:layout_width="0dp"
+            android:layout_height="97dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:text="TextView"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.166"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imagenjuego"
             app:layout_constraintVertical_bias="0.071" />
 
         <TextView
             android:id="@+id/txtnombrejuego"
-            android:layout_width="167dp"
+            android:layout_width="274dp"
             android:layout_height="28dp"
             android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
