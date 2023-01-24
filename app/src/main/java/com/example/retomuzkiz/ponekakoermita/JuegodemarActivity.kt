@@ -9,7 +9,7 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
-import com.example.retomuzkiz.R
+import com.example.retomuzkiz.*
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityJuegodemarBinding
 import kotlin.random.Random
@@ -25,18 +25,18 @@ class JuegodemarActivity : AppCompatActivity() {
     //Lista con los diferentes fotos de mares
     private val maresTipos = mutableListOf(
         R.drawable.martran2,
-        R.drawable.martran3,
         R.drawable.marrev1,
         R.drawable.marrev2,
-        R.drawable.marrev3
+        R.drawable.marrev3,
+        R.drawable.martran3,
     )
 
     //Lista con las soluciones correctas
     private val respuestasMares = mutableListOf(
         "Tranquilo",
+        "Revuelto",
+        "Revuelto",
         "Tranquilo",
-        "Revuelto",
-        "Revuelto",
         "Revuelto"
     )
 
@@ -44,7 +44,8 @@ class JuegodemarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityJuegodemarBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        startTimer()
+        fin = 0
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
 
@@ -63,11 +64,15 @@ class JuegodemarActivity : AppCompatActivity() {
             if ((respuestas.elementAt(respuestas.size-1)) == respuestasMares[respuestasBien]) {
                 respuestasBien++
                 comprobacionFinal()
-                mares()
+                if(!comprobacionFinal()){
+                    mares(respuestasBien)
+
+                }
             } else {
                 binding.imgIncorrect.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in))
 
                 respuestas.removeLast()
+
 
 
             }
@@ -78,8 +83,10 @@ class JuegodemarActivity : AppCompatActivity() {
 
                 if ((respuestas.elementAt(respuestas.size-1)) == respuestasMares[respuestasBien]) {
                     respuestasBien++
-                    comprobacionFinal()
-                    mares()
+                    if(!comprobacionFinal()){
+                        mares(respuestasBien)
+
+                    }
                 } else {
                     binding.imgIncorrect.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in))
                     //binding.imgIncorrect.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_out))
@@ -100,31 +107,33 @@ class JuegodemarActivity : AppCompatActivity() {
     }
 
     //Funcion para cargar las imagenes de fondo
-    private fun mares() {
+    private fun mares(pos: Int) {
         //Numero aleatorio desde 0 hasta el tamaño de la lista
         val random = Random.nextInt(maresTipos.size)
 
-        binding.imgMar.background = AppCompatResources.getDrawable(this, maresTipos[random])
+        binding.imgMar.background = AppCompatResources.getDrawable(this, maresTipos[pos])
 
         //Despues de cargar la imagen borramos ese elemento de la lista
-        maresTipos.removeAt(random)
+        //maresTipos.removeAt(random)
 
         //respuestasBien.add(respuestasMares[random])
 
         //Despues de guardar la respuesta correcta, borramos ese elemento
-        respuestasMares.removeAt(random)
+        //respuestasMares.removeAt(random)
     }
 
     //Funcion para comprobar las respuestas
-    private fun comprobacionFinal() {
-        var correctas = 0
+    private fun comprobacionFinal():Boolean {
 
-            if(respuestasBien== 6){
-                val intento = Intent(this, MsgVictoria::class.java)
-                intento.putExtra("imagen", "mar")
+            if(respuestasBien== 5){
+                stopTimer()
+                juegoAcabado(5)
+                fin ++
+                finalizar(this,"mar")
                 cambio = true
-                startActivity(intento)
+                return true
             }
+        return false
         }
         //Toast.makeText(this, "Has acertado $correctas fotos", Toast.LENGTH_SHORT).show()
 

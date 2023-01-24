@@ -21,6 +21,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
 import androidx.core.graphics.drawable.toDrawable
+import com.example.retomuzkiz.YourProgress.ProgressActivity
 
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco

@@ -20,7 +20,14 @@
         android:theme="@style/Theme.RetoMuzkiz"
         tools:targetApi="31">
         <activity
-            android:name=".ProgressActivity"
+            android:name=".RankingActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".YourProgress.ProgressActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -148,7 +155,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".laArenaHondartza.LaArenaHondartza"
             android:exported="false"
