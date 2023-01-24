@@ -19,7 +19,7 @@
     <!-- Menu -->
     <string name="modes">Moduak</string>
     <string name="puntuation">Puntuazioa</string>
-    <string name="others">Beste batzuk</string>
+    <string name="others">Beste batzuk…</string>
     <string name="freeMode">Aske modua</string>
     <string name="guidedMode">Modu gidatua</string>
     <string name="profesorMode">Irakasle modua</string>
@@ -63,7 +63,7 @@
     <string name="waitingExplanation">Irakasleak azalpena ematen amaitu arte itxaron beharko duzu</string>
     <string name="itsaslurQ1">Nondik sartu gara ibilbidera?</string>
     <string name="itsaslurQ2">Zer ikusi dugu ibilbidean?</string>
-    <string name="itsaslurQ3">Zer aurkitu dezakegu bide erditik?</string>
+    <string name="itsaslurQ3">Zer aurkitu dugu bide erdian?</string>
     <string name="itsaslurQ4">Non hartu dezakegu bainu bat?</string>
     <!-- San Juan gaua-->
     <string name="gameSanJuan">San Juan gaua </string>
@@ -78,7 +78,7 @@ Muskizen, garrantzi handia du 22: 30ean geltokian hasten den zuzien jaitsierak. 
     <string name="GoToMap">Mapara joan</string>
 
     <!-- Pantalla PopUp-->
-    <string name="explicacion1">¡Jokuak bete intsigniak lortzeko! </string>
+    <string name="explicacion1">"Jokuak bete txapak lortzeko! "</string>
     <!-- Pantalla felicitacion-->
     <string name="gamePuenteRomano">Pubeñako Zubi Erromanikoa</string>
 
@@ -108,10 +108,6 @@ Muskizen, garrantzi handia du 22: 30ean geltokian hasten den zuzien jaitsierak. 
     <string name="open">Zabaldu</string>
     <string name="volver">Itzuli</string>
     <string name="incorrecto">Okerra</string>
-    <string name="siguiente">Hurrengoa</string>
-    <string name="primero">Lehenengoa</string>
-    <string name="anterior">Aurrekoa</string>
-    <string name="ultimo">Azkena</string>
     <string name="mar_tranquilo">Barea</string>
     <string name="mar_revuelto">Zakarra</string>
     <string name="upv1">Uxue Cerrada</string>
@@ -125,20 +121,12 @@ Muskizen, garrantzi handia du 22: 30ean geltokian hasten den zuzien jaitsierak. 
     <!-- Descripciones -->
     <string name="DescripcionCastillo">
 Musques-eko (Bizkaia, Espainia) Muñatones gaztelua altxatzen da, itsasoarekin bat egiten duten heinean Barbadún (edo Mayor) ibaia eta bere ibaiadarrak, Cotorrio ibaia adibidez, osatzen dituzten belardi eta paduretan nagusituz.</string>
-    <string name="DescripcionLaarena">
-La Arena hondartza Bizkaiko Zierbena eta Muskiz udalerrien artean kokatua, Euskal Herria (Espainia), harea iluneko hondartza da, Barbadún ibaiaren bokalearen ondoan, La Arena (Ciérvana) eta Pobeña (Muskiz) herrien ondoan. .\n\n
-Hondartzaren zati bat Barbadun itsasadarreko natur eremu babestuan sartuta dago.</string>
+    <string name="DescripcionLaarena">La Arena hondartza Bizkaiko Zierbena eta Muskiz udalerrien artean kokatua, Euskal Herria (Espainia), harea iluneko hondartza da, Barbadún ibaiaren bokalearen ondoan, La Arena (Ciérvana) eta Pobeña (Muskiz) herrien ondoan.</string>
     <string name="DescripcionPuente">El Pobaleko zubi erromanikoak El Pobal burdinolara eramaten du, Barbadun ibaiaren gainean. XIII. Mendean eraiki zen, eta Muskiz hiriko zubirik zaharrena izan zen.</string>
-    <string name="DescripcionBurdinola">
-El Pobal Burdinola antzinako fabrika hidrauliko bat da, non burdin minerala lantzen zen mota guztietako tresnak egiteko, batez ere etxeko erabilerarako.Barbadún ibaiaren ondoan eraiki zen XVI.mendearen hasieran.</string>
-    <string name="Descripcionermita">Talaiak eta seinale-postuak oso azpiegitura sinpleak ziren.\n\n
-    Socorroko Andre Mariaren baseliza-talaia Barbadunen bokalera begira dagoen mendigune txiki batean dago.
-        Pobeñako baseliza, itsas debozio handikoa, XVII eta XVIII.</string>
+    <string name="Descripcionermita">Hondartzaren zati bat Barbadun itsasadarreko natur eremu babestuan sartuta dago.</string>
     <string name="Descripcionitzalsur">Itsaslur bide berdeak, herrian Itsaslur pasealekua izenez ezagutzen dena, Pobeña eta Kobaron hiriguneak batzen ditu, Bizkaiko pasealeku ederrenetako bat sortuz.\n\n
         Familia-ibilaldia, bere edertasunagatik, urtean milaka pertsona erakartzen dituena.</string>
-    <string name="DescripcionSanjuan">San Joan jaiak, San Joan bezpera edo San Joan gaua ere deituak, ekainaren 24an San Joan Bataiatzailearen jaiotzaren kristau jaiaren aurreko ospakizunaren bezpera da.
-        Batzuek jaia edo ospakizunetako batzuk kristautasunaren aurreko edo arrotzen diren jatorri paganoko erritoekin lotzen dituzte.\n\n
-        Suak egitea ohiko elementua izan ohi da.</string>
+    <string name="DescripcionSanjuan">San Joan jaiak, San Joan bezpera edo San Joan gaua ere deituak, ekainaren 24an San Joan Bataiatzailearen jaiotzaren kristau jaiaren aurreko ospakizunaren bezpera da. Batzuek jaia edo ospakizunetako batzuk kristautasunaren aurreko edo arrotzak diren jatorri paganoko errituekin lotzen dituzte. Suak egitea ohiko elementua izan ohi da.</string>
     <string name="IrPuzzle">Puzzlera joan</string>
     <string name="Marinero1">Talaiak eta keinulari-postuak oso azpiegitura sinpleak ziren, eta Pobeñakoa hain zuzen, XVI. eta XVIII. mendeen artean sortua izan zen. Muskileen beharrak asetzea gain, talaia hori arrantzatzeko izan zen Somorrostroko meategietako burdin mineralekin merkataritza-trafikoa eta Barbadun ibaiko burdinoletako burdina kudeatzeko, ibilitako ontzi txikien laguntzarekin.</string>
     <string name="Nosotros">EHUko Irakaskuntzako ikasle talde bat gara. CIFP Txurdinagako ikasle talde batekin batera aplikazio bat egin dugu Muskizko Lehen Hezkuntzako haurrek jolasten ari diren bitartean ikas dezaten.</string>
@@ -150,7 +138,7 @@ El Pobal Burdinola antzinako fabrika hidrauliko bat da, non burdin minerala lant
     <string name="ResButCastillo">Gaztelura joan</string>
     <string name="ResButHermita">Hermitara joan</string>
     <string name="Comprobar">Egiaztatu</string>
-    <string name="ResTxtCas">Puzzlearen azken irudiak gaztelua izan behar du. Itxura hau izango behar du:</string>
+    <string name="ResTxtCas">Puzzlearen azken irudiak gaztelua izan behar da. Itxura hau izan beharko du:</string>
     <string name="ResTxtHermita">Jokoaren irtenbideak hauek dira: itsaso zakarra eta barea, hona hemen argazki ezberdinen irtenbideak:</string>
     <string name="ResTranquilo">Itsaso barea:</string>
     <string name="ResRevuelto">Itsaso zakarra:</string>
@@ -163,4 +151,5 @@ El Pobal Burdinola antzinako fabrika hidrauliko bat da, non burdin minerala lant
     <string name="txtGuiado">Modu gidatuan zaude orain</string>
     <string name="txtLejos">Urruti zaude puntutik! Hurbildu gehiago jolasteko.</string>
     <string name="Aceptar">Ados</string>
+    <string name="DescripcionBurdinola">El Pobal Burdinola antzinako fabrika hidrauliko bat da, non burdin minerala lantzen zen mota guztietako tresnak egiteko, batez ere etxeko erabilerarako.Barbadún ibaiaren ondoan eraiki zen XVI.mendearen hasieran.</string>
 </resources>

@@ -12,14 +12,14 @@
     <string name="hintClase">Clase</string>
     <string name="start">Inicio</string>
     <string name="othersUsers">Partidas guardadas:</string>
-    <string name="eresProfesor">SI ERES PROFESOR/A, PULSA AQUI</string>
+    <string name="eresProfesor"><u>SI ERES PROFESOR/A, PULSA AQUI</u></string>
     <string name="partidaguardada">Pulsa para continuar esta partida</string>
 
     <!-- Map Activity -->
     <!-- Menu -->
     <string name="modes">Modos</string>
     <string name="puntuation">Puntuacion</string>
-    <string name="others">Otros</string>
+    <string name="others">Otros…</string>
     <string name="freeMode">Modo libre</string>
     <string name="guidedMode">Modo guiado</string>
     <string name="profesorMode">Modo profesor/a</string>
@@ -34,7 +34,7 @@
 
     <!-- Playa La Arena -->
     <string name="gameLaArenaHondartza">Playa de la Arena</string>
-    <string name="cardsMatch">Correcto!</string>
+    <string name="cardsMatch">¡Correcto!</string>
 
     <!-- Hermita -->
     <string name="gameHermitaDePobeña">Hermita de Pobeña</string>
@@ -59,8 +59,8 @@
     <string name="waiting">Esperando</string>
     <string name="waitingExplanation">Hay que esperar a que el/la profesor/a termine de dar la explicacion</string>
     <string name="itsaslurQ1">¿Por donde hemos entrado al paseo?</string>
-    <string name="itsaslurQ2">¿Que hemos visto en el paseo?</string>
-    <string name="itsaslurQ3">¿Que hemos encontrado a la mitad del camino?</string>
+    <string name="itsaslurQ2">¿Qué hemos visto en el paseo?</string>
+    <string name="itsaslurQ3">¿Qué hemos encontrado a la mitad del camino?</string>
     <string name="itsaslurQ4">¿Donde podemos darnos un baño?</string>
     <!-- San Juan gaua-->
     <string name="gameSanJuan">Noche de San Juan</string>
@@ -84,9 +84,9 @@
     <string name="gamePuenteRomano">Puente Romano de Pobeña</string>
     <string name="Continue">Continuar</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="puente_romano_enunciado_1">El puente románico de El Pobal conduce a la ferrería de El Pobal, sobre el río Barbadun. XIII. Fue construido en el siglo, y Muskiz era el puente más antiguo de la ciudad.</string>
-    <string name="puente_romano_enunciado_2">El río Barbadun pasaba por el centro de Muskize, por lo que tuvieron que construir un puente para poder moverse por el pueblo sin ningún problema. Gracias a ello, la gente se trasladó de Galdames y Sopuerta a Muskize. Este puente era necesario por problemas demográficos.</string>
-    <string name="puente_romano_enunciado_3">El puente está hecho de piedra. Tenía dos ojos arqueados, pero hoy tiene uno, ya que el otro se hundió en las Guerras Carlistas, y hoy se ha construido una pasarela de hormigón en su lugar. Tiene aproximadamente dos metros de ancho y no tiene paredes protectoras. Para evitar que el puente se caiga, se ha construido un gran pilar. Todavía hoy es transitable, pero hace mucho tiempo que no se usa.</string>
+    <string name="puente_romano_enunciado_1">El puente románico de El Pobal conduce a la ferrería de El Pobal, sobre el río Barbadun. Fue construido en el siglo XIII., y Muskiz era el puente más antiguo de la ciudad.</string>
+    <string name="puente_romano_enunciado_2">El río Barbadun pasaba por el centro de Muskize, por lo que tuvieron que construir un puente para poder moverse por el pueblo sin ningún problema. Gracias a ello, la gente podía viajar desde Galdames y Sopuerta hasta Muskiz. Este puente era necesario por problemas demográficos.</string>
+    <string name="puente_romano_enunciado_3">El puente está hecho de piedra. Tenía dos ojos arqueados, pero hoy en día solo tiene uno, ya que el otro se hundió en las Guerras Carlistas, y hoy se ha construido una pasarela de hormigón en su lugar. Tiene aproximadamente dos metros de ancho y no tiene paredes protectoras. Para evitar que el puente se caiga, se construyó un gran pilar. Todavía hoy es transitable, pero hace mucho que no se usa.</string>
     <string name="puente_romano_preg_1">¿En qué siglo se construyó el puente románico del Pobal?</string>
     <string name="puente_romano_preg_2">¿Qué río cruza este puente?</string>
     <string name="puente_romano_preg_3">¿Para qué se construyó este puente?</string>
@@ -107,10 +107,6 @@
     <string name="jugar">Jugar</string>
     <string name="volver">Volver</string>
     <string name="incorrecto">Incorrecto</string>
-    <string name="siguiente">Siguiente</string>
-    <string name="primero">Primero</string>
-    <string name="anterior">Anterior</string>
-    <string name="ultimo">Ultimo</string>
     <string name="mar_tranquilo">Tranquilo</string>
     <string name="mar_revuelto">Revuelto</string>
     <string name="upv1">Uxue Cerrada</string>
@@ -124,9 +120,8 @@
     <!-- Equipos -->
 
     <!-- Descripciones -->
-    <string name="DescripcionCastillo">El castillo de Muñatones en Musques (Vizcaya, España) se eleva dominando los prados y las marismas que, a su encuentro con el mar, conforman el río Barbadún (o Mayor) y sus arroyos afluentes, caso del río Cotorrio.</string>
-    <string name="DescripcionLaarena">La playa de La Arena situada entre los municipios vizcaínos de Zierbena y Muskiz, País Vasco (España),es una playa con arena oscura, al lado de la desembocadura del río Barbadún, junto a las localidades de La Arena (Ciérvana) y Pobeña (Muskiz).\n\n
-Parte de la playa está incluida en el espacio natural protegido de la ría del Barbadun.</string>
+    <string name="DescripcionCastillo">El castillo de Muñatones en Muskiz (Vizcaya, España) se eleva dominando los prados y las marismas que, a su encuentro con el mar, conforman el río Barbadún (o Mayor) y sus arroyos afluentes, caso del río Cotorrio.</string>
+    <string name="DescripcionLaarena">La playa de La Arena situada entre los municipios vizcaínos de Zierbena y Muskiz, País Vasco (España), es una playa con arena oscura, al lado de la desembocadura del río Barbadún, junto a las localidades de La Arena (Ciérvana) y Pobeña (Muskiz).</string>
     <string name="DescripcionPuente">El puente románico de El Pobal conduce a la ferrería de El Pobal, sobre el río Barbadun. XIII. Fue construido en el siglo, y Muskiz era el puente más antiguo de la ciudad.</string>
     <string name="DescripcionBurdinola">La Ferrería de El Pobal es una antigua fábrica hidráulica en la que se trabajaba el mineral del hierro para elaborar todo tipo de herramientas, sobre todo de uso doméstico.Fue construida junto al río Barbadún a principios del siglo XVI. </string>
     <string name="Descripcionermita">Las atalayas y puestos de señeros eran infraestructuras muy sencillas.\n\n
@@ -134,10 +129,8 @@ Parte de la playa está incluida en el espacio natural protegido de la ría del 
         La ermita de Pobeña, de gran devoción marinera, se puede datar entre los siglos XVII y XVIII</string>
     <string name="Descripcionitzalsur">La vía verde de Itsaslur, conocida popularmente como el paseo de Itsaslur, une los núcleos urbanos de Pobeña y Kobaron creando uno de los paseos más bonitos de Bizkaia.\n\n
         Un recorrido familiar, que, debido a su belleza atrae a miles de personas al año.</string>
-    <string name="DescripcionSanjuan">La Fiesta de San Juan, también llamada víspera de San Juan o Noche de San Juan, es la víspera de la celebración previa a la festividad cristiana del nacimiento de San Juan Bautista el día 24 de junio.
-        Algunos vinculan la festividad o algunas de sus celebraciones en ritos de origen pagano previos o ajenos al cristianismo.\n\n
-        La realización de hogueras suele ser un elemento habitual.</string>
-    <string name="IrPuzzle">Ir al puzle</string>
+    <string name="DescripcionSanjuan">La Fiesta de San Juan, también llamada víspera de San Juan o Noche de San Juan, es la víspera de la celebración previa a la festividad cristiana del nacimiento de San Juan Bautista el día 24 de junio. Algunos vinculan la festividad o algunas de sus celebraciones en ritos de origen pagano previos o ajenos al cristianismo. La realización de hogueras suele ser un elemento habitual.</string>
+    <string name="IrPuzzle">Ir al puzzle</string>
     <string name="Marinero1">Las torres de vigilancia y los postes de señalización eran estructuras muy sencillas, y en particular la de Pobeña, fueron creadas entre el siglo XVI. y XVIII. Además de atender las necesidades de los mejillones, este mirador servía de pesca para gestionar el tráfico comercial con el mineral de hierro de las minas de Somorrostro y el hierro de las ferrerías del río Barbadún, con la ayuda de los pequeños barcos que transitaban .</string>
     <string name="Nosotros">Somos un grupo de alumn@s de Magisterio de la UPV. Junto a un grupo de alumnos del CIFP Txurdinaga hemos llevado a cabo una aplicación para los niñ@s de primaria de Muskiz puedan conozer jugando.</string>
     <string name="Desarrollo">Desarrollo por:</string>
@@ -161,6 +154,8 @@ Parte de la playa está incluida en el espacio natural protegido de la ría del 
     <string name="txtGuiado">Ahora estás en el modo guiado</string>
     <string name="txtLejos">¡Estas muy lejos del punto! Hacercate más para jugar.</string>
     <string name="Aceptar">Aceptar</string>
+    <string name="DescripcionPuente">El puente románico de El Pobal conduce a la ferrería de El Pobal, sobre el río Barbadun. XIII. Fue construido en el siglo y fue el puente más antiguo de la ciudad de Muskiz.</string>
+    <string name="DescripcionBurdinola">La Ferrería El Pobal es una antigua fábrica hidráulica donde se procesaba el mineral de hierro para fabricar todo tipo de herramientas, principalmente de uso doméstico, que fue construida junto al río Barbadún a principios del siglo XVI.</string>
 
 
 </resources>

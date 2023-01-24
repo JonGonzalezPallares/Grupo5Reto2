@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">Get To Know Muskiz</string>
-    <string name="title_activity_maps">Get to know Muskiz!</string>
+    <string name="title_activity_maps">Muskiz ezagutzen!</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -13,14 +13,14 @@
     <string name="start">Start</string>
     <string name="othersUsers">Savegames:</string>
     <string name="eresProfesor"><u>IF YOU ARE PROFESSOR, PRESS HERE</u></string>
-    <string name="partidaguardada">Touch to continue this savegame</string>
+    <string name="partidaguardada">Touch to continue whit this savegame</string>
 
 
     <!-- Map Activity -->
     <!-- Menu -->
     <string name="modes">Modes</string>
     <string name="puntuation">Score</string>
-    <string name="others">Others</string>
+    <string name="others">Others…</string>
     <string name="freeMode">Free Mode</string>
     <string name="guidedMode">Guided Mode</string>
     <string name="profesorMode">Teacher Mode</string>
@@ -31,8 +31,8 @@
 
 
     <!-- YourProgress -->
-    <string name="progressPuntuation">Tu puntuacion</string>
-    <string name="gamesDone">Juegos Completados</string>
+    <string name="progressPuntuation">Your score</string>
+    <string name="gamesDone">Completed games</string>
 
     <!-- Playa La Arena -->
     <string name="gameLaArenaHondartza">La Arena Beach</string>
@@ -48,17 +48,7 @@
 
     <!-- Castillo Muñatones -->
     <string name="gameCastilloMuñatones">Muñatones Castle</string>
-    <string name="explanationCastilloMuñatones">Muñatones Castle is located in Muskiz, Bizkaia.
-        Somorrostro is a town in the valley, formed by the Barbadun river.
-        It has around 7,500 inhabitants and the municipality is located in a protected natural space.
-        We will find this castle we are talking about in front of the Petronor company refinery.
-        Although it is called a castle, it is a tower house.
-        It should be noted that it is not just any tower, but that of Lope García de Salazar,
-        One of the most prominent personalities of the Middle Ages in Bizkaia. It was built in 1339,
-        at the end of the aforementioned period.
-        The current castle of Muñatones was built and destroyed over the centuries.
-        with all kinds of wins and losses. Today, castle of Muñatones
-        It is the only castle in Bizkaia that has preserved most of the characteristics of its time. </string>
+    <string name="explanationCastilloMuñatones">"Muñatones Castle is located in Muskiz, Bizkaia.         Somorrostro is a town in the valley, formed by the Barbadun river.         It has around 7,500 inhabitants and the municipality is located in a protected natural space.         We will find this castle we are talking about in front of the Petronor company refinery.         Although it is called a castle, it is a tower house.         It should be noted that it is not just any tower, but that of Lope García de Salazar,         One of the most prominent personalities of the Middle Ages in Bizkaia. It was built in 1339,         at the end of the aforementioned period.         The current castle of Muñatones was built and destroyed over the centuries.         with all kinds of wins and losses. Today, castle of Muñatones         It is the only castle in Bizkaia that has preserved most of the characteristics of its time. "</string>
 
     <!-- Itsaslur Ibilbidea -->
     <string name="gameItsaslurIbilbidea">Itsaslur Route</string>
@@ -66,7 +56,7 @@
     <string name="waiting">Waiting</string>
     <string name="waitingExplanation">You have to wait for the teacher to finish giving the explanation</string>
     <string name="itsaslurQ1">Where have we entered the route?</string>
-    <string name="itsaslurQ2">What have we seen in the route</string>
+    <string name="itsaslurQ2">What have we seen in the route?</string>
     <string name="itsaslurQ3">What have we found halfway?</string>
     <string name="itsaslurQ4">Where can we take a bath?</string>
     <!-- San Juan gaua-->
@@ -83,18 +73,18 @@
 </string>
     <!-- Pantalla felicitacion-->
     <string name="congratulations1">You did it, friend!</string>
-    <string name="congratulations2">You have solved the challenge</string>
+    <string name="congratulations2">You\'ve solved the challenge</string>
     <string name="GoToMap">Go to Map</string>
     <!-- Pantalla PopUp-->
-    <string name="explicacion1">¡Complete the games to get badges!</string>
+    <string name="explicacion1">Complete the games to get badges!</string>
     <!-- Pantalla felicitacion-->
-    <string name="gamePuenteRomano">Roman bridge of Pobeña</string>
+    <string name="gamePuenteRomano">Roman Bridge of Pobeña</string>
 
     <string name="Continue">Continue</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="puente_romano_enunciado_1">The Romanesque bridge of El Pobal leads to the El Pobal ironworks, over the Barbadun river. XIII. It was built in the century, and Muskiz was the oldest bridge in the city.</string>
-    <string name="puente_romano_enunciado_2">The Barbadun River passed through the center of Muskize, so they had to build a bridge to be able to move around the town without any problem. Thanks to this, people moved from Galdames and Sopuerta to Muskize. This bridge was necessary due to demographic problems.</string>
-    <string name="puente_romano_enunciado_3">The bridge is made of stone. It had two arched eyes, but today it has one, as the other sank in the Carlistlands, and a concrete walkway has been built in its place today. It is approximately two meters wide and has no protective walls. To prevent the bridge from falling, a large pillar has been built. It is still passable today, but it has not been used for a long time.</string>
+    <string name="puente_romano_enunciado_1">The Romanesque bridge of El Pobal leads to the El Pobal ironworks, over the Barbadun river. It was built in the XIII. century, and Muskiz was the oldest bridge in the city.</string>
+    <string name="puente_romano_enunciado_2">The Barbadun River ran through the center of Muskiz, so they had to build a bridge to be able to move around the town without any problem. Thanks to this, people could travel from Galdames and Sopuerta to Muskiz. This bridge was necessary due to demographic problems.</string>
+    <string name="puente_romano_enunciado_3">The bridge is made of stone. It had two arched eyes, but today it only has one, as the other sank in the Carlist Wars, and today a concrete walkway has been built in its place. It is approximately two meters wide and has no protective walls. To prevent the bridge from falling down, a large pillar was built. It is still passable today, but it has not been used for a long time.</string>
     <string name="puente_romano_preg_1">In what century was the Romanesque bridge of Pobal built?</string>
     <string name="puente_romano_preg_2">What river crosses this bridge?</string>
     <string name="puente_romano_preg_3">What was this bridge built for?</string>
@@ -115,10 +105,6 @@
     <string name="jugar">Play</string>
     <string name="volver">Return</string>
     <string name="incorrecto">Wrong</string>
-    <string name="siguiente">Next</string>
-    <string name="primero">First</string>
-    <string name="anterior">Previous</string>
-    <string name="ultimo">Last</string>
     <string name="mar_revuelto">Rough</string>
     <string name="mar_tranquilo">Calm</string>
     <string name="upv1">Uxue Cerrada</string>
@@ -131,17 +117,13 @@
     <string name="tx4">Youssef Ait</string>
     <!-- Descripciones -->
     <string name="DescripcionCastillo">Ultimo</string>
-    <string name="DescripcionLaarena">Ultimo</string>
-    <string name="DescripcionPuente">Ultimo</string>
-    <string name="DescripcionBurdinola">Ultimo</string>
-    <string name="Descripcionermita">Ultimo</string>
-    <string name="Descripcionitzalsur">Ultimo</string>
-    <string name="DescripcionSanjuan">Ultimo</string>
-    <string name="IrPuzzle">Go to puzzle</string>
-    <string name="Marinero1">The watchtowers and signaling posts were very simple structures, and Pobeña\'s in particular, it was created between the 16th century. and 18th century. In addition to meeting the needs of the mussels, this vantage point was used for fishing to manage the commercial traffic with iron ore from the mines of Somorrostro and the iron from the forges of the Barbadun river, with the help of the small ships that traveled.</string>
-    <string name="Nosotros">We are a group of UPV Teaching students. Together with a group of students from the CIFP Txurdinaga we have carried out an application so that the primary school children of Muskiz can learn while playing.</string>
+    <string name="DescripcionLaarena">La Arena beach located between the Vizcayan municipalities of Zierbena and Muskiz, Basque Country (Spain), is a beach with dark sand, next to the mouth of the Barbadún river, next to the towns of La Arena (Ciérvana) and Pobeña ( Muskiz).</string>
+    <string name="DescripcionPuente">The Romanesque bridge of El Pobal leads to the El Pobal ironworks, over the Barbadun river. XIII. It was built in the century and was the oldest bridge in the city of Muskiz.</string>
+    <string name="DescripcionBurdinola">El Pobal Burdinola antzinako fabrika hidrauliko bat da, non burdin minerala lantzen zen mota guztietako tresnak egiteko, batez ere etxeko erabilerarako.Barbadún ibaiaren ondoan eraiki zen XVI.mendearen hasieran.</string>
+    <string name="Descripcionermita">Part of the beach is included in the protected natural area of the Barbadun estuary.</string>
+    <string name="Descripcionitzalsur">The greenway of Itsaslur, popularly known as the Itsaslur walk, unites the urban centers of Pobeña and Kobaron creating one of the most beautiful walks in Bizkaia.</string>
     <string name="Idea">Devised by:</string>
-    <string name="Desarrollo">Developers:</string>
+    <string name="Desarrollo">Development by:</string>
     <string name="DescProf">Area for the teacher to view the answers to some games. Finally, he will be the one in charge of controlling some of the other games.</string>
     <string name="ResButPuente">Go to roman bridge</string>
     <string name="ResButPaseo">Go to Itsaslur</string>
@@ -161,4 +143,8 @@
     <string name="Marinero2">The hermitage of Nuestra Señora del Socorro was built in 1768 and is located near the mouth of the Barbadun River. They call it Nuestra Señora del Socorro because they used it when there was danger to ask for help, which made it one of the favorites of the sailors of Pobeña, who were always at sea when they went fishing. Therefore, before starting to fish, the boats stopped there, went up to ask for protection and checked the state of the sea, to decide whether it was convenient to embark or not.</string>
     <string name="Bienvenido">Welcome to Muskiz!</string>
     <string name="CrearSala">The time has come to create a new room so your pupils can join in!</string>
+    <string name="DescripcionSanjuan">The Feast of San Juan, also called the eve of San Juan or the Night of San Juan, is the eve of the celebration prior to the Christian festival of the birth of Saint John the Baptist on June 24. Some link the festival or some of its celebrations to rites of pagan origin prior to or alien to Christianity. The making of bonfires is usually a common element.</string>
+    <string name="IrPuzzle">Go to puzzle</string>
+    <string name="Marinero1">The watchtowers and signaling posts were very simple structures, and in particular that of Pobeña, they were created between the 16th century. and XVIII. In addition to meeting the needs of the mussels, this viewpoint was used as a fishing area to manage commercial traffic with iron ore from the Somorrostro mines and iron from the forges on the Barbadún River, with the help of small boats that passed by.</string>
+    <string name="Nosotros">We are a group of UPV Teaching students. Together with a group of students from the CIFP Txurdinaga we have carried out an application so that the children of primary school in Muskiz can learn about playing.</string>
 </resources>

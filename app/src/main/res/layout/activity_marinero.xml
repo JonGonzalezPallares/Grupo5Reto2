@@ -44,7 +44,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="43dp"
         android:background="@drawable/estilo_botones"
-        android:text="@string/siguiente"
         android:textColor="#FFFFFF"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
