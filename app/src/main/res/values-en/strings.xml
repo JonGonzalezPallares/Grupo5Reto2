@@ -155,5 +155,8 @@
     <string name="Bienvenido">Welcome to Muskiz!</string>
     <string name="CrearSala">The time has come to create a new room so your pupils can join in!</string>
 
-    <string name="Ayudacastillo">In this game you must solve the puzzle, to do this hold down the images below to drag and drop them in the corresponding space. Good luck!</string>
+    <string name="Ayudacastillo">In this game you must solve the puzzle, to do this hold down the
+        images below to drag and drop them in the corresponding space. Good luck!</string>
+    <string name="Ayudaplaya">In this game you must put the cards together, for this you must find
+        image and description pairs. Good luck!</string>
 </resources>

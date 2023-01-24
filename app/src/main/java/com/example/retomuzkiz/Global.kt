@@ -203,6 +203,9 @@ private fun updateProgress() {
 
 
 
+
+
+
 fun dialogoAyudaJuegos (juego : String, context: Context,layoutInflater: LayoutInflater){
     val builder = AlertDialog.Builder(context)
     val view = layoutInflater.inflate(R.layout.ventanayuda,null)
@@ -227,7 +230,9 @@ fun dialogoAyudaJuegos (juego : String, context: Context,layoutInflater: LayoutI
             explicacion.text = context.resources.getString(R.string.Ayudacastillo)
         }
         "playa"->{
-           //TODO
+            titulo.text = context.resources.getString(R.string.gameLaArenaHondartza)
+            cargargifs(img,ContextCompat.getDrawable(context, R.drawable.laarenaayuda)!!,context)
+            explicacion.text = context.resources.getString(R.string.Ayudaplaya)
         }
         "fundicion"->{
             //TODO
@@ -253,6 +258,12 @@ fun dialogoAyudaJuegos (juego : String, context: Context,layoutInflater: LayoutI
     }
 
 }
+
+
+
+
+
+
 fun cargargifs(img : ImageView, draw : Drawable,context: Context){
     Glide.with(context).load(draw).into(img)
 }

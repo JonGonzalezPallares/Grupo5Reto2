@@ -47,6 +47,12 @@ class LaArenaHondartza : Activity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLaArenaHondartzaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.btnayuda.setOnClickListener{
+
+            dialogoAyudaJuegos("playa",this,layoutInflater)
+
+
+        }
         startTimer()
         fin = 0
         init()
