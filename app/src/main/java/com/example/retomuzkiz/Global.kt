@@ -49,7 +49,7 @@ fun finalizar(contexto: Context, gameName:String) {
 }
 var startTime: Long = 0
 var time: Int = 0
-var currentProgress: Progress? =  null
+var currentProgress: Progress? =  RetoGrupoCinco.progressDb.getUserProgress(RetoGrupoCinco.currentUser!!.userId)
 fun startTimer() {
     startTime = SystemClock.elapsedRealtime()
 }
@@ -62,7 +62,7 @@ fun stopTimer() {
 fun juegoAcabado(gamePos : Int) {
     if (fin <1){
         var lista :List<Game>? = null
-        currentProgress = RetoGrupoCinco.progressDb.getUserProgress(RetoGrupoCinco.currentUser!!.userId)
+
         when(gamePos){
             0->lista = calcularPuntuacionLaberinto(gamePos)
             1->lista = calcularPuntuacionItsaslur(gamePos)

@@ -11,172 +11,19 @@
     <TextView
         android:id="@+id/txtRanking"
         android:layout_width="match_parent"
-        android:layout_height="83dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="#000000"
         android:textSize="48sp"
         android:textStyle="bold"
         tools:text="RANKING" />
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRanking"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="220dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/txtFirstName"
-                    android:layout_width="match_parent"
-                    android:layout_height="59dp"
-                    android:gravity="center"
-                    android:textColor="#000000"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/txtFirstClass"
-                    android:layout_width="match_parent"
-                    android:layout_height="59dp"
-                    android:gravity="center"
-                    android:textColor="#000000"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/txtFirstPuntuation"
-                    android:layout_width="match_parent"
-                    android:layout_height="116dp"
-                    android:gravity="center"
-                    android:textColor="#000000"
-                    android:textSize="24sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imgSecond"
-                    android:layout_width="216dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/medallaoro" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:layout_width="226dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imgWinner"
-                    android:layout_width="214dp"
-                    android:layout_height="229dp"
-                    android:layout_gravity="start"
-                    app:srcCompat="@drawable/medallaplata" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="203dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:id="@+id/txtSecondName"
-                    android:layout_width="match_parent"
-                    android:layout_height="59dp"
-                    android:gravity="center"
-                    android:textColor="#000000"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/txtSecondClass"
-                    android:layout_width="match_parent"
-                    android:layout_height="59dp"
-                    android:gravity="center"
-                    android:textColor="#000000"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/txtSecondPuntuation"
-                    android:layout_width="match_parent"
-                    android:layout_height="116dp"
-                    android:gravity="center"
-                    android:textColor="#000000"
-                    android:textSize="24sp" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:id="@+id/txtThirdClass"
-                    android:layout_width="match_parent"
-                    android:layout_height="59dp"
-                    android:gravity="center"
-                    android:textColor="#000000"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/txtThirdName"
-                    android:layout_width="match_parent"
-                    android:layout_height="59dp"
-                    android:gravity="center"
-                    android:textColor="#000000"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/txtThirdPuntuation"
-                    android:layout_width="match_parent"
-                    android:layout_height="116dp"
-                    android:gravity="center"
-                    android:textColor="#000000"
-                    android:textSize="24sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imgThird"
-                    android:layout_width="216dp"
-                    android:layout_height="181dp"
-                    android:layout_gravity="end"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/medallabronce" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
+        tools:itemCount="3"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/single_rank" />
 
 </LinearLayout>
