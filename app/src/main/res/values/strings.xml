@@ -155,5 +155,9 @@
     <string name="DescripcionPuente">El puente románico de El Pobal conduce a la ferrería de El Pobal, sobre el río Barbadun. XIII. Fue construido en el siglo y fue el puente más antiguo de la ciudad de Muskiz.</string>
     <string name="DescripcionBurdinola">La Ferrería El Pobal es una antigua fábrica hidráulica donde se procesaba el mineral de hierro para fabricar todo tipo de herramientas, principalmente de uso doméstico, que fue construida junto al río Barbadún a principios del siglo XVI.</string>
 
+    <string name="Ayudacastillo">En este juego deberas resolver el puzle, para ello manten pulsadas las
+        imagenes de abajo para arrastrarlas y sueltalas en el hueco que les corresponda. Buena suerte!</string>
+    <string name="Ayudaplaya">En este juego deberas juntar las cartas, para ello deberas encontrar
+        las parejas de imagen y descripcion. Buena suerte!</string>
 
 </resources>

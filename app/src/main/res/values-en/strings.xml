@@ -147,4 +147,9 @@
     <string name="IrPuzzle">Go to puzzle</string>
     <string name="Marinero1">The watchtowers and signaling posts were very simple structures, and in particular that of Pobeña, they were created between the 16th century. and XVIII. In addition to meeting the needs of the mussels, this viewpoint was used as a fishing area to manage commercial traffic with iron ore from the Somorrostro mines and iron from the forges on the Barbadún River, with the help of small boats that passed by.</string>
     <string name="Nosotros">We are a group of UPV Teaching students. Together with a group of students from the CIFP Txurdinaga we have carried out an application so that the children of primary school in Muskiz can learn about playing.</string>
+
+    <string name="Ayudacastillo">In this game you must solve the puzzle, to do this hold down the
+        images below to drag and drop them in the corresponding space. Good luck!</string>
+    <string name="Ayudaplaya">In this game you must put the cards together, for this you must find
+        image and description pairs. Good luck!</string>
 </resources>

@@ -152,4 +152,9 @@ Musques-eko (Bizkaia, Espainia) Muñatones gaztelua altxatzen da, itsasoarekin b
     <string name="txtLejos">Urruti zaude puntutik! Hurbildu gehiago jolasteko.</string>
     <string name="Aceptar">Ados</string>
     <string name="DescripcionBurdinola">El Pobal Burdinola antzinako fabrika hidrauliko bat da, non burdin minerala lantzen zen mota guztietako tresnak egiteko, batez ere etxeko erabilerarako.Barbadún ibaiaren ondoan eraiki zen XVI.mendearen hasieran.</string>
+
+    <string name="Ayudacastillo">Joko honetan puzzlea konpondu behar duzu,
+        horretarako eduki sakatuta beheko irudiak dagokion espazioan arrastatu eta jaregiteko. Zorte on!</string>
+    <string name="Ayudaplaya">Joko honetan txartelak elkartu behar dituzu, horretarako aurkitu behar duzu
+        irudi eta deskribapen bikoteak. Zorte on!</string>
 </resources>

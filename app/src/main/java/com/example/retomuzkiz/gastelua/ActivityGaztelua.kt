@@ -9,6 +9,7 @@ import android.graphics.Point
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings.Global
 import android.view.DragEvent
 import android.view.View
 import android.widget.ImageView
@@ -52,15 +53,7 @@ class ActivityGaztelua : AppCompatActivity() {
         binding.imagenabajoder.setOnDragListener(dragListener)
 
         //poner invisibles las imagenes del resultado
-        /*binding.imagenarribaizq.setAlpha(0)
-        binding.imagenarribamed.setAlpha(0)
-        binding.imagenarribader.setAlpha(0)
-        binding.imagenmedioizq.setAlpha(0)
-        binding.imagenmediomed.setAlpha(0)
-        binding.imagenmedioder.setAlpha(0)
-        binding.imagenabajoizq.setAlpha(0)
-        binding.imagenabajomed.setAlpha(0)
-        binding.imagenabajoder.setAlpha(0)*/
+
 
         binding.imagenarribaizq.alpha = 0F
         binding.imagenarribamed.alpha = 0F
@@ -71,6 +64,14 @@ class ActivityGaztelua : AppCompatActivity() {
         binding.imagenabajoizq.alpha = 0F
         binding.imagenabajomed.alpha = 0F
         binding.imagenabajoder.alpha = 0F
+
+        binding.btnayuda?.setOnClickListener{
+
+            dialogoAyudaJuegos("castillo",this,layoutInflater)
+
+
+        }
+
 
     }
     //funcion del long listener de arrastrar

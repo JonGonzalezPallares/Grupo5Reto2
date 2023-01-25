@@ -3,13 +3,19 @@ package com.example.retomuzkiz
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.SystemClock
+import android.view.LayoutInflater
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
-import com.example.retomuzkiz.Laberinto.ActivityLaberinto
+import androidx.core.view.isGone
+import com.bumptech.*
+import com.bumptech.glide.Glide
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.clases.RetoGrupoCinco
-import com.example.retomuzkiz.itsaslurIbilbidea.ItsaslurJuego
 import com.example.retomuzkiz.room.Game
 import com.example.retomuzkiz.room.Progress
 import com.example.retomuzkiz.room.TypeConverter
@@ -188,6 +194,76 @@ fun calcularPuntuacionLaberinto(gamePos: Int): List<Game> {
     return list
 }
 
+
+
 private fun updateProgress() {
     RetoGrupoCinco.progressDb.updateProgress(currentProgress!!)
+}
+
+
+
+
+
+
+
+fun dialogoAyudaJuegos (juego : String, context: Context,layoutInflater: LayoutInflater){
+    val builder = AlertDialog.Builder(context)
+    val view = layoutInflater.inflate(R.layout.ventanayuda,null)
+
+    builder.setView(view)
+
+    val dialog = builder.create()
+    dialog.show()
+
+    val titulo = view.findViewById<TextView>(R.id.txtnombrejuego)
+    val img = view.findViewById<ImageView>(R.id.imagenjuego)
+    val explicacion = view.findViewById<TextView>(R.id.txtexplicacion)
+    val boton = view.findViewById<Button>(R.id.btncerrarayuda)
+    boton.setOnClickListener {
+        dialog.hide()
+    }
+    when(juego){
+        "castillo"->{
+        titulo.text = context.resources.getString(R.string.gameCastilloMuñatones)
+            cargargifs(img,ContextCompat.getDrawable(context, R.drawable.ayudacastillo)!!,context)
+            //img.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ayudacastillo))
+            explicacion.text = context.resources.getString(R.string.Ayudacastillo)
+        }
+        "playa"->{
+            titulo.text = context.resources.getString(R.string.gameLaArenaHondartza)
+            cargargifs(img,ContextCompat.getDrawable(context, R.drawable.laarenaayuda)!!,context)
+            explicacion.text = context.resources.getString(R.string.Ayudaplaya)
+        }
+        "fundicion"->{
+            //TODO
+        }
+        "sanjuan"->{
+            //TODO
+        }
+        "puente"->{
+            //TODO
+        }
+        "ermita"->{
+            //TODO
+        }
+        "paseo"->{
+            //TODO
+        }
+
+
+
+
+
+
+    }
+
+}
+
+
+
+
+
+
+fun cargargifs(img : ImageView, draw : Drawable,context: Context){
+    Glide.with(context).load(draw).into(img)
 }
