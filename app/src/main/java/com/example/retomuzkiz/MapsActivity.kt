@@ -12,6 +12,7 @@ import androidx.core.app.ActivityCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import android.os.Handler
 import android.os.Looper
+import android.service.notification.NotificationListenerService.Ranking
 import android.transition.Slide
 import android.transition.TransitionManager
 import android.view.Gravity
@@ -21,6 +22,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
 import androidx.core.graphics.drawable.toDrawable
+import com.example.retomuzkiz.Ranking.RankingActivity
 import com.example.retomuzkiz.YourProgress.ProgressActivity
 
 import com.example.retomuzkiz.clases.OptionsMenuActivity
@@ -181,6 +183,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 //Para ir al ranking
                 R.id.m_ranking -> {
                     //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
+                    val intento = Intent(this, RankingActivity::class.java)
+                    startActivity(intento)
                     true
                 }
 

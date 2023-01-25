@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.view.animation.LinearInterpolator
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import com.example.retomuzkiz.*
@@ -27,8 +28,9 @@ class JuegodemarActivity : AppCompatActivity() {
         R.drawable.martran2,
         R.drawable.marrev1,
         R.drawable.marrev2,
-        R.drawable.marrev3,
         R.drawable.martran3,
+        R.drawable.marrev3,
+
     )
 
     //Lista con las soluciones correctas
@@ -69,7 +71,22 @@ class JuegodemarActivity : AppCompatActivity() {
 
                 }
             } else {
-                binding.imgIncorrect.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in))
+                binding.imgIncorrect.visibility = View.VISIBLE
+                binding.imgIncorrect.alpha = 0f
+                binding.imgIncorrect.animate().apply {
+                    alpha(1f) // El TextView se vuelve completamente visible
+                    setDuration(750) // La animación dura 0.75 segundo
+                    setInterpolator(LinearInterpolator()) // Utiliza un interpolador lineal
+                }.withEndAction {
+                    binding.imgIncorrect.animate().apply {
+                        alpha(0f) // El TextView se vuelve completamente visible
+                        setDuration(750) // La animación dura 1 segundo
+                        setInterpolator(LinearInterpolator()) // Utiliza un interpolador lineal para darle
+
+                    }     //binding.imgIncorrect.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_out))
+                    //binding.imgIncorrect.visibility = View.GONE
+                }.start()
+
 
                 respuestas.removeLast()
 
@@ -88,8 +105,21 @@ class JuegodemarActivity : AppCompatActivity() {
 
                     }
                 } else {
-                    binding.imgIncorrect.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in))
-                    //binding.imgIncorrect.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_out))
+                    binding.imgIncorrect.visibility = View.VISIBLE
+                    binding.imgIncorrect.alpha = 0f
+                    binding.imgIncorrect.animate().apply {
+                        alpha(1f) // El TextView se vuelve completamente visible
+                        setDuration(750) // La animación dura 0.75 segundo
+                        setInterpolator(LinearInterpolator()) // Utiliza un interpolador lineal
+                    }.withEndAction {
+                        binding.imgIncorrect.animate().apply {
+                            alpha(0f) // El TextView se vuelve completamente visible
+                            setDuration(750) // La animación dura 1 segundo
+                            setInterpolator(LinearInterpolator()) // Utiliza un interpolador lineal para darle
+
+                        }     //binding.imgIncorrect.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_out))
+                        //binding.imgIncorrect.visibility = View.GONE
+                    }.start()
                     respuestas.removeLast()
 
 

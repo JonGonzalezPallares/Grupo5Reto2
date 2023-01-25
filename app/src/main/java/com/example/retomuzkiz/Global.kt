@@ -7,12 +7,19 @@ import android.os.SystemClock
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.example.retomuzkiz.Laberinto.ActivityLaberinto
+import com.example.retomuzkiz.Ranking.RankingActivity
+import com.example.retomuzkiz.Ranking.RankingActivity.Companion.topThree
+import com.example.retomuzkiz.YourProgress.binding
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.clases.RetoGrupoCinco
+import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.currentUser
+import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.mSocket
 import com.example.retomuzkiz.itsaslurIbilbidea.ItsaslurJuego
 import com.example.retomuzkiz.room.Game
 import com.example.retomuzkiz.room.Progress
 import com.example.retomuzkiz.room.TypeConverter
+import org.json.JSONArray
+import org.json.JSONObject
 
 /**
  * Muestra un dialogo con un mensaje y un texto
@@ -72,9 +79,26 @@ fun juegoAcabado(gamePos : Int) {
         currentProgress!!.gamesDone = TypeConverter.someObjectListToString(lista)
         println(currentProgress)
         updateProgress()
+        comprobarTopTres()
     }
 
 }
+
+fun comprobarTopTres() {
+
+    RetoGrupoCinco.mSocket.emit("get ranking", currentUser!!.userId, currentUser!!.name, currentUser!!.userClass, currentProgress!!.totalPuntuation,)
+
+
+
+    RetoGrupoCinco.mSocket.on("top Three"){ args->
+        //RankingActivity.topThree =  args[0] as JSONArray
+        //if(!topThree.isNull(""))
+
+    }
+
+}
+
+
 
 fun calcularPuntuacionMuñatones(gamePos: Int): List<Game>? {
     var puntuacion= 0
