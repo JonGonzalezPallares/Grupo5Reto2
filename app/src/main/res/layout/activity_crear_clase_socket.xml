@@ -9,7 +9,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo_degradado">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,21 +21,22 @@
                 android:id="@+id/textView14"
                 android:layout_width="match_parent"
                 android:layout_height="79dp"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 android:paddingStart="20dp"
                 android:text="@string/Bienvenido"
-                android:textColor="#000000"
+                android:textAlignment="center"
+                android:textColor="@color/botones"
                 android:textSize="26sp" />
 
             <TextView
                 android:id="@+id/txtExplicacion1"
+                style="@style/colorTxt"
                 android:layout_width="match_parent"
                 android:layout_height="139dp"
                 android:gravity="center"
                 android:paddingStart="40dp"
                 android:paddingEnd="40dp"
                 android:text="@string/CrearSala"
-                android:textColor="#332D2D"
                 android:textSize="16sp" />
 
             <TextView
@@ -45,7 +47,7 @@
                 android:paddingStart="40dp"
                 android:paddingEnd="40dp"
                 android:text="@string/Informacion"
-                android:textColor="#332D2D"
+                style="@style/colorTxt"
                 android:textSize="16sp" />
 
             <EditText
@@ -75,13 +77,13 @@
                 android:hint="Contraseña"
                 android:inputType="textPassword" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnCrearClase"
                 android:layout_width="128dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/estilo_boton_crear_clase"
+                android:background="@drawable/estilo_botones"
                 android:text="@string/Crear" />
         </LinearLayout>
     </ScrollView>

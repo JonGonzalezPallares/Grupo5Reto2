@@ -60,13 +60,13 @@
         <TextView
 
             android:id="@+id/tv_parrafo"
+            style="@style/colorFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="80dp"
             android:layout_marginEnd="60dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold|italic"
             tools:text="El mendean eraiki lorem ipsum naplest d zenbbdbdbdsbsfbsfdbdsbsdbbbsbdfsd, eta Muskiz zen herriko zubirik zaharrena." />

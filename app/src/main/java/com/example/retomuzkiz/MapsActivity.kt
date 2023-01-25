@@ -45,7 +45,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     companion object{
        var isJoined = false
     }
-    object SITESNAMES {
+    /*object SITESNAMES {
         lateinit var POBENA_FUNDICION:String
         var POBENA_FUNDICION_IMG_1 = "fundicion_pobela"
         lateinit var POBENA_HERMITA :String
@@ -62,7 +62,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         var CASTILLO_MUNATONES_IMG = "irudia_pobena_1"
         lateinit var NOCHE_SAN_JUAN :String
         var NOCHE_SAN_JUAN_IMG = "irudia_san_juan"
-    }
+    }*/
 
     private val keyPathsBehavior by lazy {
         BottomSheetBehavior.from(binding.bottomSheetKeyPaths.root).apply {
@@ -83,7 +83,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     private var navegacion = false
     private var iniciarguiado = false
     private lateinit var Servicio: Intent
-    val db = RetoGrupoCinco.database!!
+    val db = RetoGrupoCinco.database
     lateinit var user:Usuario
     override fun onDestroy() {
         super.onDestroy()
@@ -109,33 +109,37 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         val navView : NavigationView = binding.lateralmenu
         //menu lateral
         val header = navView.getHeaderView(0)
-        var totPuntuacion =  header.findViewById<TextView>(R.id.menuTxtPuntuacion)
+        val totPuntuacion =  header.findViewById<TextView>(R.id.menuTxtPuntuacion)
         totPuntuacion.text = "Puntuacion: ${db.progressDao.getUserProgress(user!!.userId).totalPuntuation.toString()}"
 
-        var nombreUser =  header.findViewById<TextView>(R.id.menuTxtUser)
+        val nombreUser =  header.findViewById<TextView>(R.id.menuTxtUser)
         nombreUser.text = user.name
-        RetoGrupoCinco.mSocket.on("gameCompleted"){ args->
-            runOnUiThread(){
+        RetoGrupoCinco.mSocket.on("gameCompleted"){
+            runOnUiThread {
                 totPuntuacion.text = "Puntuacion: ${db.progressDao.getUserProgress(user!!.userId).totalPuntuation.toString()}"
             }
         }
+
+        binding.vista.setOnClickListener{
+            binding.vista.visibility = View.GONE
+            navegacion=false
+            menuanimation()
+        }
+
         binding.Navegation.setOnClickListener{
 
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
             if(!navegacion){
+                binding.vista.visibility = View.VISIBLE
                 navegacion = true
                 if(!iniciarguiado){
-                    val free = findViewById<View>(R.id.m_Modolibre)
-
-
+                    //val free = findViewById<View>(R.id.m_Modolibre)
                     //free.isEnabled = false
-
-                    // free.isEnabled = false
+                    //free.isEnabled = false
                     iniciarguiado = true
-
                 }
-            }
-            else{
+            }else{
+                binding.vista.visibility = View.GONE
                 navegacion = false
             }
             menuanimation()
@@ -379,6 +383,13 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 }
             }
         }
+
+        /*binding.map.setOnClickListener{
+            if (navegacion){
+                navegacion=false
+                menuanimation()
+            }
+        }*/
     }
 
     //Acciones que ocurren cada vez que pulsamos a un marcador

@@ -1,6 +1,9 @@
 package com.example.retomuzkiz.laArenaHondartza.modelo
 
-class ProveedorParrafos {
+import android.content.res.Resources
+import com.example.retomuzkiz.R
+
+class ProveedorParrafos{
     companion object{
         var listaParrafos= listOf(
             Parrafo(
