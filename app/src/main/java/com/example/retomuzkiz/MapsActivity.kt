@@ -27,6 +27,7 @@ import com.example.retomuzkiz.YourProgress.ProgressActivity
 
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco
+import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.currentUser
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.example.retomuzkiz.profesor.ProfesorMode
 import com.example.retomuzkiz.room.Usuario
@@ -47,6 +48,7 @@ import com.google.android.material.navigation.NavigationView
 class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener {
     companion object{
        var isJoined = false
+        var isMapCreated = false
     }
     object SITESNAMES {
         lateinit var POBENA_FUNDICION:String
@@ -92,14 +94,15 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         super.onDestroy()
         RetoGrupoCinco.mSocket.disconnect()
         stopService(Servicio)
+        MapsActivity.isMapCreated = false
     }
     override fun onCreate(savedInstanceState: Bundle?) {
-        user = intent.getParcelableExtra("user")!!
+       // user = intent.getParcelableExtra("user")!!
 
         this.supportActionBar!!.hide()
 
         /* Inicializacion variablees */
-
+        isMapCreated = true
         /*Inicio Servicio Geolacilazacion*/
         Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
         listabooleanos = arrayListOf()
@@ -113,13 +116,13 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         //menu lateral
         val header = navView.getHeaderView(0)
         var totPuntuacion =  header.findViewById<TextView>(R.id.menuTxtPuntuacion)
-        totPuntuacion.text = "Puntuacion: ${db.progressDao.getUserProgress(user!!.userId).totalPuntuation.toString()}"
+        totPuntuacion.text = "Puntuacion: ${db.progressDao.getUserProgress(currentUser!!.userId).totalPuntuation.toString()}"
 
         var nombreUser =  header.findViewById<TextView>(R.id.menuTxtUser)
-        nombreUser.text = user.name
+        nombreUser.text = currentUser!!.name
         RetoGrupoCinco.mSocket.on("gameCompleted"){ args->
             runOnUiThread(){
-                totPuntuacion.text = "Puntuacion: ${db.progressDao.getUserProgress(user!!.userId).totalPuntuation.toString()}"
+                totPuntuacion.text = "Puntuacion: ${db.progressDao.getUserProgress(currentUser!!.userId).totalPuntuation.toString()}"
             }
         }
         binding.Navegation.setOnClickListener{
@@ -390,7 +393,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     override fun onMarkerClick(marker: Marker): Boolean {
         val numero = marker.snippet.toString().toInt()
 
-        val user: Usuario = intent.getParcelableExtra("user")!!
+        val user: Usuario = currentUser!!
 
         val actividades = db.gameDao.getAllGames()
 

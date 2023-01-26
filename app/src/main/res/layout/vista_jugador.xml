@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtClass"
         android:layout_width="216dp"
         android:layout_height="18dp"
         android:text="@string/partidaguardada"
