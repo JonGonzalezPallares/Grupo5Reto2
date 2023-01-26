@@ -26,11 +26,8 @@ class RetoGrupoCinco : Application() {
         lateinit var gameDb :GameDao
         lateinit var userDb :UsuarioDao
         var mSocket : Socket = IO.socket("https://servicioitsaslur.glitch.me/");
-        var currentUser: Usuario? = null
 
-        fun setUser(user: Usuario) {
-        currentUser = user
-        }
+
 
 
     }

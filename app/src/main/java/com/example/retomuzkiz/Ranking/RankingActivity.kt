@@ -5,8 +5,9 @@ import android.os.Bundle
 import com.example.retomuzkiz.Jugador
 import com.example.retomuzkiz.YourProgress.binding
 import com.example.retomuzkiz.clases.RetoGrupoCinco
-import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.currentUser
+import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.mSocket
 import com.example.retomuzkiz.currentProgress
+import com.example.retomuzkiz.currentUser
 import com.example.retomuzkiz.databinding.ActivityRankingBinding
 import com.example.retomuzkiz.room.Usuario
 import org.json.JSONArray
@@ -28,17 +29,14 @@ class RankingActivity : AppCompatActivity() {
 
         RetoGrupoCinco.mSocket.emit(
             "get ranking",
-            currentUser!!.userId,
-            currentUser!!.name,
-            currentUser!!.userClass,
-            currentProgress!!.totalPuntuation
+            1
         )
+        mSocket.on("top three"){ args->
 
-        RetoGrupoCinco.mSocket.on("top three") { args ->
             topThree = args[0] as JSONArray
             actualizarTopTres()
-
         }
+
 
 
 
@@ -59,6 +57,11 @@ class RankingActivity : AppCompatActivity() {
         )
         //var listaTop = topThree as Array<JSONObject>
 
+        RetoGrupoCinco.mSocket.on("top three") { args ->
+            topThree = args[0] as JSONArray
+            actualizarTopTres()
+
+        }
 
      runOnUiThread {
          binding.rvRanking.adapter = RVRankingAdapter(listaJugadores,this)

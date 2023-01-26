@@ -27,7 +27,8 @@ import com.example.retomuzkiz.YourProgress.ProgressActivity
 
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco
-import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.currentUser
+
+import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.progressDb
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.example.retomuzkiz.profesor.ProfesorMode
 import com.example.retomuzkiz.room.Usuario
@@ -99,7 +100,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     override fun onCreate(savedInstanceState: Bundle?) {
        // user = intent.getParcelableExtra("user")!!
 
-        this.supportActionBar!!.hide()
+        this.supportActionBar!!
+            .hide()
 
         /* Inicializacion variablees */
         isMapCreated = true
@@ -116,13 +118,13 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         //menu lateral
         val header = navView.getHeaderView(0)
         var totPuntuacion =  header.findViewById<TextView>(R.id.menuTxtPuntuacion)
-        totPuntuacion.text = "Puntuacion: ${db.progressDao.getUserProgress(currentUser!!.userId).totalPuntuation.toString()}"
+        totPuntuacion.text = "Puntuacion: ${progressDb.getUserProgress(currentUser!!.userId).totalPuntuation.toString()}"
 
         var nombreUser =  header.findViewById<TextView>(R.id.menuTxtUser)
         nombreUser.text = currentUser!!.name
         RetoGrupoCinco.mSocket.on("gameCompleted"){ args->
             runOnUiThread(){
-                totPuntuacion.text = "Puntuacion: ${db.progressDao.getUserProgress(currentUser!!.userId).totalPuntuation.toString()}"
+                totPuntuacion.text = "Puntuacion: ${progressDb.getUserProgress(currentUser!!.userId).totalPuntuation.toString()}"
             }
         }
         binding.Navegation.setOnClickListener{

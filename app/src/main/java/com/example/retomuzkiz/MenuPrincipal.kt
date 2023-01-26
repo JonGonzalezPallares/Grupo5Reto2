@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco
-import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.setUser
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
 import com.example.retomuzkiz.room.Progress
 import com.example.retomuzkiz.room.Game
@@ -15,19 +14,42 @@ import kotlin.random.Random
 import kotlin.random.nextInt
 
 class MenuPrincipal : AppCompatActivity() {
-
+    lateinit var user:Usuario
     private lateinit var binding : ActivityMenuPrincipalBinding
     private lateinit var adaptadorUsuario: UsuariosAdapter
     val db = RetoGrupoCinco.database!!
     var dialogos = 0
-    var dialogosClaseNoEncontrada= 0
+    var dialogosClaseNoEncontrada= 0;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
+        RetoGrupoCinco.mSocket.on("not existing room"){ args ->
+            println(args[0])
+            runOnUiThread(){
+                if(dialogosClaseNoEncontrada<1){
+                    showDialog(this, "No se ha encontrado ninguna clase", "Error")
+                    dialogosClaseNoEncontrada++
+                }
 
+            }
+        }
+        RetoGrupoCinco.mSocket.on("joined") { args ->
+            if(dialogos<1) {
+                if (MapsActivity.isMapCreated == false) {
+
+                        //setUser(user!!)
+                        val intento =
+                            Intent(this, MapsActivity::class.java)
+                        startActivity(intento)
+
+                }
+
+            }
+        }
         dialogos = 0
         dialogosClaseNoEncontrada= 0
         binding.txtProfesor.setOnClickListener(){
@@ -36,21 +58,26 @@ class MenuPrincipal : AppCompatActivity() {
         binding.button.setOnClickListener {
             dialogos = 0
             dialogosClaseNoEncontrada= 0
-            var user = comprobarUsuario()
+            var newUser = comprobarUsuario()
             val userName = binding.txtUsuario.text.toString()
             var userClass = binding.txtClase.text.toString()
             val totPuntuation = 0
             val gamesDone = 0
             val userId = "${Random.nextInt(0..1)*100}${userClass}${db.usuarioDao.getAllUsers().size}"
             val isProfesor = false
-            if(user == null){
-                setUser( user = Usuario(
+            if(newUser == null){
+                user = Usuario(
                     userId,
                     userName,
                     userClass,
                     isProfesor
-                ))
+                )
+                insertarUser(user)
+                setUser( user )
+
             }else{
+                //Si ComprobarUsuario ha encontrado algun usuario, seteamos
+                user = newUser
                 setUser(user)
             }
             var room :String? = null
@@ -61,42 +88,13 @@ class MenuPrincipal : AppCompatActivity() {
             RetoGrupoCinco.mSocket.on("Salas"){ args ->
                 println(args[0])
             }
-            RetoGrupoCinco.mSocket.on("not existing room"){ args ->
-                println(args[0])
-                runOnUiThread(){
-                    if(dialogosClaseNoEncontrada<1){
-                        showDialog(this, "No se ha encontrado ninguna clase", "Error")
-                        dialogosClaseNoEncontrada++
-                    }
 
-                }
-            }
-            RetoGrupoCinco.mSocket.on("joined") { args ->
-                if(dialogos<1) {
-                    if (room == null) {
-                        if (user != null) {
-                            RetoGrupoCinco.setUser(user!!)
-                            val intento =
-                                Intent(this, MapsActivity::class.java).putExtra("user", user)
-                            startActivity(intento)
-                        } else {
-                            user = insertarUser()
-                            RetoGrupoCinco.setUser(user!!)
-
-                            val intento =
-                                Intent(this, MapsActivity::class.java).putExtra("user", user)
-                            startActivity(intento)
-                        }
-                    }
-
-                }
-            }
 
         }
 
     }
 
-    private fun insertarUser(): Usuario {
+    private fun insertarUser(user: Usuario): Usuario {
         val userName = binding.txtUsuario.text.toString()
         var userClass = binding.txtClase.text.toString()
         val totPuntuation = 0
@@ -105,12 +103,7 @@ class MenuPrincipal : AppCompatActivity() {
         val isProfesor = false
 
 
-        val user = Usuario(
-            userId,
-            userName,
-            userClass,
-            isProfesor
-        )
+
         db.usuarioDao.insertUser(user)
         val progress = Progress(
             user.userId,
@@ -180,7 +173,7 @@ class MenuPrincipal : AppCompatActivity() {
     // guarda en sharedFreferences nombre pasado en parametro y llama la activity maps
     private fun listar(user: Usuario) {
         //prefs.saveUser(nombre)
-        RetoGrupoCinco.setUser(user)
+       setUser(user)
 //
 // dialogos = 0
         RetoGrupoCinco.mSocket.connect()
@@ -196,33 +189,33 @@ class MenuPrincipal : AppCompatActivity() {
         RetoGrupoCinco.mSocket.emit("join room",user.userClass)
         RetoGrupoCinco.mSocket.on("Salas"){ args ->
             println(args[0])
-        }
-        RetoGrupoCinco.mSocket.on("not existing room"){ args ->
-            println(args[0])
-            if(dialogosClaseNoEncontrada<1){
-                runOnUiThread(){
-
-                    showDialog(this, "No se ha encontrado ninguna clase", "Error")
-                    dialogosClaseNoEncontrada ++
-                }
-
-            }
-        }
-        RetoGrupoCinco.mSocket.on("joined") { args ->
-
-            if(dialogos<1) {
-                if (MapsActivity.isMapCreated == false) {
-                    if (user != null) {
-                        val intento =
-                            Intent(this, MapsActivity::class.java).putExtra("user", user)
-                        startActivity(intento)
-                        finish()
-                        dialogos++
-                    }
-                }
-            }
-
-        }
+       }
+//        RetoGrupoCinco.mSocket.on("not existing room"){ args ->
+//            println(args[0])
+//            if(dialogosClaseNoEncontrada<1){
+//                runOnUiThread(){
+//
+//                    showDialog(this, "No se ha encontrado ninguna clase", "Error")
+//                    dialogosClaseNoEncontrada ++
+//                }
+//
+//            }
+//        }
+//        RetoGrupoCinco.mSocket.on("joined") { args ->
+//
+//            if(dialogos<1) {
+//                if (MapsActivity.isMapCreated == false) {
+//                    if (user != null) {
+//                        val intento =
+//                            Intent(this, MapsActivity::class.java).putExtra("user", user)
+//                        startActivity(intento)
+//                        finish()
+//                        dialogos++
+//                    }
+//                }
+//            }
+//
+//        }
 
     }
 

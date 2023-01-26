@@ -6,6 +6,7 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.clases.RetoGrupoCinco
+import com.example.retomuzkiz.currentUser
 import com.example.retomuzkiz.databinding.ActivityProgresBinding
 import com.example.retomuzkiz.room.TypeConverter
 
@@ -14,7 +15,7 @@ lateinit var binding :ActivityProgresBinding
 
 
 class ProgressActivity : AppCompatActivity() {
-    var progress = RetoGrupoCinco.progressDb.getUserProgress(RetoGrupoCinco.currentUser!!.userId)
+    var progress = RetoGrupoCinco.progressDb.getUserProgress(currentUser!!.userId)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
