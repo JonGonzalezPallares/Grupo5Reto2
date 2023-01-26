@@ -159,4 +159,10 @@
         images below to drag and drop them in the corresponding space. Good luck!</string>
     <string name="Ayudaplaya">In this game you must put the cards together, for this you must find
         image and description pairs. Good luck!</string>
+    <string name="Ayudapuente">In this game you must answer certain questions correctly,
+        to fully discover the bridge. Good luck!</string>
+    <string name="Ayudapaseo">
+        In this game you must answer certain questions correctly,
+        to reach the end
+        . Good luck!</string>
 </resources>

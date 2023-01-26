@@ -241,13 +241,17 @@ fun dialogoAyudaJuegos (juego : String, context: Context,layoutInflater: LayoutI
             //TODO
         }
         "puente"->{
-            //TODO
+            titulo.text = context.resources.getString(R.string.gamePuenteRomano)
+            cargargifs(img,ContextCompat.getDrawable(context, R.drawable.puente)!!,context)
+            explicacion.text = context.resources.getString(R.string.Ayudapuente)
         }
         "ermita"->{
             //TODO
         }
         "paseo"->{
-            //TODO
+            titulo.text = context.resources.getString(R.string.gameItsaslurIbilbidea)
+            cargargifs(img,ContextCompat.getDrawable(context, R.drawable.ayudapaseo)!!,context)
+            explicacion.text = context.resources.getString(R.string.Ayudapaseo)
         }
 
 

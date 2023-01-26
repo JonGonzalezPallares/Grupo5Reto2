@@ -161,4 +161,10 @@ El Pobal Burdinola antzinako fabrika hidrauliko bat da, non burdin minerala lant
         horretarako eduki sakatuta beheko irudiak dagokion espazioan arrastatu eta jaregiteko. Zorte on!</string>
     <string name="Ayudaplaya">Joko honetan txartelak elkartu behar dituzu, horretarako aurkitu behar duzu
         irudi eta deskribapen bikoteak. Zorte on!</string>
+    <string name="Ayudapuente">Joko honetan galdera batzuk behar bezala erantzun behar dituzu,
+        zubia guztiz ezagutzeko. Zorte on!</string>
+    <string name="Ayudapaseo">
+        Joko honetan galdera batzuk behar bezala erantzun behar dituzu,
+        amaierara iristeko
+        . Zorte on!</string>
 </resources>

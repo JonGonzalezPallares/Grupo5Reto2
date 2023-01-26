@@ -233,7 +233,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         val ibilbideItsaslur = LatLng(43.331075, -3.117392)
         val muniatonesGaztelua = LatLng(43.323611, -3.112503)
         val sanJuan = LatLng(43.330278, -3.129061)
-
+        mMap.uiSettings.isZoomControlsEnabled = true
         //Añadimos los marcadores al mapa
         mMap.addMarker(
             MarkerOptions()
@@ -341,7 +341,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 //Ponemos una animacion para que no sea tan brusco el cambio
                 val camara = CameraPosition.builder()
                     .target(ubicacion)
-                    .zoom(15F)
+                    .zoom(13F)
                     .bearing(0F)
                     .tilt(0F)
                     .build()
@@ -361,7 +361,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                     //Ponemos una animacion para que no sea tan brusco el cambio
                     val camara = CameraPosition.builder()
                         .target(ubicacion)
-                        .zoom(15F)
+                        .zoom(13F)
                         .bearing(0F)
                         .tilt(0F)
                         .build()
