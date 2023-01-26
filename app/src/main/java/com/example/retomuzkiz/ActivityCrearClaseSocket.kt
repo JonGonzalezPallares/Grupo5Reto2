@@ -50,7 +50,7 @@ class ActivityCrearClaseSocket : AppCompatActivity() {
                 }
                 showDialog(this,"","Bienvenido!")
                 startActivity(Intent(this, MapsActivity::class.java).putExtra("user", user))
-                RetoGrupoCinco.setUser(user)
+                setUser(user)
                 finish()
             } else {
                 showDialog(this,
