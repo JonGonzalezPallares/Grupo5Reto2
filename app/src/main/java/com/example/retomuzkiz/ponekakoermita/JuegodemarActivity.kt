@@ -50,6 +50,9 @@ class JuegodemarActivity : AppCompatActivity() {
         fin = 0
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
+        binding.btnayuda.setOnClickListener {
+            dialogoAyudaJuegos("ermita",this,layoutInflater)
+        }
 
         //Cargamos la primera imagen de fondo
         binding.imgMar.background = AppCompatResources.getDrawable(this, R.drawable.martran1)
