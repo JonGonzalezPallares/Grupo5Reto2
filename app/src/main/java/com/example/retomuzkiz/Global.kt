@@ -246,7 +246,9 @@ fun dialogoAyudaJuegos (juego : String, context: Context,layoutInflater: LayoutI
             explicacion.text = context.resources.getString(R.string.Ayudapuente)
         }
         "ermita"->{
-            //TODO
+            titulo.text = context.resources.getString(R.string.gameHermitaDePobeña)
+            cargargifs(img,ContextCompat.getDrawable(context, R.drawable.ermitaayuda)!!,context)
+            explicacion.text = context.resources.getString(R.string.Ayudaermita)
         }
         "paseo"->{
             titulo.text = context.resources.getString(R.string.gameItsaslurIbilbidea)
