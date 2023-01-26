@@ -16,16 +16,12 @@ import com.bumptech.**/
 import com.bumptech.glide.Glide
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.clases.RetoGrupoCinco
-import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.currentUser
-/*import com.example.retomuzkiz.Laberinto.ActivityLaberinto
-import com.example.retomuzkiz.Ranking.RankingActivity
-import com.example.retomuzkiz.Ranking.RankingActivity.Companion.topThree
-import com.example.retomuzkiz.YourProgress.binding
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.mSocket
 import com.example.retomuzkiz.itsaslurIbilbidea.ItsaslurJuego*/
 import com.example.retomuzkiz.room.Game
 import com.example.retomuzkiz.room.Progress
 import com.example.retomuzkiz.room.TypeConverter
+import com.example.retomuzkiz.room.Usuario
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -57,7 +53,9 @@ fun finalizar(contexto: Context, gameName:String) {
 }
 var startTime: Long = 0
 var time: Int = 0
-var currentProgress: Progress? =  RetoGrupoCinco.progressDb.getUserProgress(RetoGrupoCinco.currentUser!!.userId)
+lateinit var currentUser:Usuario
+
+lateinit var currentProgress: Progress
 fun startTimer() {
     startTime = SystemClock.elapsedRealtime()
 }
@@ -94,7 +92,7 @@ fun juegoAcabado(gamePos : Int) {
 
 fun comprobarTopTres() {
 
-    RetoGrupoCinco.mSocket.emit("get ranking", currentUser!!.userId, currentUser!!.name, currentUser!!.userClass, currentProgress!!.totalPuntuation,)
+    RetoGrupoCinco.mSocket.emit("set ranking", currentUser!!.userId, currentUser!!.name, currentUser!!.userClass, currentProgress!!.totalPuntuation,)
 
 
 
@@ -333,4 +331,10 @@ fun dialogoAyudaJuegos (juego : String, context: Context,layoutInflater: LayoutI
 
 fun cargargifs(img : ImageView, draw : Drawable,context: Context){
     Glide.with(context).load(draw).into(img)
+fun setUser(user: Usuario) {
+    currentUser = user
+    if((RetoGrupoCinco.progressDb.getUserProgress(currentUser!!.userId) != null)){
+            currentProgress = RetoGrupoCinco.progressDb.getUserProgress(currentUser!!.userId)
+
+        }
 }

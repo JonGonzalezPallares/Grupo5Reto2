@@ -5,8 +5,9 @@ import android.os.Bundle
 import com.example.retomuzkiz.Jugador
 import com.example.retomuzkiz.YourProgress.binding
 import com.example.retomuzkiz.clases.RetoGrupoCinco
-import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.currentUser
+import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.mSocket
 import com.example.retomuzkiz.currentProgress
+import com.example.retomuzkiz.currentUser
 import com.example.retomuzkiz.databinding.ActivityRankingBinding
 import com.example.retomuzkiz.room.Usuario
 import org.json.JSONArray
@@ -28,17 +29,14 @@ class RankingActivity : AppCompatActivity() {
 
         RetoGrupoCinco.mSocket.emit(
             "get ranking",
-            currentUser!!.userId,
-            currentUser!!.name,
-            currentUser!!.userClass,
-            currentProgress!!.totalPuntuation
+            1
         )
+        mSocket.on("top three"){ args->
 
-        RetoGrupoCinco.mSocket.on("top three") { args ->
             topThree = args[0] as JSONArray
             actualizarTopTres()
-
         }
+
 
 
 
@@ -52,11 +50,18 @@ class RankingActivity : AppCompatActivity() {
         val secondUser = topThree[1] as JSONObject
         //3º Puesto
         val thirdUser = topThree[2] as JSONObject
-        var listaJugadores = arrayListOf<Jugador>(Jugador(bestUser["userName"].toString(),bestUser["userClass"].toString(),bestUser["totPuntuation"].toString()),
-            Jugador(secondUser["userName"].toString(),secondUser["userClass"].toString(),thirdUser["totPuntuation"].toString()),
-            Jugador(thirdUser["userName"].toString(),thirdUser["userClass"].toString(),thirdUser["totPuntuation"].toString()))
+        var listaJugadores = arrayListOf<Jugador>(
+            Jugador(bestUser["userName"].toString(),bestUser["userClass"].toString(),bestUser["totPuntuation"].toString()),
+            Jugador(secondUser["userName"].toString(),secondUser["userClass"].toString(),secondUser["totPuntuation"].toString()),
+            Jugador(thirdUser["userName"].toString(),thirdUser["userClass"].toString(),thirdUser["totPuntuation"].toString())
+        )
         //var listaTop = topThree as Array<JSONObject>
 
+        RetoGrupoCinco.mSocket.on("top three") { args ->
+            topThree = args[0] as JSONArray
+            actualizarTopTres()
+
+        }
 
      runOnUiThread {
          binding.rvRanking.adapter = RVRankingAdapter(listaJugadores,this)

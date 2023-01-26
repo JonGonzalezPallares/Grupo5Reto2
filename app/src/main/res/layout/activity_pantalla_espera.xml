@@ -40,11 +40,11 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnContinuar"
         android:layout_width="wrap_content"
-        android:background="@drawable/estilo_botones"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
+        android:background="@drawable/estilo_botones"
         android:text="@string/Continue"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
 </LinearLayout>

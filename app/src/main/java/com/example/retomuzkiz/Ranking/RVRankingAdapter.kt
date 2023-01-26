@@ -47,6 +47,7 @@ class RVRankingAdapter(var lista:ArrayList<Jugador>, var context:Context) : Recy
                     R.drawable.medallaoro
                 ))
             binding.txtNombre.text = jugador.nombre
+            binding.txtClass.text = jugador.clase
             binding.txtPuntuacion.text = jugador.puntuacion
         }
 
@@ -56,6 +57,8 @@ class RVRankingAdapter(var lista:ArrayList<Jugador>, var context:Context) : Recy
                     R.drawable.medallaplata
                 ))
             binding.txtNombre.text = jugador.nombre
+            binding.txtClass.text = jugador.clase
+
             binding.txtPuntuacion.text = jugador.puntuacion
         }
         fun linkThird(jugador: Jugador, context: Context) {
@@ -64,6 +67,8 @@ class RVRankingAdapter(var lista:ArrayList<Jugador>, var context:Context) : Recy
                     R.drawable.medallabronce
                 ))
             binding.txtNombre.text = jugador.nombre
+            binding.txtClass.text = jugador.clase
+
             binding.txtPuntuacion.text = jugador.puntuacion
         }
     }
