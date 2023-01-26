@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.mSocket
-import com.example.retomuzkiz.itsaslurIbilbidea.ItsaslurJuego*/
+import com.example.retomuzkiz.itsaslurIbilbidea.ItsaslurJuego
 import com.example.retomuzkiz.room.Game
 import com.example.retomuzkiz.room.Progress
 import com.example.retomuzkiz.room.TypeConverter
@@ -329,8 +329,9 @@ fun dialogoAyudaJuegos (juego : String, context: Context,layoutInflater: LayoutI
 
 
 
-fun cargargifs(img : ImageView, draw : Drawable,context: Context){
+fun cargargifs(img : ImageView, draw : Drawable,context: Context) {
     Glide.with(context).load(draw).into(img)
+}
 fun setUser(user: Usuario) {
     currentUser = user
     if((RetoGrupoCinco.progressDb.getUserProgress(currentUser!!.userId) != null)){
