@@ -48,3 +48,9 @@ class JugadoresAdapter(private var lista:List<Jugador>) :RecyclerView.Adapter<Ju
         }
     }
 }
+class Jugador (
+    var nombre: String="",
+    var clase: String="",
+
+    var puntuacion: String="0"
+)

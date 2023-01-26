@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
 import com.example.retomuzkiz.room.Progress
-import com.example.retomuzkiz.gastelua.ActivityGaztelua
 import com.example.retomuzkiz.room.Game
 import com.example.retomuzkiz.room.TypeConverter
 import com.example.retomuzkiz.room.Usuario

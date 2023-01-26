@@ -27,7 +27,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ProgressActivity"
+            android:name=".Ranking.RankingActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".YourProgress.ProgressActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
