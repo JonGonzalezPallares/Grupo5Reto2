@@ -78,13 +78,13 @@ class JuegodemarActivity : AppCompatActivity() {
                 binding.imgIncorrect.alpha = 0f
                 binding.imgIncorrect.animate().apply {
                     alpha(1f) // El TextView se vuelve completamente visible
-                    setDuration(750) // La animación dura 0.75 segundo
-                    setInterpolator(LinearInterpolator()) // Utiliza un interpolador lineal
+                    duration = 750 // La animación dura 0.75 segundo
+                    interpolator = LinearInterpolator() // Utiliza un interpolador lineal
                 }.withEndAction {
                     binding.imgIncorrect.animate().apply {
                         alpha(0f) // El TextView se vuelve completamente visible
-                        setDuration(750) // La animación dura 1 segundo
-                        setInterpolator(LinearInterpolator()) // Utiliza un interpolador lineal para darle
+                        duration = 750 // La animación dura 1 segundo
+                        interpolator = LinearInterpolator() // Utiliza un interpolador lineal para darle
 
                     }     //binding.imgIncorrect.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_out))
                     //binding.imgIncorrect.visibility = View.GONE
@@ -136,6 +136,7 @@ class JuegodemarActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             binding.btnRevuelto.visibility = View.VISIBLE
             binding.btnTranquilo.visibility = View.VISIBLE
+            binding.btnayuda.visibility = View.VISIBLE
         }, duration)
     }
 
