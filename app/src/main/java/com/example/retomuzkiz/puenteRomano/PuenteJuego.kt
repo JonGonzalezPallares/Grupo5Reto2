@@ -40,6 +40,9 @@ class PuenteJuego : AppCompatActivity() {
         fin = 0
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
+        binding.btnayuda.setOnClickListener {
+            dialogoAyudaJuegos("puente",this,layoutInflater)
+        }
 
         //Metemos las respuestas en el array
         //Tiene que ser una mutable list por que los textos estan obtenidos del resources

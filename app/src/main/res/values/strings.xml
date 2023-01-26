@@ -162,5 +162,10 @@
     <string name="expLaberinto1">a</string>
     <string name="expLaberinto2">a</string>
     <string name="expLaberinto3">a</string>
-
+    <string name="Ayudapuente">En este juego deberas responder correctamente a ciertas preguntas,
+        para descubrir el puente por completo
+        . Buena suerte!</string>
+    <string name="Ayudapaseo">En este juego deberas responder correctamente a ciertas preguntas,
+        para llegar al final
+        . Buena suerte!</string>
 </resources>

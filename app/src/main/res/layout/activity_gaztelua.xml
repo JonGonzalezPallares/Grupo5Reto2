@@ -259,7 +259,7 @@
         android:id="@+id/btnayuda"
         android:layout_width="57dp"
         android:layout_height="59dp"
-        android:background="@drawable/estilo_botones"
+        android:background="@drawable/estilo_botonayuda"
         android:text="?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

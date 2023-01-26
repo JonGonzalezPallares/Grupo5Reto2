@@ -6,13 +6,25 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo_degradado"
     tools:context=".itsaslurIbilbidea.ItsaslurJuego">
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnayuda"
+        android:layout_width="57dp"
+        android:layout_height="59dp"
+        android:background="@drawable/estilo_botonayuda"
+        android:text="?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.975"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.005" />
 
     <LinearLayout
         android:id="@+id/Preguntas1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="367dp"
+        android:layout_height="773dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="55dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:orientation="vertical"
@@ -20,7 +32,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/textView9"
@@ -74,7 +87,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="55dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:orientation="vertical"
@@ -136,7 +149,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="55dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:orientation="vertical"
@@ -198,7 +211,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="55dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:orientation="vertical"
