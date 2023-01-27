@@ -22,6 +22,7 @@ import com.example.retomuzkiz.room.Game
 import com.example.retomuzkiz.room.Progress
 import com.example.retomuzkiz.room.TypeConverter
 import com.example.retomuzkiz.room.Usuario
+import com.example.retomuzkiz.usuario.currentUser
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -53,7 +54,11 @@ fun finalizar(contexto: Context, gameName:String) {
 }
 var startTime: Long = 0
 var time: Int = 0
-lateinit var currentUser:Usuario
+
+object usuario  {
+    lateinit var currentUser:Usuario
+}
+
 
 lateinit var currentProgress: Progress
 fun startTimer() {
