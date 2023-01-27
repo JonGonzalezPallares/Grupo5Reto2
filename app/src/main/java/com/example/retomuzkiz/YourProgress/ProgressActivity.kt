@@ -6,9 +6,9 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.clases.RetoGrupoCinco
-import com.example.retomuzkiz.currentUser
 import com.example.retomuzkiz.databinding.ActivityProgresBinding
 import com.example.retomuzkiz.room.TypeConverter
+import com.example.retomuzkiz.usuario.currentUser
 
 
 lateinit var binding :ActivityProgresBinding

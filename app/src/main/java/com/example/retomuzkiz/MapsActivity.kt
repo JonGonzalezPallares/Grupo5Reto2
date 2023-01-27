@@ -32,6 +32,7 @@ import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.progressDb
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.example.retomuzkiz.profesor.ProfesorMode
 import com.example.retomuzkiz.room.Usuario
+import com.example.retomuzkiz.usuario.currentUser
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory

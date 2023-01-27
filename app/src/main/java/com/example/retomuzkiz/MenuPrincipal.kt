@@ -10,6 +10,7 @@ import com.example.retomuzkiz.room.Progress
 import com.example.retomuzkiz.room.Game
 import com.example.retomuzkiz.room.TypeConverter
 import com.example.retomuzkiz.room.Usuario
+import com.example.retomuzkiz.usuario.currentUser
 import kotlin.random.Random
 import kotlin.random.nextInt
 
@@ -34,7 +35,7 @@ class MenuPrincipal : AppCompatActivity() {
                     showDialog(this, "No se ha encontrado ninguna clase", "Error")
                     dialogosClaseNoEncontrada++
                 }
-
+                dialogosClaseNoEncontrada = 0
             }
         }
         RetoGrupoCinco.mSocket.on("joined") { args ->
@@ -72,10 +73,12 @@ class MenuPrincipal : AppCompatActivity() {
                     userClass,
                     isProfesor
                 )
-                insertarUser(user)
-                setUser( user )
+                //setUser( user )
+
 
             }else{
+                insertarUser(currentUser)
+
                 //Si ComprobarUsuario ha encontrado algun usuario, seteamos
                 user = newUser
                 setUser(user)

@@ -7,7 +7,6 @@ import com.example.retomuzkiz.YourProgress.binding
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.mSocket
 import com.example.retomuzkiz.currentProgress
-import com.example.retomuzkiz.currentUser
 import com.example.retomuzkiz.databinding.ActivityRankingBinding
 import com.example.retomuzkiz.room.Usuario
 import org.json.JSONArray
