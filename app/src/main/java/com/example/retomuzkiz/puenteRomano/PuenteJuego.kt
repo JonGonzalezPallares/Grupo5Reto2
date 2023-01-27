@@ -128,7 +128,7 @@ class PuenteJuego : AppCompatActivity() {
                         seleccion = texto
 
                         val lista = listOf(primero, segundo, tercero)
-                        typefaceEstyle(lista, id)
+                        typefaceEstyle(lista, 0)
                     }
 
                     //Si el seleccionado es la segunda opcion
@@ -138,7 +138,7 @@ class PuenteJuego : AppCompatActivity() {
                         seleccion = texto
 
                         val lista = listOf(primero, segundo, tercero)
-                        typefaceEstyle(lista, id)
+                        typefaceEstyle(lista,1)
                     }
 
                     //Si el seleccionado es la tercera opcion
@@ -148,7 +148,7 @@ class PuenteJuego : AppCompatActivity() {
                         seleccion = texto
 
                         val lista = listOf(primero, segundo, tercero)
-                        typefaceEstyle(lista, id)
+                        typefaceEstyle(lista, 2)
                     }
                 }
                 binding.btnComprobar.isEnabled = true
