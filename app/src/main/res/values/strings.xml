@@ -15,6 +15,9 @@
     <string name="eresProfesor">SI ERES PROFESOR/A, PULSA AQUI</string>
     <string name="partidaguardada">Pulsa para continuar esta partida</string>
 
+    <!-- Sopa de letras -->
+    <string name="final_score">Tu puntuación final es</string>
+
     <!-- Map Activity -->
     <!-- Menu -->
     <string name="modes">Modos</string>

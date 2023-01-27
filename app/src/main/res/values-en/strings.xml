@@ -166,4 +166,5 @@
     <string name="arena_pregunta3">The Barbadun river flows on this beach, and it can be crossed thanks to a bridge that connects the beach to the Pobeña neighborhood.</string>
     <string name="arena_pregunta4">La Arena beach has an environmental area of high botanical value, sands, dunes and marshes.</string>
     <string name="arena_pregunta5">Many activities and sports can be practiced here, the most famous of which is surfing.</string>
+    <string name="final_score">Tu puntuación final es</string>
 </resources>
