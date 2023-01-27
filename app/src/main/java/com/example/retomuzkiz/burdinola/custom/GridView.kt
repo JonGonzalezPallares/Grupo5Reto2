@@ -74,6 +74,10 @@ class GridView @JvmOverloads constructor(
         }
 
     private fun getTile(x: Float, y: Float): Tile {
+        //verificar que x e y estén dentro del rango válido
+        if (x < 0 || x >= width || y < 0 || y >= height) {
+            return Tile(0, 0, ' ')
+        }
         val column = (x / tileWidth()).toInt()
         val row = (y / tileHeight()).toInt()
         return tiles.first { it.column == column && it.row == row }
