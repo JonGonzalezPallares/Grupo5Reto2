@@ -1,6 +1,5 @@
 package com.example.retomuzkiz.puenteRomano
 
-import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.os.Handler
@@ -11,7 +10,6 @@ import android.widget.ImageView
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.*
-import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityPuenteJuegoBinding
 import com.example.retomuzkiz.funcionesExtension.eliminarNegrita
 
@@ -126,10 +124,8 @@ class PuenteJuego : AppCompatActivity() {
                         val texto = findViewById<RadioButton>(listaId[0]).text.toString()
                         seleccion = texto
 
-                        //Ponemos en negrita la seleccionada y ponemos en normal las otras
-                        primero.typeface = Typeface.DEFAULT_BOLD
-                        segundo.typeface = Typeface.DEFAULT
-                        tercero.typeface = Typeface.DEFAULT
+                        val lista = listOf(primero, segundo, tercero)
+                        typefaceEstyle(lista, id)
                     }
 
                     //Si el seleccionado es la segunda opcion
@@ -138,10 +134,8 @@ class PuenteJuego : AppCompatActivity() {
                         val texto = findViewById<RadioButton>(listaId[1]).text.toString()
                         seleccion = texto
 
-                        //Ponemos en negrita la seleccionada y ponemos en normal las otras
-                        primero.typeface = Typeface.DEFAULT
-                        segundo.typeface = Typeface.DEFAULT_BOLD
-                        tercero.typeface = Typeface.DEFAULT
+                        val lista = listOf(primero, segundo, tercero)
+                        typefaceEstyle(lista, id)
                     }
 
                     //Si el seleccionado es la tercera opcion
@@ -150,10 +144,8 @@ class PuenteJuego : AppCompatActivity() {
                         val texto = findViewById<RadioButton>(listaId[2]).text.toString()
                         seleccion = texto
 
-                        //Ponemos en negrita la seleccionada y ponemos en normal las otras
-                        primero.typeface = Typeface.DEFAULT
-                        segundo.typeface = Typeface.DEFAULT
-                        tercero.typeface = Typeface.DEFAULT_BOLD
+                        val lista = listOf(primero, segundo, tercero)
+                        typefaceEstyle(lista, id)
                     }
                 }
                 binding.btnComprobar.isEnabled = true
@@ -173,6 +165,18 @@ class PuenteJuego : AppCompatActivity() {
                 changeScreen()
             }else{
                 cleanSelection()
+            }
+        }
+    }
+
+    //Funcion para cambiar el estilo de los typeface de los radio button
+    private fun typefaceEstyle(lista: List<RadioButton>, i: Int) {
+        val tamanio = lista.size
+        for(elemento in 0 .. tamanio){
+            if(elemento == i) {
+                lista[i].typeface = Typeface.DEFAULT_BOLD
+            }else{
+                lista[i].typeface = Typeface.DEFAULT
             }
         }
     }
