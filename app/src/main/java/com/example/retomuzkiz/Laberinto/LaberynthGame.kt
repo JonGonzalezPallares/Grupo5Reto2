@@ -155,7 +155,7 @@ class LaberynthGame(applicationContext: Context, attrs: AttributeSet?) :
 
 
     private fun checkExit(){
-        if(contador < 1){
+        if(contador < 3){
             if (player == exit){
                 ROWS += 5
                 COLS += 5
