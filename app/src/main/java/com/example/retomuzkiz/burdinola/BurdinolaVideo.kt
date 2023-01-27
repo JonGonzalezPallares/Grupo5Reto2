@@ -6,9 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.MediaController
 import com.example.retomuzkiz.R
+import com.example.retomuzkiz.burdinola.main.SopaLetrasActivity
 import com.example.retomuzkiz.databinding.ActivityBurdinolaVideoBinding
 
-class BurdinolaVideoActivity : AppCompatActivity() {
+class BurdinolaVideo : AppCompatActivity() {
     private lateinit var binding : ActivityBurdinolaVideoBinding
     //Variable para saber cuando se tiene que cerrar y cuando no
     private var cambio = false
@@ -35,12 +36,9 @@ class BurdinolaVideoActivity : AppCompatActivity() {
 
 
         binding.btnJuego.setOnClickListener{
-            startActivity(Intent(this, BurdinolaSopaActivity::class.java))
+            startActivity(Intent(this, SopaLetrasActivity::class.java))
             cambio=true
         }
-    
-
-
 
     }
 

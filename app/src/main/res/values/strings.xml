@@ -15,6 +15,9 @@
     <string name="eresProfesor"><u>SI ERES PROFESOR/A, PULSA AQUI</u></string>
     <string name="partidaguardada">Pulsa para continuar esta partida</string>
 
+    <!-- Sopa de letras -->
+    <string name="final_score">Tu puntuación final es</string>
+
     <!-- Map Activity -->
     <!-- Menu -->
     <string name="modes">Modos</string>
@@ -154,6 +157,11 @@
     <string name="Aceptar">Aceptar</string>
     <string name="DescripcionPuente">El puente románico de El Pobal conduce a la ferrería de El Pobal, sobre el río Barbadun. XIII. Fue construido en el siglo y fue el puente más antiguo de la ciudad de Muskiz.</string>
     <string name="DescripcionBurdinola">La Ferrería El Pobal es una antigua fábrica hidráulica donde se procesaba el mineral de hierro para fabricar todo tipo de herramientas, principalmente de uso doméstico, que fue construida junto al río Barbadún a principios del siglo XVI.</string>
+    <string name="arena_pregunta1">La playa de La Arena está situada en la frontera de Cantabria, en Muskiz. Sin embargo, esto no es solo de Muskiz, ya que se divide en dos pueblos: Zierbena y Muskiz.</string>
+    <string name="arena_pregunta2">Es la segunda playa más ancha de la costa de Bizkaia, con casi un kilómetro de longitud, 966 metros para ser exactos.t.</string>
+    <string name="arena_pregunta4">La playa de La Arena cuenta con un espacio medioambiental de alto valor botánico, arenales, dunas y marismas.</string>
+    <string name="arena_pregunta5">Aquí se pueden practicar muchas actividades y deportes, el más famoso de los cuales es el surf.</string>
+    <string name="arena_pregunta3">En esta playa discurre el río Barbadun, y se puede cruzar gracias a un puente que une la playa con el barrio de Pobeña.</string>
 
     <string name="Ayudacastillo">En este juego deberas resolver el puzle, para ello manten pulsadas las
         imagenes de abajo para arrastrarlas y sueltalas en el hueco que les corresponda. Buena suerte!</string>

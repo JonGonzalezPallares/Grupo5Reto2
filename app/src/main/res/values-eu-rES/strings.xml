@@ -170,4 +170,10 @@ Musques-eko (Bizkaia, Espainia) Muñatones gaztelua altxatzen da, itsasoarekin b
 Joko honetan ondo erantzun behar duzu itsasoa bare dagoen edo
         aitzitik, asaldatuta dago
         . Zorte on!</string>
+    <string name="arena_pregunta1">La Arena hondartza Kantabriaren mugan dago, Muskizen. Hala ere hau ez da Muskizekoa bakarrik, bi herritan banatuta baitago: Zierbena eta Muskiz.</string>
+    <string name="arena_pregunta2">Bizkaiko kostaldeko bigarren hondartzarik zabalena da, ia kilometro bat luze, 966 metro hain zuzen.</string>
+    <string name="arena_pregunta3">Hondartza honetan Barbadun ibaia isurtzen da, eta hura gurutzatu egin daiteke, hondartza Pobeña auzoarekin lotzen duen zubi bati esker.</string>
+    <string name="arena_pregunta4">La Arena hondartzak balio botaniko handiko ingurumen eremua, hareatzak, dunak eta padurak ditu.</string>
+    <string name="arena_pregunta5">Jarduera eta kirol asko praktikatu daitezke hemen, haien artean famatuena surfa.</string>
+    <string name="final_score">Tu puntuación final es</string>
 </resources>

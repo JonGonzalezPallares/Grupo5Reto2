@@ -3,15 +3,18 @@ package com.example.retomuzkiz.laArenaHondartza
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.RecyclerView
+import android.util.Log
+import android.view.View
 import com.example.retomuzkiz.databinding.ActivityIntroBinding
-import com.example.retomuzkiz.laArenaHondartza.adapter.RvAdapterParrafos
-import com.example.retomuzkiz.laArenaHondartza.modelo.ProveedorParrafos
+import com.example.retomuzkiz.funcionesExtension.cambiarF
+
 
 class IntroActivity : AppCompatActivity() {
     private lateinit var binding: ActivityIntroBinding
-    private lateinit var adapter : RvAdapterParrafos
-    private lateinit var recyclerview: RecyclerView
+    //lista de fragmentos
+    private val fragmentList = listOf(Arena_preg1(), Arena_preg2(), Arena_preg3(), Arena_preg4(), Arena_preg5())
+    //variable para la posision de los fragments
+    private var currentIndex = 0
     //Variable para saber cuando se tiene que cerrar y cuando no
     private var cambio = false
 
@@ -24,35 +27,23 @@ class IntroActivity : AppCompatActivity() {
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
 
-        init()
-    }
+        // Cargar el primer fragmento al iniciar la actividad
+        fragmentList[currentIndex].cambiarF(binding.frgPreguntas.id, supportFragmentManager)
 
-    //______________________________________________________________________________________________
-    // Inicializar  recyclerview adapter
-    private fun init() {
-        recyclerview = binding.rvParrafos
-        adapter = RvAdapterParrafos(ProveedorParrafos.listaParrafos,{
+        binding.btnAtras.setOnClickListener {
+            navigateBack()
+        }
+
+        binding.btnSiguiente.setOnClickListener {
+            navigateNext()
+        }
+
+        binding.btnEmpezar.setOnClickListener {
             play()
-        },{
-            nextItem(it)
-        },{
-            previusItem(it)
-        })
-
-        recyclerview.adapter = adapter
+        }
     }
 
-    //______________________________________________________________________________________________
-    // Retroceder hacia un item atras si la posicion del item es mayor que cero
-    private fun previusItem(item: Int) {
-        recyclerview.scrollToPosition(item-1)
-    }
 
-    //______________________________________________________________________________________________
-    // Avanzar hacia un item adelante si la posicion del item es mayor que cero
-    private fun nextItem(item: Int) {
-        recyclerview.scrollToPosition(item+1)
-    }
 
     //______________________________________________________________________________________________
     // Llamar a la activity LaArenaHondartza
@@ -60,8 +51,35 @@ class IntroActivity : AppCompatActivity() {
         cambio = true
         startActivity(Intent(this,LaArenaHondartza::class.java))
     }
+    //______________________________________________________________________________________________
+    // carga el el anterior fragment
+    private fun navigateBack() {
+        if (currentIndex > 0) {
+            currentIndex--
+            fragmentList[currentIndex].cambiarF(binding.frgPreguntas.id, supportFragmentManager)
+            binding.btnSiguiente.visibility = View.VISIBLE
+            binding.btnEmpezar.visibility = View.GONE
 
+            if (currentIndex == 0) {
+                binding.btnAtras.visibility = View.GONE
+            }
+        }
+    }
+    //______________________________________________________________________________________________
+    // carga el siguiente fragment
+    private fun navigateNext() {
+        if (currentIndex < fragmentList.size - 1) {
+            currentIndex++
+            fragmentList[currentIndex].cambiarF(binding.frgPreguntas.id, supportFragmentManager)
+            binding.btnAtras.visibility = View.VISIBLE
 
+            if (currentIndex == fragmentList.size - 1) {
+                binding.btnSiguiente.visibility = View.GONE
+                binding.btnEmpezar.visibility = View.VISIBLE
+            }
+        }
+    }
+    //______________________________________________________________________________________________
     //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
     override fun onPause() {
         super.onPause()

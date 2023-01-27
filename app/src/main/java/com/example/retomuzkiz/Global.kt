@@ -36,10 +36,9 @@ fun showDialog (context : Context, text : String, title : String = "") {
     val builder : AlertDialog.Builder = AlertDialog.Builder (context)
     builder.setTitle (title)
     builder.setMessage (text)
-    builder.setPositiveButton ("Ok",
-        DialogInterface.OnClickListener (function = {
-                dialog : DialogInterface, which : Int ->
-        }))
+    builder.setPositiveButton ("Ok"
+    ) { _: DialogInterface, _: Int ->
+    }
     builder.show ()
 }
 var fin = 0
