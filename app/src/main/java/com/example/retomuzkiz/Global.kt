@@ -11,14 +11,23 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
-import androidx.core.view.isGone
-import com.bumptech.*
+/*import androidx.core.view.isGone
+import com.bumptech.**/
 import com.bumptech.glide.Glide
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.clases.RetoGrupoCinco
+import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.currentUser
+/*import com.example.retomuzkiz.Laberinto.ActivityLaberinto
+import com.example.retomuzkiz.Ranking.RankingActivity
+import com.example.retomuzkiz.Ranking.RankingActivity.Companion.topThree
+import com.example.retomuzkiz.YourProgress.binding
+import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.mSocket
+import com.example.retomuzkiz.itsaslurIbilbidea.ItsaslurJuego*/
 import com.example.retomuzkiz.room.Game
 import com.example.retomuzkiz.room.Progress
 import com.example.retomuzkiz.room.TypeConverter
+import org.json.JSONArray
+import org.json.JSONObject
 
 /**
  * Muestra un dialogo con un mensaje y un texto
@@ -48,7 +57,7 @@ fun finalizar(contexto: Context, gameName:String) {
 }
 var startTime: Long = 0
 var time: Int = 0
-var currentProgress: Progress? =  null
+var currentProgress: Progress? =  RetoGrupoCinco.progressDb.getUserProgress(RetoGrupoCinco.currentUser!!.userId)
 fun startTimer() {
     startTime = SystemClock.elapsedRealtime()
 }
@@ -61,7 +70,7 @@ fun stopTimer() {
 fun juegoAcabado(gamePos : Int) {
     if (fin <1){
         var lista :List<Game>? = null
-        currentProgress = RetoGrupoCinco.progressDb.getUserProgress(RetoGrupoCinco.currentUser!!.userId)
+
         when(gamePos){
             0->lista = calcularPuntuacionLaberinto(gamePos)
             1->lista = calcularPuntuacionItsaslur(gamePos)
@@ -78,12 +87,34 @@ fun juegoAcabado(gamePos : Int) {
         currentProgress!!.gamesDone = TypeConverter.someObjectListToString(lista)
         println(currentProgress)
         updateProgress()
+        comprobarTopTres()
     }
 
 }
 
+fun comprobarTopTres() {
+
+    RetoGrupoCinco.mSocket.emit("get ranking", currentUser!!.userId, currentUser!!.name, currentUser!!.userClass, currentProgress!!.totalPuntuation,)
+
+
+
+    RetoGrupoCinco.mSocket.on("top Three"){ args->
+        //RankingActivity.topThree =  args[0] as JSONArray
+        //if(!topThree.isNull(""))
+
+    }
+
+}
+
+
+
 fun calcularPuntuacionMuñatones(gamePos: Int): List<Game>? {
-    var puntuacion = 500 - time
+    var puntuacion= 0
+    if(time>500){
+        puntuacion = 0
+    }else {
+        puntuacion = 500 - time
+    }
     var totPuntuation = 0
 
     var list = TypeConverter.stringToSomeObjectList(currentProgress!!.gamesDone)
@@ -99,7 +130,12 @@ fun calcularPuntuacionMuñatones(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionHermita(gamePos: Int): List<Game>? {
-    var puntuacion = 500 - time
+    var puntuacion= 0
+    if(time>500){
+        puntuacion = 0
+    }else {
+        puntuacion = 500 - time
+    }
     var totPuntuation = 0
 
     var list = TypeConverter.stringToSomeObjectList(currentProgress!!.gamesDone)
@@ -115,7 +151,12 @@ fun calcularPuntuacionHermita(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionLaArena(gamePos: Int): List<Game>? {
-    var puntuacion = 500 - time
+    var puntuacion= 0
+    if(time>500){
+        puntuacion = 0
+    }else {
+        puntuacion = 500 - time
+    }
     var totPuntuation = 0
 
     var list = TypeConverter.stringToSomeObjectList(currentProgress!!.gamesDone)
@@ -131,7 +172,12 @@ fun calcularPuntuacionLaArena(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionFundicion(gamePos: Int): List<Game>? {
-    var puntuacion = 500 - time
+    var puntuacion= 0
+    if(time>500){
+        puntuacion = 0
+    }else {
+        puntuacion = 500 - time
+    }
     var totPuntuation = 0
 
     var list = TypeConverter.stringToSomeObjectList(currentProgress!!.gamesDone)
@@ -147,7 +193,12 @@ fun calcularPuntuacionFundicion(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionPuenteRomano(gamePos: Int): List<Game>? {
-    var puntuacion = 500 - time
+    var puntuacion= 0
+    if(time>500){
+        puntuacion = 0
+    }else {
+        puntuacion = 500 - time
+    }
     var totPuntuation = 0
 
     var list = TypeConverter.stringToSomeObjectList(currentProgress!!.gamesDone)
@@ -163,7 +214,12 @@ fun calcularPuntuacionPuenteRomano(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionItsaslur(gamePos: Int): List<Game>? {
-    var puntuacion = 500 - time
+    var puntuacion= 0
+    if(time>500){
+        puntuacion = 0
+    }else {
+        puntuacion = 500 - time
+    }
     var totPuntuation = 0
 
     var list = TypeConverter.stringToSomeObjectList(currentProgress!!.gamesDone)
@@ -179,7 +235,12 @@ fun calcularPuntuacionItsaslur(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionLaberinto(gamePos: Int): List<Game> {
-    var puntuacion = 500 - time
+    var puntuacion= 0
+    if(time>500){
+        puntuacion = 0
+    }else {
+        puntuacion = 500 - time
+    }
     var totPuntuation = 0
 
     var list = TypeConverter.stringToSomeObjectList(currentProgress!!.gamesDone)
@@ -241,13 +302,19 @@ fun dialogoAyudaJuegos (juego : String, context: Context,layoutInflater: LayoutI
             //TODO
         }
         "puente"->{
-            //TODO
+            titulo.text = context.resources.getString(R.string.gamePuenteRomano)
+            cargargifs(img,ContextCompat.getDrawable(context, R.drawable.puente)!!,context)
+            explicacion.text = context.resources.getString(R.string.Ayudapuente)
         }
         "ermita"->{
-            //TODO
+            titulo.text = context.resources.getString(R.string.gameHermitaDePobeña)
+            cargargifs(img,ContextCompat.getDrawable(context, R.drawable.ermitaayuda)!!,context)
+            explicacion.text = context.resources.getString(R.string.Ayudaermita)
         }
         "paseo"->{
-            //TODO
+            titulo.text = context.resources.getString(R.string.gameItsaslurIbilbidea)
+            cargargifs(img,ContextCompat.getDrawable(context, R.drawable.ayudapaseo)!!,context)
+            explicacion.text = context.resources.getString(R.string.Ayudapaseo)
         }
 
 

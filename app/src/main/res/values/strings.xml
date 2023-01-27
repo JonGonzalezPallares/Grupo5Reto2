@@ -159,5 +159,16 @@
         imagenes de abajo para arrastrarlas y sueltalas en el hueco que les corresponda. Buena suerte!</string>
     <string name="Ayudaplaya">En este juego deberas juntar las cartas, para ello deberas encontrar
         las parejas de imagen y descripcion. Buena suerte!</string>
-
+    <string name="expLaberinto1">La noche de San Juan se conoce como la noche más corta del año, aunque lo cierto es que la fecha actual es el 21 de junio, cuando se celebra el solsticio de verano. La adaptación del cristianismo explica que no se corresponde con el solsticio de verano. Esta noche se celebra con las Casas de San Juan, el fuego lo quema todo, se desea el fuego y se dará la bienvenida al verano. Además de ser un día mágico, ahuyentar los malos espíritus o romper con las cosas malas que han pasado.</string>
+    <string name="expLaberinto2">Antiguamente, estos fuegos se encendían con la intención de dar más fuerza al sol y así alargar la luz. Antiguamente se celebraba como fiesta pagana, ya que el sol era considerado como un dios. Con la llegada del cristianismo, la celebración fue cambiando, pero nunca ha perdido su esencia. Hoy en día, la tradición y los rituales se mezclan, y cada uno lo celebra como quiere, bailando alrededor del fuego, saltando por encima, disfrutando de la noche.</string>
+    <string name="expLaberinto3">El origen de esta fecha es el día del nacimiento de San Juan Bautista, ya que su padre Zacarías mandó encender un fuego para anunciar el nacimiento de su hijo.</string>
+    <string name="Ayudapuente">En este juego deberas responder correctamente a ciertas preguntas,
+        para descubrir el puente por completo
+        . Buena suerte!</string>
+    <string name="Ayudapaseo">En este juego deberas responder correctamente a ciertas preguntas,
+        para llegar al final
+        . Buena suerte!</string>
+    <string name="Ayudaermita">En este juego deberas contstar correctamente si el mar esta calmado o
+        en contrario, esta agitado
+        . Buena suerte!</string>
 </resources>

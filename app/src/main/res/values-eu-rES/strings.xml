@@ -157,4 +157,17 @@ Musques-eko (Bizkaia, Espainia) Muñatones gaztelua altxatzen da, itsasoarekin b
         horretarako eduki sakatuta beheko irudiak dagokion espazioan arrastatu eta jaregiteko. Zorte on!</string>
     <string name="Ayudaplaya">Joko honetan txartelak elkartu behar dituzu, horretarako aurkitu behar duzu
         irudi eta deskribapen bikoteak. Zorte on!</string>
+    <string name="expLaberinto1">San Joan gaua urteko gaurik laburrena bezala ezagutzen da, nahiz eta, egia esan, gaur egungo benetako data ekainaren 21a izan, udako solstizioa noiz ospatzen den. Kristautasunak egin zuen egokitzapenak azaltzen du ez datorrela bat udako solstizioarekin. Gaur gauean San Joan Etxeekin ospatuko da, suak dena erretzen du, sua desiratzen da eta udako ongietorria egingo da. Egun magikoa izateaz gain, izpiritu txarrak uxatzea edo gertatu diren gauza txarrekin apurtzea.</string>
+    <string name="expLaberinto2">Antzina, su hauek eguzkiari indar gehiago emateko eta horrela argia luzatzeko asmoz pizten ziren. Antzina, jai pagano gisa ospatzen zen, eguzkia jainkotzat hartzen baitzen. Kristautasunaren etorrerarekin, ospakizuna aldatuz joan zen, baina ez du inoiz bere esentzia galdu. Gaur egun, tradizioa eta erritualak nahasten dira, eta bakoitzak nahi duen bezala ospatzen du, suaren inguruan dantzan, gainetik salto eginez, gauaz gozatuz.</string>
+    <string name="expLaberinto3">Data honen jatorria San Joan Bataiatzailea jaio zen eguna da, bere aita Zacariasek su bat piztea agindu baitzuen semearen jaiotza iragartzeko.</string>
+    <string name="Ayudapuente">Joko honetan galdera batzuk behar bezala erantzun behar dituzu,
+        zubia guztiz ezagutzeko. Zorte on!</string>
+    <string name="Ayudapaseo">
+        Joko honetan galdera batzuk behar bezala erantzun behar dituzu,
+        amaierara iristeko
+        . Zorte on!</string>
+    <string name="Ayudaermita">
+Joko honetan ondo erantzun behar duzu itsasoa bare dagoen edo
+        aitzitik, asaldatuta dago
+        . Zorte on!</string>
 </resources>

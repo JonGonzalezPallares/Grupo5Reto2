@@ -15,6 +15,7 @@ import com.example.retomuzkiz.laArenaHondartza.IntroActivity
 import com.example.retomuzkiz.ponekakoermita.MarineroActivity
 import com.example.retomuzkiz.puenteRomano.PuenteRomano
 import com.example.retomuzkiz.Laberinto.ActivityLaberinto
+import com.example.retomuzkiz.Laberinto.ExplicacionLaberinto
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 //import com.example.retomuzkiz.gastelua.ActivityGaztelua
 import com.example.retomuzkiz.gastelua.ExplicacionActivity
@@ -108,7 +109,7 @@ class RvDesplegableAdapter(var listaActividades: Game, var user : Usuario,  val 
             when(id) {
                 1->{
 
-                    val intento = Intent(context, ActivityLaberinto::class.java).putExtra("user", user)
+                    val intento = Intent(context, ExplicacionLaberinto::class.java).putExtra("user", user)
                     startActivity(context, intento, null)
                 }
 

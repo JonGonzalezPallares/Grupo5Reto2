@@ -8,11 +8,26 @@
     tools:context=".ponekakoermita.JuegodemarActivity">
 
     <ImageView
+        android:id="@+id/imgIncorrect"
+        android:layout_width="0dp"
+
+        android:layout_height="match_parent"
+        android:translationZ="1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_delete"
+        tools:visibility="visible" />
+
+    <ImageView
         android:id="@+id/color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#000000"
         android:translationZ="2dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +40,7 @@
         android:layout_height="0dp"
         android:background="@drawable/binoculares"
         android:translationZ="2dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,11 +50,29 @@
         android:id="@+id/imgMar"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:translationZ="1dp"
+        android:translationZ="0dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnayuda"
+        android:layout_width="57dp"
+        android:layout_height="59dp"
+        android:background="@drawable/estilo_botonayuda"
+        android:text="?"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.045" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnTranquilo"

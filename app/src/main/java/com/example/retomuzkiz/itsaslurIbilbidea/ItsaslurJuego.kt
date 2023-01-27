@@ -35,6 +35,9 @@ class ItsaslurJuego : AppCompatActivity() {
         startTimer()
         binding = ActivityItsaslurJuegoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.btnayuda.setOnClickListener {
+            dialogoAyudaJuegos("paseo",this,layoutInflater)
+        }
         usuario = intent.getParcelableExtra("user")!!
         fin = 0
         RetoGrupoCinco.mSocket.on("game finish") { args ->
