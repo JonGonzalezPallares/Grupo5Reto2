@@ -46,7 +46,8 @@ class MenuPrincipal : AppCompatActivity() {
                         val intento =
                             Intent(this, MapsActivity::class.java)
                         startActivity(intento)
-
+                    //finish()
+                    dialogos++
                 }
 
             }
@@ -84,13 +85,17 @@ class MenuPrincipal : AppCompatActivity() {
                 setUser(user)
             }
             var room :String? = null
+
             RetoGrupoCinco.mSocket.connect()
+
             RetoGrupoCinco.mSocket.emit("join server",binding.txtUsuario.text.toString())
             RetoGrupoCinco.mSocket.emit("join room",binding.txtClase.text.toString())
 
-            RetoGrupoCinco.mSocket.on("Salas"){ args ->
-                println(args[0])
+
             }
+            RetoGrupoCinco.mSocket.on("Salas") { args ->
+                println(args[0])
+
 
 
         }
@@ -156,6 +161,12 @@ class MenuPrincipal : AppCompatActivity() {
                 RetoGrupoCinco.SITESNAMES.CASTILLO_MUNATONES_IMG))
         return gameList
     }
+
+    override fun onBackPressed() {
+       finish()
+    }
+
+
     override fun onResume() {
         super.onResume()
 //__________________________________________________________________________________________

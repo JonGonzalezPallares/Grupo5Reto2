@@ -10,7 +10,7 @@ class SopaLetrasActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.juego_sopa)
-        val exampleFragment = GameFragment()
+        val exampleFragment = GameFragment(this)
 
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_prencipal, exampleFragment)

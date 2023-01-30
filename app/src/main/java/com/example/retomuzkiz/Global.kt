@@ -175,10 +175,10 @@ fun calcularPuntuacionLaArena(gamePos: Int): List<Game>? {
 
 fun calcularPuntuacionFundicion(gamePos: Int): List<Game>? {
     var puntuacion= 0
-    if(time>500){
+    if(time>1000){
         puntuacion = 0
     }else {
-        puntuacion = 500 - time
+        puntuacion = 1000 - time
     }
     var totPuntuation = 0
 

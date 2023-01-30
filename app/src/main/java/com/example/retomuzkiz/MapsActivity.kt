@@ -473,9 +473,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
         }else{
 
-            val intento = Intent(this, MenuPrincipal::class.java)
-            startActivity(intento)
-            super.onBackPressed()
+        finish()
         }
     }
     //______________________________________________________________________________________________
