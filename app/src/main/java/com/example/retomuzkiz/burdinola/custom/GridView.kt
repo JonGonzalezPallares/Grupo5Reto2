@@ -48,19 +48,16 @@ class GridView @JvmOverloads constructor(
     private var endY = 0f
     private var startTile = Tile(0, 0, ' ')
 
-
     private var selectedTilePaint = Paint().apply {
         textAlign = Paint.Align.CENTER
         style = Paint.Style.FILL
         textSize = 2f * Resources.getSystem().displayMetrics.scaledDensity
     }
-
     private val textPaint = Paint().apply {
         textAlign = Paint.Align.CENTER
         color = ContextCompat.getColor(context, R.color.black)
         textSize = 20f * Resources.getSystem().displayMetrics.scaledDensity
     }
-
     var data: List<List<Char>> = emptyList()
         set(value) {
             field = value
@@ -72,7 +69,6 @@ class GridView @JvmOverloads constructor(
             }
             invalidate()
         }
-
     private fun getTile(x: Float, y: Float): Tile {
         //verificar que x e y estén dentro del rango válido
         if (x < 0 || x >= width || y < 0 || y >= height) {
@@ -82,8 +78,6 @@ class GridView @JvmOverloads constructor(
         val row = (y / tileHeight()).toInt()
         return tiles.first { it.column == column && it.row == row }
     }
-
-
     /**
      * Resalta los mosaicos seleccionados.
      * Colorea azul si la cadena seleccionada es correcta, colorea amarillo si el usuario aún está seleccionando mosaicos.
@@ -104,7 +98,6 @@ class GridView @JvmOverloads constructor(
             }
         )
     }
-
     /**
      * Pone caracteres, dibuja una cuadrícula y resalta las cadenas seleccionadas.
      */
@@ -130,7 +123,6 @@ class GridView @JvmOverloads constructor(
 
     private fun horizontalCenterOfTile(column: Int) = (column * tileWidth()) + tileWidth() / 2
     private fun verticalCenterOfTile(row: Int) = (row * tileHeight()) + tileHeight() / 2
-
     private fun tileWidth() = width / data.size.toFloat()
     private fun tileHeight() = height / data.size.toFloat()
 
@@ -149,7 +141,6 @@ class GridView @JvmOverloads constructor(
                 validMove = true
                 stringSelection = ""
                 selectedTiles.clear()
-
             }
             MotionEvent.ACTION_MOVE -> {
                 endX = event.x
@@ -164,10 +155,8 @@ class GridView @JvmOverloads constructor(
                     }
                 }
                 invalidate()
-
             }
             MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
-
                 if (validMove) {
                     if (wordFound(stringSelection)) {
                         selectedTiles.forEach { tile ->
@@ -193,33 +182,15 @@ class GridView @JvmOverloads constructor(
             if (!word.found && word.word == stringSelected) {
                 word.found = true
                 _score.value = _score.value?.plus(1) ?: 1
-                val congratulate = correctStringSelected.shuffled().first()
-                Toast.makeText(context, congratulate, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, (R.string.frase_correcta), Toast.LENGTH_SHORT).show()
                 return true
             }
             if (word.found && word.word == stringSelected) {
-                val message = foundStringSelected.shuffled().first()
-                Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, (R.string.frase_repetida), Toast.LENGTH_SHORT).show()
                 return false
             }
         }
-        val shame = wrongStringSelected.shuffled().first()
-        Toast.makeText(context, shame, Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, (R.string.frase_incorrecta), Toast.LENGTH_SHORT).show()
         return false
     }
-
-    /**
-     * Lista de palabras/frases que se devolverán en el Toast.
-     */
-    private val correctStringSelected = listOf(
-        "AHHH YEAH"
-    )
-
-    private val foundStringSelected = listOf(
-        "encuentra algo mas"
-    )
-
-    private val wrongStringSelected = listOf(
-        "leer el texto anterior"
-    )
 }
