@@ -41,19 +41,19 @@ class LoadingActivity : AppCompatActivity() {
         }
         binding.txtmuzkiz.animate().apply {
             alpha(1f) // El TextView se vuelve completamente visible
-            setDuration(750) // La animación dura 0.75 segundo
-            setInterpolator(LinearInterpolator()) // Utiliza un interpolador lineal
+            duration = 750 // La animación dura 0.75 segundo
+            interpolator = LinearInterpolator() // Utiliza un interpolador lineal
         }.withEndAction {
             binding.txtmuzkiz.animate().apply {
             alpha(0.5f) // El TextView se vuelve completamente visible
-            setDuration(750) // La animación dura 1 segundo
-            setInterpolator(LinearInterpolator()) // Utiliza un interpolador lineal para darle
+                duration = 750 // La animación dura 1 segundo
+                interpolator = LinearInterpolator() // Utiliza un interpolador lineal para darle
                 //una uniformidad a la transformacion del texto
             }.withEndAction {
                 binding.txtmuzkiz.animate().apply {
                     alpha(1f) // El TextView se vuelve completamente visible
-                    setDuration(750) // La animación dura 1 segundo
-                    setInterpolator(LinearInterpolator()) // Utiliza un interpolador lineal
+                    duration = 750 // La animación dura 1 segundo
+                    interpolator = LinearInterpolator() // Utiliza un interpolador lineal
                 }
             }
 
