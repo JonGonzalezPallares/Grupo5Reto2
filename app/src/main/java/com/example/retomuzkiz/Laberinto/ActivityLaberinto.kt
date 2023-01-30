@@ -12,6 +12,7 @@ import com.example.retomuzkiz.databinding.ActivityLaberintoBinding
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.clases.RetoGrupoCinco
+import com.example.retomuzkiz.dialogoAyudaJuegos
 import com.example.retomuzkiz.fin
 import com.example.retomuzkiz.room.Game
 import com.example.retomuzkiz.room.Progress
@@ -40,6 +41,9 @@ class ActivityLaberinto : AppCompatActivity() {
         this.supportActionBar!!.hide()
         //Para ponerla animacion a las llamas
         binding.fuegoAtras.startAnimation(AnimationUtils.loadAnimation(this, R.anim.animacion_fuego))
+        binding.btnayuda.setOnClickListener {
+            dialogoAyudaJuegos("sanjuan",this,layoutInflater)
+        }
 
     }
 
