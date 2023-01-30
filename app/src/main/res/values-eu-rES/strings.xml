@@ -176,6 +176,9 @@ Joko honetan ondo erantzun behar duzu itsasoa bare dagoen edo
     <string name="arena_pregunta4">La Arena hondartzak balio botaniko handiko ingurumen eremua, hareatzak, dunak eta padurak ditu.</string>
     <string name="arena_pregunta5">Jarduera eta kirol asko praktikatu daitezke hemen, haien artean famatuena surfa.</string>
     <string name="final_score">Tu puntuación final es</string>
+    <string name="frase_correcta">Ongi egina!</string>
+    <string name="frase_incorrecta">Oraingoan ez</string>
+    <string name="frase_repetida">aurkitu beste zerbait</string>
     <string name="Ayudalab">
 Joko honetan labirintoaren amaierara iritsi behar duzu kubo gorria amaieraraino arrastatuz
         . Zorte on!</string>

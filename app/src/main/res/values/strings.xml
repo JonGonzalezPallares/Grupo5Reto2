@@ -17,6 +17,9 @@
 
     <!-- Sopa de letras -->
     <string name="final_score">Tu puntuación final es</string>
+    <string name="frase_correcta">Bien hecho!</string>
+    <string name="frase_repetida">Encuentra algo mas</string>
+    <string name="frase_incorrecta">No esta vez</string>
 
     <!-- Map Activity -->
     <!-- Menu -->
