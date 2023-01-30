@@ -298,10 +298,12 @@ fun dialogoAyudaJuegos (juego : String, context: Context,layoutInflater: LayoutI
             explicacion.text = context.resources.getString(R.string.Ayudaplaya)
         }
         "fundicion"->{
-            //TODO
+
         }
         "sanjuan"->{
-            //TODO
+            titulo.text = context.resources.getString(R.string.gameSanJuan)
+            cargargifs(img,ContextCompat.getDrawable(context, R.drawable.lavertintoayuda)!!,context)
+            explicacion.text = context.resources.getString(R.string.Ayudalab)
         }
         "puente"->{
             titulo.text = context.resources.getString(R.string.gamePuenteRomano)
