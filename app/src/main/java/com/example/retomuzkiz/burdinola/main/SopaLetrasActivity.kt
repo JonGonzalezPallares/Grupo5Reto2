@@ -11,7 +11,9 @@ class SopaLetrasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.juego_sopa)
         val exampleFragment = GameFragment(this)
-
+        //Para borrar la barra superior
+        this.supportActionBar!!.hide()
+        // carga el fragment del juego
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_prencipal, exampleFragment)
             .commit()
