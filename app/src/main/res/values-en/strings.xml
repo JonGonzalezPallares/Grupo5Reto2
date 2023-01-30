@@ -18,6 +18,9 @@
 
     <!-- Map Activity -->
     <!-- Menu -->
+    <string name="frase_correcta">Done!</string>
+    <string name="frase_repetida">try other</string>
+    <string name="frase_incorrecta">Not yet!</string>
     <string name="modes">Modes</string>
     <string name="puntuation">Score</string>
     <string name="others">Others…</string>
@@ -173,4 +176,5 @@
     <string name="arena_pregunta4">La Arena beach has an environmental area of high botanical value, sands, dunes and marshes.</string>
     <string name="arena_pregunta5">Many activities and sports can be practiced here, the most famous of which is surfing.</string>
     <string name="final_score">Tu puntuación final es</string>
+    <string name="Ayudalab">In this game you must reach the end of the maze by dragging the red cube to the end. Good luck!</string>
 </resources>
