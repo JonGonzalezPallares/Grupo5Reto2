@@ -19,7 +19,7 @@ class GameViewModel : ViewModel() {
 
     )
 
-    private val gridSize = 11
+    private val gridSize = 12
 
     lateinit var grid: List<List<Char>>
     lateinit var usedWordsList: List<Word>
