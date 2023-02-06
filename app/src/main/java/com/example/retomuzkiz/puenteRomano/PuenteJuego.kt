@@ -151,6 +151,7 @@ class PuenteJuego : AppCompatActivity() {
                         typefaceEstyle(lista, 2)
                     }
                 }
+                binding.btnComprobar.alpha = 1F
                 binding.btnComprobar.isEnabled = true
             }
             paso += 1
@@ -207,6 +208,7 @@ class PuenteJuego : AppCompatActivity() {
             }
         }
         cantidad++
+        binding.btnComprobar.alpha = 0.5F
         binding.btnComprobar.isEnabled = false
     }
 
@@ -241,6 +243,7 @@ class PuenteJuego : AppCompatActivity() {
                 binding.rdbRes4.eliminarNegrita(seleTxt, cantidad)
             }
         }
+        binding.btnComprobar.alpha = 0.5F
     }
 
     //Funcion para mostrar la imagen final

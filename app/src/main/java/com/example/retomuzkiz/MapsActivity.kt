@@ -257,9 +257,31 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         val ibilbideItsaslur = LatLng(43.331075, -3.117392)
         val muniatonesGaztelua = LatLng(43.323611, -3.112503)
         val sanJuan = LatLng(43.330278, -3.129061)
+
+        val posiciones = listOf(puenteRomano, pobalekoBurdinola, pobenakoErmita, hondartzaArena, ibilbideItsaslur, muniatonesGaztelua, sanJuan)
+        val titulos = listOf(
+            getString(R.string.gamePuenteRomano),
+            getString(R.string.gameFundicion),
+            getString(R.string.gameHermitaDePobeña),
+            getString(R.string.gameLaArenaHondartza),
+            getString(R.string.gameItsaslurIbilbidea),
+            getString(R.string.gameCastilloMuñatones),
+            getString(R.string.gameSanJuan)
+        )
+        var snippet = 0
         mMap.uiSettings.isZoomControlsEnabled = true
+
+        posiciones.forEach {
+            mMap.addMarker(
+                MarkerOptions()
+                    .position(it)
+                    .title(titulos[snippet])
+                    .snippet(snippet.toString())
+            )
+            snippet++
+        }
         //Añadimos los marcadores al mapa
-        mMap.addMarker(
+        /*mMap.addMarker(
             MarkerOptions()
                 .position(puenteRomano)
                 .title(getString(R.string.gamePuenteRomano))
@@ -314,7 +336,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 .title(getString(R.string.gameSanJuan))
                 .snippet("6")
 
-        )
+        )*/
 
         mMap.setOnMarkerClickListener(this)
 
