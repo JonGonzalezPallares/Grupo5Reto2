@@ -119,6 +119,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         //menu lateral
         val header = navView.getHeaderView(0)
         var totPuntuacion =  header.findViewById<TextView>(R.id.menuTxtPuntuacion)
+        println(progressDb.getUserProgress(currentUser!!.userId).totalPuntuation)
         totPuntuacion.text = "Puntuacion: ${progressDb.getUserProgress(currentUser!!.userId).totalPuntuation.toString()}"
 
         var nombreUser =  header.findViewById<TextView>(R.id.menuTxtUser)
@@ -216,6 +217,11 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
                 //Para hacer logout
                 R.id.m_logout -> {
+                    if (keyPathsBehavior.state != BottomSheetBehavior.STATE_HIDDEN){
+                        keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+                    }else{
+                        finish()
+                    }
                     true
                 }
 
@@ -280,63 +286,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             )
             snippet++
         }
-        //Añadimos los marcadores al mapa
-        /*mMap.addMarker(
-            MarkerOptions()
-                .position(puenteRomano)
-                .title(getString(R.string.gamePuenteRomano))
-                .snippet("0")
-        )
-
-        mMap.addMarker(
-            MarkerOptions()
-                .position(pobalekoBurdinola)
-                .title(getString(R.string.gameFundicion))
-                .snippet("1")
-
-        )
-
-        mMap.addMarker(
-            MarkerOptions()
-                .position(pobenakoErmita)
-                .title(getString(R.string.gameHermitaDePobeña))
-                .snippet("2")
-
-        )
-
-        mMap.addMarker(
-            MarkerOptions()
-                .position(hondartzaArena)
-                .title(getString(R.string.gameLaArenaHondartza))
-                .snippet("3")
-
-        )
-
-        mMap.addMarker(
-
-            MarkerOptions()
-                .position(ibilbideItsaslur)
-                .title(getString(R.string.gameItsaslurIbilbidea))
-                .snippet("4")
-
-        )
-
-        mMap.addMarker(
-            MarkerOptions()
-                .position(muniatonesGaztelua)
-                .title(getString(R.string.gameCastilloMuñatones))
-                .snippet("5")
-
-        )
-
-        mMap.addMarker(
-
-            MarkerOptions()
-                .position(sanJuan)
-                .title(getString(R.string.gameSanJuan))
-                .snippet("6")
-
-        )*/
 
         mMap.setOnMarkerClickListener(this)
 
@@ -494,8 +443,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         if (keyPathsBehavior.state != BottomSheetBehavior.STATE_HIDDEN){
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
         }else{
-
-        finish()
+            finish()
         }
     }
     //______________________________________________________________________________________________

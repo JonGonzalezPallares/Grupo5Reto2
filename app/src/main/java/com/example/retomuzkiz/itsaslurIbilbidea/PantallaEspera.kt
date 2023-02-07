@@ -87,13 +87,15 @@ class PantallaEspera : AppCompatActivity() {
         this.supportActionBar!!.hide()
 
         loadProfesor()
+        if(binding.txtUsuariosConectados.text.toString() == "..."){
+            binding.btnContinuar.visibility = View.VISIBLE
+        }
 
         binding.btnContinuar.setOnClickListener {
-//            val intento = Intent(this, ItsaslurJuego::class.java).putExtra("user", usuario)
-//            startActivity(intento)
-
-
-
+            if(binding.txtUsuariosConectados.text.toString() == "..."){
+                val intento = Intent(this, ItsaslurJuego::class.java).putExtra("user", usuario)
+                startActivity(intento)
+            }
 
             RetoGrupoCinco.mSocket.emit("startGame", usuario.userClass)
             cambio = true

@@ -21,7 +21,7 @@ class MenuPrincipal : AppCompatActivity() {
     val db = RetoGrupoCinco.database!!
     var dialogos = 0
     var dialogosClaseNoEncontrada= 0;
-
+    var evento = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuPrincipalBinding.inflate(layoutInflater)
@@ -40,9 +40,10 @@ class MenuPrincipal : AppCompatActivity() {
         }
         RetoGrupoCinco.mSocket.on("joined") { args ->
             if(dialogos<1) {
-                if (MapsActivity.isMapCreated == false) {
+                if (!MapsActivity.isMapCreated) {
 
                         //setUser(user!!)
+                    evento = true
                         val intento =
                             Intent(this, MapsActivity::class.java)
                         startActivity(intento)
@@ -74,23 +75,26 @@ class MenuPrincipal : AppCompatActivity() {
                     userClass,
                     isProfesor
                 )
-                //setUser( user )
+                setUser( user )
 
 
             }else{
-                insertarUser(currentUser)
 
                 //Si ComprobarUsuario ha encontrado algun usuario, seteamos
                 user = newUser
                 setUser(user)
             }
+            insertarUser(currentUser)
             var room :String? = null
 
             RetoGrupoCinco.mSocket.connect()
 
             RetoGrupoCinco.mSocket.emit("join server",binding.txtUsuario.text.toString())
             RetoGrupoCinco.mSocket.emit("join room",binding.txtClase.text.toString())
-
+            if(!RetoGrupoCinco.mSocket.connected()){
+                val intento = Intent(this, MapsActivity::class.java)
+                startActivity(intento)
+            }
 
             }
             RetoGrupoCinco.mSocket.on("Salas") { args ->
@@ -173,8 +177,8 @@ class MenuPrincipal : AppCompatActivity() {
         dialogos = 0
         val listaUsuarios = db.usuarioDao.getAllUsers()
         if(!listaUsuarios.isEmpty()) {
-            for (i in 0 until listaUsuarios.size) {
-                println(listaUsuarios[i].toString())
+            for (element in listaUsuarios) {
+                println(element.toString())
             }
         }
         adaptadorUsuario = UsuariosAdapter(listaUsuarios){
@@ -201,6 +205,12 @@ class MenuPrincipal : AppCompatActivity() {
 
 
         RetoGrupoCinco.mSocket.emit("join room",user.userClass)
+        if (!evento){
+            val intento =
+                Intent(this, MapsActivity::class.java)
+            startActivity(intento)
+            //finish()
+        }
         RetoGrupoCinco.mSocket.on("Salas"){ args ->
             println(args[0])
        }

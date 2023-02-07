@@ -30,6 +30,7 @@ class JuegodemarActivity : AppCompatActivity() {
         R.drawable.marrev2,
         R.drawable.martran3,
         R.drawable.marrev3,
+        R.drawable.martran1
 
     )
 
@@ -39,7 +40,8 @@ class JuegodemarActivity : AppCompatActivity() {
         "Revuelto",
         "Revuelto",
         "Tranquilo",
-        "Revuelto"
+        "Revuelto",
+        "Tranquilo"
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
