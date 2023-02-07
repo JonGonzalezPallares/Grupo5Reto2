@@ -34,6 +34,9 @@ class MenuPrincipal : AppCompatActivity() {
                 if(dialogosClaseNoEncontrada<1){
                     showDialog(this, "No se ha encontrado ninguna clase", "Error")
                     dialogosClaseNoEncontrada++
+                }else{
+                    val intento = Intent(this, MapsActivity::class.java)
+                    startActivity(intento)
                 }
                 dialogosClaseNoEncontrada = 0
             }
@@ -44,8 +47,7 @@ class MenuPrincipal : AppCompatActivity() {
 
                         //setUser(user!!)
                     evento = true
-                        val intento =
-                            Intent(this, MapsActivity::class.java)
+                        val intento = Intent(this, MapsActivity::class.java)
                         startActivity(intento)
                     //finish()
                     dialogos++
@@ -58,7 +60,14 @@ class MenuPrincipal : AppCompatActivity() {
         binding.txtProfesor.setOnClickListener(){
             startActivity(Intent(this,ActivityCrearClaseSocket::class.java))
         }
+
+        RetoGrupoCinco.mSocket.connect()
         binding.button.setOnClickListener {
+            if(RetoGrupoCinco.mSocket.connected()){
+                binding.cambio!!.text = "Si"
+            }else{
+                binding.cambio!!.text = "No"
+            }
             dialogos = 0
             dialogosClaseNoEncontrada= 0
             var newUser = comprobarUsuario()
@@ -87,14 +96,13 @@ class MenuPrincipal : AppCompatActivity() {
             insertarUser(currentUser)
             var room :String? = null
 
-            RetoGrupoCinco.mSocket.connect()
 
-            RetoGrupoCinco.mSocket.emit("join server",binding.txtUsuario.text.toString())
-            RetoGrupoCinco.mSocket.emit("join room",binding.txtClase.text.toString())
-            if(!RetoGrupoCinco.mSocket.connected()){
+            if(binding.cambio!!.text == "No"){
                 val intento = Intent(this, MapsActivity::class.java)
                 startActivity(intento)
             }
+            RetoGrupoCinco.mSocket.emit("join server",binding.txtUsuario.text.toString())
+            RetoGrupoCinco.mSocket.emit("join room",binding.txtClase.text.toString())
 
             }
             RetoGrupoCinco.mSocket.on("Salas") { args ->
