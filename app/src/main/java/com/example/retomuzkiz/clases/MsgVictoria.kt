@@ -25,7 +25,7 @@ class MsgVictoria : AppCompatActivity() {
             "puente" -> imagenFondo=R.drawable.puentecompleto
             "mar" -> imagenFondo=R.drawable.martran2
             "castillo" -> imagenFondo=R.drawable.castillo
-            "fundicion" -> imagenFondo=R.drawable.castillo
+            "fundicion" -> imagenFondo=R.drawable.fundicion_pobela
 
         }
 

@@ -56,12 +56,6 @@ class RankingActivity : AppCompatActivity() {
         )
         //var listaTop = topThree as Array<JSONObject>
 
-        RetoGrupoCinco.mSocket.on("top three") { args ->
-            topThree = args[0] as JSONArray
-            actualizarTopTres()
-
-        }
-
      runOnUiThread {
          binding.rvRanking.adapter = RVRankingAdapter(listaJugadores,this)
 //            binding.txtFirstName.text = "${bestUser["userName"]}"
