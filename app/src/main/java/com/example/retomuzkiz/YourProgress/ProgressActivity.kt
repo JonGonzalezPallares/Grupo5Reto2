@@ -3,6 +3,7 @@ package com.example.retomuzkiz.YourProgress
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.clases.RetoGrupoCinco
@@ -15,6 +16,7 @@ lateinit var binding :ActivityProgresBinding
 
 
 class ProgressActivity : AppCompatActivity() {
+    var echos = 0
     var progress = RetoGrupoCinco.progressDb.getUserProgress(currentUser!!.userId)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +34,11 @@ class ProgressActivity : AppCompatActivity() {
         }
         cargarImagenes()
         binding.txtTotPuntuacion.text = "${progress.totalPuntuation}"
+        binding.txtGamesCompleted.setOnClickListener{
+            if(echos == 7 || echos == 8){
+                Toast.makeText(this, " Secreto", Toast.LENGTH_SHORT).show()
+            }
+        }
 
     }
 
@@ -39,7 +46,7 @@ class ProgressActivity : AppCompatActivity() {
 
     private fun cargarImagenes() {
         var gamesDone = TypeConverter.stringToSomeObjectList(progress.gamesDone)
-        var echos = 0
+
         gamesDone.forEach() {  game->
             if(game.done) {
                 echos++
@@ -106,6 +113,9 @@ class ProgressActivity : AppCompatActivity() {
 
         }
         binding.txtGamesCompleted.text = "$echos/7"
+        if(echos == 7 || echos == 8){
+            binding.txtGamesCompleted.text = "$echos/7!!"
+        }
 
 
 
