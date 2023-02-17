@@ -61,13 +61,8 @@ class MenuPrincipal : AppCompatActivity() {
             startActivity(Intent(this,ActivityCrearClaseSocket::class.java))
         }
 
-        RetoGrupoCinco.mSocket.connect()
         binding.button.setOnClickListener {
-            if(RetoGrupoCinco.mSocket.connected()){
-                binding.cambio!!.text = "Si"
-            }else{
-                binding.cambio!!.text = "No"
-            }
+            RetoGrupoCinco.mSocket.connect()
             dialogos = 0
             dialogosClaseNoEncontrada= 0
             var newUser = comprobarUsuario()
@@ -96,11 +91,6 @@ class MenuPrincipal : AppCompatActivity() {
             insertarUser(currentUser)
             var room :String? = null
 
-
-            if(binding.cambio!!.text == "No"){
-                val intento = Intent(this, MapsActivity::class.java)
-                startActivity(intento)
-            }
             RetoGrupoCinco.mSocket.emit("join server",binding.txtUsuario.text.toString())
             RetoGrupoCinco.mSocket.emit("join room",binding.txtClase.text.toString())
 
