@@ -53,6 +53,7 @@ fun finalizar(contexto: Context, gameName:String) {
 }
 var startTime: Long = 0
 var time: Int = 0
+var puntuacion = 0
 
 object usuario  {
     lateinit var currentUser:Usuario
@@ -111,7 +112,6 @@ fun comprobarTopTres() {
 
 
 fun calcularPuntuacionMuñatones(gamePos: Int): List<Game>? {
-    var puntuacion= 0
     if(time>500){
         puntuacion = 0
     }else {
@@ -132,7 +132,6 @@ fun calcularPuntuacionMuñatones(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionHermita(gamePos: Int): List<Game>? {
-    var puntuacion= 0
     if(time>500){
         puntuacion = 0
     }else {
@@ -153,7 +152,6 @@ fun calcularPuntuacionHermita(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionLaArena(gamePos: Int): List<Game>? {
-    var puntuacion= 0
     if(time>500){
         puntuacion = 0
     }else {
@@ -174,7 +172,6 @@ fun calcularPuntuacionLaArena(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionFundicion(gamePos: Int): List<Game>? {
-    var puntuacion= 0
     if(time>1000){
         puntuacion = 0
     }else {
@@ -195,7 +192,6 @@ fun calcularPuntuacionFundicion(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionPuenteRomano(gamePos: Int): List<Game>? {
-    var puntuacion= 0
     if(time>500){
         puntuacion = 0
     }else {
@@ -212,11 +208,11 @@ fun calcularPuntuacionPuenteRomano(gamePos: Int): List<Game>? {
         currentProgress!!.totalPuntuation =  totPuntuation
         list[gamePos].done = true
     }
+    println(puntuacion)
     return list
 }
 
 fun calcularPuntuacionItsaslur(gamePos: Int): List<Game>? {
-    var puntuacion= 0
     if(time>500){
         puntuacion = 0
     }else {
@@ -237,7 +233,6 @@ fun calcularPuntuacionItsaslur(gamePos: Int): List<Game>? {
 }
 
 fun calcularPuntuacionLaberinto(gamePos: Int): List<Game> {
-    var puntuacion= 0
     if(time>500){
         puntuacion = 0
     }else {
@@ -254,6 +249,7 @@ fun calcularPuntuacionLaberinto(gamePos: Int): List<Game> {
         currentProgress!!.totalPuntuation =  totPuntuation
         list[gamePos].done = true
     }
+    println(puntuacion)
     return list
 }
 
@@ -264,7 +260,9 @@ private fun updateProgress() {
 }
 
 
-
+fun puntuacionJuegos():String{
+    return puntuacion.toString()
+}
 
 
 
@@ -320,14 +318,7 @@ fun dialogoAyudaJuegos (juego : String, context: Context,layoutInflater: LayoutI
             cargargifs(img,ContextCompat.getDrawable(context, R.drawable.ayudapaseo)!!,context)
             explicacion.text = context.resources.getString(R.string.Ayudapaseo)
         }
-
-
-
-
-
-
     }
-
 }
 
 
