@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ActivityMsgVictoriaBinding
+import com.example.retomuzkiz.puntuacionJuegos
 
 class MsgVictoria : AppCompatActivity() {
     private lateinit var binding : ActivityMsgVictoriaBinding
@@ -29,11 +30,14 @@ class MsgVictoria : AppCompatActivity() {
 
         }
 
+        val puntuacion = puntuacionJuegos()
+        val textoPunt = getString(R.string.puntos)
+        binding.textView!!.text = "$textoPunt $puntuacion"
 
         binding.imgVictoria.setImageResource(imagenFondo)
 
         binding.btnIrMapa.setOnClickListener {
-        finish()
+            finish()
         }
     }
 

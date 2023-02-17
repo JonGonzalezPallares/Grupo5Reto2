@@ -137,7 +137,7 @@
     <string name="ResTxtHermita">The solutions to the game are divided into: rough and calm sea, here are the solutions to the different photos:</string>
     <string name="ResTranquilo">Calm sea:</string>
     <string name="ResRevuelto">Rough sea:</string>
-    <string name="Aceptar">Goodbye</string>
+    <string name="Aceptar">Ok</string>
     <string name="txtLejos">You are to far from the point! Get closer to play.</string>
     <string name="txtGuiado">You are in guide mode</string>
     <string name="txtLibre">You are in free mode</string>
@@ -177,4 +177,5 @@
     <string name="arena_pregunta5">Many activities and sports can be practiced here, the most famous of which is surfing.</string>
     <string name="final_score">Tu puntuación final es</string>
     <string name="Ayudalab">In this game you must reach the end of the maze by dragging the red cube to the end. Good luck!</string>
+    <string name="puntos">Obtained score:</string>
 </resources>
