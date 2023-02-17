@@ -10,9 +10,12 @@ import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityProgresBinding
 import com.example.retomuzkiz.room.TypeConverter
 import com.example.retomuzkiz.usuario.currentUser
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 
 
 lateinit var binding :ActivityProgresBinding
+lateinit var shine: View
 
 
 class ProgressActivity : AppCompatActivity() {
@@ -23,6 +26,7 @@ class ProgressActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding =  ActivityProgresBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        shine = binding.txtGamesCompleted
         this.supportActionBar!!.hide()
         binding.Navegation.setOnClickListener(){
            if(binding.fragmentContainerView2.visibility == 0){
@@ -115,9 +119,11 @@ class ProgressActivity : AppCompatActivity() {
         binding.txtGamesCompleted.text = "$echos/7"
         if(echos == 7 || echos == 8){
             binding.txtGamesCompleted.text = "$echos/7!!"
+            binding.txtGamesCompleted.startAnimation(AnimationUtils.loadAnimation(this, R.anim.shine_complete))
         }
 
 
 
     }
+
 }
