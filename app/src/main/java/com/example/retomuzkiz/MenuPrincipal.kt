@@ -57,7 +57,7 @@ class MenuPrincipal : AppCompatActivity() {
         }
         dialogos = 0
         dialogosClaseNoEncontrada= 0
-        binding.txtProfesor.setOnClickListener(){
+        binding.txtProfesor.setOnClickListener {
             startActivity(Intent(this,ActivityCrearClaseSocket::class.java))
         }
 
@@ -146,7 +146,7 @@ class MenuPrincipal : AppCompatActivity() {
     }
 
     private fun cargarJuegos(user: Usuario) : List<Game> {
-        var gameList = listOf<Game>(
+        var gameList = listOf(
             Game(getString(R.string.gameSanJuan),1, 0,false,
                 RetoGrupoCinco.SITESNAMES.NOCHE_SAN_JUAN_IMG),
             Game(getString(R.string.gameItsaslurIbilbidea), 2,0,false,
@@ -174,7 +174,7 @@ class MenuPrincipal : AppCompatActivity() {
 //__________________________________________________________________________________________
         dialogos = 0
         val listaUsuarios = db.usuarioDao.getAllUsers()
-        if(!listaUsuarios.isEmpty()) {
+        if(listaUsuarios.isNotEmpty()) {
             for (element in listaUsuarios) {
                 println(element.toString())
             }
@@ -189,9 +189,7 @@ class MenuPrincipal : AppCompatActivity() {
     // guarda en sharedFreferences nombre pasado en parametro y llama la activity maps
     private fun listar(user: Usuario) {
         //prefs.saveUser(nombre)
-       setUser(user)
-//
-// dialogos = 0
+        setUser(user)
         RetoGrupoCinco.mSocket.connect()
         RetoGrupoCinco.mSocket.emit("join server",user.name)
 
@@ -212,34 +210,5 @@ class MenuPrincipal : AppCompatActivity() {
         RetoGrupoCinco.mSocket.on("Salas"){ args ->
             println(args[0])
        }
-//        RetoGrupoCinco.mSocket.on("not existing room"){ args ->
-//            println(args[0])
-//            if(dialogosClaseNoEncontrada<1){
-//                runOnUiThread(){
-//
-//                    showDialog(this, "No se ha encontrado ninguna clase", "Error")
-//                    dialogosClaseNoEncontrada ++
-//                }
-//
-//            }
-//        }
-//        RetoGrupoCinco.mSocket.on("joined") { args ->
-//
-//            if(dialogos<1) {
-//                if (MapsActivity.isMapCreated == false) {
-//                    if (user != null) {
-//                        val intento =
-//                            Intent(this, MapsActivity::class.java).putExtra("user", user)
-//                        startActivity(intento)
-//                        finish()
-//                        dialogos++
-//                    }
-//                }
-//            }
-//
-//        }
-
     }
-
-
 }

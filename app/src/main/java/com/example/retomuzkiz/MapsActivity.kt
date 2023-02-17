@@ -141,11 +141,12 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
             if(!navegacion){
                 binding.vista.visibility = View.VISIBLE
+                if(!currentUser.isProfessor){
+                    findViewById<View>(R.id.m_Profesor).isClickable = false
+                    findViewById<View>(R.id.m_Profesor).alpha = 0.2F
+                }
                 navegacion = true
                 if(!iniciarguiado){
-                    //val free = findViewById<View>(R.id.m_Modolibre)
-                    //free.isEnabled = false
-                    //free.isEnabled = false
                     iniciarguiado = true
                 }
             }else{
