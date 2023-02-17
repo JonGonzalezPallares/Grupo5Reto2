@@ -119,7 +119,10 @@ class ProgressActivity : AppCompatActivity() {
         binding.txtGamesCompleted.text = "$echos/7"
         if(echos == 7 || echos == 8){
             binding.txtGamesCompleted.text = "$echos/7!!"
-            binding.txtGamesCompleted.startAnimation(AnimationUtils.loadAnimation(this, R.anim.shine_complete))
+            if(echos == 7){
+                binding.txtGamesCompleted.startAnimation(AnimationUtils.loadAnimation(this, R.anim.shine_complete))
+            }
+
         }
 
 
