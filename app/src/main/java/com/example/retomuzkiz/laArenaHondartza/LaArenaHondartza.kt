@@ -2,18 +2,20 @@ package com.example.retomuzkiz.laArenaHondartza
 
 import android.app.Activity
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.retomuzkiz.funcionesExtension.desordeno
 import android.widget.*
 import com.example.retomuzkiz.*
+import com.example.retomuzkiz.Laberinto.ActivityLaberinto
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityLaArenaHondartzaBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class LaArenaHondartza : Activity() {
-
+    lateinit var mediaPlay: MediaPlayer
 
     //______________________________________________________________________________________________
     // variables para los componentes de la vista
@@ -239,9 +241,22 @@ class LaArenaHondartza : Activity() {
 
     //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
     override fun onPause() {
+
         super.onPause()
+        mediaPlay!!.stop()
+        mediaPlay!!.release()
+        //musica("sanjuan",false,this)
         if(cambio){
             finish()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mediaPlay = MediaPlayer.create(this,com.example.retomuzkiz.R.raw.un_dos_tres_quatro)
+        mediaPlay.isLooping = true
+        mediaPlay.start()
+
+        //musica("sanjuan",true,this)
     }
 }

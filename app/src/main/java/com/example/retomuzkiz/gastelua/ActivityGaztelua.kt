@@ -6,6 +6,7 @@ import android.content.ClipDescription
 import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Point
+import android.media.MediaPlayer
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,6 +21,7 @@ import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityGazteluaBinding
 
 class ActivityGaztelua : AppCompatActivity() {
+    lateinit var mediaPlay: MediaPlayer
     private lateinit var Imagen : ImageView
     lateinit var binding: ActivityGazteluaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -154,5 +156,24 @@ class ActivityGaztelua : AppCompatActivity() {
         override fun onDrawShadow(canvas: Canvas) {
             v.draw(canvas)
         }
+    }
+    override fun onPause() {
+
+        super.onPause()
+        mediaPlay!!.stop()
+        mediaPlay!!.release()
+        //musica("sanjuan",false,this)
+        if(cambio){
+            finish()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mediaPlay = MediaPlayer.create(this,com.example.retomuzkiz.R.raw.intergalactic_odyssey)
+        mediaPlay.isLooping = true
+        mediaPlay.start()
+
+        //musica("sanjuan",true,this)
     }
 }
