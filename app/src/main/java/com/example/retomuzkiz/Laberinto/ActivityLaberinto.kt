@@ -37,7 +37,7 @@ class ActivityLaberinto : AppCompatActivity() {
         setContentView(binding.root)
 
         fin = 0
-        //musica("sanjuan",true,this)
+
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
         //Para ponerla animacion a las llamas
@@ -56,7 +56,7 @@ class ActivityLaberinto : AppCompatActivity() {
         super.onPause()
         mediaPlay!!.stop()
         mediaPlay!!.release()
-        //musica("sanjuan",false,this)
+
         if(cambio){
             finish()
         }
@@ -67,8 +67,7 @@ class ActivityLaberinto : AppCompatActivity() {
         mediaPlay = MediaPlayer.create(this,com.example.retomuzkiz.R.raw.epic_sax_mp3)
         mediaPlay.isLooping = true
         mediaPlay.start()
-
-        //musica("sanjuan",true,this)
+        
     }
 }
 

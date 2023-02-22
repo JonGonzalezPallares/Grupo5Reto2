@@ -26,7 +26,7 @@ class SopaLetrasActivity : AppCompatActivity() {
         super.onPause()
         mediaPlay!!.stop()
         mediaPlay!!.release()
-        //musica("sanjuan",false,this)
+
         if(ActivityLaberinto.cambio){
             finish()
         }
@@ -38,6 +38,6 @@ class SopaLetrasActivity : AppCompatActivity() {
         mediaPlay.isLooping = true
         mediaPlay.start()
 
-        //musica("sanjuan",true,this)
+
     }
 }

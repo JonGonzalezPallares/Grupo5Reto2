@@ -116,7 +116,7 @@ class ActivityGaztelua : AppCompatActivity() {
 
             DragEvent.ACTION_DROP ->{
                 if(event.clipDescription.label == receiverView.tag as String) {
-                    //receiverView.setAlpha(255)
+
                     receiverView.alpha = 255F
 
                     Imagen.visibility = View.INVISIBLE
@@ -162,7 +162,7 @@ class ActivityGaztelua : AppCompatActivity() {
         super.onPause()
         mediaPlay!!.stop()
         mediaPlay!!.release()
-        //musica("sanjuan",false,this)
+
         if(cambio){
             finish()
         }
@@ -174,6 +174,6 @@ class ActivityGaztelua : AppCompatActivity() {
         mediaPlay.isLooping = true
         mediaPlay.start()
 
-        //musica("sanjuan",true,this)
+
     }
 }

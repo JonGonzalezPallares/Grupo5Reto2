@@ -45,7 +45,7 @@ class ItsaslurJuego : AppCompatActivity() {
         RetoGrupoCinco.mSocket.on("game finish") { args ->
             runOnUiThread(){
                 finish()
-                // com.example.retomuzkiz.showDialog(this, "El profesor ha abandonado el juego", "Intentalo de nuevo mas tarde")
+
             }
         }
         //Para borrar la barra superior
@@ -91,10 +91,6 @@ class ItsaslurJuego : AppCompatActivity() {
                             finalizar(this,"itsaslur")
 
 
-//                            val intento = Intent(this, MsgVictoria::class.java)
-//                            intento.putExtra("imagen", "itsaslur")
-
-//                            startActivity(intento)
                         }
                     }
                 }else{
@@ -130,7 +126,7 @@ class ItsaslurJuego : AppCompatActivity() {
         super.onPause()
         mediaPlay!!.stop()
         mediaPlay!!.release()
-        //musica("sanjuan",false,this)
+
         if(cambio){
             finish()
         }
@@ -142,6 +138,6 @@ class ItsaslurJuego : AppCompatActivity() {
         mediaPlay.isLooping = true
         mediaPlay.start()
 
-        //musica("sanjuan",true,this)
+
     }
 }

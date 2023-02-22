@@ -60,7 +60,7 @@ class JuegodemarActivity : AppCompatActivity() {
         //Cargamos la primera imagen de fondo
         binding.imgMar.background = AppCompatResources.getDrawable(this, R.drawable.martran1)
 
-       // respuestasBien.add("Tranquilo")
+
 
         binding.color.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fondonegro))
         binding.imgBinoculares.startAnimation(AnimationUtils.loadAnimation(this, R.anim.binoculares))
@@ -89,8 +89,7 @@ class JuegodemarActivity : AppCompatActivity() {
                         duration = 750 // La animación dura 1 segundo
                         interpolator = LinearInterpolator() // Utiliza un interpolador lineal para darle
 
-                    }     //binding.imgIncorrect.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_out))
-                    //binding.imgIncorrect.visibility = View.GONE
+                    }
                 }.start()
 
 
@@ -123,8 +122,7 @@ class JuegodemarActivity : AppCompatActivity() {
                             setDuration(750) // La animación dura 1 segundo
                             setInterpolator(LinearInterpolator()) // Utiliza un interpolador lineal para darle
 
-                        }     //binding.imgIncorrect.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_out))
-                        //binding.imgIncorrect.visibility = View.GONE
+                        }
                     }.start()
                     respuestas.removeLast()
 
@@ -151,12 +149,12 @@ class JuegodemarActivity : AppCompatActivity() {
         binding.imgMar.background = AppCompatResources.getDrawable(this, maresTipos[pos])
 
         //Despues de cargar la imagen borramos ese elemento de la lista
-        //maresTipos.removeAt(random)
 
-        //respuestasBien.add(respuestasMares[random])
+
+
 
         //Despues de guardar la respuesta correcta, borramos ese elemento
-        //respuestasMares.removeAt(random)
+
     }
 
     //Funcion para comprobar las respuestas
@@ -172,7 +170,7 @@ class JuegodemarActivity : AppCompatActivity() {
             }
         return false
         }
-        //Toast.makeText(this, "Has acertado $correctas fotos", Toast.LENGTH_SHORT).show()
+
 
 
 
@@ -182,7 +180,7 @@ class JuegodemarActivity : AppCompatActivity() {
         super.onPause()
         mediaPlay!!.stop()
         mediaPlay!!.release()
-        //musica("sanjuan",false,this)
+
         if(cambio){
             finish()
         }
@@ -194,6 +192,6 @@ class JuegodemarActivity : AppCompatActivity() {
         mediaPlay.isLooping = true
         mediaPlay.start()
 
-        //musica("sanjuan",true,this)
+
     }
 }

@@ -139,7 +139,7 @@ class LaArenaHondartza : Activity() {
             {
                 primero = null
                 bloqueo = false
-                //Toast.makeText(this, "Matched!", Toast.LENGTH_SHORT).show()
+
                 aciertos++
                 if (aciertos == respuestas.size)
                 {
@@ -191,11 +191,7 @@ class LaArenaHondartza : Activity() {
         cambio = true
         finalizar(this,"arena")
 
-//        intento.putExtra("imagen", "arena")
-//        cambio = true
-//        startActivity(intento)
-        /*binding.btnCompletado.setOnClickListener{
-        }*/
+
     }
 
     //______________________________________________________________________________________________
@@ -245,7 +241,7 @@ class LaArenaHondartza : Activity() {
         super.onPause()
         mediaPlay!!.stop()
         mediaPlay!!.release()
-        //musica("sanjuan",false,this)
+
         if(cambio){
             finish()
         }
@@ -257,6 +253,6 @@ class LaArenaHondartza : Activity() {
         mediaPlay.isLooping = true
         mediaPlay.start()
 
-        //musica("sanjuan",true,this)
+
     }
 }
