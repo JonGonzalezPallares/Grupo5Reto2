@@ -16,7 +16,6 @@ class GameViewModel : ViewModel() {
         "Errota",
         "Salazar",
         "Tresnak"
-
     )
 
     private val gridSize = 12
@@ -37,7 +36,7 @@ class GameViewModel : ViewModel() {
         val wordSearch = WordSearch()
         grid = wordSearch.createGrid(size, words)
         usedWordsList = wordSearch.usedWordsList
-        usedWordString = "Encuentra las palabras: "
+        usedWordString = "Encuentra las palabras:"
         wordSearch.usedWordsList.forEachIndexed { index, word ->
             usedWordString += if (index == 0) {
                 " ${word.word}"
@@ -46,5 +45,4 @@ class GameViewModel : ViewModel() {
             }
         }
     }
-
 }

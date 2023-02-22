@@ -184,4 +184,14 @@
         . Buena suerte!</string>
     <string name="Ayudalab">En este juego deberas llegar al final del laberinto arrastrando el cubo rojo hasta el final         . Buena suerte!</string>
     <string name="puntos">Puntos obtenidos:</string>
+    <string name="difModo">Explicación de los diferentes modos</string>
+    <string name="libreInfo">Al seleccionar esta opcion, podemos acceder a cualquier juego sin necesidad de tener que ir hasta la ubicacion.</string>
+    <string name="guiadoInfo">Al seleccionar esta opcion, tendremos que estar a menos de 50 metros para poder jugar a los diferentes juegos.</string>
+    <string name="profesorInfo">Esta opcion solamente esta disponible si estamos logueados como profesor/a. Podremos ver soluciones de diferentes juegos.</string>
+    <string name="puntuacionModo">Explicación de las puntuaciones</string>
+    <string name="progresoInfo">Al pulsar se abrirá una ventana en la que podemos visualizar: la puntuacion que tenemos, la cantidad de juegos que hemos completados y las diferentes insignias que hayamos obtenido al completarlos.</string>
+    <string name="rankingInfo">Al pulsar se abrirá una ventana en la que podemos visualizar: un ranking del top tres mejores jugadores de la clase. Para subir en el ranking se debera conseguir mejores puntuaciones mediante los juegos.</string>
+    <string name="otrosModo">Explicación de los otros modos</string>
+    <string name="nosotrosInfo">Al seleccionar esta opción nos llevará a una ventana con una pequeña explicación sobre qué trata esta aplicación y los integrantes de los dos diferentes grupos (los que lo han llevado a cabo y los que tubieron la idea).</string>
+    <string name="logoutInfo">Al pulsar el botón se cerrara la sesión actual y nos devolvera a la pantalla inicial para poder cambiar de perfil.</string>
 </resources>

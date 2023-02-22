@@ -183,4 +183,14 @@ Joko honetan ondo erantzun behar duzu itsasoa bare dagoen edo
 Joko honetan labirintoaren amaierara iritsi behar duzu kubo gorria amaieraraino arrastatuz
         . Zorte on!</string>
     <string name="puntos">Puntuazioa:</string>
+    <string name="difModo">Modu ezberdinen azalpena</string>
+    <string name="libreInfo">Aukera hau hautatuz gero, edozein jokora sar gaitezke kokapenera joan beharrik gabe.</string>
+    <string name="guiadoInfo">Aukera hau hautatzean, 50 metrora egon beharko dugu joko ezberdinetara jokatu ahal izateko.</string>
+    <string name="profesorInfo">Aukera hau irakasle gisa saioa hasi badugu bakarrik dago erabilgarri. Jolas ezberdinen irtenbideak ikusteko aukera izango dugu.</string>
+    <string name="puntuacionModo">Puntuazioen azalpena</string>
+    <string name="progresoInfo">Sakatuz gero leiho bat irekiko da eta bertan ikusi ahal izango dugu: daukagun puntuazioa, egin ditugun partidak eta hauek osatuz lortu ditugun txapa desberdinak.</string>
+    <string name="rankingInfo">Sakatzean leiho bat irekiko da eta bertan ikus dezakegu: klaseko hiru jokalari onenen sailkapena. Sailkapenera igotzeko puntuazio hobeak lortu behar dituzu jokoen bidez.</string>
+    <string name="otrosModo">Beste moduen azalpena</string>
+    <string name="nosotrosInfo">Aukera hau hautatuz gero, leiho batera eramango gaitu aplikazio hau zertan datzan eta bi talde ezberdinetako kideei (egindakoei eta ideia izan dutenei) azalpen labur batekin.</string>
+    <string name="logoutInfo">Botoia sakatzean uneko saioa itxiko da eta hasierako pantailara itzuliko gaitu profilak aldatu ahal izateko.</string>
 </resources>

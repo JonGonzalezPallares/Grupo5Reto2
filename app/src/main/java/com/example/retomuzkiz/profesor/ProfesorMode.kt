@@ -124,14 +124,4 @@ class ProfesorMode : AppCompatActivity() {
             binding.btnItsasRes.isEnabled = true
         }
     }
-
-    //Funcion de extension que se encarga de cambiar entre los diferentes fragmentos
-    private fun Fragment.cambiarF(id: Int) {
-        //Creamos una variable para la transaccion
-        val transicion = supportFragmentManager.beginTransaction().setReorderingAllowed(true)
-        //Le añadimos a que contenedor tiene que hacer referencia, y le pasamos el fragmento que queremos cargar
-        transicion.replace(id, this)
-        //Hacemos el cambio
-        transicion.commit()
-    }
 }

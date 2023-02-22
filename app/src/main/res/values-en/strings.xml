@@ -178,4 +178,14 @@
     <string name="final_score">Tu puntuación final es</string>
     <string name="Ayudalab">In this game you must reach the end of the maze by dragging the red cube to the end. Good luck!</string>
     <string name="puntos">Obtained score:</string>
+    <string name="difModo">Explanation of the different modes</string>
+    <string name="libreInfo">By selecting this option, we can access any game without having to go to the location.</string>
+    <string name="guiadoInfo">By selecting this option, we will have to be within 50 meters to be able to play the different games.</string>
+    <string name="profesorInfo">This option is only available if we are logged in as a teacher. We will be able to see solutions of different games.</string>
+    <string name="puntuacionModo">Explanation of scores</string>
+    <string name="progresoInfo">Pressing will open a window in which we can view: the score we have, the number of games we have completed and the different badges we have obtained by completing them.</string>
+    <string name="rankingInfo">Pressing this it will open a window in which we can view: a ranking of the top three best players in the class. To climb the ranking you should get better scores through the games.</string>
+    <string name="otrosModo">Explanation of the other modes</string>
+    <string name="nosotrosInfo">Selecting this option will take us to a window with a brief explanation of what this application is about and the members of the two different groups (those who have carried it out and those who had the idea).</string>
+    <string name="logoutInfo">Pressing the button will close the current session and return us to the initial screen to be able to change profiles.</string>
 </resources>

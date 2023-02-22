@@ -179,15 +179,17 @@ class GridView @JvmOverloads constructor(
      */
     private fun wordFound(stringSelected: String): Boolean {
         for (word in usedWordsList) {
-            if (!word.found && word.word == stringSelected) {
-                word.found = true
-                _score.value = _score.value?.plus(1) ?: 1
-                Toast.makeText(context, (R.string.frase_correcta), Toast.LENGTH_SHORT).show()
-                return true
-            }
-            if (word.found && word.word == stringSelected) {
-                Toast.makeText(context, (R.string.frase_repetida), Toast.LENGTH_SHORT).show()
-                return false
+            if(word.word == stringSelected){
+                return if (!word.found) {
+                    word.found = true
+                    _score.value = _score.value?.plus(1) ?: 1
+                    Toast.makeText(context, (R.string.frase_correcta), Toast.LENGTH_SHORT).show()
+                    true
+                }else{
+                    Toast.makeText(context, (R.string.frase_repetida), Toast.LENGTH_SHORT).show()
+                    false
+                }
+
             }
         }
         Toast.makeText(context, (R.string.frase_incorrecta), Toast.LENGTH_SHORT).show()

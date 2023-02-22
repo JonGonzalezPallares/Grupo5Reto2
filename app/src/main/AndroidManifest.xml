@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -18,7 +18,14 @@
         android:roundIcon="@drawable/bandera_muskiz_circulo"
         android:supportsRtl="true"
         android:theme="@style/Theme.RetoMuzkiz"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".informacion.MasInformacion"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".Laberinto.ExplicacionLaberinto"
             android:exported="false">
@@ -34,13 +41,6 @@
                 android:value="" />
         </activity>
         <activity
-        android:name=".ProgressActivity"
-        android:exported="false" >
-        <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
-    </activity>
-        <activity
             android:name=".YourProgress.ProgressActivity"
             android:exported="false">
             <meta-data
@@ -50,7 +50,7 @@
         <activity
             android:name=".LoadingActivity"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -63,42 +63,42 @@
         </activity> <!-- Activity sobre nosotros -->
         <activity
             android:name=".Nosotros"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity> <!-- Activity para crear la clase del socket -->
         <activity
             android:name=".ActivityCrearClaseSocket"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity> <!-- Activity modo profesor -->
         <activity
             android:name=".profesor.ProfesorMode"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity> <!-- Activity mensaje victoria -->
         <activity
             android:name=".clases.MsgVictoria"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity> <!-- Activity de Itsaslur Ibilbidea -->
         <activity
             android:name=".itsaslurIbilbidea.ItsaslurJuego"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".itsaslurIbilbidea.PantallaEspera"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -106,7 +106,7 @@
         <activity
             android:name=".ponekakoermita.JuegodemarActivity"
             android:exported="false"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -114,21 +114,21 @@
         <activity
             android:name=".ponekakoermita.MarineroActivity"
             android:exported="false"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity> <!-- Activity laberinto -->
         <activity
             android:name=".Laberinto.ActivityLaberinto"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity> <!-- Activity del castillo -->
         <activity
             android:name=".gastelua.ExplicacionActivity"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -136,35 +136,35 @@
         <activity
             android:name=".gastelua.ActivityGaztelua"
             android:exported="false"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity> <!-- Activity del mapa -->
         <activity
             android:name=".MapsActivity"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity> <!-- Activity del puente romano -->
         <activity
             android:name=".puenteRomano.PuenteRomano"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".puenteRomano.PuenteJuego"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity> <!-- Activity de la Arena -->
         <activity
             android:name=".laArenaHondartza.IntroActivity"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -172,7 +172,7 @@
         <activity
             android:name=".laArenaHondartza.LaArenaHondartza"
             android:exported="false"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -180,7 +180,7 @@
         <activity
             android:name=".burdinola.main.SopaLetrasActivity"
             android:exported="false"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -188,7 +188,7 @@
         <activity
             android:name=".burdinola.BurdinolaVideo"
             android:exported="false"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -212,7 +212,7 @@
             android:name=".MenuPrincipal"
             android:exported="true"
             android:label="@string/title_activity_maps"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
