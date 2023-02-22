@@ -52,24 +52,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
        var isJoined = false
         var isMapCreated = false
     }
-    /*object SITESNAMES {
-        lateinit var POBENA_FUNDICION:String
-        var POBENA_FUNDICION_IMG_1 = "fundicion_pobela"
-        lateinit var POBENA_HERMITA :String
-        var POBENA_HERMITA_IMG = "irudiapobena1"
-        lateinit var ITSASLUR_IBILBIDEA : String
-        var ITSASLUR_IBILBIDEA_IMG_1 = "itsaslur1_2"
-        //var ITSASLUR_IBILBIDEA_IMG_2 = "itsaslur2_1"
-        //var ITSASLUR_IBILBIDEA_IMG_3 = "itsaslur2_2"
-        lateinit var PLAYA_LA_ARENA :String
-        var PLAYA_LA_ARENA_IMG = "irudia_arena_2"
-        lateinit var PUENTE_ROMANO :String
-        var PUENTE_ROMANO_IMG = "puentecompleto"
-        lateinit var CASTILLO_MUNATONES :String
-        var CASTILLO_MUNATONES_IMG = "irudia_pobena_1"
-        lateinit var NOCHE_SAN_JUAN :String
-        var NOCHE_SAN_JUAN_IMG = "irudia_san_juan"
-    }*/
 
     private val keyPathsBehavior by lazy {
         BottomSheetBehavior.from(binding.bottomSheetKeyPaths.root).apply {
@@ -142,8 +124,9 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             if(!navegacion){
                 binding.vista.visibility = View.VISIBLE
                 if(!currentUser.isProfessor){
-                    findViewById<View>(R.id.m_Profesor).isClickable = false
-                    findViewById<View>(R.id.m_Profesor).alpha = 0.2F
+                    val profesor = findViewById<View>(R.id.m_Profesor)
+                    profesor.isClickable = false
+                    profesor.alpha = 0.2F
                 }
                 navegacion = true
                 if(!iniciarguiado){
@@ -384,7 +367,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         val actividades = db.gameDao.getAllGames()
 
         if (listabooleanos[numero]) {
-            actividades.forEach(){ game ->
+            actividades.forEach { game ->
                 if(marker.title.equals(game.gameName)){
                     binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = RvDesplegableAdapter(
                         game, user,this
