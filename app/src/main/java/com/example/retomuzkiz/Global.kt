@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.drawable.Drawable
+import android.media.MediaPlayer
 import android.os.SystemClock
 import android.view.LayoutInflater
 import android.widget.Button
@@ -335,4 +336,48 @@ fun setUser(user: Usuario) {
             currentProgress = RetoGrupoCinco.progressDb.getUserProgress(currentUser!!.userId)
 
         }
+}
+
+
+
+fun musica(juego:String,estado:Boolean, context: Context){
+    lateinit var mediaPlay: MediaPlayer
+    when(juego){
+        "castillo"->{
+
+        }
+        "playa"->{
+
+        }
+        "fundicion"->{
+
+
+        }
+        "sanjuan"->{
+            mediaPlay = MediaPlayer.create(context,com.example.retomuzkiz.R.raw.epic_sax_mp3)
+            if(estado){
+
+                mediaPlay.isLooping = true
+                mediaPlay.start()
+
+
+            }
+            else{
+                //mediaPlay = MediaPlayer.create(context,com.example.retomuzkiz.R.raw.epic_sax_mp3)
+                mediaPlay.stop()
+                mediaPlay.release()
+
+            }
+        }
+        "puente"->{
+
+        }
+        "ermita"->{
+
+        }
+        "paseo"->{
+
+        }
+    }
+
 }
