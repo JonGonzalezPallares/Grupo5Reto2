@@ -1,19 +1,21 @@
 package com.example.retomuzkiz.itsaslurIbilbidea
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import com.example.retomuzkiz.*
+import com.example.retomuzkiz.Laberinto.ActivityLaberinto
 import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityItsaslurJuegoBinding
 import com.example.retomuzkiz.room.Usuario
 
 class ItsaslurJuego : AppCompatActivity() {
-
+    lateinit var mediaPlay: MediaPlayer
     private lateinit var usuario: Usuario
     private lateinit var binding : ActivityItsaslurJuegoBinding
     //Variable para saber en que lista de botones estamos
@@ -124,9 +126,22 @@ class ItsaslurJuego : AppCompatActivity() {
     }
     //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
     override fun onPause() {
+
         super.onPause()
+        mediaPlay!!.stop()
+        mediaPlay!!.release()
+        //musica("sanjuan",false,this)
         if(cambio){
             finish()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mediaPlay = MediaPlayer.create(this,com.example.retomuzkiz.R.raw.mall)
+        mediaPlay.isLooping = true
+        mediaPlay.start()
+
+        //musica("sanjuan",true,this)
     }
 }
