@@ -114,6 +114,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
         binding.vista.setOnClickListener{
             binding.vista.visibility = View.GONE
+            binding.informacion.visibility = View.GONE
+            binding.fbPosicion.visibility = View.VISIBLE
             navegacion=false
             menuanimation()
         }
@@ -121,7 +123,12 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         binding.Navegation.setOnClickListener{
 
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
-            if(!navegacion){
+            if(navegacion){
+                binding.vista.visibility = View.GONE
+                binding.informacion.visibility = View.GONE
+                binding.fbPosicion.visibility = View.VISIBLE
+                navegacion = false
+            }else{
                 binding.vista.visibility = View.VISIBLE
                 if(!currentUser.isProfessor){
                     val profesor = findViewById<View>(R.id.m_Profesor)
@@ -132,9 +139,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 if(!iniciarguiado){
                     iniciarguiado = true
                 }
-            }else{
-                binding.vista.visibility = View.GONE
-                navegacion = false
+                binding.fbPosicion.visibility = View.GONE
+                binding.informacion.visibility = View.VISIBLE
             }
             menuanimation()
         }
