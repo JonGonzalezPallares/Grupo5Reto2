@@ -273,7 +273,7 @@ class PuenteJuego : AppCompatActivity() {
         super.onPause()
         mediaPlay!!.stop()
         mediaPlay!!.release()
-        //musica("sanjuan",false,this)
+
         if(cambio){
             finish()
         }
@@ -285,6 +285,6 @@ class PuenteJuego : AppCompatActivity() {
         mediaPlay.isLooping = true
         mediaPlay.start()
 
-        //musica("sanjuan",true,this)
+
     }
 }

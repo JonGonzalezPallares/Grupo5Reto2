@@ -52,24 +52,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
        var isJoined = false
         var isMapCreated = false
     }
-    /*object SITESNAMES {
-        lateinit var POBENA_FUNDICION:String
-        var POBENA_FUNDICION_IMG_1 = "fundicion_pobela"
-        lateinit var POBENA_HERMITA :String
-        var POBENA_HERMITA_IMG = "irudiapobena1"
-        lateinit var ITSASLUR_IBILBIDEA : String
-        var ITSASLUR_IBILBIDEA_IMG_1 = "itsaslur1_2"
-        //var ITSASLUR_IBILBIDEA_IMG_2 = "itsaslur2_1"
-        //var ITSASLUR_IBILBIDEA_IMG_3 = "itsaslur2_2"
-        lateinit var PLAYA_LA_ARENA :String
-        var PLAYA_LA_ARENA_IMG = "irudia_arena_2"
-        lateinit var PUENTE_ROMANO :String
-        var PUENTE_ROMANO_IMG = "puentecompleto"
-        lateinit var CASTILLO_MUNATONES :String
-        var CASTILLO_MUNATONES_IMG = "irudia_pobena_1"
-        lateinit var NOCHE_SAN_JUAN :String
-        var NOCHE_SAN_JUAN_IMG = "irudia_san_juan"
-    }*/
+
 
     private val keyPathsBehavior by lazy {
         BottomSheetBehavior.from(binding.bottomSheetKeyPaths.root).apply {
@@ -99,7 +82,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         MapsActivity.isMapCreated = false
     }
     override fun onCreate(savedInstanceState: Bundle?) {
-       // user = intent.getParcelableExtra("user")!!
+
 
         this.supportActionBar!!
             .hide()
@@ -113,7 +96,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //Cambiado Para Pruebas
-        //guideMode()
+
         freeMode()
         val navView : NavigationView = binding.lateralmenu
         //menu lateral
@@ -194,7 +177,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
                 //Para ir al ranking
                 R.id.m_ranking -> {
-                    //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
+
                     val intento = Intent(this, RankingActivity::class.java)
                     startActivity(intento)
                     true
@@ -202,7 +185,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
                 //Para ir al ranking
                 R.id.m_Puntuacion -> {
-                    //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
+
                     val intento = Intent(this, ProgressActivity::class.java)
                     startActivity(intento)
                     true
@@ -367,12 +350,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             }
         }
 
-        /*binding.map.setOnClickListener{
-            if (navegacion){
-                navegacion=false
-                menuanimation()
-            }
-        }*/
+
     }
 
     //Acciones que ocurren cada vez que pulsamos a un marcador

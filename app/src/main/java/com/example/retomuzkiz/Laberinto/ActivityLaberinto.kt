@@ -67,7 +67,7 @@ class ActivityLaberinto : AppCompatActivity() {
         mediaPlay = MediaPlayer.create(this,com.example.retomuzkiz.R.raw.epic_sax_mp3)
         mediaPlay.isLooping = true
         mediaPlay.start()
-        
+
     }
 }
 

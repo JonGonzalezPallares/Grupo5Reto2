@@ -139,28 +139,11 @@ class ServicioGeolocalizacion : Service() {
                 // https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html#NotificationCompat.Builder(android.content.Context)
                 ""
             }
-        /*val notificationBuilder = NotificationCompat.Builder(applicationContext, channelId )
-        val notification = notificationBuilder.setOngoing(true)
-            .setSmallIcon(R.drawable.ic_input_add)
-            .setCategory(Notification.CATEGORY_SERVICE)
-            .build()
-        startForeground(101, notification)*/
+
     }
 
     //-------------------------------------------------------------------------------
-    /*@RequiresApi(Build.VERSION_CODES.O)
-    private fun createNotificationChannel(): String{
-        val channelId = "mi_servicio"
-        val channelName = "Mi servicio en segundo plano"
-        val chan = NotificationChannel(channelId,
-            channelName, NotificationManager.IMPORTANCE_HIGH)
-        chan.lightColor = Color.BLUE
-        chan.importance = NotificationManager.IMPORTANCE_NONE
-        chan.lockscreenVisibility = Notification.VISIBILITY_PRIVATE
-        val service = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        service.createNotificationChannel(chan)
-        return channelId
-    }*/
+
 
     @OptIn(DelicateCoroutinesApi::class)
     @SuppressLint("MissingPermission")

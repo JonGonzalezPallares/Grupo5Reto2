@@ -54,21 +54,10 @@ class RankingActivity : AppCompatActivity() {
             Jugador(secondUser["userName"].toString(),secondUser["userClass"].toString(),secondUser["totPuntuation"].toString()),
             Jugador(thirdUser["userName"].toString(),thirdUser["userClass"].toString(),thirdUser["totPuntuation"].toString())
         )
-        //var listaTop = topThree as Array<JSONObject>
 
      runOnUiThread {
          binding.rvRanking.adapter = RVRankingAdapter(listaJugadores,this)
-//            binding.txtFirstName.text = "${bestUser["userName"]}"
-//            binding.txtFirstClass.text = "${bestUser["userClass"]}"
-//            binding.txtFirstPuntuation.text = "${bestUser["totPuntuation"]}"
-//
-//            binding.txtSecondName.text = "${secondUser["userName"]}"
-//            binding.txtSecondClass.text = "${secondUser["userClass"]}"
-//            binding.txtSecondPuntuation.text = "${secondUser["totPuntuation"]}"
-//
-//            binding.txtThirdName.text = "${thirdUser["userName"]}"
-//            binding.txtThirdClass.text = "${thirdUser["userClass"]}"
-//            binding.txtThirdPuntuation.text = "${thirdUser["totPuntuation"]}"
+
         }
     }
 
