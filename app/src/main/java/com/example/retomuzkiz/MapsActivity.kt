@@ -52,6 +52,24 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
        var isJoined = false
         var isMapCreated = false
     }
+    /*object SITESNAMES {
+        lateinit var POBENA_FUNDICION:String
+        var POBENA_FUNDICION_IMG_1 = "fundicion_pobela"
+        lateinit var POBENA_HERMITA :String
+        var POBENA_HERMITA_IMG = "irudiapobena1"
+        lateinit var ITSASLUR_IBILBIDEA : String
+        var ITSASLUR_IBILBIDEA_IMG_1 = "itsaslur1_2"
+        //var ITSASLUR_IBILBIDEA_IMG_2 = "itsaslur2_1"
+        //var ITSASLUR_IBILBIDEA_IMG_3 = "itsaslur2_2"
+        lateinit var PLAYA_LA_ARENA :String
+        var PLAYA_LA_ARENA_IMG = "irudia_arena_2"
+        lateinit var PUENTE_ROMANO :String
+        var PUENTE_ROMANO_IMG = "puentecompleto"
+        lateinit var CASTILLO_MUNATONES :String
+        var CASTILLO_MUNATONES_IMG = "irudia_pobena_1"
+        lateinit var NOCHE_SAN_JUAN :String
+        var NOCHE_SAN_JUAN_IMG = "irudia_san_juan"
+    }*/
 
     private val keyPathsBehavior by lazy {
         BottomSheetBehavior.from(binding.bottomSheetKeyPaths.root).apply {
@@ -78,12 +96,13 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         super.onDestroy()
         RetoGrupoCinco.mSocket.disconnect()
         stopService(Servicio)
-        isMapCreated = false
+        MapsActivity.isMapCreated = false
     }
     override fun onCreate(savedInstanceState: Bundle?) {
-        //user = intent.getParcelableExtra("user")!!
+       // user = intent.getParcelableExtra("user")!!
 
-        this.supportActionBar!!.hide()
+        this.supportActionBar!!
+            .hide()
 
         /* Inicializacion variablees */
         isMapCreated = true
@@ -123,9 +142,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             if(!navegacion){
                 binding.vista.visibility = View.VISIBLE
                 if(!currentUser.isProfessor){
-                    val profesor = findViewById<View>(R.id.m_Profesor)
-                    profesor.isClickable = false
-                    profesor.alpha = 0.2F
+                    findViewById<View>(R.id.m_Profesor).isClickable = false
+                    findViewById<View>(R.id.m_Profesor).alpha = 0.2F
                 }
                 navegacion = true
                 if(!iniciarguiado){
@@ -348,22 +366,32 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 }
             }
         }
+
+        /*binding.map.setOnClickListener{
+            if (navegacion){
+                navegacion=false
+                menuanimation()
+            }
+        }*/
     }
 
     //Acciones que ocurren cada vez que pulsamos a un marcador
     override fun onMarkerClick(marker: Marker): Boolean {
         val numero = marker.snippet.toString().toInt()
+
         val user: Usuario = currentUser!!
+
         val actividades = db.gameDao.getAllGames()
 
         if (listabooleanos[numero]) {
-            actividades.forEach { game ->
+            actividades.forEach(){ game ->
                 if(marker.title.equals(game.gameName)){
                     binding.bottomSheetKeyPaths.keyPathsRecyclerView.adapter = RvDesplegableAdapter(
                         game, user,this
                     )
                 }
             }
+
             keyPathsBehavior.state = BottomSheetBehavior.STATE_EXPANDED
         } else {
             //esto pasa si estas legos de la ubicacion
@@ -374,6 +402,9 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             )
                 .show()
         }
+
+
+
         /*
         Devolvemos "false" para indicar que no queremos consumir el evento, indicandole asi que queremos
         que ocurra el evento por defecto. Que la camara se mueva al marcador seleccionado y lo centra
@@ -397,6 +428,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
     override fun onResume() {
         super.onResume()
+
         val intentFilter = IntentFilter("broadcast")
         LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver, intentFilter)
     }
@@ -408,7 +440,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         IntentFilter("broadcast")
         LocalBroadcastManager.getInstance(this).unregisterReceiver(broadcastReceiver)
     }
-
     override fun onBackPressed(){
         if (keyPathsBehavior.state != BottomSheetBehavior.STATE_HIDDEN){
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
@@ -416,7 +447,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             finish()
         }
     }
-
     //______________________________________________________________________________________________
     // funcion del modo libre
     private fun freeMode() {
@@ -424,27 +454,21 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         // fundcion de espra de 3s antes de cambiar las variables
         Handler(Looper.myLooper() ?: return).postDelayed({
            if (listabooleanos.isEmpty()){
-               for(i in 0 until listabooleanos.size){
-                   listabooleanos.add(true)
-               }
-               /*listabooleanos.add(true)
                listabooleanos.add(true)
                listabooleanos.add(true)
                listabooleanos.add(true)
                listabooleanos.add(true)
                listabooleanos.add(true)
-               listabooleanos.add(true)*/
+               listabooleanos.add(true)
+               listabooleanos.add(true)
            }else{
-               for(i in 0 until listabooleanos.size){
-                   listabooleanos[i] = true
-               }
-               /*listabooleanos[0] = true
+               listabooleanos[0] = true
                listabooleanos[1] = true
                listabooleanos[2] = true
                listabooleanos[3] = true
                listabooleanos[4] = true
                listabooleanos[5] = true
-               listabooleanos[6] = true*/
+               listabooleanos[6] = true
            }
         iniciarguiado = false
         }, 3000)
@@ -453,17 +477,15 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
     //______________________________________________________________________________________________
     //funcion del modo guiado
     private fun guideMode() {
+
         // crear el servicio de geolocalizacion
-        for(i in 0 until listabooleanos.size){
-            listabooleanos.add(false)
-        }
-        /*listabooleanos.add(false)
         listabooleanos.add(false)
         listabooleanos.add(false)
         listabooleanos.add(false)
         listabooleanos.add(false)
         listabooleanos.add(false)
-        listabooleanos.add(false)*/
+        listabooleanos.add(false)
+        listabooleanos.add(false)
 
         Servicio.putExtra("boleano0", booleano0)
         Servicio.putExtra("boleano1", booleano1)
