@@ -1,6 +1,7 @@
 package com.example.retomuzkiz.laArenaHondartza
 
 import android.app.Activity
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
