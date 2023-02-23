@@ -27,7 +27,6 @@ class MsgVictoria : AppCompatActivity() {
             "mar" -> imagenFondo=R.drawable.martran2
             "castillo" -> imagenFondo=R.drawable.castillo
             "fundicion" -> imagenFondo=R.drawable.fundicion_pobela
-
         }
 
         val puntuacion = puntuacionJuegos()
@@ -39,8 +38,5 @@ class MsgVictoria : AppCompatActivity() {
         binding.btnIrMapa.setOnClickListener {
             finish()
         }
-    }
-
-    private fun juegoCompletado(s: String) {
     }
 }
