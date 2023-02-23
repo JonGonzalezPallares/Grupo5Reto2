@@ -46,12 +46,7 @@ class GameFragment(applicationContext: Context) : Fragment() {
                 fin ++
                 finalizar(contexto,"fundicion")
                 requireActivity().finish()
-//                val currentScore = binding.letterGrid.score.value ?: 0
-//                val newFragment = ScoreFragment()
-//                val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
-//                fragmentTransaction?.replace(R.id.fragment_prencipal, newFragment)
-//                fragmentTransaction?.addToBackStack(null)
-//                fragmentTransaction?.commit()
+
             }
         }
         return binding.root
