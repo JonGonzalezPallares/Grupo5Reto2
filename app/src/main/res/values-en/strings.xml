@@ -188,4 +188,6 @@
     <string name="otrosModo">Explanation of the other modes</string>
     <string name="nosotrosInfo">Selecting this option will take us to a window with a brief explanation of what this application is about and the members of the two different groups (those who have carried it out and those who had the idea).</string>
     <string name="logoutInfo">Pressing the button will close the current session and return us to the initial screen to be able to change profiles.</string>
+    <string name="noClase">Insert a valid class.</string>
+    <string name="fallo">Wrong</string>
 </resources>

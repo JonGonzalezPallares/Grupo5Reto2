@@ -193,4 +193,6 @@ Joko honetan labirintoaren amaierara iritsi behar duzu kubo gorria amaieraraino 
     <string name="otrosModo">Beste moduen azalpena</string>
     <string name="nosotrosInfo">Aukera hau hautatuz gero, leiho batera eramango gaitu aplikazio hau zertan datzan eta bi talde ezberdinetako kideei (egindakoei eta ideia izan dutenei) azalpen labur batekin.</string>
     <string name="logoutInfo">Botoia sakatzean uneko saioa itxiko da eta hasierako pantailara itzuliko gaitu profilak aldatu ahal izateko.</string>
+    <string name="noClase">Sartu baliozko gela bat.</string>
+    <string name="fallo">Akatza</string>
 </resources>
