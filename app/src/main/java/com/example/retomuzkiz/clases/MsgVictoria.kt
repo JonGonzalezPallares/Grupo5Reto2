@@ -40,7 +40,5 @@ class MsgVictoria : AppCompatActivity() {
             finish()
         }
     }
-
-    private fun juegoCompletado(s: String) {
-    }
+    
 }
