@@ -10,6 +10,8 @@ import com.example.retomuzkiz.*
 import com.example.retomuzkiz.databinding.ActivityLaArenaHondartzaBinding
 
 class LaArenaHondartza : Activity() {
+    lateinit var mediaPlay: MediaPlayer
+
     //______________________________________________________________________________________________
     // variables para los componentes de la vista
     private var tableroRespuestas = arrayOfNulls<ImageButton>(5)
@@ -206,9 +208,22 @@ class LaArenaHondartza : Activity() {
 
     //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
     override fun onPause() {
+
         super.onPause()
+        mediaPlay!!.stop()
+        mediaPlay!!.release()
+
         if(cambio){
             finish()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mediaPlay = MediaPlayer.create(this,com.example.retomuzkiz.R.raw.un_dos_tres_quatro)
+        mediaPlay.isLooping = true
+        mediaPlay.start()
+
+
     }
 }

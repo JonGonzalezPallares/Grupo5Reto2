@@ -196,7 +196,7 @@ class MenuPrincipal : AppCompatActivity() {
     }
 
     //______________________________________________________________________________________________
-    // guarda en sharedFreferences nombre pasado en parametro y llama la activity maps
+
     private fun listar(user: Usuario) {
         setUser(user)
         RetoGrupoCinco.mSocket.connect()

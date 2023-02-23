@@ -5,6 +5,7 @@ import android.content.ClipData
 import android.content.ClipDescription
 import android.graphics.Canvas
 import android.graphics.Point
+import android.media.MediaPlayer
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,6 +18,7 @@ import com.example.retomuzkiz.Laberinto.ActivityLaberinto.Companion.cambio
 import com.example.retomuzkiz.databinding.ActivityGazteluaBinding
 
 class ActivityGaztelua : AppCompatActivity() {
+    lateinit var mediaPlay: MediaPlayer
     private lateinit var Imagen : ImageView
     lateinit var binding: ActivityGazteluaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -112,7 +114,7 @@ class ActivityGaztelua : AppCompatActivity() {
 
             DragEvent.ACTION_DROP ->{
                 if(event.clipDescription.label == receiverView.tag as String) {
-                    //receiverView.setAlpha(255)
+
                     receiverView.alpha = 255F
 
                     Imagen.visibility = View.INVISIBLE
@@ -153,5 +155,24 @@ class ActivityGaztelua : AppCompatActivity() {
         override fun onDrawShadow(canvas: Canvas) {
             v.draw(canvas)
         }
+    }
+    override fun onPause() {
+
+        super.onPause()
+        mediaPlay!!.stop()
+        mediaPlay!!.release()
+
+        if(cambio){
+            finish()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mediaPlay = MediaPlayer.create(this,com.example.retomuzkiz.R.raw.intergalactic_odyssey)
+        mediaPlay.isLooping = true
+        mediaPlay.start()
+
+
     }
 }

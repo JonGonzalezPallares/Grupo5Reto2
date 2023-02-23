@@ -1,6 +1,7 @@
 package com.example.retomuzkiz.puenteRomano
 
 import android.graphics.Typeface
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -15,7 +16,7 @@ import com.example.retomuzkiz.funcionesExtension.eliminarNegrita
 
 
 class PuenteJuego : AppCompatActivity() {
-
+    lateinit var mediaPlay: MediaPlayer
     private lateinit var binding: ActivityPuenteJuegoBinding
     //Grupo de preguntas en el que estamos
     private var cantidad = 1
@@ -268,9 +269,22 @@ class PuenteJuego : AppCompatActivity() {
 
     //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
     override fun onPause() {
+
         super.onPause()
+        mediaPlay!!.stop()
+        mediaPlay!!.release()
+
         if(cambio){
             finish()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mediaPlay = MediaPlayer.create(this,com.example.retomuzkiz.R.raw.mall)
+        mediaPlay.isLooping = true
+        mediaPlay.start()
+
+
     }
 }
