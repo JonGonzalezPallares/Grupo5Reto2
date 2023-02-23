@@ -10,13 +10,10 @@ import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityProgresBinding
 import com.example.retomuzkiz.room.TypeConverter
 import com.example.retomuzkiz.usuario.currentUser
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-
 
 lateinit var binding :ActivityProgresBinding
 lateinit var shine: View
-
 
 class ProgressActivity : AppCompatActivity() {
     var echos = 0
@@ -28,14 +25,15 @@ class ProgressActivity : AppCompatActivity() {
         setContentView(binding.root)
         shine = binding.txtGamesCompleted
         this.supportActionBar!!.hide()
-        binding.Navegation.setOnClickListener(){
-           if(binding.fragmentContainerView2.visibility == 0){
-               binding.fragmentContainerView2.visibility = View.GONE
-           }else{
-               binding.fragmentContainerView2.visibility = View.VISIBLE
+        binding.Navegation.setOnClickListener {
+            if(binding.fragmentContainerView2.visibility == 0){
+                binding.fragmentContainerView2.visibility = View.GONE
+            }else{
+                binding.fragmentContainerView2.visibility = View.VISIBLE
 
-           }
+            }
         }
+
         cargarImagenes()
         binding.txtTotPuntuacion.text = "${progress.totalPuntuation}"
         binding.txtGamesCompleted.setOnClickListener{
@@ -46,10 +44,8 @@ class ProgressActivity : AppCompatActivity() {
 
     }
 
-
-
     private fun cargarImagenes() {
-        var gamesDone = TypeConverter.stringToSomeObjectList(progress.gamesDone)
+        val gamesDone = TypeConverter.stringToSomeObjectList(progress.gamesDone)
 
         gamesDone.forEach() {  game->
             if(game.done) {
@@ -60,7 +56,6 @@ class ProgressActivity : AppCompatActivity() {
                             this,
                             R.drawable.irudia_san_juan_1
                         )
-
                     )
 
                     2 ->binding.imgItsaslur.setImageDrawable(
@@ -68,24 +63,20 @@ class ProgressActivity : AppCompatActivity() {
                             this,
                             R.drawable.itsaslur2_2
                         )
-
                     )
 
-
                     3->binding.imgPuenteRomano.setImageDrawable(
-                            ContextCompat.getDrawable(
-                                this,
-                                R.drawable.puentecompleto
-                            )
-
+                        ContextCompat.getDrawable(
+                            this,
+                            R.drawable.puentecompleto
                         )
+                    )
 
                     4->binding.imgFundicion.setImageDrawable(
                         ContextCompat.getDrawable(
                             this,
                             R.drawable.fundicion_pobela
                         )
-
                     )
 
                     5-> binding.imgLaArena.setImageDrawable(
@@ -93,7 +84,6 @@ class ProgressActivity : AppCompatActivity() {
                             this,
                             R.drawable.irudia_arena_2
                         )
-
                     )
 
                     6-> binding.imgHermita.setImageDrawable(
@@ -101,7 +91,6 @@ class ProgressActivity : AppCompatActivity() {
                             this,
                             R.drawable.hermita_pobena_1
                         )
-
                     )
 
                     7-> binding.imgCastillo.setImageDrawable(
@@ -109,24 +98,17 @@ class ProgressActivity : AppCompatActivity() {
                             this,
                             R.drawable.castillo
                         )
-
                     )
-
                 }
             }
-
         }
+
         binding.txtGamesCompleted.text = "$echos/7"
         if(echos == 7 || echos == 8){
             binding.txtGamesCompleted.text = "$echos/7!!"
             if(echos == 7){
                 binding.txtGamesCompleted.startAnimation(AnimationUtils.loadAnimation(this, R.anim.shine_complete))
             }
-
         }
-
-
-
     }
-
 }

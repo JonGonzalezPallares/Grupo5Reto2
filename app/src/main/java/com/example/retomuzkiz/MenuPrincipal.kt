@@ -1,7 +1,12 @@
 package com.example.retomuzkiz
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.SpannableStringBuilder
+import android.text.style.ForegroundColorSpan
 import androidx.appcompat.app.AppCompatActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
@@ -29,10 +34,9 @@ class MenuPrincipal : AppCompatActivity() {
         this.supportActionBar!!.hide()
 
         RetoGrupoCinco.mSocket.on("not existing room"){ args ->
-            println(args[0])
             runOnUiThread {
                 if(dialogosClaseNoEncontrada<1){
-                    showDialog(this, "No se ha encontrado ninguna clase", "Error")
+                    showDialog(this, resources.getString(R.string.noClase), resources.getString(R.string.fallo))
                     dialogosClaseNoEncontrada++
                 }else{
                     val intento = Intent(this, MapsActivity::class.java)
@@ -58,6 +62,10 @@ class MenuPrincipal : AppCompatActivity() {
         dialogos = 0
         dialogosClaseNoEncontrada= 0
 
+        /*binding.textView61!!.isAllCaps = false
+        val spannable = SpannableStringBuilder("Hola")
+        spannable.setSpan(ForegroundColorSpan(Color.RED), 0, 2, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
+        binding.textView61!!.text = spannable*/
         binding.txtProfesor.setOnClickListener {
             startActivity(Intent(this,ActivityCrearClaseSocket::class.java))
         }
@@ -93,10 +101,6 @@ class MenuPrincipal : AppCompatActivity() {
 
             RetoGrupoCinco.mSocket.emit("join server",binding.txtUsuario.text.toString())
             RetoGrupoCinco.mSocket.emit("join room",binding.txtClase.text.toString())
-        }
-
-        RetoGrupoCinco.mSocket.on("Salas") { args ->
-            println(args[0])
         }
     }
 
@@ -184,12 +188,6 @@ class MenuPrincipal : AppCompatActivity() {
         dialogos = 0
         val listaUsuarios = db.usuarioDao.getAllUsers()
 
-        if(listaUsuarios.isNotEmpty()) {
-            for (element in listaUsuarios) {
-                println(element.toString())
-            }
-        }
-
         adaptadorUsuario = UsuariosAdapter(listaUsuarios){
             listar(it)
         }
@@ -214,10 +212,6 @@ class MenuPrincipal : AppCompatActivity() {
             val intento = Intent(this, MapsActivity::class.java)
             startActivity(intento)
             //finish()
-        }
-
-        RetoGrupoCinco.mSocket.on("Salas"){ args ->
-            println(args[0])
         }
     }
 }

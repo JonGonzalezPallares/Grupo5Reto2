@@ -195,4 +195,9 @@ Joko honetan labirintoaren amaierara iritsi behar duzu kubo gorria amaieraraino 
     <string name="logoutInfo">Botoia sakatzean uneko saioa itxiko da eta hasierako pantailara itzuliko gaitu profilak aldatu ahal izateko.</string>
     <string name="noClase">Sartu baliozko gela bat.</string>
     <string name="fallo">Akatza</string>
+    <string name="txtEspera">Azalpena ematen amaitzean, egin klik jarraitu botoian jokoa hasteko.</string>
+    <string name="puntuacion">Puntuazioa:</string>
+    <string name="nombreClase">Gelaren izena</string>
+    <string name="nombreProfesor">Irakaslearen izena</string>
+    <string name="nombreContrasenia">Pasahitza</string>
 </resources>

@@ -26,7 +26,8 @@
                 android:text="@string/Bienvenido"
                 android:textAlignment="center"
                 android:textColor="@color/botones"
-                android:textSize="26sp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtExplicacion1"
@@ -56,7 +57,7 @@
                 android:layout_height="61dp"
                 android:layout_gravity="center_horizontal"
                 android:ems="10"
-                android:hint="Nombre de la clase"
+                android:hint="@string/nombreClase"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -65,7 +66,7 @@
                 android:layout_height="57dp"
                 android:layout_gravity="center_horizontal"
                 android:ems="10"
-                android:hint="Nombre Profesor"
+                android:hint="@string/nombreProfesor"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -74,7 +75,7 @@
                 android:layout_height="59dp"
                 android:layout_gravity="center_horizontal"
                 android:ems="10"
-                android:hint="Contraseña"
+                android:hint="@string/nombreContrasenia"
                 android:inputType="textPassword" />
 
             <androidx.appcompat.widget.AppCompatButton

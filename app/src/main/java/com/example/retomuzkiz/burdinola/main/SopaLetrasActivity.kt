@@ -7,7 +7,6 @@ import com.example.retomuzkiz.Laberinto.ActivityLaberinto
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.burdinola.game.GameFragment
 
-
 class SopaLetrasActivity : AppCompatActivity() {
     lateinit var mediaPlay: MediaPlayer
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,12 +20,11 @@ class SopaLetrasActivity : AppCompatActivity() {
             .add(R.id.fragment_prencipal, exampleFragment)
             .commit()
     }
-    override fun onPause() {
 
+    override fun onPause() {
         super.onPause()
-        mediaPlay!!.stop()
-        mediaPlay!!.release()
-        //musica("sanjuan",false,this)
+        mediaPlay.stop()
+        mediaPlay.release()
         if(ActivityLaberinto.cambio){
             finish()
         }
@@ -34,10 +32,8 @@ class SopaLetrasActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        mediaPlay = MediaPlayer.create(this,com.example.retomuzkiz.R.raw.nyan_cat)
+        mediaPlay = MediaPlayer.create(this, R.raw.nyan_cat)
         mediaPlay.isLooping = true
         mediaPlay.start()
-
-        //musica("sanjuan",true,this)
     }
 }

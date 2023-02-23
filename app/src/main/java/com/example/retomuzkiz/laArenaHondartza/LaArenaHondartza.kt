@@ -1,26 +1,20 @@
 package com.example.retomuzkiz.laArenaHondartza
 
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.retomuzkiz.funcionesExtension.desordeno
 import android.widget.*
 import com.example.retomuzkiz.*
-import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityLaArenaHondartzaBinding
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class LaArenaHondartza : Activity() {
-
-
     //______________________________________________________________________________________________
     // variables para los componentes de la vista
     private var tableroRespuestas = arrayOfNulls<ImageButton>(5)
     private var tableroPreguntas = arrayOfNulls<ImageButton>(5)
     private lateinit var binding: ActivityLaArenaHondartzaBinding
-
 
     //______________________________________________________________________________________________
     //imagenes
@@ -48,15 +42,12 @@ class LaArenaHondartza : Activity() {
         binding = ActivityLaArenaHondartzaBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btnayuda.setOnClickListener{
-
             dialogoAyudaJuegos("playa",this,layoutInflater)
-
-
         }
+
         startTimer()
         fin = 0
         init()
-
     }
 
     //______________________________________________________________________________________________
@@ -102,7 +93,7 @@ class LaArenaHondartza : Activity() {
     * si aciertos es igual a tamaño del array termina el juego
     * si no se encuentran en la misma posicion demora un segundo y setea las imagenes seleccionadas
     * como estaban
-    * */
+    */
     private fun comprobar(i: Int, pregunta: Boolean, imgb: ImageButton?) {
         if (primero == null)
         {
@@ -113,10 +104,7 @@ class LaArenaHondartza : Activity() {
                 primero!!.setImageResource(preguntas[arrayDesordenadoPreguntas[i]])
                 primero!!.isEnabled = false
                 numeroPrimero = arrayDesordenadoPreguntas[i]
-
-            }
-            else
-            {
+            } else {
                 primero = imgb
                 primero!!.scaleType = ImageView.ScaleType.CENTER_CROP
                 primero!!.setImageResource(respuestas[arrayDesordenadoRespuestas[i]])
@@ -124,28 +112,20 @@ class LaArenaHondartza : Activity() {
                 numeroPrimero = arrayDesordenadoRespuestas[i]
             }
 
-        }
-        else
-        {
-            when (pregunta)
-            {
+        } else {
+            when (pregunta) {
                 true -> setPregunta(i, imgb)
                 else -> setRespuesta(i, imgb)
             }
 
-            if (numeroPrimero == numeroSegundo)
-            {
+            if (numeroPrimero == numeroSegundo) {
                 primero = null
                 bloqueo = false
-                //Toast.makeText(this, "Matched!", Toast.LENGTH_SHORT).show()
                 aciertos++
-                if (aciertos == respuestas.size)
-                {
+                if (aciertos == respuestas.size) {
                     completarJuego()
                 }
-            }
-            else
-            {
+            } else {
                 Handler(Looper.myLooper()?:return).postDelayed({
                     primero!!.scaleType = ImageView.ScaleType.CENTER_CROP
                     primero!!.setImageResource(fondo)
@@ -161,8 +141,7 @@ class LaArenaHondartza : Activity() {
     }
 
     //______________________________________________________________________________________________
-    private fun setRespuesta(i: Int, imgb: ImageButton?)
-    {
+    private fun setRespuesta(i: Int, imgb: ImageButton?) {
         bloqueo = true
         imgb!!.scaleType = ImageView.ScaleType.CENTER_CROP
         imgb.setImageResource(respuestas[arrayDesordenadoRespuestas[i]])
@@ -171,8 +150,7 @@ class LaArenaHondartza : Activity() {
     }
 
     //______________________________________________________________________________________________
-    private fun setPregunta(i: Int, imgb: ImageButton?)
-    {
+    private fun setPregunta(i: Int, imgb: ImageButton?) {
         bloqueo = true
         imgb!!.scaleType = ImageView.ScaleType.CENTER_CROP
         imgb.setImageResource(preguntas[arrayDesordenadoPreguntas[i]])
@@ -182,23 +160,16 @@ class LaArenaHondartza : Activity() {
 
     //______________________________________________________________________________________________
     // al teminar el juego
-    private fun completarJuego(){
+    private fun completarJuego() {
         stopTimer()
         juegoAcabado(4)
         fin++
         cambio = true
         finalizar(this,"arena")
-
-//        intento.putExtra("imagen", "arena")
-//        cambio = true
-//        startActivity(intento)
-        /*binding.btnCompletado.setOnClickListener{
-        }*/
     }
 
     //______________________________________________________________________________________________
-    private fun init()
-    {
+    private fun init() {
         cargarTablero()
         cargarImagenes()
 
@@ -206,19 +177,16 @@ class LaArenaHondartza : Activity() {
         arrayDesordenadoPreguntas = preguntas.desordeno()
 
         // setea imagen a cada button en la posicion donde se encuentra
-        for (i in 0..4)
-        {
+        for (i in 0..4) {
             tableroRespuestas[i]!!.scaleType = ImageView.ScaleType.CENTER_CROP
             tableroPreguntas[i]!!.scaleType = ImageView.ScaleType.CENTER_CROP
             tableroRespuestas[i]!!.setImageResource(respuestas[arrayDesordenadoRespuestas[i]])
-
             tableroPreguntas[i]!!.setImageResource(preguntas[arrayDesordenadoPreguntas[i]])
-
         }
+
         // demora  medio segundo luego esconde las imagenes puestas a los buttones
-        Handler(Looper.myLooper()?:return).postDelayed({
-            for (i in 0..4)
-            {
+        Handler(Looper.myLooper()?:return).postDelayed( {
+            for (i in 0..4) {
                 tableroRespuestas[i]!!.scaleType = ImageView.ScaleType.CENTER_CROP
                 tableroPreguntas[i]!!.scaleType = ImageView.ScaleType.CENTER_CROP
                 tableroRespuestas[i]!!.setImageResource(fondo)
@@ -228,8 +196,7 @@ class LaArenaHondartza : Activity() {
         }, 4000)
 
         // al hacer  click sobre alguna foto llama a la funcion comprobar si no esta bloqueado
-        for (i in 0..4)
-        {
+        for (i in 0..4) {
             tableroPreguntas[i]!!.isEnabled = true
             tableroRespuestas[i]!!.isEnabled = true
             tableroRespuestas[i]!!.setOnClickListener { if (!bloqueo) comprobar(i, false, tableroRespuestas[i]) }

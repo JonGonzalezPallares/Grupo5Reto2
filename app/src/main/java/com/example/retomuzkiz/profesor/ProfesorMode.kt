@@ -3,7 +3,6 @@ package com.example.retomuzkiz.profesor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.retomuzkiz.CargandoDirections
@@ -32,7 +31,6 @@ class ProfesorMode : AppCompatActivity() {
 
         binding.btnPuenteRes.setOnClickListener {
             //Vamos desde el fragmento vacio, hasta el puente
-
             navController.navigate(CargandoDirections.cargatoPuente())
 
             //Cambiamos el valor para saber que estamos en el puente
@@ -43,7 +41,6 @@ class ProfesorMode : AppCompatActivity() {
 
         binding.btnItsasRes.setOnClickListener {
             //Vamos desde el fragmento vacio, hasta itsaslur
-
             navController.navigate(CargandoDirections.cargatoItsaslur())
 
             //Cambiamos el valor para saber que estamos en itsaslur
@@ -54,7 +51,6 @@ class ProfesorMode : AppCompatActivity() {
 
         binding.btnCastilloRes.setOnClickListener {
             //Vamos desde el fragmento vacio, hasta el castillo
-
             navController.navigate(CargandoDirections.cargatoCastillo())
 
             //Cambiamos el valor para saber que estamos en el castillo
@@ -65,7 +61,6 @@ class ProfesorMode : AppCompatActivity() {
 
         binding.btnHermitaRes.setOnClickListener {
             //Vamos desde el fragmento cargando, hasta la hermita
-
             navController.navigate(CargandoDirections.cargatoHermita())
 
             //Cambiamos el valor para saber que estamos en la hermita
@@ -86,7 +81,7 @@ class ProfesorMode : AppCompatActivity() {
     //Funcion para regresar al fragmento de cargando
     private fun regresar(navController: NavController) {
         //Segun con que texto venga
-        when(regresar){
+        when(regresar) {
             "Puente" -> {
                 navController.navigate(PuenteRespuestasDirections.regresoPuente())
             }

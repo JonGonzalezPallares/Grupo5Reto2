@@ -190,4 +190,9 @@
     <string name="logoutInfo">Pressing the button will close the current session and return us to the initial screen to be able to change profiles.</string>
     <string name="noClase">Insert a valid class.</string>
     <string name="fallo">Wrong</string>
+    <string name="txtEspera">When you finish giving the explanation, click on the continue button to start the game.</string>
+    <string name="puntuacion">Score:</string>
+    <string name="nombreClase">Class name</string>
+    <string name="nombreProfesor">Teacher\'s name</string>
+    <string name="nombreContrasenia">Password</string>
 </resources>

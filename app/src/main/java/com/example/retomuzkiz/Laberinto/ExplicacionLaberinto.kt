@@ -6,10 +6,6 @@ import android.os.Bundle
 import android.view.View
 import com.example.retomuzkiz.databinding.ActivityExplicacionLaberintoBinding
 import com.example.retomuzkiz.funcionesExtension.cambiarF
-import com.example.retomuzkiz.puenteRomano.PuenteJuego
-import com.example.retomuzkiz.puenteRomano.PuenteRomano_preg1
-import com.example.retomuzkiz.puenteRomano.PuenteRomano_preg2
-import com.example.retomuzkiz.puenteRomano.PuenteRomano_preg3
 
 class ExplicacionLaberinto : AppCompatActivity() {
 
@@ -21,7 +17,6 @@ class ExplicacionLaberinto : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityExplicacionLaberintoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         //Para borrar la barra superior
         this.supportActionBar!!.hide()

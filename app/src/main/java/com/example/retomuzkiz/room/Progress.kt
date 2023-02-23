@@ -3,8 +3,7 @@ package com.example.retomuzkiz.room
 import androidx.room.*
 import androidx.room.ForeignKey.CASCADE
 
-@Entity (foreignKeys = [ForeignKey(entity = Usuario::class, parentColumns = arrayOf("userId"), childColumns = arrayOf("user"), onDelete = CASCADE)],
-    )
+@Entity (foreignKeys = [ForeignKey(entity = Usuario::class, parentColumns = arrayOf("userId"), childColumns = arrayOf("user"), onDelete = CASCADE)])
 data class Progress(
     @PrimaryKey
     var user : String,

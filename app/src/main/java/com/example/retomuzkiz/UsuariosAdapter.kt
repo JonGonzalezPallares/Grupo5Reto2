@@ -33,15 +33,13 @@ class UsuariosAdapter(private var lista:List<Usuario>,private val escuchador:(Us
         holder.itemView.setOnClickListener {
             escuchador(lista[position])
         }
-//        holder.itemView.setOnLongClickListener(){
-//
-//        }
     }
 
     //Devuelve la cantidad de elementos
     override fun getItemCount(): Int {
         return lista.size
     }
+
     /*
     Otra manera para hacerlo
     override fun getItemCount(): Int = lista.size
@@ -52,7 +50,6 @@ class UsuariosAdapter(private var lista:List<Usuario>,private val escuchador:(Us
 
         fun link (usuario: Usuario){
             binding.txtNombre.text = usuario.name
-
         }
     }
 }

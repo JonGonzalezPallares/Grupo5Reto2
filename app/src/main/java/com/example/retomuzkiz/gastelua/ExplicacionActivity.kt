@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.databinding.ActivityExplicacionBinding
-import com.example.retomuzkiz.itsaslurIbilbidea.ItsaslurJuego
 
 class ExplicacionActivity : AppCompatActivity() {
     private lateinit var binding : ActivityExplicacionBinding
@@ -21,7 +20,5 @@ class ExplicacionActivity : AppCompatActivity() {
             startActivity(intento)
             this.finish()
         }
-
-
     }
 }

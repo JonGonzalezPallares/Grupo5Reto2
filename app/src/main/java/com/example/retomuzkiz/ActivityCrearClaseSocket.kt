@@ -1,12 +1,8 @@
 package com.example.retomuzkiz
 
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings.Global
-import androidx.annotation.RequiresApi
-import androidx.room.util.StringUtil
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.database
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.progressDb
@@ -24,7 +20,6 @@ class ActivityCrearClaseSocket : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         this.supportActionBar!!.hide()
-
 
         binding.btnCrearClase.setOnClickListener() {
             if (comprobarCampos()) {
@@ -44,10 +39,6 @@ class ActivityCrearClaseSocket : AppCompatActivity() {
                 RetoGrupoCinco.mSocket.emit("join server", user.name)
                 RetoGrupoCinco.mSocket.emit("create room", binding.txtNombreClase.text.toString())
                 RetoGrupoCinco.mSocket.emit("join room", binding.txtNombreClase.text.toString())
-
-                RetoGrupoCinco.mSocket.on("Salas"){ args ->
-                    println(args[0])
-                }
                 showDialog(this,"","Bienvenido!")
                 startActivity(Intent(this, MapsActivity::class.java).putExtra("user", user))
                 setUser(user)
@@ -57,34 +48,29 @@ class ActivityCrearClaseSocket : AppCompatActivity() {
                     " Algo no fue como debía. Recuerde rellenar todos los campos y proporcionar una contraseña válida",
                     "Error")
             }
-
         }
-        //
     }
 
     private fun comprobarCampos(): Boolean {
-        var res: Boolean = false
-       var clases =  RetoGrupoCinco. userDb.getAllUsers()
-        clases.forEach(
-            {
-                if(!binding.txtNombreClase.text.toString().equals(it.userClass)){
-                    if (binding.txtNombreProfesor.text.toString().isNotEmpty() && binding.txtNombreClase.text.toString().isNotEmpty() )
-                    {
-                        if (binding.editTextTextPassword.text.toString().contentEquals("1234")) {
-                            res = true
-                        }
+        var res = false
+       var clases = userDb.getAllUsers()
+        clases.forEach {
+            if (!binding.txtNombreClase.text.toString().equals(it.userClass)) {
+                if (binding.txtNombreProfesor.text.toString().isNotEmpty() && binding.txtNombreClase.text.toString().isNotEmpty()) {
+                    if (binding.editTextTextPassword.text.toString().contentEquals("1234")) {
+                        res = true
                     }
-                }else{
-                    return false
                 }
-
+            } else {
+                return false
             }
-        )
+        }
+
         return res
     }
 
     private fun cargarJuegos(user: Usuario) : List<Game> {
-        var gameList = listOf<Game>(
+        var gameList = listOf(
             Game(getString(R.string.gameSanJuan),1, 0,false,
                 RetoGrupoCinco.SITESNAMES.NOCHE_SAN_JUAN_IMG),
             Game(getString(R.string.gameItsaslurIbilbidea), 2,0,false,

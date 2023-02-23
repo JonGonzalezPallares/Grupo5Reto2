@@ -1,4 +1,5 @@
 package com.example.retomuzkiz.room
+
 import android.os.Parcelable
 import androidx.room.*
 import kotlinx.parcelize.Parcelize
@@ -7,7 +8,7 @@ import kotlinx.parcelize.Parcelize
     indices = [Index(
         value = arrayOf("userId"),
         unique = true
-        )])
+    )])
 
 @Parcelize
 data class Usuario(

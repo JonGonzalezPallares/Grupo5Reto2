@@ -7,6 +7,7 @@ fun IntArray.desordeno(): ArrayList<Int> {
     for (i in 0 until this.size){
         resultado.add(i % this.size)
     }
+
     resultado.shuffle()
     return resultado
 }

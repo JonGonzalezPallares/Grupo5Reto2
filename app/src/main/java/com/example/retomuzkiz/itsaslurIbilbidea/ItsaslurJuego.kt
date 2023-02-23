@@ -1,19 +1,16 @@
 package com.example.retomuzkiz.itsaslurIbilbidea
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import com.example.retomuzkiz.*
-import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityItsaslurJuegoBinding
 import com.example.retomuzkiz.room.Usuario
 
 class ItsaslurJuego : AppCompatActivity() {
-
     private lateinit var usuario: Usuario
     private lateinit var binding : ActivityItsaslurJuegoBinding
     //Variable para saber en que lista de botones estamos
@@ -38,14 +35,15 @@ class ItsaslurJuego : AppCompatActivity() {
         binding.btnayuda.setOnClickListener {
             dialogoAyudaJuegos("paseo",this,layoutInflater)
         }
+
         usuario = intent.getParcelableExtra("user")!!
         fin = 0
         RetoGrupoCinco.mSocket.on("game finish") { args ->
-            runOnUiThread(){
+            runOnUiThread {
                 finish()
-                // com.example.retomuzkiz.showDialog(this, "El profesor ha abandonado el juego", "Intentalo de nuevo mas tarde")
             }
         }
+
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
 
@@ -66,10 +64,8 @@ class ItsaslurJuego : AppCompatActivity() {
     }
 
     /*
-
     Añadir una animacion de una ventana de color rojo al fallar y otra de color verde al acertar
     Si se falla saldra una X en medio, si se hacierta saldra un tik
-
      */
 
     //Funcion para comprobar que se hayan acertado las imagenes seleccionadas
@@ -87,12 +83,6 @@ class ItsaslurJuego : AppCompatActivity() {
                             fin++
                             cambio = true
                             finalizar(this,"itsaslur")
-
-
-//                            val intento = Intent(this, MsgVictoria::class.java)
-//                            intento.putExtra("imagen", "itsaslur")
-
-//                            startActivity(intento)
                         }
                     }
                 }else{
@@ -115,13 +105,12 @@ class ItsaslurJuego : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         if(usuario.isProfessor){
-           // RetoGrupoCinco.mSocket.emit("user leave", usuario.userClass)
             RetoGrupoCinco.mSocket.emit("game finished", usuario.userClass)
         }else{
             RetoGrupoCinco.mSocket.emit("user leave", usuario.userClass)
-
         }
     }
+
     //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
     override fun onPause() {
         super.onPause()

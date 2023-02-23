@@ -3,20 +3,17 @@ package com.example.retomuzkiz.gastelua
 import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipDescription
-import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Point
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings.Global
 import android.view.DragEvent
 import android.view.View
 import android.widget.ImageView
 import androidx.core.view.isVisible
 import com.example.retomuzkiz.*
 import com.example.retomuzkiz.Laberinto.ActivityLaberinto.Companion.cambio
-import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityGazteluaBinding
 
 class ActivityGaztelua : AppCompatActivity() {
@@ -31,49 +28,49 @@ class ActivityGaztelua : AppCompatActivity() {
         //Para borrar la barra superior
         this.supportActionBar!!.hide()
 
-        //crear los listeners
-        binding.imgarribaizq.setOnLongClickListener(longClickListener)
-        binding.imgarribamed.setOnLongClickListener(longClickListener)
-        binding.imgarribader.setOnLongClickListener(longClickListener)
-        binding.imgcentroizq.setOnLongClickListener(longClickListener)
-        binding.imgcentromed.setOnLongClickListener(longClickListener)
-        binding.imgcentroder.setOnLongClickListener(longClickListener)
-        binding.imgabajoizq.setOnLongClickListener(longClickListener)
-        binding.imgabajomed.setOnLongClickListener(longClickListener)
-        binding.imgabajoder.setOnLongClickListener(longClickListener)
+        //Creamos una lista para guardar las imagenes respuesta
+        val imagenesRes = listOf(
+            binding.imgarribaizq,
+            binding.imgarribamed,
+            binding.imgarribader,
+            binding.imgcentroizq,
+            binding.imgcentromed,
+            binding.imgcentroder,
+            binding.imgabajoizq,
+            binding.imgabajomed,
+            binding.imgabajoder
+        )
 
-        binding.imagenarribaizq.setOnDragListener(dragListener)
-        binding.imagenarribamed.setOnDragListener(dragListener)
-        binding.imagenarribader.setOnDragListener(dragListener)
-        binding.imagenmedioizq.setOnDragListener(dragListener)
-        binding.imagenmediomed.setOnDragListener(dragListener)
-        binding.imagenmedioder.setOnDragListener(dragListener)
-        binding.imagenabajoizq.setOnDragListener(dragListener)
-        binding.imagenabajomed.setOnDragListener(dragListener)
-        binding.imagenabajoder.setOnDragListener(dragListener)
-
-        //poner invisibles las imagenes del resultado
-
-
-        binding.imagenarribaizq.alpha = 0F
-        binding.imagenarribamed.alpha = 0F
-        binding.imagenarribader.alpha = 0F
-        binding.imagenmedioizq.alpha = 0F
-        binding.imagenmediomed.alpha = 0F
-        binding.imagenmedioder.alpha = 0F
-        binding.imagenabajoizq.alpha = 0F
-        binding.imagenabajomed.alpha = 0F
-        binding.imagenabajoder.alpha = 0F
-
-        binding.btnayuda?.setOnClickListener{
-
-            dialogoAyudaJuegos("castillo",this,layoutInflater)
-
-
+        imagenesRes.forEach {
+            //Añadimos el listener
+            it.setOnLongClickListener(longClickListener)
         }
 
+        //Creamos una lista para guardar las imagenes que arrastramos
+        val imagenesAr = listOf(
+            binding.imagenarribaizq,
+            binding.imagenarribamed,
+            binding.imagenarribader,
+            binding.imagenmedioizq,
+            binding.imagenmediomed,
+            binding.imagenmedioder,
+            binding.imagenabajoizq,
+            binding.imagenabajomed,
+            binding.imagenabajoder
+        )
 
+        imagenesAr.forEach {
+            //Añadimos el listener correspondiente
+            it.setOnDragListener(dragListener)
+            //Los hacemos invisibles
+            it.alpha = 0F
+        }
+
+        binding.btnayuda.setOnClickListener{
+            dialogoAyudaJuegos("castillo",this,layoutInflater)
+        }
     }
+
     //funcion del long listener de arrastrar
     private val longClickListener = View.OnLongClickListener { v ->
         Imagen = v as ImageView
@@ -92,6 +89,7 @@ class ActivityGaztelua : AppCompatActivity() {
         }
         true
     }
+
     @SuppressLint("range")
     //funcion de deteccion de eventos al arrastrar
     private val dragListener = View.OnDragListener{ v, event ->
@@ -126,7 +124,6 @@ class ActivityGaztelua : AppCompatActivity() {
                         && !binding.imgabajoizq.isVisible && !binding.imgabajomed.isVisible
                         && !binding.imgabajoder.isVisible)
                     {
-
                         stopTimer()
                         juegoAcabado(6)
                         fin++
@@ -142,8 +139,10 @@ class ActivityGaztelua : AppCompatActivity() {
             }
             else -> {
                 false
-            }        }
+            }
+        }
     }
+
     //crear sombreado al arrastrar
     private class MyDragShadowBuilder(val v : View) : View.DragShadowBuilder(v){
         override fun onProvideShadowMetrics(size: Point, touch: Point) {

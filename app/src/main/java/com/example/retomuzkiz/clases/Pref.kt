@@ -1,7 +1,7 @@
 package com.example.retomuzkiz.clases
 
 import android.content.Context
-
+import android.content.SharedPreferences
 
 class Pref(val context: Context) {
     val SHARED_DATA = "MySharedPreferences"
@@ -9,7 +9,7 @@ class Pref(val context: Context) {
     val SHARED_ID = "id"
 
 
-    val storage = context.getSharedPreferences(SHARED_DATA,0)
+    private val storage: SharedPreferences = context.getSharedPreferences(SHARED_DATA,0)
 
     // Guarda usuario
     fun saveUser(usuario: String) {

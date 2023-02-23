@@ -12,7 +12,6 @@ import androidx.core.app.ActivityCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import android.os.Handler
 import android.os.Looper
-import android.service.notification.NotificationListenerService.Ranking
 import android.transition.Slide
 import android.transition.TransitionManager
 import android.view.Gravity
@@ -24,10 +23,8 @@ import androidx.core.view.isVisible
 import androidx.core.graphics.drawable.toDrawable
 import com.example.retomuzkiz.Ranking.RankingActivity
 import com.example.retomuzkiz.YourProgress.ProgressActivity
-
 import com.example.retomuzkiz.clases.OptionsMenuActivity
 import com.example.retomuzkiz.clases.RetoGrupoCinco
-
 import com.example.retomuzkiz.clases.RetoGrupoCinco.Companion.progressDb
 import com.example.retomuzkiz.databinding.ActivityMapsBinding
 import com.example.retomuzkiz.informacion.MasInformacion
@@ -50,7 +47,7 @@ import com.google.android.material.navigation.NavigationView
 
 class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickListener {
     companion object{
-       var isJoined = false
+        var isJoined = false
         var isMapCreated = false
     }
 
@@ -79,37 +76,36 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         super.onDestroy()
         RetoGrupoCinco.mSocket.disconnect()
         stopService(Servicio)
-        MapsActivity.isMapCreated = false
+        isMapCreated = false
     }
     override fun onCreate(savedInstanceState: Bundle?) {
-       // user = intent.getParcelableExtra("user")!!
-
-        this.supportActionBar!!
-            .hide()
+        this.supportActionBar!!.hide()
 
         /* Inicializacion variablees */
         isMapCreated = true
+        listabooleanos = arrayListOf()
+
         /*Inicio Servicio Geolacilazacion*/
         Servicio = Intent(applicationContext, ServicioGeolocalizacion::class.java)
-        listabooleanos = arrayListOf()
+
         super.onCreate(savedInstanceState)
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //Cambiado Para Pruebas
-        //guideMode()
         freeMode()
-        val navView : NavigationView = binding.lateralmenu
+
         //menu lateral
+        val navView : NavigationView = binding.lateralmenu
         val header = navView.getHeaderView(0)
         var totPuntuacion =  header.findViewById<TextView>(R.id.menuTxtPuntuacion)
-        println(progressDb.getUserProgress(currentUser!!.userId).totalPuntuation)
-        totPuntuacion.text = "Puntuacion: ${progressDb.getUserProgress(currentUser!!.userId).totalPuntuation.toString()}"
-
         var nombreUser =  header.findViewById<TextView>(R.id.menuTxtUser)
+        val textoPuntuacion = resources.getString(R.string.puntuacion)
+        totPuntuacion.text = "$textoPuntuacion ${progressDb.getUserProgress(currentUser!!.userId).totalPuntuation}"
+
         nombreUser.text = currentUser!!.name
-        RetoGrupoCinco.mSocket.on("gameCompleted"){ args->
-            runOnUiThread(){
-                totPuntuacion.text = "Puntuacion: ${progressDb.getUserProgress(currentUser!!.userId).totalPuntuation.toString()}"
+        RetoGrupoCinco.mSocket.on("gameCompleted"){
+            runOnUiThread {
+                totPuntuacion.text = "$textoPuntuacion ${progressDb.getUserProgress(currentUser!!.userId).totalPuntuation}"
             }
         }
 
@@ -127,7 +123,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         }
 
         binding.Navegation.setOnClickListener{
-
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
             if(navegacion){
                 binding.vista.visibility = View.GONE
@@ -154,7 +149,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         //______________________________________________________________________________________________
         //funciones del menu
         navView.setNavigationItemSelectedListener { menu ->
-
             when(menu.itemId) {
                 //Para activar el modo libre
                 R.id.m_Modolibre -> {
@@ -189,20 +183,17 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
                 //Para ir al ranking
                 R.id.m_ranking -> {
-                    //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
                     val intento = Intent(this, RankingActivity::class.java)
                     startActivity(intento)
                     true
                 }
 
-                //Para ir al ranking
+                //Para ir a nuestro progreso
                 R.id.m_Puntuacion -> {
-                    //Toast.makeText(this, " b", Toast.LENGTH_SHORT).show()
                     val intento = Intent(this, ProgressActivity::class.java)
                     startActivity(intento)
                     true
                 }
-
 
                 //Para ir a sobre nosotros
                 R.id.m_About -> {
@@ -211,8 +202,8 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                     true
                 }
 
-                //Para hacer logout
-                R.id.m_logout -> {
+                //Si pulsamos el boton de logout
+                else -> {
                     if (keyPathsBehavior.state != BottomSheetBehavior.STATE_HIDDEN){
                         keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
                     }else{
@@ -220,9 +211,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                     }
                     true
                 }
-
-                //Cosa que sino explota
-                else -> {false}
             }
         }
 
@@ -251,7 +239,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
      */
     override fun onMapReady(mMap: GoogleMap) {
 
-        //Creacion de los markadores
+        //Creacion de la latitud y longitud de donde van a ir los marcadores
         val puenteRomano = LatLng(43.316772, -3.119471)
         val pobalekoBurdinola = LatLng(43.296111, -3.126113)
         val pobenakoErmita = LatLng(43.346497, -3.121751)
@@ -260,7 +248,10 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         val muniatonesGaztelua = LatLng(43.323611, -3.112503)
         val sanJuan = LatLng(43.330278, -3.129061)
 
+        //Creamos una lista para las posiciones
         val posiciones = listOf(puenteRomano, pobalekoBurdinola, pobenakoErmita, hondartzaArena, ibilbideItsaslur, muniatonesGaztelua, sanJuan)
+
+        //Creamos una lista con los titulos de los marcadores
         val titulos = listOf(
             getString(R.string.gamePuenteRomano),
             getString(R.string.gameFundicion),
@@ -273,6 +264,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         var snippet = 0
         mMap.uiSettings.isZoomControlsEnabled = true
 
+        //Generamos los marcadores en un bucle para ser mas intuitivos
         posiciones.forEach {
             mMap.addMarker(
                 MarkerOptions()
@@ -324,6 +316,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             // for ActivityCompat#requestPermissions for more details.
             return
         }
+
         localizacion.lastLocation.addOnSuccessListener { location ->
             if (location != null) {
                 //Cogemos la posicion de donde hayamos clicado
@@ -361,21 +354,12 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                 }
             }
         }
-
-        /*binding.map.setOnClickListener{
-            if (navegacion){
-                navegacion=false
-                menuanimation()
-            }
-        }*/
     }
 
     //Acciones que ocurren cada vez que pulsamos a un marcador
     override fun onMarkerClick(marker: Marker): Boolean {
         val numero = marker.snippet.toString().toInt()
-
         val user: Usuario = currentUser!!
-
         val actividades = db.gameDao.getAllGames()
 
         if (listabooleanos[numero]) {
@@ -386,19 +370,15 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
                     )
                 }
             }
-
             keyPathsBehavior.state = BottomSheetBehavior.STATE_EXPANDED
         } else {
-            //esto pasa si estas legos de la ubicacion
+            //Esto pasa si estas legos de la ubicacion
             Toast.makeText(
                 this,
                 this.applicationContext.resources.getString(R.string.txtLejos),
                 Toast.LENGTH_LONG
-            )
-                .show()
+            ).show()
         }
-
-
 
         /*
         Devolvemos "false" para indicar que no queremos consumir el evento, indicandole asi que queremos
@@ -423,7 +403,6 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
 
     override fun onResume() {
         super.onResume()
-
         val intentFilter = IntentFilter("broadcast")
         LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver, intentFilter)
     }
@@ -435,6 +414,7 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
         IntentFilter("broadcast")
         LocalBroadcastManager.getInstance(this).unregisterReceiver(broadcastReceiver)
     }
+
     override fun onBackPressed(){
         if (keyPathsBehavior.state != BottomSheetBehavior.STATE_HIDDEN){
             keyPathsBehavior.state = BottomSheetBehavior.STATE_HIDDEN
@@ -442,30 +422,31 @@ class MapsActivity : OptionsMenuActivity(), OnMapReadyCallback, OnMarkerClickLis
             finish()
         }
     }
+
     //______________________________________________________________________________________________
     // funcion del modo libre
     private fun freeMode() {
         stopService(Servicio)
         // fundcion de espra de 3s antes de cambiar las variables
         Handler(Looper.myLooper() ?: return).postDelayed({
-           if (listabooleanos.isEmpty()){
-               listabooleanos.add(true)
-               listabooleanos.add(true)
-               listabooleanos.add(true)
-               listabooleanos.add(true)
-               listabooleanos.add(true)
-               listabooleanos.add(true)
-               listabooleanos.add(true)
-           }else{
-               listabooleanos[0] = true
-               listabooleanos[1] = true
-               listabooleanos[2] = true
-               listabooleanos[3] = true
-               listabooleanos[4] = true
-               listabooleanos[5] = true
-               listabooleanos[6] = true
-           }
-        iniciarguiado = false
+            if (listabooleanos.isEmpty()){
+                listabooleanos.add(true)
+                listabooleanos.add(true)
+                listabooleanos.add(true)
+                listabooleanos.add(true)
+                listabooleanos.add(true)
+                listabooleanos.add(true)
+                listabooleanos.add(true)
+            }else{
+                listabooleanos[0] = true
+                listabooleanos[1] = true
+                listabooleanos[2] = true
+                listabooleanos[3] = true
+                listabooleanos[4] = true
+                listabooleanos[5] = true
+                listabooleanos[6] = true
+            }
+            iniciarguiado = false
         }, 3000)
     }
 

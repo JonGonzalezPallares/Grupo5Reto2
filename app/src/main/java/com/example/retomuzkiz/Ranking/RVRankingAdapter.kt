@@ -58,9 +58,9 @@ class RVRankingAdapter(var lista:ArrayList<Jugador>, var context:Context) : Recy
                 ))
             binding.txtNombre.text = jugador.nombre
             binding.txtClass.text = jugador.clase
-
             binding.txtPuntuacion.text = jugador.puntuacion
         }
+
         fun linkThird(jugador: Jugador, context: Context) {
             binding.imageView.setImageDrawable(
                 ContextCompat.getDrawable(context,
@@ -68,25 +68,21 @@ class RVRankingAdapter(var lista:ArrayList<Jugador>, var context:Context) : Recy
                 ))
             binding.txtNombre.text = jugador.nombre
             binding.txtClass.text = jugador.clase
-
             binding.txtPuntuacion.text = jugador.puntuacion
         }
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-       if(position==0){
-           holder.linkFirst(lista[position],context)
-
-       }else if(position == 1){
-           holder.linkSecond(lista[position],context)
-
-       }
-       else if(position == 2){
-           holder.linkThird(lista[position],context)
-       }
+        when(position){
+            0 -> {
+                holder.linkFirst(lista[position],context)
+            }
+            1 -> {
+                holder.linkSecond(lista[position],context)
+            }
+            2 -> {
+                holder.linkThird(lista[position],context)
+            }
+        }
     }
-
-
 }
-
-

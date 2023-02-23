@@ -196,4 +196,9 @@
     <string name="logoutInfo">Al pulsar el botón se cerrara la sesión actual y nos devolvera a la pantalla inicial para poder cambiar de perfil.</string>
     <string name="noClase">Introduzca una clase válida.</string>
     <string name="fallo">Error</string>
+    <string name="txtEspera">Cuando acabes de dar la explicacion, pulsa en el boton continuar para iniciar el juego.</string>
+    <string name="puntuacion">Puntuación:</string>
+    <string name="nombreClase">Nombre de la clase</string>
+    <string name="nombreProfesor">Nombre del profesor/a</string>
+    <string name="nombreContrasenia">Contraseña</string>
 </resources>

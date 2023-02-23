@@ -33,13 +33,10 @@ class BurdinolaVideo : AppCompatActivity() {
         binding.burdinolavideo.canSeekForward()
         binding.burdinolavideo.start()
 
-
-
         binding.btnJuego.setOnClickListener{
             startActivity(Intent(this, SopaLetrasActivity::class.java))
             cambio=true
         }
-
     }
 
     //Al poner esta actividad en pausa (al abrir otra diferente), para que no pulsemos hacia atras y nos lleve a esta directamente
