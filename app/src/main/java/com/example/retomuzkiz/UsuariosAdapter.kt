@@ -33,9 +33,7 @@ class UsuariosAdapter(private var lista:List<Usuario>,private val escuchador:(Us
         holder.itemView.setOnClickListener {
             escuchador(lista[position])
         }
-//        holder.itemView.setOnLongClickListener(){
-//
-//        }
+
     }
 
     //Devuelve la cantidad de elementos
