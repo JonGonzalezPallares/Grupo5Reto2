@@ -13,6 +13,9 @@ class MasInformacion : AppCompatActivity() {
         binding = ActivityMasInformacionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Para borrar la barra superior
+        this.supportActionBar!!.hide()
+
         binding.pestanias.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when(tab!!.text.toString()){
