@@ -30,17 +30,16 @@ class GameFragment(applicationContext: Context) : Fragment() {
 
         fin = 0
         viewModel = ViewModelProvider(this)[GameViewModel::class.java]
-        binding.gameViewModel = viewModel
         startTimer()
         binding.lifecycleOwner = this
         //Reemplaza lo que está en la Vista con la cuadrícula más nueva y da una lista de palabras usadas a la vista
         binding.letterGrid.data = viewModel.grid
         binding.letterGrid.usedWordsList = viewModel.usedWordsList
+        binding.wordsString.text = viewModel.usedWordString
         /**
          * Termina el juego si la puntuación llega a (todas las palabras encontradas).
          */
         binding.letterGrid.score.observe(viewLifecycleOwner) { gameScore ->
-            println("hola")
             viewModel.usedWordString = "sfiod"
             if (gameScore == viewModel.usedWordsList.size) {
                 // puntuacion del juego
