@@ -39,20 +39,7 @@ class GameFragment(applicationContext: Context) : Fragment() {
         /**
          * Termina el juego si la puntuación llega a (todas las palabras encontradas).
          */
-        binding.letterGrid.score.observe(viewLifecycleOwner) { gameScore ->
-            println("hola")
-            viewModel.usedWordString = "sfiod"
-            if (gameScore == viewModel.usedWordsList.size) {
-                // puntuacion del juego
-                //LLamar el finalizar
 
-                stopTimer()
-                juegoAcabado(3)
-                fin ++
-                finalizar(contexto,"fundicion")
-                requireActivity().finish()
-            }
-        }
         return binding.root
     }
 }

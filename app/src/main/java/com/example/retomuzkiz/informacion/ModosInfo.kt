@@ -1,11 +1,16 @@
 package com.example.retomuzkiz.informacion
 
 import android.os.Bundle
+import android.text.SpannableStringBuilder
+import android.text.style.UnderlineSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import com.example.retomuzkiz.R
+import com.example.retomuzkiz.databinding.FragmentModosInfoBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +26,7 @@ class ModosInfo : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var binding: FragmentModosInfoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,9 +39,32 @@ class ModosInfo : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        //Para que pueda funcionar el spannable
+        binding = FragmentModosInfoBinding.inflate(inflater, container, false)
+
+        //Si no no se cargan los estilos del spannable
+        binding.txtFreeMode.isAllCaps = false
+        binding.txtGuideMode.isAllCaps = false
+        binding.txtProfesorMode.isAllCaps = false
+
+        //Creamos una variable con el texto que queremos añadirle los estilos
+        val freeModeSpan = SpannableStringBuilder(resources.getString(R.string.freeMode))
+        val guideModeSpan = SpannableStringBuilder(resources.getString(R.string.guidedMode))
+        val profesorModeSpan = SpannableStringBuilder(resources.getString(R.string.profesorMode))
+
+        //Añadimos los estilos de subrayado
+        freeModeSpan.setSpan(UnderlineSpan(), 0, resources.getString(R.string.freeMode).length, 0)
+        guideModeSpan.setSpan(UnderlineSpan(), 0, resources.getString(R.string.guidedMode).length, 0)
+        profesorModeSpan.setSpan(UnderlineSpan(), 0, resources.getString(R.string.profesorMode).length, 0)
+
+        //Ponemos los nuevos textos en los correspondientes sitios
+        binding.txtFreeMode.text = freeModeSpan
+        binding.txtGuideMode.text = guideModeSpan
+        binding.txtProfesorMode.text = profesorModeSpan
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_modos_info, container, false)
+        return binding.root
     }
 
     companion object {

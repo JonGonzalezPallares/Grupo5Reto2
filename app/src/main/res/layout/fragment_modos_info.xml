@@ -43,7 +43,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
                 <TextView
-                    android:id="@+id/textView49"
+                    android:id="@+id/txtFreeMode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -75,7 +75,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView50" />
 
                 <TextView
-                    android:id="@+id/textView56"
+                    android:id="@+id/txtGuideMode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -106,7 +106,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView57" />
 
                 <TextView
-                    android:id="@+id/textView58"
+                    android:id="@+id/txtProfesorMode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
