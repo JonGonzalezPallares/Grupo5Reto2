@@ -51,7 +51,17 @@
 
     <!-- Castillo Muñatones -->
     <string name="gameCastilloMuñatones">Muñatones Castle</string>
-    <string name="explanationCastilloMuñatones">"Muñatones Castle is located in Muskiz, Bizkaia.         Somorrostro is a town in the valley, formed by the Barbadun river.         It has around 7,500 inhabitants and the municipality is located in a protected natural space.         We will find this castle we are talking about in front of the Petronor company refinery.         Although it is called a castle, it is a tower house.         It should be noted that it is not just any tower, but that of Lope García de Salazar,         One of the most prominent personalities of the Middle Ages in Bizkaia. It was built in 1339,         at the end of the aforementioned period.         The current castle of Muñatones was built and destroyed over the centuries.         with all kinds of wins and losses. Today, castle of Muñatones         It is the only castle in Bizkaia that has preserved most of the characteristics of its time. "</string>
+    <string name="explanationCastilloMuñatones">Muñatones Castle is located in Muskiz, Bizkaia.
+        Somorrostro is a town in the valley, formed by the Barbadun river.
+        It has around 7,500 inhabitants and the municipality is located in a protected natural space.\n\n
+        We will find this castle we are talking about in front of the Petronor company refinery.
+        Although it is called a castle, it is a tower house.
+        It should be noted that it is not just any tower, but that of Lope García de Salazar,
+        one of the most prominent personalities of the Middle Ages in Bizkaia.\n\n
+        It was built in 1339, at the end of the aforementioned period.
+        The current castle of Muñatones was built and destroyed over the centuries.
+        with all kinds of wins and losses. Today, the castle of Muñatones
+        is the only castle in Bizkaia that has preserved most of the characteristics of its time.</string>
 
     <!-- Itsaslur Ibilbidea -->
     <string name="gameItsaslurIbilbidea">Itsaslur Route</string>
@@ -166,8 +176,8 @@
         . Good luck!</string>
 
 
-    <string name="expLaberinto1">The night of San Juan is known as the shortest night of the year, although the truth is that the current date is June 21, when the summer solstice is celebrated. The adaptation of Christianity explains that it does not correspond to the summer solstice. Tonight is celebrated with the Houses of San Juan, the fire burns everything, the fire is desired and the summer will be welcomed. In addition to being a magical day, drive away evil spirits or break with bad things that have happened.</string>
-    <string name="expLaberinto2">In the past, these fires were lit with the intention of giving more strength to the sun and thus extending the light. Formerly it was celebrated as a pagan festival, since the sun was considered a god. With the arrival of Christianity, the celebration changed, but it has never lost its essence. Today, tradition and rituals are mixed, and everyone celebrates it as they want, dancing around the fire, jumping over it, enjoying the night.</string>
+    <string name="expLaberinto1">The night of San Juan is known as the shortest night of the year (it is celebrated on the summer solstice). Tonight is celebrated with the Houses of San Juan, the fire burns everything, the fire is desired and the summer will be welcomed. In addition to being a magical day, it drives away evil spirits.</string>
+    <string name="expLaberinto2">In the past, these fires were lit with the intention of giving more strength to the sun, lengthening its light, since it was considered a god. With the arrival of Christianity, the celebration changed, but it has never lost its essence. Today, tradition and rituals are mixed, and everyone celebrates it as they want, dancing around the fire, jumping over it, enjoying the night.</string>
 
     <string name="expLaberinto3">The origin of this date is the day of the birth of Saint John the Baptist, as his father Zacharias ordered a fire to be lit to announce the birth of his son.</string>
     <string name="arena_pregunta2">It is the second widest beach on the Bizkaia coast, almost a kilometer long, 966 meters to be exact.</string>
@@ -195,4 +205,6 @@
     <string name="nombreClase">Class name</string>
     <string name="nombreProfesor">Teacher\'s name</string>
     <string name="nombreContrasenia">Password</string>
+    <string name="bienvenido">Welcome!</string>
+    <string name="errorClaseSocket">Something didn\'t go as it should. Remember to fill in all the fields and provide a valid password.</string>
 </resources>

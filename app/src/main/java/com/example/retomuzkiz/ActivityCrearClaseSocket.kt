@@ -39,14 +39,14 @@ class ActivityCrearClaseSocket : AppCompatActivity() {
                 RetoGrupoCinco.mSocket.emit("join server", user.name)
                 RetoGrupoCinco.mSocket.emit("create room", binding.txtNombreClase.text.toString())
                 RetoGrupoCinco.mSocket.emit("join room", binding.txtNombreClase.text.toString())
-                showDialog(this,"","Bienvenido!")
+                showDialog(this,"",resources.getString(R.string.bienvenido))
                 startActivity(Intent(this, MapsActivity::class.java).putExtra("user", user))
                 setUser(user)
                 finish()
             } else {
                 showDialog(this,
-                    " Algo no fue como debía. Recuerde rellenar todos los campos y proporcionar una contraseña válida",
-                    "Error")
+                    resources.getString(R.string.errorClaseSocket),
+                    resources.getString(R.string.fallo))
             }
         }
     }

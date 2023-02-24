@@ -49,10 +49,10 @@
         Somorrostro haranan dagoen herri bat da, Barbadun ibaiaz osatuta dagoena.
         7500 biztanle inguru ditu eta udalerria naturagune babestu batean dago.
         Hitz egingo dugun gaztelu hau Petronor enpresaren findegiaren aurrean aurkituko dugu.
-        Gaztelua deitzen den arren, dorretxea da.
+        Gaztelua deitzen den arren, dorretxea da.\n\n
         Aipatzekoa da ez dela edozein dorretxe, Lope García de Salazarrena baizik,
         Bizkaiko Erdi Aroko pertsonaiarik nabarmenetakoa. 1339. urtean eraiki zen,
-        aurretik aipatutako garaiaren amaieran.
+        aurretik aipatutako garaiaren amaieran.\n\n
         Muñatones egungo gaztelua mendeetan zehar eraiki eta suntsitu zen,
         era guztietako garaipen eta porrotekin. Gaur egun, Muñatones gaztelua
         da bere garaiko ezaugarri gehienak mantentzen dituen Bizkaiko gaztelu bakarra.  </string>
@@ -157,8 +157,8 @@ Musques-eko (Bizkaia, Espainia) Muñatones gaztelua altxatzen da, itsasoarekin b
         horretarako eduki sakatuta beheko irudiak dagokion espazioan arrastatu eta jaregiteko. Zorte on!</string>
     <string name="Ayudaplaya">Joko honetan txartelak elkartu behar dituzu, horretarako aurkitu behar duzu
         irudi eta deskribapen bikoteak. Zorte on!</string>
-    <string name="expLaberinto1">San Joan gaua urteko gaurik laburrena bezala ezagutzen da, nahiz eta, egia esan, gaur egungo benetako data ekainaren 21a izan, udako solstizioa noiz ospatzen den. Kristautasunak egin zuen egokitzapenak azaltzen du ez datorrela bat udako solstizioarekin. Gaur gauean San Joan Etxeekin ospatuko da, suak dena erretzen du, sua desiratzen da eta udako ongietorria egingo da. Egun magikoa izateaz gain, izpiritu txarrak uxatzea edo gertatu diren gauza txarrekin apurtzea.</string>
-    <string name="expLaberinto2">Antzina, su hauek eguzkiari indar gehiago emateko eta horrela argia luzatzeko asmoz pizten ziren. Antzina, jai pagano gisa ospatzen zen, eguzkia jainkotzat hartzen baitzen. Kristautasunaren etorrerarekin, ospakizuna aldatuz joan zen, baina ez du inoiz bere esentzia galdu. Gaur egun, tradizioa eta erritualak nahasten dira, eta bakoitzak nahi duen bezala ospatzen du, suaren inguruan dantzan, gainetik salto eginez, gauaz gozatuz.</string>
+    <string name="expLaberinto1">San Joan gaua urteko gaurik laburrena bezala ezagutzen da (udako solstizioan ospatzen da). Gaur gauean San Joan Etxeekin ospatuko da, suak dena erretzen du, sua desiratzen da eta udako ongietorria egingo da. Egun magikoa izateaz gain, izpiritu txarrak uxatzea.</string>
+    <string name="expLaberinto2">Iraganean, su hauek eguzkiari indar gehiago emateko asmoz pizten ziren, argia luzatuz, jainkotzat hartzen baitzen. Kristautasuna iristearekin batera, ospakizuna aldatu egin zen, baina ez du inoiz bere esentzia galdu. Gaur egun, tradizioa eta errituak nahasten dira, eta bakoitzak nahi duen moduan ospatzen du, suaren inguruan dantzan, gainetik saltoka, gauaz gozatuz.</string>
     <string name="expLaberinto3">Data honen jatorria San Joan Bataiatzailea jaio zen eguna da, bere aita Zacariasek su bat piztea agindu baitzuen semearen jaiotza iragartzeko.</string>
     <string name="Ayudapuente">Joko honetan galdera batzuk behar bezala erantzun behar dituzu,
         zubia guztiz ezagutzeko. Zorte on!</string>
@@ -200,4 +200,6 @@ Joko honetan labirintoaren amaierara iritsi behar duzu kubo gorria amaieraraino 
     <string name="nombreClase">Gelaren izena</string>
     <string name="nombreProfesor">Irakaslearen izena</string>
     <string name="nombreContrasenia">Pasahitza</string>
+    <string name="bienvenido">Ongi etorri!</string>
+    <string name="errorClaseSocket">Zerbait ez zen joan behar bezala. Gogoratu eremu guztiak bete behar dituzula eta baliozko pasahitz bat ematea.</string>
 </resources>

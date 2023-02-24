@@ -21,6 +21,9 @@ class RankingActivity : AppCompatActivity() {
         binding = ActivityRankingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Para borrar la barra superior
+        this.supportActionBar!!.hide()
+
         mSocket.emit(
             "get ranking",
             1

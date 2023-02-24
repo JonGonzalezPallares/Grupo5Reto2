@@ -2,6 +2,7 @@ package com.example.retomuzkiz.profesor
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.SpannableStringBuilder
 import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -28,6 +29,30 @@ class ProfesorMode : AppCompatActivity() {
 
         //Guardamos el controlador en una variable
         val navController = navHostFragment.navController
+
+        //Ponemos a false los "caps" para que se pueda darle estilos con el spannable
+        binding.txtGamePuente.isAllCaps = false
+        binding.txtGamePaseo.isAllCaps = false
+        binding.txtGameHermita.isAllCaps = false
+        binding.txtGameCastillo.isAllCaps = false
+
+        //Recoguemos los textos de manera que sea un spannable
+        val txtPuente = SpannableStringBuilder(binding.txtGamePuente.text)
+        val txtPaseo = SpannableStringBuilder(binding.txtGamePaseo.text)
+        val txtHermita = SpannableStringBuilder(binding.txtGameHermita.text)
+        val txtCastillo = SpannableStringBuilder(binding.txtGameCastillo.text)
+
+        //Insertamos los dos puntos al final del texto, asi no tenemos que crear otro string solo para esto
+        txtPuente.insert(binding.txtGamePuente.text.length, ":")
+        txtPaseo.insert(binding.txtGamePaseo.text.length, ":")
+        txtHermita.insert(binding.txtGameHermita.text.length, ":")
+        txtCastillo.insert(binding.txtGameCastillo.text.length, ":")
+
+        //Volvemos a colocar los textos en su sitio despues de actualizarlos
+        binding.txtGamePuente.text = txtPuente
+        binding.txtGamePaseo.text = txtPaseo
+        binding.txtGameHermita.text = txtHermita
+        binding.txtGameCastillo.text = txtCastillo
 
         binding.btnPuenteRes.setOnClickListener {
             //Vamos desde el fragmento vacio, hasta el puente

@@ -37,17 +37,15 @@
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10sp"
-            android:layout_marginTop="10sp"
             android:layout_marginEnd="10sp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/puente_romano_preg_1"
             android:textColor="@color/botones_desactivados"
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/rdb_Res1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <RadioGroup
             android:id="@+id/rdb_Res1"
@@ -97,15 +95,15 @@
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10sp"
-            android:layout_marginTop="10sp"
             android:layout_marginEnd="10sp"
+            android:layout_marginBottom="20dp"
             android:text="@string/puente_romano_preg_2"
             android:textColor="@color/botones_desactivados"
             android:textSize="30sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/rdb_Res2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <RadioGroup
             android:id="@+id/rdb_Res2"
@@ -155,15 +153,15 @@
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10sp"
-            android:layout_marginTop="10sp"
             android:layout_marginEnd="10sp"
+            android:layout_marginBottom="20dp"
             android:text="@string/puente_romano_preg_3"
             android:textColor="@color/botones_desactivados"
             android:textSize="30sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/rdb_Res3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <RadioGroup
             android:id="@+id/rdb_Res3"
@@ -213,15 +211,15 @@
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10sp"
-            android:layout_marginTop="10sp"
             android:layout_marginEnd="10sp"
+            android:layout_marginBottom="20dp"
             android:text="@string/puente_romano_preg_4"
             android:textColor="@color/botones_desactivados"
             android:textSize="30sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/rdb_Res4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <RadioGroup
             android:id="@+id/rdb_Res4"

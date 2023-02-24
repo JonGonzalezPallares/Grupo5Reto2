@@ -79,15 +79,15 @@
             android:text="@string/ResButPuente"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+            app:layout_constraintTop_toBottomOf="@+id/txtGamePuente" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/txtGamePuente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
             android:layout_marginTop="37dp"
-            android:text="Puente romano:"
+            android:text="@string/gamePuenteRomano"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
@@ -101,27 +101,27 @@
             android:text="@string/ResButPaseo"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+            app:layout_constraintTop_toBottomOf="@+id/txtGamePaseo" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/txtGamePaseo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
             android:layout_marginTop="80dp"
-            android:text="Paseo de Itsaslur:"
+            android:text="@string/gameItsaslurIbilbidea"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+            app:layout_constraintTop_toBottomOf="@+id/txtGamePuente" />
 
         <TextView
-            android:id="@+id/textView21"
+            android:id="@+id/txtGameHermita"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
             android:layout_marginTop="80dp"
-            android:text="Hermita de Pobeña:"
+            android:text="@string/gameHermitaDePobeña"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+            app:layout_constraintTop_toBottomOf="@+id/txtGameCastillo" />
 
         <TextView
             android:id="@+id/textView19"
@@ -135,14 +135,14 @@
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/txtGameCastillo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
             android:layout_marginTop="80dp"
-            android:text="Castillo de Muñatones:"
+            android:text="@string/gameCastilloMuñatones"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+            app:layout_constraintTop_toBottomOf="@+id/txtGamePaseo" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnCastilloRes"
@@ -154,7 +154,7 @@
             android:text="@string/ResButCastillo"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+            app:layout_constraintTop_toBottomOf="@+id/txtGameCastillo" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnHermitaRes"
@@ -166,7 +166,7 @@
             android:text="@string/ResButHermita"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+            app:layout_constraintTop_toBottomOf="@+id/txtGameHermita" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
