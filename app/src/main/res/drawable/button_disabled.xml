@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval"
+    android:layout_width="50dp"
+    android:layout_height="50dp">
+
+    <solid
+        android:color="@color/choiceItemBackground" />
+
+    <padding
+        android:bottom="7dp"
+        android:left="7dp"
+        android:right="7dp"
+        android:top="7dp"/>
+
+    <stroke
+        android:width="2dp"
+        android:color="#FFF"
+
+        android:dashWidth="4dp"/>
+
+    <corners android:radius="20dp"/>
+
+</shape>

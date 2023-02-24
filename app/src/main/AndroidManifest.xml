@@ -20,6 +20,12 @@
         android:theme="@style/Theme.RetoMuzkiz"
         tools:targetApi="31">
         <activity
+            android:name=".sudoku.MainSudoku"
+            android:exported="false" />
+        <activity
+            android:name=".sudoku.GameActivity"
+            android:exported="false" />
+        <activity
             android:name=".informacion.MasInformacion"
             android:exported="false">
             <meta-data
