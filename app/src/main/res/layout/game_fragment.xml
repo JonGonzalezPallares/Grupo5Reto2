@@ -4,18 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="gameViewModel"
-            type="com.example.retomuzkiz.burdinola.game.GameViewModel"/>
-    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/game_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".game.GameFragment">
-
 
         <TextView
             android:id="@+id/words_string"
