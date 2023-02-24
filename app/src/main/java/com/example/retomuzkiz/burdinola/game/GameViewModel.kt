@@ -3,6 +3,7 @@ package com.example.retomuzkiz.burdinola.game
 
 import WordSearch
 import androidx.lifecycle.ViewModel
+import com.example.retomuzkiz.YourProgress.binding
 import com.example.retomuzkiz.burdinola.wordPlacement.Word
 
 class GameViewModel : ViewModel() {
@@ -26,7 +27,6 @@ class GameViewModel : ViewModel() {
 
     init {
         createPuzzle(gridSize, wordList)
-
     }
 
     /**

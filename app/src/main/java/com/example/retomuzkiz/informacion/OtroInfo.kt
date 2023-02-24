@@ -14,6 +14,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.retomuzkiz.R
+import com.example.retomuzkiz.databinding.FragmentModosInfoBinding
+import com.example.retomuzkiz.databinding.FragmentOtroInfoBinding
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -30,6 +32,7 @@ class OtroInfo : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var binding: FragmentOtroInfoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,9 +46,28 @@ class OtroInfo : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        //Para que pueda funcionar el spannable
+        binding = FragmentOtroInfoBinding.inflate(inflater, container, false)
+
+        //Si no no se cargan los estilos del spannable
+        binding.txtCerrarSesion.isAllCaps = false
+        binding.txtSobreNosotros.isAllCaps = false
+
+        //Creamos una variable con el texto que queremos añadirle los estilos
+        val cerrarSesionSpan = SpannableStringBuilder(resources.getString(R.string.logOut))
+        val sobreNosotrosSpan = SpannableStringBuilder(resources.getString(R.string.aboutUs))
+
+        //Añadimos los estilos de subrayado
+        cerrarSesionSpan.setSpan(UnderlineSpan(), 0, resources.getString(R.string.logOut).length, 0)
+        sobreNosotrosSpan.setSpan(UnderlineSpan(), 0, resources.getString(R.string.aboutUs).length, 0)
+
+        //Ponemos los nuevos textos en los correspondientes sitios
+        binding.txtCerrarSesion.text = cerrarSesionSpan
+        binding.txtSobreNosotros.text = sobreNosotrosSpan
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_otro_info, container, false)
+        return binding.root
     }
 
     companion object {
