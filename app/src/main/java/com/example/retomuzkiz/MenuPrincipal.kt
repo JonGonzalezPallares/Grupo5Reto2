@@ -8,6 +8,7 @@ import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import androidx.appcompat.app.AppCompatActivity
+import com.example.retomuzkiz.burdinola.BurdinolaVideo
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
 import com.example.retomuzkiz.room.Progress
@@ -62,12 +63,9 @@ class MenuPrincipal : AppCompatActivity() {
         dialogos = 0
         dialogosClaseNoEncontrada= 0
 
-        /*binding.textView61!!.isAllCaps = false
-        val spannable = SpannableStringBuilder("Hola")
-        spannable.setSpan(ForegroundColorSpan(Color.RED), 0, 2, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
-        binding.textView61!!.text = spannable*/
         binding.txtProfesor.setOnClickListener {
-            startActivity(Intent(this,ActivityCrearClaseSocket::class.java))
+            //startActivity(Intent(this,ActivityCrearClaseSocket::class.java))
+            startActivity(Intent(this, BurdinolaVideo::class.java))
         }
 
         binding.button.setOnClickListener {

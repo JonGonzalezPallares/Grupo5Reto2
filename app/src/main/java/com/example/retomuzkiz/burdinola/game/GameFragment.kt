@@ -1,7 +1,11 @@
 package com.example.retomuzkiz.burdinola.game
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.style.BackgroundColorSpan
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -36,12 +40,58 @@ class GameFragment(applicationContext: Context) : Fragment() {
         binding.letterGrid.data = viewModel.grid
         binding.letterGrid.usedWordsList = viewModel.usedWordsList
         binding.wordsString.text = viewModel.usedWordString
+        binding.wordsString.isAllCaps = false
         /**
          * Termina el juego si la puntuación llega a (todas las palabras encontradas).
          */
         binding.letterGrid.score.observe(viewLifecycleOwner) { gameScore ->
-            viewModel.usedWordString = "sfiod"
-            if (gameScore == viewModel.usedWordsList.size) {
+            val cambio = SpannableStringBuilder(binding.wordsString.text)
+            viewModel.usedWordsList.forEach {
+                if(it.found){
+                    when(it.word){
+                        "BARBADUN" -> {
+                            cambio.setSpan(BackgroundColorSpan(Color.RED), 0, (0+it.word.length), 0)
+                            binding.wordsString.text = cambio
+                        }
+
+                        "ERREMENTARI" -> {
+                            cambio.setSpan(BackgroundColorSpan(Color.BLACK), 10, (10+it.word.length), 0)
+                            binding.wordsString.text = cambio
+                        }
+
+                        "LABEA" -> {
+                            cambio.setSpan(BackgroundColorSpan(Color.BLUE), 23, (23+it.word.length), 0)
+                            binding.wordsString.text = cambio
+                        }
+
+                        "SUTEGIA" -> {
+                            cambio.setSpan(BackgroundColorSpan(Color.CYAN), 30, (30+it.word.length), 0)
+                            binding.wordsString.text = cambio
+                        }
+
+                        "BURDINOLA" -> {
+                            cambio.setSpan(BackgroundColorSpan(Color.RED), 39, (39+it.word.length), 0)
+                            binding.wordsString.text = cambio
+                        }
+
+                        "ERROTA" -> {
+                            cambio.setSpan(BackgroundColorSpan(Color.BLACK), 50, (50+it.word.length), 0)
+                            binding.wordsString.text = cambio
+                        }
+
+                        "SALAZAR" -> {
+                            cambio.setSpan(BackgroundColorSpan(Color.BLUE), 58, (58+it.word.length), 0)
+                            binding.wordsString.text = cambio
+                        }
+
+                        "TRESNAK" -> {
+                            cambio.setSpan(BackgroundColorSpan(Color.CYAN), 67, (67+it.word.length), 0)
+                            binding.wordsString.text = cambio
+                        }
+                    }
+                }
+            }
+            /*if (gameScore == viewModel.usedWordsList.size) {
                 // puntuacion del juego
                 //LLamar el finalizar
 
@@ -50,7 +100,7 @@ class GameFragment(applicationContext: Context) : Fragment() {
                 fin ++
                 finalizar(contexto,"fundicion")
                 requireActivity().finish()
-            }
+            }*/
         }
         return binding.root
     }

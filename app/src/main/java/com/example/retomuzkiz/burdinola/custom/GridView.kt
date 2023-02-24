@@ -3,6 +3,7 @@ package com.example.retomuzkiz.burdinola.custom
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.MotionEvent
@@ -13,6 +14,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.burdinola.wordPlacement.Word
+import kotlin.random.Random
 
 /**
  * Vista utilizada para mostrar el rompecabezas.
@@ -78,6 +80,10 @@ class GridView @JvmOverloads constructor(
         val row = (y / tileHeight()).toInt()
         return tiles.first { it.column == column && it.row == row }
     }
+
+    var color1 = 0
+    var color2 = 0
+    var color3 = 0
     /**
      * Resalta los mosaicos seleccionados.
      * Colorea azul si la cadena seleccionada es correcta, colorea amarillo si el usuario aún está seleccionando mosaicos.
@@ -89,12 +95,16 @@ class GridView @JvmOverloads constructor(
             (tile.column +1) * tileWidth(),
             (tile.row + 1) * tileHeight(),
             selectedTilePaint.apply {
-                color = if (correct) {
+                if(this.color== Color.WHITE){
+                    if(correct) {
+                        this.setARGB(255, color1, color2, color3)
+                    }
+                }
+                /*color = if (correct) {
                     ContextCompat.getColor(context, R.color.botones)
-
                 } else {
                     ContextCompat.getColor(context, R.color.botones_desactivados)
-                }
+                }*/
             }
         )
     }
@@ -134,9 +144,16 @@ class GridView @JvmOverloads constructor(
 
     override fun onTouch(v: View?, event: MotionEvent?): Boolean {
         when (event?.action) {
+
             MotionEvent.ACTION_DOWN -> {
                 startX = event.x
                 startY = event.y
+                val rnd = Random
+
+                color1 = rnd.nextInt(256)
+                color2 = rnd.nextInt(256)
+                color3 = rnd.nextInt(256)
+
                 startTile = getTile(startX, startY)
                 validMove = true
                 stringSelection = ""

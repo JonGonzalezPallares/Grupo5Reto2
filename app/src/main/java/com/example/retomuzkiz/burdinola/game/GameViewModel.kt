@@ -36,13 +36,13 @@ class GameViewModel : ViewModel() {
         val wordSearch = WordSearch()
         grid = wordSearch.createGrid(size, words)
         usedWordsList = wordSearch.usedWordsList
-        usedWordString = "Encuentra las palabras:"
-        wordSearch.usedWordsList.forEachIndexed { index, word ->
+        usedWordString = "Barbadun, Errementari, Labea, Sutegia, Burdinola, Errota, Salazar, Tresnak"
+        /*wordSearch.usedWordsList.forEachIndexed { index, word ->
             usedWordString += if (index == 0) {
                 " ${word.word}"
             } else {
                 ", ${word.word}"
             }
-        }
+        }*/
     }
 }
