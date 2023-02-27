@@ -1,5 +1,6 @@
 package com.example.retomuzkiz.sudoku
 
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
@@ -12,6 +13,7 @@ import com.example.retomuzkiz.sudoku.model.SudokuModel.EMPTY
 
 
 class GameActivity : AppCompatActivity(){
+    lateinit var mediaPlay: MediaPlayer
     private lateinit var binding: ActivityGameBinding
     private var btnarray = arrayOfNulls<Button>(10)
     private lateinit var clock: Chronometer
@@ -155,9 +157,14 @@ class GameActivity : AppCompatActivity(){
 
     override fun onResume() {
         super.onResume()
+        mediaPlay = MediaPlayer.create(this,com.example.retomuzkiz.R.raw.bossfight)
+        mediaPlay.isLooping = true
+        mediaPlay.start()
         clock.start()
     }
     override fun onPause() {
+        mediaPlay!!.stop()
+        mediaPlay!!.release()
         super.onPause()
         clock.stop()
     }
