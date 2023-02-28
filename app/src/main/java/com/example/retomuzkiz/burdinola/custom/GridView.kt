@@ -14,7 +14,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.burdinola.wordPlacement.Word
-import kotlin.random.Random
 
 /**
  * Vista utilizada para mostrar el rompecabezas.
@@ -81,9 +80,6 @@ class GridView @JvmOverloads constructor(
         return tiles.first { it.column == column && it.row == row }
     }
 
-    var color1 = 0
-    var color2 = 0
-    var color3 = 0
     /**
      * Resalta los mosaicos seleccionados.
      * Colorea azul si la cadena seleccionada es correcta, colorea amarillo si el usuario aún está seleccionando mosaicos.
@@ -95,16 +91,11 @@ class GridView @JvmOverloads constructor(
             (tile.column +1) * tileWidth(),
             (tile.row + 1) * tileHeight(),
             selectedTilePaint.apply {
-                if(this.color== Color.WHITE){
-                    if(correct) {
-                        this.setARGB(255, color1, color2, color3)
-                    }
-                }
-                /*color = if (correct) {
-                    ContextCompat.getColor(context, R.color.botones)
+                color = if (correct) {
+                    Color.GREEN
                 } else {
-                    ContextCompat.getColor(context, R.color.botones_desactivados)
-                }*/
+                    Color.BLUE
+                }
             }
         )
     }
@@ -140,19 +131,11 @@ class GridView @JvmOverloads constructor(
      * Selecciona los mosaicos donde el usuario tocó la pantalla. Una vez que el usuario levanta el dedo, pasa la cuerda.
      * seleccionado en el método wordFound.
      */
-
-
     override fun onTouch(v: View?, event: MotionEvent?): Boolean {
         when (event?.action) {
-
             MotionEvent.ACTION_DOWN -> {
                 startX = event.x
                 startY = event.y
-                val rnd = Random
-
-                color1 = rnd.nextInt(256)
-                color2 = rnd.nextInt(256)
-                color3 = rnd.nextInt(256)
 
                 startTile = getTile(startX, startY)
                 validMove = true
@@ -206,7 +189,6 @@ class GridView @JvmOverloads constructor(
                     Toast.makeText(context, (R.string.frase_repetida), Toast.LENGTH_SHORT).show()
                     false
                 }
-
             }
         }
         Toast.makeText(context, (R.string.frase_incorrecta), Toast.LENGTH_SHORT).show()

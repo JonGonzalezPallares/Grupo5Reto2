@@ -50,48 +50,48 @@ class GameFragment(applicationContext: Context) : Fragment() {
                 if(it.found){
                     when(it.word){
                         "BARBADUN" -> {
-                            cambio.setSpan(BackgroundColorSpan(Color.RED), 0, (0+it.word.length), 0)
+                            cambio.setSpan(BackgroundColorSpan(Color.GREEN), 0, (0+it.word.length), 0)
                             binding.wordsString.text = cambio
                         }
 
                         "ERREMENTARI" -> {
-                            cambio.setSpan(BackgroundColorSpan(Color.BLACK), 10, (10+it.word.length), 0)
+                            cambio.setSpan(BackgroundColorSpan(Color.GREEN), 10, (10+it.word.length), 0)
                             binding.wordsString.text = cambio
                         }
 
                         "LABEA" -> {
-                            cambio.setSpan(BackgroundColorSpan(Color.BLUE), 23, (23+it.word.length), 0)
+                            cambio.setSpan(BackgroundColorSpan(Color.GREEN), 23, (23+it.word.length), 0)
                             binding.wordsString.text = cambio
                         }
 
                         "SUTEGIA" -> {
-                            cambio.setSpan(BackgroundColorSpan(Color.CYAN), 30, (30+it.word.length), 0)
+                            cambio.setSpan(BackgroundColorSpan(Color.GREEN), 30, (30+it.word.length), 0)
                             binding.wordsString.text = cambio
                         }
 
                         "BURDINOLA" -> {
-                            cambio.setSpan(BackgroundColorSpan(Color.RED), 39, (39+it.word.length), 0)
+                            cambio.setSpan(BackgroundColorSpan(Color.GREEN), 39, (39+it.word.length), 0)
                             binding.wordsString.text = cambio
                         }
 
                         "ERROTA" -> {
-                            cambio.setSpan(BackgroundColorSpan(Color.BLACK), 50, (50+it.word.length), 0)
+                            cambio.setSpan(BackgroundColorSpan(Color.GREEN), 50, (50+it.word.length), 0)
                             binding.wordsString.text = cambio
                         }
 
                         "SALAZAR" -> {
-                            cambio.setSpan(BackgroundColorSpan(Color.BLUE), 58, (58+it.word.length), 0)
+                            cambio.setSpan(BackgroundColorSpan(Color.GREEN), 58, (58+it.word.length), 0)
                             binding.wordsString.text = cambio
                         }
 
                         "TRESNAK" -> {
-                            cambio.setSpan(BackgroundColorSpan(Color.CYAN), 67, (67+it.word.length), 0)
+                            cambio.setSpan(BackgroundColorSpan(Color.GREEN), 67, (67+it.word.length), 0)
                             binding.wordsString.text = cambio
                         }
                     }
                 }
             }
-            /*if (gameScore == viewModel.usedWordsList.size) {
+            if (gameScore == viewModel.usedWordsList.size) {
                 // puntuacion del juego
                 //LLamar el finalizar
 
@@ -100,7 +100,7 @@ class GameFragment(applicationContext: Context) : Fragment() {
                 fin ++
                 finalizar(contexto,"fundicion")
                 requireActivity().finish()
-            }*/
+            }
         }
         return binding.root
     }
