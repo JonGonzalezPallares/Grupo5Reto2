@@ -1,5 +1,6 @@
 package com.example.retomuzkiz.YourProgress
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,6 +12,8 @@ import com.example.retomuzkiz.databinding.ActivityProgresBinding
 import com.example.retomuzkiz.room.TypeConverter
 import com.example.retomuzkiz.usuario.currentUser
 import android.view.animation.AnimationUtils
+import com.example.retomuzkiz.informacion.MasInformacion
+import com.example.retomuzkiz.sudoku.MainSudoku
 
 lateinit var binding :ActivityProgresBinding
 lateinit var shine: View
@@ -38,7 +41,8 @@ class ProgressActivity : AppCompatActivity() {
         binding.txtTotPuntuacion.text = "${progress.totalPuntuation}"
         binding.txtGamesCompleted.setOnClickListener{
             if(echos == 7 || echos == 8){
-                Toast.makeText(this, " Secreto", Toast.LENGTH_SHORT).show()
+                val intento = Intent(this, MainSudoku::class.java)
+                startActivity(intento)
             }
         }
 
@@ -106,6 +110,7 @@ class ProgressActivity : AppCompatActivity() {
         binding.txtGamesCompleted.text = "$echos/7"
         if(echos == 7 || echos == 8){
             binding.txtGamesCompleted.text = "$echos/7!!"
+
             if(echos == 7){
                 binding.txtGamesCompleted.startAnimation(AnimationUtils.loadAnimation(this, R.anim.shine_complete))
             }
