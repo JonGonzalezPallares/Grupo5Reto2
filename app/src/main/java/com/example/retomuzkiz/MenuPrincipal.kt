@@ -64,8 +64,7 @@ class MenuPrincipal : AppCompatActivity() {
         dialogosClaseNoEncontrada= 0
 
         binding.txtProfesor.setOnClickListener {
-            //startActivity(Intent(this,ActivityCrearClaseSocket::class.java))
-            startActivity(Intent(this, BurdinolaVideo::class.java))
+            startActivity(Intent(this,ActivityCrearClaseSocket::class.java))
         }
 
         binding.button.setOnClickListener {
