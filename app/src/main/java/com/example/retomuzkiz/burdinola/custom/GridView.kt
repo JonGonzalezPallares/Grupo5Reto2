@@ -14,6 +14,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.retomuzkiz.R
 import com.example.retomuzkiz.burdinola.wordPlacement.Word
+import kotlin.random.Random
 
 /**
  * Vista utilizada para mostrar el rompecabezas.
@@ -40,7 +41,14 @@ class GridView @JvmOverloads constructor(
     var usedWordsList: List<Word> = emptyList()
     var tiles: MutableList<Tile> = mutableListOf()
     private val selectedTiles = mutableSetOf<Tile>()
-    private val correctSelectedTiles = mutableSetOf<Tile>()
+    private val correctSelectedTilesBar = mutableSetOf<Tile>()
+    private val correctSelectedTilesErre = mutableSetOf<Tile>()
+    private val correctSelectedTilesLab = mutableSetOf<Tile>()
+    private val correctSelectedTilesSut = mutableSetOf<Tile>()
+    private val correctSelectedTilesBur = mutableSetOf<Tile>()
+    private val correctSelectedTilesErro = mutableSetOf<Tile>()
+    private val correctSelectedTilesSala = mutableSetOf<Tile>()
+    private val correctSelectedTilesTre = mutableSetOf<Tile>()
     private var stringSelection = ""
     private var validMove = false
     private var startX = 0f
@@ -48,6 +56,17 @@ class GridView @JvmOverloads constructor(
     private var endX = 0f
     private var endY = 0f
     private var startTile = Tile(0, 0, ' ')
+    private var color1 = 0
+    private var color2 = 0
+    private var color3 = 0
+    private var coloresBar = mutableListOf<Int>()
+    private var coloresErre = mutableListOf<Int>()
+    private var coloresLab = mutableListOf<Int>()
+    private var coloresSut = mutableListOf<Int>()
+    private var coloresBur = mutableListOf<Int>()
+    private var coloresErro = mutableListOf<Int>()
+    private var coloresSala = mutableListOf<Int>()
+    private var coloresTre = mutableListOf<Int>()
 
     private var selectedTilePaint = Paint().apply {
         textAlign = Paint.Align.CENTER
@@ -84,21 +103,109 @@ class GridView @JvmOverloads constructor(
      * Resalta los mosaicos seleccionados.
      * Colorea azul si la cadena seleccionada es correcta, colorea amarillo si el usuario aún está seleccionando mosaicos.
      */
-    private fun highlightSelectedTiles(tile: Tile, canvas: Canvas, correct: Boolean) {
+    private fun highlightSelectedTiles(tile: Tile, canvas: Canvas) {
         canvas.drawRect(
             tile.column * tileWidth(),
             tile.row * tileHeight(),
             (tile.column +1) * tileWidth(),
             (tile.row + 1) * tileHeight(),
             selectedTilePaint.apply {
-                color = if (correct) {
-                    Color.GREEN
-                } else {
-                    Color.BLUE
-                }
+                this.setARGB(255, color1, color2, color3)
             }
         )
     }
+
+    /**
+     * Por cada palabra se le da un color de fondo diferente
+     */
+    private fun highlightSelectedTilesBar(tile: Tile, canvas: Canvas) {
+        canvas.drawRect(
+            tile.column * tileWidth(),
+            tile.row * tileHeight(),
+            (tile.column +1) * tileWidth(),
+            (tile.row + 1) * tileHeight(),
+            selectedTilePaint.apply {
+                this.setARGB(255, coloresBar[0], coloresBar[1], coloresBar[2])
+            }
+        )
+    }
+    private fun highlightSelectedTilesErre(tile: Tile, canvas: Canvas) {
+        canvas.drawRect(
+            tile.column * tileWidth(),
+            tile.row * tileHeight(),
+            (tile.column +1) * tileWidth(),
+            (tile.row + 1) * tileHeight(),
+            selectedTilePaint.apply {
+                this.setARGB(255, coloresErre[0], coloresErre[1], coloresErre[2])
+            }
+        )
+    }
+    private fun highlightSelectedTilesLab(tile: Tile, canvas: Canvas) {
+        canvas.drawRect(
+            tile.column * tileWidth(),
+            tile.row * tileHeight(),
+            (tile.column +1) * tileWidth(),
+            (tile.row + 1) * tileHeight(),
+            selectedTilePaint.apply {
+                this.setARGB(255, coloresLab[0], coloresLab[1], coloresLab[2])
+            }
+        )
+    }
+    private fun highlightSelectedTilesSut(tile: Tile, canvas: Canvas) {
+        canvas.drawRect(
+            tile.column * tileWidth(),
+            tile.row * tileHeight(),
+            (tile.column +1) * tileWidth(),
+            (tile.row + 1) * tileHeight(),
+            selectedTilePaint.apply {
+                this.setARGB(255, coloresSut[0], coloresSut[1], coloresSut[2])
+            }
+        )
+    }
+    private fun highlightSelectedTilesBur(tile: Tile, canvas: Canvas) {
+        canvas.drawRect(
+            tile.column * tileWidth(),
+            tile.row * tileHeight(),
+            (tile.column +1) * tileWidth(),
+            (tile.row + 1) * tileHeight(),
+            selectedTilePaint.apply {
+                this.setARGB(255, coloresBur[0], coloresBur[1], coloresBur[2])
+            }
+        )
+    }
+    private fun highlightSelectedTilesErro(tile: Tile, canvas: Canvas) {
+        canvas.drawRect(
+            tile.column * tileWidth(),
+            tile.row * tileHeight(),
+            (tile.column +1) * tileWidth(),
+            (tile.row + 1) * tileHeight(),
+            selectedTilePaint.apply {
+                this.setARGB(255, coloresErro[0], coloresErro[1], coloresErro[2])
+            }
+        )
+    }    private fun highlightSelectedTilesSala(tile: Tile, canvas: Canvas) {
+        canvas.drawRect(
+            tile.column * tileWidth(),
+            tile.row * tileHeight(),
+            (tile.column +1) * tileWidth(),
+            (tile.row + 1) * tileHeight(),
+            selectedTilePaint.apply {
+                this.setARGB(255, coloresSala[0], coloresSala[1], coloresSala[2])
+            }
+        )
+    }
+    private fun highlightSelectedTilesTre(tile: Tile, canvas: Canvas) {
+        canvas.drawRect(
+            tile.column * tileWidth(),
+            tile.row * tileHeight(),
+            (tile.column +1) * tileWidth(),
+            (tile.row + 1) * tileHeight(),
+            selectedTilePaint.apply {
+                this.setARGB(255, coloresTre[0], coloresTre[1], coloresTre[2])
+            }
+        )
+    }
+
     /**
      * Pone caracteres, dibuja una cuadrícula y resalta las cadenas seleccionadas.
      */
@@ -106,12 +213,38 @@ class GridView @JvmOverloads constructor(
         super.onDraw(canvas)
         selectedTiles.forEach { tile ->
             if (validMove) {
-                highlightSelectedTiles(tile, canvas, false)
+                highlightSelectedTiles(tile, canvas)
             }
         }
-        correctSelectedTiles.forEach { tile ->
-            highlightSelectedTiles(tile, canvas, true)
+
+        /**
+        * Repetidas para cada palabra que seleccionemos
+        */
+        correctSelectedTilesBar.forEach { tile ->
+            highlightSelectedTilesBar(tile, canvas)
         }
+        correctSelectedTilesErre.forEach { tile ->
+            highlightSelectedTilesErre(tile, canvas)
+        }
+        correctSelectedTilesLab.forEach { tile ->
+            highlightSelectedTilesLab(tile, canvas)
+        }
+        correctSelectedTilesSut.forEach { tile ->
+            highlightSelectedTilesSut(tile, canvas)
+        }
+        correctSelectedTilesBur.forEach { tile ->
+            highlightSelectedTilesBur(tile, canvas)
+        }
+        correctSelectedTilesErro.forEach { tile ->
+            highlightSelectedTilesErro(tile, canvas)
+        }
+        correctSelectedTilesSala.forEach { tile ->
+            highlightSelectedTilesSala(tile, canvas)
+        }
+        correctSelectedTilesTre.forEach { tile ->
+            highlightSelectedTilesTre(tile, canvas)
+        }
+
         tiles.forEach { tile ->
             canvas.drawText(
                 tile.character.toString(),
@@ -137,6 +270,15 @@ class GridView @JvmOverloads constructor(
                 startX = event.x
                 startY = event.y
 
+                /**
+                 * Para los colores aleatorios de cada palabra
+                 */
+                val rnd = Random
+
+                color1 = rnd.nextInt(256)
+                color2 = rnd.nextInt(256)
+                color3 = rnd.nextInt(256)
+
                 startTile = getTile(startX, startY)
                 validMove = true
                 stringSelection = ""
@@ -159,8 +301,75 @@ class GridView @JvmOverloads constructor(
             MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                 if (validMove) {
                     if (wordFound(stringSelection)) {
-                        selectedTiles.forEach { tile ->
-                            correctSelectedTiles.add(tile)
+                        /**
+                         * Segun la palabra que sea añadimos a una lista los colores que hayan salido antes
+                         * y llamamos a su funcion correspondiente
+                         */
+                        when(stringSelection){
+                            "BARBADUN"->{
+                                selectedTiles.forEach { tile ->
+                                    coloresBar.add(color1)
+                                    coloresBar.add(color2)
+                                    coloresBar.add(color3)
+                                    correctSelectedTilesBar.add(tile)
+                                }
+                            }
+                            "ERREMENTARI"->{
+                                selectedTiles.forEach { tile ->
+                                    coloresErre.add(color1)
+                                    coloresErre.add(color2)
+                                    coloresErre.add(color3)
+                                    correctSelectedTilesErre.add(tile)
+                                }
+                            }
+                            "LABEA"->{
+                                selectedTiles.forEach { tile ->
+                                    coloresLab.add(color1)
+                                    coloresLab.add(color2)
+                                    coloresLab.add(color3)
+                                    correctSelectedTilesLab.add(tile)
+                                }
+                            }
+                            "SUTEGIA"->{
+                                selectedTiles.forEach { tile ->
+                                    coloresSut.add(color1)
+                                    coloresSut.add(color2)
+                                    coloresSut.add(color3)
+                                    correctSelectedTilesSut.add(tile)
+                                }
+                            }
+                            "BURDINOLA"->{
+                                selectedTiles.forEach { tile ->
+                                    coloresBur.add(color1)
+                                    coloresBur.add(color2)
+                                    coloresBur.add(color3)
+                                    correctSelectedTilesBur.add(tile)
+                                }
+                            }
+                            "ERROTA"->{
+                                selectedTiles.forEach { tile ->
+                                    coloresErro.add(color1)
+                                    coloresErro.add(color2)
+                                    coloresErro.add(color3)
+                                    correctSelectedTilesErro.add(tile)
+                                }
+                            }
+                            "SALAZAR"->{
+                                selectedTiles.forEach { tile ->
+                                    coloresSala.add(color1)
+                                    coloresSala.add(color2)
+                                    coloresSala.add(color3)
+                                    correctSelectedTilesSala.add(tile)
+                                }
+                            }
+                            else->{
+                                selectedTiles.forEach { tile ->
+                                    coloresTre.add(color1)
+                                    coloresTre.add(color2)
+                                    coloresTre.add(color3)
+                                    correctSelectedTilesTre.add(tile)
+                                }
+                            }
                         }
                     }
                     selectedTiles.clear()
@@ -180,14 +389,14 @@ class GridView @JvmOverloads constructor(
     private fun wordFound(stringSelected: String): Boolean {
         for (word in usedWordsList) {
             if(word.word == stringSelected){
-                return if (!word.found) {
+                return if (word.found) {
+                    Toast.makeText(context, (R.string.frase_repetida), Toast.LENGTH_SHORT).show()
+                    false
+                }else{
                     word.found = true
                     _score.value = _score.value?.plus(1) ?: 1
                     Toast.makeText(context, (R.string.frase_correcta), Toast.LENGTH_SHORT).show()
                     true
-                }else{
-                    Toast.makeText(context, (R.string.frase_repetida), Toast.LENGTH_SHORT).show()
-                    false
                 }
             }
         }
