@@ -207,4 +207,6 @@
     <string name="nombreContrasenia">Password</string>
     <string name="bienvenido">Welcome!</string>
     <string name="errorClaseSocket">Something didn\'t go as it should. Remember to fill in all the fields and provide a valid password.</string>
+    <string name="msjFinal">Sudoku solved\n\nWell done!</string>
+    <string name="regresar">Return</string>
 </resources>

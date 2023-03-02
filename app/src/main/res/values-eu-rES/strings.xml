@@ -202,4 +202,6 @@ Joko honetan labirintoaren amaierara iritsi behar duzu kubo gorria amaieraraino 
     <string name="nombreContrasenia">Pasahitza</string>
     <string name="bienvenido">Ongi etorri!</string>
     <string name="errorClaseSocket">Zerbait ez zen joan behar bezala. Gogoratu eremu guztiak bete behar dituzula eta baliozko pasahitz bat ematea.</string>
+    <string name="msjFinal">Sudokua konponduta\n\n Ondo egin!</string>
+    <string name="regresar">Itzuli</string>
 </resources>

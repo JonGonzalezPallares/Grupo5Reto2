@@ -12,14 +12,15 @@ class MainSudoku : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainSudokuBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        this.supportActionBar!!.hide()
         setContentView(binding.root)
         iniciar()
     }
     private fun iniciar() {
-        binding.btnStart.setOnClickListener {
+        //binding.btnStart.setOnClickListener {
             SudokuModel.sudoku.setDifficulty(SudokuModel.HARD)
             startActivity(Intent(this, GameActivity::class.java))
             finish()
-        }
+        //}
     }
 }

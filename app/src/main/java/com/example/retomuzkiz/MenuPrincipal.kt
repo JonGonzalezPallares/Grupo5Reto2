@@ -1,14 +1,8 @@
 package com.example.retomuzkiz
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.SpannableStringBuilder
-import android.text.style.ForegroundColorSpan
 import androidx.appcompat.app.AppCompatActivity
-import com.example.retomuzkiz.burdinola.BurdinolaVideo
 import com.example.retomuzkiz.clases.RetoGrupoCinco
 import com.example.retomuzkiz.databinding.ActivityMenuPrincipalBinding
 import com.example.retomuzkiz.room.Progress
@@ -71,29 +65,30 @@ class MenuPrincipal : AppCompatActivity() {
             RetoGrupoCinco.mSocket.connect()
             dialogos = 0
             dialogosClaseNoEncontrada= 0
-            var newUser = comprobarUsuario()
+            val newUser = comprobarUsuario()
             val userName = binding.txtUsuario.text.toString()
-            var userClass = binding.txtClase.text.toString()
-            val totPuntuation = 0
-            val gamesDone = 0
+            val userClass = binding.txtClase.text.toString()
             val userId = "${Random.nextInt(0..1)*100}${userClass}${db.usuarioDao.getAllUsers().size}"
             val isProfesor = false
 
             if(newUser == null){
-                user = Usuario(
-                    userId,
-                    userName,
-                    userClass,
-                    isProfesor
-                )
-                setUser( user )
+                if(userName.isNotEmpty() && userClass.isNotEmpty()) {
+                    user = Usuario(
+                        userId,
+                        userName,
+                        userClass,
+                        isProfesor
+                    )
+                    setUser(user)
+                    insertarUser(currentUser)
+                }
             }else{
                 //Si ComprobarUsuario ha encontrado algun usuario, seteamos
                 user = newUser
                 setUser(user)
+                insertarUser(currentUser)
             }
 
-            insertarUser(currentUser)
             var room :String? = null
 
             RetoGrupoCinco.mSocket.emit("join server",binding.txtUsuario.text.toString())
@@ -102,20 +97,13 @@ class MenuPrincipal : AppCompatActivity() {
     }
 
     private fun insertarUser(user: Usuario): Usuario {
-        val userName = binding.txtUsuario.text.toString()
-        var userClass = binding.txtClase.text.toString()
-        val totPuntuation = 0
-        val gamesDone = 0
-        val userId = "${Random.nextInt(0..1)*100}${userClass}${db.usuarioDao.getAllUsers().size}"
-        val isProfesor = false
-
         db.usuarioDao.insertUser(user)
 
         val progress = Progress(
             user.userId,
             0,
             0,
-            TypeConverter.someObjectListToString(cargarJuegos(user))
+            TypeConverter.someObjectListToString(cargarJuegos())
         )
 
         db.progressDao.insertProgress(progress)
@@ -125,10 +113,10 @@ class MenuPrincipal : AppCompatActivity() {
 
 
     private fun comprobarUsuario():Usuario?{
-        var nameIntroduced = binding.txtUsuario.text
-        var classIntroduced = binding.txtClase.text
+        val nameIntroduced = binding.txtUsuario.text
+        val classIntroduced = binding.txtClase.text
         var usuario : Usuario?
-        var userList = db.usuarioDao.getAllUsers()
+        val userList = db.usuarioDao.getAllUsers()
 
         userList.forEach { user ->
             if (user.name.contentEquals(nameIntroduced) ){
@@ -142,7 +130,7 @@ class MenuPrincipal : AppCompatActivity() {
         return null
     }
 
-    private fun cargarJuegos(user: Usuario): List<Game> {
+    private fun cargarJuegos(): List<Game> {
         return listOf(
             Game(
                 getString(R.string.gameSanJuan), 1, 0, false,

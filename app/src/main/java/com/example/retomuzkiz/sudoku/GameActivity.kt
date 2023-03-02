@@ -1,5 +1,6 @@
 package com.example.retomuzkiz.sudoku
 
+import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.os.SystemClock
 import android.widget.Button
 import android.widget.Chronometer
 import android.widget.Toast
+import com.example.retomuzkiz.clases.MsgVictoria
 import com.example.retomuzkiz.databinding.ActivityGameBinding
 import com.example.retomuzkiz.sudoku.model.SudokuModel
 import com.example.retomuzkiz.sudoku.model.SudokuModel.EMPTY
@@ -20,6 +22,7 @@ class GameActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.supportActionBar!!.hide()
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
         clock = binding.chornometer
@@ -125,13 +128,16 @@ class GameActivity : AppCompatActivity(){
      * */
     fun endGame() {
         if(SudokuModel.sudoku.validate()){
-            //
-            Toast.makeText(this, "Se ha completado con exito!", Toast.LENGTH_LONG).show()
+            //Toast.makeText(this, "Se ha completado con exito!", Toast.LENGTH_LONG).show()
             SudokuModel.sudoku.setHasEmpty(0)
             SudokuModel.sudoku.setIsBaseElement()
             val clock: Chronometer = binding.chornometer
             clock.stop()
             SudokuModel.winnedTimeWhenFinished =  clock.text.toString()
+            val intento = Intent(this, MsgVictoria::class.java)
+            intento.putExtra("imagen", "sudoku")
+            startActivity(intento)
+            this.finish()
         }
         else {
             clock.stop()

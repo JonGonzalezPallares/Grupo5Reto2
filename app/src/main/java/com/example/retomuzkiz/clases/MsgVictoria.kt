@@ -27,16 +27,30 @@ class MsgVictoria : AppCompatActivity() {
             "mar" -> imagenFondo=R.drawable.martran2
             "castillo" -> imagenFondo=R.drawable.castillo
             "fundicion" -> imagenFondo=R.drawable.fundicion_pobela
+            "sudoku" -> imagenFondo=R.drawable.trofeo
         }
 
-        val puntuacion = puntuacionJuegos()
-        val textoPunt = getString(R.string.puntos)
-        binding.textView!!.text = "$textoPunt $puntuacion"
+        if(intent.getStringExtra("imagen")=="sudoku"){
+            binding.imgVictoria.setImageResource(imagenFondo)
+            val sudoku = resources.getString(R.string.msjFinal)
+            binding.textView13.text = "$sudoku"
+            binding.textView12.text = ""
+            binding.textView!!.text = ""
+            val regresar = resources.getString(R.string.regresar)
+            binding.btnIrMapa.text = "$regresar"
+            binding.btnIrMapa.setOnClickListener{
+                finish()
+            }
+        }else{
+            val puntuacion = puntuacionJuegos()
+            val textoPunt = getString(R.string.puntos)
+            binding.textView!!.text = "$textoPunt $puntuacion"
 
-        binding.imgVictoria.setImageResource(imagenFondo)
+            binding.imgVictoria.setImageResource(imagenFondo)
 
-        binding.btnIrMapa.setOnClickListener {
-            finish()
+            binding.btnIrMapa.setOnClickListener {
+                finish()
+            }
         }
     }
 }

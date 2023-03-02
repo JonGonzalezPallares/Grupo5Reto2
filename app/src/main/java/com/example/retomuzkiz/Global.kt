@@ -53,7 +53,6 @@ var puntuacion = 0
 object usuario  {
     lateinit var currentUser:Usuario
 }
-
 lateinit var currentProgress: Progress
 
 fun startTimer() {

@@ -203,4 +203,6 @@
     <string name="nombreContrasenia">Contraseña</string>
     <string name="bienvenido">¡Bienvenido!</string>
     <string name="errorClaseSocket">Algo no fue como debía. Recuerde rellenar todos los campos y proporcionar una contraseña válida.</string>
+    <string name="msjFinal">Sudoku solucionado\n\n¡Bien hecho!</string>
+    <string name="regresar">Regresar</string>
 </resources>
